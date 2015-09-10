@@ -22,12 +22,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_SOURCE_TAKEWHILE_H
-#define LEMON_FLOW_SOURCE_TAKEWHILE_H
+#ifndef FLOW_SOURCE_TAKEWHILE_H
+#define FLOW_SOURCE_TAKEWHILE_H
 
-namespace lemon {
-    namespace flow {
-        namespace source {
+namespace flow {
+    namespace source {
 
 /// <summary>
 /// Stream source that takes elements from the stream until a predicate returns <c>false</c>. All elements
@@ -89,7 +88,6 @@ protected:
     UnaryPredicate _predicate;  // the mapping operation to apply to each element from the source
     value_type _current;        // the current value
 };
-        }
     }
 }
 #endif

@@ -23,8 +23,8 @@
  * SOFTWARE.
  */
 
-#ifndef LEMON_FLOW_STREAM_H
-#define LEMON_FLOW_STREAM_H
+#ifndef FLOW_STREAM_H
+#define FLOW_STREAM_H
 
 #include "terminal/Terminal.h"
 #include "intermediate/Intermediate.h"
@@ -59,8 +59,7 @@
         - random - generate values from an rng
 */
 
-namespace lemon {
-    namespace flow {
+namespace flow {
 
 /// <summary>
 /// The Stream class. Provides lazy evaluation and functional style transformations on data.
@@ -142,6 +141,5 @@ public:
 protected:
     Source _source; // the source of this stream
 };
-    }
 }
 #endif

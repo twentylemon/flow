@@ -22,14 +22,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_TERMINAL_LAST_H
-#define LEMON_FLOW_TERMINAL_LAST_H
+#ifndef FLOW_TERMINAL_LAST_H
+#define FLOW_TERMINAL_LAST_H
 
 #include "fold.h"
 
-namespace lemon {
-    namespace flow {
-        namespace terminal {
+namespace flow {
+    namespace terminal {
 
 /// <summary>
 /// Returns the last element from the stream.
@@ -39,7 +38,6 @@ namespace lemon {
 auto last() {
     return fold([](auto&&, auto&& ele) { return ele; });
 }
-        }
     }
 }
 #endif

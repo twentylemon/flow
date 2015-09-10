@@ -22,12 +22,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_SOURCE_SKIP_H
-#define LEMON_FLOW_SOURCE_SKIP_H
+#ifndef FLOW_SOURCE_SKIP_H
+#define FLOW_SOURCE_SKIP_H
 
-namespace lemon {
-    namespace flow {
-        namespace source {
+namespace flow {
+    namespace source {
 
 /// <summary>
 /// Stream source that skips elements in a stream. That is, the first elements are removed from the stream,
@@ -114,7 +113,6 @@ protected:
     const std::size_t _step_size;   // the step size, allows skipping elements
     bool _initial;                  // false once we have processed the first stream value
 };
-        }
     }
 }
 #endif

@@ -22,12 +22,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_SOURCE_MAP_H
-#define LEMON_FLOW_SOURCE_MAP_H
+#ifndef FLOW_SOURCE_MAP_H
+#define FLOW_SOURCE_MAP_H
 
-namespace lemon {
-    namespace flow {
-        namespace source {
+namespace flow {
+    namespace source {
 
 /// <summary>
 /// Stream source that maps elements into new values.
@@ -81,7 +80,6 @@ protected:
     Source _source;             // the source to read from
     UnaryOperation _operation;  // the mapping operation to apply to each element from the source
 };
-        }
     }
 }
 #endif

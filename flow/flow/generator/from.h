@@ -23,15 +23,14 @@
  * SOFTWARE.
  */
 
-#ifndef LEMON_FLOW_GENERATOR_FROM_H
-#define LEMON_FLOW_GENERATOR_FROM_H
+#ifndef FLOW_GENERATOR_FROM_H
+#define FLOW_GENERATOR_FROM_H
 
 #include "../Stream.h"
 #include "../source/Iterator.h"
 
-namespace lemon {
-    namespace flow {
-        namespace generator {
+namespace flow {
+    namespace generator {
 
 /// <summary>
 /// Creates a <see cref="Stream{Source}"/> from the given iterator range.
@@ -127,7 +126,6 @@ template <typename Container, typename F>
 auto operator|(const Container& container, terminal::detail::Terminal<F>& op) {
     return from(container) | op;
 }
-        }
     }
 }
 #endif

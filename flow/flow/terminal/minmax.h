@@ -22,16 +22,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_TERMINAL_MINMAX_H
-#define LEMON_FLOW_TERMINAL_MINMAX_H
+#ifndef FLOW_TERMINAL_MINMAX_H
+#define FLOW_TERMINAL_MINMAX_H
 
 #include <functional>
 
 #include "Terminal.h"
 
-namespace lemon {
-    namespace flow {
-        namespace terminal {
+namespace flow {
+    namespace terminal {
 
 /// <summary>
 /// Returns the minimum and maximum elements as a pair from the stream according to the comparator given.
@@ -73,7 +72,6 @@ auto minmax(Compare compare = Compare()) {
     }, [](auto&& value) { return std::make_pair(value, value); });
     */
 }
-        }
     }
 }
 #endif

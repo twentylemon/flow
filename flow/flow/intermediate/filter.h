@@ -22,8 +22,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_INTERMEDIATE_FILTER_H
-#define LEMON_FLOW_INTERMEDIATE_FILTER_H
+#ifndef FLOW_INTERMEDIATE_FILTER_H
+#define FLOW_INTERMEDIATE_FILTER_H
 
 #include <functional>
 
@@ -31,9 +31,8 @@
 #include "Intermediate.h"
 #include "../source/Filter.h"
 
-namespace lemon {
-    namespace flow {
-        namespace intermediate {
+namespace flow {
+    namespace intermediate {
 
 /// <summary>
 /// Removes elements from the stream that return <c>false</c> for the given predicate.
@@ -75,7 +74,6 @@ template <typename Ret, typename Class>
 auto filter(Ret(Class::*member)() const) {
     return filter(std::mem_fn(member));
 }
-        }
     }
 }
 #endif

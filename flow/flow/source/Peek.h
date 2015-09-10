@@ -22,12 +22,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_SOURCE_PEEK_H
-#define LEMON_FLOW_SOURCE_PEEK_H
+#ifndef FLOW_SOURCE_PEEK_H
+#define FLOW_SOURCE_PEEK_H
 
-namespace lemon {
-    namespace flow {
-        namespace source {
+namespace flow {
+    namespace source {
 
 /// <summary>
 /// Stream source that applies an action to each stream element. The elements are left unaltered.
@@ -84,7 +83,6 @@ protected:
     Source _source; // the source to read from
     Action _action; // the action to apply to the stream elements
 };
-        }
     }
 }
 #endif

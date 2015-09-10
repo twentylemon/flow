@@ -22,16 +22,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_TERMINAL_MAX_H
-#define LEMON_FLOW_TERMINAL_MAX_H
+#ifndef FLOW_TERMINAL_MAX_H
+#define FLOW_TERMINAL_MAX_H
 
 #include <functional>
 
 #include "fold.h"
 
-namespace lemon {
-    namespace flow {
-        namespace terminal {
+namespace flow {
+    namespace terminal {
 
 /// <summary>
 /// Returns the maximum element from the stream according to the comparator given. By default <c>operator&lt;</c>
@@ -49,7 +48,6 @@ auto max(Compare compare = Compare()) {
         return lhs;
     });
 }
-        }
     }
 }
 #endif

@@ -22,16 +22,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_TERMINAL_PRODUCT_H
-#define LEMON_FLOW_TERMINAL_PRODUCT_H
+#ifndef FLOW_TERMINAL_PRODUCT_H
+#define FLOW_TERMINAL_PRODUCT_H
 
 #include <functional>
 
 #include "fold.h"
 
-namespace lemon {
-    namespace flow {
-        namespace terminal {
+namespace flow {
+    namespace terminal {
 
 /// <summary>
 /// Computes the product of all the elements in the stream using <c>operator*</c>.
@@ -52,7 +51,6 @@ template <typename T>
 auto product(T&& init) {
     return fold(std::multiplies<T>(), std::forward<T>(init));
 }
-        }
     }
 }
 #endif

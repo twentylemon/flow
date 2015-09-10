@@ -22,8 +22,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_INTERMEDIATE_TAKEWHILE_H
-#define LEMON_FLOW_INTERMEDIATE_TAKEWHILE_H
+#ifndef FLOW_INTERMEDIATE_TAKEWHILE_H
+#define FLOW_INTERMEDIATE_TAKEWHILE_H
 
 #include <functional>
 
@@ -31,9 +31,8 @@
 #include "Intermediate.h"
 #include "../source/TakeWhile.h"
 
-namespace lemon {
-    namespace flow {
-        namespace intermediate {
+namespace flow {
+    namespace intermediate {
 
 /// <summary>
 /// Takes elements from the stream until the given predicate returns <c>false</c>. Elements after and including
@@ -78,7 +77,6 @@ template <typename Ret, typename Class>
 auto take_while(Ret(Class::*member)() const) {
     return take_while(std::mem_fn(member));
 }
-        }
     }
 }
 #endif

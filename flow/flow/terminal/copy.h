@@ -22,14 +22,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_TERMINAL_COPY_H
-#define LEMON_FLOW_TERMINAL_COPY_H
+#ifndef FLOW_TERMINAL_COPY_H
+#define FLOW_TERMINAL_COPY_H
 
 #include "Terminal.h"
 
-namespace lemon {
-    namespace flow {
-        namespace terminal {
+namespace flow {
+    namespace terminal {
 
 /// <summary>
 /// Copies the elements in the stream into the range beginning at <c>result</c>. An iterator to the end
@@ -47,7 +46,6 @@ auto copy(OutputIterator result) {
         return result;
     });
 }
-        }
     }
 }
 #endif

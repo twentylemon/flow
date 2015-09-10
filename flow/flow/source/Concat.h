@@ -22,12 +22,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_SOURCE_CONCAT_H
-#define LEMON_FLOW_SOURCE_CONCAT_H
+#ifndef FLOW_SOURCE_CONCAT_H
+#define FLOW_SOURCE_CONCAT_H
 
-namespace lemon {
-    namespace flow {
-        namespace source {
+namespace flow {
+    namespace source {
 
 /// <summary>
 /// Stream source that concatenates two other streams together.
@@ -95,7 +94,6 @@ protected:
     Tail _tail;         // the second source to pull values from after the head is empty
     bool _from_head;    // true if we are still pulling from the head
 };
-        }
     }
 }
 #endif

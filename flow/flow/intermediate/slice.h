@@ -22,16 +22,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_INTERMEDIATE_SLICE_H
-#define LEMON_FLOW_INTERMEDIATE_SLICE_H
+#ifndef FLOW_INTERMEDIATE_SLICE_H
+#define FLOW_INTERMEDIATE_SLICE_H
 
 #include "../Stream.h"
 #include "Intermediate.h"
 #include "../source/Slice.h"
 
-namespace lemon {
-    namespace flow {
-        namespace intermediate {
+namespace flow {
+    namespace intermediate {
 
 /// <summary>
 /// Slices the stream. Keeps only elements with index in the range <c>[begin..end)</c> in the stream, excluding
@@ -60,7 +59,6 @@ auto slice(std::size_t begin, std::size_t end, std::size_t step_size) {
 auto slice(std::size_t begin, std::size_t end) {
     return slice(begin, end, static_cast<std::size_t>(1));
 }
-        }
     }
 }
 #endif

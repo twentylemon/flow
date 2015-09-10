@@ -22,14 +22,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_SOURCE_ITERATOR_H
-#define LEMON_FLOW_SOURCE_ITERATOR_H
+#ifndef FLOW_SOURCE_ITERATOR_H
+#define FLOW_SOURCE_ITERATOR_H
 
 #include <iterator>
 
-namespace lemon {
-    namespace flow {
-        namespace source {
+namespace flow {
+    namespace source {
 
 /// <summary>
 /// Stream source for a pair of iterators.
@@ -80,12 +79,14 @@ public:
     }
 
 protected:
+    /// <summary>
+    /// Initializes an empty instance of the <see cref="Iterator{Itr}"/> class.
+    /// </summary>
     Iterator() { }
 
     Itr _current;   // the current iterator
     Itr _end;       // the end iterator
 };
-        }
     }
 }
 #endif

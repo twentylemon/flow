@@ -22,16 +22,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_SOURCE_REVERSE_H
-#define LEMON_FLOW_SOURCE_REVERSE_H
+#ifndef FLOW_SOURCE_REVERSE_H
+#define FLOW_SOURCE_REVERSE_H
 
 #include <vector>
 
 #include "Iterator.h"
 
-namespace lemon {
-    namespace flow {
-        namespace source {
+namespace flow {
+    namespace source {
 
 /// <summary>
 /// Stream source to reverse the stream. Reversing is an eager operation, the entire stream up to this point
@@ -69,7 +68,6 @@ protected:
     Source _source;                     // the source to read from
     std::vector<value_type> _stream;    // the full stream
 };
-        }
     }
 }
 #endif

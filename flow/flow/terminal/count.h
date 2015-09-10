@@ -22,14 +22,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_TERMINAL_COUNT_H
-#define LEMON_FLOW_TERMINAL_COUNT_H
+#ifndef FLOW_TERMINAL_COUNT_H
+#define FLOW_TERMINAL_COUNT_H
 
 #include "Terminal.h"
 
-namespace lemon {
-    namespace flow {
-        namespace terminal {
+namespace flow {
+    namespace terminal {
 
 /// <summary>
 /// Counts the number of elements in the stream. The count is returned as <c>std::size_t</c>.
@@ -45,7 +44,6 @@ auto count() {
         return size;
     });
 }
-        }
     }
 }
 #endif

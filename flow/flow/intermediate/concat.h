@@ -23,17 +23,16 @@
  * SOFTWARE.
  */
 
-#ifndef LEMON_FLOW_INTERMEDIATE_CONCAT_H
-#define LEMON_FLOW_INTERMEDIATE_CONCAT_H
+#ifndef FLOW_INTERMEDIATE_CONCAT_H
+#define FLOW_INTERMEDIATE_CONCAT_H
 
 #include "../Stream.h"
 #include "Intermediate.h"
 #include "../source/Concat.h"
 #include "../generator/from.h"
 
-namespace lemon {
-    namespace flow {
-        namespace intermediate {
+namespace flow {
+    namespace intermediate {
 
 /// <summary>
 /// Concatenates the given stream onto the end of the operated stream. The <c>tail</c> stream elements
@@ -69,7 +68,6 @@ template <typename Container>
 auto concat(const Container& container) {
     return concat(from(container));
 }
-        }
     }
 }
 #endif

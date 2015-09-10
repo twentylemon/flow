@@ -22,8 +22,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_INTERMEDIATE_MAP_H
-#define LEMON_FLOW_INTERMEDIATE_MAP_H
+#ifndef FLOW_INTERMEDIATE_MAP_H
+#define FLOW_INTERMEDIATE_MAP_H
 
 #include <functional>
 
@@ -31,9 +31,8 @@
 #include "Intermediate.h"
 #include "../source/Map.h"
 
-namespace lemon {
-    namespace flow {
-        namespace intermediate {
+namespace flow {
+    namespace intermediate {
 
 /// <summary>
 /// Transforms each element in the stream using the given unary operation.
@@ -66,7 +65,6 @@ template <typename Ret, typename Class>
 auto map(Ret(Class::*member)() const) {
     return map(std::mem_fn(member));
 }
-        }
     }
 }
 #endif

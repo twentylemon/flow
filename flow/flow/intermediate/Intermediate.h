@@ -23,17 +23,16 @@
  * SOFTWARE.
  */
 
-#ifndef LEMON_FLOW_INTERMEDIATE_INTERMEDIATE_H
-#define LEMON_FLOW_INTERMEDIATE_INTERMEDIATE_H
+#ifndef FLOW_INTERMEDIATE_INTERMEDIATE_H
+#define FLOW_INTERMEDIATE_INTERMEDIATE_H
 
 #include "../Compose.h"
 #include "../terminal/Terminal.h"
 #include "../Stream.h"
 
-namespace lemon {
-    namespace flow {
-        namespace intermediate {
-            namespace detail {
+namespace flow {
+    namespace intermediate {
+        namespace detail {
 
 /// <summary>
 /// An intermediate stream operation. Takes over the stream and applies some
@@ -95,7 +94,6 @@ template <typename Function>
 Intermediate<Function> make_intermediate(Function&& function) {
     return Intermediate<Function>(std::forward<Function>(function));
 }
-            }
         }
     }
 }

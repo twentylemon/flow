@@ -22,14 +22,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_TERMINAL_EACH_H
-#define LEMON_FLOW_TERMINAL_EACH_H
+#ifndef FLOW_TERMINAL_EACH_H
+#define FLOW_TERMINAL_EACH_H
 
 #include "Terminal.h"
 
-namespace lemon {
-    namespace flow {
-        namespace terminal {
+namespace flow {
+    namespace terminal {
 
 /// <summary>
 /// Executes a function for each element in the stream. The executed function is returned.
@@ -65,7 +64,6 @@ template <typename Ret, typename Class>
 auto each(Ret(Class::*member)() const) {
     return each(std::mem_fn(member));
 }
-        }
     }
 }
 #endif

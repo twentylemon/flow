@@ -22,15 +22,14 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_TERMINAL_NTH_H
-#define LEMON_FLOW_TERMINAL_NTH_H
+#ifndef FLOW_TERMINAL_NTH_H
+#define FLOW_TERMINAL_NTH_H
 
 #include "first.h"
 #include "../intermediate/skip.h"
 
-namespace lemon {
-    namespace flow {
-        namespace terminal {
+namespace flow {
+    namespace terminal {
 
 /// <summary>
 /// Returns the nth element from the stream. If the stream has fewer than <c>n</c> elements, this function will fail.
@@ -41,7 +40,6 @@ namespace lemon {
 auto nth(std::size_t n) {
     return intermediate::skip(n) | first();
 }
-        }
     }
 }
 #endif

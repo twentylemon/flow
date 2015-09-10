@@ -22,8 +22,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_TERMINAL_DUMP_H
-#define LEMON_FLOW_TERMINAL_DUMP_H
+#ifndef FLOW_TERMINAL_DUMP_H
+#define FLOW_TERMINAL_DUMP_H
 
 #include <string>
 #include <iostream>
@@ -31,9 +31,8 @@
 
 #include "copy.h"
 
-namespace lemon {
-    namespace flow {
-        namespace terminal {
+namespace flow {
+    namespace terminal {
 
 /// <summary>
 /// Prints the stream elements to the <c>ostream</c> with the given delimeter between each element.
@@ -49,7 +48,6 @@ auto dump(std::ostream& out = std::cout, const std::string& delimeter = " ") {
     });
     
 }
-        }
     }
 }
 #endif

@@ -22,8 +22,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_INTERMEDIATE_DROPWHILE_H
-#define LEMON_FLOW_INTERMEDIATE_DROPWHILE_H
+#ifndef FLOW_INTERMEDIATE_DROPWHILE_H
+#define FLOW_INTERMEDIATE_DROPWHILE_H
 
 #include <functional>
 
@@ -31,9 +31,8 @@
 #include "Intermediate.h"
 #include "../source/DropWhile.h"
 
-namespace lemon {
-    namespace flow {
-        namespace intermediate {
+namespace flow {
+    namespace intermediate {
 
 /// <summary>
 /// Drops elements from the stream until the given predicate returns <c>false</c>. All elements
@@ -78,7 +77,6 @@ template <typename Ret, typename Class>
 auto drop_while(Ret(Class::*member)() const) {
     return drop_while(std::mem_fn(member));
 }
-        }
     }
 }
 #endif

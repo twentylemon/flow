@@ -23,16 +23,15 @@
  * SOFTWARE.
  */
 
-#ifndef LEMON_FLOW_TERMINAL_TERMINAL_H
-#define LEMON_FLOW_TERMINAL_TERMINAL_H
+#ifndef FLOW_TERMINAL_TERMINAL_H
+#define FLOW_TERMINAL_TERMINAL_H
 
 #include "../Compose.h"
 #include "../Stream.h"
 
-namespace lemon {
-    namespace flow {
-        namespace terminal {
-            namespace detail {
+namespace flow {
+    namespace terminal {
+        namespace detail {
 
 /// <summary>
 /// A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation
@@ -83,7 +82,6 @@ template <typename Function>
 Terminal<Function> make_terminal(Function&& function) {
     return Terminal<Function>(std::forward<Function>(function));
 }
-            }
         }
     }
 }

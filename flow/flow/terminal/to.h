@@ -22,8 +22,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_TERMINAL_TO_H
-#define LEMON_FLOW_TERMINAL_TO_H
+#ifndef FLOW_TERMINAL_TO_H
+#define FLOW_TERMINAL_TO_H
 
 #include <deque>
 #include <vector>
@@ -35,20 +35,19 @@
 
 #include "copy.h"
 
-namespace lemon {
-    namespace flow {
-        namespace terminal {
-            namespace detail {
-                /// <summary>
-                /// Wrapper for <c>std::hash&lt;T&gt;</c>.
-                /// </summary>
-                struct hash {
-                    template <typename T>
-                    std::size_t operator()(const T& value) const {
-                        return std::hash<T>()(value);
-                    }
-                };
-            }
+namespace flow {
+    namespace terminal {
+        namespace detail {
+            /// <summary>
+            /// Wrapper for <c>std::hash&lt;T&gt;</c>.
+            /// </summary>
+            struct hash {
+                template <typename T>
+                std::size_t operator()(const T& value) const {
+                    return std::hash<T>()(value);
+                }
+            };
+        }
 
 /// <summary>
 /// Copies the stream into a <c>std::vector&lt;T, Alloc&lt;T&gt;&gt;</c> in order.
@@ -164,7 +163,6 @@ auto to_unordered_multiset() {
         return std::move(result);
     });
 }
-        }
     }
 }
 #endif

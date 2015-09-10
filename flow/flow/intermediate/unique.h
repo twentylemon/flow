@@ -23,8 +23,8 @@
  * SOFTWARE.
  */
 
-#ifndef LEMON_FLOW_INTERMEDIATE_UNIQUE_H
-#define LEMON_FLOW_INTERMEDIATE_UNIQUE_H
+#ifndef FLOW_INTERMEDIATE_UNIQUE_H
+#define FLOW_INTERMEDIATE_UNIQUE_H
 
 #include <functional>
 
@@ -32,9 +32,8 @@
 #include "Intermediate.h"
 #include "../source/Unique.h"
 
-namespace lemon {
-    namespace flow {
-        namespace intermediate {
+namespace flow {
+    namespace intermediate {
 
 /// <summary>
 /// Sorts and extracts only unique elements from the stream. By default, <c>operator&lt;</c> is used for comparisons
@@ -50,7 +49,6 @@ auto unique(Compare compare = Compare()) {
         return Stream<source::Unique<typename std::remove_reference_t<decltype(stream)>::source_type>>(std::move(stream.source()), compare);
     });
 }
-        }
     }
 }
 #endif

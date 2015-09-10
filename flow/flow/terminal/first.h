@@ -22,14 +22,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_TERMINAL_FIRST_H
-#define LEMON_FLOW_TERMINAL_FIRST_H
+#ifndef FLOW_TERMINAL_FIRST_H
+#define FLOW_TERMINAL_FIRST_H
 
 #include "Terminal.h"
 
-namespace lemon {
-    namespace flow {
-        namespace terminal {
+namespace flow {
+    namespace terminal {
 
 /// <summary>
 /// Returns the first element from the stream.
@@ -44,7 +43,6 @@ auto first() {
         return std::move(stream.next());
     });
 }
-        }
     }
 }
 #endif

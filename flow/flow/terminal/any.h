@@ -22,14 +22,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_TERMINAL_ANY_H
-#define LEMON_FLOW_TERMINAL_ANY_H
+#ifndef FLOW_TERMINAL_ANY_H
+#define FLOW_TERMINAL_ANY_H
 
 #include "Terminal.h"
 
-namespace lemon {
-    namespace flow {
-        namespace terminal {
+namespace flow {
+    namespace terminal {
 
 /// <summary>
 /// Returns true if any of the elements in the stream return <c>true</c> for the predicate given.
@@ -83,7 +82,6 @@ template <typename Ret, typename Class>
 auto any(Ret(Class::*member)() const) {
     return any(std::mem_fn(member));
 }
-        }
     }
 }
 #endif

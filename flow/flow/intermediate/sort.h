@@ -22,8 +22,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_INTERMEDIATE_SORT_H
-#define LEMON_FLOW_INTERMEDIATE_SORT_H
+#ifndef FLOW_INTERMEDIATE_SORT_H
+#define FLOW_INTERMEDIATE_SORT_H
 
 #include <functional>
 
@@ -31,9 +31,8 @@
 #include "Intermediate.h"
 #include "../source/Sort.h"
 
-namespace lemon {
-    namespace flow {
-        namespace intermediate {
+namespace flow {
+    namespace intermediate {
 
 /// <summary>
 /// Sorts the stream using the given comparator. By default, <c>operator&lt;</c> is used.
@@ -74,7 +73,6 @@ auto stable_sort(Compare compare = Compare()) {
         return Stream<source::Sort<typename std::remove_reference_t<decltype(stream)>::source_type>>(std::move(stream.source()), compare, true);
     });
 }
-        }
     }
 }
 #endif

@@ -23,16 +23,15 @@
  * SOFTWARE.
  */
 
-#ifndef LEMON_FLOW_INTERMEDIATE_REVERSE_H
-#define LEMON_FLOW_INTERMEDIATE_REVERSE_H
+#ifndef FLOW_INTERMEDIATE_REVERSE_H
+#define FLOW_INTERMEDIATE_REVERSE_H
 
 #include "../Stream.h"
 #include "Intermediate.h"
 #include "../source/Reverse.h"
 
-namespace lemon {
-    namespace flow {
-        namespace intermediate {
+namespace flow {
+    namespace intermediate {
 
 /// <summary>
 /// Reverses the stream. Reversing is an eager operation. On the creation of the <c>reverse</c> operation,
@@ -47,7 +46,6 @@ auto reverse() {
         return Stream<source::Reverse<typename std::remove_reference_t<decltype(stream)>::source_type>>(std::move(stream.source()));
     });
 }
-        }
     }
 }
 #endif

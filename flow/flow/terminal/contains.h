@@ -22,16 +22,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_TERMINAL_CONTAINS_H
-#define LEMON_FLOW_TERMINAL_CONTAINS_H
+#ifndef FLOW_TERMINAL_CONTAINS_H
+#define FLOW_TERMINAL_CONTAINS_H
 
 #include <functional>
 
 #include "any.h"
 
-namespace lemon {
-    namespace flow {
-        namespace terminal {
+namespace flow {
+    namespace terminal {
 
 /// <summary>
 /// Returns <c>true</c> if an element in the stream compares equal to <c>val</c> by the predicate given.
@@ -44,7 +43,6 @@ template <typename T, typename EqualPredicate = std::equal_to<T>>
 auto contains(const T& val, EqualPredicate equals = EqualPredicate()) {
     return any(std::bind1st(equals, val));
 }
-        }
     }
 }
 #endif

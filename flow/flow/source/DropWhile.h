@@ -22,12 +22,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_SOURCE_DROPWHILE_H
-#define LEMON_FLOW_SOURCE_DROPWHILE_H
+#ifndef FLOW_SOURCE_DROPWHILE_H
+#define FLOW_SOURCE_DROPWHILE_H
 
-namespace lemon {
-    namespace flow {
-        namespace source {
+namespace flow {
+    namespace source {
 
 /// <summary>
 /// Stream source that drops elements from the stream until a predicate returns <c>false</c>. All elements
@@ -99,7 +98,6 @@ protected:
     value_type _current;        // the current value
     bool _initial;              // true if we have not dropped stream values yet
 };
-        }
     }
 }
 #endif

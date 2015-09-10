@@ -22,14 +22,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_INTERMEDIATE_LIMIT_H
-#define LEMON_FLOW_INTERMEDIATE_LIMIT_H
+#ifndef FLOW_INTERMEDIATE_LIMIT_H
+#define FLOW_INTERMEDIATE_LIMIT_H
 
 #include "slice.h"
 
-namespace lemon {
-    namespace flow {
-        namespace intermediate {
+namespace flow {
+    namespace intermediate {
 
 /// <summary>
 /// Limits the length of the stream to a given number of elements. If the stream is shorter, all elements are kept.
@@ -39,7 +38,6 @@ namespace lemon {
 auto limit(std::size_t length) {
     return slice(static_cast<std::size_t>(0), length);
 }
-        }
     }
 }
 #endif

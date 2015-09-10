@@ -22,14 +22,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_SOURCE_SLICE_H
-#define LEMON_FLOW_SOURCE_SLICE_H
+#ifndef FLOW_SOURCE_SLICE_H
+#define FLOW_SOURCE_SLICE_H
 
 #include "Skip.h"
 
-namespace lemon {
-    namespace flow {
-        namespace source {
+namespace flow {
+    namespace source {
 
 /// <summary>
 /// Stream source that slices a stream. That is, a range of elements from the stream is kept, optionally allowing
@@ -72,7 +71,6 @@ public:
 protected:
     const std::size_t _end; // the ending index
 };
-        }
     }
 }
 #endif

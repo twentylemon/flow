@@ -22,16 +22,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_INTERMEDIATE_PEEK_H
-#define LEMON_FLOW_INTERMEDIATE_PEEK_H
+#ifndef FLOW_INTERMEDIATE_PEEK_H
+#define FLOW_INTERMEDIATE_PEEK_H
 
 #include "../Stream.h"
 #include "Intermediate.h"
 #include "../source/Peek.h"
 
-namespace lemon {
-    namespace flow {
-        namespace intermediate {
+namespace flow {
+    namespace intermediate {
 
 /// <summary>
 /// Executes a function for each element in the stream as an intermediate operation.
@@ -44,7 +43,6 @@ auto peek(UnaryFunction action) {
         return Stream<source::Peek<typename std::remove_reference_t<decltype(stream)>::source_type, UnaryFunction>>(std::move(stream.source()), action);
     });
 }
-        }
     }
 }
 #endif

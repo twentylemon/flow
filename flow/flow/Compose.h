@@ -23,28 +23,25 @@
  * SOFTWARE.
  */
 
-#ifndef LEMON_FLOW_COMPOSE_H
-#define LEMON_FLOW_COMPOSE_H
+#ifndef FLOW_COMPOSE_H
+#define FLOW_COMPOSE_H
 
-namespace lemon {
-    namespace flow {
-        template <typename Source> class Stream;
-        namespace terminal {
-            namespace detail {
-                template <typename F> class Terminal;
-            }
+namespace flow {
+    template <typename Source> class Stream;
+    namespace terminal {
+        namespace detail {
+            template <typename F> class Terminal;
         }
-        namespace intermediate {
-            namespace detail {
-                template <typename F> class Intermediate;
-            }
+    }
+    namespace intermediate {
+        namespace detail {
+            template <typename F> class Intermediate;
         }
     }
 }
 
-namespace lemon {
-    namespace flow {
-        namespace detail {
+namespace flow {
+    namespace detail {
 
 /// <summary>
 /// Composes the two functions F and G.
@@ -74,7 +71,6 @@ protected:
     F _f;   // the outer operation
     G _g;   // the inner operation
 };
-        }
     }
 }
 #endif

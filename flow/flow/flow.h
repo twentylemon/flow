@@ -22,8 +22,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_FLOW_H
-#define LEMON_FLOW_FLOW_H
+#ifndef FLOW_FLOW_H
+#define FLOW_FLOW_H
 
 #include "generator/from.h"
 
@@ -60,14 +60,10 @@
 #include "intermediate/reverse.h"
 #include "intermediate/unique.h"
 
-namespace lemon {
-    namespace flow {
-        using namespace generator;
-        using namespace terminal;
-        using namespace intermediate;
-    }
+namespace flow {
+    using namespace generator;
+    using namespace terminal;
+    using namespace intermediate;
 }
-
-namespace flow = lemon::flow;
 
 #endif

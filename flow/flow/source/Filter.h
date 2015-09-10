@@ -22,12 +22,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_SOURCE_FILTER_H
-#define LEMON_FLOW_SOURCE_FILTER_H
+#ifndef FLOW_SOURCE_FILTER_H
+#define FLOW_SOURCE_FILTER_H
 
-namespace lemon {
-    namespace flow {
-        namespace source {
+namespace flow {
+    namespace source {
 
 /// <summary>
 /// Stream source that filers out elements of the stream that return <c>false</c> for a given predicate.
@@ -84,11 +83,10 @@ public:
     }
 
 protected:
-    Source _source;         // the source to read from
-    UnaryPredicate _predicate;   // the mapping operation to apply to each element from the source
-    value_type _current;    // the current value
+    Source _source;             // the source to read from
+    UnaryPredicate _predicate;  // the mapping operation to apply to each element from the source
+    value_type _current;        // the current value
 };
-        }
     }
 }
 #endif

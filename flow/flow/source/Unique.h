@@ -22,16 +22,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_SOURCE_UNIQUE_H
-#define LEMON_FLOW_SOURCE_UNIQUE_H
+#ifndef FLOW_SOURCE_UNIQUE_H
+#define FLOW_SOURCE_UNIQUE_H
 
 #include <algorithm>
 
 #include "Sort.h"
 
-namespace lemon {
-    namespace flow {
-        namespace source {
+namespace flow {
+    namespace source {
 
 /// <summary>
 /// Stream source to sort the stream. Sorting is an eager operation, the entire stream up to this point
@@ -67,7 +66,6 @@ public:
             }), parent_type::_stream.end());
     }
 };
-        }
     }
 }
 #endif

@@ -22,16 +22,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_INTERMEDIATE_REPLACE_H
-#define LEMON_FLOW_INTERMEDIATE_REPLACE_H
+#ifndef FLOW_INTERMEDIATE_REPLACE_H
+#define FLOW_INTERMEDIATE_REPLACE_H
 
 #include <functional>
 
 #include "map.h"
 
-namespace lemon {
-    namespace flow {
-        namespace intermediate {
+namespace flow {
+    namespace intermediate {
 
 /// <summary>
 /// Maps stream elements to new values if the original value returns <c>true</c> for the given predicate.
@@ -71,7 +70,6 @@ template <typename T>
 auto replace(const T& old_value, const T& new_value) {
     return replace(std::bind1st(std::equal_to<T>(), old_value), new_value);
 }
-        }
     }
 }
 #endif

@@ -22,16 +22,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#ifndef LEMON_FLOW_INTERMEDIATE_SKIP_H
-#define LEMON_FLOW_INTERMEDIATE_SKIP_H
+#ifndef FLOW_INTERMEDIATE_SKIP_H
+#define FLOW_INTERMEDIATE_SKIP_H
 
 #include "../Stream.h"
 #include "Intermediate.h"
 #include "../source/Skip.h"
 
-namespace lemon {
-    namespace flow {
-        namespace intermediate {
+namespace flow {
+    namespace intermediate {
 
 /// <summary>
 /// Skips the first elements of a stream. Keeps only the elements with index <c>>=begin</c> in the stream.
@@ -65,7 +64,6 @@ auto skip(std::size_t begin) {
 auto skip_every(std::size_t step_size) {
     return skip(static_cast<std::size_t>(0), step_size);
 }
-        }
     }
 }
 #endif
