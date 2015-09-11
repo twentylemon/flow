@@ -35,7 +35,8 @@ namespace flow {
     namespace source {
 
 /// <summary>
-/// Stream source for a pair of iterators.
+/// Stream source that generates an infinite stream using successive calls to an iterated function.
+/// Initial values are given, then later values are calculated using previous values in the stream.
 /// </summary>
 template <typename IteratingFunction, typename T, std::size_t N>
 class IterateFunc
@@ -49,7 +50,7 @@ public:
     /// <param name="function">The function to iterate.</param>
     /// <param name="...initial">The initial arguments to pass to the function.</param>
     template <typename... Args>
-    IterateFunc(IteratingFunction function, Args... initial) : _function(uncurry(function)), _values({std::forward<Args>(initial)...}) { }
+    IterateFunc(IteratingFunction function, Args&&... initial) : _function(uncurry(function)), _values({std::forward<Args>(initial)...}) { }
 
     /// <summary>
     /// Returns true if this source has more elements.

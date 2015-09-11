@@ -36,10 +36,10 @@ namespace flow {
     namespace intermediate {
 
 /// <summary>
-/// Transforms each element in the stream using the given unary operation.
+/// Transforms each element in the Stream using the given unary operation, <paramref name="mapper"/>.
 /// </summary>
 /// <param name="mapper">The operation to apply to each element in the stream.</param>
-/// <returns>An <see cref="Intermediate{F}"/> operation that maps the stream to new values.</returns>
+/// <returns>A detail::Intermediate operation that maps the Stream to new values.</returns>
 template <typename UnaryOperation>
 auto map(UnaryOperation mapper) {
     return detail::make_intermediate([mapper](auto&& stream) {
@@ -48,20 +48,20 @@ auto map(UnaryOperation mapper) {
 }
 
 /// <summary>
-/// Transforms each element in the stream using the given unary operation.
+/// Transforms each element in the Stream to the return value of a member function of the stream elements.
 /// </summary>
 /// <param name="member">The class member function to use as the transformation.</param>
-/// <returns>An <see cref="Intermediate{F}"/> operation that maps the stream to new values.</returns>
+/// <returns>A detail::Intermediate operation that maps the Stream to new values.</returns>
 template <typename Ret, typename Class>
 auto map(Ret(Class::*member)()) {
     return map(std::mem_fn(member));
 }
 
 /// <summary>
-/// Transforms each element in the stream using the given unary operation.
+/// Transforms each element in the Stream to the return value of a member function of the stream elements.
 /// </summary>
 /// <param name="member">The const class member function to use as the transformation.</param>
-/// <returns>An <see cref="Intermediate{F}"/> operation that maps the stream to new values.</returns>
+/// <returns>A detail::Intermediate operation that maps the Stream to new values.</returns>
 template <typename Ret, typename Class>
 auto map(Ret(Class::*member)() const) {
     return map(std::mem_fn(member));

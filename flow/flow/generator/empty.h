@@ -34,12 +34,12 @@ namespace flow {
     namespace generator {
 
 /// <summary>
-/// Creates a <see cref="Stream{Source}"/> that contains no elements.
+/// Creates a Stream that contains no elements.
 /// </summary>
-/// <returns>An empty stream.</returns>
+/// <returns>An empty Stream with the template type of elements.</returns>
 template <typename T>
 Stream<source::Iterator<typename std::vector<T>::iterator>> empty() {
-    std::vector<T> v(10);
+    std::vector<T> v;
     return from(v.end(), v.end());
 }
     }

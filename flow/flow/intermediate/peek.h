@@ -34,10 +34,11 @@ namespace flow {
     namespace intermediate {
 
 /// <summary>
-/// Executes a function for each element in the stream as an intermediate operation.
+/// Lazily executes <paramref name="action"/> for each element in the Stream as a detail::Intermediate operation.
+/// This is an intermediate operation equivalent of <c>terminal::for_each</c>.
 /// </summary>
-/// <param name="func">The function to apply to each element of the stream.</param>
-/// <returns>An <see cref="Intermediate{F}"/> operation that executes a function for each stream element.</returns>
+/// <param name="action">The function to apply to each element of the stream.</param>
+/// <returns>A detail::Intermediate operation that executes a function for each Stream element.</returns>
 template <typename UnaryFunction>
 auto peek(UnaryFunction action) {
     return detail::make_intermediate([action](auto&& stream) {

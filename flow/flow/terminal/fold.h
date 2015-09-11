@@ -37,7 +37,7 @@ namespace flow {
 /// </summary>
 /// <param name="accumulator">The accumulator, the function through which the stream is folded.</param>
 /// <param name="init">The initial value to start the folding operation at.</param>
-/// <returns>The <see cref="Terminal{F}"/> operation which folds the stream.</returns>
+/// <returns>The Terminal operation which folds the stream.</returns>
 template <typename Accumulator, typename T>
 auto fold(Accumulator accumulator, T&& init) {
     return detail::make_terminal([accumulator, init](auto&& stream) mutable {
@@ -53,7 +53,7 @@ auto fold(Accumulator accumulator, T&& init) {
 /// folding value.
 /// </summary>
 /// <param name="accumulator">The accumulator, the function through which the stream is folded.</param>
-/// <returns>The <see cref="Terminal{F}"/> operation which folds the stream.</returns>
+/// <returns>The Terminal operation which folds the stream.</returns>
 /// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
 template <typename Accumulator>
 auto fold(Accumulator accumulator) {
@@ -71,7 +71,7 @@ auto fold(Accumulator accumulator) {
 /// </summary>
 /// <param name="accumulator">The accumulator, the function through which the stream is folded.</param>
 /// <param name="initializer">The initializer function to apply to the first element in the stream.</param>
-/// <returns>The <see cref="Terminal{F}"/> operation which folds the stream.</returns>
+/// <returns>The Terminal operation which folds the stream.</returns>
 /// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
 template <typename Accumulator, typename UnaryFunction>
 auto fold_id(Accumulator accumulator, UnaryFunction initializer) {
@@ -90,7 +90,7 @@ auto fold_id(Accumulator accumulator, UnaryFunction initializer) {
 /// <param name="accumulator">The accumulator, the function through which the stream is folded.</param>
 /// <param name="initializer">The initializer function to apply to the first element in the stream.</param>
 /// <param name="init">The initial value to start the folding operation at.</param>
-/// <returns>The <see cref="Terminal{F}"/> operation which folds the stream.</returns>
+/// <returns>The Terminal operation which folds the stream.</returns>
 template <typename Accumulator, typename UnaryFunction, typename T>
 auto fold_id(Accumulator accumulator, UnaryFunction initializer, T&& init) {
     return fold(accumulator, std::move(initializer(init)));

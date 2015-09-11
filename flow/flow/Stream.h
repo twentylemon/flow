@@ -60,7 +60,7 @@
 namespace flow {
 
 /// <summary>
-/// The Stream class. Provides lazy evaluation and functional style transformations on data.
+/// The stream class. Provides lazy evaluation and functional style transformations on data.
 /// Streams support pipelining of multiple operations. More commenting later.
 /// </summary>
 template <typename Source>
@@ -71,7 +71,7 @@ public:
     using value_type = typename Source::value_type;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Stream{Source}"/> class.
+    /// Initializes a new instance of the Stream class.
     /// </summary>
     /// <param name="...args">Arguments to forward to the Source constructor.</param>
     template <typename... Args>
@@ -117,7 +117,7 @@ public:
     }
 
     /// <summary>
-    /// Adds an aditional operation to the stream pipeline, returning the new stream.
+    /// Adds an additional operation to the stream pipeline, returning the new stream.
     /// </summary>
     /// <param name="op">The operation to add to the pipeline.</param>
     /// <returns>A new stream that is the composition of this stream and the operation given.</returns>
@@ -127,7 +127,7 @@ public:
     }
 
     /// <summary>
-    /// Adds an aditional operation to the stream pipeline, returning the new stream.
+    /// Adds an additional operation to the stream pipeline, returning the new stream.
     /// </summary>
     /// <param name="op">The operation to add to the pipeline.</param>
     /// <returns>A new stream that is the composition of this stream and the operation given.</returns>
@@ -137,7 +137,11 @@ public:
     }
 
 protected:
-    Source _source; // the source of this stream
+    /// <summary>
+    /// The source of this stream, where values are pulled from, be it a container, an infinite generator
+    /// or some other source.
+    /// </summary>
+    Source _source;
 };
 }
 #endif

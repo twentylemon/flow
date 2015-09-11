@@ -44,7 +44,7 @@ public:
     template <typename G> friend class intermediate::detail::Intermediate;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Terminal{F}"/> class.
+    /// Initializes a new instance of the Terminal class.
     /// </summary>
     /// <param name="operation">The operation.</param>
     Terminal(F&& operation) : _operation(std::forward<F>(operation)) { }
@@ -74,7 +74,7 @@ protected:
 };
 
 /// <summary>
-/// Constructs a <see cref="Terminal{F}"/> object using the function given.
+/// Constructs a Terminal object using the function given.
 /// </summary>
 /// <param name="function">The function.</param>
 /// <returns>A Terminal operation wrapping the function.</returns>

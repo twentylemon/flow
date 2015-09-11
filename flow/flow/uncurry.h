@@ -36,7 +36,7 @@ namespace flow {
 // since c++14, std::integer_sequence exists, but still a very helpful post
 
 /// <summary>
-/// Applies the tuple to the curried function.
+/// Applies the tuple/array to the curried function.
 /// </summary>
 /// <param name="">The index list.</param>
 /// <param name="function">The curried function.</param>
@@ -55,13 +55,13 @@ struct uncurrier
 {
 public:
     /// <summary>
-    /// Initializes a new instance of the <see cref="uncurrier{CurryFunction}"/> struct.
+    /// Initializes a new instance of the uncurrier struct.
     /// </summary>
     /// <param name="curry_function">The curry function to wrap.</param>
     uncurrier(CurryFunction curry_function) : _curry_function(curry_function) { }
 
     /// <summary>
-    /// Applies the tuple to the stored curried function.
+    /// Applies the tuple to the curried function.
     /// </summary>
     /// <param name="tuple">The tuple to apply.</param>
     /// <returns>The return value of the curried function.</returns>
@@ -71,9 +71,9 @@ public:
     }
 
     /// <summary>
-    /// Applies the array to the stored curried function.
+    /// Applies the array to the curried function.
     /// </summary>
-    /// <param name="tuple">The array to apply.</param>
+    /// <param name="ary">The array to apply to the curried function.</param>
     /// <returns>The return value of the curried function.</returns>
     template <typename T, std::size_t N>
     constexpr auto operator()(std::array<T, N>& ary) const {
@@ -81,7 +81,10 @@ public:
     }
 
 protected:
-    CurryFunction _curry_function;  // the function to uncurry
+    /// <summary>
+    /// The curried version of the function this class will uncurry.
+    /// </summary>
+    CurryFunction _curry_function;
 };
     }
 

@@ -36,11 +36,11 @@ namespace flow {
     namespace intermediate {
 
 /// <summary>
-/// Takes elements from the stream until the given predicate returns <c>false</c>. Elements after and including
-/// the first <c>false</c> are discarded.
+/// Takes elements from the Stream until <paramref name="predicate"/> returns <c>false</c> for an element.
+/// Elements after and including the first <c>false</c> are discarded.
 /// </summary>
 /// <param name="predicate">The predicate used to take stream elements.</param>
-/// <returns>An <see cref="Intermediate{F}"/> operation that takes stream elements while the predicate is <c>true</c>.</returns>
+/// <returns>A detail::Intermediate operation that takes Stream elements while <paramref name="predicate"/> returns <c>true</c>.</returns>
 template <typename UnaryPredicate>
 auto take_while(UnaryPredicate predicate) {
     return detail::make_intermediate([predicate](auto&& stream) {
@@ -49,31 +49,31 @@ auto take_while(UnaryPredicate predicate) {
 }
 
 /// <summary>
-/// Takes elements from the stream until the given predicate returns <c>false</c>. Elements after and including
+/// Takes elements from the Stream until an element is <c>false</c>. Elements after and including
 /// the first <c>false</c> are discarded. This is an overload for streams with types convertible to <c>bool</c>.
 /// </summary>
-/// <returns>An <see cref="Intermediate{F}"/> operation that takes stream elements while they are <c>true</c>.</returns>
+/// <returns>A detail::Intermediate operation that takes Stream elements while they are <c>true</c>.</returns>
 auto take_while() {
     return take_while([](const auto& ele) { return static_cast<bool>(ele); });
 }
 
 /// <summary>
-/// Takes elements from the stream until the given predicate returns <c>false</c>. Elements after and including
+/// Takes elements from the Stream until the <paramref name="member"/> returns <c>false</c>. Elements after and including
 /// the first <c>false</c> are discarded.
 /// </summary>
 /// <param name="member">The class member function used to take elements, the return type must be convertible to <c>bool</c>.</param>
-/// <returns>An <see cref="Intermediate{F}"/> operation that takes stream elements while the predicate is <c>true</c>.</returns>
+/// <returns>A detail::Intermediate operation that takes stream elements while the <paramref name="member"/> is <c>true</c>.</returns>
 template <typename Ret, typename Class>
 auto take_while(Ret(Class::*member)()) {
     return take_while(std::mem_fn(member));
 }
 
 /// <summary>
-/// Takes elements from the stream until the given predicate returns <c>false</c>. Elements after and including
+/// Takes elements from the Stream until the <paramref name="member"/> returns <c>false</c>. Elements after and including
 /// the first <c>false</c> are discarded.
 /// </summary>
 /// <param name="member">The const class member function used to take elements, the return type must be convertible to <c>bool</c>.</param>
-/// <returns>An <see cref="Intermediate{F}"/> operation that takes stream elements while the predicate is <c>true</c>.</returns>
+/// <returns>A detail::Intermediate operation that takes stream elements while the <paramref name="member"/> is <c>true</c>.</returns>
 template <typename Ret, typename Class>
 auto take_while(Ret(Class::*member)() const) {
     return take_while(std::mem_fn(member));

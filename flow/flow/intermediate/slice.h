@@ -34,15 +34,15 @@ namespace flow {
     namespace intermediate {
 
 /// <summary>
-/// Slices the stream. Keeps only elements with index in the range <c>[begin..end)</c> in the stream, excluding
-/// the <c>end</c> index. If <c>end</c> is out of bounds of the stream, the entire stream from <c>begin</c>
-/// is kept. The operation will skip every <c>step_size</c> elements, for example a <c>step_size</c>
-/// of 2 will keep only every other element in the range, eg <c>begin, begin+2, begin+4</c> etc.
+/// Slices the Stream. Keeps only elements with index in the range <c>[begin..end)</c> in the stream, excluding
+/// the <paramref name="end"/> index. If <paramref name="end"/> is out of bounds of the stream, the entire stream
+/// from <paramref name="begin"/> is kept. The operation will skip every <c>step_size</c> elements, for example a
+/// <paramref name="step_size"/> of 2 will keep only every other element in the range, eg <c>begin, begin+2, begin+4</c> etc.
 /// </summary>
 /// <param name="begin">The begin index to slice the stream at. The begin index element is kept.</param>
-/// <param name="end">The end index to slice to stream to. The end idex element is not kept.</param>
+/// <param name="end">The end index to slice to stream to. The end index element is not kept.</param>
 /// <param name="step_size">The step size.</param>
-/// <returns>An <see cref="Intermediate{F}"/> operation that slices the stream to the given range.</returns>
+/// <returns>A detail::Intermediate operation that slices the Stream to the given range.</returns>
 auto slice(std::size_t begin, std::size_t end, std::size_t step_size) {
     return detail::make_intermediate([begin, end, step_size](auto&& stream) {
         return Stream<source::Slice<typename std::remove_reference_t<decltype(stream)>::source_type>>(std::move(stream.source()), begin, end, step_size);
@@ -50,13 +50,13 @@ auto slice(std::size_t begin, std::size_t end, std::size_t step_size) {
 }
 
 /// <summary>
-/// Slices the stream. Keeps only elements with index in the range <c>[begin..end)</c> in the stream, excluding
-/// the <c>end</c> index. If <c>end</c> is out of bounds of the stream, the entire stream from <c>begin</c>
-/// is kept.
+/// Slices the Stream. Keeps only elements with index in the range <c>[begin..end)</c> in the stream, excluding
+/// the <paramref name="end"/> index. If <c>end</c> is out of bounds of the stream, the entire stream from
+/// <paramref name="begin"/> is kept.
 /// </summary>
 /// <param name="begin">The begin index to slice the stream at. The begin index element is kept.</param>
-/// <param name="end">The end index to slice to stream to. The end idex element is not kept.</param>
-/// <returns>An <see cref="Intermediate{F}"/> operation that slices the stream to the given range.</returns>
+/// <param name="end">The end index to slice to stream to. The end index element is not kept.</param>
+/// <returns>A detail::Intermediate operation that slices the Stream to the given range.</returns>
 auto slice(std::size_t begin, std::size_t end) {
     return slice(begin, end, static_cast<std::size_t>(1));
 }

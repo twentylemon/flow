@@ -42,7 +42,7 @@ public:
     /// Initializes a new instance of the <see cref="Peek{Source, Action}" /> class.
     /// </summary>
     /// <param name="source">The source to peek at the elements of.</param>
-    /// <param name="predicate">The action to apply to each stream element.</param>
+    /// <param name="action">The action to apply to each stream element.</param>
     Peek(Source&& source, Action action) : _source(std::forward<Source>(source)), _action(action) { }
 
     /// <summary>

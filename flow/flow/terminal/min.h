@@ -38,7 +38,7 @@ namespace flow {
 /// is used for comparisons.
 /// </summary>
 /// <param name="compare">The compare function, by default <c>std::less{T}</c>.</param>
-/// <returns>A <see cref="Terminal{F}"/> operation which gives the minimum element from the stream.</returns>
+/// <returns>A Terminal operation which gives the minimum element from the stream.</returns>
 /// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
 template <typename Compare = std::less<void>>
 auto min(Compare compare = Compare()) {

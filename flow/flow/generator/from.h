@@ -33,44 +33,40 @@ namespace flow {
     namespace generator {
 
 /// <summary>
-/// Creates a <see cref="Stream{Source}"/> from the given iterator range.
+/// Creates a Stream from the given iterator range.
 /// </summary>
 /// <param name="begin">The beginning of the range.</param>
 /// <param name="end">The end of the range.</param>
-/// <returns>A stream over the range.</returns>
+/// <returns>A Stream over the range.</returns>
 template <typename Itr>
 Stream<source::Iterator<Itr>> from(Itr begin, Itr end) {
     return Stream<source::Iterator<Itr>>(begin, end);
 }
 
 /// <summary>
-/// Creates a <see cref="Stream{Source}" /> from the given container.
+/// Creates a Stream from the given <paramref name="container"/>.
 /// </summary>
 /// <param name="container">The container to create a stream from.</param>
-/// <returns> A stream over the range.</returns>
+/// <returns> A Stream over <paramref name="container"/>.</returns>
 template <typename Container>
 auto from(Container& container) {
     return from(container.begin(), container.end());
 }
 
 /// <summary>
-/// Creates a <see cref="Stream{Source}" /> from the given container.
+/// Creates a Stream from the given <paramref name="container"/>.
 /// </summary>
 /// <param name="container">The container to create a stream from.</param>
-/// <returns>A stream over the range.</returns>
+/// <returns>A Stream over <paramref name="container"/>.</returns>
 template <typename Container>
 auto from(const Container& container) {
     return from(container.begin(), container.end());
 }
 
 /// <summary>
-/// Overrides | for containers, <c>container | operation</c> is a shorthand for
+/// Overrides <c>|</c> for containers, <c>container | operation</c> is a shorthand for
 /// <c>from(container) | operation</c>.
 /// </summary>
-/// <remarks>
-/// This shorthand fails for <c>src | dump()</c>, the <c>auto</c> fails to capture the reference
-/// type and attempts to copy constructor, which is deleted. Use <c>from(src) | dump()</c> instead.
-/// </remarks>
 /// <param name="container">The container to create a stream from.</param>
 /// <param name="op">The stream operation.</param>
 /// <returns><c>from(container) | op</c></returns>
@@ -80,7 +76,7 @@ auto operator|(Container& container, intermediate::detail::Intermediate<F>& op) 
 }
 
 /// <summary>
-/// Overrides | for containers, <c>container | operation</c> is a shorthand for
+/// Overrides <c>|</c> for containers, <c>container | operation</c> is a shorthand for
 /// <c>from(container) | operation</c>.
 /// </summary>
 /// <remarks>
@@ -96,13 +92,9 @@ auto operator|(Container& container, terminal::detail::Terminal<F>& op) {
 }
 
 /// <summary>
-/// Overrides | for containers, <c>container | operation</c> is a shorthand for
+/// Overrides <c>|</c> for containers, <c>container | operation</c> is a shorthand for
 /// <c>from(container) | operation</c>.
 /// </summary>
-/// <remarks>
-/// This shorthand fails for <c>src | dump()</c>, the <c>auto</c> fails to capture the reference
-/// type and attempts to copy constructor, which is deleted. Use <c>from(src) | dump()</c> instead.
-/// </remarks>
 /// <param name="container">The container to create a stream from.</param>
 /// <param name="op">The stream operation.</param>
 /// <returns><c>from(container) | op</c></returns>
@@ -112,7 +104,7 @@ auto operator|(const Container& container, intermediate::detail::Intermediate<F>
 }
 
 /// <summary>
-/// Overrides | for containers, <c>container | operation</c> is a shorthand for
+/// Overrides <c>|</c> for containers, <c>container | operation</c> is a shorthand for
 /// <c>from(container) | operation</c>.
 /// </summary>
 /// <remarks>

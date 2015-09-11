@@ -35,11 +35,11 @@ namespace flow {
     namespace intermediate {
 
 /// <summary>
-/// Concatenates the given stream onto the end of the operated stream. The <c>tail</c> stream elements
+/// Concatenates the given Stream onto the end of the operated stream. The <paramref name="tail"/> stream elements
 /// must be convertible to the same type of elements as the head stream.
 /// </summary>
-/// <param name="tail">The tail stream to put after the end of the operated stream.</param>
-/// <returns>An <see cref="Intermediate{F}"/> operation that concatenates the streams.</returns>
+/// <param name="tail">The tail stream to put after the end of the operated head stream.</param>
+/// <returns>A detail::Intermediate operation that concatenates the two Stream objects.</returns>
 template <typename Tail>
 auto concat(Stream<Tail>&& tail) {
     return detail::make_intermediate([tail = std::move(tail)](auto&& head) mutable {
@@ -48,22 +48,22 @@ auto concat(Stream<Tail>&& tail) {
 }
 
 /// <summary>
-/// Concatenates the given container onto the end of the stream. This is the same as <c>concat(from(container))</c>.
-/// The <c>tail</c> stream elements must be convertible to the same type of elements as the head stream.
+/// Concatenates the given container onto the end of the Stream. This is the same as <c>concat(from(container))</c>.
+/// The <paramref name="tail"/> stream elements must be convertible to the same type of elements as the head stream.
 /// </summary>
 /// <param name="container">The container to concatenate onto the end of the stream.</param>
-/// <returns>An <see cref="Intermediate{F}"/> operation that concatenates the container onto the stream.</returns>
+/// <returns>A detail::Intermediate operation that concatenates the container onto the Stream.</returns>
 template <typename Container>
 auto concat(Container& container) {
     return concat(from(container));
 }
 
 /// <summary>
-/// Concatenates the given container onto the end of the stream. This is the same as <c>concat(from(container))</c>.
-/// The <c>tail</c> stream elements must be convertible to the same type of elements as the head stream.
+/// Concatenates the given container onto the end of the Stream. This is the same as <c>concat(from(container))</c>.
+/// The <paramref name="tail"/> stream elements must be convertible to the same type of elements as the head stream.
 /// </summary>
 /// <param name="container">The container to concatenate onto the end of the stream.</param>
-/// <returns>An <see cref="Intermediate{F}"/> operation that concatenates the container onto the stream.</returns>
+/// <returns>A detail::Intermediate operation that concatenates the container onto the Stream.</returns>
 template <typename Container>
 auto concat(const Container& container) {
     return concat(from(container));

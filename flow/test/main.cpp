@@ -140,6 +140,10 @@ int main(int argc, char** argv) {
 
     iterate(std::bind1st(std::plus<std::size_t>(), 1), 1) | limit(10) | dump();
     iterate(std::plus<int>(), 0, 1) | limit(10) | dump();
+    
+    empty<int>() | dump();
+
+    
 
     std::cout << std::endl;
     system("pause");

@@ -109,7 +109,7 @@ struct tuple_zipper<std::tuple<LeftTypes...>, std::tuple<RightTypes...>>
 };
 
 /// <summary>
-/// The detault zipper wrapper function. Zips streams by concatenating them together as tuples.
+/// The default zipper wrapper function. Zips streams by concatenating them together as tuples.
 /// </summary>
 auto zipper = [](auto&& left, auto&& right) {
     using Left = std::remove_reference_t<decltype(left)>;
@@ -124,7 +124,7 @@ auto zipper = [](auto&& left, auto&& right) {
 /// <c>zip</c> operations concatenates these tuples together rather than nesting them.
 /// </summary>
 /// <param name="right">The right stream to zip together with the operated stream.</param>
-/// <returns>An <see cref="Intermediate{F}" /> operation that zips the two streams.</returns>
+/// <returns>A detail::Intermediate operation that zips the two streams.</returns>
 template <typename RightSource>
 auto zip(Stream<RightSource>&& right) {
     return detail::make_intermediate([right = std::move(right)](auto&& left) mutable {
@@ -139,7 +139,7 @@ auto zip(Stream<RightSource>&& right) {
 ///  This is the same as <c>zip(from(container))</c>.
 /// </summary>
 /// <param name="container">The container to zip together with this stream.</param>
-/// <returns>An <see cref="Intermediate{F}" /> operation that zips the two streams.</returns>
+/// <returns>A detail::Intermediate operation that zips the two streams.</returns>
 template <typename Container>
 auto zip(Container& container) {
     return zip(from(container));
@@ -152,18 +152,18 @@ auto zip(Container& container) {
 ///  This is the same as <c>zip(from(container))</c>.
 /// </summary>
 /// <param name="container">The container to zip together with this stream.</param>
-/// <returns>An <see cref="Intermediate{F}" /> operation that zips the two streams.</returns>
+/// <returns>A detail::Intermediate operation that zips the two streams.</returns>
 template <typename Container>
 auto zip(const Container& container) {
     return zip(from(container));
 }
 
 /// <summary>
-/// Zips the two streams together using the zipping operation given.
+/// Zips the two streams together using <paramref name="zipper"/> as the zipping operation.
 /// </summary>
 /// <param name="right">The right stream to zip together with the operated stream.</param>
 /// <param name="zipper">The zipping operation that combines the two streams.</param>
-/// <returns>An <see cref="Intermediate{F}" /> operation that zips the two streams.</returns>
+/// <returns>A detail::Intermediate operation that zips the two streams.</returns>
 template <typename RightSource, typename BinaryOperation>
 auto zip(Stream<RightSource>&& right, BinaryOperation zipper) {
     return detail::make_intermediate([right = std::move(right), zipper](auto&& left) mutable {
@@ -172,24 +172,24 @@ auto zip(Stream<RightSource>&& right, BinaryOperation zipper) {
 }
 
 /// <summary>
-/// Zips the two streams together using the zipping operation given.
+/// Zips the two streams together using <paramref name="zipper"/> as the zipping operation.
 ///  This is the same as <c>zip(from(container), zipper)</c>.
 /// </summary>
 /// <param name="container">The container to zip together with this stream.</param>
 /// <param name="zipper">The zipping operation that combines the two streams.</param>
-/// <returns>An <see cref="Intermediate{F}" /> operation that zips the two streams.</returns>
+/// <returns>A detail::Intermediate operation that zips the two streams.</returns>
 template <typename Container, typename BinaryOperation>
 auto zip(Container& container, BinaryOperation zipper) {
     return zip(from(container), zipper);
 }
 
 /// <summary>
-/// Zips the two streams together using the zipping operation given.
+/// Zips the two streams together using <paramref name="zipper"/> as the zipping operation.
 ///  This is the same as <c>zip(from(container), zipper)</c>.
 /// </summary>
 /// <param name="container">The container to zip together with this stream.</param>
 /// <param name="zipper">The zipping operation that combines the two streams.</param>
-/// <returns>An <see cref="Intermediate{F}" /> operation that zips the two streams.</returns>
+/// <returns>A detail::Intermediate operation that zips the two streams.</returns>
 template <typename Container, typename BinaryOperation>
 auto zip(const Container& container, BinaryOperation zipper) {
     return zip(from(container), zipper);

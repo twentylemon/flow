@@ -34,13 +34,13 @@ namespace flow {
     namespace intermediate {
 
 /// <summary>
-/// Reverses the stream. Reversing is an eager operation. On the creation of the <c>reverse</c> operation,
+/// Reverses the Stream. Reversing is an eager operation. On the creation of the <c>reverse</c> operation,
 /// the entire stream up to that point is evaluated and stored before continuing with the remainder of the stream.
 /// Thus, the <c>reverse</c> operation takes <c>O(n)</c> extra space and time, where <c>n</c> is the size of the stream.
 /// For most applications, it will be beneficial to reverse the stream beforehand by using reverse iterators, for example:
 /// <code>from(container.rbegin(), container.rend()) | ...</code>
 /// </summary>
-/// <returns>An <see cref="Intermediate{F}"/> operation that reverses the stream.</returns>
+/// <returns>A detail::Intermediate operation that reverses the Stream.</returns>
 auto reverse() {
     return detail::make_intermediate([](auto&& stream) {
         return Stream<source::Reverse<typename std::remove_reference_t<decltype(stream)>::source_type>>(std::move(stream.source()));

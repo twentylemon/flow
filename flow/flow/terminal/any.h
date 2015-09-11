@@ -36,7 +36,7 @@ namespace flow {
 /// This operation is short circuited and will stop executing once any <c>true</c> value is found.
 /// If the stream is empty, this will return <c>false</c>.
 /// </summary>
-/// <returns>The <see cref="Terminal{F}"/> operation which returns true if any stream element returns true for the given predicate.</returns>
+/// <returns>The Terminal operation which returns true if any stream element returns true for the given predicate.</returns>
 template <typename UnaryPredicate>
 auto any(UnaryPredicate predicate) {
     return detail::make_terminal([predicate](auto&& stream) {
@@ -55,7 +55,7 @@ auto any(UnaryPredicate predicate) {
 /// This operation is short circuited and will stop executing once any <c>true</c> value is found.
 /// If the stream is empty, this will return <c>false</c>.
 /// </summary>
-/// <returns>The <see cref="Terminal{F}"/> operation which returns true if any stream element is true.</returns>
+/// <returns>The Terminal operation which returns true if any stream element is true.</returns>
 auto any() {
     return any([](const auto& ele) { return static_cast<bool>(ele); });
 }
@@ -66,7 +66,7 @@ auto any() {
 /// If the stream is empty, this will return <c>false</c>.
 /// </summary>
 /// <param name="member">The class member function to use as the predicate.</param>
-/// <returns>The <see cref="Terminal{F}"/> operation which returns true if any stream element returns true for the given predicate.</returns>
+/// <returns>The Terminal operation which returns true if any stream element returns true for the given predicate.</returns>
 template <typename Ret, typename Class>
 auto any(Ret(Class::*member)()) {
     return any(std::mem_fn(member));
@@ -78,7 +78,7 @@ auto any(Ret(Class::*member)()) {
 /// If the stream is empty, this will return <c>false</c>.
 /// </summary>
 /// <param name="member">The const class member function to use as the predicate.</param>
-/// <returns>The <see cref="Terminal{F}"/> operation which returns true if any stream element returns true for the given predicate.</returns>
+/// <returns>The Terminal operation which returns true if any stream element returns true for the given predicate.</returns>
 template <typename Ret, typename Class>
 auto any(Ret(Class::*member)() const) {
     return any(std::mem_fn(member));

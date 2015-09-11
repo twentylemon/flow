@@ -36,10 +36,10 @@ namespace flow {
     namespace intermediate {
 
 /// <summary>
-/// Removes elements from the stream that return <c>false</c> for the given predicate.
+/// Removes elements from the Stream that return <c>false</c> for <paramref name="predicate"/>.
 /// </summary>
 /// <param name="predicate">The predicate used to filter stream elements.</param>
-/// <returns>An <see cref="Intermediate{F}"/> operation that filters the stream elements.</returns>
+/// <returns>A detail::Intermediate operation that filters the Stream elements.</returns>
 template <typename UnaryPredicate>
 auto filter(UnaryPredicate predicate) {
     return detail::make_intermediate([predicate](auto&& stream) {
@@ -48,29 +48,29 @@ auto filter(UnaryPredicate predicate) {
 }
 
 /// <summary>
-/// Removes elements from the stream which are evaluated to <c>false</c>. This is an overload for streams
+/// Removes elements from the Stream which are evaluated to <c>false</c>. This is an overload for streams
 /// with types convertible to <c>bool</c>.
 /// </summary>
-/// <returns>An <see cref="Intermediate{F}"/> operation that filters the stream elements.</returns>
+/// <returns>A detail::Intermediate operation that filters the Stream elements.</returns>
 auto filter() {
     return filter([](const auto& ele) { return static_cast<bool>(ele); });
 }
 
 /// <summary>
-/// Removes elements from the stream that return <c>false</c> for the given predicate.
+/// Removes elements from the Stream that return <c>false</c> for <paramref name="member"/>.
 /// </summary>
 /// <param name="member">The class member function to use for filtering, the return type must be convertible to <c>bool</c>.</param>
-/// <returns>An <see cref="Intermediate{F}"/> operation that filters the stream elements.</returns>
+/// <returns>A detail::Intermediate operation that filters the Stream elements.</returns>
 template <typename Ret, typename Class>
 auto filter(Ret(Class::*member)()) {
     return filter(std::mem_fn(member));
 }
 
 /// <summary>
-/// Removes elements from the stream that return <c>false</c> for the given predicate.
+/// Removes elements from the Stream that return <c>false</c> for <paramref name="member"/>.
 /// </summary>
 /// <param name="member">The const class member function to use for filtering, the return type must be convertible to <c>bool</c>.</param>
-/// <returns>An <see cref="Intermediate{F}"/> operation that filters the stream elements.</returns>
+/// <returns>A detail::Intermediate operation that filters the Stream elements.</returns>
 template <typename Ret, typename Class>
 auto filter(Ret(Class::*member)() const) {
     return filter(std::mem_fn(member));

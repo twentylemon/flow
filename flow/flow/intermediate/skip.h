@@ -34,13 +34,14 @@ namespace flow {
     namespace intermediate {
 
 /// <summary>
-/// Skips the first elements of a stream. Keeps only the elements with index <c>>=begin</c> in the stream.
-/// This operation will skip every <c>step_size</c> elements after the initial jump to <c>begin</c>.
-/// For example a <c>step_size</c> of 2 will keep only every other element, eg <c>begin, begin+2, begin+4</c> etc.
+/// Skips the first elements of a Stream. Keeps only the elements with index <c>&gt;=</c> <paramref name="begin"/> in the stream.
+/// This operation will skip every <paramref name="step_size"/> elements after the initial jump to <paramref name="begin"/>
+/// For example a <paramref name="step_size"/> of 2 will keep only every other element, eg <c>begin, begin+2, begin+4</c> etc.
 /// </summary>
 /// <param name="begin">The begin index to skip to. The begin index element is kept.</param>
 /// <param name="step_size">The step size.</param>
-/// <returns>An <see cref="Intermediate{F}"/> operation that slices the stream from <c>begin</c> to the end.</returns>
+/// <returns>A detail::Intermediate operation that slices the Stream from <paramref name="begin"/> to the end
+/// skipping every <paramref name="step_size"/> elements.</returns>
 auto skip(std::size_t begin, std::size_t step_size) {
     return detail::make_intermediate([begin, step_size](auto&& stream) {
         return Stream<source::Skip<typename std::remove_reference_t<decltype(stream)>::source_type>>(std::move(stream.source()), begin, step_size);
@@ -48,20 +49,20 @@ auto skip(std::size_t begin, std::size_t step_size) {
 }
 
 /// <summary>
-/// Skips the first elements of a stream. Keeps only the elements with index <c>>=begin</c> in the stream.
+/// Skips the first elements of a Stream. Keeps only the elements with index <c>&gt;=</c> <paramref name="begin"/> in the stream.
 /// </summary>
 /// <param name="begin">The begin index to skip to. The begin index element is kept.</param>
-/// <returns>An <see cref="Intermediate{F}"/> operation that slices the stream from <c>begin</c> to the end.</returns>
+/// <returns>A detail::Intermediate operation that slices the Stream from <paramref name="begin"/> to the end.</returns>
 auto skip(std::size_t begin) {
     return skip(begin, static_cast<std::size_t>(1));
 }
 
 /// <summary>
-/// Skips every <c>step_size</c> elements in the stream. For example, a <c>step_size</c> of 2 will only keep
-/// stream elements with index 0, 2, 4 etc.
+/// Skips every <paramref name="step_size"/> elements in the Stream. For example, a <paramref name="step_size"/> of 2
+/// will only keep stream elements with index 0, 2, 4 etc.
 /// </summary>
 /// <param name="step_size">The step size.</param>
-/// <returns>An <see cref="Intermediate{F}"/> operation that skips every <c>step_size</c> elements.</returns>
+/// <returns>A detail::Intermediate operation that skips every <paramref name="step_size"/> elements.</returns>
 auto skip_every(std::size_t step_size) {
     return skip(static_cast<std::size_t>(0), step_size);
 }

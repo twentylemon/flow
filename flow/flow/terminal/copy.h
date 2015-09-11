@@ -36,7 +36,7 @@ namespace flow {
 /// of the destination range is returned, pointing to the element after the last element copied.
 /// </summary>
 /// <param name="result">The output iterator to the initial position in the destination range.</param>
-/// <returns>The <see cref="Terminal{F}"/> operation which copies the stream into the <c>result</c> range.</returns>
+/// <returns>The Terminal operation which copies the stream into the <c>result</c> range.</returns>
 template <typename OutputIterator>
 auto copy(OutputIterator result) {
     return detail::make_terminal([result](auto&& stream) mutable {

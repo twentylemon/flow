@@ -44,32 +44,39 @@ namespace flow {
     namespace detail {
 
 /// <summary>
-/// Composes the two functions F and G.
+/// Composes the two functions F and G. Represents the composition <c>F(G(...))</c>.
 /// </summary>
 template <typename F, typename G>
 class Compose
 {
 public:
     /// <summary>
-    /// Initializes a new instance of the <see cref="Compose{F, G}"/> class. Represents the composition F(G(...)).
+    /// Initializes a new instance of the Compose class. Represents the composition <c>F(G(...))</c>.
     /// </summary>
     /// <param name="f">The f function.</param>
     /// <param name="g">The g function.</param>
     Compose(F&& f, G&& g) : _f(std::forward<F>(f)), _g(std::forward<G>(g)) { }
 
     /// <summary>
-    /// Executes the composition of operations on the stream given.
+    /// Executes the composition of operations on the Stream given.
     /// </summary>
-    /// <param name="stream">The stream.</param>
-    /// <returns>The result of the composition of the operations.</returns>
+    /// <param name="stream">The stream to operate on.</param>
+    /// <returns>The result of the composition of the operations on the stream.</returns>
     template <typename Source>
     std::result_of_t<F(std::result_of_t<G(Stream<Source>&&)>)> operator()(Stream<Source>&& stream) {
         return _f(_g(stream));
     }
 
 protected:
-    F _f;   // the outer operation
-    G _g;   // the inner operation
+    /// <summary>
+    /// The outer operation.
+    /// </summary>
+    F _f;
+
+    /// <summary>
+    /// The inner operation.
+    /// </summary>
+    G _g;
 };
     }
 }
