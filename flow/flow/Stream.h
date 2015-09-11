@@ -38,7 +38,6 @@
         - source::Reverse make lazy instead
         - source::Unique make lazy instead
         - intermediate::unique add an overload for already sorted streams
-        - curry helper for intermediate::zip
 
     terminal
         - sample - randomly sample elements from the finite stream

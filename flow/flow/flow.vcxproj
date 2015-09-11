@@ -119,7 +119,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Compose.h" />
-    <ClInclude Include="curry.h" />
+    <ClInclude Include="uncurry.h" />
     <ClInclude Include="flow.h" />
     <ClInclude Include="generator\from.h" />
     <ClInclude Include="intermediate\concat.h" />

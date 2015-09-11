@@ -125,11 +125,16 @@ int main(int argc, char** argv) {
 
     std::cout << std::endl;
     const std::vector<int> v = vec;
-    vec | limit(1) | zip(from(v) | zip(from(v))) | zip(from(vec)) | each([](auto& t) {
+    vec | limit(1) | zip(from(v) | zip(from(v))) | zip(from(vec), [](auto&& l, auto&& r) { return std::make_pair(l, r); }) | each([](auto& t) {
         std::cout << typeid(t).name() << std::endl;
     });
 
     //run_timer();
+
+    auto c = uncurry([](int i, int j, int k) { return i * j * k; });
+    auto c2 = uncurry(std::multiplies<int>());
+    std::cout << c(std::make_tuple(4, 5, 2)) << std::endl;
+    std::cout << c2(std::make_tuple(4, 1)) << std::endl;
 
     std::cout << std::endl;
     system("pause");

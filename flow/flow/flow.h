@@ -26,6 +26,8 @@
 #ifndef FLOW_FLOW_H
 #define FLOW_FLOW_H
 
+#include "uncurry.h"
+
 #include "generator/from.h"
 
 #include "terminal/fold.h"
