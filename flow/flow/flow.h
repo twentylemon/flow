@@ -31,8 +31,7 @@
 #include "generator/from.h"
 #include "generator/empty.h"
 #include "generator/generate.h"
-
-#include "source\IterateFunc.h"
+#include "generator/iterate.h"
 
 #include "terminal/fold.h"
 #include "terminal/sum.h"

@@ -29,6 +29,8 @@
 #include <array>
 #include <limits>
 
+#include "../uncurry.h"
+
 namespace flow {
     namespace source {
 
@@ -41,8 +43,13 @@ class IterateFunc
 public:
     using value_type = T;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="IterateFunc{IteratingFunction, T, N}"/> class.
+    /// </summary>
+    /// <param name="function">The function to iterate.</param>
+    /// <param name="...initial">The initial arguments to pass to the function.</param>
     template <typename... Args>
-    IterateFunc(IteratingFunction function, Args... initial) : _function(function), _values(std::forward<Args>(initial)...) { }
+    IterateFunc(IteratingFunction function, Args... initial) : _function(uncurry(function)), _values({std::forward<Args>(initial)...}) { }
 
     /// <summary>
     /// Returns true if this source has more elements.
@@ -57,14 +64,18 @@ public:
     /// </summary>
     /// <returns>The next item in the stream.</returns>
     value_type next() {
-        return std::move(*_current++);
+        value_type current = _values[0];
+        _values[0] = _function(_values);    // destroy the first value
+        std::rotate(_values.begin(), _values.begin() + 1, _values.end());
+        return current;
     }
 
     /// <summary>
     /// Ignores the next value from the stream.
     /// </summary>
     void lazy_next() {
-        
+        _values[0] = _function(_values);    // destroy the first value
+        std::rotate(_values.begin(), _values.begin() + 1, _values.end());
     }
 
     /// <summary>
@@ -76,8 +87,8 @@ public:
     }
 
 protected:
-    IteratingFunction _function;    // the function to iterate
-    std::array<T, N> _values;       // the current values to pass to the function
+    flow::detail::uncurrier<IteratingFunction> _function;   // the function to iterator
+    std::array<T, N> _values;                               // the current values to pass to the function
 };
     }
 }

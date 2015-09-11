@@ -7,6 +7,8 @@
 #include <vector>
 #include <algorithm>
 #include <numeric>
+#include <thread>
+#include <chrono>
 
 #include <boost/timer.hpp>
 #include <complex>
@@ -136,7 +138,8 @@ int main(int argc, char** argv) {
     std::cout << c(std::make_tuple(4, 5, 2)) << std::endl;
     std::cout << c2(std::make_tuple(4, 1)) << std::endl;
 
-    std::cout << (empty<int>() | sum(0)) << std::endl;
+    iterate(std::bind1st(std::plus<std::size_t>(), 1), 1) | limit(10) | dump();
+    iterate(std::plus<int>(), 0, 1) | limit(10) | dump();
 
     std::cout << std::endl;
     system("pause");

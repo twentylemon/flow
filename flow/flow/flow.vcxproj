@@ -121,6 +121,7 @@
     <ClInclude Include="Compose.h" />
     <ClInclude Include="generator\empty.h" />
     <ClInclude Include="generator\generate.h" />
+    <ClInclude Include="generator\iterate.h" />
     <ClInclude Include="source\Generate.h" />
     <ClInclude Include="source\IterateFunc.h" />
     <ClInclude Include="uncurry.h" />

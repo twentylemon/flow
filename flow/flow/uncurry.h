@@ -26,6 +26,7 @@
 #ifndef FLOW_UNCURRY_H
 #define FLOW_UNCURRY_H
 
+#include <array>
 #include <tuple>
 
 namespace flow {
@@ -67,6 +68,16 @@ public:
     template <typename... Types>
     constexpr auto operator()(std::tuple<Types...>&& tuple) const {
         return apply(std::make_index_sequence<sizeof...(Types)>(), _curry_function, std::forward<std::tuple<Types...>>(tuple));
+    }
+
+    /// <summary>
+    /// Applies the array to the stored curried function.
+    /// </summary>
+    /// <param name="tuple">The array to apply.</param>
+    /// <returns>The return value of the curried function.</returns>
+    template <typename T, std::size_t N>
+    constexpr auto operator()(std::array<T, N>& ary) const {
+        return apply(std::make_index_sequence<N>(), _curry_function, std::forward<std::array<T, N>>(ary));
     }
 
 protected:

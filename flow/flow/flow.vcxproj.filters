@@ -186,14 +186,17 @@
     <ClInclude Include="generator\empty.h">
       <Filter>Header Files\generator</Filter>
     </ClInclude>
-    <ClInclude Include="generator\generate.h">
-      <Filter>Header Files\generator</Filter>
-    </ClInclude>
     <ClInclude Include="source\Generate.h">
       <Filter>Header Files\source</Filter>
     </ClInclude>
     <ClInclude Include="source\IterateFunc.h">
       <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="generator\iterate.h">
+      <Filter>Header Files\generator</Filter>
+    </ClInclude>
+    <ClInclude Include="generator\generate.h">
+      <Filter>Header Files\generator</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

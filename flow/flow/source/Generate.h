@@ -33,7 +33,7 @@ namespace flow {
     namespace source {
 
 /// <summary>
-/// Stream source that maps elements into new values.
+/// Stream source that generates an infinite stream using successive calls to a generating function.
 /// </summary>
 template <typename Generator>
 class Generate
@@ -42,10 +42,9 @@ public:
     using value_type = std::result_of_t<Generator()>;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Map{Source, UnaryOperation}"/> class.
+    /// Initializes a new instance of the <see cref="Generate{Generator}" /> class.
     /// </summary>
-    /// <param name="source">The source to map from.</param>
-    /// <param name="operation">The mapping operation.</param>
+    /// <param name="generator">The generator used to create stream elements.</param>
     Generate(Generator generator) : _generator(generator) { }
 
     /// <summary>
