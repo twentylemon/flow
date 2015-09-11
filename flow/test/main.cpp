@@ -136,6 +136,8 @@ int main(int argc, char** argv) {
     std::cout << c(std::make_tuple(4, 5, 2)) << std::endl;
     std::cout << c2(std::make_tuple(4, 1)) << std::endl;
 
+    std::cout << (empty<int>() | sum(0)) << std::endl;
+
     std::cout << std::endl;
     system("pause");
     return 0;

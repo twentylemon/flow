@@ -22,37 +22,38 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
- 
-#ifndef FLOW_SOURCE_ITERATOR_H
-#define FLOW_SOURCE_ITERATOR_H
 
-#include <iterator>
+
+#ifndef FLOW_SOURCE_GENERATE_H
+#define FLOW_SOURCE_GENERATE_H
+
+#include <limits>
 
 namespace flow {
     namespace source {
 
 /// <summary>
-/// Stream source for a pair of iterators.
+/// Stream source that maps elements into new values.
 /// </summary>
-template <typename Itr>
-class Iterator
+template <typename Generator>
+class Generate
 {
 public:
-    using value_type = typename std::iterator_traits<Itr>::value_type;
+    using value_type = std::result_of_t<Generator()>;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Iterator{Itr}"/> class.
+    /// Initializes a new instance of the <see cref="Map{Source, UnaryOperation}"/> class.
     /// </summary>
-    /// <param name="begin">The begin iterator.</param>
-    /// <param name="end">The end iterator.</param>
-    Iterator(Itr begin, Itr end) : _current(begin), _end(end) { }
+    /// <param name="source">The source to map from.</param>
+    /// <param name="operation">The mapping operation.</param>
+    Generate(Generator generator) : _generator(generator) { }
 
     /// <summary>
     /// Returns true if this source has more elements.
     /// </summary>
     /// <returns><c>true</c> if this source has more stream elements.</returns>
-    bool has_next() const {
-        return _current != _end;
+    constexpr bool has_next() const {
+        return true;
     }
 
     /// <summary>
@@ -60,33 +61,26 @@ public:
     /// </summary>
     /// <returns>The next item in the stream.</returns>
     value_type next() {
-        return std::move(*_current++);
+        return std::move(_generator());
     }
 
     /// <summary>
     /// Ignores the next value from the stream.
     /// </summary>
     void lazy_next() {
-        ++_current;
+        _generator();
     }
 
     /// <summary>
-    /// Returns the estimated size of the remainder of the stream.
-    /// This is an exact value.
+    /// Returns the max value of <c>std::size_t</c>. This is an infinite stream.
     /// </summary>
     /// <returns>The estimated size of the remainder of the stream.</returns>
-    std::size_t estimate_size() const {
-        return std::distance(_current, _end);
+    constexpr std::size_t estimate_size() const {
+        return std::numeric_limits<std::size_t>::max();
     }
 
 protected:
-    /// <summary>
-    /// Initializes an empty instance of the <see cref="Iterator{Itr}"/> class.
-    /// </summary>
-    Iterator() { }
-
-    Itr _current;   // the current iterator
-    Itr _end;       // the end iterator
+    Generator _generator;   // the generator of stream elements
 };
     }
 }

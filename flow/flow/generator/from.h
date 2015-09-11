@@ -37,7 +37,7 @@ namespace flow {
 /// </summary>
 /// <param name="begin">The beginning of the range.</param>
 /// <param name="end">The end of the range.</param>
-/// <returns>A Stream over the range.</returns>
+/// <returns>A stream over the range.</returns>
 template <typename Itr>
 Stream<source::Iterator<Itr>> from(Itr begin, Itr end) {
     return Stream<source::Iterator<Itr>>(begin, end);
@@ -47,7 +47,7 @@ Stream<source::Iterator<Itr>> from(Itr begin, Itr end) {
 /// Creates a <see cref="Stream{Source}" /> from the given container.
 /// </summary>
 /// <param name="container">The container to create a stream from.</param>
-/// <returns> A Stream over the range.</returns>
+/// <returns> A stream over the range.</returns>
 template <typename Container>
 auto from(Container& container) {
     return from(container.begin(), container.end());
@@ -57,7 +57,7 @@ auto from(Container& container) {
 /// Creates a <see cref="Stream{Source}" /> from the given container.
 /// </summary>
 /// <param name="container">The container to create a stream from.</param>
-/// <returns> A Stream over the range.</returns>
+/// <returns>A stream over the range.</returns>
 template <typename Container>
 auto from(const Container& container) {
     return from(container.begin(), container.end());

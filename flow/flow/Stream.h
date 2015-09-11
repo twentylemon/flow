@@ -52,9 +52,7 @@
         - parallel - execute the next operation in parallel
 
     generator
-        - empty - an empty stream
         - repeat - repeat a value or a container forever or some number of times
-        - generate - generates values from a function like std::rand
         - iota - count up from a start value using operator++
         - random - generate values from an rng
 */

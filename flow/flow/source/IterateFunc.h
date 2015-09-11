@@ -23,10 +23,11 @@
  * SOFTWARE.
  */
  
-#ifndef FLOW_SOURCE_ITERATOR_H
-#define FLOW_SOURCE_ITERATOR_H
+#ifndef FLOW_SOURCE_ITERATEFUNC_H
+#define FLOW_SOURCE_ITERATEFUNC_H
 
-#include <iterator>
+#include <array>
+#include <limits>
 
 namespace flow {
     namespace source {
@@ -34,25 +35,21 @@ namespace flow {
 /// <summary>
 /// Stream source for a pair of iterators.
 /// </summary>
-template <typename Itr>
-class Iterator
+template <typename IteratingFunction, typename T, std::size_t N>
+class IterateFunc
 {
 public:
-    using value_type = typename std::iterator_traits<Itr>::value_type;
+    using value_type = T;
 
-    /// <summary>
-    /// Initializes a new instance of the <see cref="Iterator{Itr}"/> class.
-    /// </summary>
-    /// <param name="begin">The begin iterator.</param>
-    /// <param name="end">The end iterator.</param>
-    Iterator(Itr begin, Itr end) : _current(begin), _end(end) { }
+    template <typename... Args>
+    IterateFunc(IteratingFunction function, Args... initial) : _function(function), _values(std::forward<Args>(initial)...) { }
 
     /// <summary>
     /// Returns true if this source has more elements.
     /// </summary>
     /// <returns><c>true</c> if this source has more stream elements.</returns>
-    bool has_next() const {
-        return _current != _end;
+    constexpr bool has_next() const {
+        return true;
     }
 
     /// <summary>
@@ -67,26 +64,20 @@ public:
     /// Ignores the next value from the stream.
     /// </summary>
     void lazy_next() {
-        ++_current;
+        
     }
 
     /// <summary>
-    /// Returns the estimated size of the remainder of the stream.
-    /// This is an exact value.
+    /// Returns the max value of <c>std::size_t</c>. This is an infinite stream.
     /// </summary>
     /// <returns>The estimated size of the remainder of the stream.</returns>
-    std::size_t estimate_size() const {
-        return std::distance(_current, _end);
+    constexpr std::size_t estimate_size() const {
+        return std::numeric_limits<std::size_t>::max();
     }
 
 protected:
-    /// <summary>
-    /// Initializes an empty instance of the <see cref="Iterator{Itr}"/> class.
-    /// </summary>
-    Iterator() { }
-
-    Itr _current;   // the current iterator
-    Itr _end;       // the end iterator
+    IteratingFunction _function;    // the function to iterate
+    std::array<T, N> _values;       // the current values to pass to the function
 };
     }
 }

@@ -183,6 +183,18 @@
     <ClInclude Include="uncurry.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="generator\empty.h">
+      <Filter>Header Files\generator</Filter>
+    </ClInclude>
+    <ClInclude Include="generator\generate.h">
+      <Filter>Header Files\generator</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Generate.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\IterateFunc.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="flow.licenseheader" />

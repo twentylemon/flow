@@ -32,27 +32,7 @@ namespace flow {
     namespace detail {
 
 // this code adapted from Scott Prager's blog post: http://yapb-soc.blogspot.ca/2012/12/fun-with-tuples.html
-
-/// <summary>
-/// A tuple index list. Statically represents the list of numbers [0..index).
-/// </summary>
-template <std::size_t... index>
-struct index_list { };
-
-/// <summary>
-/// Builds an index list recursively.
-/// </summary>
-template <std::size_t end, std::size_t current, std::size_t... index>
-struct index_builder : index_builder<end, current + 1, index..., current> { };
-
-/// <summary>
-/// End case for building the index list.
-/// </summary>
-template <std::size_t end, std::size_t... index>
-struct index_builder<end, end, index...>
-{
-    using type = index_list<index...>;
-};
+// since c++14, std::integer_sequence exists, but still a very helpful post
 
 /// <summary>
 /// Applies the tuple to the curried function.
@@ -62,7 +42,7 @@ struct index_builder<end, end, index...>
 /// <param name="tuple">The tuple to apply to the function.</param>
 /// <returns>The return value of the function.</returns>
 template <std::size_t... index, typename Function, typename Tuple>
-constexpr auto apply(index_list<index...>, Function function, Tuple&& tuple) {
+constexpr auto apply(std::index_sequence<index...>, Function function, Tuple&& tuple) {
     return function(std::get<index>(std::forward<Tuple>(tuple))...);
 }
 
@@ -86,7 +66,7 @@ public:
     /// <returns>The return value of the curried function.</returns>
     template <typename... Types>
     constexpr auto operator()(std::tuple<Types...>&& tuple) const {
-        return apply(index_builder<sizeof...(Types), 0>::type(), _curry_function, std::forward<std::tuple<Types...>>(tuple));
+        return apply(std::make_index_sequence<sizeof...(Types)>(), _curry_function, std::forward<std::tuple<Types...>>(tuple));
     }
 
 protected:
