@@ -23,49 +23,14 @@
  * SOFTWARE.
  */
  
-#ifndef FLOW_FLOW_H
-#define FLOW_FLOW_H
-
-#include "generator/from.h"
-
-#include "terminal/fold.h"
-#include "terminal/sum.h"
-#include "terminal/product.h"
-#include "terminal/count.h"
-#include "terminal/each.h"
-#include "terminal/first.h"
-#include "terminal/last.h"
-#include "terminal/nth.h"
-#include "terminal/min.h"
-#include "terminal/max.h"
-#include "terminal/minmax.h"
-#include "terminal/any.h"
-#include "terminal/all.h"
-#include "terminal/none.h"
-#include "terminal/contains.h"
-#include "terminal/copy.h"
-#include "terminal/dump.h"
-#include "terminal/to.h"
-
-#include "intermediate/map.h"
-#include "intermediate/sort.h"
-#include "intermediate/filter.h"
-#include "intermediate/slice.h"
-#include "intermediate/skip.h"
-#include "intermediate/limit.h"
-#include "intermediate/take_while.h"
-#include "intermediate/drop_while.h"
-#include "intermediate/peek.h"
-#include "intermediate/replace.h"
-#include "intermediate/concat.h"
-#include "intermediate/reverse.h"
-#include "intermediate/unique.h"
-#include "intermediate/zip.h"
+#ifndef FLOW_CURRY_H
+#define FLOW_CURRY_H
 
 namespace flow {
-    using namespace generator;
-    using namespace terminal;
-    using namespace intermediate;
-}
 
+/*
+curry: [](std::tuple<Args...>){} -> [](Args...){}
+uncurry as well? why not; I don't think it'd ever be needed though
+*/
+}
 #endif
