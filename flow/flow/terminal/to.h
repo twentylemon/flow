@@ -22,6 +22,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+ 
 #ifndef FLOW_TERMINAL_TO_H
 #define FLOW_TERMINAL_TO_H
 
@@ -37,16 +38,17 @@
 
 namespace flow {
     namespace terminal {
+
         namespace detail {
-            /// <summary>
-            /// Wrapper for <c>std::hash&lt;T&gt;</c>.
-            /// </summary>
-            struct hash {
-                template <typename T>
-                std::size_t operator()(const T& value) const {
-                    return std::hash<T>()(value);
-                }
-            };
+/// <summary>
+/// Wrapper for <c>std::hash&lt;T&gt;</c>.
+/// </summary>
+struct hash {
+    template <typename T>
+    std::size_t operator()(const T& value) const {
+        return std::hash<T>()(value);
+    }
+};
         }
 
 /// <summary>

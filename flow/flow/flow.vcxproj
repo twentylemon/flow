@@ -119,6 +119,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Compose.h" />
+    <ClInclude Include="curry.h" />
     <ClInclude Include="flow.h" />
     <ClInclude Include="generator\from.h" />
     <ClInclude Include="intermediate\concat.h" />
@@ -135,6 +136,7 @@
     <ClInclude Include="intermediate\sort.h" />
     <ClInclude Include="intermediate\take_while.h" />
     <ClInclude Include="intermediate\unique.h" />
+    <ClInclude Include="intermediate\zip.h" />
     <ClInclude Include="source\Concat.h" />
     <ClInclude Include="source\DropWhile.h" />
     <ClInclude Include="source\Filter.h" />
@@ -147,6 +149,7 @@
     <ClInclude Include="source\Sort.h" />
     <ClInclude Include="source\TakeWhile.h" />
     <ClInclude Include="source\Unique.h" />
+    <ClInclude Include="source\Zip.h" />
     <ClInclude Include="Stream.h" />
     <ClInclude Include="terminal\all.h" />
     <ClInclude Include="terminal\any.h" />

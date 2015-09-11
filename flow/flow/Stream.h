@@ -22,7 +22,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-
+ 
 #ifndef FLOW_STREAM_H
 #define FLOW_STREAM_H
 
@@ -36,14 +36,15 @@
         - generator::operator| fails to capture value by reference for expressions like `vec | dump()`
         - source::Sort make lazy instead
         - source::Reverse make lazy instead
+        - source::Unique make lazy instead
         - intermediate::unique add an overload for already sorted streams
+        - curry helper for intermediate::zip
 
     terminal
         - sample - randomly sample elements from the finite stream
         - reservoir - randomly sample elements form the infinite stream
 
     intermediate
-        - zip - zip two streams together
         - merge - merges sorted streams
         - union - union sorted streams
         - intersect - intersection of sorted streams

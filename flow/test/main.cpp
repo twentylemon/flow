@@ -123,17 +123,13 @@ int main(int argc, char** argv) {
 
     vec | filter([](int i) { return i % 2 == 0; }) | limit(5) | reverse() | concat(vec | limit(10)) | concat(vec | limit(1)) | map([](auto i) { return i * 2; }) | dump();
 
-    //run_timer();
+    std::cout << std::endl;
+    const std::vector<int> v = vec;
+    vec | limit(1) | zip(from(v) | zip(from(v))) | zip(from(vec)) | each([](auto& t) {
+        std::cout << typeid(t).name() << std::endl;
+    });
 
-    std::cout << std::endl << std::endl;
-    std::vector<int> v;
-    for (int i = 0; i < 100; i++) {
-        for (int j = 0; j < 10; j++) {
-            v.push_back(i);
-        }
-    }
-    std::random_shuffle(v.begin(), v.end());
-    v | unique() | dump();
+    //run_timer();
 
     std::cout << std::endl;
     system("pause");

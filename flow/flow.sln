@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "flow", "flow\flow.vcxproj", "{EAA3CBF1-BFA3-4A2C-8168-F7A61407383F}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test", "test\test.vcxproj", "{B983C635-B836-4A67-B3AE-A9949BEC664C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EAA3CBF1-BFA3-4A2C-8168-F7A61407383F} = {EAA3CBF1-BFA3-4A2C-8168-F7A61407383F}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
