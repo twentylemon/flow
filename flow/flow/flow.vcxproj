@@ -124,7 +124,7 @@
     <ClInclude Include="generator\generate.h" />
     <ClInclude Include="generator\iota.h" />
     <ClInclude Include="generator\iterate.h" />
-    <ClInclude Include="mainpage.h" />
+    <ClInclude Include="doxy_mainpage.h" />
     <ClInclude Include="source\Generate.h" />
     <ClInclude Include="source\IterateFunc.h" />
     <ClInclude Include="uncurry.h" />

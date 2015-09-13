@@ -111,7 +111,7 @@ struct tuple_zipper<std::tuple<LeftTypes...>, std::tuple<RightTypes...>>
 /// <summary>
 /// The default zipper wrapper function. Zips streams by concatenating them together as tuples.
 /// </summary>
-auto zipper = [](auto&& left, auto&& right) {
+const auto zipper = [](auto&& left, auto&& right) {
     using Left = std::remove_reference_t<decltype(left)>;
     using Right = std::remove_reference_t<decltype(right)>;
     return tuple_zipper<Left, Right>()(std::forward<Left>(left), std::forward<Right>(right));
