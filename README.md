@@ -19,9 +19,11 @@ Creating a Sick Flow
 --------------------
 The `flow::generator` namespace contains several factory methods for creating a Stream object. Probably the most
 common generator used is `from()`, which creates a Stream from an iterator range or a container.
+
 ```C++
 auto stream = from(my_vector); // a stream over the entire vector in the same order
 ```
+
 Other common stream generators are `iota()`, which counts up from a value, and `repeat()`, which repeats a value or
 cycles a container.
 
@@ -29,6 +31,7 @@ Manipulating a Sick Flow
 ------------------------
 Say you want to loop through a list of numbers. But you only want the even values. Then you want the squares of those
 values for some reason. Oh, and you want at most 10 of those. How would you do that in normal C++? Probably something like
+
 ```C++
 int count = 0;
 for (auto it = list.begin(), end = list.end(); it != end & count < 10; ++it) {
@@ -36,11 +39,15 @@ for (auto it = list.begin(), end = list.end(); it != end & count < 10; ++it) {
         ++count;
         process(*it * *it);
     }
-}```
+}
+```
+
 Not bad, but it's not quickly clear what is going on. The same operation can be done as a sick flow instead:
+
 ```C++
 list | filter([](int i){ return i % 2 == 0; }) | limit(10) | map([](int i){ return i*i; }) | each(process);
 ```
+
 Reading the line aloud, it's obvious what is happening. Take the list, keep even values, limit it to 10 elements,
 map the elements to their square, and then process each of those. Fun. This is just a trivial example, there many other
 stream operations available to be used.
