@@ -80,12 +80,13 @@ auto operator|(Container& container, intermediate::detail::Intermediate<F>& op) 
 /// <c>from(container) | operation</c>.
 /// </summary>
 /// <remarks>
-/// This shorthand fails for <c>src | dump()</c>, the <c>auto</c> fails to capture the reference
+/// This shorthand fails for <c>container | dump()</c>, the <c>auto</c> fails to capture the reference
 /// type and attempts to copy constructor, which is deleted. Use <c>from(src) | dump()</c> instead.
 /// </remarks>
 /// <param name="container">The container to create a stream from.</param>
 /// <param name="op">The stream operation.</param>
 /// <returns><c>from(container) | op</c></returns>
+/// \todo fails to capture value by reference for expressions like <c>vec | dump()</c>
 template <typename Container, typename F>
 auto operator|(Container& container, terminal::detail::Terminal<F>& op) {
     return from(container) | op;
@@ -108,12 +109,13 @@ auto operator|(const Container& container, intermediate::detail::Intermediate<F>
 /// <c>from(container) | operation</c>.
 /// </summary>
 /// <remarks>
-/// This shorthand fails for <c>src | dump()</c>, the <c>auto</c> fails to capture the reference
+/// This shorthand fails for <c>container | dump()</c>, the <c>auto</c> fails to capture the reference
 /// type and attempts to copy constructor, which is deleted. Use <c>from(src) | dump()</c> instead.
 /// </remarks>
 /// <param name="container">The container to create a stream from.</param>
 /// <param name="op">The stream operation.</param>
 /// <returns><c>from(container) | op</c></returns>
+/// \todo fails to capture value by reference for expressions like <c>vec | dump()</c>
 template <typename Container, typename F>
 auto operator|(const Container& container, terminal::detail::Terminal<F>& op) {
     return from(container) | op;

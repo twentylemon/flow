@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="../../index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="../../pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="../../namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="../../annotated.html"><span>Classes</span></a></li>
       <li><a href="../../files.html"><span>Files</span></a></li>
@@ -69,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -456,7 +457,7 @@ template&lt;typename Container , typename F &gt; </div>
 </div><div class="memdoc">
 
 <p>Overrides <code>|</code> for containers, <code>container | operation</code> is a shorthand for <code>from(container) | operation</code>. </p>
-<p>This shorthand fails for <code>src | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f" title="Prints the stream elements to the std::ostream with the delimiter  printed between each element...">dump()</a></code>, the <code>auto</code> fails to capture the reference type and attempts to copy constructor, which is deleted. Use <code>from(src) | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f" title="Prints the stream elements to the std::ostream with the delimiter  printed between each element...">dump()</a></code> instead. </p>
+<p>This shorthand fails for <code>container | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f" title="Prints the stream elements to the std::ostream with the delimiter  printed between each element...">dump()</a></code>, the <code>auto</code> fails to capture the reference type and attempts to copy constructor, which is deleted. Use <code>from(src) | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f" title="Prints the stream elements to the std::ostream with the delimiter  printed between each element...">dump()</a></code> instead. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">container</td><td>The container to create a stream from.</td></tr>
@@ -465,6 +466,7 @@ template&lt;typename Container , typename F &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>from(container) | op</code></dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000001">Todo:</a></b></dt><dd>fails to capture value by reference for expressions like <code>vec | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f" title="Prints the stream elements to the std::ostream with the delimiter  printed between each element...">dump()</a></code> </dd></dl>
 
 </div>
 </div>
@@ -533,7 +535,7 @@ template&lt;typename Container , typename F &gt; </div>
 </div><div class="memdoc">
 
 <p>Overrides <code>|</code> for containers, <code>container | operation</code> is a shorthand for <code>from(container) | operation</code>. </p>
-<p>This shorthand fails for <code>src | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f" title="Prints the stream elements to the std::ostream with the delimiter  printed between each element...">dump()</a></code>, the <code>auto</code> fails to capture the reference type and attempts to copy constructor, which is deleted. Use <code>from(src) | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f" title="Prints the stream elements to the std::ostream with the delimiter  printed between each element...">dump()</a></code> instead. </p>
+<p>This shorthand fails for <code>container | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f" title="Prints the stream elements to the std::ostream with the delimiter  printed between each element...">dump()</a></code>, the <code>auto</code> fails to capture the reference type and attempts to copy constructor, which is deleted. Use <code>from(src) | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f" title="Prints the stream elements to the std::ostream with the delimiter  printed between each element...">dump()</a></code> instead. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">container</td><td>The container to create a stream from.</td></tr>
@@ -542,6 +544,7 @@ template&lt;typename Container , typename F &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>from(container) | op</code></dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000002">Todo:</a></b></dt><dd>fails to capture value by reference for expressions like <code>vec | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f" title="Prints the stream elements to the std::ostream with the delimiter  printed between each element...">dump()</a></code> </dd></dl>
 
 </div>
 </div>

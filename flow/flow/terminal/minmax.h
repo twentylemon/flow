@@ -41,6 +41,7 @@ namespace flow {
 /// <param name="compare">The compare function, by default <c>std::less&lt;void&gt;</c>.</param>
 /// <returns>A detail::Terminal operation which gives the min and max elements from the stream.</returns>
 /// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
+/// \todo naive implementation that uses 2n - 2 comparisons; can this be improved to the 3n / 2 solution?
 template <typename Compare = std::less<void>>
 auto minmax(Compare compare = Compare()) {
     return detail::make_terminal([compare](auto&& stream) {

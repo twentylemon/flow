@@ -37,6 +37,7 @@ namespace flow {
 /// Stream source to sort the stream. Sorting is an eager operation, the entire stream up to this point
 /// is evaluated and stored and finally sorted after.
 /// </summary>
+/// \todo make uniqueifying a lazy operation instead; wait until the first has_next() or next() call
 template <typename Source>
 class Unique : public Sort<Source>
 {
