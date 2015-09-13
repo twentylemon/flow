@@ -32,11 +32,12 @@ namespace flow {
     namespace terminal {
 
 /// <summary>
-/// Returns true if all of the elements in the stream return <c>true</c> for the predicate given.
+/// Returns <c>true</c> if all of the elements in the Stream return <c>true</c> for <paramref name="predicate" />.
 /// This operation is short circuited and will stop executing once any <c>false</c> value is found.
 /// If the stream is empty, this will return <c>true</c>.
 /// </summary>
-/// <returns>The Terminal operation which returns true if all stream element returns true for the given predicate.</returns>
+/// <param name="predicate">The predicate to test each element with.</param>
+/// <returns>The detail::Terminal operation which returns <c>true</c> if all stream elements return <c>true</c> for <paramref name="predicate" />.</returns>
 template <typename UnaryPredicate>
 auto all(UnaryPredicate predicate) {
     return detail::make_terminal([predicate](auto&& stream) {
@@ -50,12 +51,12 @@ auto all(UnaryPredicate predicate) {
 }
 
 /// <summary>
-/// Returns <c>true</c> if all elements in the stream can be evaluated to <c>true</c>.
+/// Returns <c>true</c> if all elements in the Stream can be evaluated to <c>true</c>.
 /// This is an overload for streams with types convertible to <c>bool</c>.
 /// This operation is short circuited and will stop executing once any <c>false</c> value is found.
 /// If the stream is empty, this will return <c>true</c>.
 /// </summary>
-/// <returns>The Terminal operation which returns true if all stream elements are true.</returns>
+/// <returns>The detail::Terminal operation which returns <c>true</c> if all stream elements are <c>true</c>.</returns>
 auto all() {
     return all([](const auto& ele) { return static_cast<bool>(ele); });
 }
@@ -66,7 +67,7 @@ auto all() {
 /// If the stream is empty, this will return <c>true</c>.
 /// </summary>
 /// <param name="member">The class member function to use as the predicate.</param>
-/// <returns>The Terminal operation which returns true if all stream element returns true for the given predicate.</returns>
+/// <returns>The detail::Terminal operation which returns <c>true</c> if all stream element returns <c>true</c> for the given predicate.</returns>
 template <typename Ret, typename Class>
 auto all(Ret(Class::*member)()) {
     return all(std::mem_fn(member));
@@ -78,7 +79,7 @@ auto all(Ret(Class::*member)()) {
 /// If the stream is empty, this will return <c>true</c>.
 /// </summary>
 /// <param name="member">The const class member function to use as the predicate.</param>
-/// <returns>The Terminal operation which returns true if all stream element returns true for the given predicate.</returns>
+/// <returns>The detail::Terminal operation which returns <c>true</c> if all stream element returns <c>true</c> for the given predicate.</returns>
 template <typename Ret, typename Class>
 auto all(Ret(Class::*member)() const) {
     return all(std::mem_fn(member));

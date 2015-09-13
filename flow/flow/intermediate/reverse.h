@@ -40,7 +40,7 @@ namespace flow {
 /// For most applications, it will be beneficial to reverse the stream beforehand by using reverse iterators, for example:
 /// <code>from(container.rbegin(), container.rend()) | ...</code>
 /// </summary>
-/// <returns>A detail::Intermediate operation that reverses the Stream.</returns>
+/// <returns>A detail::Intermediate operation that reverses the stream.</returns>
 auto reverse() {
     return detail::make_intermediate([](auto&& stream) {
         return Stream<source::Reverse<typename std::remove_reference_t<decltype(stream)>::source_type>>(std::move(stream.source()));

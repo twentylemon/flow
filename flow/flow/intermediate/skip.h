@@ -40,7 +40,7 @@ namespace flow {
 /// </summary>
 /// <param name="begin">The begin index to skip to. The begin index element is kept.</param>
 /// <param name="step_size">The step size.</param>
-/// <returns>A detail::Intermediate operation that slices the Stream from <paramref name="begin"/> to the end
+/// <returns>A detail::Intermediate operation that slices the stream from <paramref name="begin"/> to the end
 /// skipping every <paramref name="step_size"/> elements.</returns>
 auto skip(std::size_t begin, std::size_t step_size) {
     return detail::make_intermediate([begin, step_size](auto&& stream) {
@@ -52,14 +52,14 @@ auto skip(std::size_t begin, std::size_t step_size) {
 /// Skips the first elements of a Stream. Keeps only the elements with index <c>&gt;=</c> <paramref name="begin"/> in the stream.
 /// </summary>
 /// <param name="begin">The begin index to skip to. The begin index element is kept.</param>
-/// <returns>A detail::Intermediate operation that slices the Stream from <paramref name="begin"/> to the end.</returns>
+/// <returns>A detail::Intermediate operation that slices the stream from <paramref name="begin"/> to the end.</returns>
 auto skip(std::size_t begin) {
     return skip(begin, static_cast<std::size_t>(1));
 }
 
 /// <summary>
-/// Skips every <paramref name="step_size"/> elements in the Stream. For example, a <paramref name="step_size"/> of 2
-/// will only keep stream elements with index 0, 2, 4 etc.
+/// Skips every <paramref name="step_size"/> elements in the Stream, keeping the first element.
+/// For example, a <paramref name="step_size"/> of 2 will only keep stream elements with index 0, 2, 4 etc.
 /// </summary>
 /// <param name="step_size">The step size.</param>
 /// <returns>A detail::Intermediate operation that skips every <paramref name="step_size"/> elements.</returns>

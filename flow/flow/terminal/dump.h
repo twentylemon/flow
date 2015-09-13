@@ -36,12 +36,12 @@ namespace flow {
     namespace terminal {
 
 /// <summary>
-/// Prints the stream elements to the <c>ostream</c> with the given delimiter between each element.
-/// The output stream is returned.
+/// Prints the stream elements to the <c>std::ostream</c> with the <paramref name="delimiter"/> printed between each element.
+/// A reference to the output stream is returned.
 /// </summary>
 /// <param name="out">The output stream to print to.</param>
 /// <param name="delimiter">The delimiter to add after each element, by default a single space is added.</param>
-/// <returns>The Terminal operation which print the stream elements to the output stream given.</returns>
+/// <returns>The detail::Terminal operation which print the stream elements to <paramref name="out"/>.</returns>
 auto dump(std::ostream& out = std::cout, const std::string& delimiter = " ") {
     return detail::make_terminal([&out, &delimiter](auto&& stream) -> std::ostream& {
         stream | copy(std::ostream_iterator<typename std::remove_reference_t<decltype(stream)>::value_type>(out, delimiter.c_str()));

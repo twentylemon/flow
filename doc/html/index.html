@@ -78,10 +78,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Flow Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+<div class="textblock"><h1>Sick Flow, Bro </h1>
+<p>Inspired by Java 8 <a href="http://www.oracle.com/technetwork/articles/java/ma14-java-se-8-streams-2177646.html">Streams</a>, flow is a C++14 library that provides lazy evaluation and functional transformations on data. It's like Haskell for C++. The library provides many common data transformations, such as map, filter and fold, as well as other commonly used operations like computing the sum, min and max or simply counting the number or elements. And all of it is packaged in a nice, easy to read and understand syntax. To use, simply <code>#include &lt;flow.h&gt;</code> in your C++14 program. </p>
+<h2>What is a Sick Flow? </h2>
+<p>A flow is usually called a stream. But if I called the library "Stream" I couldn't say "sick flow" all the time. I'll use flow and stream interchangeably, just know that a stream is a source of data, data that you would want to do things with.</p>
+<h2>Creating a Sick Flow </h2>
+<p>The <a class="el" href="de/d3f/namespaceflow_1_1generator.html">flow::generator</a> namespace contains several factory methods for creating a Stream object. Probably the most common generator used is <a class="el" href="de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c" title="Creates a Stream from the given iterator range. ">from()</a>, which creates a Stream from an iterator range or a container.</p>
+<p><code>auto stream = from(my_vector); // a stream over the entire vector in the same order</code> </p>
+<p>Other common stream generators are <a class="el" href="de/d3f/namespaceflow_1_1generator.html#ad3e468cd8e943a73900891b99f7a2ded" title="Creates an infinite Stream of values by incrementing begin  using operator++. ">iota()</a>, which counts up from a value, and repeat(), which repeats a value or cycles a container.</p>
+<h2>Manipulating a Sick Flow </h2>
+<p>Say you want to loop through a list of numbers. But you only want the even values. Then you want the squares of those values for some reason. Oh, and you want at most 10 of those. How would you do that in normal C++? Probably something like</p>
+<div class="fragment"><div class="line"><span class="keywordtype">int</span> <a class="code" href="d1/d6c/namespaceflow_1_1terminal.html#a52dfcc0ff79f7c3d74ea2e80a3f9a65f">count</a> = 0;</div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span> it = list.begin(), end = list.end(); it != end &amp; count &lt; 10; ++it) {</div>
+<div class="line">    <span class="keywordflow">if</span> (*it % 2 == 0) {</div>
+<div class="line">        ++<a class="code" href="d1/d6c/namespaceflow_1_1terminal.html#a52dfcc0ff79f7c3d74ea2e80a3f9a65f">count</a>;</div>
+<div class="line">        process(*it * *it);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --> <p>Not bad, but it's not quickly clear what is going on. The same operation can be done as a sick flow instead:</p>
+<div class="fragment"><div class="line">list | <a class="code" href="dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c">filter</a>([](<span class="keywordtype">int</span> i){ <span class="keywordflow">return</span> i % 2 == 0; }) | <a class="code" href="dc/d09/namespaceflow_1_1intermediate.html#a347e52317b201a9e142031724ea4de0a">limit</a>(10) | <a class="code" href="dc/d09/namespaceflow_1_1intermediate.html#af704cfd8b681a9cd8b2437d249487f78">map</a>([](<span class="keywordtype">int</span> i){ <span class="keywordflow">return</span> i*i; }) | <a class="code" href="d1/d6c/namespaceflow_1_1terminal.html#a6b3d0ede6c9489aebb9ce1ed684c31a0">each</a>(process);</div>
+</div><!-- fragment --> <p>Reading the line aloud, it's obvious what is happening. Take the list, keep even values, limit it to 10 elements, map the elements to their square, and then process each of those. Fun. This is just a trivial example, there many other stream operations available to be used.</p>
+<p>Stream operations are broken down into two main types: Intermediate and Terminal operations. Intermediate operations transform a stream into another stream. We saw three examples above in <code>filter</code>, <code>limit</code> and <code>map</code>. Intermediate operations are meaningless without some sort of Terminal operation, such as <code>each</code> or <code>count</code>. Terminal operations do something with the final stream data, be it summing, counting, calling a function, finding the min, and so on.</p>
+<p>Intermediate operations are all inside the <a class="el" href="dc/d09/namespaceflow_1_1intermediate.html">flow::intermediate</a> namespace.<br />
+Terminal operations are all inside the <a class="el" href="d1/d6c/namespaceflow_1_1terminal.html">flow::terminal</a> namespace.</p>
+<h3>A Word on the flow namespace</h3>
+<p>All of the functions in <a class="el" href="de/d3f/namespaceflow_1_1generator.html">flow::generator</a>, <a class="el" href="dc/d09/namespaceflow_1_1intermediate.html">flow::intermediate</a> and <a class="el" href="d1/d6c/namespaceflow_1_1terminal.html">flow::terminal</a> are aliased to also be in the flow namespace. For your program, if you do <code>using namespace flow;</code> (if you want), you get access to all the core parts of the flow library. If not, you can still just write <code>flow::map</code> instead of <code><a class="el" href="dc/d09/namespaceflow_1_1intermediate.html#af704cfd8b681a9cd8b2437d249487f78" title="Transforms each element in the Stream using the given unary operation, mapper . ">flow::intermediate::map</a></code>.</p>
+<h3>Documentation at a Glance</h3>
+<p>The best way to view all available functions, use the <a href="namespacemembers_func.html">Namespace Members</a> page. It lists every important function and the namespace it sits in, indicating whether it is a generator, or an intermediate or terminal operation.</p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 11 2015 17:59:57 for Flow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 13 2015 14:59:36 for Flow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

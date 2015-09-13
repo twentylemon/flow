@@ -88,7 +88,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="../../dc/daf/classflow_1_1terminal_1_1detail_1_1_terminal-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -96,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>A terminal operation for a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a>. <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">Terminal</a> operations finalize the stream by doing some operation like looping or summing etc.  
+<p>A terminal operation for a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">Terminal</a> operations finalize the stream by doing some operation like looping or summing.  
  <a href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../df/d85/_compose_8h_source.html">Compose.h</a>&gt;</code></p>
@@ -115,11 +114,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a256a587e68540f260bfe843fc4e1135b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Composes this operation with another function.  <a href="#a256a587e68540f260bfe843fc4e1135b">More...</a><br /></td></tr>
 <tr class="separator:a256a587e68540f260bfe843fc4e1135b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a82ad3ad503212871393c1279a86bff68"><td class="memItemLeft" align="right" valign="top">F&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html#a82ad3ad503212871393c1279a86bff68">_operation</a></td></tr>
-<tr class="separator:a82ad3ad503212871393c1279a86bff68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:a4b3f56d2b086c60c4343d25e6d07c2d9"><td class="memTemplParams" colspan="2">template&lt;typename G &gt; </td></tr>
@@ -130,7 +124,7 @@ Friends</h2></td></tr>
 <div class="textblock"><h3>template&lt;typename F&gt;<br />
 class flow::terminal::detail::Terminal&lt; F &gt;</h3>
 
-<p>A terminal operation for a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a>. <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">Terminal</a> operations finalize the stream by doing some operation like looping or summing etc. </p>
+<p>A terminal operation for a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">Terminal</a> operations finalize the stream by doing some operation like looping or summing. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a93c077febafb04aa9d1b4acf7618e4e4"></a>
 <div class="memitem">
@@ -237,7 +231,7 @@ template&lt;typename G &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">Terminal</a> operation of this composes with the function given.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation of this composes with the function given.</dd></dl>
 
 </div>
 </div>
@@ -266,29 +260,6 @@ template&lt;typename G &gt; </div>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a82ad3ad503212871393c1279a86bff68"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename F&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">F <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html">flow::terminal::detail::Terminal</a>&lt; F &gt;::_operation</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>D:/git/flow/flow/flow/<a class="el" href="../../df/d85/_compose_8h_source.html">Compose.h</a></li>
 <li>D:/git/flow/flow/flow/terminal/<a class="el" href="../../d6/ddd/_terminal_8h_source.html">Terminal.h</a></li>
@@ -296,7 +267,7 @@ template&lt;typename F&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 11 2015 17:59:57 for Flow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 13 2015 14:59:35 for Flow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

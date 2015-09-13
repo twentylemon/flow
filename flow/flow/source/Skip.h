@@ -42,9 +42,9 @@ public:
     /// <summary>
     /// Initializes a new instance of the <see cref="Skip{Source}"/> class.
     /// </summary>
-    /// <param name="source">The source to slice.</param>
-    /// <param name="begin">The begin index to slice from.</param>
-    /// <param name="step_size">The step value, eg 2 will give every 2nd element in the range.</param>
+    /// <param name="source">The source to skip elements of.</param>
+    /// <param name="begin">The index to skip to.</param>
+    /// <param name="step_size">The step value, eg 2 will give every 2nd element after <paramref name="begin"/>.</param>
     Skip(Source&& source, std::size_t begin, std::size_t step_size) : _source(std::forward<Source>(source)),
         _begin(begin), _current(0), _step_size(step_size), _initial(true) { }
 
@@ -72,9 +72,9 @@ public:
     }
 
     /// <summary>
-    /// Returns the next item from the stream.
+    /// Returns the next element from the stream.
     /// </summary>
-    /// <returns>The next item in the stream.</returns>
+    /// <returns>The next element in the stream.</returns>
     value_type next() {
         return std::move(_source.next());
     }
@@ -88,8 +88,7 @@ public:
 
     /// <summary>
     /// Returns the estimated size of the remainder of the stream.
-    /// If this does not go to the end of the stream, this value is exact. Otherwise,
-    /// the estimate depends on the source estimate.
+    /// This is an exact value.
     /// </summary>
     /// <returns>The estimated size of the remainder of the stream.</returns>
     std::size_t estimate_size() {
@@ -108,10 +107,19 @@ public:
     }
 
 protected:
+    /// <summary>
+    /// The current selected index in the stream.
+    /// </summary>
+    std::size_t _current;
+
+    /// <summary>
+    /// The number of elements to skip between giving stream elements.
+    /// </summary>
+    const std::size_t _step_size;
+
+private:
     Source _source;                 // the source to read from
     const std::size_t _begin;       // the start index
-    std::size_t _current;           // the current index
-    const std::size_t _step_size;   // the step size, allows skipping elements
     bool _initial;                  // false once we have processed the first stream value
 };
     }

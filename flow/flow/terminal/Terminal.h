@@ -35,7 +35,7 @@ namespace flow {
 
 /// <summary>
 /// A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation
-/// like looping or summing etc.
+/// like looping or summing.
 /// </summary>
 template <typename F>
 class Terminal
@@ -63,13 +63,13 @@ public:
     /// Composes this operation with another function.
     /// </summary>
     /// <param name="function">The function.</param>
-    /// <returns>The Terminal operation of this composes with the function given.</returns>
+    /// <returns>The detail::Terminal operation of this composes with the function given.</returns>
     template <typename G>
     Terminal<flow::detail::Compose<G, F>> then(G&& function) {
         return Terminal<flow::detail::Compose<G, F>>(flow::detail::Compose<G, F>(std::forward<G>(function), std::move(_operation)));
     }
 
-protected:
+private:
     F _operation;   // the terminal operation
 };
 

@@ -54,9 +54,9 @@ public:
     }
 
     /// <summary>
-    /// Returns the next item from the stream. Also applies the peek action to the element.
+    /// Returns the next element from the stream. Also applies the peek action to the element.
     /// </summary>
-    /// <returns>The next item in the stream.</returns>
+    /// <returns>The next element in the stream.</returns>
     value_type next() {
         value_type current = std::move(_source.next());
         _action(current);
@@ -80,7 +80,7 @@ public:
         return _source.estimate_size();
     }
 
-protected:
+private:
     Source _source; // the source to read from
     Action _action; // the action to apply to the stream elements
 };

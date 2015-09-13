@@ -34,12 +34,12 @@ namespace flow {
     namespace terminal {
 
 /// <summary>
-/// Returns the minimum and maximum elements as a pair from the stream according to the comparator given.
+/// Returns the minimum and maximum elements as a pair from the stream according to <paramref name="compare"/>.
 /// The first element is the minimum and the second element is the maximum. By default <c>operator&lt;</c>
 /// is used for comparisons.
 /// </summary>
-/// <param name="compare">The compare function, by default <c>std::less{T}</c>.</param>
-/// <returns>A <see cref="Terminal{F}" /> operation which gives the min and max elements from the stream.</returns>
+/// <param name="compare">The compare function, by default <c>std::less&lt;void&gt;</c>.</param>
+/// <returns>A detail::Terminal operation which gives the min and max elements from the stream.</returns>
 /// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
 template <typename Compare = std::less<void>>
 auto minmax(Compare compare = Compare()) {

@@ -32,9 +32,9 @@ namespace flow {
     namespace terminal {
 
 /// <summary>
-/// Returns the last element from the stream.
+/// Returns the last element from the stream. This is an expensive operation as the entire stream must be evaluated.
 /// </summary>
-/// <returns>The Terminal operation which gives the last element from the stream.</returns>
+/// <returns>The detail::Terminal operation which gives the last element from the stream.</returns>
 /// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
 auto last() {
     return fold([](auto&&, auto&& ele) { return ele; });

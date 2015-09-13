@@ -56,9 +56,9 @@ public:
     }
 
     /// <summary>
-    /// Returns the next item from the stream.
+    /// Returns the next element from the stream.
     /// </summary>
-    /// <returns>The next item in the stream.</returns>
+    /// <returns>The next element in the stream.</returns>
     value_type next() {
         return std::move(*_current++);
     }
@@ -85,8 +85,15 @@ protected:
     /// </summary>
     Iterator() { }
 
-    Itr _current;   // the current iterator
-    Itr _end;       // the end iterator
+    /// <summary>
+    /// The current iterator.
+    /// </summary>
+    Itr _current;
+
+    /// <summary>
+    /// The off end iterator.
+    /// </summary>
+    Itr _end;
 };
     }
 }

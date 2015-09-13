@@ -125,6 +125,7 @@ auto zipper = [](auto&& left, auto&& right) {
 /// </summary>
 /// <param name="right">The right stream to zip together with the operated stream.</param>
 /// <returns>A detail::Intermediate operation that zips the two streams.</returns>
+/// <seealso cref="uncurry()"/>
 template <typename RightSource>
 auto zip(Stream<RightSource>&& right) {
     return detail::make_intermediate([right = std::move(right)](auto&& left) mutable {
@@ -140,6 +141,8 @@ auto zip(Stream<RightSource>&& right) {
 /// </summary>
 /// <param name="container">The container to zip together with this stream.</param>
 /// <returns>A detail::Intermediate operation that zips the two streams.</returns>
+/// <seealso cref="from()"/>
+/// <seealso cref="uncurry()"/>
 template <typename Container>
 auto zip(Container& container) {
     return zip(from(container));
@@ -153,6 +156,8 @@ auto zip(Container& container) {
 /// </summary>
 /// <param name="container">The container to zip together with this stream.</param>
 /// <returns>A detail::Intermediate operation that zips the two streams.</returns>
+/// <seealso cref="from()"/>
+/// <seealso cref="uncurry()"/>
 template <typename Container>
 auto zip(const Container& container) {
     return zip(from(container));

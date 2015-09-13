@@ -89,14 +89,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="../../d0/dec/classflow_1_1source_1_1_generate-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">flow::source::Generate&lt; Generator &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> source that generates an infinite stream using successive calls to a generating function.  
+<p><a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> source that generates an infinite stream using successive calls to a generating function.  
  <a href="../../d3/d03/classflow_1_1source_1_1_generate.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d8/d03/source_2generate_8h_source.html">Generate.h</a>&gt;</code></p>
@@ -115,7 +114,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a7f2d0f250e4248cee95b25374fb58572"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if this source has more elements.  <a href="#a7f2d0f250e4248cee95b25374fb58572">More...</a><br /></td></tr>
 <tr class="separator:a7f2d0f250e4248cee95b25374fb58572"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b41d93ca207d73ae6eceda9f6c14d38"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d03/classflow_1_1source_1_1_generate.html#ad36cd683cc8d0102113a75a0ccbfbf88">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d03/classflow_1_1source_1_1_generate.html#a4b41d93ca207d73ae6eceda9f6c14d38">next</a> ()</td></tr>
-<tr class="memdesc:a4b41d93ca207d73ae6eceda9f6c14d38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next item from the stream.  <a href="#a4b41d93ca207d73ae6eceda9f6c14d38">More...</a><br /></td></tr>
+<tr class="memdesc:a4b41d93ca207d73ae6eceda9f6c14d38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next element from the stream.  <a href="#a4b41d93ca207d73ae6eceda9f6c14d38">More...</a><br /></td></tr>
 <tr class="separator:a4b41d93ca207d73ae6eceda9f6c14d38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a860e3d91b7045bbbc056578bd85fcf30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d03/classflow_1_1source_1_1_generate.html#a860e3d91b7045bbbc056578bd85fcf30">lazy_next</a> ()</td></tr>
 <tr class="memdesc:a860e3d91b7045bbbc056578bd85fcf30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ignores the next value from the stream.  <a href="#a860e3d91b7045bbbc056578bd85fcf30">More...</a><br /></td></tr>
@@ -123,17 +122,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a02344498c5e6cf1d01dc10f1b2536a7f"><td class="memItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d03/classflow_1_1source_1_1_generate.html#a02344498c5e6cf1d01dc10f1b2536a7f">estimate_size</a> () const </td></tr>
 <tr class="memdesc:a02344498c5e6cf1d01dc10f1b2536a7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the max value of <code>std::size_t</code>. This is an infinite stream.  <a href="#a02344498c5e6cf1d01dc10f1b2536a7f">More...</a><br /></td></tr>
 <tr class="separator:a02344498c5e6cf1d01dc10f1b2536a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:aba787e3f5464da5bc77144f269b6f30e"><td class="memItemLeft" align="right" valign="top">Generator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d03/classflow_1_1source_1_1_generate.html#aba787e3f5464da5bc77144f269b6f30e">_generator</a></td></tr>
-<tr class="separator:aba787e3f5464da5bc77144f269b6f30e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename Generator&gt;<br />
 class flow::source::Generate&lt; Generator &gt;</h3>
 
-<p><a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> source that generates an infinite stream using successive calls to a generating function. </p>
+<p><a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> source that generates an infinite stream using successive calls to a generating function. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a class="anchor" id="ad36cd683cc8d0102113a75a0ccbfbf88"></a>
 <div class="memitem">
@@ -291,31 +285,8 @@ template&lt;typename Generator &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the next item from the stream. </p>
-<dl class="section return"><dt>Returns</dt><dd>The next item in the stream.</dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="aba787e3f5464da5bc77144f269b6f30e"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Generator &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Generator <a class="el" href="../../d3/d03/classflow_1_1source_1_1_generate.html">flow::source::Generate</a>&lt; Generator &gt;::_generator</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Returns the next element from the stream. </p>
+<dl class="section return"><dt>Returns</dt><dd>The next element in the stream.</dd></dl>
 
 </div>
 </div>
@@ -325,7 +296,7 @@ template&lt;typename Generator &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 11 2015 17:59:54 for Flow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 13 2015 14:59:33 for Flow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

@@ -36,7 +36,7 @@ namespace flow {
 /// <summary>
 /// Creates a Stream that contains no elements.
 /// </summary>
-/// <returns>An empty Stream with the template type of elements.</returns>
+/// <returns>An empty stream with the template type of elements.</returns>
 template <typename T>
 Stream<source::Iterator<typename std::vector<T>::iterator>> empty() {
     std::vector<T> v;

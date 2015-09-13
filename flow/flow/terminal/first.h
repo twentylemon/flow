@@ -34,7 +34,7 @@ namespace flow {
 /// <summary>
 /// Returns the first element from the stream.
 /// </summary>
-/// <returns>The Terminal operation which gives the first element from the stream.</returns>
+/// <returns>The detail::Terminal operation which gives the first element from the stream.</returns>
 /// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
 auto first() {
     return detail::make_terminal([](auto&& stream) {

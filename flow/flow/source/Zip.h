@@ -55,9 +55,9 @@ public:
     }
 
     /// <summary>
-    /// Returns the next item from the stream.
+    /// Returns the next element from the stream.
     /// </summary>
-    /// <returns>The next item in the stream.</returns>
+    /// <returns>The next element in the stream.</returns>
     value_type next() {
         return std::move(_zipper(std::move(_left.next()), std::move(_right.next())));
     }
@@ -79,7 +79,7 @@ public:
         return std::min(_left.estimate_size(), _right.estimate_size());
     }
 
-protected:
+private:
     LeftSource _left;   // the left stream source
     RightSource _right; // the right stream source
     Zipper _zipper;     // the zipping operation to combine the left and right streams

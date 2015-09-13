@@ -105,14 +105,14 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The stream class. Provides lazy evaluation and functional style transformations on data. Streams support pipelining of multiple operations. More commenting later.  <a href="../../d9/dcd/classflow_1_1_stream.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ad795c672b7e52516485e7ffb2d6c4ad7"><td class="memTemplParams" colspan="2">template&lt;typename CurryFunction &gt; </td></tr>
 <tr class="memitem:ad795c672b7e52516485e7ffb2d6c4ad7"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/de2/namespaceflow.html#ad795c672b7e52516485e7ffb2d6c4ad7">uncurry</a> (CurryFunction curry_function)</td></tr>
-<tr class="memdesc:ad795c672b7e52516485e7ffb2d6c4ad7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uncurries the specified function. Given a function which takes several parameters, converts that function into a function which takes one <code>std::tuple</code> of those arguments instead.  <a href="#ad795c672b7e52516485e7ffb2d6c4ad7">More...</a><br /></td></tr>
+<tr class="memdesc:ad795c672b7e52516485e7ffb2d6c4ad7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uncurries the specified function. Given a function which takes several parameters, converts that function into a function which takes one <code>std::tuple</code> of those arguments instead. This is useful when zipping streams together as it allows you to write a function which takes normal arguments instead of a tuple. For example, this allows the syntax: </p><div class="fragment"><div class="line">intlist | <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#a7f1ec0323daa06ef6b093f1d0aa4c1cc">zip</a>(more_ints) | <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#af704cfd8b681a9cd8b2437d249487f78">map</a>(<a class="code" href="../../d9/de2/namespaceflow.html#ad795c672b7e52516485e7ffb2d6c4ad7">uncurry</a>([](<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r){ i and j things })) | ...</div>
+</div><!-- fragment --><p> as opposed to using <code>std::tuple&lt;int,int&gt;</code> and <code>std::get&lt;i&gt;</code>.  <a href="#ad795c672b7e52516485e7ffb2d6c4ad7">More...</a><br /></td></tr>
 <tr class="separator:ad795c672b7e52516485e7ffb2d6c4ad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -138,7 +138,8 @@ template&lt;typename CurryFunction &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Uncurries the specified function. Given a function which takes several parameters, converts that function into a function which takes one <code>std::tuple</code> of those arguments instead. </p>
+<p>Uncurries the specified function. Given a function which takes several parameters, converts that function into a function which takes one <code>std::tuple</code> of those arguments instead. This is useful when zipping streams together as it allows you to write a function which takes normal arguments instead of a tuple. For example, this allows the syntax: </p><div class="fragment"><div class="line">intlist | <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#a7f1ec0323daa06ef6b093f1d0aa4c1cc">zip</a>(more_ints) | <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#af704cfd8b681a9cd8b2437d249487f78">map</a>(<a class="code" href="../../d9/de2/namespaceflow.html#ad795c672b7e52516485e7ffb2d6c4ad7">uncurry</a>([](<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r){ i and j things })) | ...</div>
+</div><!-- fragment --><p> as opposed to using <code>std::tuple&lt;int,int&gt;</code> and <code>std::get&lt;i&gt;</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">curry_function</td><td>The curried function to wrap.</td></tr>
@@ -152,7 +153,7 @@ template&lt;typename CurryFunction &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 11 2015 17:59:54 for Flow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 13 2015 14:59:32 for Flow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

@@ -13,7 +13,7 @@
 #include <boost/timer.hpp>
 #include <complex>
 
-#include <flow/flow.h>
+#include <flow.h>
 using namespace flow;
 
 #ifndef _DEBUG
@@ -55,19 +55,19 @@ std::vector<int> vec(maxv);
 
 void run_timer() {
     using T = int;
-    std::vector<T> vec(2 * maxv);
+    std::vector<T> vec(maxv);
     std::generate(vec.begin(), vec.end(), std::rand);
     auto gt = [](T i) { return i > 10; };
     T vv(0);
     boost::timer tv;
     for (int i = 0; i < maxit; i++) {
-        vv = vec | replace(T(0), T(5)) | min();
+        vv = iota(0, 5) | limit(vec.size()) | max();
     }
     std::cout << std::endl << "streamv: " << tv.elapsed() << "\t" << vv << std::endl;
     T v_(0);
     boost::timer t_;
     for (int i = 0; i < maxit; i++) {
-        //v_ = vec | replace_(T(0), T(5)) | min();
+        v_ = iterate(std::bind(std::plus<T>(), 5, std::placeholders::_1), 0) | limit(vec.size()) | max();
     }
     std::cout << std::endl << "stream_: " << t_.elapsed() << "\t" << v_ << std::endl;
 }
@@ -131,14 +131,14 @@ int main(int argc, char** argv) {
         std::cout << typeid(t).name() << std::endl;
     });
 
-    //run_timer();
+    run_timer();
 
     auto c = uncurry([](int i, int j, int k) { return i * j * k; });
     auto c2 = uncurry(std::multiplies<int>());
     std::cout << c(std::make_tuple(4, 5, 2)) << std::endl;
     std::cout << c2(std::make_tuple(4, 1)) << std::endl;
 
-    iterate(std::bind1st(std::plus<std::size_t>(), 1), 1) | limit(10) | dump();
+    iterate(std::bind(std::plus<std::size_t>(), 1, std::placeholders::_1), 1) | limit(10) | dump();
     iterate(std::plus<int>(), 0, 1) | limit(10) | dump();
     
     empty<int>() | dump();

@@ -65,7 +65,7 @@ public:
         parent_type::_end = _stream.rend();
     }
 
-protected:
+private:
     Source _source;                     // the source to read from
     std::vector<value_type> _stream;    // the full stream
 };

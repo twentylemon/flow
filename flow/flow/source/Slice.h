@@ -69,7 +69,7 @@ public:
         return (_end - Skip<Source>::_current) / Skip<Source>::_step_size;
     }
 
-protected:
+private:
     const std::size_t _end; // the ending index
 };
     }

@@ -40,7 +40,7 @@ namespace flow {
 /// element. All elements before the first <c>false</c> are discarded, the rest are kept.
 /// </summary>
 /// <param name="predicate">The predicate used to drop stream elements.</param>
-/// <returns>A detail::Intermediate operation that drops Stream elements while the <paramref name="predicate"/> is <c>true</c>.</returns>
+/// <returns>A detail::Intermediate operation that drops stream elements while the <paramref name="predicate"/> is <c>true</c>.</returns>
 template <typename UnaryPredicate>
 auto drop_while(UnaryPredicate predicate) {
     return detail::make_intermediate([predicate](auto&& stream) {
@@ -52,7 +52,7 @@ auto drop_while(UnaryPredicate predicate) {
 /// Drops elements from the Stream until a stream element is <c>false</c>. All elements before the first
 /// <c>false</c> are discarded, the rest are kept. This is an overload for streams with types convertible to <c>bool</c>.
 /// </summary>
-/// <returns>A detail::Intermediate operation that drops Stream elements while they are <c>true</c>.</returns>
+/// <returns>A detail::Intermediate operation that drops stream elements while they are <c>true</c>.</returns>
 auto drop_while() {
     return drop_while([](const auto& ele) { return static_cast<bool>(ele); });
 }
@@ -62,7 +62,7 @@ auto drop_while() {
 /// <c>true</c> are discarded, the rest are kept.
 /// </summary>
 /// <param name="member">The class member function used to drop elements, the return type must be convertible to <c>bool</c>.</param>
-/// <returns>A detail::Intermediate operation that drops Stream elements while the <paramref name="member"/> is <c>true</c>.</returns>
+/// <returns>A detail::Intermediate operation that drops stream elements while the <paramref name="member"/> is <c>true</c>.</returns>
 template <typename Ret, typename Class>
 auto drop_while(Ret(Class::*member)()) {
     return drop_while(std::mem_fn(member));
@@ -73,7 +73,7 @@ auto drop_while(Ret(Class::*member)()) {
 /// <c>true</c> are discarded, the rest are kept.
 /// </summary>
 /// <param name="member">The const class member function used to drop elements, the return type must be convertible to <c>bool</c>.</param>
-/// <returns>A detail::Intermediate operation that drops Stream elements while the <paramref name="member"/> is <c>true</c>.</returns>
+/// <returns>A detail::Intermediate operation that drops stream elements while the <paramref name="member"/> is <c>true</c>.</returns>
 template <typename Ret, typename Class>
 auto drop_while(Ret(Class::*member)() const) {
     return drop_while(std::mem_fn(member));

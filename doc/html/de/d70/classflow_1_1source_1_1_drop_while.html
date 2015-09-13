@@ -89,14 +89,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="../../d0/d34/classflow_1_1source_1_1_drop_while-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">flow::source::DropWhile&lt; Source, UnaryPredicate &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> source that drops elements from the stream until a predicate returns <code>false</code>. All elements before the first <code>true</code> are discarded, the rest are kept.  
+<p><a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> source that drops elements from the stream until a predicate returns <code>false</code>. All elements before the first <code>true</code> are discarded, the rest are kept.  
  <a href="../../de/d70/classflow_1_1source_1_1_drop_while.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../de/d92/_drop_while_8h_source.html">DropWhile.h</a>&gt;</code></p>
@@ -115,7 +114,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a28b87ad18ad4998aa9219a9636eb1a52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if this source has more elements.  <a href="#a28b87ad18ad4998aa9219a9636eb1a52">More...</a><br /></td></tr>
 <tr class="separator:a28b87ad18ad4998aa9219a9636eb1a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd4927506c4abd27e2855470efda0a83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d70/classflow_1_1source_1_1_drop_while.html#a69eed168fa26825fd4bf1da9e863f8b5">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d70/classflow_1_1source_1_1_drop_while.html#afd4927506c4abd27e2855470efda0a83">next</a> ()</td></tr>
-<tr class="memdesc:afd4927506c4abd27e2855470efda0a83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next item from the stream.  <a href="#afd4927506c4abd27e2855470efda0a83">More...</a><br /></td></tr>
+<tr class="memdesc:afd4927506c4abd27e2855470efda0a83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next element from the stream.  <a href="#afd4927506c4abd27e2855470efda0a83">More...</a><br /></td></tr>
 <tr class="separator:afd4927506c4abd27e2855470efda0a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac031f673fc17ed3b1b3b3b53f22256e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d70/classflow_1_1source_1_1_drop_while.html#ac031f673fc17ed3b1b3b3b53f22256e0">lazy_next</a> ()</td></tr>
 <tr class="memdesc:ac031f673fc17ed3b1b3b3b53f22256e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ignores the next value from the stream.  <a href="#ac031f673fc17ed3b1b3b3b53f22256e0">More...</a><br /></td></tr>
@@ -123,23 +122,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac60c097868fb9aff12fcf5f2e1c4f207"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d70/classflow_1_1source_1_1_drop_while.html#ac60c097868fb9aff12fcf5f2e1c4f207">estimate_size</a> ()</td></tr>
 <tr class="memdesc:ac60c097868fb9aff12fcf5f2e1c4f207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the estimated size of the remainder of the stream. This is likely an overestimate.  <a href="#ac60c097868fb9aff12fcf5f2e1c4f207">More...</a><br /></td></tr>
 <tr class="separator:ac60c097868fb9aff12fcf5f2e1c4f207"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a61fb5ce4a276970112f2bf2b87abc376"><td class="memItemLeft" align="right" valign="top">Source&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d70/classflow_1_1source_1_1_drop_while.html#a61fb5ce4a276970112f2bf2b87abc376">_source</a></td></tr>
-<tr class="separator:a61fb5ce4a276970112f2bf2b87abc376"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e10bdd5f904279b31d2fa0f339a9027"><td class="memItemLeft" align="right" valign="top">UnaryPredicate&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d70/classflow_1_1source_1_1_drop_while.html#a5e10bdd5f904279b31d2fa0f339a9027">_predicate</a></td></tr>
-<tr class="separator:a5e10bdd5f904279b31d2fa0f339a9027"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7490efa3cb39652ebf12df7d02a1e76"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d70/classflow_1_1source_1_1_drop_while.html#a69eed168fa26825fd4bf1da9e863f8b5">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d70/classflow_1_1source_1_1_drop_while.html#ae7490efa3cb39652ebf12df7d02a1e76">_current</a></td></tr>
-<tr class="separator:ae7490efa3cb39652ebf12df7d02a1e76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfbe5f162d3404f37ff90c11261fa9fd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d70/classflow_1_1source_1_1_drop_while.html#abfbe5f162d3404f37ff90c11261fa9fd">_initial</a></td></tr>
-<tr class="separator:abfbe5f162d3404f37ff90c11261fa9fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename Source, typename UnaryPredicate&gt;<br />
 class flow::source::DropWhile&lt; Source, UnaryPredicate &gt;</h3>
 
-<p><a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> source that drops elements from the stream until a predicate returns <code>false</code>. All elements before the first <code>true</code> are discarded, the rest are kept. </p>
+<p><a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> source that drops elements from the stream until a predicate returns <code>false</code>. All elements before the first <code>true</code> are discarded, the rest are kept. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a class="anchor" id="a69eed168fa26825fd4bf1da9e863f8b5"></a>
 <div class="memitem">
@@ -308,97 +296,8 @@ template&lt;typename Source , typename UnaryPredicate &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the next item from the stream. </p>
-<dl class="section return"><dt>Returns</dt><dd>The next item in the stream.</dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="ae7490efa3cb39652ebf12df7d02a1e76"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Source , typename UnaryPredicate &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../de/d70/classflow_1_1source_1_1_drop_while.html#a69eed168fa26825fd4bf1da9e863f8b5">value_type</a> <a class="el" href="../../de/d70/classflow_1_1source_1_1_drop_while.html">flow::source::DropWhile</a>&lt; Source, UnaryPredicate &gt;::_current</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="abfbe5f162d3404f37ff90c11261fa9fd"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Source , typename UnaryPredicate &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="../../de/d70/classflow_1_1source_1_1_drop_while.html">flow::source::DropWhile</a>&lt; Source, UnaryPredicate &gt;::_initial</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a5e10bdd5f904279b31d2fa0f339a9027"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Source , typename UnaryPredicate &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">UnaryPredicate <a class="el" href="../../de/d70/classflow_1_1source_1_1_drop_while.html">flow::source::DropWhile</a>&lt; Source, UnaryPredicate &gt;::_predicate</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a61fb5ce4a276970112f2bf2b87abc376"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Source , typename UnaryPredicate &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Source <a class="el" href="../../de/d70/classflow_1_1source_1_1_drop_while.html">flow::source::DropWhile</a>&lt; Source, UnaryPredicate &gt;::_source</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Returns the next element from the stream. </p>
+<dl class="section return"><dt>Returns</dt><dd>The next element in the stream.</dd></dl>
 
 </div>
 </div>
@@ -408,7 +307,7 @@ template&lt;typename Source , typename UnaryPredicate &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 11 2015 17:59:54 for Flow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 13 2015 14:59:33 for Flow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

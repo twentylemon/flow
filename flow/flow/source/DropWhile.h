@@ -71,9 +71,9 @@ public:
     }
 
     /// <summary>
-    /// Returns the next item from the stream.
+    /// Returns the next element from the stream.
     /// </summary>
-    /// <returns>The next item in the stream.</returns>
+    /// <returns>The next element in the stream.</returns>
     value_type next() {
         return std::move(_current);
     }
@@ -93,7 +93,7 @@ public:
         return _source.estimate_size();
     }
 
-protected:
+private:
     Source _source;             // the source to read from
     UnaryPredicate _predicate;  // the mapping operation to apply to each element from the source
     value_type _current;        // the current value

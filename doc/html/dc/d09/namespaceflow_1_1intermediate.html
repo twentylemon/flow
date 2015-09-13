@@ -101,87 +101,91 @@ Namespaces</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:aa0551274cc05f2c668d5612bfe1716cb"><td class="memTemplParams" colspan="2">template&lt;typename Tail &gt; </td></tr>
 <tr class="memitem:aa0551274cc05f2c668d5612bfe1716cb"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa0551274cc05f2c668d5612bfe1716cb">concat</a> (<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; Tail &gt; &amp;&amp;tail)</td></tr>
-<tr class="memdesc:aa0551274cc05f2c668d5612bfe1716cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates the given <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> onto the end of the operated stream. The <em>tail</em>  stream elements must be convertible to the same type of elements as the head stream.  <a href="#aa0551274cc05f2c668d5612bfe1716cb">More...</a><br /></td></tr>
+<tr class="memdesc:aa0551274cc05f2c668d5612bfe1716cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates the given <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> onto the end of the operated stream. The <em>tail</em>  stream elements must be convertible to the same type of elements as the head stream.  <a href="#aa0551274cc05f2c668d5612bfe1716cb">More...</a><br /></td></tr>
 <tr class="separator:aa0551274cc05f2c668d5612bfe1716cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78d230bd95954f7f57ea0eb973908c2e"><td class="memTemplParams" colspan="2">template&lt;typename Container &gt; </td></tr>
 <tr class="memitem:a78d230bd95954f7f57ea0eb973908c2e"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a78d230bd95954f7f57ea0eb973908c2e">concat</a> (Container &amp;container)</td></tr>
-<tr class="memdesc:a78d230bd95954f7f57ea0eb973908c2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates the given container onto the end of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a>. This is the same as <code>concat(from(container))</code>. The <em>tail</em>  stream elements must be convertible to the same type of elements as the head stream.  <a href="#a78d230bd95954f7f57ea0eb973908c2e">More...</a><br /></td></tr>
+<tr class="memdesc:a78d230bd95954f7f57ea0eb973908c2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates the given container onto the end of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. This is the same as <code>concat(from(container))</code>. The <em>tail</em>  stream elements must be convertible to the same type of elements as the head stream.  <a href="#a78d230bd95954f7f57ea0eb973908c2e">More...</a><br /></td></tr>
 <tr class="separator:a78d230bd95954f7f57ea0eb973908c2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa415647b6090d0eeb80ce1024e0d9bf0"><td class="memTemplParams" colspan="2">template&lt;typename Container &gt; </td></tr>
 <tr class="memitem:aa415647b6090d0eeb80ce1024e0d9bf0"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa415647b6090d0eeb80ce1024e0d9bf0">concat</a> (const Container &amp;container)</td></tr>
-<tr class="memdesc:aa415647b6090d0eeb80ce1024e0d9bf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates the given container onto the end of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a>. This is the same as <code>concat(from(container))</code>. The <em>tail</em>  stream elements must be convertible to the same type of elements as the head stream.  <a href="#aa415647b6090d0eeb80ce1024e0d9bf0">More...</a><br /></td></tr>
+<tr class="memdesc:aa415647b6090d0eeb80ce1024e0d9bf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates the given container onto the end of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. This is the same as <code>concat(from(container))</code>. The <em>tail</em>  stream elements must be convertible to the same type of elements as the head stream.  <a href="#aa415647b6090d0eeb80ce1024e0d9bf0">More...</a><br /></td></tr>
 <tr class="separator:aa415647b6090d0eeb80ce1024e0d9bf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c6e57bccb66cfbfae54134b500ea8c0"><td class="memTemplParams" colspan="2">template&lt;typename UnaryPredicate &gt; </td></tr>
 <tr class="memitem:a1c6e57bccb66cfbfae54134b500ea8c0"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1c6e57bccb66cfbfae54134b500ea8c0">drop_while</a> (UnaryPredicate predicate)</td></tr>
-<tr class="memdesc:a1c6e57bccb66cfbfae54134b500ea8c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drops elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> until the <em>predicate</em>  returns <code>false</code> for a stream element. All elements before the first <code>false</code> are discarded, the rest are kept.  <a href="#a1c6e57bccb66cfbfae54134b500ea8c0">More...</a><br /></td></tr>
+<tr class="memdesc:a1c6e57bccb66cfbfae54134b500ea8c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drops elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> until the <em>predicate</em>  returns <code>false</code> for a stream element. All elements before the first <code>false</code> are discarded, the rest are kept.  <a href="#a1c6e57bccb66cfbfae54134b500ea8c0">More...</a><br /></td></tr>
 <tr class="separator:a1c6e57bccb66cfbfae54134b500ea8c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af375a0d8fadc8ec0e0d2b97a1d2907a5"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af375a0d8fadc8ec0e0d2b97a1d2907a5">drop_while</a> ()</td></tr>
-<tr class="memdesc:af375a0d8fadc8ec0e0d2b97a1d2907a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drops elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> until a stream element is <code>false</code>. All elements before the first <code>false</code> are discarded, the rest are kept. This is an overload for streams with types convertible to <code>bool</code>.  <a href="#af375a0d8fadc8ec0e0d2b97a1d2907a5">More...</a><br /></td></tr>
+<tr class="memdesc:af375a0d8fadc8ec0e0d2b97a1d2907a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drops elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> until a stream element is <code>false</code>. All elements before the first <code>false</code> are discarded, the rest are kept. This is an overload for streams with types convertible to <code>bool</code>.  <a href="#af375a0d8fadc8ec0e0d2b97a1d2907a5">More...</a><br /></td></tr>
 <tr class="separator:af375a0d8fadc8ec0e0d2b97a1d2907a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a680ea915183bfa1bd72ff0a342a6bb1f"><td class="memTemplParams" colspan="2">template&lt;typename Ret , typename Class &gt; </td></tr>
 <tr class="memitem:a680ea915183bfa1bd72ff0a342a6bb1f"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a680ea915183bfa1bd72ff0a342a6bb1f">drop_while</a> (Ret(Class::*member)())</td></tr>
-<tr class="memdesc:a680ea915183bfa1bd72ff0a342a6bb1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drops elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> until the <em>member</em>  returns <code>false</code>. All elements before the first <code>true</code> are discarded, the rest are kept.  <a href="#a680ea915183bfa1bd72ff0a342a6bb1f">More...</a><br /></td></tr>
+<tr class="memdesc:a680ea915183bfa1bd72ff0a342a6bb1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drops elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> until the <em>member</em>  returns <code>false</code>. All elements before the first <code>true</code> are discarded, the rest are kept.  <a href="#a680ea915183bfa1bd72ff0a342a6bb1f">More...</a><br /></td></tr>
 <tr class="separator:a680ea915183bfa1bd72ff0a342a6bb1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa74be97ab2dbd180f7d1127a88cfcf8c"><td class="memTemplParams" colspan="2">template&lt;typename UnaryPredicate &gt; </td></tr>
 <tr class="memitem:aa74be97ab2dbd180f7d1127a88cfcf8c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c">filter</a> (UnaryPredicate predicate)</td></tr>
-<tr class="memdesc:aa74be97ab2dbd180f7d1127a88cfcf8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> that return <code>false</code> for <em>predicate</em> .  <a href="#aa74be97ab2dbd180f7d1127a88cfcf8c">More...</a><br /></td></tr>
+<tr class="memdesc:aa74be97ab2dbd180f7d1127a88cfcf8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> that return <code>false</code> for <em>predicate</em> .  <a href="#aa74be97ab2dbd180f7d1127a88cfcf8c">More...</a><br /></td></tr>
 <tr class="separator:aa74be97ab2dbd180f7d1127a88cfcf8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99debd4465f5e92791995d9a985a0a2d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a99debd4465f5e92791995d9a985a0a2d">filter</a> ()</td></tr>
-<tr class="memdesc:a99debd4465f5e92791995d9a985a0a2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> which are evaluated to <code>false</code>. This is an overload for streams with types convertible to <code>bool</code>.  <a href="#a99debd4465f5e92791995d9a985a0a2d">More...</a><br /></td></tr>
+<tr class="memdesc:a99debd4465f5e92791995d9a985a0a2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> which are evaluated to <code>false</code>. This is an overload for streams with types convertible to <code>bool</code>.  <a href="#a99debd4465f5e92791995d9a985a0a2d">More...</a><br /></td></tr>
 <tr class="separator:a99debd4465f5e92791995d9a985a0a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e1f3921d4f70c95c8e576ec40f8cdd2"><td class="memTemplParams" colspan="2">template&lt;typename Ret , typename Class &gt; </td></tr>
 <tr class="memitem:a6e1f3921d4f70c95c8e576ec40f8cdd2"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a6e1f3921d4f70c95c8e576ec40f8cdd2">filter</a> (Ret(Class::*member)())</td></tr>
-<tr class="memdesc:a6e1f3921d4f70c95c8e576ec40f8cdd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> that return <code>false</code> for <em>member</em> .  <a href="#a6e1f3921d4f70c95c8e576ec40f8cdd2">More...</a><br /></td></tr>
+<tr class="memdesc:a6e1f3921d4f70c95c8e576ec40f8cdd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> that return <code>false</code> for <em>member</em> .  <a href="#a6e1f3921d4f70c95c8e576ec40f8cdd2">More...</a><br /></td></tr>
 <tr class="separator:a6e1f3921d4f70c95c8e576ec40f8cdd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a347e52317b201a9e142031724ea4de0a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a347e52317b201a9e142031724ea4de0a">limit</a> (std::size_t length)</td></tr>
-<tr class="memdesc:a347e52317b201a9e142031724ea4de0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limits the length of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> to <em>length</em>  elements. If the stream is shorter, all elements are kept.  <a href="#a347e52317b201a9e142031724ea4de0a">More...</a><br /></td></tr>
+<tr class="memdesc:a347e52317b201a9e142031724ea4de0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limits the length of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> to <em>length</em>  elements. If the stream is shorter, all elements are kept.  <a href="#a347e52317b201a9e142031724ea4de0a">More...</a><br /></td></tr>
 <tr class="separator:a347e52317b201a9e142031724ea4de0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af704cfd8b681a9cd8b2437d249487f78"><td class="memTemplParams" colspan="2">template&lt;typename UnaryOperation &gt; </td></tr>
 <tr class="memitem:af704cfd8b681a9cd8b2437d249487f78"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af704cfd8b681a9cd8b2437d249487f78">map</a> (UnaryOperation mapper)</td></tr>
-<tr class="memdesc:af704cfd8b681a9cd8b2437d249487f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> using the given unary operation, <em>mapper</em> .  <a href="#af704cfd8b681a9cd8b2437d249487f78">More...</a><br /></td></tr>
+<tr class="memdesc:af704cfd8b681a9cd8b2437d249487f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> using the given unary operation, <em>mapper</em> .  <a href="#af704cfd8b681a9cd8b2437d249487f78">More...</a><br /></td></tr>
 <tr class="separator:af704cfd8b681a9cd8b2437d249487f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae7bef0ac778a95140e38bb9e81ae83a"><td class="memTemplParams" colspan="2">template&lt;typename Ret , typename Class &gt; </td></tr>
 <tr class="memitem:aae7bef0ac778a95140e38bb9e81ae83a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aae7bef0ac778a95140e38bb9e81ae83a">map</a> (Ret(Class::*member)())</td></tr>
-<tr class="memdesc:aae7bef0ac778a95140e38bb9e81ae83a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> to the return value of a member function of the stream elements.  <a href="#aae7bef0ac778a95140e38bb9e81ae83a">More...</a><br /></td></tr>
+<tr class="memdesc:aae7bef0ac778a95140e38bb9e81ae83a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> to the return value of a member function of the stream elements.  <a href="#aae7bef0ac778a95140e38bb9e81ae83a">More...</a><br /></td></tr>
 <tr class="separator:aae7bef0ac778a95140e38bb9e81ae83a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9078ec57972888d23411f8c3ea209af"><td class="memTemplParams" colspan="2">template&lt;typename UnaryFunction &gt; </td></tr>
 <tr class="memitem:ac9078ec57972888d23411f8c3ea209af"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af">peek</a> (UnaryFunction action)</td></tr>
-<tr class="memdesc:ac9078ec57972888d23411f8c3ea209af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lazily executes <em>action</em>  for each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> as a <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation. This is an intermediate operation equivalent of <code>terminal::for_each</code>.  <a href="#ac9078ec57972888d23411f8c3ea209af">More...</a><br /></td></tr>
+<tr class="memdesc:ac9078ec57972888d23411f8c3ea209af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lazily executes <em>action</em>  for each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> as a <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation. This is an intermediate operation equivalent of <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a6b3d0ede6c9489aebb9ce1ed684c31a0" title="Executes a function for each element in the stream. The executed function is returned. ">each()</a>.  <a href="#ac9078ec57972888d23411f8c3ea209af">More...</a><br /></td></tr>
 <tr class="separator:ac9078ec57972888d23411f8c3ea209af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af32b7bf1f105167d576b779b3b5f0297"><td class="memTemplParams" colspan="2">template&lt;typename Ret , typename Class &gt; </td></tr>
+<tr class="memitem:af32b7bf1f105167d576b779b3b5f0297"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af32b7bf1f105167d576b779b3b5f0297">peek</a> (Ret(Class::*member)())</td></tr>
+<tr class="memdesc:af32b7bf1f105167d576b779b3b5f0297"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lazily executes <em>member</em>  for each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> as a <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation. This is an intermediate operation equivalent of <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a6b3d0ede6c9489aebb9ce1ed684c31a0" title="Executes a function for each element in the stream. The executed function is returned. ">each()</a>.  <a href="#af32b7bf1f105167d576b779b3b5f0297">More...</a><br /></td></tr>
+<tr class="separator:af32b7bf1f105167d576b779b3b5f0297"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0db61e00aa587124edb99e065385ef16"><td class="memTemplParams" colspan="2">template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </td></tr>
 <tr class="memitem:a0db61e00aa587124edb99e065385ef16"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0db61e00aa587124edb99e065385ef16">replace_map</a> (UnaryPredicate predicate, UnaryOperation mapper)</td></tr>
-<tr class="memdesc:a0db61e00aa587124edb99e065385ef16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> elements to new values if the original value returns <code>true</code> for <em>predicate</em> .  <a href="#a0db61e00aa587124edb99e065385ef16">More...</a><br /></td></tr>
+<tr class="memdesc:a0db61e00aa587124edb99e065385ef16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> elements to new values if the original value returns <code>true</code> for <em>predicate</em> .  <a href="#a0db61e00aa587124edb99e065385ef16">More...</a><br /></td></tr>
 <tr class="separator:a0db61e00aa587124edb99e065385ef16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addc196ea292bffcb221859fc40c11806"><td class="memTemplParams" colspan="2">template&lt;typename UnaryPredicate , typename T &gt; </td></tr>
 <tr class="memitem:addc196ea292bffcb221859fc40c11806"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#addc196ea292bffcb221859fc40c11806">replace</a> (UnaryPredicate predicate, const T &amp;replace_by)</td></tr>
-<tr class="memdesc:addc196ea292bffcb221859fc40c11806"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> by <em>replace_by</em>  if the stream element returns <code>true</code> for <em>predicate</em> .  <a href="#addc196ea292bffcb221859fc40c11806">More...</a><br /></td></tr>
+<tr class="memdesc:addc196ea292bffcb221859fc40c11806"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> by <em>replace_by</em>  if the stream element returns <code>true</code> for <em>predicate</em> .  <a href="#addc196ea292bffcb221859fc40c11806">More...</a><br /></td></tr>
 <tr class="separator:addc196ea292bffcb221859fc40c11806"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0430d4efcca042eb1b6a03a9fc66e53b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a0430d4efcca042eb1b6a03a9fc66e53b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0430d4efcca042eb1b6a03a9fc66e53b">replace</a> (const T &amp;old_value, const T &amp;new_value)</td></tr>
-<tr class="memdesc:a0430d4efcca042eb1b6a03a9fc66e53b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> by <em>new_value</em>  if they are equal to <em>old_value</em> . Equality is checked by using <code>operator==</code> on the elements.  <a href="#a0430d4efcca042eb1b6a03a9fc66e53b">More...</a><br /></td></tr>
+<tr class="memdesc:a0430d4efcca042eb1b6a03a9fc66e53b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> by <em>new_value</em>  if they are equal to <em>old_value</em> . Equality is checked by using <code>operator==</code> on the elements.  <a href="#a0430d4efcca042eb1b6a03a9fc66e53b">More...</a><br /></td></tr>
 <tr class="separator:a0430d4efcca042eb1b6a03a9fc66e53b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13397178496f74369fc8dae063415b7a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a13397178496f74369fc8dae063415b7a">reverse</a> ()</td></tr>
-<tr class="memdesc:a13397178496f74369fc8dae063415b7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverses the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a>. Reversing is an eager operation. On the creation of the <code>reverse</code> operation, the entire stream up to that point is evaluated and stored before continuing with the remainder of the stream. Thus, the <code>reverse</code> operation takes <code>O(n)</code> extra space and time, where <code>n</code> is the size of the stream. For most applications, it will be beneficial to reverse the stream beforehand by using reverse iterators, for example: </p><div class="fragment"><div class="line"><a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c">from</a>(container.rbegin(), container.rend()) | ...</div>
+<tr class="memdesc:a13397178496f74369fc8dae063415b7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverses the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. Reversing is an eager operation. On the creation of the <code>reverse</code> operation, the entire stream up to that point is evaluated and stored before continuing with the remainder of the stream. Thus, the <code>reverse</code> operation takes <code>O(n)</code> extra space and time, where <code>n</code> is the size of the stream. For most applications, it will be beneficial to reverse the stream beforehand by using reverse iterators, for example: </p><div class="fragment"><div class="line"><a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c">from</a>(container.rbegin(), container.rend()) | ...</div>
 </div><!-- fragment -->  <a href="#a13397178496f74369fc8dae063415b7a">More...</a><br /></td></tr>
 <tr class="separator:a13397178496f74369fc8dae063415b7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2725d9fb49cd0c4fe25658500c2fa1f1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a2725d9fb49cd0c4fe25658500c2fa1f1">skip</a> (std::size_t begin, std::size_t step_size)</td></tr>
-<tr class="memdesc:a2725d9fb49cd0c4fe25658500c2fa1f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skips the first elements of a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a>. Keeps only the elements with index <code>&gt;=</code> <em>begin</em>  in the stream. This operation will skip every <em>step_size</em>  elements after the initial jump to <em>begin</em>  For example a <em>step_size</em>  of 2 will keep only every other element, eg <code>begin, begin+2, begin+4</code> etc.  <a href="#a2725d9fb49cd0c4fe25658500c2fa1f1">More...</a><br /></td></tr>
+<tr class="memdesc:a2725d9fb49cd0c4fe25658500c2fa1f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skips the first elements of a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. Keeps only the elements with index <code>&gt;=</code> <em>begin</em>  in the stream. This operation will skip every <em>step_size</em>  elements after the initial jump to <em>begin</em>  For example a <em>step_size</em>  of 2 will keep only every other element, eg <code>begin, begin+2, begin+4</code> etc.  <a href="#a2725d9fb49cd0c4fe25658500c2fa1f1">More...</a><br /></td></tr>
 <tr class="separator:a2725d9fb49cd0c4fe25658500c2fa1f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f8b2e7e5cc41ecd02cb4381a706d545"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a2f8b2e7e5cc41ecd02cb4381a706d545">skip</a> (std::size_t begin)</td></tr>
-<tr class="memdesc:a2f8b2e7e5cc41ecd02cb4381a706d545"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skips the first elements of a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a>. Keeps only the elements with index <code>&gt;=</code> <em>begin</em>  in the stream.  <a href="#a2f8b2e7e5cc41ecd02cb4381a706d545">More...</a><br /></td></tr>
+<tr class="memdesc:a2f8b2e7e5cc41ecd02cb4381a706d545"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skips the first elements of a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. Keeps only the elements with index <code>&gt;=</code> <em>begin</em>  in the stream.  <a href="#a2f8b2e7e5cc41ecd02cb4381a706d545">More...</a><br /></td></tr>
 <tr class="separator:a2f8b2e7e5cc41ecd02cb4381a706d545"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeef64fd0f533b9b084b83c46fe8352d4"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aeef64fd0f533b9b084b83c46fe8352d4">skip_every</a> (std::size_t step_size)</td></tr>
-<tr class="memdesc:aeef64fd0f533b9b084b83c46fe8352d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skips every <em>step_size</em>  elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a>. For example, a <em>step_size</em>  of 2 will only keep stream elements with index 0, 2, 4 etc.  <a href="#aeef64fd0f533b9b084b83c46fe8352d4">More...</a><br /></td></tr>
+<tr class="memdesc:aeef64fd0f533b9b084b83c46fe8352d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skips every <em>step_size</em>  elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>, keeping the first element. For example, a <em>step_size</em>  of 2 will only keep stream elements with index 0, 2, 4 etc.  <a href="#aeef64fd0f533b9b084b83c46fe8352d4">More...</a><br /></td></tr>
 <tr class="separator:aeef64fd0f533b9b084b83c46fe8352d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1954e2f5425b7603794790f7645e776e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1954e2f5425b7603794790f7645e776e">slice</a> (std::size_t begin, std::size_t end, std::size_t step_size)</td></tr>
-<tr class="memdesc:a1954e2f5425b7603794790f7645e776e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slices the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a>. Keeps only elements with index in the range <code>[begin..end)</code> in the stream, excluding the <em>end</em>  index. If <em>end</em>  is out of bounds of the stream, the entire stream from <em>begin</em>  is kept. The operation will skip every <code>step_size</code> elements, for example a <em>step_size</em>  of 2 will keep only every other element in the range, eg <code>begin, begin+2, begin+4</code> etc.  <a href="#a1954e2f5425b7603794790f7645e776e">More...</a><br /></td></tr>
+<tr class="memdesc:a1954e2f5425b7603794790f7645e776e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slices the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. Keeps only elements with index in the range <code>[begin..end)</code> in the stream, excluding the <em>end</em>  index. If <em>end</em>  is out of bounds of the stream, the entire stream from <em>begin</em>  is kept. The operation will skip every <code>step_size</code> elements, for example a <em>step_size</em>  of 2 will keep only every other element in the range, eg <code>begin, begin+2, begin+4</code> etc.  <a href="#a1954e2f5425b7603794790f7645e776e">More...</a><br /></td></tr>
 <tr class="separator:a1954e2f5425b7603794790f7645e776e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8468b308d2903331dc966819b373625"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac8468b308d2903331dc966819b373625">slice</a> (std::size_t begin, std::size_t end)</td></tr>
-<tr class="memdesc:ac8468b308d2903331dc966819b373625"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slices the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a>. Keeps only elements with index in the range <code>[begin..end)</code> in the stream, excluding the <em>end</em>  index. If <code>end</code> is out of bounds of the stream, the entire stream from <em>begin</em>  is kept.  <a href="#ac8468b308d2903331dc966819b373625">More...</a><br /></td></tr>
+<tr class="memdesc:ac8468b308d2903331dc966819b373625"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slices the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. Keeps only elements with index in the range <code>[begin..end)</code> in the stream, excluding the <em>end</em>  index. If <code>end</code> is out of bounds of the stream, the entire stream from <em>begin</em>  is kept.  <a href="#ac8468b308d2903331dc966819b373625">More...</a><br /></td></tr>
 <tr class="separator:ac8468b308d2903331dc966819b373625"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0641d6ecc741bd5f346a961e5e8ccf44"><td class="memTemplParams" colspan="2">template&lt;typename Compare  = std::less&lt;void&gt;&gt; </td></tr>
 <tr class="memitem:a0641d6ecc741bd5f346a961e5e8ccf44"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0641d6ecc741bd5f346a961e5e8ccf44">sort</a> (Compare compare=Compare())</td></tr>
-<tr class="memdesc:a0641d6ecc741bd5f346a961e5e8ccf44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> using the given comparator. By default, <code>operator&lt;</code> is used. Sorting is an eager operation. On the creation of the <code>sort</code> operation, the entire stream up to that point is evaluated and stored, then finally sorted before lazily continuing with the remainder of the stream. Thus, the <code>sort</code> operation takes <code>O(n)</code> extra space and time (excluding the sort), where <code>n</code> is the size of the stream. For most applications, it will be beneficial to sort the source of the stream beforehand if possible. For example, the following should be avoided: </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> min = my_vector | <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0641d6ecc741bd5f346a961e5e8ccf44">sort</a>() | <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612">first</a>(); <span class="comment">// just an example</span></div>
+<tr class="memdesc:a0641d6ecc741bd5f346a961e5e8ccf44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> using the given comparator. By default, <code>operator&lt;</code> is used. Sorting is an eager operation. On the creation of the <code>sort</code> operation, the entire stream up to that point is evaluated and stored, then finally sorted before lazily continuing with the remainder of the stream. Thus, the <code>sort</code> operation takes <code>O(n)</code> extra space and time (excluding the sort), where <code>n</code> is the size of the stream. For most applications, it will be beneficial to sort the source of the stream beforehand if possible. For example, the following should be <em>avoided</em>: </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> min = my_vector | <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0641d6ecc741bd5f346a961e5e8ccf44">sort</a>() | <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612">first</a>(); <span class="comment">// just an example</span></div>
 </div><!-- fragment --><p><br />
  Instead, sorting the container in place beforehand will be more efficient as no copying takes place.<br />
  </p><div class="fragment"><div class="line"><a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0641d6ecc741bd5f346a961e5e8ccf44">std::sort</a>(my_vector.begin(), my_vector.end());</div>
@@ -190,8 +194,7 @@ Functions</h2></td></tr>
 <tr class="separator:a0641d6ecc741bd5f346a961e5e8ccf44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9a5f0773de4aac232e80ae23495e76e"><td class="memTemplParams" colspan="2">template&lt;typename Compare  = std::less&lt;void&gt;&gt; </td></tr>
 <tr class="memitem:ab9a5f0773de4aac232e80ae23495e76e"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ab9a5f0773de4aac232e80ae23495e76e">stable_sort</a> (Compare compare=Compare())</td></tr>
-<tr class="memdesc:ab9a5f0773de4aac232e80ae23495e76e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> preserving relative order of elements using the given comparator. By default, <code>operator&lt;</code> is used. Sorting is an eager operation. On the creation of the <code>sort</code> operation, the entire stream up to that point is evaluated and stored, then finally sorted before lazily continuing with the remainder of the stream. Thus, the <code>sort</code> operation takes <code>O(n)</code> extra space and time (excluding the sort), where <code>n</code> is the size of the stream. For most applications, it will be beneficial to sort the source of the stream beforehand if possible. For example, the following should be avoided:<br />
- </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> min = my_vector | <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#ab9a5f0773de4aac232e80ae23495e76e">stable_sort</a>() | <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612">first</a>(); <span class="comment">// just an example</span></div>
+<tr class="memdesc:ab9a5f0773de4aac232e80ae23495e76e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> preserving relative order of elements using the given comparator. By default, <code>operator&lt;</code> is used. Sorting is an eager operation. On the creation of the <code>sort</code> operation, the entire stream up to that point is evaluated and stored, then finally sorted before lazily continuing with the remainder of the stream. Thus, the <code>sort</code> operation takes <code>O(n)</code> extra space and time (excluding the sort), where <code>n</code> is the size of the stream. For most applications, it will be beneficial to sort the source of the stream beforehand if possible. For example, the following should be <em>avoided</em>: </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> min = my_vector | <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#ab9a5f0773de4aac232e80ae23495e76e">stable_sort</a>() | <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612">first</a>(); <span class="comment">// just an example</span></div>
 </div><!-- fragment --><p><br />
  Instead, sorting the container in place beforehand will be more efficient as no copying takes place.<br />
  </p><div class="fragment"><div class="line"><a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#ab9a5f0773de4aac232e80ae23495e76e">std::stable_sort</a>(my_vector.begin(), my_vector.end());</div>
@@ -200,18 +203,18 @@ Functions</h2></td></tr>
 <tr class="separator:ab9a5f0773de4aac232e80ae23495e76e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af694d1a9aa88f1dd8ff3d3e66d2cb6c9"><td class="memTemplParams" colspan="2">template&lt;typename UnaryPredicate &gt; </td></tr>
 <tr class="memitem:af694d1a9aa88f1dd8ff3d3e66d2cb6c9"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af694d1a9aa88f1dd8ff3d3e66d2cb6c9">take_while</a> (UnaryPredicate predicate)</td></tr>
-<tr class="memdesc:af694d1a9aa88f1dd8ff3d3e66d2cb6c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> until <em>predicate</em>  returns <code>false</code> for an element. Elements after and including the first <code>false</code> are discarded.  <a href="#af694d1a9aa88f1dd8ff3d3e66d2cb6c9">More...</a><br /></td></tr>
+<tr class="memdesc:af694d1a9aa88f1dd8ff3d3e66d2cb6c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> until <em>predicate</em>  returns <code>false</code> for an element. Elements after and including the first <code>false</code> are discarded.  <a href="#af694d1a9aa88f1dd8ff3d3e66d2cb6c9">More...</a><br /></td></tr>
 <tr class="separator:af694d1a9aa88f1dd8ff3d3e66d2cb6c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a213755b414a7d31af11bb96c129c6667"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a213755b414a7d31af11bb96c129c6667">take_while</a> ()</td></tr>
-<tr class="memdesc:a213755b414a7d31af11bb96c129c6667"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> until an element is <code>false</code>. Elements after and including the first <code>false</code> are discarded. This is an overload for streams with types convertible to <code>bool</code>.  <a href="#a213755b414a7d31af11bb96c129c6667">More...</a><br /></td></tr>
+<tr class="memdesc:a213755b414a7d31af11bb96c129c6667"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> until an element is <code>false</code>. Elements after and including the first <code>false</code> are discarded. This is an overload for streams with types convertible to <code>bool</code>.  <a href="#a213755b414a7d31af11bb96c129c6667">More...</a><br /></td></tr>
 <tr class="separator:a213755b414a7d31af11bb96c129c6667"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf3882ef78e687785e2c1402e4a62ea1"><td class="memTemplParams" colspan="2">template&lt;typename Ret , typename Class &gt; </td></tr>
 <tr class="memitem:adf3882ef78e687785e2c1402e4a62ea1"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#adf3882ef78e687785e2c1402e4a62ea1">take_while</a> (Ret(Class::*member)())</td></tr>
-<tr class="memdesc:adf3882ef78e687785e2c1402e4a62ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> until the <em>member</em>  returns <code>false</code>. Elements after and including the first <code>false</code> are discarded.  <a href="#adf3882ef78e687785e2c1402e4a62ea1">More...</a><br /></td></tr>
+<tr class="memdesc:adf3882ef78e687785e2c1402e4a62ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> until the <em>member</em>  returns <code>false</code>. Elements after and including the first <code>false</code> are discarded.  <a href="#adf3882ef78e687785e2c1402e4a62ea1">More...</a><br /></td></tr>
 <tr class="separator:adf3882ef78e687785e2c1402e4a62ea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a304866b3dec4eafe95a024319328ef2c"><td class="memTemplParams" colspan="2">template&lt;typename Compare  = std::less&lt;void&gt;&gt; </td></tr>
 <tr class="memitem:a304866b3dec4eafe95a024319328ef2c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a304866b3dec4eafe95a024319328ef2c">unique</a> (Compare compare=Compare())</td></tr>
-<tr class="memdesc:a304866b3dec4eafe95a024319328ef2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts and extracts only unique elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a>. By default, <code>operator&lt;</code> is used for comparisons and equality. As with sorting, this operation is eager, the entire stream up to this operation's creation is evaluated and stored. Thus, the <code>unique</code> operation takes <code>O(n)</code> extra space and time, where <code>n</code> is the size of the stream.  <a href="#a304866b3dec4eafe95a024319328ef2c">More...</a><br /></td></tr>
+<tr class="memdesc:a304866b3dec4eafe95a024319328ef2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts and extracts only unique elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. By default, <code>operator&lt;</code> is used for comparisons and equality. As with sorting, this operation is eager, the entire stream up to this operation's creation is evaluated and stored. Thus, the <code>unique</code> operation takes <code>O(n)</code> extra space and time plus the time to sort, where <code>n</code> is the size of the stream.  <a href="#a304866b3dec4eafe95a024319328ef2c">More...</a><br /></td></tr>
 <tr class="separator:a304866b3dec4eafe95a024319328ef2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f1ec0323daa06ef6b093f1d0aa4c1cc"><td class="memTemplParams" colspan="2">template&lt;typename RightSource &gt; </td></tr>
 <tr class="memitem:a7f1ec0323daa06ef6b093f1d0aa4c1cc"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a7f1ec0323daa06ef6b093f1d0aa4c1cc">zip</a> (<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; RightSource &gt; &amp;&amp;right)</td></tr>
@@ -254,14 +257,14 @@ template&lt;typename Tail &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Concatenates the given <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> onto the end of the operated stream. The <em>tail</em>  stream elements must be convertible to the same type of elements as the head stream. </p>
+<p>Concatenates the given <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> onto the end of the operated stream. The <em>tail</em>  stream elements must be convertible to the same type of elements as the head stream. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">tail</td><td>The tail stream to put after the end of the operated head stream.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that concatenates the two <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> objects.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that concatenates the two <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> objects.</dd></dl>
 
 </div>
 </div>
@@ -281,14 +284,15 @@ template&lt;typename Container &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Concatenates the given container onto the end of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a>. This is the same as <code>concat(from(container))</code>. The <em>tail</em>  stream elements must be convertible to the same type of elements as the head stream. </p>
+<p>Concatenates the given container onto the end of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. This is the same as <code>concat(from(container))</code>. The <em>tail</em>  stream elements must be convertible to the same type of elements as the head stream. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">container</td><td>The container to concatenate onto the end of the stream.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that concatenates the container onto the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that concatenates the container onto the stream.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>
@@ -308,14 +312,15 @@ template&lt;typename Container &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Concatenates the given container onto the end of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a>. This is the same as <code>concat(from(container))</code>. The <em>tail</em>  stream elements must be convertible to the same type of elements as the head stream. </p>
+<p>Concatenates the given container onto the end of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. This is the same as <code>concat(from(container))</code>. The <em>tail</em>  stream elements must be convertible to the same type of elements as the head stream. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">container</td><td>The container to concatenate onto the end of the stream.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that concatenates the container onto the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that concatenates the container onto the stream.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>
@@ -335,14 +340,14 @@ template&lt;typename UnaryPredicate &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Drops elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> until the <em>predicate</em>  returns <code>false</code> for a stream element. All elements before the first <code>false</code> are discarded, the rest are kept. </p>
+<p>Drops elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> until the <em>predicate</em>  returns <code>false</code> for a stream element. All elements before the first <code>false</code> are discarded, the rest are kept. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">predicate</td><td>The predicate used to drop stream elements.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that drops <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> elements while the <em>predicate</em>  is <code>true</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that drops stream elements while the <em>predicate</em>  is <code>true</code>.</dd></dl>
 
 </div>
 </div>
@@ -359,8 +364,8 @@ template&lt;typename UnaryPredicate &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Drops elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> until a stream element is <code>false</code>. All elements before the first <code>false</code> are discarded, the rest are kept. This is an overload for streams with types convertible to <code>bool</code>. </p>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that drops <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> elements while they are <code>true</code>.</dd></dl>
+<p>Drops elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> until a stream element is <code>false</code>. All elements before the first <code>false</code> are discarded, the rest are kept. This is an overload for streams with types convertible to <code>bool</code>. </p>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that drops stream elements while they are <code>true</code>.</dd></dl>
 
 </div>
 </div>
@@ -380,21 +385,21 @@ template&lt;typename Ret , typename Class &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Drops elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> until the <em>member</em>  returns <code>false</code>. All elements before the first <code>true</code> are discarded, the rest are kept. </p>
+<p>Drops elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> until the <em>member</em>  returns <code>false</code>. All elements before the first <code>true</code> are discarded, the rest are kept. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">member</td><td>The class member function used to drop elements, the return type must be convertible to <code>bool</code>.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that drops <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> elements while the <em>member</em>  is <code>true</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that drops stream elements while the <em>member</em>  is <code>true</code>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">member</td><td>The const class member function used to drop elements, the return type must be convertible to <code>bool</code>.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that drops <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> elements while the <em>member</em>  is <code>true</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that drops stream elements while the <em>member</em>  is <code>true</code>.</dd></dl>
 
 </div>
 </div>
@@ -414,14 +419,14 @@ template&lt;typename UnaryPredicate &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Removes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> that return <code>false</code> for <em>predicate</em> . </p>
+<p>Removes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> that return <code>false</code> for <em>predicate</em> . </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">predicate</td><td>The predicate used to filter stream elements.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that filters the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> elements.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that filters the stream elements.</dd></dl>
 
 </div>
 </div>
@@ -438,8 +443,8 @@ template&lt;typename UnaryPredicate &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Removes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> which are evaluated to <code>false</code>. This is an overload for streams with types convertible to <code>bool</code>. </p>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that filters the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> elements.</dd></dl>
+<p>Removes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> which are evaluated to <code>false</code>. This is an overload for streams with types convertible to <code>bool</code>. </p>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that filters the stream elements.</dd></dl>
 
 </div>
 </div>
@@ -459,21 +464,21 @@ template&lt;typename Ret , typename Class &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Removes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> that return <code>false</code> for <em>member</em> . </p>
+<p>Removes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> that return <code>false</code> for <em>member</em> . </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">member</td><td>The class member function to use for filtering, the return type must be convertible to <code>bool</code>.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that filters the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> elements.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that filters the stream elements.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">member</td><td>The const class member function to use for filtering, the return type must be convertible to <code>bool</code>.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that filters the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> elements.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that filters the stream elements.</dd></dl>
 
 </div>
 </div>
@@ -491,14 +496,14 @@ template&lt;typename Ret , typename Class &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Limits the length of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> to <em>length</em>  elements. If the stream is shorter, all elements are kept. </p>
+<p>Limits the length of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> to <em>length</em>  elements. If the stream is shorter, all elements are kept. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">length</td><td>The length to limit the stream at.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that limits the length of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that limits the length of the stream.</dd></dl>
 
 </div>
 </div>
@@ -518,14 +523,14 @@ template&lt;typename UnaryOperation &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Transforms each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> using the given unary operation, <em>mapper</em> . </p>
+<p>Transforms each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> using the given unary operation, <em>mapper</em> . </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mapper</td><td>The operation to apply to each element in the stream.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that maps the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> to new values.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that maps the stream to new values.</dd></dl>
 
 </div>
 </div>
@@ -545,21 +550,21 @@ template&lt;typename Ret , typename Class &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Transforms each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> to the return value of a member function of the stream elements. </p>
+<p>Transforms each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> to the return value of a member function of the stream elements. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">member</td><td>The class member function to use as the transformation.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that maps the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> to new values.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that maps the stream to new values.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">member</td><td>The const class member function to use as the transformation.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that maps the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> to new values.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that maps the stream to new values.</dd></dl>
 
 </div>
 </div>
@@ -579,14 +584,43 @@ template&lt;typename UnaryFunction &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Lazily executes <em>action</em>  for each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> as a <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation. This is an intermediate operation equivalent of <code>terminal::for_each</code>. </p>
+<p>Lazily executes <em>action</em>  for each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> as a <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation. This is an intermediate operation equivalent of <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a6b3d0ede6c9489aebb9ce1ed684c31a0" title="Executes a function for each element in the stream. The executed function is returned. ">each()</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">action</td><td>The function to apply to each element of the stream.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that executes a function for each <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> element.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that executes a function for each stream element.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a6b3d0ede6c9489aebb9ce1ed684c31a0" title="Executes a function for each element in the stream. The executed function is returned. ">each()</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af32b7bf1f105167d576b779b3b5f0297"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Ret , typename Class &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::intermediate::peek </td>
+          <td>(</td>
+          <td class="paramtype">Ret(Class::*)()&#160;</td>
+          <td class="paramname"><em>member</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lazily executes <em>member</em>  for each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> as a <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation. This is an intermediate operation equivalent of <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a6b3d0ede6c9489aebb9ce1ed684c31a0" title="Executes a function for each element in the stream. The executed function is returned. ">each()</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">member</td><td>The function to apply to each element of the stream.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that executes a function for each stream element.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a6b3d0ede6c9489aebb9ce1ed684c31a0" title="Executes a function for each element in the stream. The executed function is returned. ">each()</a></dd></dl>
 
 </div>
 </div>
@@ -616,7 +650,7 @@ template&lt;typename UnaryPredicate , typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Replaces elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> by <em>replace_by</em>  if the stream element returns <code>true</code> for <em>predicate</em> . </p>
+<p>Replaces elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> by <em>replace_by</em>  if the stream element returns <code>true</code> for <em>predicate</em> . </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">predicate</td><td>The predicate, stream elements that return <code>true</code> will be replaced by <em>replace_by</em> .</td></tr>
@@ -624,7 +658,7 @@ template&lt;typename UnaryPredicate , typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that replaces <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> elements.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that replaces stream elements.</dd></dl>
 
 </div>
 </div>
@@ -654,7 +688,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Replaces elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> by <em>new_value</em>  if they are equal to <em>old_value</em> . Equality is checked by using <code>operator==</code> on the elements. </p>
+<p>Replaces elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> by <em>new_value</em>  if they are equal to <em>old_value</em> . Equality is checked by using <code>operator==</code> on the elements. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">old_value</td><td>The value to replace in the stream by <em>new_value</em> .</td></tr>
@@ -662,7 +696,7 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that replaces <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> elements.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that replaces stream elements.</dd></dl>
 
 </div>
 </div>
@@ -692,7 +726,7 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Maps <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> elements to new values if the original value returns <code>true</code> for <em>predicate</em> . </p>
+<p>Maps <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> elements to new values if the original value returns <code>true</code> for <em>predicate</em> . </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">predicate</td><td>The predicate, stream elements that return <code>true</code> will be mapped through <em>mapper</em> .</td></tr>
@@ -700,7 +734,7 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that replaces <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> elements.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that replaces stream elements.</dd></dl>
 
 </div>
 </div>
@@ -717,9 +751,9 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Reverses the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a>. Reversing is an eager operation. On the creation of the <code>reverse</code> operation, the entire stream up to that point is evaluated and stored before continuing with the remainder of the stream. Thus, the <code>reverse</code> operation takes <code>O(n)</code> extra space and time, where <code>n</code> is the size of the stream. For most applications, it will be beneficial to reverse the stream beforehand by using reverse iterators, for example: </p><div class="fragment"><div class="line"><a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c">from</a>(container.rbegin(), container.rend()) | ...</div>
+<p>Reverses the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. Reversing is an eager operation. On the creation of the <code>reverse</code> operation, the entire stream up to that point is evaluated and stored before continuing with the remainder of the stream. Thus, the <code>reverse</code> operation takes <code>O(n)</code> extra space and time, where <code>n</code> is the size of the stream. For most applications, it will be beneficial to reverse the stream beforehand by using reverse iterators, for example: </p><div class="fragment"><div class="line"><a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c">from</a>(container.rbegin(), container.rend()) | ...</div>
 </div><!-- fragment --> </p>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that reverses the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that reverses the stream.</dd></dl>
 
 </div>
 </div>
@@ -747,7 +781,7 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Skips the first elements of a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a>. Keeps only the elements with index <code>&gt;=</code> <em>begin</em>  in the stream. This operation will skip every <em>step_size</em>  elements after the initial jump to <em>begin</em>  For example a <em>step_size</em>  of 2 will keep only every other element, eg <code>begin, begin+2, begin+4</code> etc. </p>
+<p>Skips the first elements of a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. Keeps only the elements with index <code>&gt;=</code> <em>begin</em>  in the stream. This operation will skip every <em>step_size</em>  elements after the initial jump to <em>begin</em>  For example a <em>step_size</em>  of 2 will keep only every other element, eg <code>begin, begin+2, begin+4</code> etc. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">begin</td><td>The begin index to skip to. The begin index element is kept.</td></tr>
@@ -755,7 +789,7 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that slices the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> from <em>begin</em>  to the end skipping every <em>step_size</em>  elements.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that slices the stream from <em>begin</em>  to the end skipping every <em>step_size</em>  elements.</dd></dl>
 
 </div>
 </div>
@@ -773,14 +807,14 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Skips the first elements of a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a>. Keeps only the elements with index <code>&gt;=</code> <em>begin</em>  in the stream. </p>
+<p>Skips the first elements of a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. Keeps only the elements with index <code>&gt;=</code> <em>begin</em>  in the stream. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">begin</td><td>The begin index to skip to. The begin index element is kept.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that slices the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> from <em>begin</em>  to the end.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that slices the stream from <em>begin</em>  to the end.</dd></dl>
 
 </div>
 </div>
@@ -798,14 +832,14 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Skips every <em>step_size</em>  elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a>. For example, a <em>step_size</em>  of 2 will only keep stream elements with index 0, 2, 4 etc. </p>
+<p>Skips every <em>step_size</em>  elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>, keeping the first element. For example, a <em>step_size</em>  of 2 will only keep stream elements with index 0, 2, 4 etc. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">step_size</td><td>The step size.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that skips every <em>step_size</em>  elements.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that skips every <em>step_size</em>  elements.</dd></dl>
 
 </div>
 </div>
@@ -839,7 +873,7 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Slices the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a>. Keeps only elements with index in the range <code>[begin..end)</code> in the stream, excluding the <em>end</em>  index. If <em>end</em>  is out of bounds of the stream, the entire stream from <em>begin</em>  is kept. The operation will skip every <code>step_size</code> elements, for example a <em>step_size</em>  of 2 will keep only every other element in the range, eg <code>begin, begin+2, begin+4</code> etc. </p>
+<p>Slices the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. Keeps only elements with index in the range <code>[begin..end)</code> in the stream, excluding the <em>end</em>  index. If <em>end</em>  is out of bounds of the stream, the entire stream from <em>begin</em>  is kept. The operation will skip every <code>step_size</code> elements, for example a <em>step_size</em>  of 2 will keep only every other element in the range, eg <code>begin, begin+2, begin+4</code> etc. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">begin</td><td>The begin index to slice the stream at. The begin index element is kept.</td></tr>
@@ -848,7 +882,7 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that slices the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> to the given range.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that slices the stream to the given range.</dd></dl>
 
 </div>
 </div>
@@ -876,7 +910,7 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Slices the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a>. Keeps only elements with index in the range <code>[begin..end)</code> in the stream, excluding the <em>end</em>  index. If <code>end</code> is out of bounds of the stream, the entire stream from <em>begin</em>  is kept. </p>
+<p>Slices the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. Keeps only elements with index in the range <code>[begin..end)</code> in the stream, excluding the <em>end</em>  index. If <code>end</code> is out of bounds of the stream, the entire stream from <em>begin</em>  is kept. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">begin</td><td>The begin index to slice the stream at. The begin index element is kept.</td></tr>
@@ -884,7 +918,7 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that slices the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> to the given range.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that slices the stream to the given range.</dd></dl>
 
 </div>
 </div>
@@ -904,7 +938,7 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Sorts the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> using the given comparator. By default, <code>operator&lt;</code> is used. Sorting is an eager operation. On the creation of the <code>sort</code> operation, the entire stream up to that point is evaluated and stored, then finally sorted before lazily continuing with the remainder of the stream. Thus, the <code>sort</code> operation takes <code>O(n)</code> extra space and time (excluding the sort), where <code>n</code> is the size of the stream. For most applications, it will be beneficial to sort the source of the stream beforehand if possible. For example, the following should be avoided: </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> min = my_vector | <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0641d6ecc741bd5f346a961e5e8ccf44">sort</a>() | <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612">first</a>(); <span class="comment">// just an example</span></div>
+<p>Sorts the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> using the given comparator. By default, <code>operator&lt;</code> is used. Sorting is an eager operation. On the creation of the <code>sort</code> operation, the entire stream up to that point is evaluated and stored, then finally sorted before lazily continuing with the remainder of the stream. Thus, the <code>sort</code> operation takes <code>O(n)</code> extra space and time (excluding the sort), where <code>n</code> is the size of the stream. For most applications, it will be beneficial to sort the source of the stream beforehand if possible. For example, the following should be <em>avoided</em>: </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> min = my_vector | <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0641d6ecc741bd5f346a961e5e8ccf44">sort</a>() | <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612">first</a>(); <span class="comment">// just an example</span></div>
 </div><!-- fragment --><p><br />
  Instead, sorting the container in place beforehand will be more efficient as no copying takes place.<br />
  </p><div class="fragment"><div class="line"><a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0641d6ecc741bd5f346a961e5e8ccf44">std::sort</a>(my_vector.begin(), my_vector.end());</div>
@@ -916,7 +950,7 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that sorts the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> according to the compare function.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that sorts the stream according to the compare function.</dd></dl>
 
 </div>
 </div>
@@ -936,8 +970,7 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Sorts the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> preserving relative order of elements using the given comparator. By default, <code>operator&lt;</code> is used. Sorting is an eager operation. On the creation of the <code>sort</code> operation, the entire stream up to that point is evaluated and stored, then finally sorted before lazily continuing with the remainder of the stream. Thus, the <code>sort</code> operation takes <code>O(n)</code> extra space and time (excluding the sort), where <code>n</code> is the size of the stream. For most applications, it will be beneficial to sort the source of the stream beforehand if possible. For example, the following should be avoided:<br />
- </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> min = my_vector | <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#ab9a5f0773de4aac232e80ae23495e76e">stable_sort</a>() | <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612">first</a>(); <span class="comment">// just an example</span></div>
+<p>Sorts the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> preserving relative order of elements using the given comparator. By default, <code>operator&lt;</code> is used. Sorting is an eager operation. On the creation of the <code>sort</code> operation, the entire stream up to that point is evaluated and stored, then finally sorted before lazily continuing with the remainder of the stream. Thus, the <code>sort</code> operation takes <code>O(n)</code> extra space and time (excluding the sort), where <code>n</code> is the size of the stream. For most applications, it will be beneficial to sort the source of the stream beforehand if possible. For example, the following should be <em>avoided</em>: </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> min = my_vector | <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#ab9a5f0773de4aac232e80ae23495e76e">stable_sort</a>() | <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612">first</a>(); <span class="comment">// just an example</span></div>
 </div><!-- fragment --><p><br />
  Instead, sorting the container in place beforehand will be more efficient as no copying takes place.<br />
  </p><div class="fragment"><div class="line"><a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#ab9a5f0773de4aac232e80ae23495e76e">std::stable_sort</a>(my_vector.begin(), my_vector.end());</div>
@@ -949,7 +982,7 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that stable sorts the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> according to the compare function.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that stable sorts the stream according to the compare function.</dd></dl>
 
 </div>
 </div>
@@ -969,14 +1002,14 @@ template&lt;typename UnaryPredicate &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Takes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> until <em>predicate</em>  returns <code>false</code> for an element. Elements after and including the first <code>false</code> are discarded. </p>
+<p>Takes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> until <em>predicate</em>  returns <code>false</code> for an element. Elements after and including the first <code>false</code> are discarded. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">predicate</td><td>The predicate used to take stream elements.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that takes <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> elements while <em>predicate</em>  returns <code>true</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that takes stream elements while <em>predicate</em>  returns <code>true</code>.</dd></dl>
 
 </div>
 </div>
@@ -993,8 +1026,8 @@ template&lt;typename UnaryPredicate &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Takes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> until an element is <code>false</code>. Elements after and including the first <code>false</code> are discarded. This is an overload for streams with types convertible to <code>bool</code>. </p>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that takes <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> elements while they are <code>true</code>.</dd></dl>
+<p>Takes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> until an element is <code>false</code>. Elements after and including the first <code>false</code> are discarded. This is an overload for streams with types convertible to <code>bool</code>. </p>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that takes stream elements while they are <code>true</code>.</dd></dl>
 
 </div>
 </div>
@@ -1014,21 +1047,21 @@ template&lt;typename Ret , typename Class &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Takes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> until the <em>member</em>  returns <code>false</code>. Elements after and including the first <code>false</code> are discarded. </p>
+<p>Takes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> until the <em>member</em>  returns <code>false</code>. Elements after and including the first <code>false</code> are discarded. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">member</td><td>The class member function used to take elements, the return type must be convertible to <code>bool</code>.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that takes stream elements while the <em>member</em>  is <code>true</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that takes stream elements while the <em>member</em>  is <code>true</code>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">member</td><td>The const class member function used to take elements, the return type must be convertible to <code>bool</code>.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that takes stream elements while the <em>member</em>  is <code>true</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that takes stream elements while the <em>member</em>  is <code>true</code>.</dd></dl>
 
 </div>
 </div>
@@ -1048,14 +1081,14 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Sorts and extracts only unique elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a>. By default, <code>operator&lt;</code> is used for comparisons and equality. As with sorting, this operation is eager, the entire stream up to this operation's creation is evaluated and stored. Thus, the <code>unique</code> operation takes <code>O(n)</code> extra space and time, where <code>n</code> is the size of the stream. </p>
+<p>Sorts and extracts only unique elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. By default, <code>operator&lt;</code> is used for comparisons and equality. As with sorting, this operation is eager, the entire stream up to this operation's creation is evaluated and stored. Thus, the <code>unique</code> operation takes <code>O(n)</code> extra space and time plus the time to sort, where <code>n</code> is the size of the stream. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">compare</td><td>The compare function, by default <code>std::less&lt;void&gt;</code>.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that sorts the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> according to the compare function and keeps only unique elements.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that sorts the stream according to the compare function and keeps only unique elements.</dd></dl>
 
 </div>
 </div>
@@ -1083,7 +1116,8 @@ template&lt;typename RightSource &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that zips the two streams.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that zips the two streams.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d9/de2/namespaceflow.html#ad795c672b7e52516485e7ffb2d6c4ad7" title="Uncurries the specified function. Given a function which takes several parameters, converts that function into a function which takes one std::tuple of those arguments instead. This is useful when zipping streams together as it allows you to write a function which takes normal arguments instead of a tuple. For example, this allows the syntax: intlist | zip(more_ints) | map(uncurry([](int l, int r){ i and j things })) | ... as opposed to using std::tuple<int,int> and std::get<i>. ">uncurry()</a></dd></dl>
 
 </div>
 </div>
@@ -1110,7 +1144,8 @@ template&lt;typename Container &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that zips the two streams.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that zips the two streams.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c" title="Creates a Stream from the given iterator range. ">from()</a>, <a class="el" href="../../d9/de2/namespaceflow.html#ad795c672b7e52516485e7ffb2d6c4ad7" title="Uncurries the specified function. Given a function which takes several parameters, converts that function into a function which takes one std::tuple of those arguments instead. This is useful when zipping streams together as it allows you to write a function which takes normal arguments instead of a tuple. For example, this allows the syntax: intlist | zip(more_ints) | map(uncurry([](int l, int r){ i and j things })) | ... as opposed to using std::tuple<int,int> and std::get<i>. ">uncurry()</a></dd></dl>
 
 </div>
 </div>
@@ -1137,7 +1172,8 @@ template&lt;typename Container &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that zips the two streams.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that zips the two streams.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c" title="Creates a Stream from the given iterator range. ">from()</a>, <a class="el" href="../../d9/de2/namespaceflow.html#ad795c672b7e52516485e7ffb2d6c4ad7" title="Uncurries the specified function. Given a function which takes several parameters, converts that function into a function which takes one std::tuple of those arguments instead. This is useful when zipping streams together as it allows you to write a function which takes normal arguments instead of a tuple. For example, this allows the syntax: intlist | zip(more_ints) | map(uncurry([](int l, int r){ i and j things })) | ... as opposed to using std::tuple<int,int> and std::get<i>. ">uncurry()</a></dd></dl>
 
 </div>
 </div>
@@ -1175,7 +1211,7 @@ template&lt;typename RightSource , typename BinaryOperation &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that zips the two streams.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that zips the two streams.</dd></dl>
 
 </div>
 </div>
@@ -1213,7 +1249,7 @@ template&lt;typename Container , typename BinaryOperation &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that zips the two streams.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that zips the two streams.</dd></dl>
 
 </div>
 </div>
@@ -1251,14 +1287,14 @@ template&lt;typename Container , typename BinaryOperation &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="A detail::Intermediate stream operation. Takes over the stream and applies some transformation to the...">detail::Intermediate</a> operation that zips the two streams.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that zips the two streams.</dd></dl>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 11 2015 17:59:54 for Flow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 13 2015 14:59:33 for Flow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

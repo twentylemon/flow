@@ -53,15 +53,24 @@
 
     generator
         - repeat - repeat a value or a container forever or some number of times
-        - iota - count up from a start value using operator++
         - random - generate values from an rng
 */
 
 namespace flow {
 
 /// <summary>
-/// The stream class. Provides lazy evaluation and functional style transformations on data.
-/// Streams support pipelining of multiple operations. More commenting later.
+/// <para>The stream class. Provides lazy evaluation and functional style transformations on data.
+/// Streams support pipelining of multiple operations. Streams can be transformed using <c>operator|</c>
+/// to create a new stream given a detail::Intermediate operation (anything from the flow::intermediate namespace)
+/// or can return a value given a detail::Terminal operation (anything from the flow::terminal namespace).</para>
+/// <para>While streams can be constructed, it is recommended that any stream created is done through the functions
+/// in the flow::generator namespace, as all the stream operations are embedded in the potentially long template type.
+/// This means you can't do operations like:</para>
+/// <code>auto stream = Stream(...);<br/>
+/// stream = stream | filter(); // not possible; types are not compatible</code>
+/// <para>Instead, if you want a Stream object, write out the entire stream right away.</para>
+/// <code>auto stream = Stream(...) | filter();<br/>
+/// auto min = stream | min();</code>
 /// </summary>
 template <typename Source>
 class Stream
@@ -94,9 +103,9 @@ public:
     }
 
     /// <summary>
-    /// Returns the next item from the stream.
+    /// Returns the next element from the stream.
     /// </summary>
-    /// <returns>The next item in the stream.</returns>
+    /// <returns>The next element in the stream.</returns>
     value_type next() {
         return std::move(_source.next());
     }

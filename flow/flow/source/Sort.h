@@ -76,7 +76,7 @@ public:
         parent_type::_end = _stream.end();
     }
 
-protected:
+private:
     Source _source;                     // the source to read from
     std::vector<value_type> _stream;    // the sorted stream
 };

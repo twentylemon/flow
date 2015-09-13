@@ -34,15 +34,15 @@ namespace flow {
     namespace terminal {
 
 /// <summary>
-/// Returns <c>true</c> if an element in the stream compares equal to <c>val</c> by the predicate given.
-/// By default, <c>operator==</c> is used for comparisons.
+/// Returns <c>true</c> if an element in the stream compares equal to <c>val</c> by <paramref name="equals"/>.
+/// By default, <c>operator==</c> is used for equality comparisons.
 /// </summary>
 /// <param name="val">The value to search for in the stream.</param>
 /// <param name="equals">The equals predicate, by default <c>operator==</c> is used.</param>
-/// <returns>The <see cref="Terminal{F}" /> operation which returns <c>true</c> if the stream contains <c>val</c>.</returns>
+/// <returns>The detail::Terminal operation which returns <c>true</c> if the stream contains <c>val</c>.</returns>
 template <typename T, typename EqualPredicate = std::equal_to<T>>
 auto contains(const T& val, EqualPredicate equals = EqualPredicate()) {
-    return any(std::bind1st(equals, val));
+    return any(std::bind(equals, val, std::placeholders::_1));
 }
     }
 }

@@ -61,9 +61,9 @@ public:
     }
 
     /// <summary>
-    /// Returns the next item from the stream.
+    /// Returns the next element from the stream.
     /// </summary>
-    /// <returns>The next item in the stream.</returns>
+    /// <returns>The next element in the stream.</returns>
     value_type next() {
         value_type current = _values[0];
         _values[0] = _function(_values);    // destroy the first value
@@ -87,7 +87,7 @@ public:
         return std::numeric_limits<std::size_t>::max();
     }
 
-protected:
+private:
     flow::detail::uncurrier<IteratingFunction> _function;   // the function to iterator
     std::array<T, N> _values;                               // the current values to pass to the function
 };

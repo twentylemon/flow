@@ -40,7 +40,7 @@ namespace flow {
 /// Elements after and including the first <c>false</c> are discarded.
 /// </summary>
 /// <param name="predicate">The predicate used to take stream elements.</param>
-/// <returns>A detail::Intermediate operation that takes Stream elements while <paramref name="predicate"/> returns <c>true</c>.</returns>
+/// <returns>A detail::Intermediate operation that takes stream elements while <paramref name="predicate"/> returns <c>true</c>.</returns>
 template <typename UnaryPredicate>
 auto take_while(UnaryPredicate predicate) {
     return detail::make_intermediate([predicate](auto&& stream) {
@@ -52,7 +52,7 @@ auto take_while(UnaryPredicate predicate) {
 /// Takes elements from the Stream until an element is <c>false</c>. Elements after and including
 /// the first <c>false</c> are discarded. This is an overload for streams with types convertible to <c>bool</c>.
 /// </summary>
-/// <returns>A detail::Intermediate operation that takes Stream elements while they are <c>true</c>.</returns>
+/// <returns>A detail::Intermediate operation that takes stream elements while they are <c>true</c>.</returns>
 auto take_while() {
     return take_while([](const auto& ele) { return static_cast<bool>(ele); });
 }

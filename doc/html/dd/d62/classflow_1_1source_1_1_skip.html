@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> source that skips elements in a stream. That is, the first elements are removed from the stream, after which only every nth element is kept.  
+<p><a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> source that skips elements in a stream. That is, the first elements are removed from the stream, after which only every nth element is kept.  
  <a href="../../dd/d62/classflow_1_1source_1_1_skip.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d1/df2/source_2skip_8h_source.html">Skip.h</a>&gt;</code></p>
@@ -124,13 +124,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:acf3bc87660651d54a3a08afb0efe4c10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if this source has more elements.  <a href="#acf3bc87660651d54a3a08afb0efe4c10">More...</a><br /></td></tr>
 <tr class="separator:acf3bc87660651d54a3a08afb0efe4c10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d22020ceca3cfa5ac068eb99fa75c3a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d62/classflow_1_1source_1_1_skip.html#aa2d1ae13bb62e2c6eab1cf18e0c52346">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d62/classflow_1_1source_1_1_skip.html#a7d22020ceca3cfa5ac068eb99fa75c3a">next</a> ()</td></tr>
-<tr class="memdesc:a7d22020ceca3cfa5ac068eb99fa75c3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next item from the stream.  <a href="#a7d22020ceca3cfa5ac068eb99fa75c3a">More...</a><br /></td></tr>
+<tr class="memdesc:a7d22020ceca3cfa5ac068eb99fa75c3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next element from the stream.  <a href="#a7d22020ceca3cfa5ac068eb99fa75c3a">More...</a><br /></td></tr>
 <tr class="separator:a7d22020ceca3cfa5ac068eb99fa75c3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0ae98d94613b540d46632b4702a581b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d62/classflow_1_1source_1_1_skip.html#ab0ae98d94613b540d46632b4702a581b">lazy_next</a> ()</td></tr>
 <tr class="memdesc:ab0ae98d94613b540d46632b4702a581b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ignores the next value from the stream.  <a href="#ab0ae98d94613b540d46632b4702a581b">More...</a><br /></td></tr>
 <tr class="separator:ab0ae98d94613b540d46632b4702a581b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae960d2b5886b5e43826ed598ba0883c4"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d62/classflow_1_1source_1_1_skip.html#ae960d2b5886b5e43826ed598ba0883c4">estimate_size</a> ()</td></tr>
-<tr class="memdesc:ae960d2b5886b5e43826ed598ba0883c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the estimated size of the remainder of the stream. If this does not go to the end of the stream, this value is exact. Otherwise, the estimate depends on the source estimate.  <a href="#ae960d2b5886b5e43826ed598ba0883c4">More...</a><br /></td></tr>
+<tr class="memdesc:ae960d2b5886b5e43826ed598ba0883c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the estimated size of the remainder of the stream. This is an exact value.  <a href="#ae960d2b5886b5e43826ed598ba0883c4">More...</a><br /></td></tr>
 <tr class="separator:ae960d2b5886b5e43826ed598ba0883c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b04c02bebb4c68bc37fe4df59b7baca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d62/classflow_1_1source_1_1_skip.html#a2b04c02bebb4c68bc37fe4df59b7baca">step_to</a> (std::size_t begin)</td></tr>
 <tr class="memdesc:a2b04c02bebb4c68bc37fe4df59b7baca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Steps the source stream to the index given.  <a href="#a2b04c02bebb4c68bc37fe4df59b7baca">More...</a><br /></td></tr>
@@ -138,22 +138,18 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a6db42b2abec8b86e2a7a76fbd2f654c0"><td class="memItemLeft" align="right" valign="top">Source&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d62/classflow_1_1source_1_1_skip.html#a6db42b2abec8b86e2a7a76fbd2f654c0">_source</a></td></tr>
-<tr class="separator:a6db42b2abec8b86e2a7a76fbd2f654c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94ac489da62aeabee293c9795eb8bf9a"><td class="memItemLeft" align="right" valign="top">const std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d62/classflow_1_1source_1_1_skip.html#a94ac489da62aeabee293c9795eb8bf9a">_begin</a></td></tr>
-<tr class="separator:a94ac489da62aeabee293c9795eb8bf9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af00b097d1e2dacfdec86b4c6250014d2"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d62/classflow_1_1source_1_1_skip.html#af00b097d1e2dacfdec86b4c6250014d2">_current</a></td></tr>
+<tr class="memdesc:af00b097d1e2dacfdec86b4c6250014d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current selected index in the stream.  <a href="#af00b097d1e2dacfdec86b4c6250014d2">More...</a><br /></td></tr>
 <tr class="separator:af00b097d1e2dacfdec86b4c6250014d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4ba690fad4c806fd03de36c685d0885"><td class="memItemLeft" align="right" valign="top">const std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d62/classflow_1_1source_1_1_skip.html#ad4ba690fad4c806fd03de36c685d0885">_step_size</a></td></tr>
+<tr class="memdesc:ad4ba690fad4c806fd03de36c685d0885"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of elements to skip between giving stream elements.  <a href="#ad4ba690fad4c806fd03de36c685d0885">More...</a><br /></td></tr>
 <tr class="separator:ad4ba690fad4c806fd03de36c685d0885"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad010ff4f892de529e75247f080d70169"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d62/classflow_1_1source_1_1_skip.html#ad010ff4f892de529e75247f080d70169">_initial</a></td></tr>
-<tr class="separator:ad010ff4f892de529e75247f080d70169"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename Source&gt;<br />
 class flow::source::Skip&lt; Source &gt;</h3>
 
-<p><a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> source that skips elements in a stream. That is, the first elements are removed from the stream, after which only every nth element is kept. </p>
+<p><a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> source that skips elements in a stream. That is, the first elements are removed from the stream, after which only every nth element is kept. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a class="anchor" id="aa2d1ae13bb62e2c6eab1cf18e0c52346"></a>
 <div class="memitem">
@@ -213,9 +209,9 @@ template&lt;typename Source&gt; </div>
 <p>Initializes a new instance of the Skip{Source} class. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">source</td><td>The source to slice.</td></tr>
-    <tr><td class="paramname">begin</td><td>The begin index to slice from.</td></tr>
-    <tr><td class="paramname">step_size</td><td>The step value, eg 2 will give every 2nd element in the range.</td></tr>
+    <tr><td class="paramname">source</td><td>The source to skip elements of.</td></tr>
+    <tr><td class="paramname">begin</td><td>The index to skip to.</td></tr>
+    <tr><td class="paramname">step_size</td><td>The step value, eg 2 will give every 2nd element after <em>begin</em> .</td></tr>
   </table>
   </dd>
 </dl>
@@ -246,7 +242,7 @@ template&lt;typename Source&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the estimated size of the remainder of the stream. If this does not go to the end of the stream, this value is exact. Otherwise, the estimate depends on the source estimate. </p>
+<p>Returns the estimated size of the remainder of the stream. This is an exact value. </p>
 <dl class="section return"><dt>Returns</dt><dd>The estimated size of the remainder of the stream.</dd></dl>
 
 </div>
@@ -329,8 +325,8 @@ template&lt;typename Source&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the next item from the stream. </p>
-<dl class="section return"><dt>Returns</dt><dd>The next item in the stream.</dd></dl>
+<p>Returns the next element from the stream. </p>
+<dl class="section return"><dt>Returns</dt><dd>The next element in the stream.</dd></dl>
 
 </div>
 </div>
@@ -369,28 +365,6 @@ template&lt;typename Source&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a94ac489da62aeabee293c9795eb8bf9a"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Source&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::size_t <a class="el" href="../../dd/d62/classflow_1_1source_1_1_skip.html">flow::source::Skip</a>&lt; Source &gt;::_begin</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="af00b097d1e2dacfdec86b4c6250014d2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -411,49 +385,7 @@ template&lt;typename Source&gt; </div>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a class="anchor" id="ad010ff4f892de529e75247f080d70169"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Source&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="../../dd/d62/classflow_1_1source_1_1_skip.html">flow::source::Skip</a>&lt; Source &gt;::_initial</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a6db42b2abec8b86e2a7a76fbd2f654c0"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Source&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Source <a class="el" href="../../dd/d62/classflow_1_1source_1_1_skip.html">flow::source::Skip</a>&lt; Source &gt;::_source</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>The current selected index in the stream. </p>
 
 </div>
 </div>
@@ -477,6 +409,8 @@ template&lt;typename Source&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>The number of elements to skip between giving stream elements. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
@@ -485,7 +419,7 @@ template&lt;typename Source&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 11 2015 17:59:55 for Flow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 13 2015 14:59:34 for Flow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

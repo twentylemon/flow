@@ -42,7 +42,7 @@ public:
     /// <summary>
     /// Initializes a new instance of the <see cref="Concat{Head, Tail}"/> class.
     /// </summary>
-    /// <param name="head">The head stream source to read from.</param>
+    /// <param name="head">The head stream source to start with.</param>
     /// <param name="tail">The stream source to concatenate onto the end of the head source.</param>
     Concat(Head&& head, Tail&& tail) : _head(std::forward<Head>(head)), _tail(std::forward<Tail>(tail)), _from_head(true) { }
 
@@ -59,9 +59,9 @@ public:
     }
 
     /// <summary>
-    /// Returns the next item from the stream.
+    /// Returns the next element from the stream.
     /// </summary>
-    /// <returns>The next item in the stream.</returns>
+    /// <returns>The next element in the stream.</returns>
     value_type next() {
         if (_from_head) {
             return std::move(_head.next());
@@ -90,7 +90,7 @@ public:
         return _head.estimate_size() + _tail.estimate_size();
     }
 
-protected:
+private:
     Head _head;         // the head source to pull values from
     Tail _tail;         // the second source to pull values from after the head is empty
     bool _from_head;    // true if we are still pulling from the head

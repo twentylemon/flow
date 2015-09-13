@@ -52,7 +52,8 @@ auto concat(Stream<Tail>&& tail) {
 /// The <paramref name="tail"/> stream elements must be convertible to the same type of elements as the head stream.
 /// </summary>
 /// <param name="container">The container to concatenate onto the end of the stream.</param>
-/// <returns>A detail::Intermediate operation that concatenates the container onto the Stream.</returns>
+/// <returns>A detail::Intermediate operation that concatenates the container onto the stream.</returns>
+/// <seealso cref="from()"/>
 template <typename Container>
 auto concat(Container& container) {
     return concat(from(container));
@@ -63,7 +64,8 @@ auto concat(Container& container) {
 /// The <paramref name="tail"/> stream elements must be convertible to the same type of elements as the head stream.
 /// </summary>
 /// <param name="container">The container to concatenate onto the end of the stream.</param>
-/// <returns>A detail::Intermediate operation that concatenates the container onto the Stream.</returns>
+/// <returns>A detail::Intermediate operation that concatenates the container onto the stream.</returns>
+/// <seealso cref="from()"/>
 template <typename Container>
 auto concat(const Container& container) {
     return concat(from(container));

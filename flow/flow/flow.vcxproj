@@ -118,14 +118,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\flow.h" />
     <ClInclude Include="Compose.h" />
     <ClInclude Include="generator\empty.h" />
     <ClInclude Include="generator\generate.h" />
+    <ClInclude Include="generator\iota.h" />
     <ClInclude Include="generator\iterate.h" />
+    <ClInclude Include="mainpage.h" />
     <ClInclude Include="source\Generate.h" />
     <ClInclude Include="source\IterateFunc.h" />
     <ClInclude Include="uncurry.h" />
-    <ClInclude Include="flow.h" />
     <ClInclude Include="generator\from.h" />
     <ClInclude Include="intermediate\concat.h" />
     <ClInclude Include="intermediate\drop_while.h" />

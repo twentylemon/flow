@@ -115,7 +115,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0430d4efcca042eb1b6a03a9fc66e53b">   71</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#addc196ea292bffcb221859fc40c11806">replace</a>(<span class="keyword">const</span> T&amp; old_value, <span class="keyword">const</span> T&amp; new_value) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#addc196ea292bffcb221859fc40c11806">replace</a>(std::bind1st(std::equal_to&lt;T&gt;(), old_value), new_value);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#addc196ea292bffcb221859fc40c11806">replace</a>(std::bind(std::equal_to&lt;T&gt;(), old_value), new_value);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
@@ -128,7 +128,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 11 2015 17:59:53 for Flow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 13 2015 14:59:31 for Flow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

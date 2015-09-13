@@ -35,15 +35,40 @@ namespace flow {
 
 /// <summary>
 /// Lazily executes <paramref name="action"/> for each element in the Stream as a detail::Intermediate operation.
-/// This is an intermediate operation equivalent of <c>terminal::for_each</c>.
+/// This is an intermediate operation equivalent of each().
 /// </summary>
 /// <param name="action">The function to apply to each element of the stream.</param>
-/// <returns>A detail::Intermediate operation that executes a function for each Stream element.</returns>
+/// <returns>A detail::Intermediate operation that executes a function for each stream element.</returns>
+/// <seealso cref="each()"/>
 template <typename UnaryFunction>
 auto peek(UnaryFunction action) {
     return detail::make_intermediate([action](auto&& stream) {
         return Stream<source::Peek<typename std::remove_reference_t<decltype(stream)>::source_type, UnaryFunction>>(std::move(stream.source()), action);
     });
+}
+
+/// <summary>
+/// Lazily executes <paramref name="member"/> for each element in the Stream as a detail::Intermediate operation.
+/// This is an intermediate operation equivalent of each().
+/// </summary>
+/// <param name="member">The function to apply to each element of the stream.</param>
+/// <returns>A detail::Intermediate operation that executes a function for each stream element.</returns>
+/// <seealso cref="each()"/>
+template <typename Ret, typename Class>
+auto peek(Ret(Class::*member)()) {
+    return peek(std::mem_fn(member));
+}
+
+/// <summary>
+/// Lazily executes <paramref name="member"/> for each element in the Stream as a detail::Intermediate operation.
+/// This is an intermediate operation equivalent of each().
+/// </summary>
+/// <param name="member">The function to apply to each element of the stream.</param>
+/// <returns>A detail::Intermediate operation that executes a function for each stream element.</returns>
+/// <seealso cref="each()"/>
+template <typename Ret, typename Class>
+auto peek(Ret(Class::*member)() const) {
+    return peek(std::mem_fn(member));
 }
     }
 }

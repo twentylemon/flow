@@ -105,26 +105,26 @@ Namespaces</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:ad76999f9b4b01425b09c070cc7154ec8"><td class="memTemplParams" colspan="2">template&lt;typename Accumulator , typename T &gt; </td></tr>
 <tr class="memitem:ad76999f9b4b01425b09c070cc7154ec8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ad76999f9b4b01425b09c070cc7154ec8">flow::terminal::fold</a> (Accumulator accumulator, T &amp;&amp;init)</td></tr>
-<tr class="memdesc:ad76999f9b4b01425b09c070cc7154ec8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Folds the stream using the given accumulator. Applying this operation is the same as doing: </p><div class="fragment"><div class="line"><span class="keywordflow">for</span> (T e : stream) { init = accumulator(init, e); }</div>
+<tr class="memdesc:ad76999f9b4b01425b09c070cc7154ec8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Folds the stream using the <em>accumulator</em> . Applying this operation is the same as doing: </p><div class="fragment"><div class="line"><span class="keywordflow">for</span> (T e : stream) { init = accumulator(init, e); }</div>
 </div><!-- fragment -->  <a href="#ad76999f9b4b01425b09c070cc7154ec8">More...</a><br /></td></tr>
 <tr class="separator:ad76999f9b4b01425b09c070cc7154ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabf7db53b2573f8f651420cc508170f8"><td class="memTemplParams" colspan="2">template&lt;typename Accumulator &gt; </td></tr>
 <tr class="memitem:aabf7db53b2573f8f651420cc508170f8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aabf7db53b2573f8f651420cc508170f8">flow::terminal::fold</a> (Accumulator accumulator)</td></tr>
-<tr class="memdesc:aabf7db53b2573f8f651420cc508170f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Folds the stream using the given accumulator. The first element of the stream is used for the inital folding value.  <a href="#aabf7db53b2573f8f651420cc508170f8">More...</a><br /></td></tr>
+<tr class="memdesc:aabf7db53b2573f8f651420cc508170f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Folds the stream using <em>accumulator</em> . The first element of the stream is used for the initial folding value.  <a href="#aabf7db53b2573f8f651420cc508170f8">More...</a><br /></td></tr>
 <tr class="separator:aabf7db53b2573f8f651420cc508170f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a439e3f4a1be79bae0105092613415773"><td class="memTemplParams" colspan="2">template&lt;typename Accumulator , typename UnaryFunction &gt; </td></tr>
 <tr class="memitem:a439e3f4a1be79bae0105092613415773"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a439e3f4a1be79bae0105092613415773">flow::terminal::fold_id</a> (Accumulator accumulator, UnaryFunction initializer)</td></tr>
-<tr class="memdesc:a439e3f4a1be79bae0105092613415773"><td class="mdescLeft">&#160;</td><td class="mdescRight">Folds the stream using the given accumulator. The result of <code>initializer</code> applied to the first element of the stream is used for the inital folding value.  <a href="#a439e3f4a1be79bae0105092613415773">More...</a><br /></td></tr>
+<tr class="memdesc:a439e3f4a1be79bae0105092613415773"><td class="mdescLeft">&#160;</td><td class="mdescRight">Folds the stream using <em>accumulator</em> . The result of <em>initializer</em>  applied to the first element of the stream is used for the initial folding value.  <a href="#a439e3f4a1be79bae0105092613415773">More...</a><br /></td></tr>
 <tr class="separator:a439e3f4a1be79bae0105092613415773"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71feb02eace70a6babe98181f1e7c579"><td class="memTemplParams" colspan="2">template&lt;typename Accumulator , typename UnaryFunction , typename T &gt; </td></tr>
 <tr class="memitem:a71feb02eace70a6babe98181f1e7c579"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a71feb02eace70a6babe98181f1e7c579">flow::terminal::fold_id</a> (Accumulator accumulator, UnaryFunction initializer, T &amp;&amp;init)</td></tr>
-<tr class="memdesc:a71feb02eace70a6babe98181f1e7c579"><td class="mdescLeft">&#160;</td><td class="mdescRight">Folds the stream using the given accumulator. The result of <code>initializer</code> applied to <code>init</code> is used for the inital folding value.  <a href="#a71feb02eace70a6babe98181f1e7c579">More...</a><br /></td></tr>
+<tr class="memdesc:a71feb02eace70a6babe98181f1e7c579"><td class="mdescLeft">&#160;</td><td class="mdescRight">Folds the stream using <em>accumulator</em> . The result of <em>initializer</em>  applied to <em>init</em>  is used for the initial folding value.  <a href="#a71feb02eace70a6babe98181f1e7c579">More...</a><br /></td></tr>
 <tr class="separator:a71feb02eace70a6babe98181f1e7c579"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 11 2015 17:59:54 for Flow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 13 2015 14:59:32 for Flow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

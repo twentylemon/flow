@@ -35,7 +35,7 @@ namespace flow {
 /// Limits the length of the Stream to <paramref name="length"/> elements. If the stream is shorter, all elements are kept.
 /// </summary>
 /// <param name="length">The length to limit the stream at.</param>
-/// <returns>A detail::Intermediate operation that limits the length of the Stream.</returns>
+/// <returns>A detail::Intermediate operation that limits the length of the stream.</returns>
 auto limit(std::size_t length) {
     return slice(static_cast<std::size_t>(0), length);
 }

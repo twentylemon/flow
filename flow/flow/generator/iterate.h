@@ -52,7 +52,7 @@ struct HeadType
 /// </summary>
 /// <param name="function">The iterating function.</param>
 /// <param name="...initial">The values the stream will contain, and initial values to send to the iterating function.</param>
-/// <returns>An infinite Stream that iterates the function given.</returns>
+/// <returns>An infinite stream that iterates the function given.</returns>
 template <typename IteratingFunction, typename... Args>
 auto iterate(IteratingFunction function, Args&&... initial) {
     using T = std::remove_reference_t<typename detail::HeadType<Args...>::type>;

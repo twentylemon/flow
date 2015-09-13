@@ -56,9 +56,9 @@ public:
     }
 
     /// <summary>
-    /// Returns the next item from the stream.
+    /// Returns the next element from the stream.
     /// </summary>
-    /// <returns>The next item in the stream.</returns>
+    /// <returns>The next element in the stream.</returns>
     value_type next() {
         return std::move(_generator());
     }
@@ -78,7 +78,7 @@ public:
         return std::numeric_limits<std::size_t>::max();
     }
 
-protected:
+private:
     Generator _generator;   // the generator of stream elements
 };
     }

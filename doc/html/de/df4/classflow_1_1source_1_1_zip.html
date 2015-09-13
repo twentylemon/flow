@@ -89,14 +89,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="../../d1/ddb/classflow_1_1source_1_1_zip-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">flow::source::Zip&lt; LeftSource, RightSource, Zipper &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> source that zips two streams together.  
+<p><a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> source that zips two streams together.  
  <a href="../../de/df4/classflow_1_1source_1_1_zip.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../de/d5c/source_2zip_8h_source.html">Zip.h</a>&gt;</code></p>
@@ -115,7 +114,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a99a468969be302ad18c3e285ef34b1f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if this source has more elements.  <a href="#a99a468969be302ad18c3e285ef34b1f1">More...</a><br /></td></tr>
 <tr class="separator:a99a468969be302ad18c3e285ef34b1f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af258560ea9cb9a103355da2d41f5cb77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html#acc045cdcf0a17f5854753851489dc29e">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html#af258560ea9cb9a103355da2d41f5cb77">next</a> ()</td></tr>
-<tr class="memdesc:af258560ea9cb9a103355da2d41f5cb77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next item from the stream.  <a href="#af258560ea9cb9a103355da2d41f5cb77">More...</a><br /></td></tr>
+<tr class="memdesc:af258560ea9cb9a103355da2d41f5cb77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next element from the stream.  <a href="#af258560ea9cb9a103355da2d41f5cb77">More...</a><br /></td></tr>
 <tr class="separator:af258560ea9cb9a103355da2d41f5cb77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc2c5e8c009e5e19c437b4e5cf249cbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html#abc2c5e8c009e5e19c437b4e5cf249cbc">lazy_next</a> ()</td></tr>
 <tr class="memdesc:abc2c5e8c009e5e19c437b4e5cf249cbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ignores the next value from the stream.  <a href="#abc2c5e8c009e5e19c437b4e5cf249cbc">More...</a><br /></td></tr>
@@ -123,21 +122,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3c85878e1418cd5746c4f3687aa3f013"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html#a3c85878e1418cd5746c4f3687aa3f013">estimate_size</a> ()</td></tr>
 <tr class="memdesc:a3c85878e1418cd5746c4f3687aa3f013"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the estimated size of the remainder of the stream. This is an exact value.  <a href="#a3c85878e1418cd5746c4f3687aa3f013">More...</a><br /></td></tr>
 <tr class="separator:a3c85878e1418cd5746c4f3687aa3f013"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a37c44d345fef8877c8544e180ba63a3c"><td class="memItemLeft" align="right" valign="top">LeftSource&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html#a37c44d345fef8877c8544e180ba63a3c">_left</a></td></tr>
-<tr class="separator:a37c44d345fef8877c8544e180ba63a3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24edae9793c55af0da92ecdc0910dbba"><td class="memItemLeft" align="right" valign="top">RightSource&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html#a24edae9793c55af0da92ecdc0910dbba">_right</a></td></tr>
-<tr class="separator:a24edae9793c55af0da92ecdc0910dbba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f4f97fc75a67367db57eab8b1f7f52e"><td class="memItemLeft" align="right" valign="top">Zipper&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html#a3f4f97fc75a67367db57eab8b1f7f52e">_zipper</a></td></tr>
-<tr class="separator:a3f4f97fc75a67367db57eab8b1f7f52e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename LeftSource, typename RightSource, typename Zipper&gt;<br />
 class flow::source::Zip&lt; LeftSource, RightSource, Zipper &gt;</h3>
 
-<p><a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> source that zips two streams together. </p>
+<p><a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> source that zips two streams together. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a class="anchor" id="acc045cdcf0a17f5854753851489dc29e"></a>
 <div class="memitem">
@@ -313,75 +303,8 @@ template&lt;typename LeftSource , typename RightSource , typename Zipper &gt; </
 </table>
 </div><div class="memdoc">
 
-<p>Returns the next item from the stream. </p>
-<dl class="section return"><dt>Returns</dt><dd>The next item in the stream.</dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a37c44d345fef8877c8544e180ba63a3c"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename LeftSource , typename RightSource , typename Zipper &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">LeftSource <a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html">flow::source::Zip</a>&lt; LeftSource, RightSource, Zipper &gt;::_left</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a24edae9793c55af0da92ecdc0910dbba"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename LeftSource , typename RightSource , typename Zipper &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">RightSource <a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html">flow::source::Zip</a>&lt; LeftSource, RightSource, Zipper &gt;::_right</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a3f4f97fc75a67367db57eab8b1f7f52e"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename LeftSource , typename RightSource , typename Zipper &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Zipper <a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html">flow::source::Zip</a>&lt; LeftSource, RightSource, Zipper &gt;::_zipper</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Returns the next element from the stream. </p>
+<dl class="section return"><dt>Returns</dt><dd>The next element in the stream.</dd></dl>
 
 </div>
 </div>
@@ -391,7 +314,7 @@ template&lt;typename LeftSource , typename RightSource , typename Zipper &gt; </
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 11 2015 17:59:56 for Flow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 13 2015 14:59:35 for Flow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

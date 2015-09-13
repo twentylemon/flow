@@ -38,7 +38,7 @@ namespace flow {
 /// </summary>
 /// <param name="predicate">The predicate, stream elements that return <c>true</c> will be mapped through <paramref name="mapper"/>.</param>
 /// <param name="mapper">The mapping operation to apply to elements that return <c>true</c> for<paramref name="predicate"/>.</param>
-/// <returns>A detail::Intermediate operation that replaces Stream elements.</returns>
+/// <returns>A detail::Intermediate operation that replaces stream elements.</returns>
 template <typename UnaryPredicate, typename UnaryOperation>
 auto replace_map(UnaryPredicate predicate, UnaryOperation mapper) {
     return map([mapper, predicate](auto&& ele) {
@@ -54,7 +54,7 @@ auto replace_map(UnaryPredicate predicate, UnaryOperation mapper) {
 /// </summary>
 /// <param name="predicate">The predicate, stream elements that return <c>true</c> will be replaced by <paramref name="replace_by"/>.</param>
 /// <param name="replace_by">The value to replace stream elements by when <paramref name="predicate"/> returns <c>true</c>.</param>
-/// <returns>A detail::Intermediate operation that replaces Stream elements.</returns>
+/// <returns>A detail::Intermediate operation that replaces stream elements.</returns>
 template <typename UnaryPredicate, typename T>
 auto replace(UnaryPredicate predicate, const T& replace_by) {
     return replace_map(predicate, [replace_by](auto&&) { return replace_by; });
@@ -66,10 +66,10 @@ auto replace(UnaryPredicate predicate, const T& replace_by) {
 /// </summary>
 /// <param name="old_value">The value to replace in the stream by <paramref name="new_value"/>.</param>
 /// <param name="new_value">The value to replace with.</param>
-/// <returns>A detail::Intermediate operation that replaces Stream elements.</returns>
+/// <returns>A detail::Intermediate operation that replaces stream elements.</returns>
 template <typename T>
 auto replace(const T& old_value, const T& new_value) {
-    return replace(std::bind1st(std::equal_to<T>(), old_value), new_value);
+    return replace(std::bind(std::equal_to<T>(), old_value), new_value);
 }
     }
 }

@@ -41,14 +41,14 @@ namespace flow {
 /// up to that point is evaluated and stored, then finally sorted before lazily continuing with the remainder
 /// of the stream. Thus, the <c>sort</c> operation takes <c>O(n)</c> extra space and time (excluding the sort), where <c>n</c>
 /// is the size of the stream. For most applications, it will be beneficial to sort the source of the stream beforehand if possible.
-/// For example, the following should be avoided:
+/// For example, the following should be <em>avoided</em>:
 /// <code>int min = my_vector | sort() | first(); // just an example</code><br/>
 /// Instead, sorting the container in place beforehand will be more efficient as no copying takes place.<br/>
 /// <code>std::sort(my_vector.begin(), my_vector.end());
 /// int min = my_vector | first();</code>
 /// </summary>
 /// <param name="compare">The compare function, by default <c>std::less&lt;void&gt;</c>.</param>
-/// <returns>A detail::Intermediate operation that sorts the Stream according to the compare function.</returns>
+/// <returns>A detail::Intermediate operation that sorts the stream according to the compare function.</returns>
 template <typename Compare = std::less<void>>
 auto sort(Compare compare = Compare()) {
     return detail::make_intermediate([compare](auto&& stream) {
@@ -62,14 +62,14 @@ auto sort(Compare compare = Compare()) {
 /// up to that point is evaluated and stored, then finally sorted before lazily continuing with the remainder
 /// of the stream. Thus, the <c>sort</c> operation takes <c>O(n)</c> extra space and time (excluding the sort), where <c>n</c>
 /// is the size of the stream. For most applications, it will be beneficial to sort the source of the stream beforehand if possible.
-/// For example, the following should be avoided:<br>
+/// For example, the following should be <em>avoided</em>:
 /// <code>int min = my_vector | stable_sort() | first(); // just an example</code><br>
 /// Instead, sorting the container in place beforehand will be more efficient as no copying takes place.<br>
 /// <code>std::stable_sort(my_vector.begin(), my_vector.end());
 /// int min = my_vector | first();</code>
 /// </summary>
 /// <param name="compare">The compare function, by default <c>std::less&lt;void&gt;</c>.</param>
-/// <returns>A detail::Intermediate operation that stable sorts the Stream according to the compare function.</returns>
+/// <returns>A detail::Intermediate operation that stable sorts the stream according to the compare function.</returns>
 template <typename Compare = std::less<void>>
 auto stable_sort(Compare compare = Compare()) {
     return detail::make_intermediate([compare](auto&& stream) {

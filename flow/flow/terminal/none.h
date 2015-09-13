@@ -34,11 +34,12 @@ namespace flow {
     namespace terminal {
 
 /// <summary>
-/// Returns true if none of the elements in the stream return <c>true</c> for the predicate given.
+/// Returns <c>true</c> if none of the elements in the stream return <c>true</c> for <paramref name="predicate"/>.
 /// This operation is short circuited and will stop executing once any <c>true</c> value is found.
 /// If the stream is empty, this will return <c>true</c>.
 /// </summary>
-/// <returns>The Terminal operation which returns true if all stream element returns true for the given predicate.</returns>
+/// <param name="predicate">The predicate to test each element with.</param>
+/// <returns>The detail::Terminal operation which returns <c>true</c> if none of stream elements return <c>true</c> for <paramref name="predicate"/>.</returns>
 template <typename UnaryPredicate>
 auto none(UnaryPredicate predicate) {
     return any(predicate).then(std::logical_not<bool>());
@@ -49,28 +50,28 @@ auto none(UnaryPredicate predicate) {
 /// This is an overload for streams with types convertible to <c>bool</c>.
 /// This operation is short circuited and will stop executing once any <c>true</c> value is found.
 /// </summary>
-/// <returns>The Terminal operation which returns true if all stream elements are true.</returns>
+/// <returns>The detail::Terminal operation which returns <c>true</c> if none of the stream elements are <c>true</c>.</returns>
 auto none() {
     return none([](const auto& ele) { return static_cast<bool>(ele); });
 }
 
 /// <summary>
-/// Returns true if none of the elements in the stream return <c>true</c> for the predicate given.
+/// Returns <c>true</c> if none of the elements in the stream return <c>true</c> for the predicate given.
 /// This operation is short circuited and will stop executing once any <c>true</c> value is found.
 /// </summary>
 /// <param name="member">The class member function to use as the predicate.</param>
-/// <returns>The Terminal operation which returns true if all stream element returns true for the given predicate.</returns>
+/// <returns>The detail::Terminal operation which returns <c>true</c> if none of the stream elements return <c>true</c> for the given predicate.</returns>
 template <typename Ret, typename Class>
 auto none(Ret(Class::*member)()) {
     return none(std::mem_fn(member));
 }
 
 /// <summary>
-/// Returns true if none of the elements in the stream return <c>true</c> for the predicate given.
+/// Returns <c>true</c> if none of the elements in the stream return <c>true</c> for the predicate given.
 /// This operation is short circuited and will stop executing once any <c>true</c> value is found.
 /// </summary>
 /// <param name="member">The const class member function to use as the predicate.</param>
-/// <returns>The Terminal operation which returns true if all stream element returns true for the given predicate.</returns>
+/// <returns>The detail::Terminal operation which returns <c>true</c> if none of the stream elements return <c>true</c> for the given predicate.</returns>
 template <typename Ret, typename Class>
 auto none(Ret(Class::*member)() const) {
     return none(std::mem_fn(member));

@@ -89,14 +89,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="../../d2/d95/classflow_1_1source_1_1_iterate_func-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">flow::source::IterateFunc&lt; IteratingFunction, T, N &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> source that generates an infinite stream using successive calls to an iterated function. Initial values are given, then later values are calculated using previous values in the stream.  
+<p><a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> source that generates an infinite stream using successive calls to an iterated function. Initial values are given, then later values are calculated using previous values in the stream.  
  <a href="../../de/d8c/classflow_1_1source_1_1_iterate_func.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../dc/d89/_iterate_func_8h_source.html">IterateFunc.h</a>&gt;</code></p>
@@ -116,7 +115,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a9b51d5505d34b724c14a4f5309ae07d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if this source has more elements.  <a href="#a9b51d5505d34b724c14a4f5309ae07d7">More...</a><br /></td></tr>
 <tr class="separator:a9b51d5505d34b724c14a4f5309ae07d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86092c60cb9af58dfb1b5c6d737516ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d8c/classflow_1_1source_1_1_iterate_func.html#a688aae199e0fb586efd9ae7424b934a9">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d8c/classflow_1_1source_1_1_iterate_func.html#a86092c60cb9af58dfb1b5c6d737516ff">next</a> ()</td></tr>
-<tr class="memdesc:a86092c60cb9af58dfb1b5c6d737516ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next item from the stream.  <a href="#a86092c60cb9af58dfb1b5c6d737516ff">More...</a><br /></td></tr>
+<tr class="memdesc:a86092c60cb9af58dfb1b5c6d737516ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next element from the stream.  <a href="#a86092c60cb9af58dfb1b5c6d737516ff">More...</a><br /></td></tr>
 <tr class="separator:a86092c60cb9af58dfb1b5c6d737516ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef1f6d2e536c85c0f5ce4d1b06dd6a8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d8c/classflow_1_1source_1_1_iterate_func.html#aef1f6d2e536c85c0f5ce4d1b06dd6a8d">lazy_next</a> ()</td></tr>
 <tr class="memdesc:aef1f6d2e536c85c0f5ce4d1b06dd6a8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ignores the next value from the stream.  <a href="#aef1f6d2e536c85c0f5ce4d1b06dd6a8d">More...</a><br /></td></tr>
@@ -124,19 +123,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5138047fe551f789b8af63dd32be61f2"><td class="memItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d8c/classflow_1_1source_1_1_iterate_func.html#a5138047fe551f789b8af63dd32be61f2">estimate_size</a> () const </td></tr>
 <tr class="memdesc:a5138047fe551f789b8af63dd32be61f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the max value of <code>std::size_t</code>. This is an infinite stream.  <a href="#a5138047fe551f789b8af63dd32be61f2">More...</a><br /></td></tr>
 <tr class="separator:a5138047fe551f789b8af63dd32be61f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a94545b1b2df501ca201aa99a79ec715d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d2d/structflow_1_1detail_1_1uncurrier.html">flow::detail::uncurrier</a>&lt; IteratingFunction &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d8c/classflow_1_1source_1_1_iterate_func.html#a94545b1b2df501ca201aa99a79ec715d">_function</a></td></tr>
-<tr class="separator:a94545b1b2df501ca201aa99a79ec715d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ce1e2cc12c92045d9cb91c0d1aa5c56"><td class="memItemLeft" align="right" valign="top">std::array&lt; T, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d8c/classflow_1_1source_1_1_iterate_func.html#a6ce1e2cc12c92045d9cb91c0d1aa5c56">_values</a></td></tr>
-<tr class="separator:a6ce1e2cc12c92045d9cb91c0d1aa5c56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename IteratingFunction, typename T, std::size_t N&gt;<br />
 class flow::source::IterateFunc&lt; IteratingFunction, T, N &gt;</h3>
 
-<p><a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> source that generates an infinite stream using successive calls to an iterated function. Initial values are given, then later values are calculated using previous values in the stream. </p>
+<p><a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> source that generates an infinite stream using successive calls to an iterated function. Initial values are given, then later values are calculated using previous values in the stream. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a class="anchor" id="a688aae199e0fb586efd9ae7424b934a9"></a>
 <div class="memitem">
@@ -307,53 +299,8 @@ template&lt;typename IteratingFunction , typename T , std::size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the next item from the stream. </p>
-<dl class="section return"><dt>Returns</dt><dd>The next item in the stream.</dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a94545b1b2df501ca201aa99a79ec715d"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename IteratingFunction , typename T , std::size_t N&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d0/d2d/structflow_1_1detail_1_1uncurrier.html">flow::detail::uncurrier</a>&lt;IteratingFunction&gt; <a class="el" href="../../de/d8c/classflow_1_1source_1_1_iterate_func.html">flow::source::IterateFunc</a>&lt; IteratingFunction, T, N &gt;::_function</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a6ce1e2cc12c92045d9cb91c0d1aa5c56"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename IteratingFunction , typename T , std::size_t N&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::array&lt;T, N&gt; <a class="el" href="../../de/d8c/classflow_1_1source_1_1_iterate_func.html">flow::source::IterateFunc</a>&lt; IteratingFunction, T, N &gt;::_values</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Returns the next element from the stream. </p>
+<dl class="section return"><dt>Returns</dt><dd>The next element in the stream.</dd></dl>
 
 </div>
 </div>
@@ -363,7 +310,7 @@ template&lt;typename IteratingFunction , typename T , std::size_t N&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 11 2015 17:59:54 for Flow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 13 2015 14:59:33 for Flow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

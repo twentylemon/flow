@@ -30,9 +30,6 @@
     <ClInclude Include="Compose.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="flow.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Stream.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -197,6 +194,15 @@
     </ClInclude>
     <ClInclude Include="generator\generate.h">
       <Filter>Header Files\generator</Filter>
+    </ClInclude>
+    <ClInclude Include="mainpage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="generator\iota.h">
+      <Filter>Header Files\generator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\flow.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

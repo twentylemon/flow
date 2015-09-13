@@ -38,12 +38,12 @@ namespace flow {
 /// <summary>
 /// Applies the tuple/array to the curried function.
 /// </summary>
-/// <param name="">The index list.</param>
+/// <param name="idx">The index list.</param>
 /// <param name="function">The curried function.</param>
 /// <param name="tuple">The tuple to apply to the function.</param>
 /// <returns>The return value of the function.</returns>
 template <std::size_t... index, typename Function, typename Tuple>
-constexpr auto apply(std::index_sequence<index...>, Function function, Tuple&& tuple) {
+constexpr auto apply(std::index_sequence<index...> idx, Function function, Tuple&& tuple) {
     return function(std::get<index>(std::forward<Tuple>(tuple))...);
 }
 
@@ -90,7 +90,11 @@ protected:
 
 /// <summary>
 /// Uncurries the specified function. Given a function which takes several parameters, converts that function
-/// into a function which takes one <c>std::tuple</c> of those arguments instead.
+/// into a function which takes one <c>std::tuple</c> of those arguments instead. This is useful when zipping streams
+/// together as it allows you to write a function which takes normal arguments instead of a tuple.
+/// For example, this allows the syntax:
+/// <code>intlist | zip(more_ints) | map(uncurry([](int l, int r){ i and j things })) | ...</code>
+/// as opposed to using <c>std::tuple&lt;int,int&gt;</c> and <c>std::get&lt;i&gt;</c>.
 /// </summary>
 /// <param name="curry_function">The curried function to wrap.</param>
 /// <returns>An object with an <c>operator()(std::tuple&lt;Types...&gt;)</c> which wraps <c>curry_function</c>.</returns>

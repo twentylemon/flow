@@ -36,7 +36,7 @@ namespace flow {
 /// <summary>
 /// Computes the product of all the elements in the stream using <c>operator*</c>.
 /// </summary>
-/// <returns>The Terminal operation which multiplies the elements in the stream.</returns>
+/// <returns>The detail::Terminal operation which multiplies the elements in the stream.</returns>
 /// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
 auto product() {
     return fold(std::multiplies<void>());
@@ -44,10 +44,10 @@ auto product() {
 
 /// <summary>
 /// Computes the product of all the elements in the stream using <c>operator*</c>, starting the
-/// product at <c>init</c>.
+/// product at <paramref name="init"/>.
 /// </summary>
 /// <param name="init">The initial value to start the product at.</param>
-/// <returns>The Terminal operation which multiplies the elements in the stream.</returns>
+/// <returns>The detail::Terminal operation which multiplies the elements in the stream.</returns>
 template <typename T>
 auto product(T&& init) {
     return fold(std::multiplies<T>(), std::forward<T>(init));

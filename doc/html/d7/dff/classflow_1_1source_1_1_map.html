@@ -89,14 +89,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="../../df/d55/classflow_1_1source_1_1_map-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">flow::source::Map&lt; Source, UnaryOperation &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> source that maps elements into new values.  
+<p><a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> source that maps elements into new values.  
  <a href="../../d7/dff/classflow_1_1source_1_1_map.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../db/d48/source_2map_8h_source.html">Map.h</a>&gt;</code></p>
@@ -115,7 +114,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a05463103e9860c40a4f29d0d6df93263"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if this source has more elements.  <a href="#a05463103e9860c40a4f29d0d6df93263">More...</a><br /></td></tr>
 <tr class="separator:a05463103e9860c40a4f29d0d6df93263"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53f85927acf1aca2c4ee1488294ee3c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/dff/classflow_1_1source_1_1_map.html#a8982782666b8e54ce82872b9def0b7b9">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dff/classflow_1_1source_1_1_map.html#a53f85927acf1aca2c4ee1488294ee3c5">next</a> ()</td></tr>
-<tr class="memdesc:a53f85927acf1aca2c4ee1488294ee3c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next item from the stream.  <a href="#a53f85927acf1aca2c4ee1488294ee3c5">More...</a><br /></td></tr>
+<tr class="memdesc:a53f85927acf1aca2c4ee1488294ee3c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next element from the stream.  <a href="#a53f85927acf1aca2c4ee1488294ee3c5">More...</a><br /></td></tr>
 <tr class="separator:a53f85927acf1aca2c4ee1488294ee3c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ac22d5a3d2d56008d72c1ab52b377f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dff/classflow_1_1source_1_1_map.html#a0ac22d5a3d2d56008d72c1ab52b377f6">lazy_next</a> ()</td></tr>
 <tr class="memdesc:a0ac22d5a3d2d56008d72c1ab52b377f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ignores the next value from the stream.  <a href="#a0ac22d5a3d2d56008d72c1ab52b377f6">More...</a><br /></td></tr>
@@ -123,19 +122,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a14e8939c1e442837e4b5c6bd1e6ba2fc"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dff/classflow_1_1source_1_1_map.html#a14e8939c1e442837e4b5c6bd1e6ba2fc">estimate_size</a> ()</td></tr>
 <tr class="memdesc:a14e8939c1e442837e4b5c6bd1e6ba2fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the estimated size of the remainder of the stream. This is an exact value.  <a href="#a14e8939c1e442837e4b5c6bd1e6ba2fc">More...</a><br /></td></tr>
 <tr class="separator:a14e8939c1e442837e4b5c6bd1e6ba2fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:af3e742f20d4ed28b7472c6150d408b62"><td class="memItemLeft" align="right" valign="top">Source&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dff/classflow_1_1source_1_1_map.html#af3e742f20d4ed28b7472c6150d408b62">_source</a></td></tr>
-<tr class="separator:af3e742f20d4ed28b7472c6150d408b62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc0dae136b9095393613d7b95800eaf8"><td class="memItemLeft" align="right" valign="top">UnaryOperation&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dff/classflow_1_1source_1_1_map.html#acc0dae136b9095393613d7b95800eaf8">_operation</a></td></tr>
-<tr class="separator:acc0dae136b9095393613d7b95800eaf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename Source, typename UnaryOperation&gt;<br />
 class flow::source::Map&lt; Source, UnaryOperation &gt;</h3>
 
-<p><a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class. Provides lazy evaluation and functional style transformations on data...">Stream</a> source that maps elements into new values. </p>
+<p><a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> source that maps elements into new values. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a class="anchor" id="a8982782666b8e54ce82872b9def0b7b9"></a>
 <div class="memitem">
@@ -304,53 +296,8 @@ template&lt;typename Source , typename UnaryOperation &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the next item from the stream. </p>
-<dl class="section return"><dt>Returns</dt><dd>The next item in the stream.</dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="acc0dae136b9095393613d7b95800eaf8"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Source , typename UnaryOperation &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">UnaryOperation <a class="el" href="../../d7/dff/classflow_1_1source_1_1_map.html">flow::source::Map</a>&lt; Source, UnaryOperation &gt;::_operation</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="af3e742f20d4ed28b7472c6150d408b62"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Source , typename UnaryOperation &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Source <a class="el" href="../../d7/dff/classflow_1_1source_1_1_map.html">flow::source::Map</a>&lt; Source, UnaryOperation &gt;::_source</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Returns the next element from the stream. </p>
+<dl class="section return"><dt>Returns</dt><dd>The next element in the stream.</dd></dl>
 
 </div>
 </div>
@@ -360,7 +307,7 @@ template&lt;typename Source , typename UnaryOperation &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 11 2015 17:59:54 for Flow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 13 2015 14:59:33 for Flow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

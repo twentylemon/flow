@@ -103,13 +103,13 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2884da0e8eb47258e948bdbbf300b77c"><td class="memTemplParams" colspan="2">template&lt;std::size_t... index, typename Function , typename Tuple &gt; </td></tr>
-<tr class="memitem:a2884da0e8eb47258e948bdbbf300b77c"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d6c/namespaceflow_1_1detail.html#a2884da0e8eb47258e948bdbbf300b77c">apply</a> (std::index_sequence&lt; index...&gt;, Function function, Tuple &amp;&amp;tuple)</td></tr>
-<tr class="memdesc:a2884da0e8eb47258e948bdbbf300b77c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the tuple/array to the curried function.  <a href="#a2884da0e8eb47258e948bdbbf300b77c">More...</a><br /></td></tr>
-<tr class="separator:a2884da0e8eb47258e948bdbbf300b77c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21ceda685045c8a8db7675318e6e4c67"><td class="memTemplParams" colspan="2">template&lt;std::size_t... index, typename Function , typename Tuple &gt; </td></tr>
+<tr class="memitem:a21ceda685045c8a8db7675318e6e4c67"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d6c/namespaceflow_1_1detail.html#a21ceda685045c8a8db7675318e6e4c67">apply</a> (std::index_sequence&lt; index...&gt; idx, Function function, Tuple &amp;&amp;tuple)</td></tr>
+<tr class="memdesc:a21ceda685045c8a8db7675318e6e4c67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the tuple/array to the curried function.  <a href="#a21ceda685045c8a8db7675318e6e4c67">More...</a><br /></td></tr>
+<tr class="separator:a21ceda685045c8a8db7675318e6e4c67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a2884da0e8eb47258e948bdbbf300b77c"></a>
+<a class="anchor" id="a21ceda685045c8a8db7675318e6e4c67"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -119,7 +119,7 @@ template&lt;std::size_t... index, typename Function , typename Tuple &gt; </div>
           <td class="memname">constexpr auto flow::detail::apply </td>
           <td>(</td>
           <td class="paramtype">std::index_sequence&lt; index...&gt;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>idx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -142,9 +142,9 @@ template&lt;std::size_t... index, typename Function , typename Tuple &gt; </div>
 </div><div class="memdoc">
 
 <p>Applies the tuple/array to the curried function. </p>
-<p>The index list.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">idx</td><td>The index list.</td></tr>
     <tr><td class="paramname">function</td><td>The curried function.</td></tr>
     <tr><td class="paramname">tuple</td><td>The tuple to apply to the function.</td></tr>
   </table>
@@ -157,7 +157,7 @@ template&lt;std::size_t... index, typename Function , typename Tuple &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 11 2015 17:59:54 for Flow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 13 2015 14:59:32 for Flow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

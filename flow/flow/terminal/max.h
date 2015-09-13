@@ -34,11 +34,11 @@ namespace flow {
     namespace terminal {
 
 /// <summary>
-/// Returns the maximum element from the stream according to the comparator given. By default <c>operator&lt;</c>
+/// Returns the maximum element from the stream according to <paramref name="compare"/>. By default <c>operator&lt;</c>
 /// is used for comparisons.
 /// </summary>
-/// <param name="compare">The compare function, by default <c>std::less{T}</c>.</param>
-/// <returns>A Terminal operation which gives the maximum element from the stream.</returns>
+/// <param name="compare">The compare function, by default <c>std::less&lt;void&gt;</c>.</param>
+/// <returns>A detail::Terminal operation which gives the maximum element from the stream.</returns>
 /// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
 template <typename Compare = std::less<void>>
 auto max(Compare compare = Compare()) {

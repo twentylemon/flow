@@ -98,24 +98,34 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d9/de2/namespaceflow.html">flow</a> {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">namespace </span>intermediate {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> UnaryFunction&gt;</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af">   43</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af">peek</a>(UnaryFunction action) {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../da/df5/namespaceflow_1_1intermediate_1_1detail.html#aef2fd0c716feeaa1b770adfaa555162b">detail::make_intermediate</a>([action](<span class="keyword">auto</span>&amp;&amp; stream) {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d9/dcd/classflow_1_1_stream.html">Stream&lt;source::Peek&lt;typename std::remove_reference_t&lt;decltype(stream)&gt;::source_type</a>, UnaryFunction&gt;&gt;(std::move(stream.source()), action);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    });</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="classflow_1_1_stream_html"><div class="ttname"><a href="../../d9/dcd/classflow_1_1_stream.html">flow::Stream</a></div><div class="ttdoc">The stream class. Provides lazy evaluation and functional style transformations on data...</div><div class="ttdef"><b>Definition:</b> Compose.h:30</div></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> UnaryFunction&gt;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af">   44</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af">peek</a>(UnaryFunction action) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../da/df5/namespaceflow_1_1intermediate_1_1detail.html#aef2fd0c716feeaa1b770adfaa555162b">detail::make_intermediate</a>([action](<span class="keyword">auto</span>&amp;&amp; stream) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d9/dcd/classflow_1_1_stream.html">Stream&lt;source::Peek&lt;typename std::remove_reference_t&lt;decltype(stream)&gt;::source_type</a>, UnaryFunction&gt;&gt;(std::move(stream.source()), action);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    });</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Ret, <span class="keyword">typename</span> Class&gt;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../dc/d09/namespaceflow_1_1intermediate.html#af32b7bf1f105167d576b779b3b5f0297">   58</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af">peek</a>(Ret(Class::*member)()) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af">peek</a>(std::mem_fn(member));</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Ret, <span class="keyword">typename</span> Class&gt;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">auto</span> <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af">peek</a>(Ret(Class::*member)() <span class="keyword">const</span>) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af">peek</a>(std::mem_fn(member));</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classflow_1_1_stream_html"><div class="ttname"><a href="../../d9/dcd/classflow_1_1_stream.html">flow::Stream</a></div><div class="ttdef"><b>Definition:</b> Compose.h:30</div></div>
 <div class="ttc" id="_intermediate_8h_html"><div class="ttname"><a href="../../d9/df2/_intermediate_8h.html">Intermediate.h</a></div></div>
-<div class="ttc" id="namespaceflow_1_1intermediate_1_1detail_html_aef2fd0c716feeaa1b770adfaa555162b"><div class="ttname"><a href="../../da/df5/namespaceflow_1_1intermediate_1_1detail.html#aef2fd0c716feeaa1b770adfaa555162b">flow::intermediate::detail::make_intermediate</a></div><div class="ttdeci">Intermediate&lt; Function &gt; make_intermediate(Function &amp;&amp;function)</div><div class="ttdoc">Constructs A detail::Intermediate object using the function given. </div><div class="ttdef"><b>Definition:</b> Intermediate.h:94</div></div>
-<div class="ttc" id="namespaceflow_1_1intermediate_html_ac9078ec57972888d23411f8c3ea209af"><div class="ttname"><a href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af">flow::intermediate::peek</a></div><div class="ttdeci">auto peek(UnaryFunction action)</div><div class="ttdoc">Lazily executes action  for each element in the Stream as a detail::Intermediate operation. This is an intermediate operation equivalent of terminal::for_each. </div><div class="ttdef"><b>Definition:</b> peek.h:43</div></div>
+<div class="ttc" id="namespaceflow_1_1intermediate_1_1detail_html_aef2fd0c716feeaa1b770adfaa555162b"><div class="ttname"><a href="../../da/df5/namespaceflow_1_1intermediate_1_1detail.html#aef2fd0c716feeaa1b770adfaa555162b">flow::intermediate::detail::make_intermediate</a></div><div class="ttdeci">Intermediate&lt; Function &gt; make_intermediate(Function &amp;&amp;function)</div><div class="ttdoc">Constructs An Intermediate object using the function given. </div><div class="ttdef"><b>Definition:</b> Intermediate.h:94</div></div>
+<div class="ttc" id="namespaceflow_1_1intermediate_html_ac9078ec57972888d23411f8c3ea209af"><div class="ttname"><a href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af">flow::intermediate::peek</a></div><div class="ttdeci">auto peek(UnaryFunction action)</div><div class="ttdoc">Lazily executes action  for each element in the Stream as a detail::Intermediate operation. This is an intermediate operation equivalent of each(). </div><div class="ttdef"><b>Definition:</b> peek.h:44</div></div>
 <div class="ttc" id="namespaceflow_html"><div class="ttname"><a href="../../d9/de2/namespaceflow.html">flow</a></div><div class="ttdef"><b>Definition:</b> Compose.h:29</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 11 2015 17:59:53 for Flow by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 13 2015 14:59:31 for Flow by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

@@ -35,7 +35,7 @@ namespace flow {
         namespace detail {
 
 /// <summary>
-/// A detail::Intermediate stream operation. Takes over the stream and applies some
+/// An intermediate stream operation. Takes over the stream and applies some
 /// transformation to the stream elements or the stream itself.
 /// Intermediate operations are streams, they have no value without a Terminal operation.
 /// </summary>
@@ -74,19 +74,19 @@ public:
     /// Pipes the Terminal operation onto the end of this stream. The result is a
     /// composition  of this and rhs' operations on the stream.
     /// </summary>
-    /// <param name="rhs">The Terminal operation to pipe onto the end of the stream.</param>
+    /// <param name="rhs">The terminal::detail::Terminal operation to pipe onto the end of the stream.</param>
     /// <returns>The composition of this and rhs as a Terminal operation.</returns>
     template <typename G>
     terminal::detail::Terminal<flow::detail::Compose<G, F>> operator|(terminal::detail::Terminal<G>&& rhs) {
         return terminal::detail::Terminal<flow::detail::Compose<G, F>>(flow::detail::Compose<G, F>(std::move(rhs._operation), std::move(_operation)));
     }
 
-protected:
+private:
     F _operation;   // the stream operation
 };
 
 /// <summary>
-/// Constructs A detail::Intermediate object using the function given.
+/// Constructs An Intermediate object using the function given.
 /// </summary>
 /// <param name="function">The function.</param>
 /// <returns>A detail::Intermediate operation wrapping the function.</returns>
