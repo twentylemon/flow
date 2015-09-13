@@ -6,7 +6,7 @@ Inspired by Java 8 [Streams](http://www.oracle.com/technetwork/articles/java/ma1
 flow is a C++14 library that provides lazy evaluation and functional transformations on data. It's like Haskell for C++.
 The library provides many common data transformations, such as map, filter and fold, as well as other commonly used
 operations like computing the sum, min and max or simply counting the number or elements. And all of it is packaged
-in a nice, easy to read and understand syntax. To use, simply `#include<flow.h>` in your C++14 program.
+in a nice, easy to read and understand syntax. To use, simply `#include <flow.h>` in your C++14 program.
 
 
 What is a Sick Flow?
@@ -25,7 +25,7 @@ auto stream = from(my_vector); // a stream over the entire vector in the same or
 Other common stream generators are `iota()`, which counts up from a value, and `repeat()`, which repeats a value or
 cycles a container.
 
- * Manipulating a Sick Flow
+Manipulating a Sick Flow
 ------------------------
 Say you want to loop through a list of numbers. But you only want the even values. Then you want the squares of those
 values for some reason. Oh, and you want at most 10 of those. How would you do that in normal C++? Probably something like
