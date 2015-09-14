@@ -28,6 +28,7 @@
 
 #include <array>
 #include <limits>
+#include <algorithm>
 
 #include "../uncurry.h"
 

@@ -31,6 +31,22 @@
 
 namespace flow {
     namespace generator {
+        
+        namespace detail {
+
+/// <summary>
+/// Type trait for a type having a member class <c>const_iterator</c>.
+/// </summary>
+template <typename T>
+struct has_const_iterator
+{
+private:
+    template <typename C> static char test(typename C::const_iterator*);
+    template <typename C> static int test(...);
+public:
+    enum { value = sizeof(test<T>(0)) == sizeof(char) };
+};
+        }
 
 /// <summary>
 /// Creates a Stream from the given iterator range.
@@ -70,9 +86,9 @@ auto from(const Container& container) {
 /// <param name="container">The container to create a stream from.</param>
 /// <param name="op">The stream operation.</param>
 /// <returns><c>from(container) | op</c></returns>
-template <typename Container, typename F>
-auto operator|(Container& container, intermediate::detail::Intermediate<F>& op) {
-    return from(container) | op;
+template <typename Container, typename F, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
+auto operator|(Container& container, intermediate::detail::Intermediate<F>&& op) {
+    return from(container) | std::forward<intermediate::detail::Intermediate<F>>(op);
 }
 
 /// <summary>
@@ -87,9 +103,9 @@ auto operator|(Container& container, intermediate::detail::Intermediate<F>& op) 
 /// <param name="op">The stream operation.</param>
 /// <returns><c>from(container) | op</c></returns>
 /// \todo fails to capture value by reference for expressions like <c>vec | dump()</c>
-template <typename Container, typename F>
-auto operator|(Container& container, terminal::detail::Terminal<F>& op) {
-    return from(container) | op;
+template <typename Container, typename F, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
+auto operator|(Container& container, terminal::detail::Terminal<F>&& op) {
+    return from(container) | std::forward<terminal::detail::Terminal<F>>(op);
 }
 
 /// <summary>
@@ -99,9 +115,9 @@ auto operator|(Container& container, terminal::detail::Terminal<F>& op) {
 /// <param name="container">The container to create a stream from.</param>
 /// <param name="op">The stream operation.</param>
 /// <returns><c>from(container) | op</c></returns>
-template <typename Container, typename F>
-auto operator|(const Container& container, intermediate::detail::Intermediate<F>& op) {
-    return from(container) | op;
+template <typename Container, typename F, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
+auto operator|(const Container& container, intermediate::detail::Intermediate<F>&& op) {
+    return from(container) | std::forward<intermediate::detail::Intermediate<F>>(op);
 }
 
 /// <summary>
@@ -116,9 +132,9 @@ auto operator|(const Container& container, intermediate::detail::Intermediate<F>
 /// <param name="op">The stream operation.</param>
 /// <returns><c>from(container) | op</c></returns>
 /// \todo fails to capture value by reference for expressions like <c>vec | dump()</c>
-template <typename Container, typename F>
-auto operator|(const Container& container, terminal::detail::Terminal<F>& op) {
-    return from(container) | op;
+template <typename Container, typename F, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
+auto operator|(const Container& container, terminal::detail::Terminal<F>&& op) {
+    return from(container) | std::forward<terminal::detail::Terminal<F>>(op);
 }
     }
 }

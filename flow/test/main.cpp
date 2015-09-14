@@ -77,7 +77,7 @@ int main(int argc, char** argv) {
     std::iota(vec.begin(), vec.end(), 0);
     using T = decltype(vec)::value_type;
     std::size_t inc = vec | nth(50);
-    std::cout << inc << std::endl;
+    std::cout << inc << '\t' << vec.size() << std::endl;
 
     boost::timer t1;
     std::pair<T, T> m1;
@@ -107,7 +107,7 @@ int main(int argc, char** argv) {
         }
     }
     std::cout << std::endl << "stdlib: " << t2.elapsed() << "\t" << m2.first << "\t" << m2.second << std::endl;
-
+    
     std::vector<Widget> widgets;
     for (int i = 0; i < 10; i++) {
         widgets.emplace_back(i);
@@ -116,22 +116,22 @@ int main(int argc, char** argv) {
     from(widgets) | map(&Widget::get_value) | dump();
     from(widgets) | map(&Widget::get_value) | each([](int i) { std::cout << i << " "; });
     from(w) | map(&Widget::get_value) | each([](int i) { std::cout << i << " "; });
-
+    
     std::cout << std::endl << std::endl;
 
     std::cout << (vec | count()) << std::endl;
     std::cout << (vec | contains(4)) << std::endl;
     std::cout << (vec | none([](int i) { return i == -1; })) << std::endl;
-
-    vec | filter([](int i) { return i % 2 == 0; }) | limit(5) | reverse() | concat(vec | limit(10)) | concat(vec | limit(1)) | map([](auto i) { return i * 2; }) | dump();
-
+    
+    vec | limit(5) | reverse() | concat(vec | limit(10)) | concat(vec | limit(1)) | dump();
+    
     std::cout << std::endl;
     const std::vector<int> v = vec;
-    vec | limit(1) | zip(from(v) | zip(from(v))) | zip(from(vec), [](auto&& l, auto&& r) { return std::make_pair(l, r); }) | each([](auto& t) {
+    vec | limit(1) | zip(v | zip(v)) | zip(vec, [](auto&& l, auto&& r) { return std::make_pair(l, r); }) | each([](auto&& t) {
         std::cout << typeid(t).name() << std::endl;
     });
-
-    run_timer();
+    
+    //run_timer();
 
     auto c = uncurry([](int i, int j, int k) { return i * j * k; });
     auto c2 = uncurry(std::multiplies<int>());
@@ -142,10 +142,10 @@ int main(int argc, char** argv) {
     iterate(std::plus<int>(), 0, 1) | limit(10) | dump();
     
     empty<int>() | dump();
-
     
-
+    from(widgets) | filter([](Widget& w){ return w.value > 5; }) | dump();
+    
     std::cout << std::endl;
-    system("pause");
+    //system("pause");
     return 0;
 }

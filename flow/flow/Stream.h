@@ -116,7 +116,7 @@ public:
     /// <param name="op">The operation to add to the pipeline.</param>
     /// <returns>A new stream that is the composition of this stream and the operation given.</returns>
     template <typename F>
-    std::result_of_t<intermediate::detail::Intermediate<F>(Stream<Source>&&)> operator|(intermediate::detail::Intermediate<F>& op) {
+    std::result_of_t<intermediate::detail::Intermediate<F>(Stream<Source>&&)> operator|(intermediate::detail::Intermediate<F>&& op) {
         return op(std::move(*this));
     }
 
@@ -126,7 +126,7 @@ public:
     /// <param name="op">The operation to add to the pipeline.</param>
     /// <returns>A new stream that is the composition of this stream and the operation given.</returns>
     template <typename F>
-    std::result_of_t<terminal::detail::Terminal<F>(Stream<Source>&&)> operator|(terminal::detail::Terminal<F>& op) {
+    std::result_of_t<terminal::detail::Terminal<F>(Stream<Source>&&)> operator|(terminal::detail::Terminal<F>&& op) {
         return op(std::move(*this));
     }
 

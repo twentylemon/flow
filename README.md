@@ -6,7 +6,8 @@ Inspired by Java 8 [Streams](http://www.oracle.com/technetwork/articles/java/ma1
 flow is a C++14 library that provides lazy evaluation and functional transformations on data. It's like Haskell for C++.
 The library provides many common data transformations, such as map, filter and fold, as well as other commonly used
 operations like computing the sum, min and max or simply counting the number or elements. And all of it is packaged
-in a nice, easy to read and understand syntax. To use, simply `#include <flow.h>` in your C++14 program.
+in a nice, easy to read and understand syntax. To use, simply `#include <flow.h>` in your C++14 program. With fully
+optimized code (`-Ofast` or `/O2`), flow does not offer any performance penalities, so there's no reason not to love.
 
 
 What is a Sick Flow?

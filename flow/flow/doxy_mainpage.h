@@ -3,13 +3,13 @@
  * \mainpage
  * Sick Flow, Bro
  * ==============
- * <para>
- * Inspired by Java 8 [Streams](http://www.oracle.com/technetwork/articles/java/ma14-java-se-8-streams-2177646.html),
+ * <para>Inspired by Java 8 [Streams](http://www.oracle.com/technetwork/articles/java/ma14-java-se-8-streams-2177646.html),
  * flow is a C++14 library that provides lazy evaluation and functional transformations on data. It's like Haskell for C++.
  * The library provides many common data transformations, such as map, filter and fold, as well as other commonly used
  * operations like computing the sum, min and max or simply counting the number or elements. And all of it is packaged
  * in a nice, easy to read and understand syntax. To use, simply <c>\#include &lt;flow.h&gt;</c> in your C++14 program.
- * </para>
+ * With fully optimized code (<c>-Ofast</c> or <c>/O2</c>), flow does not offer any performace penalties compared to
+ * standard code, so there's no reason not to love.</para>
  * 
  * What is a Sick Flow?
  * --------------------
@@ -36,21 +36,26 @@
  *         process(*it * *it);
  *     }
  * }\endcode
+ *
  * <para>Not bad, but it's not quickly clear what is going on. The same operation can be done as a sick flow instead:</para>
  * \code{.cpp}list | filter([](int i){ return i % 2 == 0; }) | limit(10) | map([](int i){ return i*i; }) | each(process);\endcode
+ * 
  * <para>Reading the line aloud, it's obvious what is happening. Take the list, keep even values, limit it to 10 elements,
  * map the elements to their square, and then process each of those. Fun. This is just a trivial example, there many other
  * stream operations available to be used.</para>
+ * 
  * <para>Stream operations are broken down into two main types: Intermediate and Terminal operations. Intermediate operations
  * transform a stream into another stream. We saw three examples above in <c>filter</c>, <c>limit</c> and <c>map</c>. Intermediate
  * operations are meaningless without some sort of Terminal operation, such as <c>each</c> or <c>count</c>. Terminal operations
  * do something with the final stream data, be it summing, counting, calling a function, finding the min, and so on.</para>
  * <para>Intermediate operations are all inside the flow::intermediate namespace.<br/>Terminal operations are all inside the
  * flow::terminal namespace.</para>
+ *
  * ### A Word on the flow namespace
  * <para>All of the functions in flow::generator, flow::intermediate and flow::terminal are aliased to also be in the flow namespace.
  * For your program, if you do <c>using namespace flow;</c> (if you want), you get access to all the core parts of the flow library.
  * If not, you can still just write <c>flow::map</c> instead of <c>flow::intermediate::map</c>.</para>
+ *
  * ### Documentation at a Glance
  * <para>The best way to view all available functions, use the <a href="namespacemembers_func.html">Namespace Members</a> page. It lists
  * every important function and the namespace it sits in, indicating whether it is a generator, or an intermediate or terminal operation.</para>
