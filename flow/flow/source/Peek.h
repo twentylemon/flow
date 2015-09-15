@@ -67,7 +67,7 @@ public:
     /// Ignores the next value from the stream.
     /// </summary>
     void lazy_next() {
-        _action(_source.next());
+        next();
     }
 
     /// <summary>
