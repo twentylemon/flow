@@ -36,6 +36,7 @@ namespace flow {
 /// Stream source to sort the stream. Sorting is an eager operation, the entire stream up to this point
 /// is evaluated and stored and finally sorted after.
 /// </summary>
+/// \todo make sorting a lazy operation instead; wait until the first has_next() or next() call
 template <typename Source>
 class Sort : public Iterator<typename std::vector<typename Source::value_type>::iterator>
 {
@@ -50,7 +51,7 @@ public:
     /// <param name="compare">The comparator to use in the sort.</param>
     /// <param name="stable_sort"><c>true</c> to use <c>std::stable_sort</c>, otherwise <c>std::sort</c> is used.</param>
     template <typename Compare>
-    Sort(Source&& source, Compare compare, bool stable_sort) : _source(std::forward<Source>(source)), _stream()
+    Sort(Source&& source, Compare compare, bool stable_sort) : _source(std::move(source)), _stream()
     {
         sort(compare, stable_sort); 
     }

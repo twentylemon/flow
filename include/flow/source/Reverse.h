@@ -37,6 +37,7 @@ namespace flow {
 /// Stream source to reverse the stream. Reversing is an eager operation, the entire stream up to this point
 /// is evaluated and stored.
 /// </summary>
+/// \todo make reversing a lazy operation instead; wait until the first has_next() or next() call
 template <typename Source>
 class Reverse : public Iterator<typename std::vector<typename Source::value_type>::reverse_iterator>
 {
@@ -48,7 +49,7 @@ public:
     /// Initializes a new instance of the <see cref="Reverse{Source}" /> class.
     /// </summary>
     /// <param name="source">The source stream to reverse.</param>
-    Reverse(Source&& source) : _source(std::forward<Source>(source)), _stream()
+    Reverse(Source&& source) : _source(std::move(source)), _stream()
     {
         reverse();
     }

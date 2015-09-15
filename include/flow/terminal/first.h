@@ -41,7 +41,7 @@ auto first() {
         if (!stream.has_next()) {
             throw std::out_of_range("flow::first() expects a non-empty stream");
         }
-        return std::move(stream.next());
+        return stream.next();
     });
 }
     }

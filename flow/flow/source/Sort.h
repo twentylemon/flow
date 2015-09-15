@@ -51,7 +51,7 @@ public:
     /// <param name="compare">The comparator to use in the sort.</param>
     /// <param name="stable_sort"><c>true</c> to use <c>std::stable_sort</c>, otherwise <c>std::sort</c> is used.</param>
     template <typename Compare>
-    Sort(Source&& source, Compare compare, bool stable_sort) : _source(std::forward<Source>(source)), _stream()
+    Sort(Source&& source, Compare compare, bool stable_sort) : _source(std::move(source)), _stream()
     {
         sort(compare, stable_sort); 
     }

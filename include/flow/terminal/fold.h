@@ -42,9 +42,9 @@ template <typename Accumulator, typename T>
 auto fold(Accumulator accumulator, T&& init) {
     return detail::make_terminal([accumulator, init](auto&& stream) mutable {
         while (stream.has_next()) {
-            init = accumulator(std::move(init), std::move(stream.next()));
+            init = accumulator(init, stream.next());
         }
-        return std::move(init);
+        return init;
     });
 }
 
@@ -61,7 +61,7 @@ auto fold(Accumulator accumulator) {
         if (!stream.has_next()) {
             throw std::out_of_range("flow::fold(Accumulator) expects a non-empty stream");
         }
-        return stream | fold(accumulator, std::move(stream.next()));
+        return stream | fold(accumulator, stream.next());
     });
 }
 
@@ -79,7 +79,7 @@ auto fold_id(Accumulator accumulator, UnaryFunction initializer) {
         if (!stream.has_next()) {
             throw std::out_of_range("flow::fold_id(Accumulator, UnaryFunction) expects a non-empty stream");
         }
-        return stream | fold(accumulator, std::move(initializer(stream.next())));
+        return stream | fold(accumulator, initializer(stream.next()));
     });
 }
 
@@ -93,7 +93,7 @@ auto fold_id(Accumulator accumulator, UnaryFunction initializer) {
 /// <returns>The detail::Terminal operation which folds the stream.</returns>
 template <typename Accumulator, typename UnaryFunction, typename T>
 auto fold_id(Accumulator accumulator, UnaryFunction initializer, T&& init) {
-    return fold(accumulator, std::move(initializer(init)));
+    return fold(accumulator, initializer(init));
 }
     }
 }

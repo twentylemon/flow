@@ -76,8 +76,7 @@ public:
     /// Ignores the next value from the stream.
     /// </summary>
     void lazy_next() {
-        _values[0] = _function(_values);    // destroy the first value
-        std::rotate(_values.begin(), _values.begin() + 1, _values.end());
+        next();
     }
 
     /// <summary>

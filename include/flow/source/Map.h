@@ -43,7 +43,7 @@ public:
     /// </summary>
     /// <param name="source">The source to map from.</param>
     /// <param name="operation">The mapping operation.</param>
-    Map(Source&& source, UnaryOperation operation) : _source(std::forward<Source>(source)), _operation(operation) { }
+    Map(Source&& source, UnaryOperation operation) : _source(std::move(source)), _operation(operation) { }
 
     /// <summary>
     /// Returns true if this source has more elements.
@@ -58,7 +58,7 @@ public:
     /// </summary>
     /// <returns>The next element in the stream.</returns>
     value_type next() {
-        return std::move(_operation(std::move(_source.next())));
+        return _operation(_source.next());
     }
 
     /// <summary>

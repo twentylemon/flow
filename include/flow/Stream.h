@@ -29,33 +29,6 @@
 #include "terminal/Terminal.h"
 #include "intermediate/Intermediate.h"
 
-/*
-    todo
-        - terminal::last is there a way to lazily step to the end of the stream?
-        - terminal::minmax naive implementation, 2n-2 comparisons; can it be improved to the 3n/2 solution?
-        - generator::operator| fails to capture value by reference for expressions like `vec | dump()`
-        - source::Sort make lazy instead
-        - source::Reverse make lazy instead
-        - source::Unique make lazy instead
-        - intermediate::unique add an overload for already sorted streams
-
-    terminal
-        - sample - randomly sample elements from the finite stream
-        - reservoir - randomly sample elements form the infinite stream
-
-    intermediate
-        - merge - merges sorted streams
-        - union - union sorted streams
-        - intersect - intersection of sorted streams
-        - difference - set difference of sorted streams
-        - symmetric_difference - symmetric difference of sorted streams
-        - parallel - execute the next operation in parallel
-
-    generator
-        - repeat - repeat a value or a container forever or some number of times
-        - random - generate values from an rng
-*/
-
 namespace flow {
 
 /// <summary>
@@ -72,6 +45,18 @@ namespace flow {
 /// <code>auto stream = Stream(...) | filter();<br/>
 /// auto min = stream | min();</code>
 /// </summary>
+/// \todo flow::terminal::sample - take a random sample of n elements from a finite stream
+/// \todo flow::terminal::reservoir - take a random sample of n elements from an infinite stream
+/// \todo flow::intermediate::merge - combine two sorted streams while maintaining sorted order
+/// \todo flow::intermediate::union - union two sorted/unique streams
+/// \todo flow::intermediate::intersect - intersect two sorted/unique streams
+/// \todo flow::intermediate::difference - compute the difference of two sorted/unique streams
+/// \todo flow::intermediate::symmetric_difference - compute the symmetric difference of two sorted/unique streams
+/// \todo flow::generator::repeat - infinitely repeat a value or container, allow limiting the number of limits
+/// \todo flow::generator::random - generate stream values from a random number generator
+/// \todo flow::generator::parallel_* - create a parallel version of other generators
+/// \todo flow::Stream - allow iterator access via begin() and end()
+/// \todo docs - add examples to the main page and readme
 template <typename Source>
 class Stream
 {
@@ -107,7 +92,7 @@ public:
     /// </summary>
     /// <returns>The next element in the stream.</returns>
     value_type next() {
-        return std::move(_source.next());
+        return _source.next();
     }
 
     /// <summary>
@@ -131,7 +116,7 @@ public:
     /// <param name="op">The operation to add to the pipeline.</param>
     /// <returns>A new stream that is the composition of this stream and the operation given.</returns>
     template <typename F>
-    std::result_of_t<intermediate::detail::Intermediate<F>(Stream<Source>&&)> operator|(intermediate::detail::Intermediate<F>& op) {
+    std::result_of_t<intermediate::detail::Intermediate<F>(Stream<Source>&&)> operator|(intermediate::detail::Intermediate<F>&& op) {
         return op(std::move(*this));
     }
 
@@ -141,7 +126,7 @@ public:
     /// <param name="op">The operation to add to the pipeline.</param>
     /// <returns>A new stream that is the composition of this stream and the operation given.</returns>
     template <typename F>
-    std::result_of_t<terminal::detail::Terminal<F>(Stream<Source>&&)> operator|(terminal::detail::Terminal<F>& op) {
+    std::result_of_t<terminal::detail::Terminal<F>(Stream<Source>&&)> operator|(terminal::detail::Terminal<F>&& op) {
         return op(std::move(*this));
     }
 

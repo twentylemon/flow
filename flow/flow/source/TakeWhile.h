@@ -44,7 +44,7 @@ public:
     /// </summary>
     /// <param name="source">The source to take elements from.</param>
     /// <param name="predicate">The predicate, take stream elements until this returns <c>false</c>.</param>
-    TakeWhile(Source&& source, UnaryPredicate predicate) : _source(std::forward<Source>(source)), _predicate(predicate) { }
+    TakeWhile(Source&& source, UnaryPredicate predicate) : _source(std::move(source)), _predicate(predicate) { }
 
     /// <summary>
     /// Returns true if this source has more elements.
@@ -52,7 +52,7 @@ public:
     /// <returns><c>true</c> if this source has more stream elements.</returns>
     bool has_next() {
         while (_source.has_next()) {
-            _current = std::move(_source.next());
+            _current = _source.next();
             if (_predicate(_current)) {
                 return true;
             }

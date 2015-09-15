@@ -50,7 +50,7 @@ auto iota(T&& begin) {
 /// <returns>A Stream of values starting at <paramref name="begin"/>, counting up using <c>operator+</c> by <paramref name="increment"/> each time.</returns>
 template <typename T, typename U>
 auto iota(T&& begin, const U& increment) {
-    return iterate([increment](auto&& val) { return std::move(val + increment);  }, std::forward<T>(begin));
+    return iterate([increment](auto&& val) { return std::move(val) + increment;  }, std::forward<T>(begin));
 }
     }
 }

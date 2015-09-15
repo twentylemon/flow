@@ -56,7 +56,7 @@ public:
     /// <returns>A new stream with this operation applied to it.</returns>
     template <typename Source>
     std::result_of_t<F(Stream<Source>&&)> operator()(Stream<Source>&& stream) {
-        return _operation(std::forward<Stream<Source>>(stream));
+        return _operation(std::move(stream));
     }
 
     /// <summary>

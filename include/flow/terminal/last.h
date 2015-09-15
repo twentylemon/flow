@@ -36,8 +36,9 @@ namespace flow {
 /// </summary>
 /// <returns>The detail::Terminal operation which gives the last element from the stream.</returns>
 /// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
+/// \todo is there a way to lazily step to the end of the stream?
 auto last() {
-    return fold([](auto&&, auto&& ele) { return ele; });
+    return fold([](auto&&, auto&& ele) { return std::move(ele); });
 }
     }
 }

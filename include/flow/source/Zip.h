@@ -44,7 +44,7 @@ public:
     /// <param name="left">The left stream source.</param>
     /// <param name="right">The right stream source.</param>
     /// <param name="zipper">The function used to zip the two streams together.</param>
-    Zip(LeftSource&& left, RightSource&& right, Zipper zipper) : _left(std::forward<LeftSource>(left)), _right(std::forward<RightSource>(right)), _zipper(zipper) { }
+    Zip(LeftSource&& left, RightSource&& right, Zipper zipper) : _left(std::move(left)), _right(std::move(right)), _zipper(zipper) { }
 
     /// <summary>
     /// Returns true if this source has more elements.
@@ -59,7 +59,7 @@ public:
     /// </summary>
     /// <returns>The next element in the stream.</returns>
     value_type next() {
-        return std::move(_zipper(std::move(_left.next()), std::move(_right.next())));
+        return _zipper(_left.next(), _right.next());
     }
 
     /// <summary>

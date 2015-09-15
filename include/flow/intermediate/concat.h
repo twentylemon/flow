@@ -54,9 +54,9 @@ auto concat(Stream<Tail>&& tail) {
 /// <param name="container">The container to concatenate onto the end of the stream.</param>
 /// <returns>A detail::Intermediate operation that concatenates the container onto the stream.</returns>
 /// <seealso cref="from()"/>
-template <typename Container>
+template <typename Container, typename = typename std::enable_if_t<generator::detail::has_const_iterator<Container>::value>>
 auto concat(Container& container) {
-    return concat(from(container));
+    return concat(generator::from(container));
 }
 
 /// <summary>
@@ -66,9 +66,9 @@ auto concat(Container& container) {
 /// <param name="container">The container to concatenate onto the end of the stream.</param>
 /// <returns>A detail::Intermediate operation that concatenates the container onto the stream.</returns>
 /// <seealso cref="from()"/>
-template <typename Container>
+template <typename Container, typename = typename std::enable_if_t<generator::detail::has_const_iterator<Container>::value>>
 auto concat(const Container& container) {
-    return concat(from(container));
+    return concat(generator::from(container));
 }
     }
 }

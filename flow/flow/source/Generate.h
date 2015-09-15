@@ -60,14 +60,14 @@ public:
     /// </summary>
     /// <returns>The next element in the stream.</returns>
     value_type next() {
-        return std::move(_generator());
+        return _generator();
     }
 
     /// <summary>
     /// Ignores the next value from the stream.
     /// </summary>
     void lazy_next() {
-        _generator();
+        next();
     }
 
     /// <summary>

@@ -40,7 +40,7 @@ template <typename UnaryFunction>
 auto each(UnaryFunction func) {
     return detail::make_terminal([func](auto&& stream) {
         while (stream.has_next()) {
-            func(std::move(stream.next()));
+            func(stream.next());
         }
         return std::move(func);
     });

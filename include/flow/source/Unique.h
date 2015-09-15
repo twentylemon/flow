@@ -37,6 +37,7 @@ namespace flow {
 /// Stream source to sort the stream. Sorting is an eager operation, the entire stream up to this point
 /// is evaluated and stored and finally sorted after.
 /// </summary>
+/// \todo make uniqueifying a lazy operation instead; wait until the first has_next() or next() call
 template <typename Source>
 class Unique : public Sort<Source>
 {
@@ -50,7 +51,7 @@ public:
     /// <param name="source">The source stream to sort are take unique values from.</param>
     /// <param name="compare">The comparator to use in the sort.</param>
     template <typename Compare>
-    Unique(Source&& source, Compare compare) : parent_type(std::forward<Source>(source), compare, false)
+    Unique(Source&& source, Compare compare) : parent_type(std::move(source), compare, false)
     {
         unique(compare);
     }

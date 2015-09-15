@@ -32,9 +32,13 @@ public:
     int get_value() const {
         return value;
     }
+    Widget(const Widget& w) : value(w.value) { std::cout << "copy" << std::endl; }
+    Widget(Widget&& w) : value(std::move(w.value)) { std::cout << "move" << std::endl; }
     bool operator<(const Widget& rhs) const { return value < rhs.value; }
     Widget operator*(const Widget& rhs) const { return Widget(value * rhs.value); }
     bool operator==(const Widget& rhs) const { return value == rhs.value; }
+    Widget& operator=(const Widget& w) { value = w.value; std::cout << "copy assign" << std::endl; return *this; }
+    Widget& operator=(Widget&& w) { value = std::move(w.value); std::cout << "move assign" << std::endl; return *this; }
     int value;
     std::array<int, 500> arry;
 };
@@ -78,7 +82,7 @@ int main(int argc, char** argv) {
     using T = decltype(vec)::value_type;
     std::size_t inc = vec | nth(50);
     std::cout << inc << '\t' << vec.size() << std::endl;
-
+    
     boost::timer t1;
     std::pair<T, T> m1;
     T v1 = 0;

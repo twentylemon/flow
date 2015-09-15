@@ -77,7 +77,7 @@ public:
     /// <returns>The return value of the curried function.</returns>
     template <typename T, std::size_t N>
     constexpr auto operator()(std::array<T, N>& ary) const {
-        return apply(std::make_index_sequence<N>(), _curry_function, std::forward<std::array<T, N>>(ary));
+        return apply(std::make_index_sequence<N>(), _curry_function, ary);
     }
 
 protected:

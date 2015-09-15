@@ -8,7 +8,7 @@
  * The library provides many common data transformations, such as map, filter and fold, as well as other commonly used
  * operations like computing the sum, min and max or simply counting the number or elements. And all of it is packaged
  * in a nice, easy to read and understand syntax. To use, simply <c>\#include &lt;flow.h&gt;</c> in your C++14 program.
- * With fully optimized code (<c>-Ofast</c> or <c>/O2</c>), flow does not offer any performace penalties compared to
+ * With fully optimized code (<c>-O3</c> or <c>/O2</c>), flow does not offer any performace penalties compared to
  * standard code, so there's no reason not to love.</para>
  * 
  * What is a Sick Flow?

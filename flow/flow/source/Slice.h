@@ -49,7 +49,7 @@ public:
     /// <param name="end">The end index to slice to.</param>
     /// <param name="step_size">The step value, eg 2 will give every 2nd element in the range.</param>
     Slice(Source&& source, std::size_t begin, std::size_t end, std::size_t step_size) :
-        Skip<Source>(std::forward<Source>(source), begin, step_size), _end(end) { }
+        Skip<Source>(std::move(source), begin, step_size), _end(end) { }
 
     /// <summary>
     /// Returns true if this source has more elements.

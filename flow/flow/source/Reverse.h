@@ -49,7 +49,7 @@ public:
     /// Initializes a new instance of the <see cref="Reverse{Source}" /> class.
     /// </summary>
     /// <param name="source">The source stream to reverse.</param>
-    Reverse(Source&& source) : _source(std::forward<Source>(source)), _stream()
+    Reverse(Source&& source) : _source(std::move(source)), _stream()
     {
         reverse();
     }

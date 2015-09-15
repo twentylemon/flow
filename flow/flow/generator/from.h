@@ -88,7 +88,7 @@ auto from(const Container& container) {
 /// <returns><c>from(container) | op</c></returns>
 template <typename Container, typename F, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto operator|(Container& container, intermediate::detail::Intermediate<F>&& op) {
-    return from(container) | std::forward<intermediate::detail::Intermediate<F>>(op);
+    return from(container) | std::move(op);
 }
 
 /// <summary>
@@ -102,10 +102,9 @@ auto operator|(Container& container, intermediate::detail::Intermediate<F>&& op)
 /// <param name="container">The container to create a stream from.</param>
 /// <param name="op">The stream operation.</param>
 /// <returns><c>from(container) | op</c></returns>
-/// \todo fails to capture value by reference for expressions like <c>vec | dump()</c>
 template <typename Container, typename F, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
-auto operator|(Container& container, terminal::detail::Terminal<F>&& op) {
-    return from(container) | std::forward<terminal::detail::Terminal<F>>(op);
+decltype(auto) operator|(Container& container, terminal::detail::Terminal<F>&& op) {
+    return from(container) | std::move(op);
 }
 
 /// <summary>
@@ -117,7 +116,7 @@ auto operator|(Container& container, terminal::detail::Terminal<F>&& op) {
 /// <returns><c>from(container) | op</c></returns>
 template <typename Container, typename F, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto operator|(const Container& container, intermediate::detail::Intermediate<F>&& op) {
-    return from(container) | std::forward<intermediate::detail::Intermediate<F>>(op);
+    return from(container) | std::move(op);
 }
 
 /// <summary>
@@ -131,10 +130,9 @@ auto operator|(const Container& container, intermediate::detail::Intermediate<F>
 /// <param name="container">The container to create a stream from.</param>
 /// <param name="op">The stream operation.</param>
 /// <returns><c>from(container) | op</c></returns>
-/// \todo fails to capture value by reference for expressions like <c>vec | dump()</c>
 template <typename Container, typename F, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
-auto operator|(const Container& container, terminal::detail::Terminal<F>&& op) {
-    return from(container) | std::forward<terminal::detail::Terminal<F>>(op);
+decltype(auto) operator|(const Container& container, terminal::detail::Terminal<F>&& op) {
+    return from(container) | std::move(op);
 }
     }
 }

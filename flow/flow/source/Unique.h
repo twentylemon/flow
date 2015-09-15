@@ -51,7 +51,7 @@ public:
     /// <param name="source">The source stream to sort are take unique values from.</param>
     /// <param name="compare">The comparator to use in the sort.</param>
     template <typename Compare>
-    Unique(Source&& source, Compare compare) : parent_type(std::forward<Source>(source), compare, false)
+    Unique(Source&& source, Compare compare) : parent_type(std::move(source), compare, false)
     {
         unique(compare);
     }

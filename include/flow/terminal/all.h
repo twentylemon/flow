@@ -42,7 +42,7 @@ template <typename UnaryPredicate>
 auto all(UnaryPredicate predicate) {
     return detail::make_terminal([predicate](auto&& stream) {
         while (stream.has_next()) {
-            if (!predicate(std::move(stream.next()))) {
+            if (!predicate(stream.next())) {
                 return false;
             }
         }

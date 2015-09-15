@@ -43,7 +43,7 @@ public:
     /// </summary>
     /// <param name="source">The source to peek at the elements of.</param>
     /// <param name="action">The action to apply to each stream element.</param>
-    Peek(Source&& source, Action action) : _source(std::forward<Source>(source)), _action(action) { }
+    Peek(Source&& source, Action action) : _source(std::move(source)), _action(action) { }
 
     /// <summary>
     /// Returns true if this source has more elements.
@@ -58,17 +58,16 @@ public:
     /// </summary>
     /// <returns>The next element in the stream.</returns>
     value_type next() {
-        value_type current = std::move(_source.next());
+        value_type current = _source.next();
         _action(current);
-        return std::move(current);
+        return current;
     }
 
     /// <summary>
     /// Ignores the next value from the stream.
     /// </summary>
     void lazy_next() {
-        //_source.lazy_next();
-        _action(std::move(_source.next()));
+        _action(_source.next());
     }
 
     /// <summary>

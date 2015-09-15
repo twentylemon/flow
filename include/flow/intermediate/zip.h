@@ -143,9 +143,9 @@ auto zip(Stream<RightSource>&& right) {
 /// <returns>A detail::Intermediate operation that zips the two streams.</returns>
 /// <seealso cref="from()"/>
 /// <seealso cref="uncurry()"/>
-template <typename Container>
+template <typename Container, typename = typename std::enable_if_t<generator::detail::has_const_iterator<Container>::value>>
 auto zip(Container& container) {
-    return zip(from(container));
+    return zip(generator::from(container));
 }
 
 /// <summary>
@@ -158,9 +158,9 @@ auto zip(Container& container) {
 /// <returns>A detail::Intermediate operation that zips the two streams.</returns>
 /// <seealso cref="from()"/>
 /// <seealso cref="uncurry()"/>
-template <typename Container>
+template <typename Container, typename = typename std::enable_if_t<generator::detail::has_const_iterator<Container>::value>>
 auto zip(const Container& container) {
-    return zip(from(container));
+    return zip(generator::from(container));
 }
 
 /// <summary>
@@ -183,9 +183,9 @@ auto zip(Stream<RightSource>&& right, BinaryOperation zipper) {
 /// <param name="container">The container to zip together with this stream.</param>
 /// <param name="zipper">The zipping operation that combines the two streams.</param>
 /// <returns>A detail::Intermediate operation that zips the two streams.</returns>
-template <typename Container, typename BinaryOperation>
+template <typename Container, typename BinaryOperation, typename = typename std::enable_if_t<generator::detail::has_const_iterator<Container>::value>>
 auto zip(Container& container, BinaryOperation zipper) {
-    return zip(from(container), zipper);
+    return zip(generator::from(container), zipper);
 }
 
 /// <summary>
@@ -195,9 +195,9 @@ auto zip(Container& container, BinaryOperation zipper) {
 /// <param name="container">The container to zip together with this stream.</param>
 /// <param name="zipper">The zipping operation that combines the two streams.</param>
 /// <returns>A detail::Intermediate operation that zips the two streams.</returns>
-template <typename Container, typename BinaryOperation>
+template <typename Container, typename BinaryOperation, typename = typename std::enable_if_t<generator::detail::has_const_iterator<Container>::value>>
 auto zip(const Container& container, BinaryOperation zipper) {
-    return zip(from(container), zipper);
+    return zip(generator::from(container), zipper);
 }
     }
 }

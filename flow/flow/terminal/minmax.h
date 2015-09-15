@@ -48,15 +48,15 @@ auto minmax(Compare compare = Compare()) {
         if (!stream.has_next()) {
             throw std::out_of_range("flow::minmax(Compare) expects a non-empty stream");
         }
-        auto min = std::move(stream.next());
+        auto min = stream.next();
         auto max = min;
         while (stream.has_next()) {
-            auto next = std::move(stream.next());
+            auto next = stream.next();
             if (compare(next, min)) {
-                min = std::move(next);
+                min = next;
             }
             else if (compare(max, next)) {
-                max = std::move(next);
+                max = next;
             }
         }
         return std::make_pair(min, max);

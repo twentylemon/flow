@@ -44,7 +44,7 @@ public:
     /// </summary>
     /// <param name="head">The head stream source to start with.</param>
     /// <param name="tail">The stream source to concatenate onto the end of the head source.</param>
-    Concat(Head&& head, Tail&& tail) : _head(std::forward<Head>(head)), _tail(std::forward<Tail>(tail)), _from_head(true) { }
+    Concat(Head&& head, Tail&& tail) : _head(std::move(head)), _tail(std::move(tail)), _from_head(true) { }
 
     /// <summary>
     /// Returns true if this source has more elements.
@@ -64,9 +64,9 @@ public:
     /// <returns>The next element in the stream.</returns>
     value_type next() {
         if (_from_head) {
-            return std::move(_head.next());
+            return _head.next();
         }
-        return std::move(_tail.next());
+        return _tail.next();
     }
 
     /// <summary>

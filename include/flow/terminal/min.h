@@ -44,9 +44,9 @@ template <typename Compare = std::less<void>>
 auto min(Compare compare = Compare()) {
     return fold([compare](auto&& lhs, auto&& rhs) {
         if (compare(lhs, rhs)) {
-            return lhs;
+            return std::move(lhs);
         }
-        return rhs;
+        return std::move(rhs);
     });
 }
     }

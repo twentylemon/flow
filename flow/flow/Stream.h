@@ -92,7 +92,7 @@ public:
     /// </summary>
     /// <returns>The next element in the stream.</returns>
     value_type next() {
-        return std::move(_source.next());
+        return _source.next();
     }
 
     /// <summary>

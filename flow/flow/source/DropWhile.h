@@ -44,7 +44,7 @@ public:
     /// </summary>
     /// <param name="source">The source to drop elements from.</param>
     /// <param name="predicate">The predicate, drop stream elements until this returns <c>false</c>.</param>
-    DropWhile(Source&& source, UnaryPredicate predicate) : _source(std::forward<Source>(source)), _predicate(predicate), _initial(true) { }
+    DropWhile(Source&& source, UnaryPredicate predicate) : _source(std::move(source)), _predicate(predicate), _initial(true) { }
 
     /// <summary>
     /// Returns true if this source has more elements.
@@ -54,7 +54,7 @@ public:
         if (_initial) {
             _initial = false;
             while (_source.has_next()) {
-                _current = std::move(_source.next());
+                _current = _source.next();
                 if (!_predicate(_current)) {
                     return true;
                 }
@@ -63,7 +63,7 @@ public:
         }
         else {
             if (_source.has_next()) {
-                _current = std::move(_source.next());
+                _current = _source.next();
                 return true;
             }
             return false;
