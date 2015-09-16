@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['skip',['Skip',['../dd/d62/classflow_1_1source_1_1_skip.html',1,'flow::source']]],
+  ['skip',['Skip',['../dd/d62/classflow_1_1source_1_1_skip.html#ae6647e2ca96e70bb68b771a22ce76f82',1,'flow::source::Skip::Skip()'],['../dc/d09/namespaceflow_1_1intermediate.html#a2725d9fb49cd0c4fe25658500c2fa1f1',1,'flow::intermediate::skip(std::size_t begin, std::size_t step_size)'],['../dc/d09/namespaceflow_1_1intermediate.html#a2f8b2e7e5cc41ecd02cb4381a706d545',1,'flow::intermediate::skip(std::size_t begin)']]],
+  ['skip_2eh',['skip.h',['../dc/d32/intermediate_2skip_8h.html',1,'']]],
+  ['skip_2eh',['Skip.h',['../d1/df2/source_2skip_8h.html',1,'']]],
+  ['skip_5fevery',['skip_every',['../dc/d09/namespaceflow_1_1intermediate.html#aeef64fd0f533b9b084b83c46fe8352d4',1,'flow::intermediate']]],
+  ['slice',['Slice',['../da/d25/classflow_1_1source_1_1_slice.html',1,'flow::source']]],
+  ['slice',['Slice',['../da/d25/classflow_1_1source_1_1_slice.html#a92744208381b60a842a5415530322f2a',1,'flow::source::Slice::Slice()'],['../dc/d09/namespaceflow_1_1intermediate.html#a1954e2f5425b7603794790f7645e776e',1,'flow::intermediate::slice(std::size_t begin, std::size_t end, std::size_t step_size)'],['../dc/d09/namespaceflow_1_1intermediate.html#ac8468b308d2903331dc966819b373625',1,'flow::intermediate::slice(std::size_t begin, std::size_t end)']]],
+  ['slice_2eh',['Slice.h',['../d8/d4a/source_2slice_8h.html',1,'']]],
+  ['slice_2eh',['slice.h',['../d1/dd9/intermediate_2slice_8h.html',1,'']]],
+  ['sort',['Sort',['../de/d82/classflow_1_1source_1_1_sort.html',1,'flow::source']]],
+  ['sort',['sort',['../de/d82/classflow_1_1source_1_1_sort.html#a60e2968eedf8c0fb89978061ef02c223',1,'flow::source::Sort::sort(Compare compare, bool stable_sort)'],['../de/d82/classflow_1_1source_1_1_sort.html#a331afe1bcf947cfe4d93ab8e64404fd1',1,'flow::source::Sort::Sort(Source &amp;&amp;source, Compare compare, bool stable_sort)'],['../dc/d09/namespaceflow_1_1intermediate.html#a0641d6ecc741bd5f346a961e5e8ccf44',1,'flow::intermediate::sort()']]],
+  ['sort_2eh',['sort.h',['../d9/d6e/intermediate_2sort_8h.html',1,'']]],
+  ['sort_2eh',['Sort.h',['../d2/d1d/source_2sort_8h.html',1,'']]],
+  ['source',['source',['../d9/dcd/classflow_1_1_stream.html#a2ba3ee37c4e132838681519c0f4dfdda',1,'flow::Stream']]],
+  ['source_5ftype',['source_type',['../d9/dcd/classflow_1_1_stream.html#a1f5a9b22df89ffc576bbc37548864ee8',1,'flow::Stream']]],
+  ['stable_5fsort',['stable_sort',['../dc/d09/namespaceflow_1_1intermediate.html#ab9a5f0773de4aac232e80ae23495e76e',1,'flow::intermediate']]],
+  ['step_5fto',['step_to',['../dd/d62/classflow_1_1source_1_1_skip.html#a2b04c02bebb4c68bc37fe4df59b7baca',1,'flow::source::Skip']]],
+  ['stream',['Stream',['../d9/dcd/classflow_1_1_stream.html',1,'flow']]],
+  ['stream',['Stream',['../d9/dcd/classflow_1_1_stream.html#a8bb7d10321101656ba68f420eec020ef',1,'flow::Stream']]],
+  ['stream_2eh',['Stream.h',['../d3/d99/_stream_8h.html',1,'']]],
+  ['sum',['sum',['../d1/d6c/namespaceflow_1_1terminal.html#a9d36eab187f4b501c07a00f39e4f2381',1,'flow::terminal::sum()'],['../d1/d6c/namespaceflow_1_1terminal.html#a21f36f6877d4af5794b93a8f1c0af92d',1,'flow::terminal::sum(T &amp;&amp;init)']]],
+  ['sum_2eh',['sum.h',['../d8/dee/sum_8h.html',1,'']]]
+];
