@@ -55,8 +55,8 @@ namespace flow {
 /// \todo flow::generator::repeat - infinitely repeat a value or container, allow limiting the number of limits
 /// \todo flow::generator::random - generate stream values from a random number generator
 /// \todo flow::generator::parallel_* - create a parallel version of other generators
-/// \todo flow::Stream - allow iterator access via begin() and end()
-/// \todo docs - add examples to the main page and readme
+/// \todo parallel pipelining of stream operations?
+/// \todo allow iterator access via begin() and end()
 template <typename Source>
 class Stream
 {

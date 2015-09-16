@@ -32,13 +32,13 @@ public:
     int get_value() const {
         return value;
     }
-    Widget(const Widget& w) : value(w.value) { std::cout << "copy" << std::endl; }
-    Widget(Widget&& w) : value(std::move(w.value)) { std::cout << "move" << std::endl; }
+    //Widget(const Widget& w) : value(w.value) { std::cout << "copy" << std::endl; }
+    //Widget(Widget&& w) : value(std::move(w.value)) { std::cout << "move" << std::endl; }
     bool operator<(const Widget& rhs) const { return value < rhs.value; }
     Widget operator*(const Widget& rhs) const { return Widget(value * rhs.value); }
     bool operator==(const Widget& rhs) const { return value == rhs.value; }
-    Widget& operator=(const Widget& w) { value = w.value; std::cout << "copy assign" << std::endl; return *this; }
-    Widget& operator=(Widget&& w) { value = std::move(w.value); std::cout << "move assign" << std::endl; return *this; }
+    //Widget& operator=(const Widget& w) { value = w.value; std::cout << "copy assign" << std::endl; return *this; }
+    //Widget& operator=(Widget&& w) { value = std::move(w.value); std::cout << "move assign" << std::endl; return *this; }
     int value;
     std::array<int, 500> arry;
 };
