@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Flow by twentylemon</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Flow</h1>
+        <h2>C++ lazy evaluated stream processing</h2>
+        <a href="https://github.com/twentylemon/flow" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="sick-flow-bro" class="anchor" href="#sick-flow-bro" aria-hidden="true"><span class="octicon octicon-link"></span></a>sick flow, bro</h1>
+
+<p>Inspired by Java 8 <a href="http://www.oracle.com/technetwork/articles/java/ma14-java-se-8-streams-2177646.html">Streams</a>,
+flow is a C++14 library that provides lazy evaluation and functional transformations on data. It's like Haskell for C++.
+The library provides many common data transformations, such as map, filter and fold, as well as other commonly used
+operations like computing the sum, min and max or simply counting the number or elements. And all of it is packaged
+in a nice, easy to read and understand syntax. To use, simply <code>#include &lt;flow.h&gt;</code> in your C++14 program. With fully
+optimized code (<code>-O3</code> or <code>/O2</code>), flow does not offer any performance penalities, so there's no reason not to love.</p>
+
+<h2>
+<a id="what-is-a-sick-flow" class="anchor" href="#what-is-a-sick-flow" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is a Sick Flow?</h2>
+
+<p>A flow is usually called a stream. But if I called the library "Stream" I couldn't say "sick flow" all the time.
+I'll use flow and stream interchangeably, just know that a stream is a source of data, data that would want to
+do things with.</p>
+
+<h2>
+<a id="creating-a-sick-flow" class="anchor" href="#creating-a-sick-flow" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Sick Flow</h2>
+
+<p>The <code>flow::generator</code> namespace contains several factory methods for creating a Stream object. Probably the most
+common generator used is <code>from()</code>, which creates a Stream from an iterator range or a container.</p>
+
+<div class="highlight highlight-source-c++"><pre><span class="pl-k">auto</span> stream = from(my_vector); <span class="pl-c">// a stream over the entire vector in the same order</span></pre></div>
+
+<p>Other common stream generators are <code>iota()</code>, which counts up from a value, and <code>repeat()</code>, which repeats a value or
+cycles a container.</p>
+
+<h2>
+<a id="manipulating-a-sick-flow" class="anchor" href="#manipulating-a-sick-flow" aria-hidden="true"><span class="octicon octicon-link"></span></a>Manipulating a Sick Flow</h2>
+
+<p>Say you want to loop through a list of numbers. But you only want the even values. Then you want the squares of those
+values for some reason. Oh, and you want at most 10 of those. How would you do that in normal C++? Probably something like</p>
+
+<div class="highlight highlight-source-c++"><pre><span class="pl-k">int</span> count = <span class="pl-c1">0</span>;
+<span class="pl-k">for</span> (<span class="pl-k">auto</span> it = list.begin(), end = list.end(); it != end &amp; count &lt; <span class="pl-c1">10</span>; ++it) {
+    <span class="pl-k">if</span> (*it % <span class="pl-c1">2</span> == <span class="pl-c1">0</span>) {
+        ++count;
+        <span class="pl-c1">process</span>(*it * *it);
+    }
+}</pre></div>
+
+<p>Not bad, but it's not quickly clear what is going on. The same operation can be done as a sick flow instead:</p>
+
+<div class="highlight highlight-source-c++"><pre>list | filter([](<span class="pl-k">int</span> i){ <span class="pl-k">return</span> i % <span class="pl-c1">2</span> == <span class="pl-c1">0</span>; }) | limit(<span class="pl-c1">10</span>) | map([](<span class="pl-k">int</span> i){ <span class="pl-k">return</span> i*i; }) | each(process);</pre></div>
+
+<p>Reading the line aloud, it's obvious what is happening. Take the list, keep even values, limit it to 10 elements,
+map the elements to their square, and then process each of those. Fun. This is just a trivial example, there many other
+stream operations available to be used.
+Stream operations are broken down into two main types: Intermediate and Terminal operations. Intermediate operations
+transform a stream into another stream. We saw three examples above in <code>filter</code>, <code>limit</code> and <code>map</code>. Intermediate
+operations are meaningless without some sort of Terminal operation, such as <code>each</code> or <code>count</code>. Terminal operations
+do something with the final stream data, be it summing, counting, calling a function, finding the min, and so on.</p>
+
+<p>Intermediate operations are all inside the flow::intermediate namespace.</p>
+
+<p>Terminal operations are all inside the flow::terminal namespace.</p>
+
+<h3>
+<a id="a-word-on-the-flow-namespace" class="anchor" href="#a-word-on-the-flow-namespace" aria-hidden="true"><span class="octicon octicon-link"></span></a>A Word on the flow namespace</h3>
+
+<p>All of the functions in <code>flow::generator</code>, <code>flow::intermediate</code> and <code>flow::terminal</code> are aliased to also be in the <code>flow</code> namespace.
+For your program, if you do <code>using namespace flow;</code> (if you want), you get access to all the core parts of the flow library.
+If not, you can still just write <code>flow::map</code> instead of <code>flow::intermediate::map</code>.</p>
+
+<h3>
+<a id="documentation-at-a-glance" class="anchor" href="#documentation-at-a-glance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation at a Glance</h3>
+
+<p>The best way to view all available functions, use the <a href="namespacemembers_func.html">Namespace Members</a> page. It lists
+every important function and the namespace it sits in, indicating whether it is a generator, or an intermediate or terminal operation.</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/twentylemon/flow/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/twentylemon/flow/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/twentylemon/flow"></a> is maintained by <a href="https://github.com/twentylemon">twentylemon</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
