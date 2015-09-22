@@ -14,8 +14,9 @@ var indexSectionsWithContent =
   4: "acdefghilmnoprstuz",
   5: "_z",
   6: "pstv",
-  7: "i",
-  8: "t"
+  7: "v",
+  8: "i",
+  9: "t"
 };
 
 var indexSectionNames =
@@ -27,8 +28,9 @@ var indexSectionNames =
   4: "functions",
   5: "variables",
   6: "typedefs",
-  7: "related",
-  8: "pages"
+  7: "enumvalues",
+  8: "related",
+  9: "pages"
 };
 
 function convertToId(search)
