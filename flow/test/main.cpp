@@ -150,6 +150,6 @@ int main(int argc, char** argv) {
     from(widgets) | filter([](Widget& w){ return w.value > 5; }) | dump();
     
     std::cout << std::endl;
-    //system("pause");
+    system("pause");
     return 0;
 }
