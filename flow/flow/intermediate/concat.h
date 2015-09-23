@@ -31,8 +31,15 @@
 #include "../source/Concat.h"
 #include "../generator/from.h"
 
+
 namespace flow {
     namespace intermediate {
+
+/// \example concat.cpp
+/// <para>A simple flow::concat example. This operation appends a stream onto the end of another stream.
+/// The type of elements in the <em>tail</em> stream must be convertible to the type of element in
+/// the <em>head</em> stream.</para>
+/// <para>Overrides are available which are shorthands for calling from().</para>
 
 /// <summary>
 /// Concatenates the given Stream onto the end of the operated stream. The <paramref name="tail"/> stream elements
@@ -48,7 +55,20 @@ auto concat(Stream<Tail>&& tail) {
 }
 
 /// <summary>
-/// Concatenates the given container onto the end of the Stream. This is the same as <c>concat(from(container))</c>.
+/// Concatenates the given iterator range onto the end of the Stream. This is the same as <c>concat(from(begin, end))</c>.
+/// The <paramref name="tail"/> stream elements must be convertible to the same type of elements as the head stream.
+/// </summary>
+/// <param name="begin">The beginning of the range to concat.</param>
+/// <param name="end">The end of the range to concat.</param>
+/// <returns>A detail::Intermediate operation that concatenates the container onto the stream.</returns>
+/// <seealso cref="from()"/>
+template <typename Itr>
+auto concat(Itr begin, Itr end) {
+    return concat(generator::from(begin, end));
+}
+
+/// <summary>
+/// Concatenates <paramref name="container"/> onto the end of the Stream. This is the same as <c>concat(from(container))</c>.
 /// The <paramref name="tail"/> stream elements must be convertible to the same type of elements as the head stream.
 /// </summary>
 /// <param name="container">The container to concatenate onto the end of the stream.</param>
@@ -60,7 +80,7 @@ auto concat(Container& container) {
 }
 
 /// <summary>
-/// Concatenates the given container onto the end of the Stream. This is the same as <c>concat(from(container))</c>.
+/// Concatenates <paramref name="container"/> onto the end of the Stream. This is the same as <c>concat(from(container))</c>.
 /// The <paramref name="tail"/> stream elements must be convertible to the same type of elements as the head stream.
 /// </summary>
 /// <param name="container">The container to concatenate onto the end of the stream.</param>

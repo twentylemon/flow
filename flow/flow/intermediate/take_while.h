@@ -53,7 +53,7 @@ auto take_while(UnaryPredicate predicate) {
 /// the first <c>false</c> are discarded. This is an overload for streams with types convertible to <c>bool</c>.
 /// </summary>
 /// <returns>A detail::Intermediate operation that takes stream elements while they are <c>true</c>.</returns>
-auto take_while() {
+inline auto take_while() {
     return take_while([](const auto& ele) { return static_cast<bool>(ele); });
 }
 

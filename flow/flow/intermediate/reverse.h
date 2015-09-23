@@ -41,7 +41,7 @@ namespace flow {
 /// <code>from(container.rbegin(), container.rend()) | ...</code>
 /// </summary>
 /// <returns>A detail::Intermediate operation that reverses the stream.</returns>
-auto reverse() {
+inline auto reverse() {
     return detail::make_intermediate([](auto&& stream) {
         return Stream<source::Reverse<typename std::remove_reference_t<decltype(stream)>::source_type>>(std::move(stream.source()));
     });

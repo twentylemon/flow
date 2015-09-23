@@ -201,7 +201,6 @@
     <ClInclude Include="..\flow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="doxy_mainpage.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="flow.licenseheader" />

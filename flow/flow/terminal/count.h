@@ -35,7 +35,7 @@ namespace flow {
 /// Counts the number of elements in the stream. The count is returned as <c>std::size_t</c>.
 /// </summary>
 /// <returns>The detail::Terminal operation which counts the number of elements in the stream.</returns>
-auto count() {
+inline auto count() {
     return detail::make_terminal([](auto&& stream) {
         std::size_t size = 0;
         while (stream.has_next()) {

@@ -19,32 +19,32 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{EAA3CBF1-BFA3-4A2C-8168-F7A61407383F}</ProjectGuid>
-    <RootNamespace>flow</RootNamespace>
+    <ProjectGuid>{8E4F70DF-D4F5-45FB-AE74-B011758DCF9D}</ProjectGuid>
+    <RootNamespace>examples</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -68,7 +68,18 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(SolutionDir);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(SolutionDir);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(SolutionDir);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(SolutionDir);$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -118,68 +129,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\flow.h" />
-    <ClInclude Include="Compose.h" />
-    <ClInclude Include="generator\empty.h" />
-    <ClInclude Include="generator\generate.h" />
-    <ClInclude Include="generator\iota.h" />
-    <ClInclude Include="generator\iterate.h" />
-    <ClInclude Include="source\Generate.h" />
-    <ClInclude Include="source\IterateFunc.h" />
-    <ClInclude Include="uncurry.h" />
-    <ClInclude Include="generator\from.h" />
-    <ClInclude Include="intermediate\concat.h" />
-    <ClInclude Include="intermediate\drop_while.h" />
-    <ClInclude Include="intermediate\filter.h" />
-    <ClInclude Include="intermediate\Intermediate.h" />
-    <ClInclude Include="intermediate\limit.h" />
-    <ClInclude Include="intermediate\map.h" />
-    <ClInclude Include="intermediate\peek.h" />
-    <ClInclude Include="intermediate\replace.h" />
-    <ClInclude Include="intermediate\reverse.h" />
-    <ClInclude Include="intermediate\skip.h" />
-    <ClInclude Include="intermediate\slice.h" />
-    <ClInclude Include="intermediate\sort.h" />
-    <ClInclude Include="intermediate\take_while.h" />
-    <ClInclude Include="intermediate\unique.h" />
-    <ClInclude Include="intermediate\zip.h" />
-    <ClInclude Include="source\Concat.h" />
-    <ClInclude Include="source\DropWhile.h" />
-    <ClInclude Include="source\Filter.h" />
-    <ClInclude Include="source\Iterator.h" />
-    <ClInclude Include="source\Map.h" />
-    <ClInclude Include="source\Peek.h" />
-    <ClInclude Include="source\Reverse.h" />
-    <ClInclude Include="source\Skip.h" />
-    <ClInclude Include="source\Slice.h" />
-    <ClInclude Include="source\Sort.h" />
-    <ClInclude Include="source\TakeWhile.h" />
-    <ClInclude Include="source\Unique.h" />
-    <ClInclude Include="source\Zip.h" />
-    <ClInclude Include="Stream.h" />
-    <ClInclude Include="terminal\all.h" />
-    <ClInclude Include="terminal\any.h" />
-    <ClInclude Include="terminal\contains.h" />
-    <ClInclude Include="terminal\copy.h" />
-    <ClInclude Include="terminal\count.h" />
-    <ClInclude Include="terminal\dump.h" />
-    <ClInclude Include="terminal\each.h" />
-    <ClInclude Include="terminal\first.h" />
-    <ClInclude Include="terminal\fold.h" />
-    <ClInclude Include="terminal\last.h" />
-    <ClInclude Include="terminal\max.h" />
-    <ClInclude Include="terminal\min.h" />
-    <ClInclude Include="terminal\minmax.h" />
-    <ClInclude Include="terminal\none.h" />
-    <ClInclude Include="terminal\nth.h" />
-    <ClInclude Include="terminal\product.h" />
-    <ClInclude Include="terminal\sum.h" />
-    <ClInclude Include="terminal\Terminal.h" />
-    <ClInclude Include="terminal\to.h" />
+    <ClCompile Include="concat.cpp" />
+    <ClCompile Include="examples.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\README.md" />
-    <None Include="flow.licenseheader" />
+    <ClInclude Include="examples.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

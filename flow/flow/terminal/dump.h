@@ -42,7 +42,7 @@ namespace flow {
 /// <param name="out">The output stream to print to.</param>
 /// <param name="delimiter">The delimiter to add after each element, by default a single space is added.</param>
 /// <returns>The detail::Terminal operation which print the stream elements to <paramref name="out"/>.</returns>
-auto dump(std::ostream& out = std::cout, const std::string& delimiter = " ") {
+inline auto dump(std::ostream& out = std::cout, const std::string& delimiter = " ") {
     return detail::make_terminal([&out, &delimiter](auto&& stream) -> std::ostream& {
         stream | copy(std::ostream_iterator<typename std::remove_reference_t<decltype(stream)>::value_type>(out, delimiter.c_str()));
         return out;

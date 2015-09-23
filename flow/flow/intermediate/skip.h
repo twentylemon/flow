@@ -42,7 +42,7 @@ namespace flow {
 /// <param name="step_size">The step size.</param>
 /// <returns>A detail::Intermediate operation that slices the stream from <paramref name="begin"/> to the end
 /// skipping every <paramref name="step_size"/> elements.</returns>
-auto skip(std::size_t begin, std::size_t step_size) {
+inline auto skip(std::size_t begin, std::size_t step_size) {
     return detail::make_intermediate([begin, step_size](auto&& stream) {
         return Stream<source::Skip<typename std::remove_reference_t<decltype(stream)>::source_type>>(std::move(stream.source()), begin, step_size);
     });

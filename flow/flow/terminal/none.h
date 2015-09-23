@@ -51,7 +51,7 @@ auto none(UnaryPredicate predicate) {
 /// This operation is short circuited and will stop executing once any <c>true</c> value is found.
 /// </summary>
 /// <returns>The detail::Terminal operation which returns <c>true</c> if none of the stream elements are <c>true</c>.</returns>
-auto none() {
+inline auto none() {
     return none([](const auto& ele) { return static_cast<bool>(ele); });
 }
 
