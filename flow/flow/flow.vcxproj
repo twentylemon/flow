@@ -124,8 +124,10 @@
     <ClInclude Include="generator\generate.h" />
     <ClInclude Include="generator\iota.h" />
     <ClInclude Include="generator\iterate.h" />
+    <ClInclude Include="generator\repeat.h" />
     <ClInclude Include="source\Generate.h" />
     <ClInclude Include="source\IterateFunc.h" />
+    <ClInclude Include="source\Repeat.h" />
     <ClInclude Include="uncurry.h" />
     <ClInclude Include="generator\from.h" />
     <ClInclude Include="intermediate\concat.h" />

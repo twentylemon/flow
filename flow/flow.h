@@ -29,6 +29,7 @@
 #include "flow/uncurry.h"
 
 #include "flow/generator/from.h"
+#include "flow/generator/repeat.h"
 #include "flow/generator/empty.h"
 #include "flow/generator/generate.h"
 #include "flow/generator/iterate.h"

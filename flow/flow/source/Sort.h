@@ -29,6 +29,8 @@
 #include <vector>
 #include <algorithm>
 
+#include "Iterator.h"
+
 namespace flow {
     namespace source {
 
@@ -41,8 +43,8 @@ template <typename Source>
 class Sort : public Iterator<typename std::vector<typename Source::value_type>::iterator>
 {
 public:
-    using value_type = typename Source::value_type;
     using parent_type = Iterator<typename std::vector<value_type>::iterator>;
+    using value_type = typename parent_type::value_type;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Sort{Source, Compare}" /> class.

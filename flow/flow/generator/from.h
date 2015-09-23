@@ -64,7 +64,7 @@ Stream<source::Iterator<Itr>> from(Itr begin, Itr end) {
 /// </summary>
 /// <param name="container">The container to create a stream from.</param>
 /// <returns> A stream over <paramref name="container"/>.</returns>
-template <typename Container>
+template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto from(Container& container) {
     return from(container.begin(), container.end());
 }
@@ -74,7 +74,7 @@ auto from(Container& container) {
 /// </summary>
 /// <param name="container">The container to create a stream from.</param>
 /// <returns>A stream over <paramref name="container"/>.</returns>
-template <typename Container>
+template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto from(const Container& container) {
     return from(container.begin(), container.end());
 }

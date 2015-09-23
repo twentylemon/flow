@@ -23,23 +23,35 @@
  * SOFTWARE.
  */
  
-#ifndef FLOW_TERMINAL_NTH_H
-#define FLOW_TERMINAL_NTH_H
+#ifndef FLOW_GENERATOR_REPEAT_H
+#define FLOW_GENERATOR_REPEAT_H
 
-#include "first.h"
-#include "../intermediate/skip.h"
+#include "../Stream.h"
+#include "../source/Repeat.h"
+#include "from.h"
 
 namespace flow {
-    namespace terminal {
+    namespace generator {
 
-/// <summary>
-/// Returns the nth element from the stream.
-/// </summary>
-/// <param name="n">The index of the element to retrieve.</param>
-/// <returns>The detail::Terminal operation which gives the nth element from the stream.</returns>
-/// <exception cref="std::out_of_range">Thrown when the stream has fewer than <c>n</c> elements.</exception>
-inline auto nth(std::size_t n) {
-    return intermediate::skip(n) | first();
+template <typename Itr>
+Stream<source::Repeat<Itr>> repeat(Itr begin, Itr end) {
+    return Stream<source::Repeat<Itr>>(begin, end);
+}
+
+template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
+auto repeat(Container& container) {
+    return repeat(container.begin(), container.end());
+}
+
+template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
+auto repeat(const Container& container) {
+    return repeat(container.begin(), container.end());
+}
+
+template <typename T>
+auto repeat(T&& value) {
+    std::vector<T> vec{ std::forward<T>(value) };
+    return repeat(vec);
 }
     }
 }

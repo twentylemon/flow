@@ -53,7 +53,7 @@ inline auto skip(std::size_t begin, std::size_t step_size) {
 /// </summary>
 /// <param name="begin">The begin index to skip to. The begin index element is kept.</param>
 /// <returns>A detail::Intermediate operation that slices the stream from <paramref name="begin"/> to the end.</returns>
-auto skip(std::size_t begin) {
+inline auto skip(std::size_t begin) {
     return skip(begin, static_cast<std::size_t>(1));
 }
 
@@ -63,7 +63,7 @@ auto skip(std::size_t begin) {
 /// </summary>
 /// <param name="step_size">The step size.</param>
 /// <returns>A detail::Intermediate operation that skips every <paramref name="step_size"/> elements.</returns>
-auto skip_every(std::size_t step_size) {
+inline auto skip_every(std::size_t step_size) {
     return skip(static_cast<std::size_t>(0), step_size);
 }
     }

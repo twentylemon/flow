@@ -42,8 +42,8 @@ template <typename Source>
 class Unique : public Sort<Source>
 {
 public:
-    using value_type = typename Source::value_type;
     using parent_type = Sort<Source>;
+    using value_type = typename parent_type::value_type;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Unique{Source}"/> class.
