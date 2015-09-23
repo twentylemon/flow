@@ -206,4 +206,8 @@
     <None Include="flow.licenseheader" />
     <None Include="..\..\README.md" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="mainpage.txt" />
+    <Text Include="examples.txt" />
+  </ItemGroup>
 </Project>

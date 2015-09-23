@@ -8,8 +8,8 @@ using namespace flow;
 #include <vector>
 #include <iostream>
 
-extern const std::vector<int> vec14;
-extern const std::vector<int> vec58;
+extern const std::vector<int> vec1to4;
+extern const std::vector<int> vec5to8;
 
 void concat_example();
 

@@ -31,15 +31,8 @@
 #include "../source/Concat.h"
 #include "../generator/from.h"
 
-
 namespace flow {
     namespace intermediate {
-
-/// \example concat.cpp
-/// <para>A simple flow::concat example. This operation appends a stream onto the end of another stream.
-/// The type of elements in the <em>tail</em> stream must be convertible to the type of element in
-/// the <em>head</em> stream.</para>
-/// <para>Overrides are available which are shorthands for calling from().</para>
 
 /// <summary>
 /// Concatenates the given Stream onto the end of the operated stream. The <paramref name="tail"/> stream elements

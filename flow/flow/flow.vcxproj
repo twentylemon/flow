@@ -181,6 +181,10 @@
     <None Include="..\..\README.md" />
     <None Include="flow.licenseheader" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="examples.txt" />
+    <Text Include="mainpage.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

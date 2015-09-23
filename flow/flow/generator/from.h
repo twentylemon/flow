@@ -86,6 +86,7 @@ auto from(const Container& container) {
 /// <param name="container">The container to create a stream from.</param>
 /// <param name="op">The stream operation.</param>
 /// <returns><c>from(container) | op</c></returns>
+/// <seealso cref="from()"/>
 template <typename Container, typename F, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto operator|(Container& container, intermediate::detail::Intermediate<F>&& op) {
     return from(container) | std::move(op);
@@ -95,13 +96,10 @@ auto operator|(Container& container, intermediate::detail::Intermediate<F>&& op)
 /// Overrides <c>|</c> for containers, <c>container | operation</c> is a shorthand for
 /// <c>from(container) | operation</c>.
 /// </summary>
-/// <remarks>
-/// This shorthand fails for <c>container | dump()</c>, the <c>auto</c> fails to capture the reference
-/// type and attempts to copy constructor, which is deleted. Use <c>from(src) | dump()</c> instead.
-/// </remarks>
 /// <param name="container">The container to create a stream from.</param>
 /// <param name="op">The stream operation.</param>
 /// <returns><c>from(container) | op</c></returns>
+/// <seealso cref="from()"/>
 template <typename Container, typename F, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
 decltype(auto) operator|(Container& container, terminal::detail::Terminal<F>&& op) {
     return from(container) | std::move(op);
@@ -114,6 +112,7 @@ decltype(auto) operator|(Container& container, terminal::detail::Terminal<F>&& o
 /// <param name="container">The container to create a stream from.</param>
 /// <param name="op">The stream operation.</param>
 /// <returns><c>from(container) | op</c></returns>
+/// <seealso cref="from()"/>
 template <typename Container, typename F, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto operator|(const Container& container, intermediate::detail::Intermediate<F>&& op) {
     return from(container) | std::move(op);
@@ -123,13 +122,10 @@ auto operator|(const Container& container, intermediate::detail::Intermediate<F>
 /// Overrides <c>|</c> for containers, <c>container | operation</c> is a shorthand for
 /// <c>from(container) | operation</c>.
 /// </summary>
-/// <remarks>
-/// This shorthand fails for <c>container | dump()</c>, the <c>auto</c> fails to capture the reference
-/// type and attempts to copy constructor, which is deleted. Use <c>from(src) | dump()</c> instead.
-/// </remarks>
 /// <param name="container">The container to create a stream from.</param>
 /// <param name="op">The stream operation.</param>
 /// <returns><c>from(container) | op</c></returns>
+/// <seealso cref="from()"/>
 template <typename Container, typename F, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
 decltype(auto) operator|(const Container& container, terminal::detail::Terminal<F>&& op) {
     return from(container) | std::move(op);
