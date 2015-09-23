@@ -201,10 +201,16 @@
     <ClInclude Include="..\flow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="source\Repeat.h">
+    <ClInclude Include="intermediate\flat_map.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
+    <ClInclude Include="source\FlatMap.h">
       <Filter>Header Files\source</Filter>
     </ClInclude>
     <ClInclude Include="generator\repeat.h">
+      <Filter>Header Files\generator</Filter>
+    </ClInclude>
+    <ClInclude Include="generator\cycle.h">
       <Filter>Header Files\generator</Filter>
     </ClInclude>
   </ItemGroup>

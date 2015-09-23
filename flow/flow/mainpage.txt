@@ -22,8 +22,8 @@
  * <para>The flow::generator namespace contains several factory methods for creating a Stream object. Probably the most
  * common generator used is from(), which creates a Stream from an iterator range or a container.</para>
  * <code>auto stream = from(my_vector); // a stream over the entire vector in the same order</code>
- * <para>Other common stream generators are iota(), which counts up from a value, and repeat(), which repeats a value or
- * cycles a container.</para>
+ * <para>Other common stream generators are iota(), which counts up from a value, repeat(), which repeats a value or
+ * cycle(), which cycles a container.</para>
  *
  * Manipulating a Sick Flow
  * ------------------------

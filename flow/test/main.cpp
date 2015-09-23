@@ -82,10 +82,6 @@ int main(int argc, char** argv) {
     using T = decltype(vec)::value_type;
     std::size_t inc = vec | nth(50);
     std::cout << inc << '\t' << vec.size() << std::endl;
-
-    repeat(1) | limit(100) | dump();
-    system("pause");
-    return 0;
     
     boost::timer t1;
     std::pair<T, T> m1;

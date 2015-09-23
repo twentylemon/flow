@@ -23,34 +23,27 @@
  * SOFTWARE.
  */
  
-#ifndef FLOW_GENERATOR_REPEAT_H
-#define FLOW_GENERATOR_REPEAT_H
+#ifndef FLOW_INTERMEDIATE_FLATMAP_H
+#define FLOW_INTERMEDIATE_FLATMAP_H
 
-#include "generate.h"
-#include "../intermediate/limit.h"
+#include "../Stream.h"
+#include "Intermediate.h"
+#include "../source/FlatMap.h"
 
 namespace flow {
-    namespace generator {
+    namespace intermediate {
 
 /// <summary>
-/// Creates an infinite stream containing <paramref name="value"/> repeated over and over.
+/// Transforms each element in the Stream using the given unary function, <paramref name="operation"/>.
+/// Each element is transformed into a new stream. The resultant stream is a concatenation of all created streams.
 /// </summary>
-/// <param name="value">The value in the stream.</param>
-/// <returns>An infinite stream containing only <paramref name="value"/>.</returns>
-template <typename T>
-auto repeat(T&& value) {
-    return generate([value = std::forward<T>(value)](){ return value; });
-}
-
-/// <summary>
-/// Creates a stream containing <paramref name="value"/> repeated <paramref name="n"/> times.
-/// </summary>
-/// <param name="value">The value in the stream.</param>
-/// <param name="n">The number of times to repeat <paramref name="value"/>.</param>
-/// <returns>A stream containing <paramref name="n"/> copies of <paramref name="value"/>.</returns>
-template <typename T>
-auto repeat(T&& value, std::size_t n) {
-    return repeat(std::forward<T>(value)) | limit(n);
+/// <param name="operation">The operation that creates a new stream from a stream element.</param>
+/// <returns>A detail::Intermediate operation that creates new streams and concatenations them together.</returns>
+template <typename UnaryOperation>
+auto flat_map(UnaryOperation operation) {
+    return detail::make_intermediate([operation](auto&& stream) {
+        return Stream<source::FlatMap<typename std::remove_reference_t<decltype(stream)>::source_type, UnaryOperation>>(std::move(stream.source()), operation);
+    });
 }
     }
 }

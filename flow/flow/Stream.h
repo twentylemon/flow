@@ -52,7 +52,6 @@ namespace flow {
 /// \todo flow::intermediate::intersect - intersect two sorted/unique streams
 /// \todo flow::intermediate::difference - compute the difference of two sorted/unique streams
 /// \todo flow::intermediate::symmetric_difference - compute the symmetric difference of two sorted/unique streams
-/// \todo flow::generator::repeat - infinitely repeat a value or container, allow limiting the number of limits
 /// \todo flow::generator::random - generate stream values from a random number generator
 /// \todo flow::generator::parallel_* - create a parallel version of other generators
 /// \todo parallel pipelining of stream operations?

@@ -68,18 +68,6 @@ auto concat(Itr begin, Itr end) {
 /// <returns>A detail::Intermediate operation that concatenates the container onto the stream.</returns>
 /// <seealso cref="from()"/>
 template <typename Container, typename = typename std::enable_if_t<generator::detail::has_const_iterator<Container>::value>>
-auto concat(Container& container) {
-    return concat(generator::from(container));
-}
-
-/// <summary>
-/// Concatenates <paramref name="container"/> onto the end of the Stream. This is the same as <c>concat(from(container))</c>.
-/// The <paramref name="tail"/> stream elements must be convertible to the same type of elements as the head stream.
-/// </summary>
-/// <param name="container">The container to concatenate onto the end of the stream.</param>
-/// <returns>A detail::Intermediate operation that concatenates the container onto the stream.</returns>
-/// <seealso cref="from()"/>
-template <typename Container, typename = typename std::enable_if_t<generator::detail::has_const_iterator<Container>::value>>
 auto concat(const Container& container) {
     return concat(generator::from(container));
 }
