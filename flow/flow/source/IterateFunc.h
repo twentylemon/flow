@@ -66,7 +66,7 @@ public:
     /// </summary>
     /// <returns>The next element in the stream.</returns>
     value_type next() {
-        value_type current = _values[0];
+        value_type current = std::move(_values[0]);
         _values[0] = _function(_values);    // destroy the first value
         std::rotate(_values.begin(), _values.begin() + 1, _values.end());
         return current;

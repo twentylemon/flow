@@ -44,7 +44,7 @@ public:
     /// </summary>
     /// <param name="source">The source to filter.</param>
     /// <param name="predicate">The predicate used to filter stream elements.</param>
-    Filter(Source&& source, UnaryPredicate predicate) : _source(std::move(source)), _predicate(predicate), _current(nullptr) { }
+    Filter(Source&& source, UnaryPredicate predicate) : _source(std::move(source)), _predicate(predicate) { }
 
     /// <summary>
     /// Returns true if this source has more elements.
@@ -52,8 +52,8 @@ public:
     /// <returns><c>true</c> if this source has more stream elements.</returns>
     bool has_next() {
         while (_source.has_next()) {
-            _current = &_source.next();
-            if (_predicate(*_current)) {
+            _current = _source.next();
+            if (_predicate(_current)) {
                 return true;
             }
         }
@@ -64,8 +64,8 @@ public:
     /// Returns the next element from the stream.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
-    const value_type& next() {
-        return std::move(*_current);
+    value_type next() {
+        return std::move(_current);
     }
 
     /// <summary>
@@ -86,7 +86,7 @@ public:
 private:
     Source _source;             // the source to read from
     UnaryPredicate _predicate;  // the mapping operation to apply to each element from the source
-    const value_type* _current; // the current value
+    value_type _current;        // the current value
 };
     }
 }

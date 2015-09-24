@@ -16,6 +16,8 @@ int main(int argc, char** argv) {
 
     concat_example();
 
+    cycle(vec1to4, 1) | dump();
+
     system("pause");
     return 0;
 }

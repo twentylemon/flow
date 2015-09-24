@@ -47,7 +47,7 @@ public:
     /// </summary>
     /// <param name="source">The source to map from.</param>
     /// <param name="operation">The mapping operation.</param>
-    FlatMap(Source&& source, UnaryOperation operation) : _source(std::move(source)), _operation(operation), _stream(nullptr), current(nullptr) { }
+    FlatMap(Source&& source, UnaryOperation operation) : _source(std::move(source)), _operation(operation), _stream(nullptr) { }
 
     /// <summary>
     /// Returns true if this source has more elements.
@@ -55,7 +55,7 @@ public:
     /// <returns><c>true</c> if this source has more stream elements.</returns>
     bool has_next() {
         if (_stream != nullptr && _stream->has_next()) {
-            _current = &_stream->next();
+            _current = _stream->next();
             return true;
         }
         else if (_source.has_next()) {
@@ -69,8 +69,8 @@ public:
     /// Returns the next element from the stream.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
-    const value_type& next() {
-        return std::move(*_current);
+    value_type next() {
+        return std::move(_current);
     }
 
     /// <summary>
@@ -94,7 +94,7 @@ private:
     Source _source;                         // the source to read from
     UnaryOperation _operation;              // the mapping operation to apply to each element from the source
     std::unique_ptr<stream_type> _stream;   // the current stream we are reading values from
-    const value_type* _current;             // the current value of the current stream
+    value_type _current;                    // the current value of the current stream
 };
     }
 }

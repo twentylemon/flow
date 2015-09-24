@@ -59,12 +59,9 @@ public:
     /// Returns the next element from the stream.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
-    const value_type& next() {
-        return *_current++;
+    value_type next() {
+        return std::move(*_current++);
     }
-    //value_type next() {
-    //    return std::move(*_current++);    // this is copying in vc++
-    //}
 
     /// <summary>
     /// Ignores the next value from the stream.

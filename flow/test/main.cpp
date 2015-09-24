@@ -32,13 +32,13 @@ public:
     int get_value() const {
         return value;
     }
-    //Widget(const Widget& w) : value(w.value) { std::cout << "copy" << std::endl; }
-    //Widget(Widget&& w) : value(std::move(w.value)) { std::cout << "move" << std::endl; }
+    Widget(const Widget& w) : value(w.value) { std::cout << "copy" << std::endl; }
+    Widget(Widget&& w) : value(std::move(w.value)) { std::cout << "move" << std::endl; }
     bool operator<(const Widget& rhs) const { return value < rhs.value; }
     Widget operator*(const Widget& rhs) const { return Widget(value * rhs.value); }
     bool operator==(const Widget& rhs) const { return value == rhs.value; }
-    //Widget& operator=(const Widget& w) { value = w.value; std::cout << "copy assign" << std::endl; return *this; }
-    //Widget& operator=(Widget&& w) { value = std::move(w.value); std::cout << "move assign" << std::endl; return *this; }
+    Widget& operator=(const Widget& w) { value = w.value; std::cout << "copy assign" << std::endl; return *this; }
+    Widget& operator=(Widget&& w) { value = std::move(w.value); std::cout << "move assign" << std::endl; return *this; }
     int value;
     std::array<int, 500> arry;
 };
@@ -78,6 +78,7 @@ void run_timer() {
 
 
 int main(int argc, char** argv) {
+    /*
     std::iota(vec.begin(), vec.end(), 0);
     using T = decltype(vec)::value_type;
     std::size_t inc = iota(0) | nth(50);
@@ -111,14 +112,17 @@ int main(int argc, char** argv) {
         }
     }
     std::cout << std::endl << "stdlib: " << t2.elapsed() << "\t" << m2.first << "\t" << m2.second << std::endl;
-    /*
+    */
     std::vector<Widget> widgets;
     for (int i = 0; i < 10; i++) {
         widgets.emplace_back(i);
     }
-    const std::vector<Widget> w = widgets;
-    std::cout << (from(widgets) | map(&Widget::get_value) | min()) << std::endl;
-    from(widgets) | map(&Widget::get_value) | each([](int i) { std::cout << i << " "; });
+    std::cout << std::endl << std::endl;
+    //const std::vector<Widget> w = widgets;
+    //std::cout << (from(widgets) | map(&Widget::get_value) | min()) << std::endl;
+    from(widgets) | filter([](Widget& w) { return w.value > 5; }) | map(&Widget::get_value) | dump();
+    /*
+    from(widgets) | map(&Widget::get_value) | dump();
     from(w) | map(&Widget::get_value) | each([](int i) { std::cout << i << " "; });
     
     std::cout << std::endl << std::endl;
