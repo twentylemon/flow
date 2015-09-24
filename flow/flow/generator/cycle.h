@@ -41,7 +41,7 @@ namespace flow {
  /// <returns>An infinite stream which cycles the range.</returns>
 template <typename Itr>
 auto cycle(Itr begin, Itr end) {
-    return repeat(std::make_pair(begin, end)) | flat_map([](const auto& pair) { return from(pair.first, pair.second); });
+    return repeat(std::make_pair(begin, end)) | intermediate::flat_map([](const auto& pair) { return from(pair.first, pair.second); });
 }
 
 /// <summary>
@@ -53,7 +53,7 @@ auto cycle(Itr begin, Itr end) {
 /// <returns>A stream which cycles the range <paramref name="n"/> times.</returns>
 template <typename Itr>
 auto cycle(Itr begin, Itr end, std::size_t n) {
-    return repeat(std::make_pair(begin, end), n) | flat_map([](const auto& pair) { return from(pair.first, pair.second); });
+    return repeat(std::make_pair(begin, end), n) | intermediate::flat_map([](const auto& pair) { return from(pair.first, pair.second); });
 }
 
 /// <summary>

@@ -42,7 +42,7 @@ template <typename Source>
 class Reverse : public Iterator<typename std::vector<typename Source::value_type>::reverse_iterator>
 {
 public:
-    using parent_type = Iterator<typename std::vector<value_type>::reverse_iterator>;
+    using parent_type = Iterator<typename std::vector<typename Source::value_type>::reverse_iterator>;
     using value_type = typename parent_type::value_type;
 
     /// <summary>

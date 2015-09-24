@@ -50,7 +50,7 @@ auto repeat(T&& value) {
 /// <returns>A stream containing <paramref name="n"/> copies of <paramref name="value"/>.</returns>
 template <typename T>
 auto repeat(T&& value, std::size_t n) {
-    return repeat(std::forward<T>(value)) | limit(n);
+    return repeat(std::forward<T>(value)) | intermediate::limit(n);
 }
     }
 }
