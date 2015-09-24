@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Flow: D:/git/flow/flow/flow/generator/from.h File Reference</title>
+<title>Flow: flow/generator/from.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -24,6 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Flow
    </div>
+   <div id="projectbrief">Lazy Evaluated Stream Processing</div>
   </td>
  </tr>
  </tbody>
@@ -41,6 +42,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="../../annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="../../files.html"><span>Files</span></a></li>
+      <li><a href="../../examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -80,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="../../dir_2420eba184a3676f5a7fb84b29bc58a5.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_8d759b635f6b804b122261ed7ac7ad98.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_118e20f3366c2a879a67a85a2ae9c504.html">generator</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../dir_2420eba184a3676f5a7fb84b29bc58a5.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_82b0d2086401c82289635bcacc8786d9.html">generator</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -118,22 +120,10 @@ Functions</h2></td></tr>
 <tr class="memitem:abff3916ae173286065e12f1ff3e4a60c"><td class="memTemplItemLeft" align="right" valign="top">Stream&lt; source::Iterator&lt; Itr &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c">flow::generator::from</a> (Itr begin, Itr end)</td></tr>
 <tr class="memdesc:abff3916ae173286065e12f1ff3e4a60c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> from the given iterator range.  <a href="#abff3916ae173286065e12f1ff3e4a60c">More...</a><br /></td></tr>
 <tr class="separator:abff3916ae173286065e12f1ff3e4a60c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5f2725690296c9fe96031330087197a"><td class="memTemplParams" colspan="2">template&lt;typename Container &gt; </td></tr>
-<tr class="memitem:ad5f2725690296c9fe96031330087197a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad5f2725690296c9fe96031330087197a">flow::generator::from</a> (Container &amp;container)</td></tr>
-<tr class="memdesc:ad5f2725690296c9fe96031330087197a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> from the given <em>container</em> .  <a href="#ad5f2725690296c9fe96031330087197a">More...</a><br /></td></tr>
-<tr class="separator:ad5f2725690296c9fe96031330087197a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa5f66bec85e3e02cb93f184eec2a3aa"><td class="memTemplParams" colspan="2">template&lt;typename Container &gt; </td></tr>
-<tr class="memitem:afa5f66bec85e3e02cb93f184eec2a3aa"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#afa5f66bec85e3e02cb93f184eec2a3aa">flow::generator::from</a> (const Container &amp;container)</td></tr>
-<tr class="memdesc:afa5f66bec85e3e02cb93f184eec2a3aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> from the given <em>container</em> .  <a href="#afa5f66bec85e3e02cb93f184eec2a3aa">More...</a><br /></td></tr>
-<tr class="separator:afa5f66bec85e3e02cb93f184eec2a3aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a600c0179388a946baf8aaf03350ed7"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename F , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:a3a600c0179388a946baf8aaf03350ed7"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a3a600c0179388a946baf8aaf03350ed7">flow::generator::operator|</a> (Container &amp;container, intermediate::detail::Intermediate&lt; F &gt; &amp;&amp;op)</td></tr>
-<tr class="memdesc:a3a600c0179388a946baf8aaf03350ed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overrides <code>|</code> for containers, <code>container | operation</code> is a shorthand for <code>from(container) | operation</code>.  <a href="#a3a600c0179388a946baf8aaf03350ed7">More...</a><br /></td></tr>
-<tr class="separator:a3a600c0179388a946baf8aaf03350ed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5bab90bcea83ba6a0658275bb4fdc28e"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename F , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:a5bab90bcea83ba6a0658275bb4fdc28e"><td class="memTemplItemLeft" align="right" valign="top">decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a5bab90bcea83ba6a0658275bb4fdc28e">flow::generator::operator|</a> (Container &amp;container, terminal::detail::Terminal&lt; F &gt; &amp;&amp;op)</td></tr>
-<tr class="memdesc:a5bab90bcea83ba6a0658275bb4fdc28e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overrides <code>|</code> for containers, <code>container | operation</code> is a shorthand for <code>from(container) | operation</code>.  <a href="#a5bab90bcea83ba6a0658275bb4fdc28e">More...</a><br /></td></tr>
-<tr class="separator:a5bab90bcea83ba6a0658275bb4fdc28e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d4c7a7ea3bf9f9b0e596d9fea0f70cc"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a4d4c7a7ea3bf9f9b0e596d9fea0f70cc"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a4d4c7a7ea3bf9f9b0e596d9fea0f70cc">flow::generator::from</a> (const Container &amp;container)</td></tr>
+<tr class="memdesc:a4d4c7a7ea3bf9f9b0e596d9fea0f70cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> over <em>container</em> .  <a href="#a4d4c7a7ea3bf9f9b0e596d9fea0f70cc">More...</a><br /></td></tr>
+<tr class="separator:a4d4c7a7ea3bf9f9b0e596d9fea0f70cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1560e2c0769ebcbc05be89fe0366e37"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename F , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:aa1560e2c0769ebcbc05be89fe0366e37"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#aa1560e2c0769ebcbc05be89fe0366e37">flow::generator::operator|</a> (const Container &amp;container, intermediate::detail::Intermediate&lt; F &gt; &amp;&amp;op)</td></tr>
 <tr class="memdesc:aa1560e2c0769ebcbc05be89fe0366e37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overrides <code>|</code> for containers, <code>container | operation</code> is a shorthand for <code>from(container) | operation</code>.  <a href="#aa1560e2c0769ebcbc05be89fe0366e37">More...</a><br /></td></tr>

@@ -24,6 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Flow
    </div>
+   <div id="projectbrief">Lazy Evaluated Stream Processing</div>
   </td>
  </tr>
  </tbody>
@@ -41,6 +42,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -138,6 +140,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="da/dbc/classflow_1_1source_1_1_concat.html#a07f45eae13e2eb6598182348840287db">flow::source::Concat&lt; Head, Tail &gt;</a>
 , <a class="el" href="de/d70/classflow_1_1source_1_1_drop_while.html#ac60c097868fb9aff12fcf5f2e1c4f207">flow::source::DropWhile&lt; Source, UnaryPredicate &gt;</a>
 , <a class="el" href="d0/d3f/classflow_1_1source_1_1_filter.html#a8565b797da809f67eb2ba82c0287315e">flow::source::Filter&lt; Source, UnaryPredicate &gt;</a>
+, <a class="el" href="d9/db6/classflow_1_1source_1_1_flat_map.html#a4a7ef7be7a5d1f5ee41dd08a7e886ae2">flow::source::FlatMap&lt; Source, UnaryOperation &gt;</a>
 , <a class="el" href="d3/d03/classflow_1_1source_1_1_generate.html#a02344498c5e6cf1d01dc10f1b2536a7f">flow::source::Generate&lt; Generator &gt;</a>
 , <a class="el" href="de/d8c/classflow_1_1source_1_1_iterate_func.html#a5138047fe551f789b8af63dd32be61f2">flow::source::IterateFunc&lt; IteratingFunction, T, N &gt;</a>
 , <a class="el" href="d6/ddc/classflow_1_1source_1_1_iterator.html#a3469e75689ed9f57a70cc5affebcad04">flow::source::Iterator&lt; Itr &gt;</a>
@@ -156,6 +159,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Filter()
 : <a class="el" href="d0/d3f/classflow_1_1source_1_1_filter.html#abf0b9c9d419d114a9110eb356b702699">flow::source::Filter&lt; Source, UnaryPredicate &gt;</a>
 </li>
+<li>FlatMap()
+: <a class="el" href="d9/db6/classflow_1_1source_1_1_flat_map.html#a86e108e0d079bd7502a0f026ec20861e">flow::source::FlatMap&lt; Source, UnaryOperation &gt;</a>
+</li>
 </ul>
 
 
@@ -171,6 +177,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="da/dbc/classflow_1_1source_1_1_concat.html#adc7a74971d1135cd31fa7c3d6d0f5fc3">flow::source::Concat&lt; Head, Tail &gt;</a>
 , <a class="el" href="de/d70/classflow_1_1source_1_1_drop_while.html#a28b87ad18ad4998aa9219a9636eb1a52">flow::source::DropWhile&lt; Source, UnaryPredicate &gt;</a>
 , <a class="el" href="d0/d3f/classflow_1_1source_1_1_filter.html#a1c436d442cee1ddb2d4986aa51b2eb9e">flow::source::Filter&lt; Source, UnaryPredicate &gt;</a>
+, <a class="el" href="d9/db6/classflow_1_1source_1_1_flat_map.html#a8d8bb9507e33d8486bb6e087d89319b7">flow::source::FlatMap&lt; Source, UnaryOperation &gt;</a>
 , <a class="el" href="d3/d03/classflow_1_1source_1_1_generate.html#a7f2d0f250e4248cee95b25374fb58572">flow::source::Generate&lt; Generator &gt;</a>
 , <a class="el" href="de/d8c/classflow_1_1source_1_1_iterate_func.html#a9b51d5505d34b724c14a4f5309ae07d7">flow::source::IterateFunc&lt; IteratingFunction, T, N &gt;</a>
 , <a class="el" href="d6/ddc/classflow_1_1source_1_1_iterator.html#aea0a7770cf11a8da01ac658f5ca040d1">flow::source::Iterator&lt; Itr &gt;</a>
@@ -203,6 +210,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="da/dbc/classflow_1_1source_1_1_concat.html#ae729ac49fec9ddb8da9e9ab6447a17d3">flow::source::Concat&lt; Head, Tail &gt;</a>
 , <a class="el" href="de/d70/classflow_1_1source_1_1_drop_while.html#ac031f673fc17ed3b1b3b3b53f22256e0">flow::source::DropWhile&lt; Source, UnaryPredicate &gt;</a>
 , <a class="el" href="d0/d3f/classflow_1_1source_1_1_filter.html#a4b6c25ad68984e40fab297670ce91bb4">flow::source::Filter&lt; Source, UnaryPredicate &gt;</a>
+, <a class="el" href="d9/db6/classflow_1_1source_1_1_flat_map.html#a92341f26b2e06e6b81205eafe29f2dbc">flow::source::FlatMap&lt; Source, UnaryOperation &gt;</a>
 , <a class="el" href="d3/d03/classflow_1_1source_1_1_generate.html#a860e3d91b7045bbbc056578bd85fcf30">flow::source::Generate&lt; Generator &gt;</a>
 , <a class="el" href="de/d8c/classflow_1_1source_1_1_iterate_func.html#aef1f6d2e536c85c0f5ce4d1b06dd6a8d">flow::source::IterateFunc&lt; IteratingFunction, T, N &gt;</a>
 , <a class="el" href="d6/ddc/classflow_1_1source_1_1_iterator.html#aebd9316211d33d757a2bacfb9782408d">flow::source::Iterator&lt; Itr &gt;</a>
@@ -228,6 +236,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="da/dbc/classflow_1_1source_1_1_concat.html#aef7a25c531e04bf73fb85a156eb76840">flow::source::Concat&lt; Head, Tail &gt;</a>
 , <a class="el" href="de/d70/classflow_1_1source_1_1_drop_while.html#afd4927506c4abd27e2855470efda0a83">flow::source::DropWhile&lt; Source, UnaryPredicate &gt;</a>
 , <a class="el" href="d0/d3f/classflow_1_1source_1_1_filter.html#a2765bc7e4c77a69a25b58ed8f1d3f7d7">flow::source::Filter&lt; Source, UnaryPredicate &gt;</a>
+, <a class="el" href="d9/db6/classflow_1_1source_1_1_flat_map.html#a618514acbc930c6fef41f936bb7c10db">flow::source::FlatMap&lt; Source, UnaryOperation &gt;</a>
 , <a class="el" href="d3/d03/classflow_1_1source_1_1_generate.html#a4b41d93ca207d73ae6eceda9f6c14d38">flow::source::Generate&lt; Generator &gt;</a>
 , <a class="el" href="de/d8c/classflow_1_1source_1_1_iterate_func.html#a86092c60cb9af58dfb1b5c6d737516ff">flow::source::IterateFunc&lt; IteratingFunction, T, N &gt;</a>
 , <a class="el" href="d6/ddc/classflow_1_1source_1_1_iterator.html#a1d408ea2e100ff2c0f59eeea25a89b16">flow::source::Iterator&lt; Itr &gt;</a>
@@ -268,11 +277,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
-<li>reverse()
-: <a class="el" href="d9/d22/classflow_1_1source_1_1_reverse.html#a83a0446b8aacb524ed2fce04ba136431">flow::source::Reverse&lt; Source &gt;</a>
-</li>
 <li>Reverse()
 : <a class="el" href="d9/d22/classflow_1_1source_1_1_reverse.html#a6b131831c4fbe834ed0aff7fd38f218a">flow::source::Reverse&lt; Source &gt;</a>
+</li>
+<li>reverse()
+: <a class="el" href="d9/d22/classflow_1_1source_1_1_reverse.html#a83a0446b8aacb524ed2fce04ba136431">flow::source::Reverse&lt; Source &gt;</a>
 </li>
 </ul>
 
@@ -284,11 +293,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Slice()
 : <a class="el" href="da/d25/classflow_1_1source_1_1_slice.html#a92744208381b60a842a5415530322f2a">flow::source::Slice&lt; Source &gt;</a>
 </li>
-<li>Sort()
-: <a class="el" href="de/d82/classflow_1_1source_1_1_sort.html#a331afe1bcf947cfe4d93ab8e64404fd1">flow::source::Sort&lt; Source &gt;</a>
-</li>
 <li>sort()
 : <a class="el" href="de/d82/classflow_1_1source_1_1_sort.html#a60e2968eedf8c0fb89978061ef02c223">flow::source::Sort&lt; Source &gt;</a>
+</li>
+<li>Sort()
+: <a class="el" href="de/d82/classflow_1_1source_1_1_sort.html#a331afe1bcf947cfe4d93ab8e64404fd1">flow::source::Sort&lt; Source &gt;</a>
 </li>
 <li>source()
 : <a class="el" href="d9/dcd/classflow_1_1_stream.html#a2ba3ee37c4e132838681519c0f4dfdda">flow::Stream&lt; Source &gt;</a>
@@ -319,11 +328,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>uncurrier()
 : <a class="el" href="d0/d2d/structflow_1_1detail_1_1uncurrier.html#aaeadc4d4e942f071def6bd6e0a083e28">flow::detail::uncurrier&lt; CurryFunction &gt;</a>
 </li>
-<li>Unique()
-: <a class="el" href="d2/d42/classflow_1_1source_1_1_unique.html#a3427e6a35151cd66f1e62b717440abf7">flow::source::Unique&lt; Source &gt;</a>
-</li>
 <li>unique()
 : <a class="el" href="d2/d42/classflow_1_1source_1_1_unique.html#adf518688bda7f79bf5bb41c2ef39ca5c">flow::source::Unique&lt; Source &gt;</a>
+</li>
+<li>Unique()
+: <a class="el" href="d2/d42/classflow_1_1source_1_1_unique.html#a3427e6a35151cd66f1e62b717440abf7">flow::source::Unique&lt; Source &gt;</a>
 </li>
 </ul>
 

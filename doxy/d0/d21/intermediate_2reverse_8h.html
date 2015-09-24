@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Flow: D:/git/flow/flow/flow/intermediate/reverse.h File Reference</title>
+<title>Flow: flow/intermediate/reverse.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -24,6 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Flow
    </div>
+   <div id="projectbrief">Lazy Evaluated Stream Processing</div>
   </td>
  </tr>
  </tbody>
@@ -41,6 +42,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="../../annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="../../files.html"><span>Files</span></a></li>
+      <li><a href="../../examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -80,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="../../dir_2420eba184a3676f5a7fb84b29bc58a5.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_8d759b635f6b804b122261ed7ac7ad98.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_711f473ca6d0bb4b30b50dd32f985cf6.html">intermediate</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../dir_2420eba184a3676f5a7fb84b29bc58a5.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_a0e9e98f8cff90e425322a8947b4aaff.html">intermediate</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -107,8 +109,7 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a13397178496f74369fc8dae063415b7a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a13397178496f74369fc8dae063415b7a">flow::intermediate::reverse</a> ()</td></tr>
-<tr class="memdesc:a13397178496f74369fc8dae063415b7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverses the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. Reversing is an eager operation. On the creation of the <code>reverse</code> operation, the entire stream up to that point is evaluated and stored before continuing with the remainder of the stream. Thus, the <code>reverse</code> operation takes <code>O(n)</code> extra space and time, where <code>n</code> is the size of the stream. For most applications, it will be beneficial to reverse the stream beforehand by using reverse iterators, for example: </p><div class="fragment"><div class="line"><a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c">from</a>(container.rbegin(), container.rend()) | ...</div>
-</div><!-- fragment -->  <a href="#a13397178496f74369fc8dae063415b7a">More...</a><br /></td></tr>
+<tr class="memdesc:a13397178496f74369fc8dae063415b7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverses the elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>.  <a href="#a13397178496f74369fc8dae063415b7a">More...</a><br /></td></tr>
 <tr class="separator:a13397178496f74369fc8dae063415b7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->

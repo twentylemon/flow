@@ -24,6 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Flow
    </div>
+   <div id="projectbrief">Lazy Evaluated Stream Processing</div>
   </td>
  </tr>
  </tbody>
@@ -41,6 +42,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li class="current"><a href="../../namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="../../annotated.html"><span>Classes</span></a></li>
       <li><a href="../../files.html"><span>Files</span></a></li>
+      <li><a href="../../examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -138,11 +140,11 @@ Functions</h2></td></tr>
 <tr class="separator:acc0afd1d9f8846d76814248e4d6a164f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b3d0ede6c9489aebb9ce1ed684c31a0"><td class="memTemplParams" colspan="2">template&lt;typename UnaryFunction &gt; </td></tr>
 <tr class="memitem:a6b3d0ede6c9489aebb9ce1ed684c31a0"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a6b3d0ede6c9489aebb9ce1ed684c31a0">each</a> (UnaryFunction func)</td></tr>
-<tr class="memdesc:a6b3d0ede6c9489aebb9ce1ed684c31a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a function for each element in the stream. The executed function is returned.  <a href="#a6b3d0ede6c9489aebb9ce1ed684c31a0">More...</a><br /></td></tr>
+<tr class="memdesc:a6b3d0ede6c9489aebb9ce1ed684c31a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a function for each element in the stream. The executed function is returned. This is the terminal operation equivalent of <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af" title="Lazily executes action  for each element in the Stream as a detail::Intermediate operation. This is an intermediate operation equivalent of each(). ">peek()</a>.  <a href="#a6b3d0ede6c9489aebb9ce1ed684c31a0">More...</a><br /></td></tr>
 <tr class="separator:a6b3d0ede6c9489aebb9ce1ed684c31a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89c7d99f1f196e5f9b55032c60097ece"><td class="memTemplParams" colspan="2">template&lt;typename Ret , typename Class &gt; </td></tr>
 <tr class="memitem:a89c7d99f1f196e5f9b55032c60097ece"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a89c7d99f1f196e5f9b55032c60097ece">each</a> (Ret(Class::*member)())</td></tr>
-<tr class="memdesc:a89c7d99f1f196e5f9b55032c60097ece"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a function for each element in the stream. The executed function is returned.  <a href="#a89c7d99f1f196e5f9b55032c60097ece">More...</a><br /></td></tr>
+<tr class="memdesc:a89c7d99f1f196e5f9b55032c60097ece"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a function for each element in the stream. The executed function is returned. This is the terminal operation equivalent of <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af" title="Lazily executes action  for each element in the Stream as a detail::Intermediate operation. This is an intermediate operation equivalent of each(). ">peek()</a>.  <a href="#a89c7d99f1f196e5f9b55032c60097ece">More...</a><br /></td></tr>
 <tr class="separator:a89c7d99f1f196e5f9b55032c60097ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2088cf5443957cdf935652bccc0b612"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612">first</a> ()</td></tr>
 <tr class="memdesc:ae2088cf5443957cdf935652bccc0b612"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element from the stream.  <a href="#ae2088cf5443957cdf935652bccc0b612">More...</a><br /></td></tr>
@@ -271,6 +273,9 @@ template&lt;typename UnaryPredicate &gt; </div>
 <a class="anchor" id="ab69ca58eca0161111d95306425586634"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto flow::terminal::all </td>
@@ -279,6 +284,11 @@ template&lt;typename UnaryPredicate &gt; </div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Returns <code>true</code> if all elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> can be evaluated to <code>true</code>. This is an overload for streams with types convertible to <code>bool</code>. This operation is short circuited and will stop executing once any <code>false</code> value is found. If the stream is empty, this will return <code>true</code>. </p>
@@ -350,6 +360,9 @@ template&lt;typename UnaryPredicate &gt; </div>
 <a class="anchor" id="af592d8f034ddf176998928a0d3b86bd0"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto flow::terminal::any </td>
@@ -358,6 +371,11 @@ template&lt;typename UnaryPredicate &gt; </div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Returns <code>true</code> if any element in the stream can be evaluated to <code>true</code>. This is an overload for streams with types convertible to <code>bool</code>. This operation is short circuited and will stop executing once any <code>true</code> value is found. If the stream is empty, this will return <code>false</code>. </p>
@@ -467,6 +485,9 @@ template&lt;typename OutputIterator &gt; </div>
 <a class="anchor" id="a52dfcc0ff79f7c3d74ea2e80a3f9a65f"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto flow::terminal::count </td>
@@ -475,6 +496,11 @@ template&lt;typename OutputIterator &gt; </div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Counts the number of elements in the stream. The count is returned as <code>std::size_t</code>. </p>
@@ -485,6 +511,9 @@ template&lt;typename OutputIterator &gt; </div>
 <a class="anchor" id="acc0afd1d9f8846d76814248e4d6a164f"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto flow::terminal::dump </td>
@@ -504,6 +533,11 @@ template&lt;typename OutputIterator &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Prints the stream elements to the <code>std::ostream</code> with the <em>delimiter</em>  printed between each element. A reference to the output stream is returned. </p>
@@ -515,7 +549,8 @@ template&lt;typename OutputIterator &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which print the stream elements to <em>out</em> .</dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d7/db4/concat_8cpp-example.html#a1">concat.cpp</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="a6b3d0ede6c9489aebb9ce1ed684c31a0"></a>
@@ -534,7 +569,7 @@ template&lt;typename UnaryFunction &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Executes a function for each element in the stream. The executed function is returned. </p>
+<p>Executes a function for each element in the stream. The executed function is returned. This is the terminal operation equivalent of <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af" title="Lazily executes action  for each element in the Stream as a detail::Intermediate operation. This is an intermediate operation equivalent of each(). ">peek()</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">func</td><td>The function to apply to each element of the stream.</td></tr>
@@ -542,6 +577,7 @@ template&lt;typename UnaryFunction &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation that executes a function for each stream element.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af" title="Lazily executes action  for each element in the Stream as a detail::Intermediate operation. This is an intermediate operation equivalent of each(). ">peek()</a></dd></dl>
 
 </div>
 </div>
@@ -561,7 +597,7 @@ template&lt;typename Ret , typename Class &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Executes a function for each element in the stream. The executed function is returned. </p>
+<p>Executes a function for each element in the stream. The executed function is returned. This is the terminal operation equivalent of <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af" title="Lazily executes action  for each element in the Stream as a detail::Intermediate operation. This is an intermediate operation equivalent of each(). ">peek()</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">member</td><td>The class member function to use as the operation.</td></tr>
@@ -569,6 +605,7 @@ template&lt;typename Ret , typename Class &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation that executes a function for each stream element.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af" title="Lazily executes action  for each element in the Stream as a detail::Intermediate operation. This is an intermediate operation equivalent of each(). ">peek()</a></dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">member</td><td>The const class member function to use as the operation.</td></tr>
@@ -576,12 +613,16 @@ template&lt;typename Ret , typename Class &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation that executes a function for each stream element.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af" title="Lazily executes action  for each element in the Stream as a detail::Intermediate operation. This is an intermediate operation equivalent of each(). ">peek()</a></dd></dl>
 
 </div>
 </div>
 <a class="anchor" id="ae2088cf5443957cdf935652bccc0b612"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto flow::terminal::first </td>
@@ -590,6 +631,11 @@ template&lt;typename Ret , typename Class &gt; </div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Returns the first element from the stream. </p>
@@ -767,6 +813,9 @@ template&lt;typename Accumulator , typename UnaryFunction , typename T &gt; </di
 <a class="anchor" id="a4fe0dda56d4f64d94e607e73b9187960"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto flow::terminal::last </td>
@@ -775,6 +824,11 @@ template&lt;typename Accumulator , typename UnaryFunction , typename T &gt; </di
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Returns the last element from the stream. This is an expensive operation as the entire stream must be evaluated. </p>
@@ -919,6 +973,9 @@ template&lt;typename UnaryPredicate &gt; </div>
 <a class="anchor" id="ae4c81d966a9a314a18cc091bbca744fc"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto flow::terminal::none </td>
@@ -927,6 +984,11 @@ template&lt;typename UnaryPredicate &gt; </div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Returns <code>true</code> if none of the elements in the stream can be evaluated to <code>true</code>. This is an overload for streams with types convertible to <code>bool</code>. This operation is short circuited and will stop executing once any <code>true</code> value is found. </p>
@@ -971,6 +1033,9 @@ template&lt;typename Ret , typename Class &gt; </div>
 <a class="anchor" id="a9eb644e7c13c0b2805f1e565763285da"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto flow::terminal::nth </td>
@@ -980,6 +1045,11 @@ template&lt;typename Ret , typename Class &gt; </div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Returns the nth element from the stream. </p>
@@ -1002,6 +1072,9 @@ template&lt;typename Ret , typename Class &gt; </div>
 <a class="anchor" id="adc89d6fdbd682554a03d621d57dc0e19"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto flow::terminal::product </td>
@@ -1010,6 +1083,11 @@ template&lt;typename Ret , typename Class &gt; </div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Computes the product of all the elements in the stream using <code>operator*</code>. </p>
@@ -1053,6 +1131,9 @@ template&lt;typename T &gt; </div>
 <a class="anchor" id="a9d36eab187f4b501c07a00f39e4f2381"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto flow::terminal::sum </td>
@@ -1061,6 +1142,11 @@ template&lt;typename T &gt; </div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Computes the sum of all the elements in the stream using <code>operator+</code>. </p>

@@ -24,6 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Flow
    </div>
+   <div id="projectbrief">Lazy Evaluated Stream Processing</div>
   </td>
  </tr>
  </tbody>
@@ -41,6 +42,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li class="current"><a href="../../namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="../../annotated.html"><span>Classes</span></a></li>
       <li><a href="../../files.html"><span>Files</span></a></li>
+      <li><a href="../../examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -104,13 +106,13 @@ Functions</h2></td></tr>
 <tr class="memitem:aa0551274cc05f2c668d5612bfe1716cb"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa0551274cc05f2c668d5612bfe1716cb">concat</a> (<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; Tail &gt; &amp;&amp;tail)</td></tr>
 <tr class="memdesc:aa0551274cc05f2c668d5612bfe1716cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates the given <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> onto the end of the operated stream. The <em>tail</em>  stream elements must be convertible to the same type of elements as the head stream.  <a href="#aa0551274cc05f2c668d5612bfe1716cb">More...</a><br /></td></tr>
 <tr class="separator:aa0551274cc05f2c668d5612bfe1716cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a955cba2286efa38c29c17ee9d2fd43f5"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = typename std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:a955cba2286efa38c29c17ee9d2fd43f5"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a955cba2286efa38c29c17ee9d2fd43f5">concat</a> (Container &amp;container)</td></tr>
-<tr class="memdesc:a955cba2286efa38c29c17ee9d2fd43f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates the given container onto the end of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. This is the same as <code>concat(from(container))</code>. The <em>tail</em>  stream elements must be convertible to the same type of elements as the head stream.  <a href="#a955cba2286efa38c29c17ee9d2fd43f5">More...</a><br /></td></tr>
-<tr class="separator:a955cba2286efa38c29c17ee9d2fd43f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac535fea33e2424506d0bbf56409f99a7"><td class="memTemplParams" colspan="2">template&lt;typename Itr &gt; </td></tr>
+<tr class="memitem:ac535fea33e2424506d0bbf56409f99a7"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac535fea33e2424506d0bbf56409f99a7">concat</a> (Itr begin, Itr end)</td></tr>
+<tr class="memdesc:ac535fea33e2424506d0bbf56409f99a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates the given iterator range onto the end of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. This is the same as <code>concat(from(begin, end))</code>. The <em>tail</em>  stream elements must be convertible to the same type of elements as the head stream.  <a href="#ac535fea33e2424506d0bbf56409f99a7">More...</a><br /></td></tr>
+<tr class="separator:ac535fea33e2424506d0bbf56409f99a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7c183077d6fef7e3dc3c0e7041bf086"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = typename std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:ad7c183077d6fef7e3dc3c0e7041bf086"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ad7c183077d6fef7e3dc3c0e7041bf086">concat</a> (const Container &amp;container)</td></tr>
-<tr class="memdesc:ad7c183077d6fef7e3dc3c0e7041bf086"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates the given container onto the end of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. This is the same as <code>concat(from(container))</code>. The <em>tail</em>  stream elements must be convertible to the same type of elements as the head stream.  <a href="#ad7c183077d6fef7e3dc3c0e7041bf086">More...</a><br /></td></tr>
+<tr class="memdesc:ad7c183077d6fef7e3dc3c0e7041bf086"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates <em>container</em>  onto the end of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. This is the same as <code>concat(from(container))</code>. The <em>tail</em>  stream elements must be convertible to the same type of elements as the head stream.  <a href="#ad7c183077d6fef7e3dc3c0e7041bf086">More...</a><br /></td></tr>
 <tr class="separator:ad7c183077d6fef7e3dc3c0e7041bf086"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c6e57bccb66cfbfae54134b500ea8c0"><td class="memTemplParams" colspan="2">template&lt;typename UnaryPredicate &gt; </td></tr>
 <tr class="memitem:a1c6e57bccb66cfbfae54134b500ea8c0"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1c6e57bccb66cfbfae54134b500ea8c0">drop_while</a> (UnaryPredicate predicate)</td></tr>
@@ -134,6 +136,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a6e1f3921d4f70c95c8e576ec40f8cdd2"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a6e1f3921d4f70c95c8e576ec40f8cdd2">filter</a> (Ret(Class::*member)())</td></tr>
 <tr class="memdesc:a6e1f3921d4f70c95c8e576ec40f8cdd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> that return <code>false</code> for <em>member</em> .  <a href="#a6e1f3921d4f70c95c8e576ec40f8cdd2">More...</a><br /></td></tr>
 <tr class="separator:a6e1f3921d4f70c95c8e576ec40f8cdd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5917010c6f56abf7ba421dbe0f5e92b"><td class="memTemplParams" colspan="2">template&lt;typename UnaryOperation &gt; </td></tr>
+<tr class="memitem:ae5917010c6f56abf7ba421dbe0f5e92b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ae5917010c6f56abf7ba421dbe0f5e92b">flat_map</a> (UnaryOperation operation)</td></tr>
+<tr class="memdesc:ae5917010c6f56abf7ba421dbe0f5e92b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> using the given unary function, <em>operation</em> . Each element is transformed into a new stream. The resultant stream is a concatenation of all created streams.  <a href="#ae5917010c6f56abf7ba421dbe0f5e92b">More...</a><br /></td></tr>
+<tr class="separator:ae5917010c6f56abf7ba421dbe0f5e92b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a347e52317b201a9e142031724ea4de0a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a347e52317b201a9e142031724ea4de0a">limit</a> (std::size_t length)</td></tr>
 <tr class="memdesc:a347e52317b201a9e142031724ea4de0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limits the length of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> to <em>length</em>  elements. If the stream is shorter, all elements are kept.  <a href="#a347e52317b201a9e142031724ea4de0a">More...</a><br /></td></tr>
 <tr class="separator:a347e52317b201a9e142031724ea4de0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,11 +153,11 @@ Functions</h2></td></tr>
 <tr class="separator:aae7bef0ac778a95140e38bb9e81ae83a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9078ec57972888d23411f8c3ea209af"><td class="memTemplParams" colspan="2">template&lt;typename UnaryFunction &gt; </td></tr>
 <tr class="memitem:ac9078ec57972888d23411f8c3ea209af"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af">peek</a> (UnaryFunction action)</td></tr>
-<tr class="memdesc:ac9078ec57972888d23411f8c3ea209af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lazily executes <em>action</em>  for each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> as a <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation. This is an intermediate operation equivalent of <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a6b3d0ede6c9489aebb9ce1ed684c31a0" title="Executes a function for each element in the stream. The executed function is returned. ">each()</a>.  <a href="#ac9078ec57972888d23411f8c3ea209af">More...</a><br /></td></tr>
+<tr class="memdesc:ac9078ec57972888d23411f8c3ea209af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lazily executes <em>action</em>  for each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> as a <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation. This is an intermediate operation equivalent of <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a6b3d0ede6c9489aebb9ce1ed684c31a0" title="Executes a function for each element in the stream. The executed function is returned. This is the terminal operation equivalent of peek(). ">each()</a>.  <a href="#ac9078ec57972888d23411f8c3ea209af">More...</a><br /></td></tr>
 <tr class="separator:ac9078ec57972888d23411f8c3ea209af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af32b7bf1f105167d576b779b3b5f0297"><td class="memTemplParams" colspan="2">template&lt;typename Ret , typename Class &gt; </td></tr>
 <tr class="memitem:af32b7bf1f105167d576b779b3b5f0297"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af32b7bf1f105167d576b779b3b5f0297">peek</a> (Ret(Class::*member)())</td></tr>
-<tr class="memdesc:af32b7bf1f105167d576b779b3b5f0297"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lazily executes <em>member</em>  for each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> as a <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation. This is an intermediate operation equivalent of <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a6b3d0ede6c9489aebb9ce1ed684c31a0" title="Executes a function for each element in the stream. The executed function is returned. ">each()</a>.  <a href="#af32b7bf1f105167d576b779b3b5f0297">More...</a><br /></td></tr>
+<tr class="memdesc:af32b7bf1f105167d576b779b3b5f0297"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lazily executes <em>member</em>  for each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> as a <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation. This is an intermediate operation equivalent of <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a6b3d0ede6c9489aebb9ce1ed684c31a0" title="Executes a function for each element in the stream. The executed function is returned. This is the terminal operation equivalent of peek(). ">each()</a>.  <a href="#af32b7bf1f105167d576b779b3b5f0297">More...</a><br /></td></tr>
 <tr class="separator:af32b7bf1f105167d576b779b3b5f0297"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0db61e00aa587124edb99e065385ef16"><td class="memTemplParams" colspan="2">template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </td></tr>
 <tr class="memitem:a0db61e00aa587124edb99e065385ef16"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0db61e00aa587124edb99e065385ef16">replace_map</a> (UnaryPredicate predicate, UnaryOperation mapper)</td></tr>
@@ -166,8 +172,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a0430d4efcca042eb1b6a03a9fc66e53b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> by <em>new_value</em>  if they are equal to <em>old_value</em> . Equality is checked by using <code>operator==</code> on the elements.  <a href="#a0430d4efcca042eb1b6a03a9fc66e53b">More...</a><br /></td></tr>
 <tr class="separator:a0430d4efcca042eb1b6a03a9fc66e53b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13397178496f74369fc8dae063415b7a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a13397178496f74369fc8dae063415b7a">reverse</a> ()</td></tr>
-<tr class="memdesc:a13397178496f74369fc8dae063415b7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverses the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. Reversing is an eager operation. On the creation of the <code>reverse</code> operation, the entire stream up to that point is evaluated and stored before continuing with the remainder of the stream. Thus, the <code>reverse</code> operation takes <code>O(n)</code> extra space and time, where <code>n</code> is the size of the stream. For most applications, it will be beneficial to reverse the stream beforehand by using reverse iterators, for example: </p><div class="fragment"><div class="line"><a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c">from</a>(container.rbegin(), container.rend()) | ...</div>
-</div><!-- fragment -->  <a href="#a13397178496f74369fc8dae063415b7a">More...</a><br /></td></tr>
+<tr class="memdesc:a13397178496f74369fc8dae063415b7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverses the elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>.  <a href="#a13397178496f74369fc8dae063415b7a">More...</a><br /></td></tr>
 <tr class="separator:a13397178496f74369fc8dae063415b7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2725d9fb49cd0c4fe25658500c2fa1f1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a2725d9fb49cd0c4fe25658500c2fa1f1">skip</a> (std::size_t begin, std::size_t step_size)</td></tr>
 <tr class="memdesc:a2725d9fb49cd0c4fe25658500c2fa1f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skips the first elements of a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. Keeps only the elements with index <code>&gt;=</code> <em>begin</em>  in the stream. This operation will skip every <em>step_size</em>  elements after the initial jump to <em>begin</em>  For example a <em>step_size</em>  of 2 will keep only every other element, eg <code>begin, begin+2, begin+4</code> etc.  <a href="#a2725d9fb49cd0c4fe25658500c2fa1f1">More...</a><br /></td></tr>
@@ -220,10 +225,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a7f1ec0323daa06ef6b093f1d0aa4c1cc"><td class="memTemplParams" colspan="2">template&lt;typename RightSource &gt; </td></tr>
 <tr class="memitem:a7f1ec0323daa06ef6b093f1d0aa4c1cc"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a7f1ec0323daa06ef6b093f1d0aa4c1cc">zip</a> (<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; RightSource &gt; &amp;&amp;right)</td></tr>
 <tr class="separator:a7f1ec0323daa06ef6b093f1d0aa4c1cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2fc82a612a709360fac445a46001509"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = typename std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:ab2fc82a612a709360fac445a46001509"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ab2fc82a612a709360fac445a46001509">zip</a> (Container &amp;container)</td></tr>
-<tr class="memdesc:ab2fc82a612a709360fac445a46001509"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using the default zipping operation. The default zip creates tuples of the stream elements like <code>std::tuple&lt;T1, T2&gt;</code>. Multiple <code>zip</code> operations concatenates these tuples together rather than nesting them. This is the same as <code>zip(from(container))</code>.  <a href="#ab2fc82a612a709360fac445a46001509">More...</a><br /></td></tr>
-<tr class="separator:ab2fc82a612a709360fac445a46001509"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a307ab32b7942a1a8347ccd0172c4da04"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = typename std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:a307ab32b7942a1a8347ccd0172c4da04"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a307ab32b7942a1a8347ccd0172c4da04">zip</a> (const Container &amp;container)</td></tr>
 <tr class="memdesc:a307ab32b7942a1a8347ccd0172c4da04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using the default zipping operation. The default zip creates tuples of the stream elements like <code>std::tuple&lt;T1, T2&gt;</code>. Multiple <code>zip</code> operations concatenates these tuples together rather than nesting them. This is the same as <code>zip(from(container))</code>.  <a href="#a307ab32b7942a1a8347ccd0172c4da04">More...</a><br /></td></tr>
@@ -232,10 +233,6 @@ Functions</h2></td></tr>
 <tr class="memitem:ae25b0a8475258acc29173c4a37e13e22"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ae25b0a8475258acc29173c4a37e13e22">zip</a> (<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; RightSource &gt; &amp;&amp;right, BinaryOperation zipper)</td></tr>
 <tr class="memdesc:ae25b0a8475258acc29173c4a37e13e22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using <em>zipper</em>  as the zipping operation.  <a href="#ae25b0a8475258acc29173c4a37e13e22">More...</a><br /></td></tr>
 <tr class="separator:ae25b0a8475258acc29173c4a37e13e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a573b95c3fc149372b6659127f7d47814"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename BinaryOperation , typename  = typename std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:a573b95c3fc149372b6659127f7d47814"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a573b95c3fc149372b6659127f7d47814">zip</a> (Container &amp;container, BinaryOperation zipper)</td></tr>
-<tr class="memdesc:a573b95c3fc149372b6659127f7d47814"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using <em>zipper</em>  as the zipping operation. This is the same as <code>zip(from(container), zipper)</code>.  <a href="#a573b95c3fc149372b6659127f7d47814">More...</a><br /></td></tr>
-<tr class="separator:a573b95c3fc149372b6659127f7d47814"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a351227e746aefe4a0a60df97b89bc62e"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename BinaryOperation , typename  = typename std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:a351227e746aefe4a0a60df97b89bc62e"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a351227e746aefe4a0a60df97b89bc62e">zip</a> (const Container &amp;container, BinaryOperation zipper)</td></tr>
 <tr class="memdesc:a351227e746aefe4a0a60df97b89bc62e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using <em>zipper</em>  as the zipping operation. This is the same as <code>zip(from(container), zipper)</code>.  <a href="#a351227e746aefe4a0a60df97b89bc62e">More...</a><br /></td></tr>
@@ -266,29 +263,41 @@ template&lt;typename Tail &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that concatenates the two <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> objects.</dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d7/db4/concat_8cpp-example.html#a0">concat.cpp</a>.</dd>
+</dl>
 </div>
 </div>
-<a class="anchor" id="a955cba2286efa38c29c17ee9d2fd43f5"></a>
+<a class="anchor" id="ac535fea33e2424506d0bbf56409f99a7"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Container , typename  = typename std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
+template&lt;typename Itr &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto flow::intermediate::concat </td>
           <td>(</td>
-          <td class="paramtype">Container &amp;&#160;</td>
-          <td class="paramname"><em>container</em></td><td>)</td>
+          <td class="paramtype">Itr&#160;</td>
+          <td class="paramname"><em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">Itr&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Concatenates the given container onto the end of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. This is the same as <code>concat(from(container))</code>. The <em>tail</em>  stream elements must be convertible to the same type of elements as the head stream. </p>
+<p>Concatenates the given iterator range onto the end of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. This is the same as <code>concat(from(begin, end))</code>. The <em>tail</em>  stream elements must be convertible to the same type of elements as the head stream. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">container</td><td>The container to concatenate onto the end of the stream.</td></tr>
+    <tr><td class="paramname">begin</td><td>The beginning of the range to concat.</td></tr>
+    <tr><td class="paramname">end</td><td>The end of the range to concat.</td></tr>
   </table>
   </dd>
 </dl>
@@ -313,7 +322,7 @@ template&lt;typename Container , typename  = typename std::enable_if_t&lt;genera
       </table>
 </div><div class="memdoc">
 
-<p>Concatenates the given container onto the end of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. This is the same as <code>concat(from(container))</code>. The <em>tail</em>  stream elements must be convertible to the same type of elements as the head stream. </p>
+<p>Concatenates <em>container</em>  onto the end of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. This is the same as <code>concat(from(container))</code>. The <em>tail</em>  stream elements must be convertible to the same type of elements as the head stream. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">container</td><td>The container to concatenate onto the end of the stream.</td></tr>
@@ -355,6 +364,9 @@ template&lt;typename UnaryPredicate &gt; </div>
 <a class="anchor" id="af375a0d8fadc8ec0e0d2b97a1d2907a5"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto flow::intermediate::drop_while </td>
@@ -363,6 +375,11 @@ template&lt;typename UnaryPredicate &gt; </div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Drops elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> until a stream element is <code>false</code>. All elements before the first <code>false</code> are discarded, the rest are kept. This is an overload for streams with types convertible to <code>bool</code>. </p>
@@ -434,6 +451,9 @@ template&lt;typename UnaryPredicate &gt; </div>
 <a class="anchor" id="a99debd4465f5e92791995d9a985a0a2d"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto flow::intermediate::filter </td>
@@ -442,6 +462,11 @@ template&lt;typename UnaryPredicate &gt; </div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Removes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> which are evaluated to <code>false</code>. This is an overload for streams with types convertible to <code>bool</code>. </p>
@@ -483,9 +508,39 @@ template&lt;typename Ret , typename Class &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="ae5917010c6f56abf7ba421dbe0f5e92b"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename UnaryOperation &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::intermediate::flat_map </td>
+          <td>(</td>
+          <td class="paramtype">UnaryOperation&#160;</td>
+          <td class="paramname"><em>operation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transforms each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> using the given unary function, <em>operation</em> . Each element is transformed into a new stream. The resultant stream is a concatenation of all created streams. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">operation</td><td>The operation that creates a new stream from a stream element.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that creates new streams and concatenations them together.</dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a347e52317b201a9e142031724ea4de0a"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto flow::intermediate::limit </td>
@@ -495,6 +550,11 @@ template&lt;typename Ret , typename Class &gt; </div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Limits the length of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> to <em>length</em>  elements. If the stream is shorter, all elements are kept. </p>
@@ -505,7 +565,8 @@ template&lt;typename Ret , typename Class &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that limits the length of the stream.</dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d7/db4/concat_8cpp-example.html#a2">concat.cpp</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="af704cfd8b681a9cd8b2437d249487f78"></a>
@@ -585,7 +646,7 @@ template&lt;typename UnaryFunction &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Lazily executes <em>action</em>  for each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> as a <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation. This is an intermediate operation equivalent of <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a6b3d0ede6c9489aebb9ce1ed684c31a0" title="Executes a function for each element in the stream. The executed function is returned. ">each()</a>. </p>
+<p>Lazily executes <em>action</em>  for each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> as a <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation. This is an intermediate operation equivalent of <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a6b3d0ede6c9489aebb9ce1ed684c31a0" title="Executes a function for each element in the stream. The executed function is returned. This is the terminal operation equivalent of peek(). ">each()</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">action</td><td>The function to apply to each element of the stream.</td></tr>
@@ -593,7 +654,7 @@ template&lt;typename UnaryFunction &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that executes a function for each stream element.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a6b3d0ede6c9489aebb9ce1ed684c31a0" title="Executes a function for each element in the stream. The executed function is returned. ">each()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a6b3d0ede6c9489aebb9ce1ed684c31a0" title="Executes a function for each element in the stream. The executed function is returned. This is the terminal operation equivalent of peek(). ">each()</a></dd></dl>
 
 </div>
 </div>
@@ -613,7 +674,7 @@ template&lt;typename Ret , typename Class &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Lazily executes <em>member</em>  for each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> as a <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation. This is an intermediate operation equivalent of <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a6b3d0ede6c9489aebb9ce1ed684c31a0" title="Executes a function for each element in the stream. The executed function is returned. ">each()</a>. </p>
+<p>Lazily executes <em>member</em>  for each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> as a <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation. This is an intermediate operation equivalent of <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a6b3d0ede6c9489aebb9ce1ed684c31a0" title="Executes a function for each element in the stream. The executed function is returned. This is the terminal operation equivalent of peek(). ">each()</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">member</td><td>The function to apply to each element of the stream.</td></tr>
@@ -621,7 +682,7 @@ template&lt;typename Ret , typename Class &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that executes a function for each stream element.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a6b3d0ede6c9489aebb9ce1ed684c31a0" title="Executes a function for each element in the stream. The executed function is returned. ">each()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a6b3d0ede6c9489aebb9ce1ed684c31a0" title="Executes a function for each element in the stream. The executed function is returned. This is the terminal operation equivalent of peek(). ">each()</a></dd></dl>
 
 </div>
 </div>
@@ -742,6 +803,9 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
 <a class="anchor" id="a13397178496f74369fc8dae063415b7a"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto flow::intermediate::reverse </td>
@@ -750,17 +814,27 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Reverses the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. Reversing is an eager operation. On the creation of the <code>reverse</code> operation, the entire stream up to that point is evaluated and stored before continuing with the remainder of the stream. Thus, the <code>reverse</code> operation takes <code>O(n)</code> extra space and time, where <code>n</code> is the size of the stream. For most applications, it will be beneficial to reverse the stream beforehand by using reverse iterators, for example: </p><div class="fragment"><div class="line"><a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c">from</a>(container.rbegin(), container.rend()) | ...</div>
-</div><!-- fragment --> </p>
+<p>Reverses the elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. </p>
+<p>Reversing is an eager operation. On the creation of the <code>reverse</code> operation, the entire stream up to that point is evaluated and stored before continuing with the remainder of the stream. Thus, the <code>reverse</code> operation takes <code>O(n)</code> extra space and time, where <code>n</code> is the size of the stream. For most applications, it will be beneficial to reverse the stream beforehand by using reverse iterators, for example:</p>
+<p><code>from(container.rbegin(), container.rend()) | ...</code> </p>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that reverses the stream.</dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d7/db4/concat_8cpp-example.html#a3">concat.cpp</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="a2725d9fb49cd0c4fe25658500c2fa1f1"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto flow::intermediate::skip </td>
@@ -780,6 +854,11 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Skips the first elements of a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. Keeps only the elements with index <code>&gt;=</code> <em>begin</em>  in the stream. This operation will skip every <em>step_size</em>  elements after the initial jump to <em>begin</em>  For example a <em>step_size</em>  of 2 will keep only every other element, eg <code>begin, begin+2, begin+4</code> etc. </p>
@@ -797,6 +876,9 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
 <a class="anchor" id="a2f8b2e7e5cc41ecd02cb4381a706d545"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto flow::intermediate::skip </td>
@@ -806,6 +888,11 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Skips the first elements of a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. Keeps only the elements with index <code>&gt;=</code> <em>begin</em>  in the stream. </p>
@@ -822,6 +909,9 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
 <a class="anchor" id="aeef64fd0f533b9b084b83c46fe8352d4"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto flow::intermediate::skip_every </td>
@@ -831,6 +921,11 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Skips every <em>step_size</em>  elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>, keeping the first element. For example, a <em>step_size</em>  of 2 will only keep stream elements with index 0, 2, 4 etc. </p>
@@ -847,6 +942,9 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
 <a class="anchor" id="a1954e2f5425b7603794790f7645e776e"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto flow::intermediate::slice </td>
@@ -872,6 +970,11 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Slices the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. Keeps only elements with index in the range <code>[begin..end)</code> in the stream, excluding the <em>end</em>  index. If <em>end</em>  is out of bounds of the stream, the entire stream from <em>begin</em>  is kept. The operation will skip every <code>step_size</code> elements, for example a <em>step_size</em>  of 2 will keep only every other element in the range, eg <code>begin, begin+2, begin+4</code> etc. </p>
@@ -890,6 +993,9 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
 <a class="anchor" id="ac8468b308d2903331dc966819b373625"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto flow::intermediate::slice </td>
@@ -909,6 +1015,11 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Slices the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. Keeps only elements with index in the range <code>[begin..end)</code> in the stream, excluding the <em>end</em>  index. If <code>end</code> is out of bounds of the stream, the entire stream from <em>begin</em>  is kept. </p>
@@ -1017,6 +1128,9 @@ template&lt;typename UnaryPredicate &gt; </div>
 <a class="anchor" id="a213755b414a7d31af11bb96c129c6667"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto flow::intermediate::take_while </td>
@@ -1025,6 +1139,11 @@ template&lt;typename UnaryPredicate &gt; </div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Takes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> until an element is <code>false</code>. Elements after and including the first <code>false</code> are discarded. This is an overload for streams with types convertible to <code>bool</code>. </p>
@@ -1122,34 +1241,6 @@ template&lt;typename RightSource &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ab2fc82a612a709360fac445a46001509"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Container , typename  = typename std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">auto flow::intermediate::zip </td>
-          <td>(</td>
-          <td class="paramtype">Container &amp;&#160;</td>
-          <td class="paramname"><em>container</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Zips the two streams together using the default zipping operation. The default zip creates tuples of the stream elements like <code>std::tuple&lt;T1, T2&gt;</code>. Multiple <code>zip</code> operations concatenates these tuples together rather than nesting them. This is the same as <code>zip(from(container))</code>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">container</td><td>The container to zip together with this stream.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that zips the two streams.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c" title="Creates a Stream from the given iterator range. ">from()</a>, <a class="el" href="../../d9/de2/namespaceflow.html#ad795c672b7e52516485e7ffb2d6c4ad7" title="Uncurries the specified function. Given a function which takes several parameters, converts that function into a function which takes one std::tuple of those arguments instead. This is useful when zipping streams together as it allows you to write a function which takes normal arguments instead of a tuple. For example, this allows the syntax: intlist | zip(more_ints) | map(uncurry([](int l, int r){ i and j things })) | ... as opposed to using std::tuple<int,int> and std::get<i>. ">uncurry()</a></dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="a307ab32b7942a1a8347ccd0172c4da04"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1208,44 +1299,6 @@ template&lt;typename RightSource , typename BinaryOperation &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">right</td><td>The right stream to zip together with the operated stream.</td></tr>
-    <tr><td class="paramname">zipper</td><td>The zipping operation that combines the two streams.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that zips the two streams.</dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a573b95c3fc149372b6659127f7d47814"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Container , typename BinaryOperation , typename  = typename std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">auto flow::intermediate::zip </td>
-          <td>(</td>
-          <td class="paramtype">Container &amp;&#160;</td>
-          <td class="paramname"><em>container</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">BinaryOperation&#160;</td>
-          <td class="paramname"><em>zipper</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Zips the two streams together using <em>zipper</em>  as the zipping operation. This is the same as <code>zip(from(container), zipper)</code>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">container</td><td>The container to zip together with this stream.</td></tr>
     <tr><td class="paramname">zipper</td><td>The zipping operation that combines the two streams.</td></tr>
   </table>
   </dd>

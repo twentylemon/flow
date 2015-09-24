@@ -24,6 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Flow
    </div>
+   <div id="projectbrief">Lazy Evaluated Stream Processing</div>
   </td>
  </tr>
  </tbody>
@@ -41,6 +42,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -80,13 +82,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h1>Sick Flow, Bro </h1>
-<p>Inspired by Java 8 <a href="http://www.oracle.com/technetwork/articles/java/ma14-java-se-8-streams-2177646.html">Streams</a>, flow is a C++14 library that provides lazy evaluation and functional transformations on data. It's like Haskell for C++. The library provides many common data transformations, such as map, filter and fold, as well as other commonly used operations like computing the sum, min and max or simply counting the number or elements. And all of it is packaged in a nice, easy to read and understand syntax. To use, simply <code>#include &lt;flow.h&gt;</code> in your C++14 program. With fully optimized code (<code>-O3</code> or <code>/O2</code>), flow does not offer any performace penalties compared to standard code, so there's no reason not to love.</p>
+<p>Inspired by Java 8 <a href="http://www.oracle.com/technetwork/articles/java/ma14-java-se-8-streams-2177646.html">Streams</a>, flow is a C++14 library that provides lazy evaluation and functional transformations on data. It's like Haskell for C++. The library provides many common data transformations, such as map, filter and fold, as well as other commonly used operations like computing the sum, min and max or simply counting the number or elements. And all of it is packaged in a nice, easy to read and understand syntax. To use, simply <code>#include &lt;flow.h&gt;</code> in your C++14 program. With fully optimized code (<code>-O3</code> or <code>/O2</code>), flow does not offer any performance penalties compared to standard code, so there's no reason not to love.</p>
 <h2>What is a Sick Flow? </h2>
 <p>A flow is usually called a stream. But if I called the library "Stream" I couldn't say "sick flow" all the time. I'll use flow and stream interchangeably, just know that a stream is a source of data, data that you would want to do things with.</p>
 <h2>Creating a Sick Flow </h2>
 <p>The <a class="el" href="de/d3f/namespaceflow_1_1generator.html">flow::generator</a> namespace contains several factory methods for creating a Stream object. Probably the most common generator used is <a class="el" href="de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c" title="Creates a Stream from the given iterator range. ">from()</a>, which creates a Stream from an iterator range or a container.</p>
 <p><code>auto stream = from(my_vector); // a stream over the entire vector in the same order</code> </p>
-<p>Other common stream generators are <a class="el" href="de/d3f/namespaceflow_1_1generator.html#ad3e468cd8e943a73900891b99f7a2ded" title="Creates an infinite Stream of values by incrementing begin  using operator++. ">iota()</a>, which counts up from a value, and repeat(), which repeats a value or cycles a container.</p>
+<p>Other common stream generators are <a class="el" href="de/d3f/namespaceflow_1_1generator.html#ad3e468cd8e943a73900891b99f7a2ded" title="Creates an infinite Stream of values by incrementing begin  using operator++. ">iota()</a>, which counts up from a value, <a class="el" href="de/d3f/namespaceflow_1_1generator.html#ac91cc015f53a6efeea386b04b9486572" title="Creates an infinite stream containing value  repeated over and over. ">repeat()</a>, which repeats a value or <a class="el" href="de/d3f/namespaceflow_1_1generator.html#ac56e6d6017435a15378682bacc6da4e9" title="Creates an infinite stream which cycles the iterator range. ">cycle()</a>, which cycles a container.</p>
 <h2>Manipulating a Sick Flow </h2>
 <p>Say you want to loop through a list of numbers. But you only want the even values. Then you want the squares of those values for some reason. Oh, and you want at most 10 of those. How would you do that in normal C++? Probably something like</p>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> <a class="code" href="d1/d6c/namespaceflow_1_1terminal.html#a52dfcc0ff79f7c3d74ea2e80a3f9a65f">count</a> = 0;</div>

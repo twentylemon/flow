@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Flow: D:/git/flow/flow/flow/intermediate/slice.h Source File</title>
+<title>Flow: flow/intermediate/slice.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -24,6 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Flow
    </div>
+   <div id="projectbrief">Lazy Evaluated Stream Processing</div>
   </td>
  </tr>
  </tbody>
@@ -41,6 +42,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="../../annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="../../files.html"><span>Files</span></a></li>
+      <li><a href="../../examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -80,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="../../dir_2420eba184a3676f5a7fb84b29bc58a5.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_8d759b635f6b804b122261ed7ac7ad98.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_711f473ca6d0bb4b30b50dd32f985cf6.html">intermediate</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../dir_2420eba184a3676f5a7fb84b29bc58a5.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_a0e9e98f8cff90e425322a8947b4aaff.html">intermediate</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -99,13 +101,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d9/de2/namespaceflow.html">flow</a> {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">namespace </span>intermediate {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1954e2f5425b7603794790f7645e776e">   46</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1954e2f5425b7603794790f7645e776e">slice</a>(std::size_t begin, std::size_t end, std::size_t step_size) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1954e2f5425b7603794790f7645e776e">   46</a></span>&#160;<span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1954e2f5425b7603794790f7645e776e">slice</a>(std::size_t begin, std::size_t end, std::size_t step_size) {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../da/df5/namespaceflow_1_1intermediate_1_1detail.html#aef2fd0c716feeaa1b770adfaa555162b">detail::make_intermediate</a>([begin, end, step_size](<span class="keyword">auto</span>&amp;&amp; stream) {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d9/dcd/classflow_1_1_stream.html">Stream&lt;source::Slice&lt;typename std::remove_reference_t&lt;decltype(stream)&gt;::source_type</a>&gt;&gt;(std::move(stream.source()), begin, end, step_size);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    });</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac8468b308d2903331dc966819b373625">   60</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1954e2f5425b7603794790f7645e776e">slice</a>(std::size_t begin, std::size_t end) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac8468b308d2903331dc966819b373625">   60</a></span>&#160;<span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1954e2f5425b7603794790f7645e776e">slice</a>(std::size_t begin, std::size_t end) {</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1954e2f5425b7603794790f7645e776e">slice</a>(begin, end, static_cast&lt;std::size_t&gt;(1));</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>

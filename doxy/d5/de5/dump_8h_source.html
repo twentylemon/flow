@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Flow: D:/git/flow/flow/flow/terminal/dump.h Source File</title>
+<title>Flow: flow/terminal/dump.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -24,6 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Flow
    </div>
+   <div id="projectbrief">Lazy Evaluated Stream Processing</div>
   </td>
  </tr>
  </tbody>
@@ -41,6 +42,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="../../annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="../../files.html"><span>Files</span></a></li>
+      <li><a href="../../examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -80,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="../../dir_2420eba184a3676f5a7fb84b29bc58a5.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_8d759b635f6b804b122261ed7ac7ad98.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_a7ea9171120fa7d1527d3f5fbdd04867.html">terminal</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../dir_2420eba184a3676f5a7fb84b29bc58a5.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_e74d20354ec74f7e2733517bf2c570cf.html">terminal</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -101,7 +103,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d9/de2/namespaceflow.html">flow</a> {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">namespace </span>terminal {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f">   45</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f">dump</a>(std::ostream&amp; out = std::cout, <span class="keyword">const</span> std::string&amp; delimiter = <span class="stringliteral">&quot; &quot;</span>) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f">   45</a></span>&#160;<span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f">dump</a>(std::ostream&amp; out = std::cout, <span class="keyword">const</span> std::string&amp; delimiter = <span class="stringliteral">&quot; &quot;</span>) {</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../de/d8a/namespaceflow_1_1terminal_1_1detail.html#aee999abcc54ba9a5a1f400b46467193f">detail::make_terminal</a>([&amp;out, &amp;delimiter](<span class="keyword">auto</span>&amp;&amp; stream) -&gt; std::ostream&amp; {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        stream | <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#aa2e701e11c61d1038e3b0581e2f32df0">copy</a>(std::ostream_iterator&lt;<span class="keyword">typename</span> std::remove_reference_t&lt;decltype(stream)&gt;::value_type&gt;(out, delimiter.c_str()));</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> out;</div>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Flow: D:/git/flow/flow/flow/intermediate/concat.h Source File</title>
+<title>Flow: flow/intermediate/concat.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -24,6 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Flow
    </div>
+   <div id="projectbrief">Lazy Evaluated Stream Processing</div>
   </td>
  </tr>
  </tbody>
@@ -41,6 +42,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="../../annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="../../files.html"><span>Files</span></a></li>
+      <li><a href="../../examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -80,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="../../dir_2420eba184a3676f5a7fb84b29bc58a5.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_8d759b635f6b804b122261ed7ac7ad98.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_711f473ca6d0bb4b30b50dd32f985cf6.html">intermediate</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../dir_2420eba184a3676f5a7fb84b29bc58a5.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_a0e9e98f8cff90e425322a8947b4aaff.html">intermediate</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -107,18 +109,18 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    });</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;template &lt;typename Container, typename = typename std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt;</div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../dc/d09/namespaceflow_1_1intermediate.html#a955cba2286efa38c29c17ee9d2fd43f5">   58</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa0551274cc05f2c668d5612bfe1716cb">concat</a>(Container&amp; container) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa0551274cc05f2c668d5612bfe1716cb">concat</a>(<a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c">generator::from</a>(container));</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;template &lt;typename Container, typename = typename std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt;</div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="../../dc/d09/namespaceflow_1_1intermediate.html#ad7c183077d6fef7e3dc3c0e7041bf086">   70</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa0551274cc05f2c668d5612bfe1716cb">concat</a>(<span class="keyword">const</span> Container&amp; container) {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa0551274cc05f2c668d5612bfe1716cb">concat</a>(<a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c">generator::from</a>(container));</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Itr&gt;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac535fea33e2424506d0bbf56409f99a7">   59</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa0551274cc05f2c668d5612bfe1716cb">concat</a>(Itr begin, Itr end) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa0551274cc05f2c668d5612bfe1716cb">concat</a>(<a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c">generator::from</a>(begin, end));</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;template &lt;typename Container, typename = typename std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="../../dc/d09/namespaceflow_1_1intermediate.html#ad7c183077d6fef7e3dc3c0e7041bf086">   71</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa0551274cc05f2c668d5612bfe1716cb">concat</a>(<span class="keyword">const</span> Container&amp; container) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa0551274cc05f2c668d5612bfe1716cb">concat</a>(<a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c">generator::from</a>(container));</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="classflow_1_1_stream_html"><div class="ttname"><a href="../../d9/dcd/classflow_1_1_stream.html">flow::Stream</a></div><div class="ttdef"><b>Definition:</b> Compose.h:30</div></div>
 <div class="ttc" id="_intermediate_8h_html"><div class="ttname"><a href="../../d9/df2/_intermediate_8h.html">Intermediate.h</a></div></div>
 <div class="ttc" id="namespaceflow_1_1intermediate_1_1detail_html_aef2fd0c716feeaa1b770adfaa555162b"><div class="ttname"><a href="../../da/df5/namespaceflow_1_1intermediate_1_1detail.html#aef2fd0c716feeaa1b770adfaa555162b">flow::intermediate::detail::make_intermediate</a></div><div class="ttdeci">Intermediate&lt; Function &gt; make_intermediate(Function &amp;&amp;function)</div><div class="ttdoc">Constructs An Intermediate object using the function given. </div><div class="ttdef"><b>Definition:</b> Intermediate.h:94</div></div>

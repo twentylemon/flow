@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Flow: D:/git/flow/flow/flow/generator/from.h Source File</title>
+<title>Flow: flow/generator/from.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -24,6 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Flow
    </div>
+   <div id="projectbrief">Lazy Evaluated Stream Processing</div>
   </td>
  </tr>
  </tbody>
@@ -41,6 +42,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="../../annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="../../files.html"><span>Files</span></a></li>
+      <li><a href="../../examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -80,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="../../dir_2420eba184a3676f5a7fb84b29bc58a5.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_8d759b635f6b804b122261ed7ac7ad98.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_118e20f3366c2a879a67a85a2ae9c504.html">generator</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../dir_2420eba184a3676f5a7fb84b29bc58a5.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_82b0d2086401c82289635bcacc8786d9.html">generator</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -116,45 +118,30 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d9/dcd/classflow_1_1_stream.html">Stream&lt;source::Iterator&lt;Itr&gt;</a>&gt;(begin, end);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Container&gt;</div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../de/d3f/namespaceflow_1_1generator.html#ad5f2725690296c9fe96031330087197a">   68</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c">from</a>(Container&amp; container) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;template &lt;typename Container, typename = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../de/d3f/namespaceflow_1_1generator.html#a4d4c7a7ea3bf9f9b0e596d9fea0f70cc">   68</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c">from</a>(<span class="keyword">const</span> Container&amp; container) {</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c">from</a>(container.begin(), container.end());</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Container&gt;</div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="../../de/d3f/namespaceflow_1_1generator.html#afa5f66bec85e3e02cb93f184eec2a3aa">   78</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c">from</a>(<span class="keyword">const</span> Container&amp; container) {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c">from</a>(container.begin(), container.end());</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;template &lt;typename Container, typename F, typename = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt;</div>
-<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="../../de/d3f/namespaceflow_1_1generator.html#a3a600c0179388a946baf8aaf03350ed7">   90</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#a3a600c0179388a946baf8aaf03350ed7">operator|</a>(Container&amp; container, <a class="code" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html">intermediate::detail::Intermediate&lt;F&gt;</a>&amp;&amp; op) {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c">from</a>(container) | std::move(op);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;template &lt;typename Container, typename F, typename = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt;</div>
-<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="../../de/d3f/namespaceflow_1_1generator.html#a5bab90bcea83ba6a0658275bb4fdc28e">  106</a></span>&#160;decltype(<span class="keyword">auto</span>) operator|(Container&amp; container, terminal::detail::Terminal&lt;F&gt;&amp;&amp; op) {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c">from</a>(container) | std::move(op);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;template &lt;typename Container, typename F, typename = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt;</div>
-<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="../../de/d3f/namespaceflow_1_1generator.html#aa1560e2c0769ebcbc05be89fe0366e37">  118</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#a3a600c0179388a946baf8aaf03350ed7">operator|</a>(<span class="keyword">const</span> Container&amp; container, <a class="code" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html">intermediate::detail::Intermediate&lt;F&gt;</a>&amp;&amp; op) {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c">from</a>(container) | std::move(op);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;template &lt;typename Container, typename F, typename = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt;</div>
-<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="../../de/d3f/namespaceflow_1_1generator.html#a361c278799bd7f1569719553f7c7088d">  134</a></span>&#160;decltype(<span class="keyword">auto</span>) operator|(const Container&amp; container, terminal::detail::Terminal&lt;F&gt;&amp;&amp; op) {</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c">from</a>(container) | std::move(op);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    }</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;template &lt;typename Container, typename F, typename = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt;</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="../../de/d3f/namespaceflow_1_1generator.html#aa1560e2c0769ebcbc05be89fe0366e37">   81</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#aa1560e2c0769ebcbc05be89fe0366e37">operator|</a>(<span class="keyword">const</span> Container&amp; container, <a class="code" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html">intermediate::detail::Intermediate&lt;F&gt;</a>&amp;&amp; op) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c">from</a>(container) | std::move(op);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;template &lt;typename Container, typename F, typename = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt;</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="../../de/d3f/namespaceflow_1_1generator.html#a361c278799bd7f1569719553f7c7088d">   94</a></span>&#160;decltype(<span class="keyword">auto</span>) operator|(const Container&amp; container, terminal::detail::Terminal&lt;F&gt;&amp;&amp; op) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c">from</a>(container) | std::move(op);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="namespaceflow_1_1generator_html_aa1560e2c0769ebcbc05be89fe0366e37"><div class="ttname"><a href="../../de/d3f/namespaceflow_1_1generator.html#aa1560e2c0769ebcbc05be89fe0366e37">flow::generator::operator|</a></div><div class="ttdeci">auto operator|(const Container &amp;container, intermediate::detail::Intermediate&lt; F &gt; &amp;&amp;op)</div><div class="ttdoc">Overrides | for containers, container | operation is a shorthand for from(container) | operation...</div><div class="ttdef"><b>Definition:</b> from.h:81</div></div>
 <div class="ttc" id="classflow_1_1_stream_html"><div class="ttname"><a href="../../d9/dcd/classflow_1_1_stream.html">flow::Stream</a></div><div class="ttdef"><b>Definition:</b> Compose.h:30</div></div>
 <div class="ttc" id="structflow_1_1generator_1_1detail_1_1has__const__iterator_html"><div class="ttname"><a href="../../d6/de2/structflow_1_1generator_1_1detail_1_1has__const__iterator.html">flow::generator::detail::has_const_iterator</a></div><div class="ttdoc">Type trait for a type having a member class const_iterator. </div><div class="ttdef"><b>Definition:</b> from.h:41</div></div>
 <div class="ttc" id="classflow_1_1intermediate_1_1detail_1_1_intermediate_html"><div class="ttname"><a href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html">flow::intermediate::detail::Intermediate</a></div><div class="ttdoc">An intermediate stream operation. Takes over the stream and applies some transformation to the stream...</div><div class="ttdef"><b>Definition:</b> Compose.h:38</div></div>
 <div class="ttc" id="namespaceflow_1_1generator_html_abff3916ae173286065e12f1ff3e4a60c"><div class="ttname"><a href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c">flow::generator::from</a></div><div class="ttdeci">Stream&lt; source::Iterator&lt; Itr &gt; &gt; from(Itr begin, Itr end)</div><div class="ttdoc">Creates a Stream from the given iterator range. </div><div class="ttdef"><b>Definition:</b> from.h:58</div></div>
 <div class="ttc" id="namespaceflow_html"><div class="ttname"><a href="../../d9/de2/namespaceflow.html">flow</a></div><div class="ttdef"><b>Definition:</b> Compose.h:29</div></div>
 <div class="ttc" id="structflow_1_1generator_1_1detail_1_1has__const__iterator_html_aec7984fa68f30ca3b6235af3c65d69a1a32254b0cf28090304c619b4afeb070db"><div class="ttname"><a href="../../d6/de2/structflow_1_1generator_1_1detail_1_1has__const__iterator.html#aec7984fa68f30ca3b6235af3c65d69a1a32254b0cf28090304c619b4afeb070db">flow::generator::detail::has_const_iterator::value</a></div><div class="ttdef"><b>Definition:</b> from.h:47</div></div>
-<div class="ttc" id="namespaceflow_1_1generator_html_a3a600c0179388a946baf8aaf03350ed7"><div class="ttname"><a href="../../de/d3f/namespaceflow_1_1generator.html#a3a600c0179388a946baf8aaf03350ed7">flow::generator::operator|</a></div><div class="ttdeci">auto operator|(Container &amp;container, intermediate::detail::Intermediate&lt; F &gt; &amp;&amp;op)</div><div class="ttdoc">Overrides | for containers, container | operation is a shorthand for from(container) | operation...</div><div class="ttdef"><b>Definition:</b> from.h:90</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

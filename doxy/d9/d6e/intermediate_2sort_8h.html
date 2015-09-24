@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Flow: D:/git/flow/flow/flow/intermediate/sort.h File Reference</title>
+<title>Flow: flow/intermediate/sort.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -24,6 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Flow
    </div>
+   <div id="projectbrief">Lazy Evaluated Stream Processing</div>
   </td>
  </tr>
  </tbody>
@@ -41,6 +42,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="../../annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="../../files.html"><span>Files</span></a></li>
+      <li><a href="../../examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -80,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="../../dir_2420eba184a3676f5a7fb84b29bc58a5.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_8d759b635f6b804b122261ed7ac7ad98.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_711f473ca6d0bb4b30b50dd32f985cf6.html">intermediate</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../dir_2420eba184a3676f5a7fb84b29bc58a5.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_a0e9e98f8cff90e425322a8947b4aaff.html">intermediate</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -113,7 +115,7 @@ Functions</h2></td></tr>
 </div><!-- fragment --><p><br />
  Instead, sorting the container in place beforehand will be more efficient as no copying takes place.<br />
  </p><div class="fragment"><div class="line"><a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0641d6ecc741bd5f346a961e5e8ccf44">std::sort</a>(my_vector.begin(), my_vector.end());</div>
-<div class="line"><span class="keywordtype">int</span> min = my_vector | <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612">first</a>();</div>
+<div class="line"><span class="keywordtype">int</span> <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#ad02d008becaf1d5d64d2ae358ae7306e">min</a> = my_vector | <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612">first</a>();</div>
 </div><!-- fragment -->  <a href="#a0641d6ecc741bd5f346a961e5e8ccf44">More...</a><br /></td></tr>
 <tr class="separator:a0641d6ecc741bd5f346a961e5e8ccf44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9a5f0773de4aac232e80ae23495e76e"><td class="memTemplParams" colspan="2">template&lt;typename Compare  = std::less&lt;void&gt;&gt; </td></tr>

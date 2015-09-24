@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Flow: D:/git/flow/flow/flow/source/Reverse.h Source File</title>
+<title>Flow: flow/source/Reverse.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -24,6 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Flow
    </div>
+   <div id="projectbrief">Lazy Evaluated Stream Processing</div>
   </td>
  </tr>
  </tbody>
@@ -41,6 +42,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="../../annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="../../files.html"><span>Files</span></a></li>
+      <li><a href="../../examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -80,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="../../dir_2420eba184a3676f5a7fb84b29bc58a5.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_8d759b635f6b804b122261ed7ac7ad98.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_ea07bf8b3390f63010cdfb03a819f6cb.html">source</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../dir_2420eba184a3676f5a7fb84b29bc58a5.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_27f4a12829f4687a70b5d5cc33ec1f57.html">source</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -103,8 +105,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../d9/d22/classflow_1_1source_1_1_reverse.html">   42</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d9/d22/classflow_1_1source_1_1_reverse.html">Reverse</a> : <span class="keyword">public</span> <a class="code" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">Iterator</a>&lt;typename std::vector&lt;typename Source::value_type&gt;::reverse_iterator&gt;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../d9/d22/classflow_1_1source_1_1_reverse.html#a9bf6a017de501b0869c7512a2954497b">   45</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="../../d9/d22/classflow_1_1source_1_1_reverse.html#a9bf6a017de501b0869c7512a2954497b">value_type</a> = <span class="keyword">typename</span> Source::value_type;</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="../../d9/d22/classflow_1_1source_1_1_reverse.html#a0b58dadf9fc5d1794db1708338fbd1e3">   46</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">parent_type</a> = <a class="code" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">Iterator&lt;typename std::vector&lt;value_type&gt;::reverse_iterator</a>&gt;;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../d9/d22/classflow_1_1source_1_1_reverse.html#a0b58dadf9fc5d1794db1708338fbd1e3">   45</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">parent_type</a> = <a class="code" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">Iterator&lt;typename std::vector&lt;value_type&gt;::reverse_iterator</a>&gt;;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="../../d9/d22/classflow_1_1source_1_1_reverse.html#ade5f801d77b0157530bf0354639dd94b">   46</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="../../d9/d22/classflow_1_1source_1_1_reverse.html#ade5f801d77b0157530bf0354639dd94b">value_type</a> = <span class="keyword">typename</span> <a class="code" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#a04511baca1a5566ef979490dc8bfb9d8">parent_type::value_type</a>;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
 <div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="../../d9/d22/classflow_1_1source_1_1_reverse.html#a6b131831c4fbe834ed0aff7fd38f218a">   52</a></span>&#160;    <a class="code" href="../../d9/d22/classflow_1_1source_1_1_reverse.html#a6b131831c4fbe834ed0aff7fd38f218a">Reverse</a>(Source&amp;&amp; source) : _source(std::move(source)), _stream()</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
@@ -127,12 +129,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classflow_1_1source_1_1_iterator_html_a04511baca1a5566ef979490dc8bfb9d8"><div class="ttname"><a href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#a04511baca1a5566ef979490dc8bfb9d8">flow::source::Iterator::value_type</a></div><div class="ttdeci">typename std::iterator_traits&lt; Itr &gt;::value_type value_type</div><div class="ttdef"><b>Definition:</b> Iterator.h:41</div></div>
 <div class="ttc" id="classflow_1_1source_1_1_reverse_html_a6b131831c4fbe834ed0aff7fd38f218a"><div class="ttname"><a href="../../d9/d22/classflow_1_1source_1_1_reverse.html#a6b131831c4fbe834ed0aff7fd38f218a">flow::source::Reverse::Reverse</a></div><div class="ttdeci">Reverse(Source &amp;&amp;source)</div><div class="ttdoc">Initializes a new instance of the Reverse{Source} class. </div><div class="ttdef"><b>Definition:</b> Reverse.h:52</div></div>
+<div class="ttc" id="classflow_1_1source_1_1_reverse_html_ade5f801d77b0157530bf0354639dd94b"><div class="ttname"><a href="../../d9/d22/classflow_1_1source_1_1_reverse.html#ade5f801d77b0157530bf0354639dd94b">flow::source::Reverse::value_type</a></div><div class="ttdeci">typename parent_type::value_type value_type</div><div class="ttdef"><b>Definition:</b> Reverse.h:46</div></div>
 <div class="ttc" id="classflow_1_1source_1_1_iterator_html_aaa05e42a77aebf0427ca8236448ec893"><div class="ttname"><a href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#aaa05e42a77aebf0427ca8236448ec893">flow::source::Iterator::_end</a></div><div class="ttdeci">Itr _end</div><div class="ttdoc">The off end iterator. </div><div class="ttdef"><b>Definition:</b> Iterator.h:96</div></div>
 <div class="ttc" id="_iterator_8h_html"><div class="ttname"><a href="../../d3/d38/_iterator_8h.html">Iterator.h</a></div></div>
 <div class="ttc" id="classflow_1_1source_1_1_iterator_html"><div class="ttname"><a href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">flow::source::Iterator</a></div><div class="ttdoc">Stream source for a pair of iterators. </div><div class="ttdef"><b>Definition:</b> Iterator.h:38</div></div>
 <div class="ttc" id="classflow_1_1source_1_1_reverse_html_a83a0446b8aacb524ed2fce04ba136431"><div class="ttname"><a href="../../d9/d22/classflow_1_1source_1_1_reverse.html#a83a0446b8aacb524ed2fce04ba136431">flow::source::Reverse::reverse</a></div><div class="ttdeci">void reverse()</div><div class="ttdoc">Pulls all the elements from the source stream and reverses </div><div class="ttdef"><b>Definition:</b> Reverse.h:60</div></div>
-<div class="ttc" id="classflow_1_1source_1_1_reverse_html_a9bf6a017de501b0869c7512a2954497b"><div class="ttname"><a href="../../d9/d22/classflow_1_1source_1_1_reverse.html#a9bf6a017de501b0869c7512a2954497b">flow::source::Reverse::value_type</a></div><div class="ttdeci">typename Source::value_type value_type</div><div class="ttdef"><b>Definition:</b> Reverse.h:45</div></div>
 <div class="ttc" id="classflow_1_1source_1_1_iterator_html_aaae1b8376b95a5f5bdbf0ad4cdb9d146"><div class="ttname"><a href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#aaae1b8376b95a5f5bdbf0ad4cdb9d146">flow::source::Iterator::_current</a></div><div class="ttdeci">Itr _current</div><div class="ttdoc">The current iterator. </div><div class="ttdef"><b>Definition:</b> Iterator.h:91</div></div>
 <div class="ttc" id="namespaceflow_html"><div class="ttname"><a href="../../d9/de2/namespaceflow.html">flow</a></div><div class="ttdef"><b>Definition:</b> Compose.h:29</div></div>
 <div class="ttc" id="classflow_1_1source_1_1_reverse_html"><div class="ttname"><a href="../../d9/d22/classflow_1_1source_1_1_reverse.html">flow::source::Reverse</a></div><div class="ttdoc">Stream source to reverse the stream. Reversing is an eager operation, the entire stream up to this po...</div><div class="ttdef"><b>Definition:</b> Reverse.h:42</div></div>
