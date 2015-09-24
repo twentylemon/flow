@@ -44,7 +44,7 @@ public:
     /// </summary>
     /// <param name="source">The source to filter.</param>
     /// <param name="predicate">The predicate used to filter stream elements.</param>
-    Filter(Source&& source, UnaryPredicate predicate) : _source(std::move(source)), _predicate(predicate) { }
+    Filter(Source&& source, UnaryPredicate predicate) : _source(std::move(source)), _predicate(predicate), _current(nullptr) { }
 
     /// <summary>
     /// Returns true if this source has more elements.

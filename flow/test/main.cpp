@@ -54,7 +54,7 @@ std::ostream& print(std::ostream& out, const Container& container) {
 }
 
 
-std::vector<int> vec(maxv);
+std::vector<Widget> vec(maxv);
 
 
 void run_timer() {
@@ -80,8 +80,8 @@ void run_timer() {
 int main(int argc, char** argv) {
     std::iota(vec.begin(), vec.end(), 0);
     using T = decltype(vec)::value_type;
-    //std::size_t inc = vec | nth(50);
-    //std::cout << inc << '\t' << vec.size() << std::endl;
+    std::size_t inc = iota(0) | nth(50);
+    std::cout << inc << '\t' << vec.size() << std::endl;
 
     boost::timer t1;
     std::pair<T, T> m1;
@@ -90,7 +90,7 @@ int main(int argc, char** argv) {
     for (int i = 0; i < maxit; i++) {
         v1 = 0;
         //v1 = vec | filter([](T i) { return i % 2 == 0; }) | map([](T i) { return i*i; }) | min();
-        m1 = vec | filter([](const T& i) { return i % 2 == 0; }) | map([](const T& i) { return i*i; }) | minmax();
+        m1 = vec | filter([](const auto& i) { return i.value % 2 == 0; }) | map([](const auto& i) { return i*i; }) | minmax();
     }
     std::cout << std::endl << "stream: " << t1.elapsed() << "\t" << m1.first << "\t" << m1.second << std::endl;
     
@@ -102,7 +102,7 @@ int main(int argc, char** argv) {
         m2 = std::make_pair(v2, v2);
         std::size_t s = 0;
         for (auto it = vec.begin(), end = vec.end(); it != end; ++it) {
-            if (*it % 2 == 0) {
+            if (it->value % 2 == 0) {
                 T q = *it * *it;
                 //if (v2 < q) { v2 = q; }
                 if (q < m2.first) { m2.first = q; }

@@ -41,7 +41,7 @@ namespace flow {
 /// <returns>The detail::Terminal operation which folds the stream.</returns>
 template <typename Accumulator, typename T>
 auto fold(Accumulator accumulator, T&& init) {
-    return detail::make_terminal([accumulator, init](auto&& stream) mutable {
+    return detail::make_terminal([accumulator, init = std::forward<T>(init)](auto&& stream) mutable {
         while (stream.has_next()) {
             init = accumulator(init, stream.next());
         }

@@ -75,8 +75,8 @@ public:
     /// Returns the next element from the stream.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
-    value_type next() {
-        return _source.next();
+    const value_type& next() {
+        return std::move(_source.next());
     }
 
     /// <summary>

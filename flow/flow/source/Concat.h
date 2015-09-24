@@ -62,7 +62,7 @@ public:
     /// Returns the next element from the stream.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
-    value_type next() {
+    const value_type& next() {
         if (_from_head) {
             return _head.next();
         }

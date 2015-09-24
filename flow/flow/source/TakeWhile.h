@@ -44,7 +44,7 @@ public:
     /// </summary>
     /// <param name="source">The source to take elements from.</param>
     /// <param name="predicate">The predicate, take stream elements until this returns <c>false</c>.</param>
-    TakeWhile(Source&& source, UnaryPredicate predicate) : _source(std::move(source)), _predicate(predicate) { }
+    TakeWhile(Source&& source, UnaryPredicate predicate) : _source(std::move(source)), _predicate(predicate), _current(nullptr) { }
 
     /// <summary>
     /// Returns true if this source has more elements.
@@ -52,8 +52,8 @@ public:
     /// <returns><c>true</c> if this source has more stream elements.</returns>
     bool has_next() {
         while (_source.has_next()) {
-            _current = _source.next();
-            if (_predicate(_current)) {
+            _current = &_source.next();
+            if (_predicate(*_current)) {
                 return true;
             }
             return false;
@@ -65,8 +65,8 @@ public:
     /// Returns the next element from the stream.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
-    value_type next() {
-        return std::move(_current);
+    const value_type& next() {
+        return std::move(*_current);
     }
 
     /// <summary>
@@ -87,7 +87,7 @@ public:
 private:
     Source _source;             // the source to read from
     UnaryPredicate _predicate;  // the mapping operation to apply to each element from the source
-    value_type _current;        // the current value
+    const value_type* _current; // the current value
 };
     }
 }
