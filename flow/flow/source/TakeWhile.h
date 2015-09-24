@@ -26,6 +26,8 @@
 #ifndef FLOW_SOURCE_TAKEWHILE_H
 #define FLOW_SOURCE_TAKEWHILE_H
 
+#include "IntermediateSource.h"
+
 namespace flow {
     namespace source {
 
@@ -34,26 +36,26 @@ namespace flow {
 /// after and including the first <c>false</c> are discarded.
 /// </summary>
 template <typename Source, typename UnaryPredicate>
-class TakeWhile
+class TakeWhile : public IntermediateSource<Source>
 {
 public:
-    using value_type = typename Source::value_type;
+    using base = IntermediateSource<Source>;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="TakeWhile{Source, UnaryPredicate}" /> class.
     /// </summary>
     /// <param name="source">The source to take elements from.</param>
     /// <param name="predicate">The predicate, take stream elements until this returns <c>false</c>.</param>
-    TakeWhile(Source&& source, UnaryPredicate predicate) : _source(std::move(source)), _predicate(predicate) { }
+    TakeWhile(Source&& source, UnaryPredicate predicate) : base(std::forward<Source>(source)), _predicate(predicate) { }
 
     /// <summary>
     /// Returns true if this source has more elements.
     /// </summary>
     /// <returns><c>true</c> if this source has more stream elements.</returns>
     bool has_next() {
-        while (_source.has_next()) {
-            _current = _source.next();
-            if (_predicate(_current)) {
+        while (base::has_next()) {
+            base::assign_current();
+            if (_predicate(base::raw_current())) {
                 return true;
             }
             return false;
@@ -61,33 +63,8 @@ public:
         return false;
     }
 
-    /// <summary>
-    /// Returns the next element from the stream.
-    /// </summary>
-    /// <returns>The next element in the stream.</returns>
-    value_type next() {
-        return std::move(_current);
-    }
-
-    /// <summary>
-    /// Ignores the next value from the stream.
-    /// </summary>
-    void lazy_next() {
-    }
-
-    /// <summary>
-    /// Returns the estimated size of the remainder of the stream.
-    /// This is likely a vast overestimate.
-    /// </summary>
-    /// <returns>The estimated size of the remainder of the stream.</returns>
-    std::size_t estimate_size() const {
-        return _source.estimate_size();
-    }
-
 private:
-    Source _source;             // the source to read from
     UnaryPredicate _predicate;  // the mapping operation to apply to each element from the source
-    value_type _current;        // the current value
 };
     }
 }

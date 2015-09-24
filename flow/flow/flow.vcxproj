@@ -129,7 +129,9 @@
     <ClInclude Include="intermediate\flat_map.h" />
     <ClInclude Include="source\FlatMap.h" />
     <ClInclude Include="source\Generate.h" />
+    <ClInclude Include="source\GeneratorSource.h" />
     <ClInclude Include="source\IterateFunc.h" />
+    <ClInclude Include="source\IntermediateSource.h" />
     <ClInclude Include="uncurry.h" />
     <ClInclude Include="generator\from.h" />
     <ClInclude Include="intermediate\concat.h" />

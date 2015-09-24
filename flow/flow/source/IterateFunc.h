@@ -27,10 +27,10 @@
 #define FLOW_SOURCE_ITERATEFUNC_H
 
 #include <array>
-#include <limits>
 #include <algorithm>
 
 #include "../uncurry.h"
+#include "GeneratorSource.h"
 
 namespace flow {
     namespace source {
@@ -40,10 +40,10 @@ namespace flow {
 /// Initial values are given, then later values are calculated using previous values in the stream.
 /// </summary>
 template <typename IteratingFunction, typename T, std::size_t N>
-class IterateFunc
+class IterateFunc : public GeneratorSource<T>
 {
 public:
-    using value_type = T;
+    using base = GeneratorSource<T>;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="IterateFunc{IteratingFunction, T, N}"/> class.
@@ -51,25 +51,17 @@ public:
     /// <param name="function">The function to iterate.</param>
     /// <param name="...initial">The initial arguments to pass to the function.</param>
     template <typename... Args>
-    IterateFunc(IteratingFunction function, Args&&... initial) : _function(uncurry(function)), _values({std::forward<Args>(initial)...}) { }
-
-    /// <summary>
-    /// Returns true if this source has more elements.
-    /// </summary>
-    /// <returns><c>true</c> if this source has more stream elements.</returns>
-    constexpr bool has_next() const {
-        return true;
-    }
+    IterateFunc(IteratingFunction function, Args&&... initial) : base(), _function(uncurry(function)), _values({std::forward<Args>(initial)...}) { }
 
     /// <summary>
     /// Returns the next element from the stream.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
-    value_type next() {
-        value_type current = std::move(_values[0]);
+    const value_type& next() {
+        base::assign_temp_current(std::move(_values[0]));
         _values[0] = _function(_values);    // destroy the first value
         std::rotate(_values.begin(), _values.begin() + 1, _values.end());
-        return current;
+        return base::next();
     }
 
     /// <summary>
@@ -77,14 +69,6 @@ public:
     /// </summary>
     void lazy_next() {
         next();
-    }
-
-    /// <summary>
-    /// Returns the max value of <c>std::size_t</c>. This is an infinite stream.
-    /// </summary>
-    /// <returns>The estimated size of the remainder of the stream.</returns>
-    constexpr std::size_t estimate_size() const {
-        return std::numeric_limits<std::size_t>::max();
     }
 
 private:

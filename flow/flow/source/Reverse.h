@@ -29,6 +29,7 @@
 #include <vector>
 
 #include "Iterator.h"
+#include "IntermediateSource.h"
 
 namespace flow {
     namespace source {
@@ -39,9 +40,10 @@ namespace flow {
 /// </summary>
 /// \todo make reversing a lazy operation instead; wait until the first has_next() or next() call
 template <typename Source>
-class Reverse : public Iterator<typename std::vector<typename Source::value_type>::reverse_iterator>
+class Reverse : public IntermediateSource<Source>, public Iterator<typename std::vector<typename Source::value_type>::reverse_iterator>
 {
 public:
+    using base = IntermediateSource<Source>;
     using parent_type = Iterator<typename std::vector<typename Source::value_type>::reverse_iterator>;
     using value_type = typename parent_type::value_type;
 
@@ -49,25 +51,47 @@ public:
     /// Initializes a new instance of the <see cref="Reverse{Source}" /> class.
     /// </summary>
     /// <param name="source">The source stream to reverse.</param>
-    Reverse(Source&& source) : _source(std::move(source)), _stream()
+    Reverse(Source&& source) : base(std::forward<Source>(source)), _stream()
     {
         reverse();
+    }
+
+    /// <summary>
+    /// Returns true if the source has more elements.
+    /// </summary>
+    /// <returns><c>true</c> if this source has more stream elements.</returns>
+    bool has_next() {
+        return parent_type::has_next();
+    }
+
+    /// <summary>
+    /// Returns the next element from the stream. The value is <em>moved</em>. Successive calls to next() will fail.
+    /// </summary>
+    /// <returns>The next element in the stream.</returns>
+    const value_type& next() {
+        return parent_type::next();
+    }
+
+    /// <summary>
+    /// Ignores the next value from the stream.
+    /// </summary>
+    void lazy_next() {
+        parent_type::lazy_next();
     }
 
     /// <summary>
     /// Pulls all the elements from the source stream and reverses
     /// </summary>
     void reverse() {
-        _stream.reserve(_source.estimate_size());
-        while (_source.has_next()) {
-            _stream.emplace_back(std::move(_source.next()));
+        _stream.reserve(base::estimate_size());
+        while (base::has_next()) {
+            _stream.emplace_back(std::move(base::raw_next()));
         }
         parent_type::_current = _stream.rbegin();
         parent_type::_end = _stream.rend();
     }
 
 private:
-    Source _source;                     // the source to read from
     std::vector<value_type> _stream;    // the full stream
 };
     }

@@ -26,6 +26,8 @@
 #ifndef FLOW_SOURCE_ZIP_H
 #define FLOW_SOURCE_ZIP_H
 
+#include "IntermediateSource.h"
+
 namespace flow {
     namespace source {
 
@@ -33,10 +35,10 @@ namespace flow {
 /// Stream source that zips two streams together.
 /// </summary>
 template <typename LeftSource, typename RightSource, typename Zipper>
-class Zip
+class Zip : public IntermediateSource<LeftSource, typename std::result_of_t<Zipper(typename LeftSource::value_type&&, typename RightSource::value_type&&)>>
 {
 public:
-    using value_type = typename std::result_of_t<Zipper(typename LeftSource::value_type&&, typename RightSource::value_type&&)>;
+    using base = IntermediateSource<LeftSource, typename std::result_of_t<Zipper(typename LeftSource::value_type&&, typename RightSource::value_type&&)>>;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Zip{LeftSource, RightSource, Zipper}"/> class.
@@ -44,14 +46,14 @@ public:
     /// <param name="left">The left stream source.</param>
     /// <param name="right">The right stream source.</param>
     /// <param name="zipper">The function used to zip the two streams together.</param>
-    Zip(LeftSource&& left, RightSource&& right, Zipper zipper) : _left(std::move(left)), _right(std::move(right)), _zipper(zipper) { }
+    Zip(LeftSource&& left, RightSource&& right, Zipper zipper) : base(std::forward<LeftSource>(left)), _right(std::move(right)), _zipper(zipper) { }
 
     /// <summary>
     /// Returns true if this source has more elements.
     /// </summary>
     /// <returns><c>true</c> if this source has more stream elements.</returns>
     bool has_next() {
-        return _left.has_next() && _right.has_next();
+        return base::has_next() && _right.has_next();
     }
 
     /// <summary>
@@ -59,14 +61,16 @@ public:
     /// </summary>
     /// <returns>The next element in the stream.</returns>
     value_type next() {
-        return _zipper(_left.next(), _right.next());
+        base::assign_temp_current(_zipper(base::raw_next(), _right.next()));
+        return base::next();
+        //return _zipper(base::raw_next(), _right.next());
     }
 
     /// <summary>
     /// Ignores the next value from the stream.
     /// </summary>
     void lazy_next() {
-        _left.lazy_next();
+        base::lazy_next();
         _right.lazy_next();
     }
 
@@ -76,11 +80,10 @@ public:
     /// </summary>
     /// <returns>The estimated size of the remainder of the stream.</returns>
     std::size_t estimate_size() const {
-        return std::min(_left.estimate_size(), _right.estimate_size());
+        return std::min(base::estimate_size(), _right.estimate_size());
     }
 
 private:
-    LeftSource _left;   // the left stream source
     RightSource _right; // the right stream source
     Zipper _zipper;     // the zipping operation to combine the left and right streams
 };

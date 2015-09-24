@@ -18,7 +18,7 @@ using namespace flow;
 
 #ifndef _DEBUG
 const int maxit = 100;
-const int maxv = 750000;
+const int maxv = 7500000;
 #else
 const int maxit = 1;
 const int maxv = 1001;
@@ -32,15 +32,18 @@ public:
     int get_value() const {
         return value;
     }
-    Widget(const Widget& w) : value(w.value) { std::cout << "copy" << std::endl; }
-    Widget(Widget&& w) : value(std::move(w.value)) { std::cout << "move" << std::endl; }
     bool operator<(const Widget& rhs) const { return value < rhs.value; }
     Widget operator*(const Widget& rhs) const { return Widget(value * rhs.value); }
     bool operator==(const Widget& rhs) const { return value == rhs.value; }
-    Widget& operator=(const Widget& w) { value = w.value; std::cout << "copy assign" << std::endl; return *this; }
-    Widget& operator=(Widget&& w) { value = std::move(w.value); std::cout << "move assign" << std::endl; return *this; }
+    Widget operator++() { return Widget(value + 1); }
     int value;
     std::array<int, 500> arry;
+    /*
+    Widget& operator=(const Widget& w) { value = w.value; std::cout << "copy assign" << std::endl; return *this; }
+    Widget& operator=(Widget&& w) { value = std::move(w.value); std::cout << "move assign" << std::endl; return *this; }
+    Widget(const Widget& w) : value(w.value) { std::cout << "copy" << std::endl; }
+    Widget(Widget&& w) : value(std::move(w.value)) { std::cout << "move" << std::endl; }
+    */
 };
 std::ostream& operator<<(std::ostream& o, const Widget& w) {
     o << w.value;
@@ -54,7 +57,7 @@ std::ostream& print(std::ostream& out, const Container& container) {
 }
 
 
-std::vector<Widget> vec(maxv);
+std::vector<int> vec(maxv);
 
 
 void run_timer() {
@@ -78,11 +81,13 @@ void run_timer() {
 
 
 int main(int argc, char** argv) {
-    /*
     std::iota(vec.begin(), vec.end(), 0);
     using T = decltype(vec)::value_type;
     std::size_t inc = iota(0) | nth(50);
     std::cout << inc << '\t' << vec.size() << std::endl;
+    std::vector<int> ww{ 1, 2, 3 };
+
+    cycle(ww, 4) | take_while([](int i) { return i == 1; }) | dump();
 
     boost::timer t1;
     std::pair<T, T> m1;
@@ -91,7 +96,7 @@ int main(int argc, char** argv) {
     for (int i = 0; i < maxit; i++) {
         v1 = 0;
         //v1 = vec | filter([](T i) { return i % 2 == 0; }) | map([](T i) { return i*i; }) | min();
-        m1 = vec | filter([](const auto& i) { return i.value % 2 == 0; }) | map([](const auto& i) { return i*i; }) | minmax();
+        m1 = vec | filter([](const auto& i) { return i % 2 == 0; }) | map([](const auto& i) { return i*i; }) | minmax();
     }
     std::cout << std::endl << "stream: " << t1.elapsed() << "\t" << m1.first << "\t" << m1.second << std::endl;
     
@@ -103,7 +108,7 @@ int main(int argc, char** argv) {
         m2 = std::make_pair(v2, v2);
         std::size_t s = 0;
         for (auto it = vec.begin(), end = vec.end(); it != end; ++it) {
-            if (it->value % 2 == 0) {
+            if (*it % 2 == 0) {
                 T q = *it * *it;
                 //if (v2 < q) { v2 = q; }
                 if (q < m2.first) { m2.first = q; }
@@ -112,16 +117,18 @@ int main(int argc, char** argv) {
         }
     }
     std::cout << std::endl << "stdlib: " << t2.elapsed() << "\t" << m2.first << "\t" << m2.second << std::endl;
-    */
+    
     std::vector<Widget> widgets;
     for (int i = 0; i < 10; i++) {
         widgets.emplace_back(i);
     }
     std::cout << std::endl << std::endl;
-    //const std::vector<Widget> w = widgets;
+    const std::vector<Widget> w = widgets;
     //std::cout << (from(widgets) | map(&Widget::get_value) | min()) << std::endl;
-    from(widgets) | filter([](Widget& w) { return w.value > 5; }) | map(&Widget::get_value) | dump();
-    /*
+    from(widgets) | filter([](const Widget& w) { return w.value > 5; }) | map(&Widget::get_value) | dump();
+    std::cout << std::endl << std::endl;
+    iota(Widget(0)) | limit(10) | filter([](const Widget& w) { return w.value > 5; }) | map(&Widget::get_value) | dump();
+    
     from(widgets) | map(&Widget::get_value) | dump();
     from(w) | map(&Widget::get_value) | each([](int i) { std::cout << i << " "; });
     
@@ -152,7 +159,7 @@ int main(int argc, char** argv) {
     empty<int>() | dump();
     
     from(widgets) | filter([](const Widget& w){ return w.value > 5; }) | dump();
-    */
+    
     std::cout << std::endl;
     system("pause");
     return 0;

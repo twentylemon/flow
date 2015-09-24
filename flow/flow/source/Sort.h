@@ -30,6 +30,7 @@
 #include <algorithm>
 
 #include "Iterator.h"
+#include "IntermediateSource.h"
 
 namespace flow {
     namespace source {
@@ -40,9 +41,10 @@ namespace flow {
 /// </summary>
 /// \todo make sorting a lazy operation instead; wait until the first has_next() or next() call
 template <typename Source>
-class Sort : public Iterator<typename std::vector<typename Source::value_type>::iterator>
+class Sort : public IntermediateSource<Source>, public Iterator<typename std::vector<typename Source::value_type>::iterator>
 {
 public:
+    using base = IntermediateSource<Source>;
     using parent_type = Iterator<typename std::vector<typename Source::value_type>::iterator>;
     using value_type = typename parent_type::value_type;
 
@@ -53,9 +55,32 @@ public:
     /// <param name="compare">The comparator to use in the sort.</param>
     /// <param name="stable_sort"><c>true</c> to use <c>std::stable_sort</c>, otherwise <c>std::sort</c> is used.</param>
     template <typename Compare>
-    Sort(Source&& source, Compare compare, bool stable_sort) : _source(std::move(source)), _stream()
+    Sort(Source&& source, Compare compare, bool stable_sort) : base(std::forward<Source>(source)), _stream()
     {
         sort(compare, stable_sort); 
+    }
+
+    /// <summary>
+    /// Returns true if the source has more elements.
+    /// </summary>
+    /// <returns><c>true</c> if this source has more stream elements.</returns>
+    bool has_next() {
+        return parent_type::has_next();
+    }
+
+    /// <summary>
+    /// Returns the next element from the stream. The value is <em>moved</em>. Successive calls to next() will fail.
+    /// </summary>
+    /// <returns>The next element in the stream.</returns>
+    const value_type& next() {
+        return parent_type::next();
+    }
+
+    /// <summary>
+    /// Ignores the next value from the stream.
+    /// </summary>
+    void lazy_next() {
+        parent_type::lazy_next();
     }
 
     /// <summary>
@@ -65,9 +90,9 @@ public:
     /// <param name="stable_sort"><c>true</c> to use <c>std::stable_sort</c>, otherwise <c>std::sort</c> is used.</param>
     template <typename Compare>
     void sort(Compare compare, bool stable_sort) {
-        _stream.reserve(_source.estimate_size());
-        while (_source.has_next()) {
-            _stream.emplace_back(std::move(_source.next()));
+        _stream.reserve(base::estimate_size());
+        while (base::has_next()) {
+            _stream.emplace_back(std::move(base::raw_next()));
         }
         if (stable_sort) {
             std::stable_sort(_stream.begin(), _stream.end(), compare);
@@ -80,7 +105,6 @@ public:
     }
 
 private:
-    Source _source;                     // the source to read from
     std::vector<value_type> _stream;    // the sorted stream
 };
     }

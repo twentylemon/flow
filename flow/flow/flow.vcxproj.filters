@@ -213,6 +213,12 @@
     <ClInclude Include="generator\cycle.h">
       <Filter>Header Files\generator</Filter>
     </ClInclude>
+    <ClInclude Include="source\IntermediateSource.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\GeneratorSource.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="flow.licenseheader" />

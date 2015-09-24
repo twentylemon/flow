@@ -28,6 +28,8 @@
 
 #include <memory>
 
+#include "IntermediateSource.h"
+
 namespace flow {
     namespace source {
 
@@ -36,18 +38,18 @@ namespace flow {
 /// of all the created streams.
 /// </summary>
 template <typename Source, typename UnaryOperation>
-class FlatMap
+class FlatMap : public IntermediateSource<Source, typename std::result_of_t<UnaryOperation(typename Source::value_type)>::value_type>
 {
 public:
+    using base = IntermediateSource<Source, typename std::result_of_t<UnaryOperation(typename Source::value_type)>::value_type>;
     using stream_type = typename std::result_of_t<UnaryOperation(typename Source::value_type)>;
-    using value_type = typename stream_type::value_type;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="FlatMap{Source, UnaryOperation}"/> class.
     /// </summary>
     /// <param name="source">The source to map from.</param>
     /// <param name="operation">The mapping operation.</param>
-    FlatMap(Source&& source, UnaryOperation operation) : _source(std::move(source)), _operation(operation), _stream(nullptr) { }
+    FlatMap(Source&& source, UnaryOperation operation) : base(std::forward<Source>(source)), _operation(operation), _stream(nullptr) { }
 
     /// <summary>
     /// Returns true if this source has more elements.
@@ -55,28 +57,14 @@ public:
     /// <returns><c>true</c> if this source has more stream elements.</returns>
     bool has_next() {
         if (_stream != nullptr && _stream->has_next()) {
-            _current = _stream->next();
+            base::assign_current(&_stream->next());
             return true;
         }
-        else if (_source.has_next()) {
-            _stream = std::make_unique<stream_type>(_operation(_source.next()));
+        else if (base::has_next()) {
+            _stream = std::make_unique<stream_type>(_operation(base::raw_next()));
             return has_next();  // step the stream or step the original source again
         }
         return false;
-    }
-
-    /// <summary>
-    /// Returns the next element from the stream.
-    /// </summary>
-    /// <returns>The next element in the stream.</returns>
-    value_type next() {
-        return std::move(_current);
-    }
-
-    /// <summary>
-    /// Ignores the next value from the stream.
-    /// </summary>
-    void lazy_next() {
     }
 
     /// <summary>
@@ -87,14 +75,12 @@ public:
     /// </summary>
     /// <returns>The estimated size of the remainder of the stream.</returns>
     std::size_t estimate_size() const {
-        return _source.estimate_size() * _stream->estimate_size();
+        return base::estimate_size() * _stream->estimate_size();
     }
 
 private:
-    Source _source;                         // the source to read from
     UnaryOperation _operation;              // the mapping operation to apply to each element from the source
     std::unique_ptr<stream_type> _stream;   // the current stream we are reading values from
-    value_type _current;                    // the current value of the current stream
 };
     }
 }
