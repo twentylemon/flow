@@ -32,7 +32,7 @@ namespace flow {
     namespace terminal {
 
 /// <summary>
-/// Returns the last element from the stream. This is an expensive operation as the entire stream must be evaluated.
+/// Returns the last element from the stream. This is a potentially expensive operation as the entire stream must be evaluated.
 /// </summary>
 /// <returns>The detail::Terminal operation which gives the last element from the stream.</returns>
 /// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>

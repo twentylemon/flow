@@ -52,8 +52,8 @@ public:
     /// <returns><c>true</c> if this source has more stream elements.</returns>
     bool has_next() {
         while (_source.has_next()) {
-            _current = _source.next();
-            if (_predicate(_current)) {
+            _current = &_source.next();
+            if (_predicate(*_current)) {
                 return true;
             }
         }
@@ -64,8 +64,8 @@ public:
     /// Returns the next element from the stream.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
-    value_type next() {
-        return std::move(_current);
+    const value_type& next() {
+        return std::move(*_current);
     }
 
     /// <summary>
@@ -79,14 +79,14 @@ public:
     /// This is likely an overestimate.
     /// </summary>
     /// <returns>The estimated size of the remainder of the stream.</returns>
-    std::size_t estimate_size() {
+    std::size_t estimate_size() const {
         return _source.estimate_size();
     }
 
 private:
     Source _source;             // the source to read from
     UnaryPredicate _predicate;  // the mapping operation to apply to each element from the source
-    value_type _current;        // the current value
+    const value_type* _current; // the current value
 };
     }
 }

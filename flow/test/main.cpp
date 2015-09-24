@@ -18,7 +18,7 @@ using namespace flow;
 
 #ifndef _DEBUG
 const int maxit = 100;
-const int maxv = 25000000;
+const int maxv = 750000;
 #else
 const int maxit = 1;
 const int maxv = 1001;
@@ -80,9 +80,9 @@ void run_timer() {
 int main(int argc, char** argv) {
     std::iota(vec.begin(), vec.end(), 0);
     using T = decltype(vec)::value_type;
-    std::size_t inc = vec | nth(50);
-    std::cout << inc << '\t' << vec.size() << std::endl;
-    
+    //std::size_t inc = vec | nth(50);
+    //std::cout << inc << '\t' << vec.size() << std::endl;
+
     boost::timer t1;
     std::pair<T, T> m1;
     T v1 = 0;
@@ -90,10 +90,10 @@ int main(int argc, char** argv) {
     for (int i = 0; i < maxit; i++) {
         v1 = 0;
         //v1 = vec | filter([](T i) { return i % 2 == 0; }) | map([](T i) { return i*i; }) | min();
-        m1 = vec | filter([](T i) { return i % 2 == 0; }) | map([](T i) { return i*i; }) | minmax();
+        m1 = vec | filter([](const T& i) { return i % 2 == 0; }) | map([](const T& i) { return i*i; }) | minmax();
     }
     std::cout << std::endl << "stream: " << t1.elapsed() << "\t" << m1.first << "\t" << m1.second << std::endl;
-
+    
     boost::timer t2;
     std::pair<T, T> m2;
     T v2 = 0;
@@ -111,13 +111,13 @@ int main(int argc, char** argv) {
         }
     }
     std::cout << std::endl << "stdlib: " << t2.elapsed() << "\t" << m2.first << "\t" << m2.second << std::endl;
-    
+    /*
     std::vector<Widget> widgets;
     for (int i = 0; i < 10; i++) {
         widgets.emplace_back(i);
     }
     const std::vector<Widget> w = widgets;
-    from(widgets) | map(&Widget::get_value) | dump();
+    std::cout << (from(widgets) | map(&Widget::get_value) | min()) << std::endl;
     from(widgets) | map(&Widget::get_value) | each([](int i) { std::cout << i << " "; });
     from(w) | map(&Widget::get_value) | each([](int i) { std::cout << i << " "; });
     
@@ -142,13 +142,13 @@ int main(int argc, char** argv) {
     std::cout << c(std::make_tuple(4, 5, 2)) << std::endl;
     std::cout << c2(std::make_tuple(4, 1)) << std::endl;
 
-    iterate(std::bind(std::plus<std::size_t>(), 1, std::placeholders::_1), 1) | limit(10) | dump();
+    iterate(std::bind(std::plus<int>(), 1, std::placeholders::_1), 1) | limit(10) | dump();
     iterate(std::plus<int>(), 0, 1) | limit(10) | dump();
     
     empty<int>() | dump();
     
-    from(widgets) | filter([](Widget& w){ return w.value > 5; }) | dump();
-    
+    from(widgets) | filter([](const Widget& w){ return w.value > 5; }) | dump();
+    */
     std::cout << std::endl;
     system("pause");
     return 0;

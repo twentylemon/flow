@@ -86,7 +86,7 @@ public:
     /// This is an exact value.
     /// </summary>
     /// <returns>The estimated size of the remainder of the stream.</returns>
-    std::size_t estimate_size() {
+    std::size_t estimate_size() const {
         return _head.estimate_size() + _tail.estimate_size();
     }
 

@@ -86,7 +86,7 @@ public:
     /// making the estimate <code>_source.estimate_size() * _current_stream.estimate_size()</code>.
     /// </summary>
     /// <returns>The estimated size of the remainder of the stream.</returns>
-    std::size_t estimate_size() {
+    std::size_t estimate_size() const {
         return _source.estimate_size() * _stream->estimate_size();
     }
 
