@@ -17,8 +17,8 @@
 using namespace flow;
 
 #ifndef _DEBUG
-const int maxit = 100;
-const int maxv = 750000;
+const int maxit = 1000;
+const int maxv = 150000;
 #else
 const int maxit = 1;
 const int maxv = 11;

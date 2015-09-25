@@ -98,7 +98,7 @@ public:
     void step_to(std::size_t begin) {
         while (_current < begin && base::has_next()) {
             ++_current;
-            lazy_next();
+            base::lazy_next();
         }
     }
 
