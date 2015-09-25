@@ -72,7 +72,7 @@ public:
 
     /// <summary>
     /// Returns the max value of <c>std::size_t</c>. This is an infinite stream.
-    /// Default implementation returns std::size_t max value.</code>.
+    /// Default implementation returns std::size_t max value.
     /// </summary>
     /// <returns>The estimated size of the remainder of the stream.</returns>
     constexpr std::size_t estimate_size() const {

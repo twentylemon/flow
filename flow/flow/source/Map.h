@@ -35,10 +35,10 @@ namespace flow {
 /// Stream source that maps elements into new values.
 /// </summary>
 template <typename Source, typename UnaryOperation>
-class Map : public IntermediateSource<Source, typename std::result_of_t<UnaryOperation(typename Source::value_type)>>
+class Map : public IntermediateSource<Source, std::result_of_t<UnaryOperation(typename Source::value_type)>>
 {
 public:
-    using base = IntermediateSource<Source, typename std::result_of_t<UnaryOperation(typename Source::value_type)>>;
+    using base = IntermediateSource<Source, std::result_of_t<UnaryOperation(typename Source::value_type)>>;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Map{Source, UnaryOperation}"/> class.
