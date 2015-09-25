@@ -40,12 +40,12 @@ namespace flow {
 /// </summary>
 /// \todo make reversing a lazy operation instead; wait until the first has_next() or next() call
 template <typename Source>
-class Reverse : public IntermediateSource<Source>, public Iterator<typename std::vector<typename Source::value_type>::reverse_iterator>
+class Reverse : public IntermediateSource<Source>, public Iterator<typename std::vector<typename Source::value_type*>::reverse_iterator>
 {
 public:
     using base = IntermediateSource<Source>;
-    using parent_type = Iterator<typename std::vector<typename Source::value_type>::reverse_iterator>;
-    using value_type = typename parent_type::value_type;
+    using parent_type = Iterator<typename std::vector<typename Source::value_type*>::reverse_iterator>;
+    using value_type = typename base::value_type;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Reverse{Source}" /> class.
@@ -69,7 +69,7 @@ public:
     /// </summary>
     /// <returns>The next element in the stream.</returns>
     const value_type& next() {
-        return parent_type::next();
+        return *parent_type::next();
     }
 
     /// <summary>
@@ -80,19 +80,27 @@ public:
     }
 
     /// <summary>
+    /// Returns the estimated size of the remainder of the stream.
+    /// </summary>
+    /// <returns>The estimated size of the remainder of the stream.</returns>
+    std::size_t estimate_size() const {
+        return parent_type::estimate_size();
+    }
+
+    /// <summary>
     /// Pulls all the elements from the source stream and reverses
     /// </summary>
     void reverse() {
         _stream.reserve(base::estimate_size());
         while (base::has_next()) {
-            _stream.emplace_back(std::move(base::raw_next()));
+            _stream.push_back(const_cast<value_type*>(&base::raw_next()));
         }
         parent_type::_current = _stream.rbegin();
         parent_type::_end = _stream.rend();
     }
 
 private:
-    std::vector<value_type> _stream;    // the full stream
+    std::vector<value_type*> _stream;   // the full stream
 };
     }
 }

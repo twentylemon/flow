@@ -63,8 +63,8 @@ public:
     template <typename Compare>
     void unique(Compare compare) {
         parent_type::_end = parent_type::_stream.erase(
-            std::unique(parent_type::_stream.begin(), parent_type::_stream.end(), [compare](auto&& lhs, auto&& rhs) {
-                return !compare(lhs, rhs);  // they are sorted, they elements are equal while this is true
+            std::unique(parent_type::_stream.begin(), parent_type::_stream.end(), [compare](value_type* lhs, value_type* rhs) {
+                return !compare(*lhs, *rhs);    // they are sorted, they elements are equal while this is true
             }), parent_type::_stream.end());
     }
 };

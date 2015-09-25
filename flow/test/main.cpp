@@ -38,12 +38,12 @@ public:
     Widget operator++() { return Widget(value + 1); }
     int value;
     std::array<int, 500> arry;
-    /*
+    
     Widget& operator=(const Widget& w) { value = w.value; std::cout << "copy assign" << std::endl; return *this; }
     Widget& operator=(Widget&& w) { value = std::move(w.value); std::cout << "move assign" << std::endl; return *this; }
     Widget(const Widget& w) : value(w.value) { std::cout << "copy" << std::endl; }
     Widget(Widget&& w) : value(std::move(w.value)) { std::cout << "move" << std::endl; }
-    */
+    
 };
 std::ostream& operator<<(std::ostream& o, const Widget& w) {
     o << w.value;
@@ -57,7 +57,7 @@ std::ostream& print(std::ostream& out, const Container& container) {
 }
 
 
-std::vector<Widget> vec(maxv);
+std::vector<int> vec(maxv);
 
 
 void run_timer() {
@@ -88,14 +88,14 @@ int main(int argc, char** argv) {
     std::vector<int> ww{ 1, 2, 3 };
 
     cycle(ww, 4) | take_while([](int i) { return i == 1; }) | dump();
-
+    /*
     boost::timer t1;
     std::pair<T, T> m1;
     for (int i = 0; i < maxit; i++) {
-        m1 = vec | filter([](const auto& i) { return i.value % 2 == 0; }) | map([](const auto& i) { return i*i; }) | minmax();
+        m1 = vec | filter([](const auto& i) { return i % 2 == 0; }) | map([](const auto& i) { return i*i; }) | minmax();
     }
     std::cout << std::endl << "stream: " << t1.elapsed() << "\t" << m1.first << "\t" << m1.second << std::endl;
-    
+
     boost::timer t2;
     std::pair<T, T> m2;
     T v2 = 0;
@@ -103,7 +103,7 @@ int main(int argc, char** argv) {
         v2 = vec.front() * vec.front();
         m2 = std::make_pair(v2, v2);
         for (auto it = vec.begin(), end = vec.end(); it != end; ++it) {
-            if (it->value % 2 == 0) {
+            if (*it % 2 == 0) {
                 T q = *it * *it;
                 if (q < m2.first) { m2.first = q; }
                 else if (m2.second < q) { m2.second = q; }
@@ -111,7 +111,7 @@ int main(int argc, char** argv) {
         }
     }
     std::cout << std::endl << "stdlib: " << t2.elapsed() << "\t" << m2.first << "\t" << m2.second << std::endl;
-    
+    */
     std::vector<Widget> widgets;
     for (int i = 0; i < 10; i++) {
         widgets.emplace_back(i);
@@ -119,8 +119,17 @@ int main(int argc, char** argv) {
     std::cout << std::endl << std::endl;
     //const std::vector<Widget> w = widgets;
     //std::cout << (from(widgets) | map(&Widget::get_value) | min()) << std::endl;
-    from(widgets) | filter([](auto& w) { return w.value > 5; }) | map(&Widget::get_value) | dump();
-    from(widgets) | map(&Widget::get_value) | dump();
+    cycle(widgets, 100)
+        | take_while([](auto& w) { return w.value >= 0; })
+        | drop_while([](auto& w) { return w.value >= 10; })
+        | concat(widgets | limit(1) | map([](auto& w) { return Widget(w.value * 500 + 10000); }))
+        | filter([](auto& w) { return w.value > 5; })
+        | peek([](auto& w) {  })
+        | slice(0, 3)
+        | reverse()
+        | unique()
+        | limit(5)
+        | dump();
     //from(w) | map(&Widget::get_value) | each([](int i) { std::cout << i << " "; });
     
     std::cout << std::endl << std::endl;

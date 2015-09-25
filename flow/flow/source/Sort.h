@@ -41,12 +41,12 @@ namespace flow {
 /// </summary>
 /// \todo make sorting a lazy operation instead; wait until the first has_next() or next() call
 template <typename Source>
-class Sort : public IntermediateSource<Source>, public Iterator<typename std::vector<typename Source::value_type>::iterator>
+class Sort : public IntermediateSource<Source>, public Iterator<typename std::vector<typename Source::value_type*>::iterator>
 {
 public:
     using base = IntermediateSource<Source>;
-    using parent_type = Iterator<typename std::vector<typename Source::value_type>::iterator>;
-    using value_type = typename parent_type::value_type;
+    using parent_type = Iterator<typename std::vector<typename Source::value_type*>::iterator>;
+    using value_type = typename base::value_type;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Sort{Source, Compare}" /> class.
@@ -73,7 +73,7 @@ public:
     /// </summary>
     /// <returns>The next element in the stream.</returns>
     const value_type& next() {
-        return parent_type::next();
+        return *parent_type::next();
     }
 
     /// <summary>
@@ -92,20 +92,23 @@ public:
     void sort(Compare compare, bool stable_sort) {
         _stream.reserve(base::estimate_size());
         while (base::has_next()) {
-            _stream.emplace_back(std::move(base::raw_next()));
+            _stream.push_back(const_cast<value_type*>(&base::raw_next()));
         }
         if (stable_sort) {
-            std::stable_sort(_stream.begin(), _stream.end(), compare);
+            std::stable_sort(_stream.begin(), _stream.end(), [compare](value_type* lhs, value_type* rhs) { return compare(*lhs, *rhs); });
         }
         else {
-            std::sort(_stream.begin(), _stream.end(), compare);
+            std::sort(_stream.begin(), _stream.end(), [compare](value_type* lhs, value_type* rhs) { return compare(*lhs, *rhs); });
         }
         parent_type::_current = _stream.begin();
         parent_type::_end = _stream.end();
     }
 
-private:
-    std::vector<value_type> _stream;    // the sorted stream
+protected:
+    /// <summary>
+    /// The sorted stream.
+    /// </summary>
+    std::vector<value_type*> _stream;
 };
     }
 }
