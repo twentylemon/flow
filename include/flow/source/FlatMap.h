@@ -43,6 +43,7 @@ class FlatMap : public IntermediateSource<Source, typename std::result_of_t<Unar
 public:
     using base = IntermediateSource<Source, typename std::result_of_t<UnaryOperation(typename Source::value_type)>::value_type>;
     using stream_type = typename std::result_of_t<UnaryOperation(typename Source::value_type)>;
+    using value_type = typename base::value_type;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="FlatMap{Source, UnaryOperation}"/> class.

@@ -40,6 +40,7 @@ class Skip : public IntermediateSource<Source>
 {
 public:
     using base = IntermediateSource<Source>;
+    using value_type = typename base::value_type;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Skip{Source}"/> class.
@@ -97,7 +98,7 @@ public:
     void step_to(std::size_t begin) {
         while (_current < begin && base::has_next()) {
             ++_current;
-            lazy_next();
+            base::lazy_next();
         }
     }
 

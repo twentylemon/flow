@@ -39,6 +39,7 @@ class Concat : public IntermediateSource<Head>
 {
 public:
     using base = IntermediateSource<Head>;
+    using value_type = typename base::value_type;
     static_assert(std::is_convertible<value_type, typename Tail::value_type>::value, "flow::concat tail element type must be convertible to the head element type");
 
     /// <summary>

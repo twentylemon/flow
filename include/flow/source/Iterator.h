@@ -41,6 +41,7 @@ class Iterator : public GeneratorSource<typename std::iterator_traits<Itr>::valu
 {
 public:
     using base = GeneratorSource<typename std::iterator_traits<Itr>::value_type>;
+    using value_type = typename base::value_type;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Iterator{Itr}"/> class.

@@ -40,6 +40,7 @@ class DropWhile : public IntermediateSource<Source>
 {
 public:
     using base = IntermediateSource<Source>;
+    using value_type = typename base::value_type;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DropWhile{Source, UnaryPredicate}" /> class.
