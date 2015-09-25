@@ -6,5 +6,6 @@ var searchData=
   ['_5ff',['_f',['../d3/d93/classflow_1_1detail_1_1_compose.html#a9f677be4146637efb617f47683698fe8',1,'flow::detail::Compose']]],
   ['_5fg',['_g',['../d3/d93/classflow_1_1detail_1_1_compose.html#ad6b7012d88f61a7bf2c8cca67b208f6f',1,'flow::detail::Compose']]],
   ['_5fsource',['_source',['../d9/dcd/classflow_1_1_stream.html#a250b5e524d5d4a6e4a8a72066382e98c',1,'flow::Stream']]],
-  ['_5fstep_5fsize',['_step_size',['../dd/d62/classflow_1_1source_1_1_skip.html#ad4ba690fad4c806fd03de36c685d0885',1,'flow::source::Skip']]]
+  ['_5fstep_5fsize',['_step_size',['../dd/d62/classflow_1_1source_1_1_skip.html#ad4ba690fad4c806fd03de36c685d0885',1,'flow::source::Skip']]],
+  ['_5fstream',['_stream',['../de/d82/classflow_1_1source_1_1_sort.html#a224a7eb5bb50dd4131a24521efeb68aa',1,'flow::source::Sort']]]
 ];

@@ -103,7 +103,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="../../d1/d6c/namespaceflow_1_1terminal.html#aa2e701e11c61d1038e3b0581e2f32df0">   41</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#aa2e701e11c61d1038e3b0581e2f32df0">copy</a>(OutputIterator result) {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../de/d8a/namespaceflow_1_1terminal_1_1detail.html#aee999abcc54ba9a5a1f400b46467193f">detail::make_terminal</a>([result](<span class="keyword">auto</span>&amp;&amp; stream) <span class="keyword">mutable</span> {</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">while</span> (stream.has_next()) {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            *result = stream.next();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            *result = std::move(stream.next());</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            ++result;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">return</span> result;</div>

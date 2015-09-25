@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['zip',['Zip',['../de/df4/classflow_1_1source_1_1_zip.html',1,'flow::source']]],
-  ['zip',['Zip',['../de/df4/classflow_1_1source_1_1_zip.html#a7879f3d8888203d254cad0e5c460e2b5',1,'flow::source::Zip::Zip()'],['../dc/d09/namespaceflow_1_1intermediate.html#a7f1ec0323daa06ef6b093f1d0aa4c1cc',1,'flow::intermediate::zip(Stream&lt; RightSource &gt; &amp;&amp;right)'],['../dc/d09/namespaceflow_1_1intermediate.html#a307ab32b7942a1a8347ccd0172c4da04',1,'flow::intermediate::zip(const Container &amp;container)'],['../dc/d09/namespaceflow_1_1intermediate.html#ae25b0a8475258acc29173c4a37e13e22',1,'flow::intermediate::zip(Stream&lt; RightSource &gt; &amp;&amp;right, BinaryOperation zipper)'],['../dc/d09/namespaceflow_1_1intermediate.html#a351227e746aefe4a0a60df97b89bc62e',1,'flow::intermediate::zip(const Container &amp;container, BinaryOperation zipper)']]],
-  ['zip_2eh',['zip.h',['../dc/d21/intermediate_2zip_8h.html',1,'']]],
-  ['zip_2eh',['Zip.h',['../de/d5c/source_2zip_8h.html',1,'']]],
-  ['zipper',['zipper',['../da/df5/namespaceflow_1_1intermediate_1_1detail.html#a032c13f295ee62c6fd712b86aa09cdcb',1,'flow::intermediate::detail']]]
+  ['value',['value',['../d6/de2/structflow_1_1generator_1_1detail_1_1has__const__iterator.html#aec7984fa68f30ca3b6235af3c65d69a1a32254b0cf28090304c619b4afeb070db',1,'flow::generator::detail::has_const_iterator']]],
+  ['value_5ftype',['value_type',['../d3/d72/classflow_1_1source_1_1_generator_source.html#afc04489376e75fc0c931d51f0151fb3f',1,'flow::source::GeneratorSource::value_type()'],['../da/dea/classflow_1_1source_1_1_intermediate_source.html#aed66112d78b000bee00a5df8aad93193',1,'flow::source::IntermediateSource::value_type()'],['../d9/d22/classflow_1_1source_1_1_reverse.html#a2a09759c9bc3c6a721681ba18aa3f2cb',1,'flow::source::Reverse::value_type()'],['../de/d82/classflow_1_1source_1_1_sort.html#aba3f67bbdd795ded39eb97051060bc3a',1,'flow::source::Sort::value_type()'],['../d2/d42/classflow_1_1source_1_1_unique.html#a52b91583401edb0663f1cb92d8634936',1,'flow::source::Unique::value_type()'],['../d9/dcd/classflow_1_1_stream.html#af34fe4571912244e3c3b180871bb38e6',1,'flow::Stream::value_type()']]]
 ];

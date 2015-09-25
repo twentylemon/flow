@@ -1,16 +1,8 @@
 var searchData=
 [
-  ['mainpage_2etxt',['mainpage.txt',['../d8/d0b/mainpage_8txt.html',1,'']]],
-  ['make_5fintermediate',['make_intermediate',['../da/df5/namespaceflow_1_1intermediate_1_1detail.html#aef2fd0c716feeaa1b770adfaa555162b',1,'flow::intermediate::detail']]],
-  ['make_5fterminal',['make_terminal',['../de/d8a/namespaceflow_1_1terminal_1_1detail.html#aee999abcc54ba9a5a1f400b46467193f',1,'flow::terminal::detail']]],
-  ['map',['Map',['../d7/dff/classflow_1_1source_1_1_map.html',1,'flow::source']]],
-  ['map',['Map',['../d7/dff/classflow_1_1source_1_1_map.html#a1cbb17fd758c2f85b1235f3c278e6bcb',1,'flow::source::Map::Map()'],['../dc/d09/namespaceflow_1_1intermediate.html#af704cfd8b681a9cd8b2437d249487f78',1,'flow::intermediate::map(UnaryOperation mapper)'],['../dc/d09/namespaceflow_1_1intermediate.html#aae7bef0ac778a95140e38bb9e81ae83a',1,'flow::intermediate::map(Ret(Class::*member)())']]],
-  ['map_2eh',['map.h',['../de/df7/intermediate_2map_8h.html',1,'']]],
-  ['map_2eh',['Map.h',['../db/d48/source_2map_8h.html',1,'']]],
-  ['max',['max',['../d1/d6c/namespaceflow_1_1terminal.html#aa878b5ae4e25bf654161a5004ca025b3',1,'flow::terminal']]],
-  ['max_2eh',['max.h',['../df/d9f/max_8h.html',1,'']]],
-  ['min',['min',['../d1/d6c/namespaceflow_1_1terminal.html#ad02d008becaf1d5d64d2ae358ae7306e',1,'flow::terminal']]],
-  ['min_2eh',['min.h',['../d8/dca/min_8h.html',1,'']]],
-  ['minmax',['minmax',['../d1/d6c/namespaceflow_1_1terminal.html#ae944c0b98f14746eb980b9883e36a7e4',1,'flow::terminal']]],
-  ['minmax_2eh',['minmax.h',['../d6/d1e/minmax_8h.html',1,'']]]
+  ['last',['last',['../d1/d6c/namespaceflow_1_1terminal.html#a4fe0dda56d4f64d94e607e73b9187960',1,'flow::terminal']]],
+  ['last_2eh',['last.h',['../d8/d02/last_8h.html',1,'']]],
+  ['lazy_5fnext',['lazy_next',['../da/dbc/classflow_1_1source_1_1_concat.html#ae729ac49fec9ddb8da9e9ab6447a17d3',1,'flow::source::Concat::lazy_next()'],['../d3/d72/classflow_1_1source_1_1_generator_source.html#ab9fbf72d2b37c927a72e411f12488612',1,'flow::source::GeneratorSource::lazy_next()'],['../da/dea/classflow_1_1source_1_1_intermediate_source.html#a1409e1385d33d5c8daa2b7e4284711a3',1,'flow::source::IntermediateSource::lazy_next()'],['../de/d8c/classflow_1_1source_1_1_iterate_func.html#aef1f6d2e536c85c0f5ce4d1b06dd6a8d',1,'flow::source::IterateFunc::lazy_next()'],['../d6/ddc/classflow_1_1source_1_1_iterator.html#aebd9316211d33d757a2bacfb9782408d',1,'flow::source::Iterator::lazy_next()'],['../d8/d78/classflow_1_1source_1_1_peek.html#afc54fd132e1ecb1ffaf61c434c710911',1,'flow::source::Peek::lazy_next()'],['../d9/d22/classflow_1_1source_1_1_reverse.html#ac31e403630eeb062326c9945f725db73',1,'flow::source::Reverse::lazy_next()'],['../de/d82/classflow_1_1source_1_1_sort.html#a1ded2988c776ac562965cd54663961ce',1,'flow::source::Sort::lazy_next()'],['../de/df4/classflow_1_1source_1_1_zip.html#abc2c5e8c009e5e19c437b4e5cf249cbc',1,'flow::source::Zip::lazy_next()'],['../d9/dcd/classflow_1_1_stream.html#ad190af15ebba62f43f3485a9986e9e3b',1,'flow::Stream::lazy_next()']]],
+  ['limit',['limit',['../dc/d09/namespaceflow_1_1intermediate.html#a347e52317b201a9e142031724ea4de0a',1,'flow::intermediate']]],
+  ['limit_2eh',['limit.h',['../de/de9/limit_8h.html',1,'']]]
 ];

@@ -151,8 +151,7 @@ Functions</h2></td></tr>
 <tr class="separator:ae2088cf5443957cdf935652bccc0b612"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad76999f9b4b01425b09c070cc7154ec8"><td class="memTemplParams" colspan="2">template&lt;typename Accumulator , typename T &gt; </td></tr>
 <tr class="memitem:ad76999f9b4b01425b09c070cc7154ec8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ad76999f9b4b01425b09c070cc7154ec8">fold</a> (Accumulator accumulator, T &amp;&amp;init)</td></tr>
-<tr class="memdesc:ad76999f9b4b01425b09c070cc7154ec8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Folds the stream using the <em>accumulator</em> . Applying this operation is the same as doing: </p><div class="fragment"><div class="line"><span class="keywordflow">for</span> (T e : stream) { init = accumulator(init, e); }</div>
-</div><!-- fragment -->  <a href="#ad76999f9b4b01425b09c070cc7154ec8">More...</a><br /></td></tr>
+<tr class="memdesc:ad76999f9b4b01425b09c070cc7154ec8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Folds the stream using the <em>accumulator</em> .  <a href="#ad76999f9b4b01425b09c070cc7154ec8">More...</a><br /></td></tr>
 <tr class="separator:ad76999f9b4b01425b09c070cc7154ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabf7db53b2573f8f651420cc508170f8"><td class="memTemplParams" colspan="2">template&lt;typename Accumulator &gt; </td></tr>
 <tr class="memitem:aabf7db53b2573f8f651420cc508170f8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aabf7db53b2573f8f651420cc508170f8">fold</a> (Accumulator accumulator)</td></tr>
@@ -167,7 +166,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a71feb02eace70a6babe98181f1e7c579"><td class="mdescLeft">&#160;</td><td class="mdescRight">Folds the stream using <em>accumulator</em> . The result of <em>initializer</em>  applied to <em>init</em>  is used for the initial folding value.  <a href="#a71feb02eace70a6babe98181f1e7c579">More...</a><br /></td></tr>
 <tr class="separator:a71feb02eace70a6babe98181f1e7c579"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fe0dda56d4f64d94e607e73b9187960"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a4fe0dda56d4f64d94e607e73b9187960">last</a> ()</td></tr>
-<tr class="memdesc:a4fe0dda56d4f64d94e607e73b9187960"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last element from the stream. This is an expensive operation as the entire stream must be evaluated.  <a href="#a4fe0dda56d4f64d94e607e73b9187960">More...</a><br /></td></tr>
+<tr class="memdesc:a4fe0dda56d4f64d94e607e73b9187960"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last element from the stream. This is a potentially expensive operation as the entire stream must be evaluated.  <a href="#a4fe0dda56d4f64d94e607e73b9187960">More...</a><br /></td></tr>
 <tr class="separator:a4fe0dda56d4f64d94e607e73b9187960"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa878b5ae4e25bf654161a5004ca025b3"><td class="memTemplParams" colspan="2">template&lt;typename Compare  = std::less&lt;void&gt;&gt; </td></tr>
 <tr class="memitem:aa878b5ae4e25bf654161a5004ca025b3"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aa878b5ae4e25bf654161a5004ca025b3">max</a> (Compare compare=Compare())</td></tr>
@@ -675,8 +674,9 @@ template&lt;typename Accumulator , typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Folds the stream using the <em>accumulator</em> . Applying this operation is the same as doing: </p><div class="fragment"><div class="line"><span class="keywordflow">for</span> (T e : stream) { init = accumulator(init, e); }</div>
-</div><!-- fragment --> </p>
+<p>Folds the stream using the <em>accumulator</em> . </p>
+<p>Applying this operation is the same as doing:</p>
+<p><code>for (T e : stream) { init = accumulator(init, e); }</code> </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">accumulator</td><td>The function through which the stream is folded.</td></tr>
@@ -831,7 +831,7 @@ template&lt;typename Accumulator , typename UnaryFunction , typename T &gt; </di
 </table>
 </div><div class="memdoc">
 
-<p>Returns the last element from the stream. This is an expensive operation as the entire stream must be evaluated. </p>
+<p>Returns the last element from the stream. This is a potentially expensive operation as the entire stream must be evaluated. </p>
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which gives the last element from the stream.</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">

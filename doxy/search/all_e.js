@@ -1,12 +1,10 @@
 var searchData=
 [
-  ['repeat',['repeat',['../de/d3f/namespaceflow_1_1generator.html#ac91cc015f53a6efeea386b04b9486572',1,'flow::generator::repeat(T &amp;&amp;value)'],['../de/d3f/namespaceflow_1_1generator.html#a8a58b8df495070ec677c6c28b713bf20',1,'flow::generator::repeat(T &amp;&amp;value, std::size_t n)']]],
-  ['repeat_2eh',['repeat.h',['../d3/d71/repeat_8h.html',1,'']]],
-  ['replace',['replace',['../dc/d09/namespaceflow_1_1intermediate.html#addc196ea292bffcb221859fc40c11806',1,'flow::intermediate::replace(UnaryPredicate predicate, const T &amp;replace_by)'],['../dc/d09/namespaceflow_1_1intermediate.html#a0430d4efcca042eb1b6a03a9fc66e53b',1,'flow::intermediate::replace(const T &amp;old_value, const T &amp;new_value)']]],
-  ['replace_2eh',['replace.h',['../d2/d4f/replace_8h.html',1,'']]],
-  ['replace_5fmap',['replace_map',['../dc/d09/namespaceflow_1_1intermediate.html#a0db61e00aa587124edb99e065385ef16',1,'flow::intermediate']]],
-  ['reverse',['Reverse',['../d9/d22/classflow_1_1source_1_1_reverse.html#a6b131831c4fbe834ed0aff7fd38f218a',1,'flow::source::Reverse::Reverse(Source &amp;&amp;source)'],['../d9/d22/classflow_1_1source_1_1_reverse.html#a83a0446b8aacb524ed2fce04ba136431',1,'flow::source::Reverse::reverse()'],['../dc/d09/namespaceflow_1_1intermediate.html#a13397178496f74369fc8dae063415b7a',1,'flow::intermediate::reverse()']]],
-  ['reverse',['Reverse',['../d9/d22/classflow_1_1source_1_1_reverse.html',1,'flow::source']]],
-  ['reverse_2eh',['reverse.h',['../d0/d21/intermediate_2reverse_8h.html',1,'']]],
-  ['reverse_2eh',['Reverse.h',['../d2/dbb/source_2reverse_8h.html',1,'']]]
+  ['parent_5ftype',['parent_type',['../d9/d22/classflow_1_1source_1_1_reverse.html#ab1ebfbcb02e5596ab42ea26ab9c0d39d',1,'flow::source::Reverse::parent_type()'],['../da/d25/classflow_1_1source_1_1_slice.html#abe8de5589c7e5d037a194de29e999bf8',1,'flow::source::Slice::parent_type()'],['../de/d82/classflow_1_1source_1_1_sort.html#aa6b7b942ebabf36217c3392d48f51cc3',1,'flow::source::Sort::parent_type()'],['../d2/d42/classflow_1_1source_1_1_unique.html#aea34042b7b82b5aecd80ff3d04e4f6e6',1,'flow::source::Unique::parent_type()']]],
+  ['peek',['Peek',['../d8/d78/classflow_1_1source_1_1_peek.html',1,'flow::source']]],
+  ['peek',['Peek',['../d8/d78/classflow_1_1source_1_1_peek.html#a21d5ab8c4c25ca9a658ce23d469f6266',1,'flow::source::Peek::Peek()'],['../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af',1,'flow::intermediate::peek(UnaryFunction action)'],['../dc/d09/namespaceflow_1_1intermediate.html#af32b7bf1f105167d576b779b3b5f0297',1,'flow::intermediate::peek(Ret(Class::*member)())']]],
+  ['peek_2eh',['peek.h',['../d8/d02/intermediate_2peek_8h.html',1,'']]],
+  ['peek_2eh',['Peek.h',['../df/d77/source_2peek_8h.html',1,'']]],
+  ['product',['product',['../d1/d6c/namespaceflow_1_1terminal.html#adc89d6fdbd682554a03d621d57dc0e19',1,'flow::terminal::product()'],['../d1/d6c/namespaceflow_1_1terminal.html#ac41837040615447514b15b28c578d829',1,'flow::terminal::product(T &amp;&amp;init)']]],
+  ['product_2eh',['product.h',['../dc/daa/product_8h.html',1,'']]]
 ];

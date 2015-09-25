@@ -92,6 +92,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="../../d8/d97/classflow_1_1source_1_1_sort-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">flow::source::Sort&lt; Source &gt; Class Template Reference</div>  </div>
@@ -108,20 +109,32 @@ Inheritance diagram for flow::source::Sort&lt; Source &gt;:</div>
  <div class="center">
   <img src="../../de/d82/classflow_1_1source_1_1_sort.png" usemap="#flow::source::Sort&lt; Source &gt;_map" alt=""/>
   <map id="flow::source::Sort&lt; Source &gt;_map" name="flow::source::Sort&lt; Source &gt;_map">
-<area href="../../d6/ddc/classflow_1_1source_1_1_iterator.html" alt="flow::source::Iterator&lt; std::vector&lt; Source::value_type &gt;::iterator &gt;" shape="rect" coords="0,0,387,24"/>
-<area href="../../d2/d42/classflow_1_1source_1_1_unique.html" title="Stream source to sort the stream. Sorting is an eager operation, the entire stream up to this point i..." alt="flow::source::Unique&lt; Source &gt;" shape="rect" coords="0,112,387,136"/>
+<area href="../../da/dea/classflow_1_1source_1_1_intermediate_source.html" alt="flow::source::IntermediateSource&lt; Source &gt;" shape="rect" coords="0,56,645,80"/>
+<area href="../../d6/ddc/classflow_1_1source_1_1_iterator.html" alt="flow::source::Iterator&lt; std::vector&lt; Source::value_type * &gt;::iterator &gt;" shape="rect" coords="655,56,1300,80"/>
+<area href="../../d3/d72/classflow_1_1source_1_1_generator_source.html" alt="flow::source::GeneratorSource&lt; std::iterator_traits&lt; std::vector&lt; Source::value_type * &gt;::iterator &gt;::value_type &gt;" shape="rect" coords="655,0,1300,24"/>
+<area href="../../d2/d42/classflow_1_1source_1_1_unique.html" title="Stream source to sort the stream. Sorting is an eager operation, the entire stream up to this point i..." alt="flow::source::Unique&lt; Source &gt;" shape="rect" coords="327,168,972,192"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:aad0e07e59fb6188d90f4ea0422d1f932"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html#aad0e07e59fb6188d90f4ea0422d1f932">parent_type</a> = <a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">Iterator</a>&lt; typename std::vector&lt; <a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html#ae9c785a3609011a8019a562a666dd5a0">value_type</a> &gt;::iterator &gt;</td></tr>
-<tr class="separator:aad0e07e59fb6188d90f4ea0422d1f932"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9c785a3609011a8019a562a666dd5a0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html#ae9c785a3609011a8019a562a666dd5a0">value_type</a> = typename <a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#a04511baca1a5566ef979490dc8bfb9d8">parent_type::value_type</a></td></tr>
-<tr class="separator:ae9c785a3609011a8019a562a666dd5a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_types_classflow_1_1source_1_1_iterator"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classflow_1_1source_1_1_iterator')"><img src="../../closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">flow::source::Iterator&lt; std::vector&lt; Source::value_type &gt;::iterator &gt;</a></td></tr>
-<tr class="memitem:a04511baca1a5566ef979490dc8bfb9d8 inherit pub_types_classflow_1_1source_1_1_iterator"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#a04511baca1a5566ef979490dc8bfb9d8">value_type</a> = typename std::iterator_traits&lt; std::vector&lt; Source::value_type &gt;::iterator &gt;::<a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#a04511baca1a5566ef979490dc8bfb9d8">value_type</a></td></tr>
-<tr class="separator:a04511baca1a5566ef979490dc8bfb9d8 inherit pub_types_classflow_1_1source_1_1_iterator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b706ad4a7c44bb5917102bd65cc8aaa"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html#a3b706ad4a7c44bb5917102bd65cc8aaa">base</a> = <a class="el" href="../../da/dea/classflow_1_1source_1_1_intermediate_source.html">IntermediateSource</a>&lt; Source &gt;</td></tr>
+<tr class="separator:a3b706ad4a7c44bb5917102bd65cc8aaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6b7b942ebabf36217c3392d48f51cc3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html#aa6b7b942ebabf36217c3392d48f51cc3">parent_type</a> = <a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">Iterator</a>&lt; typename std::vector&lt; typename Source::value_type * &gt;::iterator &gt;</td></tr>
+<tr class="separator:aa6b7b942ebabf36217c3392d48f51cc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba3f67bbdd795ded39eb97051060bc3a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html#aba3f67bbdd795ded39eb97051060bc3a">value_type</a> = typename <a class="el" href="../../da/dea/classflow_1_1source_1_1_intermediate_source.html#aed66112d78b000bee00a5df8aad93193">base::value_type</a></td></tr>
+<tr class="separator:aba3f67bbdd795ded39eb97051060bc3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classflow_1_1source_1_1_intermediate_source"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classflow_1_1source_1_1_intermediate_source')"><img src="../../closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="../../da/dea/classflow_1_1source_1_1_intermediate_source.html">flow::source::IntermediateSource&lt; Source &gt;</a></td></tr>
+<tr class="memitem:af0c4d39f15edbe214cc3a3dfb0e1cbba inherit pub_types_classflow_1_1source_1_1_intermediate_source"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dea/classflow_1_1source_1_1_intermediate_source.html#af0c4d39f15edbe214cc3a3dfb0e1cbba">source_type</a> = Source</td></tr>
+<tr class="separator:af0c4d39f15edbe214cc3a3dfb0e1cbba inherit pub_types_classflow_1_1source_1_1_intermediate_source"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed66112d78b000bee00a5df8aad93193 inherit pub_types_classflow_1_1source_1_1_intermediate_source"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dea/classflow_1_1source_1_1_intermediate_source.html#aed66112d78b000bee00a5df8aad93193">value_type</a> = T</td></tr>
+<tr class="separator:aed66112d78b000bee00a5df8aad93193 inherit pub_types_classflow_1_1source_1_1_intermediate_source"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classflow_1_1source_1_1_iterator"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classflow_1_1source_1_1_iterator')"><img src="../../closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">flow::source::Iterator&lt; std::vector&lt; Source::value_type * &gt;::iterator &gt;</a></td></tr>
+<tr class="memitem:a799a3cd79498956d4a58899e53d7ceef inherit pub_types_classflow_1_1source_1_1_iterator"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#a799a3cd79498956d4a58899e53d7ceef">base</a> = <a class="el" href="../../d3/d72/classflow_1_1source_1_1_generator_source.html">GeneratorSource</a>&lt; typename std::iterator_traits&lt; std::vector&lt; Source::value_type * &gt;::iterator &gt;::<a class="el" href="../../d3/d72/classflow_1_1source_1_1_generator_source.html#afc04489376e75fc0c931d51f0151fb3f">value_type</a> &gt;</td></tr>
+<tr class="separator:a799a3cd79498956d4a58899e53d7ceef inherit pub_types_classflow_1_1source_1_1_iterator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classflow_1_1source_1_1_generator_source"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classflow_1_1source_1_1_generator_source')"><img src="../../closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="../../d3/d72/classflow_1_1source_1_1_generator_source.html">flow::source::GeneratorSource&lt; std::iterator_traits&lt; std::vector&lt; Source::value_type * &gt;::iterator &gt;::value_type &gt;</a></td></tr>
+<tr class="memitem:afc04489376e75fc0c931d51f0151fb3f inherit pub_types_classflow_1_1source_1_1_generator_source"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d72/classflow_1_1source_1_1_generator_source.html#afc04489376e75fc0c931d51f0151fb3f">value_type</a> = std::iterator_traits&lt; std::vector&lt; Source::value_type * &gt;::iterator &gt;::<a class="el" href="../../d3/d72/classflow_1_1source_1_1_generator_source.html#afc04489376e75fc0c931d51f0151fb3f">value_type</a></td></tr>
+<tr class="separator:afc04489376e75fc0c931d51f0151fb3f inherit pub_types_classflow_1_1source_1_1_generator_source"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -129,70 +142,164 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a331afe1bcf947cfe4d93ab8e64404fd1"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html#a331afe1bcf947cfe4d93ab8e64404fd1">Sort</a> (Source &amp;&amp;source, Compare compare, bool stable_sort)</td></tr>
 <tr class="memdesc:a331afe1bcf947cfe4d93ab8e64404fd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the Sort{Source, Compare} class.  <a href="#a331afe1bcf947cfe4d93ab8e64404fd1">More...</a><br /></td></tr>
 <tr class="separator:a331afe1bcf947cfe4d93ab8e64404fd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ea9fdecc861869d1f2cf562724a2a4a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html#a9ea9fdecc861869d1f2cf562724a2a4a">has_next</a> ()</td></tr>
+<tr class="memdesc:a9ea9fdecc861869d1f2cf562724a2a4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the source has more elements.  <a href="#a9ea9fdecc861869d1f2cf562724a2a4a">More...</a><br /></td></tr>
+<tr class="separator:a9ea9fdecc861869d1f2cf562724a2a4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2099300140728dc21adfc0a4f835588"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html#aba3f67bbdd795ded39eb97051060bc3a">value_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html#aa2099300140728dc21adfc0a4f835588">next</a> ()</td></tr>
+<tr class="memdesc:aa2099300140728dc21adfc0a4f835588"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next element from the stream. The value is <em>moved</em>. Successive calls to <a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html#aa2099300140728dc21adfc0a4f835588" title="Returns the next element from the stream. The value is moved. Successive calls to next() will fail...">next()</a> will fail.  <a href="#aa2099300140728dc21adfc0a4f835588">More...</a><br /></td></tr>
+<tr class="separator:aa2099300140728dc21adfc0a4f835588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ded2988c776ac562965cd54663961ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html#a1ded2988c776ac562965cd54663961ce">lazy_next</a> ()</td></tr>
+<tr class="memdesc:a1ded2988c776ac562965cd54663961ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ignores the next value from the stream.  <a href="#a1ded2988c776ac562965cd54663961ce">More...</a><br /></td></tr>
+<tr class="separator:a1ded2988c776ac562965cd54663961ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60e2968eedf8c0fb89978061ef02c223"><td class="memTemplParams" colspan="2">template&lt;typename Compare &gt; </td></tr>
 <tr class="memitem:a60e2968eedf8c0fb89978061ef02c223"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html#a60e2968eedf8c0fb89978061ef02c223">sort</a> (Compare compare, bool stable_sort)</td></tr>
 <tr class="memdesc:a60e2968eedf8c0fb89978061ef02c223"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pulls all the elements from the source stream and sorts them.  <a href="#a60e2968eedf8c0fb89978061ef02c223">More...</a><br /></td></tr>
 <tr class="separator:a60e2968eedf8c0fb89978061ef02c223"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classflow_1_1source_1_1_iterator"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classflow_1_1source_1_1_iterator')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">flow::source::Iterator&lt; std::vector&lt; Source::value_type &gt;::iterator &gt;</a></td></tr>
-<tr class="memitem:a8f656f251d89cb46541bdec812983d7e inherit pub_methods_classflow_1_1source_1_1_iterator"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#a8f656f251d89cb46541bdec812983d7e">Iterator</a> (std::vector&lt; Source::value_type &gt;::iteratorbegin, std::vector&lt; Source::value_type &gt;::iteratorend)</td></tr>
+<tr class="inherit_header pub_methods_classflow_1_1source_1_1_intermediate_source"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classflow_1_1source_1_1_intermediate_source')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../da/dea/classflow_1_1source_1_1_intermediate_source.html">flow::source::IntermediateSource&lt; Source &gt;</a></td></tr>
+<tr class="memitem:afc56be56e20da61d1351dd8bb8af46a9 inherit pub_methods_classflow_1_1source_1_1_intermediate_source"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dea/classflow_1_1source_1_1_intermediate_source.html#afc56be56e20da61d1351dd8bb8af46a9">IntermediateSource</a> (Source &amp;&amp;source)</td></tr>
+<tr class="memdesc:afc56be56e20da61d1351dd8bb8af46a9 inherit pub_methods_classflow_1_1source_1_1_intermediate_source"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the IntermediateSource{Source, T} class.  <a href="#afc56be56e20da61d1351dd8bb8af46a9">More...</a><br /></td></tr>
+<tr class="separator:afc56be56e20da61d1351dd8bb8af46a9 inherit pub_methods_classflow_1_1source_1_1_intermediate_source"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2896fe83d026f18cf24c4cb92b0e901c inherit pub_methods_classflow_1_1source_1_1_intermediate_source"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dea/classflow_1_1source_1_1_intermediate_source.html#a2896fe83d026f18cf24c4cb92b0e901c">has_next</a> ()</td></tr>
+<tr class="memdesc:a2896fe83d026f18cf24c4cb92b0e901c inherit pub_methods_classflow_1_1source_1_1_intermediate_source"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the source has more elements. Default implementation returns </p><div class="fragment"><div class="line">_source.has_next()</div>
+</div><!-- fragment --><p>.  <a href="#a2896fe83d026f18cf24c4cb92b0e901c">More...</a><br /></td></tr>
+<tr class="separator:a2896fe83d026f18cf24c4cb92b0e901c inherit pub_methods_classflow_1_1source_1_1_intermediate_source"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acca841bb6e6725cb4a8a57a4ad6ca974 inherit pub_methods_classflow_1_1source_1_1_intermediate_source"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../da/dea/classflow_1_1source_1_1_intermediate_source.html#aed66112d78b000bee00a5df8aad93193">value_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dea/classflow_1_1source_1_1_intermediate_source.html#acca841bb6e6725cb4a8a57a4ad6ca974">next</a> ()</td></tr>
+<tr class="memdesc:acca841bb6e6725cb4a8a57a4ad6ca974 inherit pub_methods_classflow_1_1source_1_1_intermediate_source"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next element from the stream. The value is <em>moved</em>. Successive calls to <a class="el" href="../../da/dea/classflow_1_1source_1_1_intermediate_source.html#acca841bb6e6725cb4a8a57a4ad6ca974" title="Returns the next element from the stream. The value is moved. Successive calls to next() will fail...">next()</a> will fail. Default implementation returns </p><div class="fragment"><div class="line">std::move(*_current);</div>
+</div><!-- fragment --><p>.  <a href="#acca841bb6e6725cb4a8a57a4ad6ca974">More...</a><br /></td></tr>
+<tr class="separator:acca841bb6e6725cb4a8a57a4ad6ca974 inherit pub_methods_classflow_1_1source_1_1_intermediate_source"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1409e1385d33d5c8daa2b7e4284711a3 inherit pub_methods_classflow_1_1source_1_1_intermediate_source"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dea/classflow_1_1source_1_1_intermediate_source.html#a1409e1385d33d5c8daa2b7e4284711a3">lazy_next</a> ()</td></tr>
+<tr class="memdesc:a1409e1385d33d5c8daa2b7e4284711a3 inherit pub_methods_classflow_1_1source_1_1_intermediate_source"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ignores the next value from the stream. Default implementation executes </p><div class="fragment"><div class="line">_source.lazy_next()</div>
+</div><!-- fragment --><p>.  <a href="#a1409e1385d33d5c8daa2b7e4284711a3">More...</a><br /></td></tr>
+<tr class="separator:a1409e1385d33d5c8daa2b7e4284711a3 inherit pub_methods_classflow_1_1source_1_1_intermediate_source"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2775091c8051036e35263cb0f7e5d21e inherit pub_methods_classflow_1_1source_1_1_intermediate_source"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dea/classflow_1_1source_1_1_intermediate_source.html#a2775091c8051036e35263cb0f7e5d21e">estimate_size</a> () const</td></tr>
+<tr class="memdesc:a2775091c8051036e35263cb0f7e5d21e inherit pub_methods_classflow_1_1source_1_1_intermediate_source"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the estimated size of the remainder of the stream. Default implementation returns </p><div class="fragment"><div class="line">_source.estimate_size()</div>
+</div><!-- fragment --><p>.  <a href="#a2775091c8051036e35263cb0f7e5d21e">More...</a><br /></td></tr>
+<tr class="separator:a2775091c8051036e35263cb0f7e5d21e inherit pub_methods_classflow_1_1source_1_1_intermediate_source"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classflow_1_1source_1_1_iterator"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classflow_1_1source_1_1_iterator')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">flow::source::Iterator&lt; std::vector&lt; Source::value_type * &gt;::iterator &gt;</a></td></tr>
+<tr class="memitem:a8f656f251d89cb46541bdec812983d7e inherit pub_methods_classflow_1_1source_1_1_iterator"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#a8f656f251d89cb46541bdec812983d7e">Iterator</a> (std::vector&lt; Source::value_type * &gt;::iteratorbegin, std::vector&lt; Source::value_type * &gt;::iteratorend)</td></tr>
 <tr class="memdesc:a8f656f251d89cb46541bdec812983d7e inherit pub_methods_classflow_1_1source_1_1_iterator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the Iterator{Itr} class.  <a href="#a8f656f251d89cb46541bdec812983d7e">More...</a><br /></td></tr>
 <tr class="separator:a8f656f251d89cb46541bdec812983d7e inherit pub_methods_classflow_1_1source_1_1_iterator"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea0a7770cf11a8da01ac658f5ca040d1 inherit pub_methods_classflow_1_1source_1_1_iterator"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#aea0a7770cf11a8da01ac658f5ca040d1">has_next</a> () const</td></tr>
 <tr class="memdesc:aea0a7770cf11a8da01ac658f5ca040d1 inherit pub_methods_classflow_1_1source_1_1_iterator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if this source has more elements.  <a href="#aea0a7770cf11a8da01ac658f5ca040d1">More...</a><br /></td></tr>
 <tr class="separator:aea0a7770cf11a8da01ac658f5ca040d1 inherit pub_methods_classflow_1_1source_1_1_iterator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d408ea2e100ff2c0f59eeea25a89b16 inherit pub_methods_classflow_1_1source_1_1_iterator"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#a04511baca1a5566ef979490dc8bfb9d8">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#a1d408ea2e100ff2c0f59eeea25a89b16">next</a> ()</td></tr>
-<tr class="memdesc:a1d408ea2e100ff2c0f59eeea25a89b16 inherit pub_methods_classflow_1_1source_1_1_iterator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next element from the stream.  <a href="#a1d408ea2e100ff2c0f59eeea25a89b16">More...</a><br /></td></tr>
-<tr class="separator:a1d408ea2e100ff2c0f59eeea25a89b16 inherit pub_methods_classflow_1_1source_1_1_iterator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a85d0de7033b210e433354edfa216c0 inherit pub_methods_classflow_1_1source_1_1_iterator"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d3/d72/classflow_1_1source_1_1_generator_source.html#afc04489376e75fc0c931d51f0151fb3f">value_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#a2a85d0de7033b210e433354edfa216c0">next</a> ()</td></tr>
+<tr class="memdesc:a2a85d0de7033b210e433354edfa216c0 inherit pub_methods_classflow_1_1source_1_1_iterator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next element from the stream.  <a href="#a2a85d0de7033b210e433354edfa216c0">More...</a><br /></td></tr>
+<tr class="separator:a2a85d0de7033b210e433354edfa216c0 inherit pub_methods_classflow_1_1source_1_1_iterator"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebd9316211d33d757a2bacfb9782408d inherit pub_methods_classflow_1_1source_1_1_iterator"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#aebd9316211d33d757a2bacfb9782408d">lazy_next</a> ()</td></tr>
 <tr class="memdesc:aebd9316211d33d757a2bacfb9782408d inherit pub_methods_classflow_1_1source_1_1_iterator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ignores the next value from the stream.  <a href="#aebd9316211d33d757a2bacfb9782408d">More...</a><br /></td></tr>
 <tr class="separator:aebd9316211d33d757a2bacfb9782408d inherit pub_methods_classflow_1_1source_1_1_iterator"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3469e75689ed9f57a70cc5affebcad04 inherit pub_methods_classflow_1_1source_1_1_iterator"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#a3469e75689ed9f57a70cc5affebcad04">estimate_size</a> () const</td></tr>
 <tr class="memdesc:a3469e75689ed9f57a70cc5affebcad04 inherit pub_methods_classflow_1_1source_1_1_iterator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the estimated size of the remainder of the stream. This is an exact value.  <a href="#a3469e75689ed9f57a70cc5affebcad04">More...</a><br /></td></tr>
 <tr class="separator:a3469e75689ed9f57a70cc5affebcad04 inherit pub_methods_classflow_1_1source_1_1_iterator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classflow_1_1source_1_1_generator_source"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classflow_1_1source_1_1_generator_source')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d3/d72/classflow_1_1source_1_1_generator_source.html">flow::source::GeneratorSource&lt; std::iterator_traits&lt; std::vector&lt; Source::value_type * &gt;::iterator &gt;::value_type &gt;</a></td></tr>
+<tr class="memitem:a998b16063e95875408d5a7016dc365a2 inherit pub_methods_classflow_1_1source_1_1_generator_source"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d72/classflow_1_1source_1_1_generator_source.html#a998b16063e95875408d5a7016dc365a2">GeneratorSource</a> ()</td></tr>
+<tr class="memdesc:a998b16063e95875408d5a7016dc365a2 inherit pub_methods_classflow_1_1source_1_1_generator_source"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the GeneratorSource{T} class.  <a href="#a998b16063e95875408d5a7016dc365a2">More...</a><br /></td></tr>
+<tr class="separator:a998b16063e95875408d5a7016dc365a2 inherit pub_methods_classflow_1_1source_1_1_generator_source"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5c8ce352d9ae8d33d0ecb8ec1145324 inherit pub_methods_classflow_1_1source_1_1_generator_source"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d72/classflow_1_1source_1_1_generator_source.html#ac5c8ce352d9ae8d33d0ecb8ec1145324">has_next</a> () const</td></tr>
+<tr class="memdesc:ac5c8ce352d9ae8d33d0ecb8ec1145324 inherit pub_methods_classflow_1_1source_1_1_generator_source"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if this source has more elements. Default implementation returns </p><div class="fragment"><div class="line">_source.has_next()</div>
+</div><!-- fragment --><p>.  <a href="#ac5c8ce352d9ae8d33d0ecb8ec1145324">More...</a><br /></td></tr>
+<tr class="separator:ac5c8ce352d9ae8d33d0ecb8ec1145324 inherit pub_methods_classflow_1_1source_1_1_generator_source"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8c9a13b7b883c61c3c7f26d54e11f75 inherit pub_methods_classflow_1_1source_1_1_generator_source"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d3/d72/classflow_1_1source_1_1_generator_source.html#afc04489376e75fc0c931d51f0151fb3f">value_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d72/classflow_1_1source_1_1_generator_source.html#ac8c9a13b7b883c61c3c7f26d54e11f75">next</a> ()</td></tr>
+<tr class="memdesc:ac8c9a13b7b883c61c3c7f26d54e11f75 inherit pub_methods_classflow_1_1source_1_1_generator_source"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next element from the stream. The value is <em>moved</em>. Successive calls to <a class="el" href="../../d3/d72/classflow_1_1source_1_1_generator_source.html#ac8c9a13b7b883c61c3c7f26d54e11f75" title="Returns the next element from the stream. The value is moved. Successive calls to next() will fail...">next()</a> will fail. Default implementation returns </p><div class="fragment"><div class="line">std::move(*_current);</div>
+</div><!-- fragment --><p>.  <a href="#ac8c9a13b7b883c61c3c7f26d54e11f75">More...</a><br /></td></tr>
+<tr class="separator:ac8c9a13b7b883c61c3c7f26d54e11f75 inherit pub_methods_classflow_1_1source_1_1_generator_source"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9fbf72d2b37c927a72e411f12488612 inherit pub_methods_classflow_1_1source_1_1_generator_source"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d72/classflow_1_1source_1_1_generator_source.html#ab9fbf72d2b37c927a72e411f12488612">lazy_next</a> ()</td></tr>
+<tr class="memdesc:ab9fbf72d2b37c927a72e411f12488612 inherit pub_methods_classflow_1_1source_1_1_generator_source"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ignores the next value from the stream.  <a href="#ab9fbf72d2b37c927a72e411f12488612">More...</a><br /></td></tr>
+<tr class="separator:ab9fbf72d2b37c927a72e411f12488612 inherit pub_methods_classflow_1_1source_1_1_generator_source"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a680b8ba911cc307057a8b4cc35740cb7 inherit pub_methods_classflow_1_1source_1_1_generator_source"><td class="memItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d72/classflow_1_1source_1_1_generator_source.html#a680b8ba911cc307057a8b4cc35740cb7">estimate_size</a> () const</td></tr>
+<tr class="memdesc:a680b8ba911cc307057a8b4cc35740cb7 inherit pub_methods_classflow_1_1source_1_1_generator_source"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the max value of <code>std::size_t</code>. This is an infinite stream. Default implementation returns std::size_t max value.  <a href="#a680b8ba911cc307057a8b4cc35740cb7">More...</a><br /></td></tr>
+<tr class="separator:a680b8ba911cc307057a8b4cc35740cb7 inherit pub_methods_classflow_1_1source_1_1_generator_source"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a224a7eb5bb50dd4131a24521efeb68aa"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html#aba3f67bbdd795ded39eb97051060bc3a">value_type</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html#a224a7eb5bb50dd4131a24521efeb68aa">_stream</a></td></tr>
+<tr class="memdesc:a224a7eb5bb50dd4131a24521efeb68aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">The sorted stream.  <a href="#a224a7eb5bb50dd4131a24521efeb68aa">More...</a><br /></td></tr>
+<tr class="separator:a224a7eb5bb50dd4131a24521efeb68aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classflow_1_1source_1_1_iterator"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classflow_1_1source_1_1_iterator')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">flow::source::Iterator&lt; std::vector&lt; Source::value_type * &gt;::iterator &gt;</a></td></tr>
+<tr class="memitem:aaae1b8376b95a5f5bdbf0ad4cdb9d146 inherit pro_attribs_classflow_1_1source_1_1_iterator"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Source::value_type * &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#aaae1b8376b95a5f5bdbf0ad4cdb9d146">_current</a></td></tr>
+<tr class="memdesc:aaae1b8376b95a5f5bdbf0ad4cdb9d146 inherit pro_attribs_classflow_1_1source_1_1_iterator"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current iterator.  <a href="#aaae1b8376b95a5f5bdbf0ad4cdb9d146">More...</a><br /></td></tr>
+<tr class="separator:aaae1b8376b95a5f5bdbf0ad4cdb9d146 inherit pro_attribs_classflow_1_1source_1_1_iterator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa05e42a77aebf0427ca8236448ec893 inherit pro_attribs_classflow_1_1source_1_1_iterator"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Source::value_type * &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#aaa05e42a77aebf0427ca8236448ec893">_end</a></td></tr>
+<tr class="memdesc:aaa05e42a77aebf0427ca8236448ec893 inherit pro_attribs_classflow_1_1source_1_1_iterator"><td class="mdescLeft">&#160;</td><td class="mdescRight">The off end iterator.  <a href="#aaa05e42a77aebf0427ca8236448ec893">More...</a><br /></td></tr>
+<tr class="separator:aaa05e42a77aebf0427ca8236448ec893 inherit pro_attribs_classflow_1_1source_1_1_iterator"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_methods_classflow_1_1source_1_1_iterator"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classflow_1_1source_1_1_iterator')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">flow::source::Iterator&lt; std::vector&lt; Source::value_type &gt;::iterator &gt;</a></td></tr>
+<tr class="inherit_header pro_methods_classflow_1_1source_1_1_intermediate_source"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classflow_1_1source_1_1_intermediate_source')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../da/dea/classflow_1_1source_1_1_intermediate_source.html">flow::source::IntermediateSource&lt; Source &gt;</a></td></tr>
+<tr class="memitem:ac0438bd5d5d528a0d0e20c6ab2f07940 inherit pro_methods_classflow_1_1source_1_1_intermediate_source"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dea/classflow_1_1source_1_1_intermediate_source.html#ac0438bd5d5d528a0d0e20c6ab2f07940">assign_current</a> ()</td></tr>
+<tr class="memdesc:ac0438bd5d5d528a0d0e20c6ab2f07940 inherit pro_methods_classflow_1_1source_1_1_intermediate_source"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the current stream value pointer to be the next element from the source stream.  <a href="#ac0438bd5d5d528a0d0e20c6ab2f07940">More...</a><br /></td></tr>
+<tr class="separator:ac0438bd5d5d528a0d0e20c6ab2f07940 inherit pro_methods_classflow_1_1source_1_1_intermediate_source"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa37d5f7b9f77d21725994c710b2fb976 inherit pro_methods_classflow_1_1source_1_1_intermediate_source"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dea/classflow_1_1source_1_1_intermediate_source.html#aa37d5f7b9f77d21725994c710b2fb976">assign_current</a> (const <a class="el" href="../../da/dea/classflow_1_1source_1_1_intermediate_source.html#aed66112d78b000bee00a5df8aad93193">value_type</a> *current)</td></tr>
+<tr class="memdesc:aa37d5f7b9f77d21725994c710b2fb976 inherit pro_methods_classflow_1_1source_1_1_intermediate_source"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the current stream value pointer to be the given element.  <a href="#aa37d5f7b9f77d21725994c710b2fb976">More...</a><br /></td></tr>
+<tr class="separator:aa37d5f7b9f77d21725994c710b2fb976 inherit pro_methods_classflow_1_1source_1_1_intermediate_source"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf44c23ec2d1a539eb0ee7f324ca5b76 inherit pro_methods_classflow_1_1source_1_1_intermediate_source"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dea/classflow_1_1source_1_1_intermediate_source.html#aaf44c23ec2d1a539eb0ee7f324ca5b76">assign_temp_current</a> (<a class="el" href="../../da/dea/classflow_1_1source_1_1_intermediate_source.html#aed66112d78b000bee00a5df8aad93193">value_type</a> &amp;&amp;temp_current)</td></tr>
+<tr class="memdesc:aaf44c23ec2d1a539eb0ee7f324ca5b76 inherit pro_methods_classflow_1_1source_1_1_intermediate_source"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the current stream value pointer to a temporary value. The lifetime of the temporary is extended so the pointer is valid.  <a href="#aaf44c23ec2d1a539eb0ee7f324ca5b76">More...</a><br /></td></tr>
+<tr class="separator:aaf44c23ec2d1a539eb0ee7f324ca5b76 inherit pro_methods_classflow_1_1source_1_1_intermediate_source"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff090cac60184e9f293a090b2e1311a0 inherit pro_methods_classflow_1_1source_1_1_intermediate_source"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../da/dea/classflow_1_1source_1_1_intermediate_source.html#aed66112d78b000bee00a5df8aad93193">value_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dea/classflow_1_1source_1_1_intermediate_source.html#aff090cac60184e9f293a090b2e1311a0">raw_current</a> ()</td></tr>
+<tr class="memdesc:aff090cac60184e9f293a090b2e1311a0 inherit pro_methods_classflow_1_1source_1_1_intermediate_source"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value inside the current stream value pointer. It is <em>not</em> moved.  <a href="#aff090cac60184e9f293a090b2e1311a0">More...</a><br /></td></tr>
+<tr class="separator:aff090cac60184e9f293a090b2e1311a0 inherit pro_methods_classflow_1_1source_1_1_intermediate_source"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a6632c71ab4bc88ef79aeaade554b01 inherit pro_methods_classflow_1_1source_1_1_intermediate_source"><td class="memItemLeft" align="right" valign="top">const Source::value_type &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dea/classflow_1_1source_1_1_intermediate_source.html#a3a6632c71ab4bc88ef79aeaade554b01">raw_next</a> ()</td></tr>
+<tr class="memdesc:a3a6632c71ab4bc88ef79aeaade554b01 inherit pro_methods_classflow_1_1source_1_1_intermediate_source"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns </p><div class="fragment"><div class="line">_source.next()</div>
+</div><!-- fragment --><p>.  <a href="#a3a6632c71ab4bc88ef79aeaade554b01">More...</a><br /></td></tr>
+<tr class="separator:a3a6632c71ab4bc88ef79aeaade554b01 inherit pro_methods_classflow_1_1source_1_1_intermediate_source"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classflow_1_1source_1_1_iterator"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classflow_1_1source_1_1_iterator')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">flow::source::Iterator&lt; std::vector&lt; Source::value_type * &gt;::iterator &gt;</a></td></tr>
 <tr class="memitem:a697001246de189dff967134abc8e0b33 inherit pro_methods_classflow_1_1source_1_1_iterator"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#a697001246de189dff967134abc8e0b33">Iterator</a> ()</td></tr>
 <tr class="memdesc:a697001246de189dff967134abc8e0b33 inherit pro_methods_classflow_1_1source_1_1_iterator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes an empty instance of the Iterator{Itr} class.  <a href="#a697001246de189dff967134abc8e0b33">More...</a><br /></td></tr>
 <tr class="separator:a697001246de189dff967134abc8e0b33 inherit pro_methods_classflow_1_1source_1_1_iterator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_classflow_1_1source_1_1_iterator"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classflow_1_1source_1_1_iterator')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">flow::source::Iterator&lt; std::vector&lt; Source::value_type &gt;::iterator &gt;</a></td></tr>
-<tr class="memitem:aaae1b8376b95a5f5bdbf0ad4cdb9d146 inherit pro_attribs_classflow_1_1source_1_1_iterator"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Source::value_type &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#aaae1b8376b95a5f5bdbf0ad4cdb9d146">_current</a></td></tr>
-<tr class="memdesc:aaae1b8376b95a5f5bdbf0ad4cdb9d146 inherit pro_attribs_classflow_1_1source_1_1_iterator"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current iterator.  <a href="#aaae1b8376b95a5f5bdbf0ad4cdb9d146">More...</a><br /></td></tr>
-<tr class="separator:aaae1b8376b95a5f5bdbf0ad4cdb9d146 inherit pro_attribs_classflow_1_1source_1_1_iterator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa05e42a77aebf0427ca8236448ec893 inherit pro_attribs_classflow_1_1source_1_1_iterator"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Source::value_type &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#aaa05e42a77aebf0427ca8236448ec893">_end</a></td></tr>
-<tr class="memdesc:aaa05e42a77aebf0427ca8236448ec893 inherit pro_attribs_classflow_1_1source_1_1_iterator"><td class="mdescLeft">&#160;</td><td class="mdescRight">The off end iterator.  <a href="#aaa05e42a77aebf0427ca8236448ec893">More...</a><br /></td></tr>
-<tr class="separator:aaa05e42a77aebf0427ca8236448ec893 inherit pro_attribs_classflow_1_1source_1_1_iterator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classflow_1_1source_1_1_generator_source"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classflow_1_1source_1_1_generator_source')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../d3/d72/classflow_1_1source_1_1_generator_source.html">flow::source::GeneratorSource&lt; std::iterator_traits&lt; std::vector&lt; Source::value_type * &gt;::iterator &gt;::value_type &gt;</a></td></tr>
+<tr class="memitem:a8b2c96404d7479c6f44fc7756533a6ca inherit pro_methods_classflow_1_1source_1_1_generator_source"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d72/classflow_1_1source_1_1_generator_source.html#a8b2c96404d7479c6f44fc7756533a6ca">assign_current</a> (const <a class="el" href="../../d3/d72/classflow_1_1source_1_1_generator_source.html#afc04489376e75fc0c931d51f0151fb3f">value_type</a> *current)</td></tr>
+<tr class="memdesc:a8b2c96404d7479c6f44fc7756533a6ca inherit pro_methods_classflow_1_1source_1_1_generator_source"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the current stream value pointer to be the given element.  <a href="#a8b2c96404d7479c6f44fc7756533a6ca">More...</a><br /></td></tr>
+<tr class="separator:a8b2c96404d7479c6f44fc7756533a6ca inherit pro_methods_classflow_1_1source_1_1_generator_source"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a675b864de69f74d6dfe7d8660bc9f37e inherit pro_methods_classflow_1_1source_1_1_generator_source"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d72/classflow_1_1source_1_1_generator_source.html#a675b864de69f74d6dfe7d8660bc9f37e">assign_temp_current</a> (<a class="el" href="../../d3/d72/classflow_1_1source_1_1_generator_source.html#afc04489376e75fc0c931d51f0151fb3f">value_type</a> &amp;&amp;temp_current)</td></tr>
+<tr class="memdesc:a675b864de69f74d6dfe7d8660bc9f37e inherit pro_methods_classflow_1_1source_1_1_generator_source"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the current stream value pointer to a temporary value. The lifetime of the temporary is extended so the pointer is valid.  <a href="#a675b864de69f74d6dfe7d8660bc9f37e">More...</a><br /></td></tr>
+<tr class="separator:a675b864de69f74d6dfe7d8660bc9f37e inherit pro_methods_classflow_1_1source_1_1_generator_source"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd369272e9b5f32e7f3e951413cf79c5 inherit pro_methods_classflow_1_1source_1_1_generator_source"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d3/d72/classflow_1_1source_1_1_generator_source.html#afc04489376e75fc0c931d51f0151fb3f">value_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d72/classflow_1_1source_1_1_generator_source.html#afd369272e9b5f32e7f3e951413cf79c5">raw_current</a> ()</td></tr>
+<tr class="memdesc:afd369272e9b5f32e7f3e951413cf79c5 inherit pro_methods_classflow_1_1source_1_1_generator_source"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value inside the current stream value pointer. It is <em>not</em> moved.  <a href="#afd369272e9b5f32e7f3e951413cf79c5">More...</a><br /></td></tr>
+<tr class="separator:afd369272e9b5f32e7f3e951413cf79c5 inherit pro_methods_classflow_1_1source_1_1_generator_source"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename Source&gt;<br />
 class flow::source::Sort&lt; Source &gt;</h3>
 
 <p><a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> source to sort the stream. Sorting is an eager operation, the entire stream up to this point is evaluated and stored and finally sorted after. </p>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000002">Todo:</a></b></dt><dd>make sorting a lazy operation instead; wait until the first <a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#aea0a7770cf11a8da01ac658f5ca040d1" title="Returns true if this source has more elements. ">has_next()</a> or <a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#a1d408ea2e100ff2c0f59eeea25a89b16" title="Returns the next element from the stream. ">next()</a> call </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000002">Todo:</a></b></dt><dd>make sorting a lazy operation instead; wait until the first <a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html#a9ea9fdecc861869d1f2cf562724a2a4a" title="Returns true if the source has more elements. ">has_next()</a> or <a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html#aa2099300140728dc21adfc0a4f835588" title="Returns the next element from the stream. The value is moved. Successive calls to next() will fail...">next()</a> call </dd></dl>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a class="anchor" id="aad0e07e59fb6188d90f4ea0422d1f932"></a>
+<a class="anchor" id="a3b706ad4a7c44bb5917102bd65cc8aaa"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename Source &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html">flow::source::Sort</a>&lt; Source &gt;::<a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html#aad0e07e59fb6188d90f4ea0422d1f932">parent_type</a> =  <a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">Iterator</a>&lt;typename std::vector&lt;<a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html#ae9c785a3609011a8019a562a666dd5a0">value_type</a>&gt;::iterator&gt;</td>
+          <td class="memname">using <a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html">flow::source::Sort</a>&lt; Source &gt;::<a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html#a3b706ad4a7c44bb5917102bd65cc8aaa">base</a> =  <a class="el" href="../../da/dea/classflow_1_1source_1_1_intermediate_source.html">IntermediateSource</a>&lt;Source&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="ae9c785a3609011a8019a562a666dd5a0"></a>
+<a class="anchor" id="aa6b7b942ebabf36217c3392d48f51cc3"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename Source &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html">flow::source::Sort</a>&lt; Source &gt;::<a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html#ae9c785a3609011a8019a562a666dd5a0">value_type</a> =  typename <a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#a04511baca1a5566ef979490dc8bfb9d8">parent_type::value_type</a></td>
+          <td class="memname">using <a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html">flow::source::Sort</a>&lt; Source &gt;::<a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html#aa6b7b942ebabf36217c3392d48f51cc3">parent_type</a> =  <a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">Iterator</a>&lt;typename std::vector&lt;typename Source::value_type*&gt;::iterator&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aba3f67bbdd795ded39eb97051060bc3a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Source &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html">flow::source::Sort</a>&lt; Source &gt;::<a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html#aba3f67bbdd795ded39eb97051060bc3a">value_type</a> =  typename <a class="el" href="../../da/dea/classflow_1_1source_1_1_intermediate_source.html#aed66112d78b000bee00a5df8aad93193">base::value_type</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -255,6 +362,89 @@ template&lt;typename Compare &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a9ea9fdecc861869d1f2cf562724a2a4a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Source &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html">flow::source::Sort</a>&lt; Source &gt;::has_next </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns true if the source has more elements. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if this source has more stream elements.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1ded2988c776ac562965cd54663961ce"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Source &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html">flow::source::Sort</a>&lt; Source &gt;::lazy_next </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ignores the next value from the stream. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa2099300140728dc21adfc0a4f835588"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Source &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html#aba3f67bbdd795ded39eb97051060bc3a">value_type</a>&amp; <a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html">flow::source::Sort</a>&lt; Source &gt;::next </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the next element from the stream. The value is <em>moved</em>. Successive calls to <a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html#aa2099300140728dc21adfc0a4f835588" title="Returns the next element from the stream. The value is moved. Successive calls to next() will fail...">next()</a> will fail. </p>
+<dl class="section return"><dt>Returns</dt><dd>The next element in the stream.</dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a60e2968eedf8c0fb89978061ef02c223"></a>
 <div class="memitem">
 <div class="memproto">
@@ -299,6 +489,31 @@ template&lt;typename Compare &gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a224a7eb5bb50dd4131a24521efeb68aa"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Source &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html#aba3f67bbdd795ded39eb97051060bc3a">value_type</a>*&gt; <a class="el" href="../../de/d82/classflow_1_1source_1_1_sort.html">flow::source::Sort</a>&lt; Source &gt;::_stream</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The sorted stream. </p>
 
 </div>
 </div>
