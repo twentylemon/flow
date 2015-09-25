@@ -40,6 +40,7 @@ class Generate : public GeneratorSource<std::result_of_t<Generator()>>
 {
 public:
     using base = GeneratorSource<std::result_of_t<Generator()>>;
+    using value_type = typename base::value_type;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Generate{Generator}" /> class.

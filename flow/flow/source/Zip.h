@@ -39,6 +39,7 @@ class Zip : public IntermediateSource<LeftSource, std::result_of_t<Zipper(typena
 {
 public:
     using base = IntermediateSource<LeftSource, std::result_of_t<Zipper(typename LeftSource::value_type, typename RightSource::value_type)>>;
+    using value_type = typename base::value_type;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Zip{LeftSource, RightSource, Zipper}"/> class.

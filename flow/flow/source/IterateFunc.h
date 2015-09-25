@@ -44,6 +44,7 @@ class IterateFunc : public GeneratorSource<T>
 {
 public:
     using base = GeneratorSource<T>;
+    using value_type = typename base::value_type;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="IterateFunc{IteratingFunction, T, N}"/> class.

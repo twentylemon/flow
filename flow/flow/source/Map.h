@@ -39,6 +39,7 @@ class Map : public IntermediateSource<Source, std::result_of_t<UnaryOperation(ty
 {
 public:
     using base = IntermediateSource<Source, std::result_of_t<UnaryOperation(typename Source::value_type)>>;
+    using value_type = typename base::value_type;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Map{Source, UnaryOperation}"/> class.
