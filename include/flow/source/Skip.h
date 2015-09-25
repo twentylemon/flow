@@ -26,6 +26,8 @@
 #ifndef FLOW_SOURCE_SKIP_H
 #define FLOW_SOURCE_SKIP_H
 
+#include "IntermediateSource.h"
+
 namespace flow {
     namespace source {
 
@@ -34,10 +36,10 @@ namespace flow {
 /// after which only every nth element is kept.
 /// </summary>
 template <typename Source>
-class Skip
+class Skip : public IntermediateSource<Source>
 {
 public:
-    using value_type = typename Source::value_type;
+    using base = IntermediateSource<Source>;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Skip{Source}"/> class.
@@ -45,8 +47,8 @@ public:
     /// <param name="source">The source to skip elements of.</param>
     /// <param name="begin">The index to skip to.</param>
     /// <param name="step_size">The step value, eg 2 will give every 2nd element after <paramref name="begin"/>.</param>
-    Skip(Source&& source, std::size_t begin, std::size_t step_size) : _current(0), _step_size(step_size),
-        _source(std::move(source)), _begin(begin), _initial(true) { }
+    Skip(Source&& source, std::size_t begin, std::size_t step_size) : base(std::forward<Source>(source)),
+        _current(0), _step_size(step_size), _begin(begin), _initial(true) { }
 
     /// <summary>
     /// Returns true if this source has more elements.
@@ -60,30 +62,23 @@ public:
         else {
             _current += _step_size;
             for (std::size_t i = 1; i < _step_size; ++i) {
-                if (_source.has_next()) {
-                    _source.lazy_next();
+                if (base::has_next()) {
+                    base::lazy_next();
                 }
                 else {
                     return false;
                 }
             }
         }
-        return _source.has_next();
+        return base::has_next();
     }
 
     /// <summary>
     /// Returns the next element from the stream.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
-    value_type next() {
-        return _source.next();
-    }
-
-    /// <summary>
-    /// Ignores the next value from the stream.
-    /// </summary>
-    void lazy_next() {
-        _source.lazy_next();
+    const value_type& next() {
+        return base::raw_next();
     }
 
     /// <summary>
@@ -91,8 +86,8 @@ public:
     /// This is an exact value.
     /// </summary>
     /// <returns>The estimated size of the remainder of the stream.</returns>
-    std::size_t estimate_size() {
-        return _source.estimate_size() / _step_size;
+    std::size_t estimate_size() const {
+        return base::estimate_size() / _step_size;
     }
 
     /// <summary>
@@ -100,7 +95,7 @@ public:
     /// </summary>
     /// <param name="begin">The index to step to in the source stream.</param>
     void step_to(std::size_t begin) {
-        while (_current < begin && _source.has_next()) {
+        while (_current < begin && base::has_next()) {
             ++_current;
             lazy_next();
         }
@@ -118,7 +113,6 @@ protected:
     const std::size_t _step_size;
 
 private:
-    Source _source;                 // the source to read from
     const std::size_t _begin;       // the start index
     bool _initial;                  // false once we have processed the first stream value
 };

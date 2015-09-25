@@ -28,6 +28,8 @@
 
 #include <iterator>
 
+#include "GeneratorSource.h"
+
 namespace flow {
     namespace source {
 
@@ -35,17 +37,17 @@ namespace flow {
 /// Stream source for a pair of iterators.
 /// </summary>
 template <typename Itr>
-class Iterator
+class Iterator : public GeneratorSource<typename std::iterator_traits<Itr>::value_type>
 {
 public:
-    using value_type = typename std::iterator_traits<Itr>::value_type;
+    using base = GeneratorSource<typename std::iterator_traits<Itr>::value_type>;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Iterator{Itr}"/> class.
     /// </summary>
     /// <param name="begin">The begin iterator.</param>
     /// <param name="end">The end iterator.</param>
-    Iterator(Itr begin, Itr end) : _current(begin), _end(end) { }
+    Iterator(Itr begin, Itr end) : base(), _current(begin), _end(end) { }
 
     /// <summary>
     /// Returns true if this source has more elements.
@@ -59,7 +61,7 @@ public:
     /// Returns the next element from the stream.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
-    value_type next() {
+    const value_type& next() {
         return std::move(*_current++);
     }
 

@@ -38,7 +38,7 @@ namespace flow {
 /// </summary>
 /// <returns>The detail::Terminal operation which multiplies the elements in the stream.</returns>
 /// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
-auto product() {
+inline auto product() {
     return fold(std::multiplies<void>());
 }
 

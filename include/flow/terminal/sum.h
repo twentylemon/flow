@@ -38,7 +38,7 @@ namespace flow {
 /// </summary>
 /// <returns>The detail::Terminal operation which sums the elements in the stream.</returns>
 /// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
-auto sum() {
+inline auto sum() {
     return fold(std::plus<void>());
 }
 

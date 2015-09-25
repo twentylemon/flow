@@ -26,6 +26,8 @@
 #ifndef FLOW_SOURCE_CONCAT_H
 #define FLOW_SOURCE_CONCAT_H
 
+#include "IntermediateSource.h"
+
 namespace flow {
     namespace source {
 
@@ -33,10 +35,10 @@ namespace flow {
 /// Stream source that concatenates two other streams together.
 /// </summary>
 template <typename Head, typename Tail>
-class Concat
+class Concat : public IntermediateSource<Head>
 {
 public:
-    using value_type = typename Head::value_type;
+    using base = IntermediateSource<Head>;
     static_assert(std::is_convertible<value_type, typename Tail::value_type>::value, "flow::concat tail element type must be convertible to the head element type");
 
     /// <summary>
@@ -44,14 +46,14 @@ public:
     /// </summary>
     /// <param name="head">The head stream source to start with.</param>
     /// <param name="tail">The stream source to concatenate onto the end of the head source.</param>
-    Concat(Head&& head, Tail&& tail) : _head(std::move(head)), _tail(std::move(tail)), _from_head(true) { }
+    Concat(Head&& head, Tail&& tail) : base(std::forward<Head>(head)), _tail(std::move(tail)), _from_head(true) { }
 
     /// <summary>
     /// Returns true if this source has more elements.
     /// </summary>
     /// <returns><c>true</c> if this source has more stream elements.</returns>
     bool has_next() {
-        if (_from_head && _head.has_next()) {
+        if (_from_head && base::has_next()) {
             return true;
         }
         _from_head = false;
@@ -62,9 +64,9 @@ public:
     /// Returns the next element from the stream.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
-    value_type next() {
+    const value_type& next() {
         if (_from_head) {
-            return _head.next();
+            return base::raw_next();
         }
         return _tail.next();
     }
@@ -74,7 +76,7 @@ public:
     /// </summary>
     void lazy_next() {
         if (_from_head) {
-            _head.lazy_next();
+            base::lazy_next();
         }
         else {
             _tail.lazy_next();
@@ -86,12 +88,12 @@ public:
     /// This is an exact value.
     /// </summary>
     /// <returns>The estimated size of the remainder of the stream.</returns>
-    std::size_t estimate_size() {
-        return _head.estimate_size() + _tail.estimate_size();
+    std::size_t estimate_size() const {
+        return base::estimate_size() + _tail.estimate_size();
     }
 
 private:
-    Head _head;         // the head source to pull values from
+    // tail can instead be an IntermediateSource<Tail>, but this is good enough
     Tail _tail;         // the second source to pull values from after the head is empty
     bool _from_head;    // true if we are still pulling from the head
 };

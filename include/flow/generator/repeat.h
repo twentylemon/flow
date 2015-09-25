@@ -23,27 +23,34 @@
  * SOFTWARE.
  */
  
-#ifndef FLOW_TERMINAL_COUNT_H
-#define FLOW_TERMINAL_COUNT_H
+#ifndef FLOW_GENERATOR_REPEAT_H
+#define FLOW_GENERATOR_REPEAT_H
 
-#include "Terminal.h"
+#include "generate.h"
+#include "../intermediate/limit.h"
 
 namespace flow {
-    namespace terminal {
+    namespace generator {
 
 /// <summary>
-/// Counts the number of elements in the stream. The count is returned as <c>std::size_t</c>.
+/// Creates an infinite stream containing <paramref name="value"/> repeated over and over.
 /// </summary>
-/// <returns>The detail::Terminal operation which counts the number of elements in the stream.</returns>
-inline auto count() {
-    return detail::make_terminal([](auto&& stream) {
-        std::size_t size = 0;
-        while (stream.has_next()) {
-            stream.lazy_next();
-            ++size;
-        }
-        return size;
-    });
+/// <param name="value">The value in the stream.</param>
+/// <returns>An infinite stream containing only <paramref name="value"/>.</returns>
+template <typename T>
+auto repeat(T&& value) {
+    return generate([value = std::forward<T>(value)](){ return value; });
+}
+
+/// <summary>
+/// Creates a stream containing <paramref name="value"/> repeated <paramref name="n"/> times.
+/// </summary>
+/// <param name="value">The value in the stream.</param>
+/// <param name="n">The number of times to repeat <paramref name="value"/>.</param>
+/// <returns>A stream containing <paramref name="n"/> copies of <paramref name="value"/>.</returns>
+template <typename T>
+auto repeat(T&& value, std::size_t n) {
+    return repeat(std::forward<T>(value)) | intermediate::limit(n);
 }
     }
 }

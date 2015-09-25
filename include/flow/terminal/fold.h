@@ -32,7 +32,8 @@ namespace flow {
     namespace terminal {
 
 /// <summary>
-/// Folds the stream using the <paramref name="accumulator"/>. Applying this operation is the same as doing:
+/// Folds the stream using the <paramref name="accumulator"/>.
+/// <para>Applying this operation is the same as doing:</para>
 /// <code>for (T e : stream) { init = accumulator(init, e); }</code>
 /// </summary>
 /// <param name="accumulator">The function through which the stream is folded.</param>
@@ -40,7 +41,7 @@ namespace flow {
 /// <returns>The detail::Terminal operation which folds the stream.</returns>
 template <typename Accumulator, typename T>
 auto fold(Accumulator accumulator, T&& init) {
-    return detail::make_terminal([accumulator, init](auto&& stream) mutable {
+    return detail::make_terminal([accumulator, init = std::forward<T>(init)](auto&& stream) mutable {
         while (stream.has_next()) {
             init = accumulator(init, stream.next());
         }

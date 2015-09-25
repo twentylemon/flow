@@ -23,26 +23,26 @@
  * SOFTWARE.
  */
  
-#ifndef FLOW_TERMINAL_COUNT_H
-#define FLOW_TERMINAL_COUNT_H
+#ifndef FLOW_INTERMEDIATE_FLATMAP_H
+#define FLOW_INTERMEDIATE_FLATMAP_H
 
-#include "Terminal.h"
+#include "../Stream.h"
+#include "Intermediate.h"
+#include "../source/FlatMap.h"
 
 namespace flow {
-    namespace terminal {
+    namespace intermediate {
 
 /// <summary>
-/// Counts the number of elements in the stream. The count is returned as <c>std::size_t</c>.
+/// Transforms each element in the Stream using the given unary function, <paramref name="operation"/>.
+/// Each element is transformed into a new stream. The resultant stream is a concatenation of all created streams.
 /// </summary>
-/// <returns>The detail::Terminal operation which counts the number of elements in the stream.</returns>
-inline auto count() {
-    return detail::make_terminal([](auto&& stream) {
-        std::size_t size = 0;
-        while (stream.has_next()) {
-            stream.lazy_next();
-            ++size;
-        }
-        return size;
+/// <param name="operation">The operation that creates a new stream from a stream element.</param>
+/// <returns>A detail::Intermediate operation that creates new streams and concatenations them together.</returns>
+template <typename UnaryOperation>
+auto flat_map(UnaryOperation operation) {
+    return detail::make_intermediate([operation](auto&& stream) {
+        return Stream<source::FlatMap<typename std::remove_reference_t<decltype(stream)>::source_type, UnaryOperation>>(std::move(stream.source()), operation);
     });
 }
     }

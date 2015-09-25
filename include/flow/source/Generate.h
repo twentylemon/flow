@@ -27,7 +27,7 @@
 #ifndef FLOW_SOURCE_GENERATE_H
 #define FLOW_SOURCE_GENERATE_H
 
-#include <limits>
+#include "GeneratorSource.h"
 
 namespace flow {
     namespace source {
@@ -36,46 +36,24 @@ namespace flow {
 /// Stream source that generates an infinite stream using successive calls to a generating function.
 /// </summary>
 template <typename Generator>
-class Generate
+class Generate : public GeneratorSource<std::result_of_t<Generator()>>
 {
 public:
-    using value_type = std::result_of_t<Generator()>;
+    using base = GeneratorSource<std::result_of_t<Generator()>>;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Generate{Generator}" /> class.
     /// </summary>
     /// <param name="generator">The generator used to create stream elements.</param>
-    Generate(Generator generator) : _generator(generator) { }
-
-    /// <summary>
-    /// Returns true if this source has more elements.
-    /// </summary>
-    /// <returns><c>true</c> if this source has more stream elements.</returns>
-    constexpr bool has_next() const {
-        return true;
-    }
+    Generate(Generator generator) : base(), _generator(generator) { }
 
     /// <summary>
     /// Returns the next element from the stream.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
-    value_type next() {
-        return _generator();
-    }
-
-    /// <summary>
-    /// Ignores the next value from the stream.
-    /// </summary>
-    void lazy_next() {
-        next();
-    }
-
-    /// <summary>
-    /// Returns the max value of <c>std::size_t</c>. This is an infinite stream.
-    /// </summary>
-    /// <returns>The estimated size of the remainder of the stream.</returns>
-    constexpr std::size_t estimate_size() const {
-        return std::numeric_limits<std::size_t>::max();
+    const value_type& next() {
+        base::assign_temp_current(_generator());
+        return base::next();
     }
 
 private:

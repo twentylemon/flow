@@ -53,10 +53,10 @@ auto minmax(Compare compare = Compare()) {
         while (stream.has_next()) {
             auto next = stream.next();
             if (compare(next, min)) {
-                min = next;
+                min = std::move(next);
             }
             else if (compare(max, next)) {
-                max = next;
+                max = std::move(next);
             }
         }
         return std::make_pair(min, max);

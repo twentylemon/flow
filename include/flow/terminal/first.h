@@ -36,7 +36,7 @@ namespace flow {
 /// </summary>
 /// <returns>The detail::Terminal operation which gives the first element from the stream.</returns>
 /// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
-auto first() {
+inline auto first() {
     return detail::make_terminal([](auto&& stream) {
         if (!stream.has_next()) {
             throw std::out_of_range("flow::first() expects a non-empty stream");

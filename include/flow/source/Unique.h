@@ -42,8 +42,8 @@ template <typename Source>
 class Unique : public Sort<Source>
 {
 public:
-    using value_type = typename Source::value_type;
     using parent_type = Sort<Source>;
+    using value_type = typename parent_type::value_type;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Unique{Source}"/> class.
@@ -63,8 +63,8 @@ public:
     template <typename Compare>
     void unique(Compare compare) {
         parent_type::_end = parent_type::_stream.erase(
-            std::unique(parent_type::_stream.begin(), parent_type::_stream.end(), [compare](auto&& lhs, auto&& rhs) {
-                return !compare(lhs, rhs);  // they are sorted, they elements are equal while this is true
+            std::unique(parent_type::_stream.begin(), parent_type::_stream.end(), [compare](value_type* lhs, value_type* rhs) {
+                return !compare(*lhs, *rhs);    // they are sorted, they elements are equal while this is true
             }), parent_type::_stream.end());
     }
 };

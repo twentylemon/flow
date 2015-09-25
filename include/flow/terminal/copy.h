@@ -41,7 +41,7 @@ template <typename OutputIterator>
 auto copy(OutputIterator result) {
     return detail::make_terminal([result](auto&& stream) mutable {
         while (stream.has_next()) {
-            *result = stream.next();
+            *result = std::move(stream.next());
             ++result;
         }
         return result;

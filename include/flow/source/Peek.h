@@ -26,6 +26,8 @@
 #ifndef FLOW_SOURCE_PEEK_H
 #define FLOW_SOURCE_PEEK_H
 
+#include "IntermediateSource.h"
+
 namespace flow {
     namespace source {
 
@@ -33,54 +35,36 @@ namespace flow {
 /// Stream source that applies an action to each stream element. The elements are left unaltered.
 /// </summary>
 template <typename Source, typename Action>
-class Peek
+class Peek : public IntermediateSource<Source>
 {
 public:
-    using value_type = typename Source::value_type;
+    using base = IntermediateSource<Source>;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Peek{Source, Action}" /> class.
     /// </summary>
     /// <param name="source">The source to peek at the elements of.</param>
     /// <param name="action">The action to apply to each stream element.</param>
-    Peek(Source&& source, Action action) : _source(std::move(source)), _action(action) { }
-
-    /// <summary>
-    /// Returns true if this source has more elements.
-    /// </summary>
-    /// <returns><c>true</c> if this source has more stream elements.</returns>
-    bool has_next() {
-        return _source.has_next();
-    }
+    Peek(Source&& source, Action action) : base(std::forward<Source>(source)), _action(action) { }
 
     /// <summary>
     /// Returns the next element from the stream. Also applies the peek action to the element.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
-    value_type next() {
-        value_type current = _source.next();
-        _action(current);
-        return current;
+    const value_type& next() {
+        base::assign_current();
+        _action(base::raw_current());
+        return base::next();
     }
 
     /// <summary>
     /// Ignores the next value from the stream.
     /// </summary>
     void lazy_next() {
-        _action(_source.next());
-    }
-
-    /// <summary>
-    /// Returns the estimated size of the remainder of the stream.
-    /// This is likely an overestimate.
-    /// </summary>
-    /// <returns>The estimated size of the remainder of the stream.</returns>
-    std::size_t estimate_size() {
-        return _source.estimate_size();
+        next();
     }
 
 private:
-    Source _source; // the source to read from
     Action _action; // the action to apply to the stream elements
 };
     }

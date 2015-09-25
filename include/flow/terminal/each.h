@@ -33,9 +33,11 @@ namespace flow {
 
 /// <summary>
 /// Executes a function for each element in the stream. The executed function is returned.
+/// This is the terminal operation equivalent of peek().
 /// </summary>
 /// <param name="func">The function to apply to each element of the stream.</param>
 /// <returns>The detail::Terminal operation that executes a function for each stream element.</returns>
+/// <seealso cref="peek()"/>
 template <typename UnaryFunction>
 auto each(UnaryFunction func) {
     return detail::make_terminal([func](auto&& stream) {
@@ -48,9 +50,11 @@ auto each(UnaryFunction func) {
 
 /// <summary>
 /// Executes a function for each element in the stream. The executed function is returned.
+/// This is the terminal operation equivalent of peek().
 /// </summary>
 /// <param name="member">The class member function to use as the operation.</param>
 /// <returns>The detail::Terminal operation that executes a function for each stream element.</returns>
+/// <seealso cref="peek()"/>
 template <typename Ret, typename Class>
 auto each(Ret(Class::*member)()) {
     return each(std::mem_fn(member));
@@ -58,9 +62,11 @@ auto each(Ret(Class::*member)()) {
 
 /// <summary>
 /// Executes a function for each element in the stream. The executed function is returned.
+/// This is the terminal operation equivalent of peek().
 /// </summary>
 /// <param name="member">The const class member function to use as the operation.</param>
 /// <returns>The detail::Terminal operation that executes a function for each stream element.</returns>
+/// <seealso cref="peek()"/>
 template <typename Ret, typename Class>
 auto each(Ret(Class::*member)() const) {
     return each(std::mem_fn(member));

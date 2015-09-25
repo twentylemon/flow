@@ -7,7 +7,7 @@ flow is a C++14 library that provides lazy evaluation and functional transformat
 The library provides many common data transformations, such as map, filter and fold, as well as other commonly used
 operations like computing the sum, min and max or simply counting the number or elements. And all of it is packaged
 in a nice, easy to read and understand syntax. To use, simply `#include <flow.h>` in your C++14 program. With fully
-optimized code (`-O3` or `/O2`), flow does not offer any performance penalities, so there's no reason not to love.
+optimized code (`-O3` or `/O2`), flow offers minimal performance penalties, so there's no reason not to love.
 
 
 What is a Sick Flow?

@@ -57,7 +57,7 @@ auto any(UnaryPredicate predicate) {
 /// If the stream is empty, this will return <c>false</c>.
 /// </summary>
 /// <returns>The detail::Terminal operation which returns <c>true</c> if any stream element is <c>true</c>.</returns>
-auto any() {
+inline auto any() {
     return any([](const auto& ele) { return static_cast<bool>(ele); });
 }
 

@@ -39,7 +39,7 @@ template <typename Source>
 class Slice : public Skip<Source>
 {
 public:
-    using value_type = typename Source::value_type;
+    using parent_type = Skip<Source>;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Slice{Source}"/> class.
@@ -49,14 +49,14 @@ public:
     /// <param name="end">The end index to slice to.</param>
     /// <param name="step_size">The step value, eg 2 will give every 2nd element in the range.</param>
     Slice(Source&& source, std::size_t begin, std::size_t end, std::size_t step_size) :
-        Skip<Source>(std::move(source), begin, step_size), _end(end) { }
+        parent_type(std::forward<Source>(source), begin, step_size), _end(end) { }
 
     /// <summary>
     /// Returns true if this source has more elements.
     /// </summary>
     /// <returns><c>true</c> if this source has more stream elements.</returns>
     bool has_next() {
-        return Skip<Source>::has_next() && Skip<Source>::_current < _end;
+        return parent_type::has_next() && parent_type::_current < _end;
     }
 
     /// <summary>
@@ -65,8 +65,8 @@ public:
     /// the estimate depends on the source estimate.
     /// </summary>
     /// <returns>The estimated size of the remainder of the stream.</returns>
-    std::size_t estimate_size() {
-        return (_end - Skip<Source>::_current) / Skip<Source>::_step_size;
+    std::size_t estimate_size() const {
+        return (_end - parent_type::_current) / parent_type::_step_size;
     }
 
 private:

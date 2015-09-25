@@ -53,7 +53,7 @@ auto drop_while(UnaryPredicate predicate) {
 /// <c>false</c> are discarded, the rest are kept. This is an overload for streams with types convertible to <c>bool</c>.
 /// </summary>
 /// <returns>A detail::Intermediate operation that drops stream elements while they are <c>true</c>.</returns>
-auto drop_while() {
+inline auto drop_while() {
     return drop_while([](const auto& ele) { return static_cast<bool>(ele); });
 }
 

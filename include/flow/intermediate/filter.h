@@ -52,7 +52,7 @@ auto filter(UnaryPredicate predicate) {
 /// with types convertible to <c>bool</c>.
 /// </summary>
 /// <returns>A detail::Intermediate operation that filters the stream elements.</returns>
-auto filter() {
+inline auto filter() {
     return filter([](const auto& ele) { return static_cast<bool>(ele); });
 }
 

@@ -52,11 +52,10 @@ namespace flow {
 /// \todo flow::intermediate::intersect - intersect two sorted/unique streams
 /// \todo flow::intermediate::difference - compute the difference of two sorted/unique streams
 /// \todo flow::intermediate::symmetric_difference - compute the symmetric difference of two sorted/unique streams
-/// \todo flow::generator::repeat - infinitely repeat a value or container, allow limiting the number of limits
 /// \todo flow::generator::random - generate stream values from a random number generator
 /// \todo flow::generator::parallel_* - create a parallel version of other generators
-/// \todo flow::Stream - allow iterator access via begin() and end()
-/// \todo docs - add examples to the main page and readme
+/// \todo parallel pipelining of stream operations?
+/// \todo allow iterator access via begin() and end()
 template <typename Source>
 class Stream
 {
@@ -91,7 +90,7 @@ public:
     /// Returns the next element from the stream.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
-    value_type next() {
+    const value_type& next() {
         return _source.next();
     }
 
@@ -106,7 +105,7 @@ public:
     /// Returns the estimated size of the remainder of the stream.
     /// </summary>
     /// <returns>The estimated size of the remainder of the stream.</returns>
-    std::size_t estimate_size() {
+    std::size_t estimate_size() const {
         return _source.estimate_size();
     }
 
