@@ -73,7 +73,7 @@ public:
     }
 
 private:
-    flow::detail::uncurrier<IteratingFunction> _function;   // the function to iterator
+    flow::detail::uncurrier<IteratingFunction> _function;   // the function to iterate
     std::array<T, N> _values;                               // the current values to pass to the function
 };
     }
