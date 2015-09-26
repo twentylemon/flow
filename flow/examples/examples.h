@@ -13,5 +13,6 @@ extern const std::vector<int> vec5to8;
 extern const std::vector<int> vec1to8;
 
 void concat_example();
+void zip_example();
 
 #endif

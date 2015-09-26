@@ -219,6 +219,9 @@
     <ClInclude Include="source\GeneratorSource.h">
       <Filter>Header Files\source</Filter>
     </ClInclude>
+    <ClInclude Include="print_tuple.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="flow.licenseheader" />

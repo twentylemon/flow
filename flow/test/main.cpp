@@ -17,8 +17,8 @@
 using namespace flow;
 
 #ifndef _DEBUG
-const int maxit = 1000;
-const int maxv = 150000;
+const int maxit = 100000000;
+const int maxv = 50;
 #else
 const int maxit = 1;
 const int maxv = 11;
@@ -57,7 +57,7 @@ std::ostream& print(std::ostream& out, const Container& container) {
 }
 
 
-std::vector<Widget> vec(maxv);
+std::vector<int> vec(maxv);
 
 
 void run_timer() {
@@ -87,12 +87,14 @@ int main(int argc, char** argv) {
     std::cout << inc << '\t' << vec.size() << std::endl;
     std::vector<int> ww{ 1, 2, 3 };
 
+    iota(0) | limit(5) | dump();
+
     cycle(ww, 4) | take_while([](int i) { return i == 1; }) | dump();
     
     boost::timer t1;
     std::pair<T, T> m1;
     for (int i = 0; i < maxit; i++) {
-        m1 = vec | filter([](const auto& i) { return i.value % 2 == 0; }) | map([](const auto& i) { return i*i; }) | minmax();
+        m1 = vec | filter([](const auto& i) { return i % 2 == 0; }) | map([](const auto& i) { return i*i; }) | minmax();
     }
     std::cout << std::endl << "stream: " << t1.elapsed() << "\t" << m1.first << "\t" << m1.second << std::endl;
 
@@ -103,7 +105,7 @@ int main(int argc, char** argv) {
         v2 = vec.front() * vec.front();
         m2 = std::make_pair(v2, v2);
         for (auto it = vec.begin(), end = vec.end(); it != end; ++it) {
-            if (it->value % 2 == 0) {
+            if (*it % 2 == 0) {
                 T q = *it * *it;
                 if (q < m2.first) { m2.first = q; }
                 else if (m2.second < q) { m2.second = q; }

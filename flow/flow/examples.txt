@@ -4,3 +4,17 @@
 /// The type of elements in the <em>tail</em> stream must be convertible to the type of element in
 /// the <em>head</em> stream.</para>
 /// <para>Overrides are available which are shorthands for calling from().</para>
+
+/// \example zip.cpp
+/// <para>A flow::zip example. The zip operation combines two streams into a single stream using a
+/// zipping operation. A zipping operation takes the front element from each stream to produce an output.
+/// By default, the zipping operation creates a <code>std::tuple</code> out of
+/// the two elements. Multiple zipped streams concatenates tuples together so,</para>
+/// \code{.cpp}vec | zip(vec) | zip(vec)\endcode
+/// <para>will create a <code>std::tuple<T, T, T></code> rather than nesting tuples.</para>
+/// <para>Other zipping operations are possible other than tuplfying the elements. A simple
+/// example would be to compute the pairwise sum of elements from each stream.</para>
+/// <para>Note that the flow namespace defines <code>operator<<</code> for tuples. It prints
+/// each tuple element using <code>operator<</code>, with a familiar format. Note that the function
+/// is also defined inside of the <code>std</code> namespace. This allows dump() to see the operator
+/// and actually compile. To exclude the <code>std</code> version, <code>\#define FLOW_PRINTTUPLE_NO_STD</code>.</para>

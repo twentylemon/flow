@@ -69,16 +69,16 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(SolutionDir);$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir);$(ProjectDir);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(SolutionDir);$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir);$(ProjectDir);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(SolutionDir);$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir);$(ProjectDir);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(SolutionDir);$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir);$(ProjectDir);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -129,8 +129,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="concat.cpp" />
     <ClCompile Include="examples.cpp" />
+    <ClCompile Include="intermediate\concat.cpp" />
+    <ClCompile Include="intermediate\zip.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="examples.h" />

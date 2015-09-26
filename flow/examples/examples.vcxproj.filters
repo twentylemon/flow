@@ -13,13 +13,19 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\intermediate">
+      <UniqueIdentifier>{a6cb4538-719f-4771-9c04-ecd9fbce2e70}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="concat.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="examples.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="intermediate\concat.cpp">
+      <Filter>Source Files\intermediate</Filter>
+    </ClCompile>
+    <ClCompile Include="intermediate\zip.cpp">
+      <Filter>Source Files\intermediate</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

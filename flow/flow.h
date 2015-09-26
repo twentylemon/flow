@@ -27,6 +27,7 @@
 #define FLOW_FLOW_H
 
 #include "flow/uncurry.h"
+#include "flow/print_tuple.h"
 
 #include "flow/generator/from.h"
 #include "flow/generator/repeat.h"

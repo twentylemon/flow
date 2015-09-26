@@ -127,6 +127,7 @@
     <ClInclude Include="generator\iterate.h" />
     <ClInclude Include="generator\repeat.h" />
     <ClInclude Include="intermediate\flat_map.h" />
+    <ClInclude Include="print_tuple.h" />
     <ClInclude Include="source\FlatMap.h" />
     <ClInclude Include="source\Generate.h" />
     <ClInclude Include="source\GeneratorSource.h" />

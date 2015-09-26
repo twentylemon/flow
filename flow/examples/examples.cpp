@@ -1,5 +1,5 @@
 
-#include "examples.h"
+#include <examples.h>
 
 const std::vector<int> vec1to4 = iota(1) | limit(4) | to_vector();
 const std::vector<int> vec5to8 = iota(5) | limit(4) | to_vector();
@@ -12,11 +12,10 @@ int main(int argc, char** argv) {
     vec1to4 | dump();
     std::cout << std::endl << "vec5to8 = ";
     vec5to8 | dump();
-    std::cout << std::endl;
+    std::cout << std::endl << std::endl;
 
     concat_example();
-
-    cycle(vec1to4, 1) | dump();
+    zip_example();
 
     system("pause");
     return 0;
