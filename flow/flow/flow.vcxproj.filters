@@ -228,6 +228,12 @@
     <ClInclude Include="source\Unique.h">
       <Filter>Header Files\source</Filter>
     </ClInclude>
+    <ClInclude Include="generator\range.h">
+      <Filter>Header Files\generator</Filter>
+    </ClInclude>
+    <ClInclude Include="generator\closed_range.h">
+      <Filter>Header Files\generator</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="flow.licenseheader" />

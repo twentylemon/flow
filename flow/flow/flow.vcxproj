@@ -120,6 +120,7 @@
   <ItemGroup>
     <ClInclude Include="..\flow.h" />
     <ClInclude Include="Compose.h" />
+    <ClInclude Include="generator\closed_range.h" />
     <ClInclude Include="generator\cycle.h" />
     <ClInclude Include="generator\cycle_move.h" />
     <ClInclude Include="generator\empty.h" />
@@ -127,6 +128,7 @@
     <ClInclude Include="generator\generate.h" />
     <ClInclude Include="generator\iota.h" />
     <ClInclude Include="generator\iterate.h" />
+    <ClInclude Include="generator\range.h" />
     <ClInclude Include="generator\repeat.h" />
     <ClInclude Include="intermediate\flat_map.h" />
     <ClInclude Include="print_tuple.h" />

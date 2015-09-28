@@ -87,7 +87,7 @@ int main(int argc, char** argv) {
     auto endl = []() { std::cout << std::endl; };
     const std::vector<int> cw{ 1, 2, 3 };
 
-    iota(0, 5) | limit(5) | dump();
+    range(0, 26, 5) | dump();
 
     cycle(cw, 4) | take_while([](int i) { return i == 1; }) | dump();
     
@@ -136,7 +136,7 @@ int main(int argc, char** argv) {
     
     vec | zip(vec | zip(vec | zip(vec))) | limit(1) | each([](auto&& t) { std::cout << typeid(t).name() << std::endl; });
     
-    run_timer();
+    //run_timer();
     
     std::cout << std::endl;
     system("pause");
