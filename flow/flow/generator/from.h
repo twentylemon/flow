@@ -60,16 +60,6 @@ Stream<source::Iterator<Itr>> from(Itr begin, Itr end) {
 }
 
 /// <summary>
-/// Specialization of from() to catch streams.
-/// </summary>
-/// <param name="stream">The stream to return.</param>
-/// <returns><paramref name="stream"/></returns>
-template <typename T>
-Stream<T>& from(Stream<T>& stream) {
-    return stream;
-}
-
-/// <summary>
 /// Creates a Stream over <paramref name="container"/>.
 /// </summary>
 /// <param name="container">The container to create a stream from.</param>

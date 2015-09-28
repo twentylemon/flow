@@ -87,7 +87,7 @@ int main(int argc, char** argv) {
     auto endl = []() { std::cout << std::endl; };
     std::vector<int> cw{ 1, 2, 3 };
 
-    cycle(cw) | replace(1, 3) | dump();
+    cycle(cw, 1) | replace(1, 3) | dump();
 
     //range(0, 26, 5) | dump();
 
