@@ -39,6 +39,7 @@ class IntermediateSource
 public:
     using source_type = Source;
     using value_type = T;
+    using decay_type = std::decay_t<value_type>;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="IntermediateSource{Source, T}"/> class.
@@ -59,8 +60,8 @@ public:
     /// Default implementation returns <code>std::move(*_current);</code>.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
-    const value_type& next() {
-        return std::move(*_current);
+    value_type& next() {
+        return *_current;
     }
 
     /// <summary>
@@ -92,7 +93,7 @@ protected:
     /// Updates the current stream value pointer to be the given element.
     /// </summary>
     /// <param name="current">The value to give to the current element.</param>
-    void assign_current(const value_type* current) {
+    void assign_current(value_type* current) {
         _current = current;
     }
 
@@ -101,8 +102,8 @@ protected:
     /// temporary is extended so the pointer is valid.
     /// </summary>
     /// <param name="temp_current">The temp_current.</param>
-    void assign_temp_current(value_type&& temp_current) {
-        _temp_current = std::forward<value_type>(temp_current);
+    void assign_temp_current(decay_type&& temp_current) {
+        _temp_current = std::forward<decay_type>(temp_current);
         _current = &_temp_current;
     }
 
@@ -110,7 +111,7 @@ protected:
     /// Returns the value inside the current stream value pointer. It is <em>not</em> moved.
     /// </summary>
     /// <returns>The stream value without moving it.</returns>
-    const value_type& raw_current() {
+    value_type& raw_current() {
         return *_current;
     }
 
@@ -118,14 +119,14 @@ protected:
     /// Returns <code>_source.next()</code>.
     /// </summary>
     /// <returns><code>_source.next()</code></returns>
-    const typename Source::value_type& raw_next() {
+    typename Source::value_type& raw_next() {
         return _source.next();
     }
 
 private:
     Source _source;             // the source of the stream
-    const value_type* _current; // the current value from the stream
-    value_type _temp_current;   // the temporary value from the stream, if any
+    value_type* _current;       // the current value from the stream
+    decay_type _temp_current;   // the temporary value from the stream, if any
 };
     }
 }

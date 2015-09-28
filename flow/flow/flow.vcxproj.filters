@@ -162,13 +162,7 @@
     <ClInclude Include="source\Slice.h">
       <Filter>Header Files\source</Filter>
     </ClInclude>
-    <ClInclude Include="source\Sort.h">
-      <Filter>Header Files\source</Filter>
-    </ClInclude>
     <ClInclude Include="source\TakeWhile.h">
-      <Filter>Header Files\source</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Unique.h">
       <Filter>Header Files\source</Filter>
     </ClInclude>
     <ClInclude Include="source\Zip.h">
@@ -221,6 +215,18 @@
     </ClInclude>
     <ClInclude Include="print_tuple.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="generator\from_move.h">
+      <Filter>Header Files\generator</Filter>
+    </ClInclude>
+    <ClInclude Include="generator\cycle_move.h">
+      <Filter>Header Files\generator</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Sort.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Unique.h">
+      <Filter>Header Files\source</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

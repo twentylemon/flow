@@ -121,7 +121,9 @@
     <ClInclude Include="..\flow.h" />
     <ClInclude Include="Compose.h" />
     <ClInclude Include="generator\cycle.h" />
+    <ClInclude Include="generator\cycle_move.h" />
     <ClInclude Include="generator\empty.h" />
+    <ClInclude Include="generator\from_move.h" />
     <ClInclude Include="generator\generate.h" />
     <ClInclude Include="generator\iota.h" />
     <ClInclude Include="generator\iterate.h" />
@@ -133,6 +135,8 @@
     <ClInclude Include="source\GeneratorSource.h" />
     <ClInclude Include="source\IterateFunc.h" />
     <ClInclude Include="source\IntermediateSource.h" />
+    <ClInclude Include="source\Sort.h" />
+    <ClInclude Include="source\Unique.h" />
     <ClInclude Include="uncurry.h" />
     <ClInclude Include="generator\from.h" />
     <ClInclude Include="intermediate\concat.h" />
@@ -159,9 +163,7 @@
     <ClInclude Include="source\Reverse.h" />
     <ClInclude Include="source\Skip.h" />
     <ClInclude Include="source\Slice.h" />
-    <ClInclude Include="source\Sort.h" />
     <ClInclude Include="source\TakeWhile.h" />
-    <ClInclude Include="source\Unique.h" />
     <ClInclude Include="source\Zip.h" />
     <ClInclude Include="Stream.h" />
     <ClInclude Include="terminal\all.h" />

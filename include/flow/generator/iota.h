@@ -38,7 +38,7 @@ namespace flow {
 /// <returns>A Stream of values starting at <paramref name="begin"/>, counting up using <c>operator++</c> each time.</returns>
 template <typename T>
 auto iota(T&& begin) {
-    return iterate([](auto&& val) { return ++val; }, std::forward<T>(begin));
+    return iterate([](T& val) -> T& { return ++val; }, std::forward<T>(begin));
 }
 
 /// <summary>

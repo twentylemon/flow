@@ -53,6 +53,8 @@ namespace flow {
 /// \todo flow::intermediate::difference - compute the difference of two sorted/unique streams
 /// \todo flow::intermediate::symmetric_difference - compute the symmetric difference of two sorted/unique streams
 /// \todo flow::generator::random - generate stream values from a random number generator
+/// \todo flow::generator::range - iota() | limit()
+/// \todo flow::generator::generate - overload to limit size
 /// \todo flow::generator::parallel_* - create a parallel version of other generators
 /// \todo parallel pipelining of stream operations?
 /// \todo allow iterator access via begin() and end()
@@ -90,7 +92,7 @@ public:
     /// Returns the next element from the stream.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
-    const value_type& next() {
+    value_type& next() {
         return _source.next();
     }
 

@@ -78,6 +78,16 @@ public:
     /// <param name="tuple">The tuple to apply.</param>
     /// <returns>The return value of the curried function.</returns>
     template <typename... Types>
+    constexpr auto operator()(std::tuple<Types...>& tuple) const {
+        return apply(std::make_index_sequence<sizeof...(Types)>(), _curry_function, tuple);
+    }
+
+    /// <summary>
+    /// Applies the tuple to the curried function.
+    /// </summary>
+    /// <param name="tuple">The tuple to apply.</param>
+    /// <returns>The return value of the curried function.</returns>
+    template <typename... Types>
     constexpr auto operator()(const std::tuple<Types...>& tuple) const {
         return apply(std::make_index_sequence<sizeof...(Types)>(), _curry_function, tuple);
     }

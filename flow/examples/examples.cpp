@@ -15,6 +15,7 @@ int main(int argc, char** argv) {
     std::cout << std::endl << std::endl;
 
     concat_example();
+    sort_example();
     zip_example();
 
     system("pause");

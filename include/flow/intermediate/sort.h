@@ -52,7 +52,10 @@ namespace flow {
 template <typename Compare = std::less<void>>
 auto sort(Compare compare = Compare()) {
     return detail::make_intermediate([compare](auto&& stream) {
-        return Stream<source::Sort<typename std::remove_reference_t<decltype(stream)>::source_type>>(std::move(stream.source()), compare, false);
+        auto vec = stream | terminal::to_vector();
+        std::sort(vec.begin(), vec.end(), compare);
+        return generator::from_move(std::move(vec));
+        //return Stream<source::Sort<typename std::remove_reference_t<decltype(stream)>::source_type>>(std::move(stream.source()), compare, false);
     });
 }
 
@@ -73,7 +76,10 @@ auto sort(Compare compare = Compare()) {
 template <typename Compare = std::less<void>>
 auto stable_sort(Compare compare = Compare()) {
     return detail::make_intermediate([compare](auto&& stream) {
-        return Stream<source::Sort<typename std::remove_reference_t<decltype(stream)>::source_type>>(std::move(stream.source()), compare, true);
+        auto vec = stream | terminal::to_vector();
+        std::stable_sort(vec.begin(), vec.end(), compare);
+        return generator::from_move(std::move(vec));
+        //return Stream<source::Sort<typename std::remove_reference_t<decltype(stream)>::source_type>>(std::move(stream.source()), compare, true);
     });
 }
     }

@@ -65,7 +65,7 @@ Stream<source::Iterator<Itr>> from(Itr begin, Itr end) {
 /// <param name="container">The container to create a stream from.</param>
 /// <returns>A stream over <paramref name="container"/>.</returns>
 template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
-auto from(const Container& container) {
+auto from(Container& container) {
     return from(container.begin(), container.end());
 }
 
@@ -78,7 +78,7 @@ auto from(const Container& container) {
 /// <returns><c>from(container) | op</c></returns>
 /// <seealso cref="from()"/>
 template <typename Container, typename F, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
-auto operator|(const Container& container, intermediate::detail::Intermediate<F>&& op) {
+auto operator|(Container& container, intermediate::detail::Intermediate<F>&& op) {
     return from(container) | std::move(op);
 }
 
@@ -91,8 +91,18 @@ auto operator|(const Container& container, intermediate::detail::Intermediate<F>
 /// <returns><c>from(container) | op</c></returns>
 /// <seealso cref="from()"/>
 template <typename Container, typename F, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
-decltype(auto) operator|(const Container& container, terminal::detail::Terminal<F>&& op) {
+decltype(auto) operator|(Container& container, terminal::detail::Terminal<F>&& op) {
     return from(container) | std::move(op);
+}
+
+/// <summary>
+/// Creates a Stream over <paramref name="container"/> in reverse order.
+/// </summary>
+/// <param name="container">The container to create a stream from.</param>
+/// <returns>A stream over <paramref name="container"/>.</returns>
+template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
+auto rfrom(Container& container) {
+    return from(container.rbegin(), container.rend());
 }
     }
 }

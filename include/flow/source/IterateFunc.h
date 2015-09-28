@@ -58,7 +58,7 @@ public:
     /// Returns the next element from the stream.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
-    const value_type& next() {
+    value_type& next() {
         base::assign_temp_current(std::move(_values[0]));
         _values[0] = _function(_values);    // destroy the first value
         std::rotate(_values.begin(), _values.begin() + 1, _values.end());
@@ -73,7 +73,7 @@ public:
     }
 
 private:
-    flow::detail::uncurrier<IteratingFunction> _function;   // the function to iterator
+    flow::detail::uncurrier<IteratingFunction> _function;   // the function to iterate
     std::array<T, N> _values;                               // the current values to pass to the function
 };
     }

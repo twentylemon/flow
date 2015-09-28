@@ -64,22 +64,16 @@ void run_timer() {
     using T = int;
     std::vector<T> vec(10000000);
     std::generate(vec.begin(), vec.end(), std::rand);
-    auto gt = [](T i) { return i > 10; };
     T vv(0);
     boost::timer tv;
     for (int i = 0; i < maxit; i++) {
-        vv = vec | filter([](T i) { return i % 2 == 0; }) | max();
+        vv = vec | filter([](int i) { return i % 17 == 0; }) | reverse() | max();
     }
     std::cout << std::endl << "streamv: " << tv.elapsed() << "\t" << vv << std::endl;
     T v_(0);
     boost::timer t_;
     for (int i = 0; i < maxit; i++) {
-        v_ = 0;
-        for (T j : vec) {
-            if (j % 2 == 0 && v_ < j) {
-                v_ = j;
-            }
-        }
+        //v_ = vec | filter([](int i) { return i % 17 == 0; }) | reverse_() | max();
     }
     std::cout << std::endl << "stream_: " << t_.elapsed() << "\t" << v_ << std::endl;
 }

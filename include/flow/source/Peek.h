@@ -52,7 +52,7 @@ public:
     /// Returns the next element from the stream. Also applies the peek action to the element.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
-    const value_type& next() {
+    value_type& next() {
         base::assign_current();
         _action(base::raw_current());
         return base::next();

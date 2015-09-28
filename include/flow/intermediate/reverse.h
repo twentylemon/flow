@@ -26,9 +26,14 @@
 #ifndef FLOW_INTERMEDIATE_REVERSE_H
 #define FLOW_INTERMEDIATE_REVERSE_H
 
+#include <algorithm>
+
 #include "../Stream.h"
 #include "Intermediate.h"
 #include "../source/Reverse.h"
+
+#include "../generator/from_move.h"
+#include "../terminal/to.h"
 
 namespace flow {
     namespace intermediate {
@@ -44,7 +49,8 @@ namespace flow {
 /// <returns>A detail::Intermediate operation that reverses the stream.</returns>
 inline auto reverse() {
     return detail::make_intermediate([](auto&& stream) {
-        return Stream<source::Reverse<typename std::remove_reference_t<decltype(stream)>::source_type>>(std::move(stream.source()));
+        return generator::rfrom_move(stream | to_vector());
+        //return Stream<source::Reverse<typename std::remove_reference_t<decltype(stream)>::source_type>>(std::move(stream.source()));
     });
 }
     }

@@ -30,8 +30,10 @@
 #include "flow/print_tuple.h"
 
 #include "flow/generator/from.h"
+#include "flow/generator/from_move.h"
 #include "flow/generator/repeat.h"
 #include "flow/generator/cycle.h"
+#include "flow/generator/cycle_move.h"
 #include "flow/generator/empty.h"
 #include "flow/generator/generate.h"
 #include "flow/generator/iterate.h"

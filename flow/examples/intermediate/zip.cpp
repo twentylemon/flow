@@ -19,6 +19,11 @@ void zip_example() {
     vec1to4 | zip(vec1to4 | zip(vec1to4)) | dump();
     std::cout << std::endl;
 
+    // uncurry() can be used to simplify creating functions for zipped streams
+    std::cout << "vec1to4 | zip(vec5to8) | filter(uncurry([](int lhs, int rhs) { return lhs % 2 == 0 && rhs % 4 == 0; })) = ";
+    vec1to4 | zip(vec5to8) | filter(uncurry([](int lhs, int rhs) { return lhs % 2 == 0 && rhs % 4 == 0; })) | dump();   // (4, 8)
+    std::cout << std::endl;
+
     // other zipping operations are possible, such as summing the elements
     std::cout << "vec1to4 | zip(vec5to8, std::plus<int>()) = ";
     vec1to4 | zip(vec5to8, std::plus<int>()) | dump();  // 6 8 10 12

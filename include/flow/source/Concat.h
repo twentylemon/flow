@@ -65,7 +65,7 @@ public:
     /// Returns the next element from the stream.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
-    const value_type& next() {
+    value_type& next() {
         if (_from_head) {
             return base::raw_next();
         }

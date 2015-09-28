@@ -52,7 +52,7 @@ public:
     /// Returns the next element from the stream.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
-    const value_type& next() {
+    value_type& next() {
         base::assign_temp_current(_generator());
         return base::next();
     }

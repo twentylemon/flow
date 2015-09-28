@@ -53,7 +53,7 @@ auto cycle(Itr begin, Itr end) {
 /// <returns>A stream which cycles the range <paramref name="n"/> times.</returns>
 template <typename Itr>
 auto cycle(Itr begin, Itr end, std::size_t n) {
-    return repeat(std::make_pair(begin, end), n) | intermediate::flat_map([](const auto& pair) { return from(pair.first, pair.second); });
+    return repeat(std::make_pair(begin, end), n) | intermediate::flat_map([](const auto& itr) { return from(itr.first, itr.second); });
 }
 
 /// <summary>
@@ -62,7 +62,7 @@ auto cycle(Itr begin, Itr end, std::size_t n) {
 /// <param name="container">The container to cycle through.</param>
 /// <returns>An infinite stream which cycles <paramref name="container"/>.</returns>
 template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
-auto cycle(const Container& container) {
+auto cycle(Container& container) {
     return cycle(container.begin(), container.end());
 }
 
@@ -73,8 +73,29 @@ auto cycle(const Container& container) {
 /// <param name="n">The number of times to repeat <paramref name="container"/>.</param>
 /// <returns>A stream which cycles <paramref name="container"/> <paramref name="n"/> times.</returns>
 template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
-auto cycle(const Container& container, std::size_t n) {
+auto cycle(Container& container, std::size_t n) {
     return cycle(container.begin(), container.end(), n);
+}
+
+/// <summary>
+/// Creates an infinite stream which cycles <paramref name="container"/> in reverse order.
+/// </summary>
+/// <param name="container">The container to cycle through.</param>
+/// <returns>An infinite stream which cycles <paramref name="container"/>.</returns>
+template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
+auto rcycle(Container& container) {
+    return cycle(container.rbegin(), container.rend());
+}
+
+/// <summary>
+/// Creates a stream which cycles through <paramref name="container"/> <paramref name="n"/> times in reverse order.
+/// </summary>
+/// <param name="container">The container to cycle through.</param>
+/// <param name="n">The number of times to repeat <paramref name="container"/>.</param>
+/// <returns>A stream which cycles <paramref name="container"/> <paramref name="n"/> times.</returns>
+template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
+auto rcycle(Container& container, std::size_t n) {
+    return cycle(container.rbegin(), container.rend(), n);
 }
     }
 }
