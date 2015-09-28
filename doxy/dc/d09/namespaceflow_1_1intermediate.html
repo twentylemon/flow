@@ -110,10 +110,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ac535fea33e2424506d0bbf56409f99a7"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac535fea33e2424506d0bbf56409f99a7">concat</a> (Itr begin, Itr end)</td></tr>
 <tr class="memdesc:ac535fea33e2424506d0bbf56409f99a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates the given iterator range onto the end of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. This is the same as <code>concat(from(begin, end))</code>. The <em>tail</em>  stream elements must be convertible to the same type of elements as the head stream.  <a href="#ac535fea33e2424506d0bbf56409f99a7">More...</a><br /></td></tr>
 <tr class="separator:ac535fea33e2424506d0bbf56409f99a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7c183077d6fef7e3dc3c0e7041bf086"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = typename std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:ad7c183077d6fef7e3dc3c0e7041bf086"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ad7c183077d6fef7e3dc3c0e7041bf086">concat</a> (const Container &amp;container)</td></tr>
-<tr class="memdesc:ad7c183077d6fef7e3dc3c0e7041bf086"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates <em>container</em>  onto the end of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. This is the same as <code>concat(from(container))</code>. The <em>tail</em>  stream elements must be convertible to the same type of elements as the head stream.  <a href="#ad7c183077d6fef7e3dc3c0e7041bf086">More...</a><br /></td></tr>
-<tr class="separator:ad7c183077d6fef7e3dc3c0e7041bf086"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a955cba2286efa38c29c17ee9d2fd43f5"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = typename std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a955cba2286efa38c29c17ee9d2fd43f5"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a955cba2286efa38c29c17ee9d2fd43f5">concat</a> (Container &amp;container)</td></tr>
+<tr class="memdesc:a955cba2286efa38c29c17ee9d2fd43f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates <em>container</em>  onto the end of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. This is the same as <code>concat(from(container))</code>. The <em>tail</em>  stream elements must be convertible to the same type of elements as the head stream.  <a href="#a955cba2286efa38c29c17ee9d2fd43f5">More...</a><br /></td></tr>
+<tr class="separator:a955cba2286efa38c29c17ee9d2fd43f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c6e57bccb66cfbfae54134b500ea8c0"><td class="memTemplParams" colspan="2">template&lt;typename UnaryPredicate &gt; </td></tr>
 <tr class="memitem:a1c6e57bccb66cfbfae54134b500ea8c0"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1c6e57bccb66cfbfae54134b500ea8c0">drop_while</a> (UnaryPredicate predicate)</td></tr>
 <tr class="memdesc:a1c6e57bccb66cfbfae54134b500ea8c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drops elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> until the <em>predicate</em>  returns <code>false</code> for a stream element. All elements before the first <code>false</code> are discarded, the rest are kept.  <a href="#a1c6e57bccb66cfbfae54134b500ea8c0">More...</a><br /></td></tr>
@@ -212,21 +212,22 @@ Functions</h2></td></tr>
 <tr class="memitem:a304866b3dec4eafe95a024319328ef2c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a304866b3dec4eafe95a024319328ef2c">unique</a> (Compare compare=Compare())</td></tr>
 <tr class="memdesc:a304866b3dec4eafe95a024319328ef2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts and extracts only unique elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. By default, <code>operator&lt;</code> is used for comparisons and equality. As with sorting, this operation is eager, the entire stream up to this operation's creation is evaluated and stored. Thus, the <code>unique</code> operation takes <code>O(n)</code> extra space and time plus the time to sort, where <code>n</code> is the size of the stream.  <a href="#a304866b3dec4eafe95a024319328ef2c">More...</a><br /></td></tr>
 <tr class="separator:a304866b3dec4eafe95a024319328ef2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f1ec0323daa06ef6b093f1d0aa4c1cc"><td class="memTemplParams" colspan="2">template&lt;typename RightSource &gt; </td></tr>
-<tr class="memitem:a7f1ec0323daa06ef6b093f1d0aa4c1cc"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a7f1ec0323daa06ef6b093f1d0aa4c1cc">zip</a> (<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; RightSource &gt; &amp;&amp;right)</td></tr>
-<tr class="separator:a7f1ec0323daa06ef6b093f1d0aa4c1cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a307ab32b7942a1a8347ccd0172c4da04"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = typename std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:a307ab32b7942a1a8347ccd0172c4da04"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a307ab32b7942a1a8347ccd0172c4da04">zip</a> (const Container &amp;container)</td></tr>
-<tr class="memdesc:a307ab32b7942a1a8347ccd0172c4da04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using the default zipping operation. The default zip creates tuples of the stream elements like <code>std::tuple&lt;T1, T2&gt;</code>. Multiple <code>zip</code> operations concatenates these tuples together rather than nesting them. This is the same as <code>zip(from(container))</code>.  <a href="#a307ab32b7942a1a8347ccd0172c4da04">More...</a><br /></td></tr>
-<tr class="separator:a307ab32b7942a1a8347ccd0172c4da04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae25b0a8475258acc29173c4a37e13e22"><td class="memTemplParams" colspan="2">template&lt;typename RightSource , typename BinaryOperation &gt; </td></tr>
 <tr class="memitem:ae25b0a8475258acc29173c4a37e13e22"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ae25b0a8475258acc29173c4a37e13e22">zip</a> (<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; RightSource &gt; &amp;&amp;right, BinaryOperation zipper)</td></tr>
 <tr class="memdesc:ae25b0a8475258acc29173c4a37e13e22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using <em>zipper</em>  as the zipping operation.  <a href="#ae25b0a8475258acc29173c4a37e13e22">More...</a><br /></td></tr>
 <tr class="separator:ae25b0a8475258acc29173c4a37e13e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a351227e746aefe4a0a60df97b89bc62e"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename BinaryOperation , typename  = typename std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:a351227e746aefe4a0a60df97b89bc62e"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a351227e746aefe4a0a60df97b89bc62e">zip</a> (const Container &amp;container, BinaryOperation zipper)</td></tr>
-<tr class="memdesc:a351227e746aefe4a0a60df97b89bc62e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using <em>zipper</em>  as the zipping operation. This is the same as <code>zip(from(container), zipper)</code>.  <a href="#a351227e746aefe4a0a60df97b89bc62e">More...</a><br /></td></tr>
-<tr class="separator:a351227e746aefe4a0a60df97b89bc62e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a573b95c3fc149372b6659127f7d47814"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename BinaryOperation , typename  = typename std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a573b95c3fc149372b6659127f7d47814"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a573b95c3fc149372b6659127f7d47814">zip</a> (Container &amp;container, BinaryOperation zipper)</td></tr>
+<tr class="memdesc:a573b95c3fc149372b6659127f7d47814"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using <em>zipper</em>  as the zipping operation. This is the same as <code>zip(from(container), zipper)</code>.  <a href="#a573b95c3fc149372b6659127f7d47814">More...</a><br /></td></tr>
+<tr class="separator:a573b95c3fc149372b6659127f7d47814"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f1ec0323daa06ef6b093f1d0aa4c1cc"><td class="memTemplParams" colspan="2">template&lt;typename RightSource &gt; </td></tr>
+<tr class="memitem:a7f1ec0323daa06ef6b093f1d0aa4c1cc"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a7f1ec0323daa06ef6b093f1d0aa4c1cc">zip</a> (<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; RightSource &gt; &amp;&amp;right)</td></tr>
+<tr class="memdesc:a7f1ec0323daa06ef6b093f1d0aa4c1cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using the default zipping operation. The default zip operation creates tuples of the stream elements like <code>std::tuple&lt;T1, T2&gt;</code>. Multiple <code>zip</code> operations concatenates these tuples together rather than nesting them.  <a href="#a7f1ec0323daa06ef6b093f1d0aa4c1cc">More...</a><br /></td></tr>
+<tr class="separator:a7f1ec0323daa06ef6b093f1d0aa4c1cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2fc82a612a709360fac445a46001509"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = typename std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:ab2fc82a612a709360fac445a46001509"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ab2fc82a612a709360fac445a46001509">zip</a> (Container &amp;container)</td></tr>
+<tr class="memdesc:ab2fc82a612a709360fac445a46001509"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using the default zipping operation. The default zip creates tuples of the stream elements like <code>std::tuple&lt;T1, T2&gt;</code>. Multiple <code>zip</code> operations concatenates these tuples together rather than nesting them. This is the same as <code>zip(from(container))</code>.  <a href="#ab2fc82a612a709360fac445a46001509">More...</a><br /></td></tr>
+<tr class="separator:ab2fc82a612a709360fac445a46001509"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="aa0551274cc05f2c668d5612bfe1716cb"></a>
@@ -296,7 +297,7 @@ template&lt;typename Itr &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ad7c183077d6fef7e3dc3c0e7041bf086"></a>
+<a class="anchor" id="a955cba2286efa38c29c17ee9d2fd43f5"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -305,7 +306,7 @@ template&lt;typename Container , typename  = typename std::enable_if_t&lt;genera
         <tr>
           <td class="memname">auto flow::intermediate::concat </td>
           <td>(</td>
-          <td class="paramtype">const Container &amp;&#160;</td>
+          <td class="paramtype">Container &amp;&#160;</td>
           <td class="paramname"><em>container</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1200,63 +1201,6 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a7f1ec0323daa06ef6b093f1d0aa4c1cc"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename RightSource &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">auto flow::intermediate::zip </td>
-          <td>(</td>
-          <td class="paramtype">Stream&lt; RightSource &gt; &amp;&amp;&#160;</td>
-          <td class="paramname"><em>right</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p></p>
-<p>Zips the two streams together using the default zipping operation. The default zip creates tuples of the stream elements like <code>std::tuple&lt;T1, T2&gt;</code>. Multiple <code>zip</code> operations concatenates these tuples together rather than nesting them. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">right</td><td>The right stream to zip together with the operated stream.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that zips the two streams.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d9/de2/namespaceflow.html#ad795c672b7e52516485e7ffb2d6c4ad7" title="Uncurries curry_function . ">uncurry()</a></dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a307ab32b7942a1a8347ccd0172c4da04"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Container , typename  = typename std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">auto flow::intermediate::zip </td>
-          <td>(</td>
-          <td class="paramtype">const Container &amp;&#160;</td>
-          <td class="paramname"><em>container</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Zips the two streams together using the default zipping operation. The default zip creates tuples of the stream elements like <code>std::tuple&lt;T1, T2&gt;</code>. Multiple <code>zip</code> operations concatenates these tuples together rather than nesting them. This is the same as <code>zip(from(container))</code>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">container</td><td>The container to zip together with this stream.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that zips the two streams.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c" title="Creates a Stream from the given iterator range. ">from()</a>, <a class="el" href="../../d9/de2/namespaceflow.html#ad795c672b7e52516485e7ffb2d6c4ad7" title="Uncurries curry_function . ">uncurry()</a></dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="ae25b0a8475258acc29173c4a37e13e22"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1284,6 +1228,7 @@ template&lt;typename RightSource , typename BinaryOperation &gt; </div>
 </div><div class="memdoc">
 
 <p>Zips the two streams together using <em>zipper</em>  as the zipping operation. </p>
+<p>A zipping operation is any function that takes the front element from both streams as input and produces a single output which is used for the resultant stream.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">right</td><td>The right stream to zip together with the operated stream.</td></tr>
@@ -1292,10 +1237,11 @@ template&lt;typename RightSource , typename BinaryOperation &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that zips the two streams.</dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d0/d76/zip_8cpp-example.html#a0">zip.cpp</a>.</dd>
+</dl>
 </div>
 </div>
-<a class="anchor" id="a351227e746aefe4a0a60df97b89bc62e"></a>
+<a class="anchor" id="a573b95c3fc149372b6659127f7d47814"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -1304,7 +1250,7 @@ template&lt;typename Container , typename BinaryOperation , typename  = typename
         <tr>
           <td class="memname">auto flow::intermediate::zip </td>
           <td>(</td>
-          <td class="paramtype">const Container &amp;&#160;</td>
+          <td class="paramtype">Container &amp;&#160;</td>
           <td class="paramname"><em>container</em>, </td>
         </tr>
         <tr>
@@ -1322,6 +1268,7 @@ template&lt;typename Container , typename BinaryOperation , typename  = typename
 </div><div class="memdoc">
 
 <p>Zips the two streams together using <em>zipper</em>  as the zipping operation. This is the same as <code>zip(from(container), zipper)</code>. </p>
+<p>A zipping operation is any function that takes an element from either stream as input and produces a single output.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">container</td><td>The container to zip together with this stream.</td></tr>
@@ -1330,6 +1277,62 @@ template&lt;typename Container , typename BinaryOperation , typename  = typename
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that zips the two streams.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7f1ec0323daa06ef6b093f1d0aa4c1cc"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename RightSource &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::intermediate::zip </td>
+          <td>(</td>
+          <td class="paramtype">Stream&lt; RightSource &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>right</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zips the two streams together using the default zipping operation. The default zip operation creates tuples of the stream elements like <code>std::tuple&lt;T1, T2&gt;</code>. Multiple <code>zip</code> operations concatenates these tuples together rather than nesting them. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">right</td><td>The right stream to zip together with the operated stream.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that zips the two streams.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d9/de2/namespaceflow.html#ad795c672b7e52516485e7ffb2d6c4ad7" title="Uncurries curry_function . ">uncurry()</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab2fc82a612a709360fac445a46001509"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Container , typename  = typename std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::intermediate::zip </td>
+          <td>(</td>
+          <td class="paramtype">Container &amp;&#160;</td>
+          <td class="paramname"><em>container</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zips the two streams together using the default zipping operation. The default zip creates tuples of the stream elements like <code>std::tuple&lt;T1, T2&gt;</code>. Multiple <code>zip</code> operations concatenates these tuples together rather than nesting them. This is the same as <code>zip(from(container))</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">container</td><td>The container to zip together with this stream.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that zips the two streams.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c" title="Creates a Stream from the given iterator range. ">from()</a>, <a class="el" href="../../d9/de2/namespaceflow.html#ad795c672b7e52516485e7ffb2d6c4ad7" title="Uncurries curry_function . ">uncurry()</a></dd></dl>
 
 </div>
 </div>

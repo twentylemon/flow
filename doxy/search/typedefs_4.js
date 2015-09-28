@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['value_5ftype',['value_type',['../d3/d72/classflow_1_1source_1_1_generator_source.html#afc04489376e75fc0c931d51f0151fb3f',1,'flow::source::GeneratorSource::value_type()'],['../da/dea/classflow_1_1source_1_1_intermediate_source.html#aed66112d78b000bee00a5df8aad93193',1,'flow::source::IntermediateSource::value_type()'],['../d9/d22/classflow_1_1source_1_1_reverse.html#a2a09759c9bc3c6a721681ba18aa3f2cb',1,'flow::source::Reverse::value_type()'],['../de/d82/classflow_1_1source_1_1_sort.html#aba3f67bbdd795ded39eb97051060bc3a',1,'flow::source::Sort::value_type()'],['../d2/d42/classflow_1_1source_1_1_unique.html#a52b91583401edb0663f1cb92d8634936',1,'flow::source::Unique::value_type()'],['../d9/dcd/classflow_1_1_stream.html#af34fe4571912244e3c3b180871bb38e6',1,'flow::Stream::value_type()']]]
+  ['type',['type',['../d2/df6/structflow_1_1generator_1_1detail_1_1_head_type.html#a8b437e08f299ce869db222e5c47ade46',1,'flow::generator::detail::HeadType']]]
 ];

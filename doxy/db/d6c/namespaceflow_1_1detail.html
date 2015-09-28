@@ -106,13 +106,69 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a21ceda685045c8a8db7675318e6e4c67"><td class="memTemplParams" colspan="2">template&lt;std::size_t... index, typename Function , typename Tuple &gt; </td></tr>
-<tr class="memitem:a21ceda685045c8a8db7675318e6e4c67"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d6c/namespaceflow_1_1detail.html#a21ceda685045c8a8db7675318e6e4c67">apply</a> (std::index_sequence&lt; index...&gt; idx, Function function, Tuple &amp;&amp;tuple)</td></tr>
-<tr class="memdesc:a21ceda685045c8a8db7675318e6e4c67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the tuple/array to the curried function.  <a href="#a21ceda685045c8a8db7675318e6e4c67">More...</a><br /></td></tr>
-<tr class="separator:a21ceda685045c8a8db7675318e6e4c67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab13a762cb282855b34bf59da4f30e35d"><td class="memTemplParams" colspan="2">template&lt;std::size_t N, typename... T&gt; </td></tr>
+<tr class="memitem:ab13a762cb282855b34bf59da4f30e35d"><td class="memTemplItemLeft" align="right" valign="top">typename T std::enable_if_t&lt; N==0 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d6c/namespaceflow_1_1detail.html#ab13a762cb282855b34bf59da4f30e35d">print_tuple</a> (std::ostream &amp;out, const std::tuple&lt; T...&gt; &amp;tuple)</td></tr>
+<tr class="separator:ab13a762cb282855b34bf59da4f30e35d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d53b9d72ae1016cd26b0ec25f984998"><td class="memTemplParams" colspan="2">template&lt;std::size_t N, typename... T&gt; </td></tr>
+<tr class="memitem:a1d53b9d72ae1016cd26b0ec25f984998"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt;(N &gt; 0 &amp;&amp;N&lt; sizeof...(T))&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d6c/namespaceflow_1_1detail.html#a1d53b9d72ae1016cd26b0ec25f984998">print_tuple</a> (std::ostream &amp;out, const std::tuple&lt; T...&gt; &amp;tuple)</td></tr>
+<tr class="memdesc:a1d53b9d72ae1016cd26b0ec25f984998"><td class="mdescLeft">&#160;</td><td class="mdescRight">The normal case for printing tuples. A comma is printed before the item.  <a href="#a1d53b9d72ae1016cd26b0ec25f984998">More...</a><br /></td></tr>
+<tr class="separator:a1d53b9d72ae1016cd26b0ec25f984998"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c5a939cbb69da6ad76bd67f42607d9c"><td class="memTemplParams" colspan="2">template&lt;std::size_t... index, typename Function , typename Array &gt; </td></tr>
+<tr class="memitem:a2c5a939cbb69da6ad76bd67f42607d9c"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d6c/namespaceflow_1_1detail.html#a2c5a939cbb69da6ad76bd67f42607d9c">apply</a> (std::index_sequence&lt; index...&gt; idx, Function function, Array &amp;ary)</td></tr>
+<tr class="memdesc:a2c5a939cbb69da6ad76bd67f42607d9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the tuple/array to the curried function.  <a href="#a2c5a939cbb69da6ad76bd67f42607d9c">More...</a><br /></td></tr>
+<tr class="separator:a2c5a939cbb69da6ad76bd67f42607d9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48a38e4876808f59c89a465892d7498d"><td class="memTemplParams" colspan="2">template&lt;std::size_t... index, typename Function , typename Tuple &gt; </td></tr>
+<tr class="memitem:a48a38e4876808f59c89a465892d7498d"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d6c/namespaceflow_1_1detail.html#a48a38e4876808f59c89a465892d7498d">apply</a> (std::index_sequence&lt; index...&gt; idx, Function function, const Tuple &amp;tuple)</td></tr>
+<tr class="memdesc:a48a38e4876808f59c89a465892d7498d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the tuple/array to the curried function.  <a href="#a48a38e4876808f59c89a465892d7498d">More...</a><br /></td></tr>
+<tr class="separator:a48a38e4876808f59c89a465892d7498d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a21ceda685045c8a8db7675318e6e4c67"></a>
+<a class="anchor" id="a2c5a939cbb69da6ad76bd67f42607d9c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::size_t... index, typename Function , typename Array &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr auto flow::detail::apply </td>
+          <td>(</td>
+          <td class="paramtype">std::index_sequence&lt; index...&gt;&#160;</td>
+          <td class="paramname"><em>idx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Function&#160;</td>
+          <td class="paramname"><em>function</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Array &amp;&#160;</td>
+          <td class="paramname"><em>ary</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Applies the tuple/array to the curried function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idx</td><td>The index list.</td></tr>
+    <tr><td class="paramname">function</td><td>The curried function.</td></tr>
+    <tr><td class="paramname">ary</td><td>The array to apply to the function.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The return value of the function.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a48a38e4876808f59c89a465892d7498d"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -133,7 +189,7 @@ template&lt;std::size_t... index, typename Function , typename Tuple &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Tuple &amp;&amp;&#160;</td>
+          <td class="paramtype">const Tuple &amp;&#160;</td>
           <td class="paramname"><em>tuple</em>&#160;</td>
         </tr>
         <tr>
@@ -154,6 +210,71 @@ template&lt;std::size_t... index, typename Function , typename Tuple &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The return value of the function.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab13a762cb282855b34bf59da4f30e35d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::size_t N, typename... T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typename T std::enable_if_t&lt;N == 0&gt; flow::detail::print_tuple </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::tuple&lt; T...&gt; &amp;&#160;</td>
+          <td class="paramname"><em>tuple</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1d53b9d72ae1016cd26b0ec25f984998"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::size_t N, typename... T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if_t&lt;(N &gt; 0 &amp;&amp; N &lt; sizeof...(T))&gt; flow::detail::print_tuple </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::tuple&lt; T...&gt; &amp;&#160;</td>
+          <td class="paramname"><em>tuple</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The normal case for printing tuples. A comma is printed before the item. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>The out stream.</td></tr>
+    <tr><td class="paramname">tuple</td><td>The tuple to display.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

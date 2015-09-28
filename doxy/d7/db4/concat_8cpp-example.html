@@ -84,7 +84,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <p>A simple flow::concat example. This operation appends a stream onto the end of another stream. The type of elements in the <em>tail</em> stream must be convertible to the type of element in the <em>head</em> stream.</p>
 <p>Overrides are available which are shorthands for calling <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c" title="Creates a Stream from the given iterator range. ">from()</a>.</p>
 <div class="fragment"><div class="line"></div>
-<div class="line"><span class="preprocessor">#include &quot;examples.h&quot;</span>   <span class="comment">// defines vec1to4 = {1,2,3,4}, vec5to8 = {5,6,7,8}</span></div>
+<div class="line"><span class="preprocessor">#include &lt;examples.h&gt;</span>   <span class="comment">// defines vec1to4 = {1,2,3,4}, vec5to8 = {5,6,7,8}</span></div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> concat_example() {</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;flow::concat&quot;</span> &lt;&lt; std::endl;</div>
@@ -97,14 +97,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">    vec5to8 | <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa0551274cc05f2c668d5612bfe1716cb">concat</a>(vec1to4) | <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f">dump</a>(); <span class="comment">// 5 6 7 8 1 2 3 4</span></div>
 <div class="line">    std::cout &lt;&lt; std::endl;</div>
 <div class="line"></div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot; vec1to4 | concat(vec5to8.begin(), vec5to8.begin() + 2) = &quot;</span>;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;vec1to4 | concat(vec5to8.begin(), vec5to8.begin() + 2) = &quot;</span>;</div>
 <div class="line">    vec1to4 | <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa0551274cc05f2c668d5612bfe1716cb">concat</a>(vec5to8.begin(), vec5to8.begin() + 2) | <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f">dump</a>();    <span class="comment">// 1 2 3 4 5 6</span></div>
 <div class="line">    std::cout &lt;&lt; std::endl;</div>
 <div class="line"></div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;vec1to4 | limit(2) | concat(vec5to8 | reverse() | limit(2)) = &quot;</span>;</div>
 <div class="line">    vec1to4 | <a name="a2"></a><a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#a347e52317b201a9e142031724ea4de0a">limit</a>(2) | <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa0551274cc05f2c668d5612bfe1716cb">concat</a>(vec5to8 | <a name="a3"></a><a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#a13397178496f74369fc8dae063415b7a">reverse</a>() | <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#a347e52317b201a9e142031724ea4de0a">limit</a>(2)) | <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f">dump</a>();</div>
 <div class="line">    <span class="comment">// {1 2} + {8 7} = 1 2 8 7</span></div>
-<div class="line">    std::cout &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; std::endl &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
