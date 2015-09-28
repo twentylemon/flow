@@ -44,7 +44,7 @@ namespace flow {
 template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto cycle_move(Container&& container) {
     return generate([container = std::move(container)](){ return std::make_pair(container.begin(), container.end()); })
-        | intermediate::flat_map([](auto& itr) { return from(itr.first, itr.second); });
+        | intermediate::flat_map([](auto&& itr) { return from(itr.first, itr.second); });
 }
 
 /// <summary>
@@ -58,7 +58,7 @@ auto cycle_move(Container&& container) {
 template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto cycle_move(Container&& container, std::size_t n) {
     return generate([container = std::move(container)](){ return std::make_pair(container.begin(), container.end()); })
-        | intermediate::limit(n) | intermediate::flat_map([](auto& itr) { return from(itr.first, itr.second); });
+        | intermediate::limit(n) | intermediate::flat_map([](auto&& itr) { return from(itr.first, itr.second); });
 }
 
 /// <summary>
@@ -71,7 +71,7 @@ auto cycle_move(Container&& container, std::size_t n) {
 template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto rcycle_move(Container&& container) {
     return generate([container = std::move(container)](){ return std::make_pair(container.rbegin(), container.rend()); })
-        | intermediate::flat_map([](auto& itr) { return from(itr.first, itr.second); });
+        | intermediate::flat_map([](auto&& itr) { return from(itr.first, itr.second); });
 }
 
 /// <summary>
@@ -85,7 +85,7 @@ auto rcycle_move(Container&& container) {
 template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto rcycle_move(Container&& container, std::size_t n) {
     return generate([container = std::move(container)](){ return std::make_pair(container.rbegin(), container.rend()); })
-        | intermediate::limit(n) | intermediate::flat_map([](auto& itr) { return from(itr.first, itr.second); });
+        | intermediate::limit(n) | intermediate::flat_map([](auto&& itr) { return from(itr.first, itr.second); });
 }
     }
 }

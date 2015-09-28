@@ -85,11 +85,11 @@ int main(int argc, char** argv) {
     std::size_t inc = iota(0) | nth(50);
     std::cout << inc << '\t' << vec.size() << std::endl;
     auto endl = []() { std::cout << std::endl; };
-    const std::vector<int> cw{ 1, 2, 3 };
+    std::vector<int> cw{ 1, 2, 3 };
 
     range(0, 26, 5) | dump();
 
-    cycle(cw, 4) | take_while([](int i) { return i == 1; }) | dump();
+    cycle_move(std::move(cw), 4) | take_while([](int i) { return i == 1; }) | dump();
     
     boost::timer t1;
     std::pair<T, T> m1;
