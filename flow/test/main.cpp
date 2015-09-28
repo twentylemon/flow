@@ -87,15 +87,11 @@ int main(int argc, char** argv) {
     auto endl = []() { std::cout << std::endl; };
     std::vector<int> cw{ 1, 2, 3 };
 
+    cycle(cw) | replace(1, 3) | dump();
+
     //range(0, 26, 5) | dump();
 
     //cycle_move(std::move(cw), 4) | take_while([](int i) { return i == 1; }) | dump();
-
-    auto s = range(0, 2) | zip(range(4, 232), std::plus<int>());
-    for (int i : s) {
-        std::cout << i << " ";
-    }
-    //std::for_each(s.begin(), s.end(), [](int i){ std::cout << i << std::endl; });
     
     boost::timer t1;
     std::pair<T, T> m1;

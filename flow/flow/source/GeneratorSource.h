@@ -49,7 +49,7 @@ public:
 
     /// <summary>
     /// Returns true if this source has more elements.
-    /// Default implementation returns <code>_source.has_next()</code>.
+    /// Default implementation returns <c>_source.has_next()</c>.
     /// </summary>
     /// <returns><c>true</c> if this source has more stream elements.</returns>
     constexpr bool has_next() const {
@@ -58,7 +58,7 @@ public:
 
     /// <summary>
     /// Returns the next element from the stream. The value is <em>moved</em>. Successive calls to next() will fail.
-    /// Default implementation returns <code>std::move(*_current);</code>.
+    /// Default implementation returns <c>std::move(*_current);</c>.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
     value_type& next() {

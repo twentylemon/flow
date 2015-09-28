@@ -28,7 +28,7 @@
 
 #include <vector>
 
-#include "from.h"
+#include "from_move.h"
 
 namespace flow {
     namespace generator {
@@ -38,9 +38,8 @@ namespace flow {
 /// </summary>
 /// <returns>An empty stream with the template type of elements.</returns>
 template <typename T>
-Stream<source::Iterator<typename std::vector<T>::iterator>> empty() {
-    std::vector<T> v;
-    return from(v.end(), v.end());
+auto empty() {
+    return from_move(std::vector<T>());
 }
     }
 }

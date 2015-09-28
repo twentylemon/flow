@@ -34,7 +34,7 @@ namespace flow {
     namespace intermediate {
 
 /// <summary>
-/// Transforms each element in the Stream using the given unary function, <paramref name="operation"/>.
+/// Transforms each element in the Stream using <paramref name="operation"/>.
 /// Each element is transformed into a new stream. The resultant stream is a concatenation of all created streams.
 /// </summary>
 /// <param name="operation">The operation that creates a new stream from a stream element.</param>

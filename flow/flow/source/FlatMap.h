@@ -72,7 +72,7 @@ public:
     /// Returns the estimated size of the remainder of the stream.
     /// This value cannot be accurately estimated. We assume that each stream created
     /// is the same size as the number of remaining elements in this stream,
-    /// making the estimate <code>_source.estimate_size() * _current_stream.estimate_size()</code>.
+    /// making the estimate <c>_source.estimate_size() * _current_stream.estimate_size()</c>.
     /// </summary>
     /// <returns>The estimated size of the remainder of the stream.</returns>
     std::size_t estimate_size() const {

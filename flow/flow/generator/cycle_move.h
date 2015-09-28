@@ -62,7 +62,7 @@ auto cycle_move(Container&& container, std::size_t n) {
 }
 
 /// <summary>
-/// Creates an infinite stream which cycles <paramref name="container"/>.
+/// Creates an infinite stream which cycles <paramref name="container"/> in reverse order.
 /// <para>This extends the lifetime of temporary containers that are passed to it. That is, it is
 /// safe to use temporaries as long as they are moved in.</para>
 /// </summary>
@@ -75,7 +75,7 @@ auto rcycle_move(Container&& container) {
 }
 
 /// <summary>
-/// Creates a stream which cycles through <paramref name="container"/> <paramref name="n"/> times.
+/// Creates a stream which cycles through <paramref name="container"/> <paramref name="n"/> times in reverse order.
 /// <para>This extends the lifetime of temporary containers that are passed to it. That is, it is
 /// safe to use temporaries as long as they are moved in.</para>
 /// </summary>

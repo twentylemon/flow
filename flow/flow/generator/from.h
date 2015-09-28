@@ -109,7 +109,7 @@ decltype(auto) operator|(Container& container, terminal::detail::Terminal<F>&& o
 /// Creates a Stream over <paramref name="container"/> in reverse order.
 /// </summary>
 /// <param name="container">The container to create a stream from.</param>
-/// <returns>A stream over <paramref name="container"/>.</returns>
+/// <returns>A reversed stream over <paramref name="container"/>.</returns>
 template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto rfrom(Container& container) {
     return from(container.rbegin(), container.rend());

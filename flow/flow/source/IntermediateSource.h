@@ -48,7 +48,7 @@ public:
     IntermediateSource(Source&& source) : _source(std::move(source)), _current(nullptr) { }
 
     /// <summary>
-    /// Returns true if the source has more elements. Default implementation returns <code>_source.has_next()</code>.
+    /// Returns true if the source has more elements. Default implementation returns <c>_source.has_next()</c>.
     /// </summary>
     /// <returns><c>true</c> if this source has more stream elements.</returns>
     bool has_next() {
@@ -57,7 +57,7 @@ public:
 
     /// <summary>
     /// Returns the next element from the stream. The value is <em>moved</em>. Successive calls to next() will fail.
-    /// Default implementation returns <code>std::move(*_current);</code>.
+    /// Default implementation returns <c>std::move(*_current);</c>.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
     value_type& next() {
@@ -66,7 +66,7 @@ public:
 
     /// <summary>
     /// Ignores the next value from the stream.
-    /// Default implementation executes <code>_source.lazy_next()</code>.
+    /// Default implementation executes <c>_source.lazy_next()</c>.
     /// </summary>
     void lazy_next() {
         _source.lazy_next();
@@ -74,7 +74,7 @@ public:
 
     /// <summary>
     /// Returns the estimated size of the remainder of the stream.
-    /// Default implementation returns <code>_source.estimate_size()</code>.
+    /// Default implementation returns <c>_source.estimate_size()</c>.
     /// </summary>
     /// <returns>The estimated size of the remainder of the stream.</returns>
     std::size_t estimate_size() const {
@@ -116,9 +116,9 @@ protected:
     }
 
     /// <summary>
-    /// Returns <code>_source.next()</code>.
+    /// Returns <c>_source.next()</c>.
     /// </summary>
-    /// <returns><code>_source.next()</code></returns>
+    /// <returns><c>_source.next()</c></returns>
     typename Source::value_type& raw_next() {
         return _source.next();
     }

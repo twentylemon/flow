@@ -38,12 +38,13 @@ namespace flow {
 /// <summary>
 /// Sorts and extracts only unique elements from the Stream. By default, <c>operator&lt;</c> is used for comparisons
 /// and equality.
-/// <para<As with sorting, this operation is eager, the entire stream up to this operation's creation
+/// <para>As with sorting, this operation is eager, the entire stream up to this operation's creation
 /// is evaluated and stored. Thus, the <c>unique</c> operation takes <c>O(n)</c> extra space and time plus the time to sort,
 /// where <c>n</c> is the size of the stream.</para>
 /// </summary>
 /// <param name="compare">The compare function, by default <c>std::less&lt;void&gt;</c>.</param>
 /// <returns>A detail::Intermediate operation that sorts the stream according to the compare function and keeps only unique elements.</returns>
+/// <seealso cref="sort()"/>
 template <typename Compare = std::less<void>>
 auto unique(Compare compare = Compare()) {
     return detail::make_intermediate([compare](auto&& stream) {

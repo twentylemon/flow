@@ -34,18 +34,18 @@ namespace flow {
     namespace intermediate {
 
 /// <summary>
-/// Maps Stream elements to new values if the original value returns <c>true</c> for <paramref name="predicate"/>.
+/// Maps Stream elements to new values if the original element returns <c>true</c> for <paramref name="predicate"/>.
 /// </summary>
-/// <param name="predicate">The predicate, stream elements that return <c>true</c> will be mapped through <paramref name="mapper"/>.</param>
-/// <param name="mapper">The mapping operation to apply to elements that return <c>true</c> for<paramref name="predicate"/>.</param>
+/// <param name="predicate">Stream elements that return <c>true</c> will be mapped through <paramref name="mapper"/>.</param>
+/// <param name="mapper">The mapping operation to apply to elements that return <c>true</c> for <paramref name="predicate"/>.</param>
 /// <returns>A detail::Intermediate operation that replaces stream elements.</returns>
 template <typename UnaryPredicate, typename UnaryOperation>
 auto replace_map(UnaryPredicate predicate, UnaryOperation mapper) {
     return map([mapper, predicate](auto&& ele) {
         if (predicate(ele)) {
-            return mapper(std::move(ele));
+            return mapper(ele);
         }
-        return std::move(ele);
+        return ele;
     });
 }
 
@@ -56,8 +56,8 @@ auto replace_map(UnaryPredicate predicate, UnaryOperation mapper) {
 /// <param name="replace_by">The value to replace stream elements by when <paramref name="predicate"/> returns <c>true</c>.</param>
 /// <returns>A detail::Intermediate operation that replaces stream elements.</returns>
 template <typename UnaryPredicate, typename T>
-auto replace(UnaryPredicate predicate, const T& replace_by) {
-    return replace_map(predicate, [replace_by](auto&&) { return replace_by; });
+auto replace(UnaryPredicate predicate, T&& replace_by) {
+    return replace_map(predicate, [replace_by = std::forward<T>(replace_by)](auto&&) { return replace_by; });
 }
 
 /// <summary>
@@ -68,8 +68,8 @@ auto replace(UnaryPredicate predicate, const T& replace_by) {
 /// <param name="new_value">The value to replace with.</param>
 /// <returns>A detail::Intermediate operation that replaces stream elements.</returns>
 template <typename T>
-auto replace(const T& old_value, const T& new_value) {
-    return replace(std::bind(std::equal_to<T>(), old_value), new_value);
+auto replace(T&& old_value, T&& new_value) {
+    return replace(std::bind(std::equal_to<T>(), std::placeholders::_1, std::forward<T>(old_value)), std::forward<T>(new_value));
 }
     }
 }

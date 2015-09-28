@@ -62,7 +62,7 @@ inline auto all() {
 }
 
 /// <summary>
-/// Returns true if all of the elements in the stream return <c>true</c> for the predicate given.
+/// Returns <c>true</c> if all of the elements in the stream return <c>true</c> for the predicate given.
 /// This operation is short circuited and will stop executing once any <c>false</c> value is found.
 /// If the stream is empty, this will return <c>true</c>.
 /// </summary>
@@ -74,7 +74,7 @@ auto all(Ret(Class::*member)()) {
 }
 
 /// <summary>
-/// Returns true if all of the elements in the stream return <c>true</c> for the predicate given.
+/// Returns <c>true</c> if all of the elements in the stream return <c>true</c> for the predicate given.
 /// This operation is short circuited and will stop executing once any <c>false</c> value is found.
 /// If the stream is empty, this will return <c>true</c>.
 /// </summary>

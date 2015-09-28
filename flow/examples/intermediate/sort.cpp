@@ -9,6 +9,6 @@ void sort_example() {
     std::cout << std::endl;
 
     std::cout << "10 random values [0,4] | sort() = ";
-    generate([]() { return std::rand() % 5; }) | limit(10) | sort() | dump();   // 0 1 2 2 3 3 4 4 4 4
+    generate([]() { return std::rand() % 5; }, 10) | sort() | dump();   // 0 1 2 2 3 3 4 4 4 4
     std::cout << std::endl << std::endl;
 }

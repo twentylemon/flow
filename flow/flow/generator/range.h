@@ -35,28 +35,36 @@ namespace flow {
     namespace generator {
 
 /// <summary>
-/// Produces a Stream containing the elements in the range <code>[lower, upper)</code>, excluding <paramref name="upper"/>.
-/// <para>Stream elements are incremented using <code>operator++</code>, and the range is computed using <code>operator&lt;</code>.</para>
+/// Produces a Stream containing the elements in the range <c>[lower, upper)</c>, excluding <paramref name="upper"/>.
+/// <para>Stream elements are incremented using <c>operator++</c>, and the range is computed using <c>operator&lt;</c>.
+/// The stream ends once <c>element &lt; upper</c> returns <c>false</c>. That is, the stream produced is equivalent to:</para>
+/// <code>iota(lower) | take_while([upper](T e) { return e &lt; upper; })</code>
 /// </summary>
 /// <param name="lower">The lower bound of the range of elements to appear in the stream, inclusive.</param>
 /// <param name="upper">The upper bound of the range of elements to appear in the stream, exclusive.</param>
-/// <returns>A Stream containing the elements in the range <code>[lower, upper)</code>.</returns>
+/// <returns>A Stream containing the elements in the range <c>[lower, upper)</c>.</returns>
 /// <seealso cref="closed_range()"/>
+/// <seealso cref="iota()"/>
+/// <seealso cref="take_while()"/>
 template <typename T>
 auto range(T&& lower, T&& upper) {
     return iota(std::forward<T>(lower)) | intermediate::take_while(std::bind(std::less<T>(), std::placeholders::_1, std::forward<T>(upper)));
 }
 
 /// <summary>
-/// Produces a Stream containing the elements in the range <code>[lower, upper)</code>, excluding <paramref name="upper"/>
+/// Produces a Stream containing the elements in the range <c>[lower, upper)</c>, excluding <paramref name="upper"/>
 /// counting up by <paramref name="increment"/> each step.
-/// <para>Stream elements are incremented using <code>operator+</code>, and the range is computed using <code>operator&lt;</code>.</para>
+/// <para>Stream elements are incremented using the function <c>operator+(T, U)</c>, and the range is computed using <c>operator&lt;</c>.
+/// The stream ends once <c>element &lt; upper</c> returns <c>false</c>. That is, the stream produced is equivalent to:</para>
+/// <code>iota(lower, increment) | take_while([upper](T e) { return e &lt; upper; })</code>
 /// </summary>
 /// <param name="lower">The lower bound of the range of elements to appear in the stream, inclusive.</param>
 /// <param name="upper">The upper bound of the range of elements to appear in the stream, exclusive.</param>
 /// <param name="increment">The value by which to increment each step in the stream.</param>
-/// <returns>A Stream containing the elements in the range <code>[lower, upper)</code> incremented using <code>operator+</code> <paramref name="increment"/>.</returns>
+/// <returns>A Stream containing the elements in the range <c>[lower, upper)</c> incremented using <c>operator+</c> <paramref name="increment"/>.</returns>
 /// <seealso cref="closed_range()"/>
+/// <seealso cref="iota()"/>
+/// <seealso cref="take_while()"/>
 template <typename T, typename U>
 auto range(T&& lower, T&& upper, U&& increment) {
     return iota(std::forward<T>(lower), std::forward<U>(increment)) | intermediate::take_while(std::bind(std::less<T>(), std::placeholders::_1, std::forward<T>(upper)));
