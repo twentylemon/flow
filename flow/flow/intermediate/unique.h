@@ -49,7 +49,7 @@ auto unique(Compare compare = Compare()) {
     return detail::make_intermediate([compare](auto&& stream) {
         auto vec = stream | terminal::to_vector();
         std::sort(vec.begin(), vec.end(), compare);
-        vec.erase(std:unique(vec.begin(), vec.end(), compare), vec.end());
+        vec.erase(std::unique(vec.begin(), vec.end(), compare), vec.end());
         return generator::from_move(std::move(vec));
         //return Stream<source::Unique<typename std::remove_reference_t<decltype(stream)>::source_type>>(std::move(stream.source()), compare);
     });

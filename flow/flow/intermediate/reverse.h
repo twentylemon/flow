@@ -49,7 +49,7 @@ namespace flow {
 /// <returns>A detail::Intermediate operation that reverses the stream.</returns>
 inline auto reverse() {
     return detail::make_intermediate([](auto&& stream) {
-        return generator::rfrom_move(stream | to_vector());
+        return generator::rfrom_move(stream | terminal::to_vector());
         //return Stream<source::Reverse<typename std::remove_reference_t<decltype(stream)>::source_type>>(std::move(stream.source()));
     });
 }
