@@ -26,6 +26,8 @@
 #ifndef FLOW_STREAM_H
 #define FLOW_STREAM_H
 
+#include <iterator>
+
 #include "terminal/Terminal.h"
 #include "intermediate/Intermediate.h"
 
@@ -53,10 +55,9 @@ namespace flow {
 /// \todo flow::intermediate::difference - compute the difference of two sorted/unique streams
 /// \todo flow::intermediate::symmetric_difference - compute the symmetric difference of two sorted/unique streams
 /// \todo flow::generator::random - generate stream values from a random number generator
-/// \todo flow::generator::generate - overload to limit size
-/// \todo flow::generator::parallel_* - create a parallel version of other generators
+/// \todo flow::generator::parallel_* - create a parallel version of other generators?
+/// \todo flow::terminal::parallel_* - chunking parallelization of terminal operations
 /// \todo parallel pipelining of stream operations?
-/// \todo allow iterator access via begin() and end()
 template <typename Source>
 class Stream
 {
@@ -130,10 +131,68 @@ public:
         return op(std::move(*this));
     }
 
+    /// <summary>
+    /// Allows STL-like iterator access to the stream. Stream iterators are forward and single-pass,
+    /// once a stream has been iterated in any way (including terminal operations), the
+    /// iterators are invalidated.
+    /// <para>Additionally, only the first iterator ever used is valid. To extend the lifetime
+    /// of a stream, use one of the to_container terminal operations.</para>
+    /// </summary>
+    class const_iterator : public std::iterator<std::forward_iterator_tag, value_type>
+    {
+    public:
+        using base = std::iterator<std::forward_iterator_tag, value_type>;
+        using value_type = typename base::value_type;
+        using reference = typename base::reference;
+        using pointer = typename base::pointer;
+        using difference_type = typename base::difference_type;
+        using iterator_category = typename base::iterator_category;
+
+        const_iterator() : _current(nullptr), _stream(nullptr) { }
+        const_iterator(Stream<Source>* stream) : _current(nullptr), _stream(stream) { operator++(); }
+        bool operator==(const const_iterator& rhs) const { return _current == rhs._current; }
+        bool operator!=(const const_iterator& rhs) const { return _current != rhs._current; }
+        reference operator*() { return *_current; }
+        pointer operator->() { return _current; }
+        const_iterator& operator++() {
+            if (_stream->has_next()) {
+                _current = &_stream->next();
+            }
+            else {
+                _current = nullptr;
+            }
+            return *this;
+        }
+        const_iterator operator++(int){
+            iterator ret = *this;
+            return ++ret;
+        }
+    private:
+        pointer _current;
+        Stream<Source>* _stream;
+    };
+
+    using iterator = const_iterator;
+
+    /// <summary>
+    /// Returns an iterator to the first element in the stream.
+    /// </summary>
+    /// <returns>An iterator to the first element in the stream.</returns>
+    const_iterator begin() {
+        return const_iterator(this);
+    }
+
+    /// <summary>
+    /// Returns an iterator to the first off-end element of the stream.
+    /// </summary>
+    /// <returns>An iterator to the first off-end element of the stream.</returns>
+    const_iterator end() {
+        return const_iterator();
+    }
+
 protected:
     /// <summary>
-    /// The source of this stream, where values are pulled from, be it a container, an infinite generator
-    /// or some other source.
+    /// The source of this stream, where values are pulled from.
     /// </summary>
     Source _source;
 };
