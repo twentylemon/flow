@@ -68,7 +68,7 @@ auto concat(Itr begin, Itr end) {
 /// <returns>A detail::Intermediate operation that concatenates the container onto the stream.</returns>
 /// <seealso cref="from()"/>
 template <typename Container, typename = typename std::enable_if_t<generator::detail::has_const_iterator<Container>::value>>
-auto concat(const Container& container) {
+auto concat(Container& container) {
     return concat(generator::from(container));
 }
     }

@@ -72,7 +72,7 @@ public:
     /// Returns the next element from the stream. The value is <em>moved</em>. Successive calls to next() will fail.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
-    const value_type& next() {
+    value_type& next() {
         return *parent_type::next();
     }
 
@@ -92,7 +92,7 @@ public:
     void sort(Compare compare, bool stable_sort) {
         _stream.reserve(base::estimate_size());
         while (base::has_next()) {
-            _stream.push_back(const_cast<value_type*>(&base::raw_next()));
+            _stream.push_back(&base::raw_next());
         }
         if (stable_sort) {
             std::stable_sort(_stream.begin(), _stream.end(), [compare](value_type* lhs, value_type* rhs) { return compare(*lhs, *rhs); });

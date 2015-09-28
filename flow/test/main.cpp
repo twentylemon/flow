@@ -17,7 +17,7 @@
 using namespace flow;
 
 #ifndef _DEBUG
-const int maxit = 100000000;
+const int maxit = 100;
 const int maxv = 50;
 #else
 const int maxit = 1;
@@ -57,24 +57,29 @@ std::ostream& print(std::ostream& out, const Container& container) {
 }
 
 
-std::vector<int> vec(maxv);
+std::vector<Widget> vec(maxv);
 
 
 void run_timer() {
     using T = int;
-    std::vector<T> vec(maxv);
+    std::vector<T> vec(10000000);
     std::generate(vec.begin(), vec.end(), std::rand);
     auto gt = [](T i) { return i > 10; };
     T vv(0);
     boost::timer tv;
     for (int i = 0; i < maxit; i++) {
-        //vv = iota(0, 5) | limit(vec.size()) | max();
+        vv = vec | filter([](T i) { return i % 2 == 0; }) | max();
     }
     std::cout << std::endl << "streamv: " << tv.elapsed() << "\t" << vv << std::endl;
     T v_(0);
     boost::timer t_;
     for (int i = 0; i < maxit; i++) {
-        //v_ = iterate(std::bind(std::plus<T>(), 5, std::placeholders::_1), 0) | limit(vec.size()) | max();
+        v_ = 0;
+        for (T j : vec) {
+            if (j % 2 == 0 && v_ < j) {
+                v_ = j;
+            }
+        }
     }
     std::cout << std::endl << "stream_: " << t_.elapsed() << "\t" << v_ << std::endl;
 }
@@ -85,16 +90,18 @@ int main(int argc, char** argv) {
     using T = decltype(vec)::value_type;
     std::size_t inc = iota(0) | nth(50);
     std::cout << inc << '\t' << vec.size() << std::endl;
-    std::vector<int> ww{ 1, 2, 3 };
+    auto endl = []() { std::cout << std::endl; };
+    const std::vector<int> cw{ 1, 2, 3 };
 
     iota(0, 5) | limit(5) | dump();
 
-    cycle(ww, 4) | take_while([](int i) { return i == 1; }) | dump();
+    cycle(cw, 4) | take_while([](int i) { return i == 1; }) | dump();
     
     boost::timer t1;
     std::pair<T, T> m1;
     for (int i = 0; i < maxit; i++) {
-        m1 = vec | filter([](const auto& i) { return i % 2 == 0; }) | map([](const auto& i) { return i*i; }) | minmax();
+        //m1 = vec | filter([](const auto& i) { return i % 2 == 0; }) | map([](const auto& i) { return i*i; }) | minmax();
+        m1 = vec | filter([](const auto& i) { return i.value % 2 == 0; }) | map([](const auto& i) { return i*i; }) | minmax();
     }
     std::cout << std::endl << "stream: " << t1.elapsed() << "\t" << m1.first << "\t" << m1.second << std::endl;
 
@@ -105,7 +112,8 @@ int main(int argc, char** argv) {
         v2 = vec.front() * vec.front();
         m2 = std::make_pair(v2, v2);
         for (auto it = vec.begin(), end = vec.end(); it != end; ++it) {
-            if (*it % 2 == 0) {
+            //if (*it % 2 == 0) {
+            if (it->value % 2 == 0) {
                 T q = *it * *it;
                 if (q < m2.first) { m2.first = q; }
                 else if (m2.second < q) { m2.second = q; }
@@ -127,14 +135,14 @@ int main(int argc, char** argv) {
     
     
     std::cout << std::endl;
-    const std::vector<int> v = vec;
+    const auto v = vec;
     vec | limit(1) | zip(v | zip(v)) | zip(vec, [](auto&& l, auto&& r) { return std::make_pair(l, r); }) | each([](auto&& t) {
         std::cout << typeid(t).name() << std::endl;
     });
     
     vec | zip(vec | zip(vec | zip(vec))) | limit(1) | each([](auto&& t) { std::cout << typeid(t).name() << std::endl; });
     
-    //run_timer();
+    run_timer();
     
     std::cout << std::endl;
     system("pause");

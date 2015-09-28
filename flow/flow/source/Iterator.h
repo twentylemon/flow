@@ -37,10 +37,10 @@ namespace flow {
 /// Stream source for a pair of iterators.
 /// </summary>
 template <typename Itr>
-class Iterator : public GeneratorSource<typename std::iterator_traits<Itr>::value_type>
+class Iterator : public GeneratorSource<std::remove_reference_t<typename std::iterator_traits<Itr>::reference>>
 {
 public:
-    using base = GeneratorSource<typename std::iterator_traits<Itr>::value_type>;
+    using base = GeneratorSource<std::remove_reference_t<typename std::iterator_traits<Itr>::reference>>;
     using value_type = typename base::value_type;
 
     /// <summary>
@@ -62,8 +62,8 @@ public:
     /// Returns the next element from the stream.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
-    const value_type& next() {
-        return std::move(*_current++);
+    value_type& next() {
+        return *_current++;
     }
 
     /// <summary>

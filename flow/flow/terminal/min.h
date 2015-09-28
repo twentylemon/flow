@@ -40,6 +40,7 @@ namespace flow {
 /// <param name="compare">The compare function, by default <c>std::less&lt;void&gt;</c>.</param>
 /// <returns>A detail::Terminal operation which gives the minimum element from the stream.</returns>
 /// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
+/// \todo benchmark non-fold implementation
 template <typename Compare = std::less<void>>
 auto min(Compare compare = Compare()) {
     return fold([compare](auto&& lhs, auto&& rhs) {

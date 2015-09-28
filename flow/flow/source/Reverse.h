@@ -68,7 +68,7 @@ public:
     /// Returns the next element from the stream. The value is <em>moved</em>. Successive calls to next() will fail.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
-    const value_type& next() {
+    value_type& next() {
         return *parent_type::next();
     }
 
@@ -93,7 +93,7 @@ public:
     void reverse() {
         _stream.reserve(base::estimate_size());
         while (base::has_next()) {
-            _stream.push_back(const_cast<value_type*>(&base::raw_next()));
+            _stream.push_back(&base::raw_next());
         }
         parent_type::_current = _stream.rbegin();
         parent_type::_end = _stream.rend();
