@@ -21,7 +21,7 @@ var searchData=
   ['stream',['Stream',['../d9/dcd/classflow_1_1_stream.html#a8bb7d10321101656ba68f420eec020ef',1,'flow::Stream']]],
   ['stream',['Stream',['../d9/dcd/classflow_1_1_stream.html',1,'flow']]],
   ['stream_2eh',['Stream.h',['../d3/d99/_stream_8h.html',1,'']]],
-  ['stream_5ftype',['stream_type',['../d9/db6/classflow_1_1source_1_1_flat_map.html#ae70061ee8f1906e0201c5d880bce0552',1,'flow::source::FlatMap']]],
+  ['stream_5ftype',['stream_type',['../d9/db6/classflow_1_1source_1_1_flat_map.html#ac72dec61bf269190fc97b658f95de350',1,'flow::source::FlatMap']]],
   ['sum',['sum',['../d1/d6c/namespaceflow_1_1terminal.html#a9d36eab187f4b501c07a00f39e4f2381',1,'flow::terminal::sum()'],['../d1/d6c/namespaceflow_1_1terminal.html#a21f36f6877d4af5794b93a8f1c0af92d',1,'flow::terminal::sum(T &amp;&amp;init)']]],
   ['sum_2eh',['sum.h',['../d8/dee/sum_8h.html',1,'']]]
 ];

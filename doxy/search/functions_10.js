@@ -1,6 +1,15 @@
 var searchData=
 [
-  ['uncurrier',['uncurrier',['../d0/d2d/structflow_1_1detail_1_1uncurrier.html#aaeadc4d4e942f071def6bd6e0a083e28',1,'flow::detail::uncurrier']]],
-  ['uncurry',['uncurry',['../d9/de2/namespaceflow.html#ad795c672b7e52516485e7ffb2d6c4ad7',1,'flow']]],
-  ['unique',['Unique',['../d2/d42/classflow_1_1source_1_1_unique.html#a3427e6a35151cd66f1e62b717440abf7',1,'flow::source::Unique::Unique(Source &amp;&amp;source, Compare compare)'],['../d2/d42/classflow_1_1source_1_1_unique.html#adf518688bda7f79bf5bb41c2ef39ca5c',1,'flow::source::Unique::unique(Compare compare)'],['../dc/d09/namespaceflow_1_1intermediate.html#a304866b3dec4eafe95a024319328ef2c',1,'flow::intermediate::unique()']]]
+  ['take_5fwhile',['take_while',['../dc/d09/namespaceflow_1_1intermediate.html#af694d1a9aa88f1dd8ff3d3e66d2cb6c9',1,'flow::intermediate::take_while(UnaryPredicate predicate)'],['../dc/d09/namespaceflow_1_1intermediate.html#a213755b414a7d31af11bb96c129c6667',1,'flow::intermediate::take_while()'],['../dc/d09/namespaceflow_1_1intermediate.html#adf3882ef78e687785e2c1402e4a62ea1',1,'flow::intermediate::take_while(Ret(Class::*member)())']]],
+  ['takewhile',['TakeWhile',['../d5/d29/classflow_1_1source_1_1_take_while.html#afe516908e08ef8fa278632b194ae58ed',1,'flow::source::TakeWhile']]],
+  ['terminal',['Terminal',['../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html#a93c077febafb04aa9d1b4acf7618e4e4',1,'flow::terminal::detail::Terminal']]],
+  ['then',['then',['../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html#a256a587e68540f260bfe843fc4e1135b',1,'flow::terminal::detail::Terminal']]],
+  ['to_5fdeque',['to_deque',['../d1/d6c/namespaceflow_1_1terminal.html#aab64d8c770e599993b993036e25af893',1,'flow::terminal']]],
+  ['to_5fforward_5flist',['to_forward_list',['../d1/d6c/namespaceflow_1_1terminal.html#a0220b84a0d18c61162cac48cd1bf7925',1,'flow::terminal']]],
+  ['to_5flist',['to_list',['../d1/d6c/namespaceflow_1_1terminal.html#ac7b7ba1e4981b0e2df9254b4831aa3b1',1,'flow::terminal']]],
+  ['to_5fmultiset',['to_multiset',['../d1/d6c/namespaceflow_1_1terminal.html#aad3fbccb7a7a86e960f60b5b686519d9',1,'flow::terminal']]],
+  ['to_5fset',['to_set',['../d1/d6c/namespaceflow_1_1terminal.html#a931b21e882fc9666304d7205886f4452',1,'flow::terminal']]],
+  ['to_5funordered_5fmultiset',['to_unordered_multiset',['../d1/d6c/namespaceflow_1_1terminal.html#a6d98aaaa327fd861f35ccaab3c81f075',1,'flow::terminal']]],
+  ['to_5funordered_5fset',['to_unordered_set',['../d1/d6c/namespaceflow_1_1terminal.html#a738f8a51a1b5cdbee93236f39b5fca43',1,'flow::terminal']]],
+  ['to_5fvector',['to_vector',['../d1/d6c/namespaceflow_1_1terminal.html#ae4dc13099ad26de78eccc63f7efad271',1,'flow::terminal']]]
 ];

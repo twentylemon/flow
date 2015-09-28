@@ -90,6 +90,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
@@ -104,12 +105,20 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 
 <p><code>#include &lt;<a class="el" href="../../df/d85/_compose_8h_source.html">Compose.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d07/classflow_1_1_stream_1_1const__iterator.html">const_iterator</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows STL-like iterator access to the stream. <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> iterators are forward and single-pass, once a stream has been iterated in any way (including terminal operations), the iterators are invalidated.  <a href="../../db/d07/classflow_1_1_stream_1_1const__iterator.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a1f5a9b22df89ffc576bbc37548864ee8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#a1f5a9b22df89ffc576bbc37548864ee8">source_type</a> = Source</td></tr>
 <tr class="separator:a1f5a9b22df89ffc576bbc37548864ee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af34fe4571912244e3c3b180871bb38e6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#af34fe4571912244e3c3b180871bb38e6">value_type</a> = typename Source::value_type</td></tr>
 <tr class="separator:af34fe4571912244e3c3b180871bb38e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5c47fe98d14d9c74c169b5dd8f9f3c4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#ad5c47fe98d14d9c74c169b5dd8f9f3c4">iterator</a> = <a class="el" href="../../db/d07/classflow_1_1_stream_1_1const__iterator.html">const_iterator</a></td></tr>
+<tr class="separator:ad5c47fe98d14d9c74c169b5dd8f9f3c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -140,11 +149,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa3dbf75b1a4abcdc4305e3cf7ef972fb"><td class="memTemplItemLeft" align="right" valign="top">std::result_of_t&lt; <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html">terminal::detail::Terminal</a>&lt; F &gt;<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; Source &gt; &amp;&amp;)&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#aa3dbf75b1a4abcdc4305e3cf7ef972fb">operator|</a> (<a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html">terminal::detail::Terminal</a>&lt; F &gt; &amp;&amp;op)</td></tr>
 <tr class="memdesc:aa3dbf75b1a4abcdc4305e3cf7ef972fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an additional operation to the stream pipeline, returning the new stream.  <a href="#aa3dbf75b1a4abcdc4305e3cf7ef972fb">More...</a><br /></td></tr>
 <tr class="separator:aa3dbf75b1a4abcdc4305e3cf7ef972fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae01be8948668196ff7d7e23fb6c64bf6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d07/classflow_1_1_stream_1_1const__iterator.html">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#ae01be8948668196ff7d7e23fb6c64bf6">begin</a> ()</td></tr>
+<tr class="memdesc:ae01be8948668196ff7d7e23fb6c64bf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the first element in the stream.  <a href="#ae01be8948668196ff7d7e23fb6c64bf6">More...</a><br /></td></tr>
+<tr class="separator:ae01be8948668196ff7d7e23fb6c64bf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2aaa26f5c0b7761093b995a657ef2a22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d07/classflow_1_1_stream_1_1const__iterator.html">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#a2aaa26f5c0b7761093b995a657ef2a22">end</a> ()</td></tr>
+<tr class="memdesc:a2aaa26f5c0b7761093b995a657ef2a22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the first off-end element of the stream.  <a href="#a2aaa26f5c0b7761093b995a657ef2a22">More...</a><br /></td></tr>
+<tr class="separator:a2aaa26f5c0b7761093b995a657ef2a22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a250b5e524d5d4a6e4a8a72066382e98c"><td class="memItemLeft" align="right" valign="top">Source&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#a250b5e524d5d4a6e4a8a72066382e98c">_source</a></td></tr>
-<tr class="memdesc:a250b5e524d5d4a6e4a8a72066382e98c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The source of this stream, where values are pulled from, be it a container, an infinite generator or some other source.  <a href="#a250b5e524d5d4a6e4a8a72066382e98c">More...</a><br /></td></tr>
+<tr class="memdesc:a250b5e524d5d4a6e4a8a72066382e98c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The source of this stream, where values are pulled from.  <a href="#a250b5e524d5d4a6e4a8a72066382e98c">More...</a><br /></td></tr>
 <tr class="separator:a250b5e524d5d4a6e4a8a72066382e98c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -166,18 +181,30 @@ class flow::Stream&lt; Source &gt;</h3>
 <p>flow::intermediate::difference - compute the difference of two sorted/unique streams </p>
 <p>flow::intermediate::symmetric_difference - compute the symmetric difference of two sorted/unique streams </p>
 <p>flow::generator::random - generate stream values from a random number generator </p>
-<p>flow::generator::range - <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad3e468cd8e943a73900891b99f7a2ded" title="Creates an infinite Stream of values by incrementing begin  using operator++. ">iota()</a> | <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a347e52317b201a9e142031724ea4de0a" title="Limits the length of the Stream to length  elements. If the stream is shorter, all elements are kept...">limit()</a> </p>
-<p><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a1233462a5ce649e3eb3bc58ef9ae131e" title="Creates an infinite Stream where values are created using successive calls to generator(). ">flow::generator::generate</a> - overload to limit size </p>
-<p>flow::generator::parallel_* - create a parallel version of other generators </p>
-<p>parallel pipelining of stream operations? </p>
-<p class="enddd">allow iterator access via begin() and end() </p>
+<p>flow::generator::parallel_* - create a parallel version of other generators? </p>
+<p>flow::terminal::parallel_* - chunking parallelization of terminal operations </p>
+<p class="enddd">parallel pipelining of stream operations? </p>
 </dd></dl>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a class="anchor" id="ad5c47fe98d14d9c74c169b5dd8f9f3c4"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Source&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">flow::Stream</a>&lt; Source &gt;::<a class="el" href="../../d9/dcd/classflow_1_1_stream.html#ad5c47fe98d14d9c74c169b5dd8f9f3c4">iterator</a> =  <a class="el" href="../../db/d07/classflow_1_1_stream_1_1const__iterator.html">const_iterator</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a1f5a9b22df89ffc576bbc37548864ee8"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Source &gt; </div>
+template&lt;typename Source&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">flow::Stream</a>&lt; Source &gt;::<a class="el" href="../../d9/dcd/classflow_1_1_stream.html#a1f5a9b22df89ffc576bbc37548864ee8">source_type</a> =  Source</td>
@@ -191,7 +218,7 @@ template&lt;typename Source &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Source &gt; </div>
+template&lt;typename Source&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">flow::Stream</a>&lt; Source &gt;::<a class="el" href="../../d9/dcd/classflow_1_1_stream.html#af34fe4571912244e3c3b180871bb38e6">value_type</a> =  typename Source::value_type</td>
@@ -206,7 +233,7 @@ template&lt;typename Source &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Source &gt; </div>
+template&lt;typename Source&gt; </div>
 <div class="memtemplate">
 template&lt;typename... Args&gt; </div>
 <table class="mlabels">
@@ -239,11 +266,67 @@ template&lt;typename... Args&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ae01be8948668196ff7d7e23fb6c64bf6"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Source&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d07/classflow_1_1_stream_1_1const__iterator.html">const_iterator</a> <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">flow::Stream</a>&lt; Source &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns an iterator to the first element in the stream. </p>
+<dl class="section return"><dt>Returns</dt><dd>An iterator to the first element in the stream.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2aaa26f5c0b7761093b995a657ef2a22"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Source&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d07/classflow_1_1_stream_1_1const__iterator.html">const_iterator</a> <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">flow::Stream</a>&lt; Source &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns an iterator to the first off-end element of the stream. </p>
+<dl class="section return"><dt>Returns</dt><dd>An iterator to the first off-end element of the stream.</dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a10867bd380fe28c2a27a23db8813d71f"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Source &gt; </div>
+template&lt;typename Source&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -271,7 +354,7 @@ template&lt;typename Source &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Source &gt; </div>
+template&lt;typename Source&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -299,7 +382,7 @@ template&lt;typename Source &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Source &gt; </div>
+template&lt;typename Source&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -326,7 +409,7 @@ template&lt;typename Source &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Source &gt; </div>
+template&lt;typename Source&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -354,7 +437,7 @@ template&lt;typename Source &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Source &gt; </div>
+template&lt;typename Source&gt; </div>
 <div class="memtemplate">
 template&lt;typename F &gt; </div>
 <table class="mlabels">
@@ -391,7 +474,7 @@ template&lt;typename F &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Source &gt; </div>
+template&lt;typename Source&gt; </div>
 <div class="memtemplate">
 template&lt;typename F &gt; </div>
 <table class="mlabels">
@@ -428,7 +511,7 @@ template&lt;typename F &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Source &gt; </div>
+template&lt;typename Source&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -457,7 +540,7 @@ template&lt;typename Source &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Source &gt; </div>
+template&lt;typename Source&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -473,7 +556,7 @@ template&lt;typename Source &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>The source of this stream, where values are pulled from, be it a container, an infinite generator or some other source. </p>
+<p>The source of this stream, where values are pulled from. </p>
 
 </div>
 </div>

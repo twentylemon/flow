@@ -107,6 +107,11 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">    vec1to4 | <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#ae25b0a8475258acc29173c4a37e13e22">zip</a>(vec1to4 | <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#ae25b0a8475258acc29173c4a37e13e22">zip</a>(vec1to4)) | <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f">dump</a>();</div>
 <div class="line">    std::cout &lt;&lt; std::endl;</div>
 <div class="line"></div>
+<div class="line">    <span class="comment">// uncurry() can be used to simplify creating functions for zipped streams</span></div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;vec1to4 | zip(vec5to8) | filter(uncurry([](int lhs, int rhs) { return lhs % 2 == 0 &amp;&amp; rhs % 4 == 0; })) = &quot;</span>;</div>
+<div class="line">    vec1to4 | <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#ae25b0a8475258acc29173c4a37e13e22">zip</a>(vec5to8) | <a name="a2"></a><a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c">filter</a>(<a name="a3"></a><a class="code" href="../../d9/de2/namespaceflow.html#ad795c672b7e52516485e7ffb2d6c4ad7">uncurry</a>([](<span class="keywordtype">int</span> lhs, <span class="keywordtype">int</span> rhs) { <span class="keywordflow">return</span> lhs % 2 == 0 &amp;&amp; rhs % 4 == 0; })) | <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f">dump</a>();   <span class="comment">// (4, 8)</span></div>
+<div class="line">    std::cout &lt;&lt; std::endl;</div>
+<div class="line"></div>
 <div class="line">    <span class="comment">// other zipping operations are possible, such as summing the elements</span></div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;vec1to4 | zip(vec5to8, std::plus&lt;int&gt;()) = &quot;</span>;</div>
 <div class="line">    vec1to4 | <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#ae25b0a8475258acc29173c4a37e13e22">zip</a>(vec5to8, std::plus&lt;int&gt;()) | <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f">dump</a>();  <span class="comment">// 6 8 10 12</span></div>

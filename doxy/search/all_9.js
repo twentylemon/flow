@@ -12,7 +12,7 @@ var searchData=
   ['intermediatesource_3c_20source_20_3e',['IntermediateSource&lt; Source &gt;',['../da/dea/classflow_1_1source_1_1_intermediate_source.html',1,'flow::source']]],
   ['intermediatesource_3c_20source_2c_20std_3a_3aresult_5fof_5ft_3c_20unaryoperation_28source_3a_3avalue_5ftype_29_3e_20_3e',['IntermediateSource&lt; Source, std::result_of_t&lt; UnaryOperation(Source::value_type)&gt; &gt;',['../da/dea/classflow_1_1source_1_1_intermediate_source.html',1,'flow::source']]],
   ['intermediatesource_3c_20source_2c_20std_3a_3aresult_5fof_5ft_3c_20unaryoperation_28source_3a_3avalue_5ftype_29_3e_3a_3avalue_5ftype_20_3e',['IntermediateSource&lt; Source, std::result_of_t&lt; UnaryOperation(Source::value_type)&gt;::value_type &gt;',['../da/dea/classflow_1_1source_1_1_intermediate_source.html',1,'flow::source']]],
-  ['iota',['iota',['../de/d3f/namespaceflow_1_1generator.html#ad3e468cd8e943a73900891b99f7a2ded',1,'flow::generator::iota(T &amp;&amp;begin)'],['../de/d3f/namespaceflow_1_1generator.html#a53f096b35bb8acaee2451d4890c33f40',1,'flow::generator::iota(T &amp;&amp;begin, const U &amp;increment)']]],
+  ['iota',['iota',['../de/d3f/namespaceflow_1_1generator.html#ad3e468cd8e943a73900891b99f7a2ded',1,'flow::generator::iota(T &amp;&amp;begin)'],['../de/d3f/namespaceflow_1_1generator.html#a4b086b2a970996cb283820b9f50f77f8',1,'flow::generator::iota(T &amp;&amp;begin, U &amp;&amp;increment)']]],
   ['iota_2eh',['iota.h',['../db/d3e/iota_8h.html',1,'']]],
   ['iterate',['iterate',['../de/d3f/namespaceflow_1_1generator.html#a6eb74edc2bf991250c0a54d721285fd6',1,'flow::generator']]],
   ['iterate_2eh',['iterate.h',['../d0/dbc/iterate_8h.html',1,'']]],
@@ -20,8 +20,9 @@ var searchData=
   ['iteratefunc',['IterateFunc',['../de/d8c/classflow_1_1source_1_1_iterate_func.html#a4e3823be3433f85f3a5196ab081e7de4',1,'flow::source::IterateFunc']]],
   ['iteratefunc_2eh',['IterateFunc.h',['../dc/d89/_iterate_func_8h.html',1,'']]],
   ['iterator',['Iterator',['../d6/ddc/classflow_1_1source_1_1_iterator.html',1,'flow::source']]],
-  ['iterator',['Iterator',['../d6/ddc/classflow_1_1source_1_1_iterator.html#a8f656f251d89cb46541bdec812983d7e',1,'flow::source::Iterator::Iterator(Itr begin, Itr end)'],['../d6/ddc/classflow_1_1source_1_1_iterator.html#a697001246de189dff967134abc8e0b33',1,'flow::source::Iterator::Iterator()']]],
+  ['iterator',['iterator',['../d9/dcd/classflow_1_1_stream.html#ad5c47fe98d14d9c74c169b5dd8f9f3c4',1,'flow::Stream::iterator()'],['../d6/ddc/classflow_1_1source_1_1_iterator.html#a8f656f251d89cb46541bdec812983d7e',1,'flow::source::Iterator::Iterator(Itr begin, Itr end)'],['../d6/ddc/classflow_1_1source_1_1_iterator.html#a697001246de189dff967134abc8e0b33',1,'flow::source::Iterator::Iterator()']]],
   ['iterator_2eh',['Iterator.h',['../d3/d38/_iterator_8h.html',1,'']]],
   ['iterator_3c_20std_3a_3avector_3c_20source_3a_3avalue_5ftype_20_2a_20_3e_3a_3aiterator_20_3e',['Iterator&lt; std::vector&lt; Source::value_type * &gt;::iterator &gt;',['../d6/ddc/classflow_1_1source_1_1_iterator.html',1,'flow::source']]],
-  ['iterator_3c_20std_3a_3avector_3c_20source_3a_3avalue_5ftype_20_2a_20_3e_3a_3areverse_5fiterator_20_3e',['Iterator&lt; std::vector&lt; Source::value_type * &gt;::reverse_iterator &gt;',['../d6/ddc/classflow_1_1source_1_1_iterator.html',1,'flow::source']]]
+  ['iterator_3c_20std_3a_3avector_3c_20source_3a_3avalue_5ftype_20_2a_20_3e_3a_3areverse_5fiterator_20_3e',['Iterator&lt; std::vector&lt; Source::value_type * &gt;::reverse_iterator &gt;',['../d6/ddc/classflow_1_1source_1_1_iterator.html',1,'flow::source']]],
+  ['iterator_5fcategory',['iterator_category',['../db/d07/classflow_1_1_stream_1_1const__iterator.html#a3184495e46f05e7d6f5a8a1f5093101f',1,'flow::Stream::const_iterator']]]
 ];

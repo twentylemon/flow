@@ -114,8 +114,7 @@ Classes</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a90f7b62e83eb2d3a5c96f737df87a336"><td class="memTemplParams" colspan="2">template&lt;typename... T&gt; </td></tr>
 <tr class="memitem:a90f7b62e83eb2d3a5c96f737df87a336"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/de2/namespaceflow.html#a90f7b62e83eb2d3a5c96f737df87a336">operator&lt;&lt;</a> (std::ostream &amp;out, const std::tuple&lt; T...&gt; &amp;tuple)</td></tr>
-<tr class="memdesc:a90f7b62e83eb2d3a5c96f737df87a336"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload operator&lt;&lt; to display tuple types. The tuple is printed as </p><div class="fragment"><div class="line">(item1, item2, ...)</div>
-</div><!-- fragment --><p>. Each item is displayed using operator&lt;&lt; on the elements.  <a href="#a90f7b62e83eb2d3a5c96f737df87a336">More...</a><br /></td></tr>
+<tr class="memdesc:a90f7b62e83eb2d3a5c96f737df87a336"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload operator&lt;&lt; to display tuple types. The tuple is printed as <code>(item1, item2, ...)</code>. Each item is displayed using operator&lt;&lt; on the elements.  <a href="#a90f7b62e83eb2d3a5c96f737df87a336">More...</a><br /></td></tr>
 <tr class="separator:a90f7b62e83eb2d3a5c96f737df87a336"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad795c672b7e52516485e7ffb2d6c4ad7"><td class="memTemplParams" colspan="2">template&lt;typename CurryFunction &gt; </td></tr>
 <tr class="memitem:ad795c672b7e52516485e7ffb2d6c4ad7"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/de2/namespaceflow.html#ad795c672b7e52516485e7ffb2d6c4ad7">uncurry</a> (CurryFunction curry_function)</td></tr>
@@ -155,8 +154,7 @@ template&lt;typename... T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Overload operator&lt;&lt; to display tuple types. The tuple is printed as </p><div class="fragment"><div class="line">(item1, item2, ...)</div>
-</div><!-- fragment --><p>. Each item is displayed using operator&lt;&lt; on the elements. </p>
+<p>Overload operator&lt;&lt; to display tuple types. The tuple is printed as <code>(item1, item2, ...)</code>. Each item is displayed using operator&lt;&lt; on the elements. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>The out stream.</td></tr>
@@ -195,7 +193,8 @@ template&lt;typename CurryFunction &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An object with an <code>operator()(std::tuple&lt;Types...&gt;)</code> which wraps <code>curry_function</code>.</dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d0/d76/zip_8cpp-example.html#a3">zip.cpp</a>.</dd>
+</dl>
 </div>
 </div>
 </div><!-- contents -->

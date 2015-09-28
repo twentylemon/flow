@@ -1,15 +1,12 @@
 var searchData=
 [
-  ['take_5fwhile',['take_while',['../dc/d09/namespaceflow_1_1intermediate.html#af694d1a9aa88f1dd8ff3d3e66d2cb6c9',1,'flow::intermediate::take_while(UnaryPredicate predicate)'],['../dc/d09/namespaceflow_1_1intermediate.html#a213755b414a7d31af11bb96c129c6667',1,'flow::intermediate::take_while()'],['../dc/d09/namespaceflow_1_1intermediate.html#adf3882ef78e687785e2c1402e4a62ea1',1,'flow::intermediate::take_while(Ret(Class::*member)())']]],
-  ['takewhile',['TakeWhile',['../d5/d29/classflow_1_1source_1_1_take_while.html#afe516908e08ef8fa278632b194ae58ed',1,'flow::source::TakeWhile']]],
-  ['terminal',['Terminal',['../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html#a93c077febafb04aa9d1b4acf7618e4e4',1,'flow::terminal::detail::Terminal']]],
-  ['then',['then',['../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html#a256a587e68540f260bfe843fc4e1135b',1,'flow::terminal::detail::Terminal']]],
-  ['to_5fdeque',['to_deque',['../d1/d6c/namespaceflow_1_1terminal.html#aab64d8c770e599993b993036e25af893',1,'flow::terminal']]],
-  ['to_5fforward_5flist',['to_forward_list',['../d1/d6c/namespaceflow_1_1terminal.html#a0220b84a0d18c61162cac48cd1bf7925',1,'flow::terminal']]],
-  ['to_5flist',['to_list',['../d1/d6c/namespaceflow_1_1terminal.html#ac7b7ba1e4981b0e2df9254b4831aa3b1',1,'flow::terminal']]],
-  ['to_5fmultiset',['to_multiset',['../d1/d6c/namespaceflow_1_1terminal.html#aad3fbccb7a7a86e960f60b5b686519d9',1,'flow::terminal']]],
-  ['to_5fset',['to_set',['../d1/d6c/namespaceflow_1_1terminal.html#a931b21e882fc9666304d7205886f4452',1,'flow::terminal']]],
-  ['to_5funordered_5fmultiset',['to_unordered_multiset',['../d1/d6c/namespaceflow_1_1terminal.html#a6d98aaaa327fd861f35ccaab3c81f075',1,'flow::terminal']]],
-  ['to_5funordered_5fset',['to_unordered_set',['../d1/d6c/namespaceflow_1_1terminal.html#a738f8a51a1b5cdbee93236f39b5fca43',1,'flow::terminal']]],
-  ['to_5fvector',['to_vector',['../d1/d6c/namespaceflow_1_1terminal.html#ae4dc13099ad26de78eccc63f7efad271',1,'flow::terminal']]]
+  ['skip',['Skip',['../dd/d62/classflow_1_1source_1_1_skip.html#ae6647e2ca96e70bb68b771a22ce76f82',1,'flow::source::Skip::Skip()'],['../dc/d09/namespaceflow_1_1intermediate.html#a2725d9fb49cd0c4fe25658500c2fa1f1',1,'flow::intermediate::skip(std::size_t begin, std::size_t step_size)'],['../dc/d09/namespaceflow_1_1intermediate.html#a2f8b2e7e5cc41ecd02cb4381a706d545',1,'flow::intermediate::skip(std::size_t begin)']]],
+  ['skip_5fevery',['skip_every',['../dc/d09/namespaceflow_1_1intermediate.html#aeef64fd0f533b9b084b83c46fe8352d4',1,'flow::intermediate']]],
+  ['slice',['Slice',['../da/d25/classflow_1_1source_1_1_slice.html#a92744208381b60a842a5415530322f2a',1,'flow::source::Slice::Slice()'],['../dc/d09/namespaceflow_1_1intermediate.html#a1954e2f5425b7603794790f7645e776e',1,'flow::intermediate::slice(std::size_t begin, std::size_t end, std::size_t step_size)'],['../dc/d09/namespaceflow_1_1intermediate.html#ac8468b308d2903331dc966819b373625',1,'flow::intermediate::slice(std::size_t begin, std::size_t end)']]],
+  ['sort',['Sort',['../de/d82/classflow_1_1source_1_1_sort.html#a331afe1bcf947cfe4d93ab8e64404fd1',1,'flow::source::Sort::Sort(Source &amp;&amp;source, Compare compare, bool stable_sort)'],['../de/d82/classflow_1_1source_1_1_sort.html#a60e2968eedf8c0fb89978061ef02c223',1,'flow::source::Sort::sort(Compare compare, bool stable_sort)'],['../dc/d09/namespaceflow_1_1intermediate.html#a0641d6ecc741bd5f346a961e5e8ccf44',1,'flow::intermediate::sort()']]],
+  ['source',['source',['../d9/dcd/classflow_1_1_stream.html#a2ba3ee37c4e132838681519c0f4dfdda',1,'flow::Stream']]],
+  ['stable_5fsort',['stable_sort',['../dc/d09/namespaceflow_1_1intermediate.html#ab9a5f0773de4aac232e80ae23495e76e',1,'flow::intermediate']]],
+  ['step_5fto',['step_to',['../dd/d62/classflow_1_1source_1_1_skip.html#a2b04c02bebb4c68bc37fe4df59b7baca',1,'flow::source::Skip']]],
+  ['stream',['Stream',['../d9/dcd/classflow_1_1_stream.html#a8bb7d10321101656ba68f420eec020ef',1,'flow::Stream']]],
+  ['sum',['sum',['../d1/d6c/namespaceflow_1_1terminal.html#a9d36eab187f4b501c07a00f39e4f2381',1,'flow::terminal::sum()'],['../d1/d6c/namespaceflow_1_1terminal.html#a21f36f6877d4af5794b93a8f1c0af92d',1,'flow::terminal::sum(T &amp;&amp;init)']]]
 ];
