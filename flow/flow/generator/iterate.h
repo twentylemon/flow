@@ -57,8 +57,7 @@ struct HeadType
 /// <returns>An infinite stream that iterates the function given.</returns>
 template <typename IteratingFunction, typename... Args>
 auto iterate(IteratingFunction function, Args&&... initial) {
-    using T = std::remove_reference_t<typename detail::HeadType<Args...>::type>;
-    return Stream<source::IterateFunc<IteratingFunction, T, sizeof...(Args)>>(function, std::forward<Args>(initial)...);
+    return Stream<source::IterateFunc<IteratingFunction, std::remove_reference_t<typename detail::HeadType<Args...>::type>, sizeof...(Args)>>(function, std::forward<Args>(initial)...);
 }
     }
 }

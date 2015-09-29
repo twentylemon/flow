@@ -44,7 +44,7 @@ namespace flow {
 /// skipping every <paramref name="step_size"/> elements.</returns>
 inline auto skip(std::size_t begin, std::size_t step_size) {
     return detail::make_intermediate([begin, step_size](auto&& stream) {
-        return Stream<source::Skip<typename std::remove_reference_t<decltype(stream)>::source_type>>(std::move(stream.source()), begin, step_size);
+        return Stream<source::Skip<std::remove_reference_t<decltype(stream.source())>>>(std::move(stream.source()), begin, step_size);
     });
 }
 

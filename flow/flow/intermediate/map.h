@@ -43,7 +43,7 @@ namespace flow {
 template <typename UnaryOperation>
 auto map(UnaryOperation mapper) {
     return detail::make_intermediate([mapper](auto&& stream) {
-        return Stream<source::Map<typename std::remove_reference_t<decltype(stream)>::source_type, UnaryOperation>>(std::move(stream.source()), mapper);
+        return Stream<source::Map<std::remove_reference_t<decltype(stream.source())>, UnaryOperation>>(std::move(stream.source()), mapper);
     });
 }
 

@@ -46,7 +46,7 @@ namespace flow {
 /// <returns>A detail::Intermediate operation that slices the stream to the given range.</returns>
 inline auto slice(std::size_t begin, std::size_t end, std::size_t step_size) {
     return detail::make_intermediate([begin, end, step_size](auto&& stream) {
-        return Stream<source::Slice<typename std::remove_reference_t<decltype(stream)>::source_type>>(std::move(stream.source()), begin, end, step_size);
+        return Stream<source::Slice<std::remove_reference_t<decltype(stream.source())>>>(std::move(stream.source()), begin, end, step_size);
     });
 }
 

@@ -59,7 +59,7 @@ auto minmax(Compare compare = Compare()) {
                 max = next;
             }
         }
-        return std::make_pair(min, max);
+        return std::make_pair(std::move(min), std::move(max));
     });
     /*
     // this implementation is much slower; odd as min/max were faster as fold operations

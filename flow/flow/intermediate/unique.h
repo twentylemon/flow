@@ -52,7 +52,7 @@ auto unique(Compare compare = Compare()) {
         std::sort(vec.begin(), vec.end(), compare);
         vec.erase(std::unique(vec.begin(), vec.end(), compare), vec.end());
         return generator::from_move(std::move(vec));
-        //return Stream<source::Unique<typename std::remove_reference_t<decltype(stream)>::source_type>>(std::move(stream.source()), compare);
+        //return Stream<source::Unique<std::remove_reference_t<decltype(stream.source())>>>(std::move(stream.source()), compare);
     });
 }
     }

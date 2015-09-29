@@ -218,7 +218,7 @@ const auto zipper = [](auto&& left, auto&& right) {
 template <typename RightSource, typename BinaryOperation>
 auto zip(Stream<RightSource>&& right, BinaryOperation zipper) {
     return detail::make_intermediate([right = std::move(right), zipper](auto&& left) mutable {
-        return Stream<source::Zip<typename std::remove_reference_t<decltype(left)>::source_type, RightSource, BinaryOperation>>(std::move(left.source()), std::move(right.source()), zipper);
+        return Stream<source::Zip<std::remove_reference_t<decltype(left.source())>, RightSource, BinaryOperation>>(std::move(left.source()), std::move(right.source()), zipper);
     });
 }
 

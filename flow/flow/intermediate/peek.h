@@ -42,7 +42,7 @@ namespace flow {
 template <typename UnaryFunction>
 auto peek(UnaryFunction action) {
     return detail::make_intermediate([action](auto&& stream) {
-        return Stream<source::Peek<typename std::remove_reference_t<decltype(stream)>::source_type, UnaryFunction>>(std::move(stream.source()), action);
+        return Stream<source::Peek<std::remove_reference_t<decltype(stream.source())>, UnaryFunction>>(std::move(stream.source()), action);
     });
 }
 

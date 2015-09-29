@@ -58,7 +58,7 @@ struct hash {
 template <template <typename> class Alloc = std::allocator>
 auto to_vector() {
     return detail::make_terminal([](auto&& stream) {
-        using T = std::decay_t<typename std::remove_reference_t<decltype(stream)>::value_type>;
+        using T = std::decay_t<decltype(stream.next())>;
         std::vector<T, Alloc<T>> result;
         result.reserve(stream.estimate_size());
         stream | copy(std::back_inserter(result));
@@ -73,7 +73,7 @@ auto to_vector() {
 template <template <typename> class Alloc = std::allocator>
 auto to_deque() {
     return detail::make_terminal([](auto&& stream) {
-        using T = std::decay_t<typename std::remove_reference_t<decltype(stream)>::value_type>;
+        using T = std::decay_t<decltype(stream.next())>;
         std::deque<T, Alloc<T>> result;
         stream | copy(std::back_inserter(result));
         return result;
@@ -89,7 +89,7 @@ auto to_deque() {
 template <template <typename> class Alloc = std::allocator>
 auto to_forward_list() {
     return detail::make_terminal([](auto&& stream) {
-        using T = std::decay_t<typename std::remove_reference_t<decltype(stream)>::value_type>;
+        using T = std::decay_t<decltype(stream.next())>;
         std::forward_list<T, Alloc<T>> result;
         stream | copy(std::front_inserter(result));
         return result;
@@ -103,7 +103,7 @@ auto to_forward_list() {
 template <template <typename> class Alloc = std::allocator>
 auto to_list() {
     return detail::make_terminal([](auto&& stream) {
-        using T = std::decay_t<typename std::remove_reference_t<decltype(stream)>::value_type>;
+        using T = std::decay_t<decltype(stream.next())>;
         std::list<T, Alloc<T>> result;
         stream | copy(std::back_inserter(result));
         return result;
@@ -117,7 +117,7 @@ auto to_list() {
 template <typename Compare = std::less<void>, template <typename> class Alloc = std::allocator>
 auto to_set() {
     return detail::make_terminal([](auto&& stream) {
-        using T = std::decay_t<typename std::remove_reference_t<decltype(stream)>::value_type>;
+        using T = std::decay_t<decltype(stream.next())>;
         std::set<T, Compare, Alloc<T>> result;
         stream | copy(std::inserter(result, result.end()));
         return result;
@@ -131,7 +131,7 @@ auto to_set() {
 template <typename Compare = std::less<void>, template <typename> class Alloc = std::allocator>
 auto to_multiset() {
     return detail::make_terminal([](auto&& stream) {
-        using T = std::decay_t<typename std::remove_reference_t<decltype(stream)>::value_type>;
+        using T = std::decay_t<decltype(stream.next())>;
         std::multiset<T, Compare, Alloc<T>> result;
         stream | copy(std::inserter(result, result.end()));
         return result;
@@ -145,7 +145,7 @@ auto to_multiset() {
 template <typename Hash = detail::hash, typename UnaryPredicate = std::equal_to<void>, template <typename> class Alloc = std::allocator>
 auto to_unordered_set() {
     return detail::make_terminal([](auto&& stream) {
-        using T = std::decay_t<typename std::remove_reference_t<decltype(stream)>::value_type>;
+        using T = std::decay_t<decltype(stream.next())>;
         std::unordered_set<T, Hash, UnaryPredicate, Alloc<T>> result;
         stream | copy(std::inserter(result, result.end()));
         return result;
@@ -159,7 +159,7 @@ auto to_unordered_set() {
 template <typename Hash = detail::hash, typename UnaryPredicate = std::equal_to<void>, template <typename> class Alloc = std::allocator>
 auto to_unordered_multiset() {
     return detail::make_terminal([](auto&& stream) {
-        using T = std::decay_t<typename std::remove_reference_t<decltype(stream)>::value_type>;
+        using T = std::decay_t<decltype(stream.next())>;
         std::unordered_multiset<T, Hash, UnaryPredicate, Alloc<T>> result;
         stream | copy(std::inserter(result, result.end()));
         return result;

@@ -18,7 +18,7 @@ using namespace flow;
 
 #ifndef _DEBUG
 const int maxit = 100;
-const int maxv = 50;
+const int maxv = 50000;
 #else
 const int maxit = 1;
 const int maxv = 11;
@@ -32,6 +32,7 @@ public:
     int get_value() const {
         return value;
     }
+    void set_value(int v) { value = v; }
     bool operator<(const Widget& rhs) const { return value < rhs.value; }
     Widget operator*(const Widget& rhs) const { return Widget(value * rhs.value); }
     bool operator==(const Widget& rhs) const { return value == rhs.value; }
@@ -85,18 +86,16 @@ int main(int argc, char** argv) {
     std::size_t inc = iota(0) | nth(50);
     std::cout << inc << '\t' << vec.size() << std::endl;
     auto endl = []() { std::cout << std::endl; };
+
     std::vector<int> cw{ 1, 2, 3 };
-
     cycle(cw, 1) | replace(1, 3) | dump();
-
     //range(0, 26, 5) | dump();
-
     //cycle_move(std::move(cw), 4) | take_while([](int i) { return i == 1; }) | dump();
     
     boost::timer t1;
     std::pair<T, T> m1;
     for (int i = 0; i < maxit; i++) {
-        //m1 = vec | filter([](const auto& i) { return i % 2 == 0; }) | map([](const auto& i) { return i*i; }) | minmax();
+        //m1 = vec | filter([](auto i) { return i % 2 == 0; }) | map([](auto i) { return i*i; }) | minmax();
         m1 = vec | filter([](const auto& i) { return i.value % 2 == 0; }) | map([](const auto& i) { return i*i; }) | minmax();
     }
     std::cout << std::endl << "stream: " << t1.elapsed() << "\t" << m1.first << "\t" << m1.second << std::endl;
@@ -117,7 +116,7 @@ int main(int argc, char** argv) {
         }
     }
     std::cout << std::endl << "stdlib: " << t2.elapsed() << "\t" << m2.first << "\t" << m2.second << std::endl;
-    
+    /*
     std::vector<Widget> widgets;
     for (int i = 0; i < 10; i++) {
         widgets.emplace_back(i);
@@ -131,13 +130,13 @@ int main(int argc, char** argv) {
     
     
     std::cout << std::endl;
-    const auto v = vec;
+    const auto v = vec | limit(10) | to_vector();
     vec | limit(1) | zip(v | zip(v)) | zip(vec, [](auto&& l, auto&& r) { return std::make_pair(l, r); }) | each([](auto&& t) {
         std::cout << typeid(t).name() << std::endl;
     });
     
     vec | zip(vec | zip(vec | zip(vec))) | limit(1) | each([](auto&& t) { std::cout << typeid(t).name() << std::endl; });
-    
+    */
     //run_timer();
     
     std::cout << std::endl;

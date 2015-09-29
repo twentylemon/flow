@@ -43,7 +43,7 @@ namespace flow {
 template <typename Tail>
 auto concat(Stream<Tail>&& tail) {
     return detail::make_intermediate([tail = std::move(tail)](auto&& head) mutable {
-        return Stream<source::Concat<typename std::remove_reference_t<decltype(head)>::source_type, Tail>>(std::move(head.source()), std::move(tail.source()));
+        return Stream<source::Concat<std::remove_reference_t<decltype(head.source())>, Tail>>(std::move(head.source()), std::move(tail.source()));
     });
 }
 

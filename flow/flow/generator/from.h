@@ -55,7 +55,7 @@ public:
 /// <param name="end">The end of the range.</param>
 /// <returns>A stream over the range.</returns>
 template <typename Itr>
-Stream<source::Iterator<Itr>> from(Itr begin, Itr end) {
+auto from(Itr begin, Itr end) {
     return Stream<source::Iterator<Itr>>(begin, end);
 }
 

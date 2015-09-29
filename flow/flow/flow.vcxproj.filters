@@ -234,6 +234,9 @@
     <ClInclude Include="generator\closed_range.h">
       <Filter>Header Files\generator</Filter>
     </ClInclude>
+    <ClInclude Include="terminal\execute.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="flow.licenseheader" />

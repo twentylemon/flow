@@ -63,9 +63,6 @@ template <typename Source>
 class Stream
 {
 public:
-    using source_type = Source;
-    using value_type = typename Source::value_type;
-
     /// <summary>
     /// Initializes a new instance of the Stream class.
     /// </summary>
@@ -93,7 +90,7 @@ public:
     /// Returns the next element from the stream.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
-    value_type& next() {
+    auto& next() {
         return _source.next();
     }
 
@@ -139,11 +136,11 @@ public:
     /// <para>Additionally, only the first iterator ever used is valid. To extend the lifetime
     /// of a stream, use one of the to_container terminal operations.</para>
     /// </summary>
-    class iterator : public std::iterator<std::forward_iterator_tag, value_type>
+    class iterator : public std::iterator<std::forward_iterator_tag, std::remove_reference_t<decltype(next())>>
     {
     public:
         using base = std::iterator<std::forward_iterator_tag, value_type>;
-        //using value_type = typename base::value_type;
+        using value_type = typename base::value_type;
         using reference = typename base::reference;
         using pointer = typename base::pointer;
         using difference_type = typename base::difference_type;
