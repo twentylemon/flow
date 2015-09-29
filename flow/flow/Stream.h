@@ -136,7 +136,7 @@ public:
     /// <para>Additionally, only the first iterator ever used is valid. To extend the lifetime
     /// of a stream, use one of the to_container terminal operations.</para>
     /// </summary>
-    class iterator : public std::iterator<std::forward_iterator_tag, std::remove_reference_t<decltype(next())>>
+    class iterator : public std::iterator<std::forward_iterator_tag, typename Source::value_type>
     {
     public:
         using base = std::iterator<std::forward_iterator_tag, value_type>;
@@ -186,11 +186,8 @@ public:
         return iterator();
     }
 
-protected:
-    /// <summary>
-    /// The source of this stream, where values are pulled from.
-    /// </summary>
-    Source _source;
+private:
+    Source _source; // the source of stream elements
 };
 }
 #endif

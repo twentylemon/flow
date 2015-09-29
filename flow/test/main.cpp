@@ -91,6 +91,9 @@ int main(int argc, char** argv) {
     cycle(cw, 1) | replace(1, 3) | dump();
     //range(0, 26, 5) | dump();
     //cycle_move(std::move(cw), 4) | take_while([](int i) { return i == 1; }) | dump();
+
+    auto s = cycle(cw, 3) | replace(1, 3);
+    std::for_each(s.begin(), s.end(), [](int i) { std::cout << i << " "; });
     
     boost::timer t1;
     std::pair<T, T> m1;
