@@ -42,6 +42,9 @@
     <ClCompile Include="terminal\dump.cpp">
       <Filter>Source Files\terminal</Filter>
     </ClCompile>
+    <ClCompile Include="terminal\each.cpp">
+      <Filter>Source Files\terminal</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="test.h">

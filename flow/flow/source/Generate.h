@@ -56,6 +56,13 @@ public:
         return base::next();
     }
 
+    /// <summary>
+    /// Ignores the next value from the stream.
+    /// </summary>
+    void lazy_next() {
+        _generator();
+    }
+
 private:
     Generator _generator;   // the generator of stream elements
 };

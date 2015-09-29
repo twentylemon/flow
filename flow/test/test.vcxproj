@@ -143,6 +143,7 @@
     <ClCompile Include="terminal\copy.cpp" />
     <ClCompile Include="terminal\count.cpp" />
     <ClCompile Include="terminal\dump.cpp" />
+    <ClCompile Include="terminal\each.cpp" />
     <ClCompile Include="terminal\to.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
