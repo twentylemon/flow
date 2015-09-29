@@ -58,7 +58,7 @@ auto cycle_move(Container&& container) {
 template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto cycle_move(Container&& container, std::size_t n) {
     return generate([container = std::move(container)](){ return std::make_pair(container.begin(), container.end()); }, n)
-        | intermediate::flat_map([](auto& itr) { return from(itr.first, itr.second); });
+        | intermediate::flat_map([](auto&& itr) { return from(itr.first, itr.second); });
 }
 
 /// <summary>

@@ -38,7 +38,7 @@ namespace flow {
 /// of all the created streams.
 /// </summary>
 template <typename Source, typename UnaryOperation>
-class FlatMap : public IntermediateSource<Source, std::remove_reference_t<decltype(std::declval<std::result_of_t<UnaryOperation(typename Source::value_type)>>().next())>>   
+class FlatMap : public IntermediateSource<Source, std::remove_reference_t<decltype(std::declval<std::result_of_t<UnaryOperation(typename Source::value_type)>>().next())>>
 {
 public:
     using base = IntermediateSource<Source, std::remove_reference_t<decltype(std::declval<std::result_of_t<UnaryOperation(typename Source::value_type)>>().next())>>;

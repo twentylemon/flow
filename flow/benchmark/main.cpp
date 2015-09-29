@@ -17,7 +17,7 @@
 using namespace flow;
 
 #ifndef _DEBUG
-const int maxit = 100;
+const int maxit = 10000;
 const int maxv = 50000;
 #else
 const int maxit = 1;
@@ -39,12 +39,12 @@ public:
     Widget operator++() { return Widget(value + 1); }
     int value;
     std::array<int, 500> arry;
-    
+    /*
     Widget& operator=(const Widget& w) { value = w.value; std::cout << "copy assign" << std::endl; return *this; }
     Widget& operator=(Widget&& w) { value = std::move(w.value); std::cout << "move assign" << std::endl; return *this; }
     Widget(const Widget& w) : value(w.value) { std::cout << "copy" << std::endl; }
     Widget(Widget&& w) : value(std::move(w.value)) { std::cout << "move" << std::endl; }
-    
+    */
 };
 std::ostream& operator<<(std::ostream& o, const Widget& w) {
     o << w.value;
@@ -93,9 +93,6 @@ int main(int argc, char** argv) {
     //cycle(cw, 1) | replace(1, 3) | dump();
     //range(0, 26, 5) | dump();
     cycle_move(std::move(cw), 4) | take_while([](int i) { return i == 1; }) | dump();
-
-    const auto q = vec;
-    q | dump();
 
     boost::timer t1;
     std::pair<T, T> m1;
