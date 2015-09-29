@@ -70,6 +70,16 @@ auto from(Container& container) {
 }
 
 /// <summary>
+/// Creates a Stream over <paramref name="list"/>.
+/// </summary>
+/// <param name="list">The list to create a stream from.</param>
+/// <returns>A stream over <paramref name="list"/>.</returns>
+template <typename T>
+auto from(std::initializer_list<T> list) {
+    return from(list.begin(), list.end());
+}
+
+/// <summary>
 /// Overrides <c>|</c> for containers, <c>container | operation</c> is a shorthand for
 /// <c>from(container) | operation</c>.
 /// </summary>

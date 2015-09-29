@@ -47,7 +47,6 @@ namespace flow {
 /// <code>auto stream = Stream(...) | filter();<br/>
 /// auto min = stream | min();</code>
 /// </summary>
-/// \todo remove value_type in favour of decltype and auto?
 /// \todo flow::terminal::sample - take a random sample of n elements from a finite stream
 /// \todo flow::terminal::reservoir - take a random sample of n elements from an infinite stream
 /// \todo flow::intermediate::merge - combine two sorted streams while maintaining sorted order
@@ -166,8 +165,8 @@ public:
             return ++ret;
         }
     private:
-        pointer _current;
-        Stream<Source>* _stream;
+        pointer _current;           // the current stream element, null once off end
+        Stream<Source>* _stream;    // the stream this iterator belongs to
     };
 
     /// <summary>

@@ -57,8 +57,8 @@ auto cycle_move(Container&& container) {
 /// <returns>A stream which cycles <paramref name="container"/> <paramref name="n"/> times.</returns>
 template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto cycle_move(Container&& container, std::size_t n) {
-    return generate([container = std::move(container)](){ return std::make_pair(container.begin(), container.end()); })
-        | intermediate::limit(n) | intermediate::flat_map([](auto&& itr) { return from(itr.first, itr.second); });
+    return generate([container = std::move(container)](){ return std::make_pair(container.begin(), container.end()); }, n)
+        | intermediate::flat_map([](auto& itr) { return from(itr.first, itr.second); });
 }
 
 /// <summary>
@@ -84,8 +84,8 @@ auto rcycle_move(Container&& container) {
 /// <returns>A stream which cycles <paramref name="container"/> <paramref name="n"/> times.</returns>
 template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto rcycle_move(Container&& container, std::size_t n) {
-    return generate([container = std::move(container)](){ return std::make_pair(container.rbegin(), container.rend()); })
-        | intermediate::limit(n) | intermediate::flat_map([](auto&& itr) { return from(itr.first, itr.second); });
+    return generate([container = std::move(container)](){ return std::make_pair(container.rbegin(), container.rend()); }, n)
+        | intermediate::flat_map([](auto&& itr) { return from(itr.first, itr.second); });
 }
     }
 }

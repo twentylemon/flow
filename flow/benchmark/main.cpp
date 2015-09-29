@@ -39,12 +39,12 @@ public:
     Widget operator++() { return Widget(value + 1); }
     int value;
     std::array<int, 500> arry;
-    /*
+    
     Widget& operator=(const Widget& w) { value = w.value; std::cout << "copy assign" << std::endl; return *this; }
     Widget& operator=(Widget&& w) { value = std::move(w.value); std::cout << "move assign" << std::endl; return *this; }
     Widget(const Widget& w) : value(w.value) { std::cout << "copy" << std::endl; }
     Widget(Widget&& w) : value(std::move(w.value)) { std::cout << "move" << std::endl; }
-    */
+    
 };
 std::ostream& operator<<(std::ostream& o, const Widget& w) {
     o << w.value;
@@ -83,18 +83,20 @@ void run_timer() {
 int main(int argc, char** argv) {
     std::iota(vec.begin(), vec.end(), 0);
     using T = decltype(vec)::value_type;
-    std::size_t inc = iota(0) | nth(50);
-    std::cout << inc << '\t' << vec.size() << std::endl;
+    //std::size_t inc = iota(0) | nth(50);
+    //std::cout << inc << '\t' << vec.size() << std::endl;
     auto endl = []() { std::cout << std::endl; };
 
-    std::vector<int> cw{ 1, 2, 3 };
-    cycle(cw, 1) | replace(1, 3) | dump();
-    //range(0, 26, 5) | dump();
-    //cycle_move(std::move(cw), 4) | take_while([](int i) { return i == 1; }) | dump();
 
-    auto s = cycle(cw, 3) | replace(1, 3);
-    std::for_each(s.begin(), s.end(), [](int i) { std::cout << i << " "; });
-    
+
+    std::vector<int> cw{ 1, 2, 3 };
+    //cycle(cw, 1) | replace(1, 3) | dump();
+    //range(0, 26, 5) | dump();
+    cycle_move(std::move(cw), 4) | take_while([](int i) { return i == 1; }) | dump();
+
+    const auto q = vec;
+    q | dump();
+
     boost::timer t1;
     std::pair<T, T> m1;
     for (int i = 0; i < maxit; i++) {
@@ -122,26 +124,26 @@ int main(int argc, char** argv) {
     /*
     std::vector<Widget> widgets;
     for (int i = 0; i < 10; i++) {
-        widgets.emplace_back(i);
+    widgets.emplace_back(i);
     }
     std::cout << std::endl << std::endl;
     //const std::vector<Widget> w = widgets;
     //std::cout << (from(widgets) | map(&Widget::get_value) | min()) << std::endl;
     //from(w) | map(&Widget::get_value) | each([](int i) { std::cout << i << " "; });
-    
+
     std::cout << std::endl << std::endl;
-    
-    
+
+
     std::cout << std::endl;
     const auto v = vec | limit(10) | to_vector();
     vec | limit(1) | zip(v | zip(v)) | zip(vec, [](auto&& l, auto&& r) { return std::make_pair(l, r); }) | each([](auto&& t) {
-        std::cout << typeid(t).name() << std::endl;
+    std::cout << typeid(t).name() << std::endl;
     });
-    
+
     vec | zip(vec | zip(vec | zip(vec))) | limit(1) | each([](auto&& t) { std::cout << typeid(t).name() << std::endl; });
     */
     //run_timer();
-    
+
     std::cout << std::endl;
     system("pause");
     return 0;

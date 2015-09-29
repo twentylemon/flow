@@ -13,10 +13,39 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\terminal">
+      <UniqueIdentifier>{22d1e50d-fda0-414c-8b2c-eefc18805875}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="terminal\to.cpp">
+      <Filter>Source Files\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="terminal\all.cpp">
+      <Filter>Source Files\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="terminal\any.cpp">
+      <Filter>Source Files\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="terminal\contains.cpp">
+      <Filter>Source Files\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="terminal\copy.cpp">
+      <Filter>Source Files\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="terminal\count.cpp">
+      <Filter>Source Files\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="terminal\dump.cpp">
+      <Filter>Source Files\terminal</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="test.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

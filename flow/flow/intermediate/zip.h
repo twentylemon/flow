@@ -27,7 +27,6 @@
 #define FLOW_INTERMEDIATE_ZIP_H
 
 #include <tuple>
-#include <functional>
 
 #include "../Stream.h"
 #include "Intermediate.h"
@@ -52,6 +51,26 @@ struct tuple_zipper
     /// <returns>A <c>std::tuple</c> of the two elements.</returns>
     std::tuple<LeftType, RightType> operator()(const LeftType& left, const RightType& right) const {
         return std::make_tuple(left, right);
+    }
+
+    /// <summary>
+    /// Returns a tuple of the two elements.
+    /// </summary>
+    /// <param name="left">The left stream element.</param>
+    /// <param name="right">The right stream element.</param>
+    /// <returns>A <c>std::tuple</c> of the two elements.</returns>
+    std::tuple<LeftType, RightType> operator()(LeftType&& left, const RightType& right) const {
+        return std::make_tuple(std::move(left), right);
+    }
+
+    /// <summary>
+    /// Returns a tuple of the two elements.
+    /// </summary>
+    /// <param name="left">The left stream element.</param>
+    /// <param name="right">The right stream element.</param>
+    /// <returns>A <c>std::tuple</c> of the two elements.</returns>
+    std::tuple<LeftType, RightType> operator()(const LeftType& left, RightType&& right) const {
+        return std::make_tuple(left, std::move(right));
     }
 };
 
@@ -210,7 +229,7 @@ const auto zipper = [](auto&& left, auto&& right) {
 /// <summary>
 /// Zips the two streams together using <paramref name="zipper"/> as the zipping operation.
 /// <para>A zipping operation is any function that takes the front element from both streams as input and produces
-/// a single output which is used for the resultant stream.</para>
+/// a single output which is used for the resultant stream. The resultant stream is as long as the shortest input stream.</para>
 /// </summary>
 /// <param name="right">The right stream to zip together with the operated stream.</param>
 /// <param name="zipper">The zipping operation that combines the two streams.</param>
@@ -226,7 +245,7 @@ auto zip(Stream<RightSource>&& right, BinaryOperation zipper) {
 /// Zips the two streams together using <paramref name="zipper"/> as the zipping operation.
 /// This is the same as <c>zip(from(container), zipper)</c>.
 /// <para>A zipping operation is any function that takes an element from either stream as input and produces
-/// a single output.</para>
+/// a single output which is used for the resultant stream. The resultant stream is as long as the shortest input stream.</para>
 /// </summary>
 /// <param name="container">The container to zip together with this stream.</param>
 /// <param name="zipper">The zipping operation that combines the two streams.</param>
@@ -241,6 +260,7 @@ auto zip(Container& container, BinaryOperation zipper) {
 /// Zips the two streams together using the default zipping operation. The default zip operation
 /// creates tuples of the stream elements like <c>std::tuple&lt;T1, T2&gt;</c>. Multiple
 /// <c>zip</c> operations concatenates these tuples together rather than nesting them.
+/// <para>The resultant stream is as long as the shortest input stream.</para>
 /// </summary>
 /// <param name="right">The right stream to zip together with the operated stream.</param>
 /// <returns>A detail::Intermediate operation that zips the two streams.</returns>
@@ -254,7 +274,8 @@ auto zip(Stream<RightSource>&& right) {
 /// Zips the two streams together using the default zipping operation. The default zip
 /// creates tuples of the stream elements like <c>std::tuple&lt;T1, T2&gt;</c>. Multiple
 /// <c>zip</c> operations concatenates these tuples together rather than nesting them.
-///  This is the same as <c>zip(from(container))</c>.
+/// This is the same as <c>zip(from(container))</c>.
+/// <para>The resultant stream is as long as the shortest input stream.</para>
 /// </summary>
 /// <param name="container">The container to zip together with this stream.</param>
 /// <returns>A detail::Intermediate operation that zips the two streams.</returns>
