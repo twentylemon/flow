@@ -139,7 +139,7 @@ public:
     class iterator : public std::iterator<std::forward_iterator_tag, typename Source::value_type>
     {
     public:
-        using base = std::iterator<std::forward_iterator_tag, value_type>;
+        using base = std::iterator<std::forward_iterator_tag, typename Source::value_type>;
         using value_type = typename base::value_type;
         using reference = typename base::reference;
         using pointer = typename base::pointer;
