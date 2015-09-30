@@ -141,6 +141,11 @@
     <ClCompile Include="intermediate\drop_while.cpp" />
     <ClCompile Include="intermediate\filter.cpp" />
     <ClCompile Include="intermediate\flat_map.cpp" />
+    <ClCompile Include="intermediate\limit.cpp" />
+    <ClCompile Include="intermediate\map.cpp" />
+    <ClCompile Include="intermediate\peek.cpp" />
+    <ClCompile Include="intermediate\replace.cpp" />
+    <ClCompile Include="intermediate\reverse.cpp" />
     <ClCompile Include="terminal\all.cpp" />
     <ClCompile Include="terminal\any.cpp" />
     <ClCompile Include="terminal\contains.cpp" />

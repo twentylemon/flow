@@ -46,7 +46,8 @@ inline bool square_less(int lhs, int rhs) {
 }
 
 struct Widget {
-    Widget(int i) : _value(i), _other(0) { }
+    static const int DEFAULT_OTHER = 0;
+    Widget(int i) : _value(i), _other(DEFAULT_OTHER) { }
     void set_value(int value) { _value = value; }
     void clear() { _value = 0; }
     bool is_even() const { return _value % 2 == 0; }

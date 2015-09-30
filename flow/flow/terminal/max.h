@@ -37,6 +37,7 @@ namespace flow {
 /// Returns the maximum element from the stream according to <paramref name="compare"/>. By default <c>operator&lt;</c>
 /// is used for comparisons.
 /// </summary>
+/// <para>If there are multiple maximum elements, the first such element is returned.</para>
 /// <param name="compare">The compare function, by default <c>std::less&lt;void&gt;</c>.</param>
 /// <returns>A detail::Terminal operation which gives the maximum element from the stream.</returns>
 /// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
