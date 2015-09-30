@@ -90,6 +90,12 @@
     <ClCompile Include="intermediate\drop_while.cpp">
       <Filter>Source Files\intermediate</Filter>
     </ClCompile>
+    <ClCompile Include="intermediate\filter.cpp">
+      <Filter>Source Files\intermediate</Filter>
+    </ClCompile>
+    <ClCompile Include="intermediate\flat_map.cpp">
+      <Filter>Source Files\intermediate</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="test.h">

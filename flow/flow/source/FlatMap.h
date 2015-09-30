@@ -76,6 +76,9 @@ public:
     /// </summary>
     /// <returns>The estimated size of the remainder of the stream.</returns>
     std::size_t estimate_size() const {
+        if (_stream == nullptr) {
+            return 128; // to_vector can crash; just return something
+        }
         return base::estimate_size() * _stream->estimate_size();
     }
 

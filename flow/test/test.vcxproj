@@ -139,6 +139,8 @@
   <ItemGroup>
     <ClCompile Include="intermediate\concat.cpp" />
     <ClCompile Include="intermediate\drop_while.cpp" />
+    <ClCompile Include="intermediate\filter.cpp" />
+    <ClCompile Include="intermediate\flat_map.cpp" />
     <ClCompile Include="terminal\all.cpp" />
     <ClCompile Include="terminal\any.cpp" />
     <ClCompile Include="terminal\contains.cpp" />
