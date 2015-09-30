@@ -76,7 +76,7 @@ auto concat(Container& container) {
 /// Concatenates <paramref name="list"/> onto the end of the Stream. This is the same as <c>concat(from(list))</c>.
 /// The <paramref name="tail"/> stream elements must be convertible to the same type of elements as the head stream.
 /// </summary>
-/// <param name="container">The list to concatenate onto the end of the stream.</param>
+/// <param name="list">The list to concatenate onto the end of the stream.</param>
 /// <returns>A detail::Intermediate operation that concatenates the container onto the stream.</returns>
 /// <seealso cref="from()"/>
 template <typename T>

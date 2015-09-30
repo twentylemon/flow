@@ -111,6 +111,12 @@
     <ClCompile Include="intermediate\reverse.cpp">
       <Filter>Source Files\intermediate</Filter>
     </ClCompile>
+    <ClCompile Include="intermediate\skip.cpp">
+      <Filter>Source Files\intermediate</Filter>
+    </ClCompile>
+    <ClCompile Include="intermediate\slice.cpp">
+      <Filter>Source Files\intermediate</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="test.h">
