@@ -91,21 +91,6 @@ protected:
     }
 
     /// <summary>
-    /// Updates the current stream value pointer to a temporary value. The lifetime of the
-    /// temporary is extended so the pointer is valid.
-    /// </summary>
-    /// <param name="temp_current">The temp_current.</param>
-    void assign_temp_current(decay_type&& temp_current) {
-        if (_temp.empty()) {
-            _temp.push_back(std::forward<decay_type>(temp_current));
-        }
-        else {
-            _temp[0] = std::forward<decay_type>(temp_current);
-        }
-        base::assign_current(_temp.data());
-    }
-
-    /// <summary>
     /// Returns the value inside the current stream value pointer. It is <em>not</em> moved.
     /// </summary>
     /// <returns>The stream value without moving it.</returns>
@@ -115,7 +100,6 @@ protected:
 
 private:
     value_type* _current;           // the current value from the stream
-    std::vector<decay_type> _temp;  // the temporary value from the stream, if any
 };
 
 /// <summary>
