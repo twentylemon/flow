@@ -61,7 +61,7 @@ auto cycle(Itr begin, Itr end, std::size_t n) {
 /// </summary>
 /// <param name="container">The container to cycle through.</param>
 /// <returns>An infinite stream which cycles <paramref name="container"/>.</returns>
-template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
+template <typename Container, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto cycle(Container& container) {
     return cycle(container.begin(), container.end());
 }
@@ -72,7 +72,7 @@ auto cycle(Container& container) {
 /// <param name="container">The container to cycle through.</param>
 /// <param name="n">The number of times to repeat <paramref name="container"/>.</param>
 /// <returns>A stream which cycles <paramref name="container"/> <paramref name="n"/> times.</returns>
-template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
+template <typename Container, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto cycle(Container& container, std::size_t n) {
     return cycle(container.begin(), container.end(), n);
 }
@@ -82,7 +82,7 @@ auto cycle(Container& container, std::size_t n) {
 /// </summary>
 /// <param name="container">The container to cycle through.</param>
 /// <returns>An infinite stream which cycles <paramref name="container"/>.</returns>
-template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
+template <typename Container, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto rcycle(Container& container) {
     return cycle(container.rbegin(), container.rend());
 }
@@ -93,7 +93,7 @@ auto rcycle(Container& container) {
 /// <param name="container">The container to cycle through.</param>
 /// <param name="n">The number of times to repeat <paramref name="container"/>.</param>
 /// <returns>A stream which cycles <paramref name="container"/> <paramref name="n"/> times.</returns>
-template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
+template <typename Container, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto rcycle(Container& container, std::size_t n) {
     return cycle(container.rbegin(), container.rend(), n);
 }

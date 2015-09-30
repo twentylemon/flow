@@ -251,7 +251,7 @@ auto zip(Stream<RightSource>&& right, BinaryOperation zipper) {
 /// <param name="zipper">The zipping operation that combines the two streams.</param>
 /// <returns>A detail::Intermediate operation that zips the two streams.</returns>
 /// <seealso cref="from()"/>
-template <typename Container, typename BinaryOperation, typename = typename std::enable_if_t<generator::detail::has_const_iterator<Container>::value>>
+template <typename Container, typename BinaryOperation, typename = std::enable_if_t<generator::detail::has_const_iterator<Container>::value>>
 auto zip(Container& container, BinaryOperation zipper) {
     return zip(generator::from(container), zipper);
 }
@@ -281,7 +281,7 @@ auto zip(Stream<RightSource>&& right) {
 /// <returns>A detail::Intermediate operation that zips the two streams.</returns>
 /// <seealso cref="from()"/>
 /// <seealso cref="uncurry()"/>
-template <typename Container, typename = typename std::enable_if_t<generator::detail::has_const_iterator<Container>::value>>
+template <typename Container, typename = std::enable_if_t<generator::detail::has_const_iterator<Container>::value>>
 auto zip(Container& container) {
     return zip(generator::from(container));
 }

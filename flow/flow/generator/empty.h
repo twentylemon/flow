@@ -26,9 +26,7 @@
 #ifndef FLOW_GENERATOR_EMPTY_H
 #define FLOW_GENERATOR_EMPTY_H
 
-#include <vector>
-
-#include "from_move.h"
+#include "from.h"
 
 namespace flow {
     namespace generator {
@@ -39,7 +37,7 @@ namespace flow {
 /// <returns>An empty stream with the template type of elements.</returns>
 template <typename T>
 auto empty() {
-    return from_move(std::vector<T>());
+    return from(static_cast<T*>(nullptr), static_cast<T*>(nullptr));
 }
     }
 }

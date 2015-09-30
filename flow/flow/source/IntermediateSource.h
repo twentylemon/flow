@@ -26,6 +26,8 @@
 #ifndef FLOW_SOURCE_INTERMEDIATESOURCE_H
 #define FLOW_SOURCE_INTERMEDIATESOURCE_H
 
+#include <vector>
+
 namespace flow {
     namespace source {
 
@@ -33,8 +35,8 @@ namespace flow {
 /// Base class for intermediate operation sources. Provides default implementations
 /// for basic methods, type aliases and common member variable definitions.
 /// </summary>
-template <typename Source, typename T = typename Source::value_type>
-class IntermediateSource
+template <typename Source, typename T>
+class IntermediateSourceBase
 {
 public:
     using source_type = Source;
@@ -42,10 +44,10 @@ public:
     using decay_type = std::decay_t<value_type>;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="IntermediateSource{Source, T}"/> class.
+    /// Initializes a new instance of the <see cref="IntermediateSourceBase{Source, T}"/> class.
     /// </summary>
     /// <param name="source">The stream source to read elements from.</param>
-    IntermediateSource(Source&& source) : _source(std::move(source)), _current(nullptr) { }
+    IntermediateSourceBase(Source&& source) : _source(std::move(source)), _current(nullptr) { }
 
     /// <summary>
     /// Returns true if the source has more elements. Default implementation returns <c>_source.has_next()</c>.
@@ -98,16 +100,6 @@ protected:
     }
 
     /// <summary>
-    /// Updates the current stream value pointer to a temporary value. The lifetime of the
-    /// temporary is extended so the pointer is valid.
-    /// </summary>
-    /// <param name="temp_current">The temp_current.</param>
-    void assign_temp_current(decay_type&& temp_current) {
-        _temp_current = std::forward<decay_type>(temp_current);
-        _current = &_temp_current;
-    }
-
-    /// <summary>
     /// Returns the value inside the current stream value pointer. It is <em>not</em> moved.
     /// </summary>
     /// <returns>The stream value without moving it.</returns>
@@ -124,10 +116,87 @@ protected:
     }
 
 private:
-    Source _source;             // the source of the stream
-    value_type* _current;       // the current value from the stream
+    Source _source;         // the source of the stream
+    value_type* _current;   // the current value from the stream
+};
+
+/// <summary>
+/// Base class for intermediate operation sources without default constructible types.
+/// </summary>
+template <typename Source, typename T = typename Source::value_type>
+class IntermediateSourceNoDefault : public IntermediateSourceBase<Source, T>
+{
+public:
+    using base = IntermediateSourceBase<Source, T>;
+    using source_type = typename base::source_type;
+    using value_type = typename base::value_type;
+    using decay_type = typename base::decay_type;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="IntermediateSourceNoDefault{Source, T}"/> class.
+    /// </summary>
+    /// <param name="source">The stream source to read elements from.</param>
+    IntermediateSourceNoDefault(Source&& source) : base(std::move(source)), _temp() { }
+
+protected:
+    /// <summary>
+    /// Updates the current stream value pointer to a temporary value. The lifetime of the
+    /// temporary is extended so the pointer is valid.
+    /// </summary>
+    /// <param name="temp_current">The temp_current.</param>
+    void assign_temp_current(decay_type&& temp_current) {
+        if (_temp.empty()) {
+            _temp.push_back(std::forward<decay_type>(temp_current));
+        }
+        else {
+            _temp[0] = std::forward<decay_type>(temp_current);
+        }
+        base::assign_current(_temp.data());
+    }
+
+private:
+    std::vector<decay_type> _temp;  // the temporary value from the stream, if any
+};
+
+/// <summary>
+/// Base class for intermediate operation sources with default constructible types.
+/// </summary>
+template <typename Source, typename T = typename Source::value_type>
+class IntermediateSourceDefault : public IntermediateSourceBase<Source, T>
+{
+public:
+    using base = IntermediateSourceBase<Source, T>;
+    using source_type = typename base::source_type;
+    using value_type = typename base::value_type;
+    using decay_type = typename base::decay_type;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="IntermediateSourceDefault{Source, T}"/> class.
+    /// </summary>
+    /// <param name="source">The stream source to read elements from.</param>
+    IntermediateSourceDefault(Source&& source) : base(std::move(source)), _temp_current() { }
+
+protected:
+    /// <summary>
+    /// Updates the current stream value pointer to a temporary value. The lifetime of the
+    /// temporary is extended so the pointer is valid.
+    /// </summary>
+    /// <param name="temp_current">The temp_current.</param>
+    void assign_temp_current(decay_type&& temp_current) {
+        _temp_current = std::forward<decay_type>(temp_current);
+        base::assign_current(&_temp_current);
+    }
+
+private:
     decay_type _temp_current;   // the temporary value from the stream, if any
 };
+
+template <typename Source, typename T = typename Source::value_type>
+using IntermediateSource = std::conditional_t<
+    std::is_default_constructible<T>::value,
+    IntermediateSourceDefault<Source, T>,
+    IntermediateSourceNoDefault<Source, T>
+>;
     }
 }
 #endif

@@ -27,6 +27,7 @@
 #define FLOW_SOURCE_GENERATORSOURCE_H
 
 #include <limits>
+#include <vector>
 
 namespace flow {
     namespace source {
@@ -36,16 +37,16 @@ namespace flow {
 /// Provides default implementations for infinite streams.
 /// </summary>
 template <typename T>
-class GeneratorSource
+class GeneratorSourceBase
 {
 public:
     using value_type = T;
     using decay_type = std::decay_t<value_type>;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="GeneratorSource{T}"/> class.
+    /// Initializes a new instance of the <see cref="GeneratorSourceBase{T}"/> class.
     /// </summary>
-    GeneratorSource() : _current(nullptr) { }
+    GeneratorSourceBase() : _current(nullptr) { }
 
     /// <summary>
     /// Returns true if this source has more elements.
@@ -95,8 +96,13 @@ protected:
     /// </summary>
     /// <param name="temp_current">The temp_current.</param>
     void assign_temp_current(decay_type&& temp_current) {
-        _temp_current = std::forward<decay_type>(temp_current);
-        _current = &_temp_current;
+        if (_temp.empty()) {
+            _temp.push_back(std::forward<decay_type>(temp_current));
+        }
+        else {
+            _temp[0] = std::forward<decay_type>(temp_current);
+        }
+        base::assign_current(_temp.data());
     }
 
     /// <summary>
@@ -108,9 +114,83 @@ protected:
     }
 
 private:
-    value_type* _current;       // the current value from the stream
+    value_type* _current;           // the current value from the stream
+    std::vector<decay_type> _temp;  // the temporary value from the stream, if any
+};
+
+/// <summary>
+/// Base class for original stream sources without default constructible types.
+/// </summary>
+template <typename T>
+class GeneratorSourceNoDefault : public GeneratorSourceBase<T>
+{
+public:
+    using base = GeneratorSourceBase<T>;
+    using value_type = typename base::value_type;
+    using decay_type = typename base::decay_type;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="GeneratorSourceNoDefault{T}"/> class.
+    /// </summary>
+    GeneratorSourceNoDefault() : base(), _temp() { }
+
+protected:
+    /// <summary>
+    /// Updates the current stream value pointer to a temporary value. The lifetime of the
+    /// temporary is extended so the pointer is valid.
+    /// </summary>
+    /// <param name="temp_current">The temp_current.</param>
+    void assign_temp_current(decay_type&& temp_current) {
+        if (_temp.empty()) {
+            _temp.push_back(std::forward<decay_type>(temp_current));
+        }
+        else {
+            _temp[0] = std::forward<decay_type>(temp_current);
+        }
+        base::assign_current(_temp.data());
+    }
+
+private:
+    std::vector<decay_type> _temp;  // the temporary value from the stream, if any
+};
+
+/// <summary>
+/// Base class for original stream sources with default constructible types.
+/// </summary>
+template <typename T>
+class GeneratorSourceDefault : public GeneratorSourceBase<T>
+{
+public:
+    using base = GeneratorSourceBase<T>;
+    using value_type = typename base::value_type;
+    using decay_type = typename base::decay_type;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="GeneratorSourceDefault{T}"/> class.
+    /// </summary>
+    GeneratorSourceDefault() : base(), _temp_current() { }
+
+protected:
+    /// <summary>
+    /// Updates the current stream value pointer to a temporary value. The lifetime of the
+    /// temporary is extended so the pointer is valid.
+    /// </summary>
+    /// <param name="temp_current">The temp_current.</param>
+    void assign_temp_current(decay_type&& temp_current) {
+        _temp_current = std::forward<decay_type>(temp_current);
+        base::assign_current(&_temp_current);
+    }
+
+private:
     decay_type _temp_current;   // the temporary value from the stream, if any
 };
+
+template <typename T>
+using GeneratorSource = std::conditional_t<
+    std::is_default_constructible<T>::value,
+    GeneratorSourceDefault<T>,
+    GeneratorSourceNoDefault<T>
+>;
     }
 }
 

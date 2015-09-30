@@ -3,6 +3,7 @@
 #define TEST_H
 
 #include <iostream>
+#include <functional>
 
 #include <flow.h>
 using namespace flow;
@@ -25,9 +26,23 @@ DO_OP(std::set);
 DO_OP(std::multiset);
 DO_OP(std::unordered_set);
 DO_OP(std::unordered_multiset);
+namespace std {
+    template <typename T, typename U>
+    std::ostream& operator<<(std::ostream& out, const std::pair<T, U>& pair) {
+        return out << '(' << pair.first << ", " << pair.second << ')';
+    }
+}
 
 inline bool is_even(int val) {
     return val % 2 == 0;
+}
+
+inline int negate(int val) {
+    return -val;
+}
+
+inline bool square_less(int lhs, int rhs) {
+    return lhs*lhs < rhs*rhs;
 }
 
 struct Widget {

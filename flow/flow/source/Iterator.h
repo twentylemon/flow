@@ -28,25 +28,27 @@
 
 #include <iterator>
 
+#include "GeneratorSource.h"
+
 namespace flow {
     namespace source {
 
 /// <summary>
 /// Stream source for a pair of iterators.
-/// <para>Does <em>not</em> extend GeneratorSource, as it does not share any similarities with it.</para>
 /// </summary>
 template <typename Itr>
-class Iterator
+class Iterator : public GeneratorSource<std::remove_reference_t<typename std::iterator_traits<Itr>::reference>>
 {
 public:
-    using value_type = std::remove_reference_t<typename std::iterator_traits<Itr>::reference>;
+    using base = GeneratorSource<std::remove_reference_t<typename std::iterator_traits<Itr>::reference>>;
+    using value_type = typename base::value_type;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Iterator{Itr}"/> class.
     /// </summary>
     /// <param name="begin">The begin iterator.</param>
     /// <param name="end">The end iterator.</param>
-    Iterator(Itr begin, Itr end) : _current(begin), _end(end) { }
+    Iterator(Itr begin, Itr end) : base(), _current(begin), _end(end) { }
 
     /// <summary>
     /// Returns true if this source has more elements.

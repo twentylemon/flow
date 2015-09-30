@@ -137,6 +137,8 @@
     <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="intermediate\concat.cpp" />
+    <ClCompile Include="intermediate\drop_while.cpp" />
     <ClCompile Include="terminal\all.cpp" />
     <ClCompile Include="terminal\any.cpp" />
     <ClCompile Include="terminal\contains.cpp" />
@@ -144,6 +146,17 @@
     <ClCompile Include="terminal\count.cpp" />
     <ClCompile Include="terminal\dump.cpp" />
     <ClCompile Include="terminal\each.cpp" />
+    <ClCompile Include="terminal\execute.cpp" />
+    <ClCompile Include="terminal\first.cpp" />
+    <ClCompile Include="terminal\fold.cpp" />
+    <ClCompile Include="terminal\last.cpp" />
+    <ClCompile Include="terminal\max.cpp" />
+    <ClCompile Include="terminal\min.cpp" />
+    <ClCompile Include="terminal\minmax.cpp" />
+    <ClCompile Include="terminal\none.cpp" />
+    <ClCompile Include="terminal\nth.cpp" />
+    <ClCompile Include="terminal\product.cpp" />
+    <ClCompile Include="terminal\sum.cpp" />
     <ClCompile Include="terminal\to.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>

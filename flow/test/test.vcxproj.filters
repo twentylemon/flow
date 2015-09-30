@@ -16,6 +16,12 @@
     <Filter Include="Source Files\terminal">
       <UniqueIdentifier>{22d1e50d-fda0-414c-8b2c-eefc18805875}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\generator">
+      <UniqueIdentifier>{d3a87bdc-87eb-4daf-9a46-0116beacff79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate">
+      <UniqueIdentifier>{2d25bc65-4ed5-480d-8749-b3d68300900c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test.cpp">
@@ -44,6 +50,45 @@
     </ClCompile>
     <ClCompile Include="terminal\each.cpp">
       <Filter>Source Files\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="terminal\execute.cpp">
+      <Filter>Source Files\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="terminal\first.cpp">
+      <Filter>Source Files\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="terminal\fold.cpp">
+      <Filter>Source Files\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="terminal\last.cpp">
+      <Filter>Source Files\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="terminal\max.cpp">
+      <Filter>Source Files\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="terminal\min.cpp">
+      <Filter>Source Files\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="terminal\minmax.cpp">
+      <Filter>Source Files\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="terminal\none.cpp">
+      <Filter>Source Files\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="terminal\nth.cpp">
+      <Filter>Source Files\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="terminal\product.cpp">
+      <Filter>Source Files\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="terminal\sum.cpp">
+      <Filter>Source Files\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="intermediate\concat.cpp">
+      <Filter>Source Files\intermediate</Filter>
+    </ClCompile>
+    <ClCompile Include="intermediate\drop_while.cpp">
+      <Filter>Source Files\intermediate</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

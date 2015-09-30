@@ -44,10 +44,10 @@ namespace flow {
 template <typename Compare = std::less<void>>
 auto min(Compare compare = Compare()) {
     return fold([compare](auto&& lhs, auto&& rhs) {
-        if (compare(lhs, rhs)) {
-            return std::move(lhs);
+        if (compare(rhs, lhs)) {
+            return std::move(rhs);
         }
-        return std::move(rhs);
+        return std::move(lhs);
     });
 }
     }

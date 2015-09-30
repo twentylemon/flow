@@ -64,7 +64,7 @@ auto from(Itr begin, Itr end) {
 /// </summary>
 /// <param name="container">The container to create a stream from.</param>
 /// <returns>A stream over <paramref name="container"/>.</returns>
-template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
+template <typename Container, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto from(Container& container) {
     return from(container.begin(), container.end());
 }
@@ -87,7 +87,7 @@ auto from(std::initializer_list<T> list) {
 /// <param name="op">The stream operation.</param>
 /// <returns><c>from(container) | op</c></returns>
 /// <seealso cref="from()"/>
-template <typename Container, typename F, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
+template <typename Container, typename F, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto operator|(Container& container, intermediate::detail::Intermediate<F>&& op) {
     return from(container) | std::move(op);
 }
@@ -100,7 +100,7 @@ auto operator|(Container& container, intermediate::detail::Intermediate<F>&& op)
 /// <param name="op">The stream operation.</param>
 /// <returns><c>from(container) | op</c></returns>
 /// <seealso cref="from()"/>
-template <typename Container, typename F, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
+template <typename Container, typename F, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 decltype(auto) operator|(Container& container, terminal::detail::Terminal<F>&& op) {
     return from(container) | std::move(op);
 }
@@ -110,9 +110,19 @@ decltype(auto) operator|(Container& container, terminal::detail::Terminal<F>&& o
 /// </summary>
 /// <param name="container">The container to create a stream from.</param>
 /// <returns>A reversed stream over <paramref name="container"/>.</returns>
-template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
+template <typename Container, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto rfrom(Container& container) {
     return from(container.rbegin(), container.rend());
+}
+
+/// <summary>
+/// Creates a Stream over <paramref name="list"/> in reverse order.
+/// </summary>
+/// <param name="list">The list to create a stream from.</param>
+/// <returns>A reversed stream over <paramref name="list"/>.</returns>
+template <typename T>
+auto rfrom(std::initializer_list<T> list) {
+    return from(list.rbegin(), list.rend());
 }
     }
 }
