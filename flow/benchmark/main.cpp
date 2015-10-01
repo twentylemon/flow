@@ -18,7 +18,7 @@ using namespace flow;
 
 #ifndef _DEBUG
 const int maxit = 1000;
-const int maxv = 500000;
+const int maxv = 500001;
 #else
 const int maxit = 1;
 const int maxv = 11;
@@ -83,8 +83,8 @@ void run_timer() {
 int main(int argc, char** argv) {
     std::iota(vec.begin(), vec.end(), 0);
     using T = decltype(vec)::value_type;
-    //std::size_t inc = iota(0) | nth(50);
-    //std::cout << inc << '\t' << vec.size() << std::endl;
+    std::size_t inc = iota(0) | nth(50);
+    std::cout << inc << '\t' << vec.size() << std::endl;
     auto endl = []() { std::cout << std::endl; };
 
     std::vector<int> cw{ 1, 2, 3 };
