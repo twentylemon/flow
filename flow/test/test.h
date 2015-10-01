@@ -9,7 +9,7 @@
 using namespace flow;
 
 #define BOOST_TEST_MODULE flow_test
-#include <boost/test/unit_test.hpp>
+#include <boost/test/included/unit_test.hpp>
 
 #define DO_OP1(cls) \
     namespace std { \
@@ -88,8 +88,9 @@ inline bool square_less(int lhs, int rhs) {
     return lhs*lhs < rhs*rhs;
 }
 
+const int DEFAULT_OTHER = 0;
+
 struct Widget {
-    static const int DEFAULT_OTHER = 0;
     Widget(int i) : _value(i), _other(DEFAULT_OTHER) { }
     Widget(int i, int j) : _value(i), _other(j) { }
     void set_value(int value) { _value = value; }

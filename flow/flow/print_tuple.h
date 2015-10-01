@@ -43,17 +43,6 @@ std::enable_if_t<N >= sizeof...(T)> print_tuple(std::ostream& out, const std::tu
 }
 
 /// <summary>
-/// Start recursive case for printing tuples. No comma is printed before the item.
-/// </summary>
-/// <param name="out">The out stream.</param>
-/// <param name="tuple">The tuple to display.</param>
-template <std::size_t N, typename... T>
-std::enable_if_t<N == 0> print_tuple(std::ostream& out, const std::tuple<T...>& tuple) {
-    out << std::get<N>(tuple);
-    print_tuple<N + 1>(out, tuple);
-}
-
-/// <summary>
 /// The normal case for printing tuples. A comma is printed before the item.
 /// </summary>
 /// <param name="out">The out stream.</param>
@@ -61,6 +50,17 @@ std::enable_if_t<N == 0> print_tuple(std::ostream& out, const std::tuple<T...>& 
 template <std::size_t N, typename... T>
 std::enable_if_t<(N > 0 && N < sizeof...(T))> print_tuple(std::ostream& out, const std::tuple<T...>& tuple) {
     out << ", " << std::get<N>(tuple);
+    print_tuple<N + 1>(out, tuple);
+}
+
+/// <summary>
+/// Start recursive case for printing tuples. No comma is printed before the item.
+/// </summary>
+/// <param name="out">The out stream.</param>
+/// <param name="tuple">The tuple to display.</param>
+template <std::size_t N, typename... T>
+std::enable_if_t<N == 0> print_tuple(std::ostream& out, const std::tuple<T...>& tuple) {
+    out << std::get<N>(tuple);
     print_tuple<N + 1>(out, tuple);
 }
     }

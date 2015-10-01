@@ -35,6 +35,6 @@ BOOST_AUTO_TEST_CASE(peek_member_const) {
     vec = { Widget(1), Widget(2) };
     vec | peek(&Widget::process);
     for (Widget& w : vec) {
-        BOOST_CHECK_EQUAL(w._other, Widget::DEFAULT_OTHER);
+        BOOST_CHECK_EQUAL(w._other, DEFAULT_OTHER);
     }
 }
