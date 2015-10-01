@@ -139,7 +139,15 @@
   <ItemGroup>
     <ClCompile Include="generator\closed_range.cpp" />
     <ClCompile Include="generator\cycle.cpp" />
+    <ClCompile Include="generator\cycle_move.cpp" />
+    <ClCompile Include="generator\empty.cpp" />
     <ClCompile Include="generator\from.cpp" />
+    <ClCompile Include="generator\from_move.cpp" />
+    <ClCompile Include="generator\generate.cpp" />
+    <ClCompile Include="generator\iota.cpp" />
+    <ClCompile Include="generator\iterate.cpp" />
+    <ClCompile Include="generator\range.cpp" />
+    <ClCompile Include="generator\repeat.cpp" />
     <ClCompile Include="intermediate\concat.cpp" />
     <ClCompile Include="intermediate\drop_while.cpp" />
     <ClCompile Include="intermediate\filter.cpp" />
@@ -155,6 +163,7 @@
     <ClCompile Include="intermediate\take_while.cpp" />
     <ClCompile Include="intermediate\unique.cpp" />
     <ClCompile Include="intermediate\zip.cpp" />
+    <ClCompile Include="iterator.cpp" />
     <ClCompile Include="terminal\all.cpp" />
     <ClCompile Include="terminal\any.cpp" />
     <ClCompile Include="terminal\contains.cpp" />
