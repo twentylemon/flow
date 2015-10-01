@@ -28,9 +28,7 @@
 
 #include <functional>
 
-#include "../Stream.h"
 #include "Intermediate.h"
-#include "../source/Unique.h"
 
 namespace flow {
     namespace intermediate {
@@ -48,11 +46,7 @@ namespace flow {
 template <typename Compare = std::less<void>>
 auto unique(Compare compare = Compare()) {
     return detail::make_intermediate([compare](auto&& stream) {
-        auto vec = stream | terminal::to_vector();
-        std::sort(vec.begin(), vec.end(), compare);
-        vec.erase(std::unique(vec.begin(), vec.end(), compare), vec.end());
-        return generator::from_move(std::move(vec));
-        //return Stream<source::Unique<std::remove_reference_t<decltype(stream.source())>>>(std::move(stream.source()), compare);
+        return generator::from_move(stream | terminal::to_set(compare));
     });
 }
     }

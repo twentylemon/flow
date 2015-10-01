@@ -138,7 +138,6 @@
     <ClInclude Include="source\IterateFunc.h" />
     <ClInclude Include="source\IntermediateSource.h" />
     <ClInclude Include="source\Sort.h" />
-    <ClInclude Include="source\Unique.h" />
     <ClInclude Include="terminal\execute.h" />
     <ClInclude Include="uncurry.h" />
     <ClInclude Include="generator\from.h" />

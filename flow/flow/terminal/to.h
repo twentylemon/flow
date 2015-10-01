@@ -39,27 +39,14 @@
 namespace flow {
     namespace terminal {
 
-        namespace detail {
 /// <summary>
-/// Wrapper for <c>std::hash&lt;T&gt;</c>.
-/// </summary>
-struct hash {
-    template <typename T>
-    std::size_t operator()(const T& value) const {
-        return std::hash<T>()(value);
-    }
-};
-        }
-
-/// <summary>
-/// Copies the stream into a <c>std::vector&lt;T, Alloc&lt;T&gt;&gt;</c> in order.
+/// Copies the stream into a <c>std::vector&lt;T&gt;</c> in order.
 /// </summary>
 /// <returns>The detail::Terminal operation which copies the stream into a <c>std::vector</c>.</returns>
-template <template <typename> class Alloc = std::allocator>
-auto to_vector() {
+inline auto to_vector() {
     return detail::make_terminal([](auto&& stream) {
         using T = std::decay_t<decltype(stream.next())>;
-        std::vector<T, Alloc<T>> result;
+        std::vector<T> result;
         result.reserve(stream.estimate_size());
         stream | copy(std::back_inserter(result));
         return result;
@@ -67,45 +54,133 @@ auto to_vector() {
 }
 
 /// <summary>
-/// Copies the stream into a <c>std::deque&lt;T, Alloc&lt;T&gt;&gt;</c> in order.
+/// Copies the stream into a <c>std::vector&lt;T, Allocator&gt;</c> in order.
 /// </summary>
-/// <returns>The detail::Terminal operation which copies the stream into a <c>std::deque</c>.</returns>
-template <template <typename> class Alloc = std::allocator>
-auto to_deque() {
-    return detail::make_terminal([](auto&& stream) {
+/// <param name="alloc">The allocator to use in the returned container.</param>
+/// <returns>The detail::Terminal operation which copies the stream into a <c>std::vector</c>.</returns>
+template <typename Allocator>
+auto to_vector(const Allocator& alloc) {
+    return detail::make_terminal([alloc](auto&& stream) {
         using T = std::decay_t<decltype(stream.next())>;
-        std::deque<T, Alloc<T>> result;
+        std::vector<T, Allocator> result(alloc);
+        result.reserve(stream.estimate_size());
         stream | copy(std::back_inserter(result));
         return result;
     });
 }
 
 /// <summary>
-/// Copies the stream into a <c>std::forward_list&lt;T, Alloc&lt;T&gt;&gt;</c> in reverse order.
+/// Copies the stream into a <c>std::deque&lt;T&gt;</c> in order.
+/// </summary>
+/// <returns>The detail::Terminal operation which copies the stream into a <c>std::deque</c>.</returns>
+inline auto to_deque() {
+    return detail::make_terminal([](auto&& stream) {
+        using T = std::decay_t<decltype(stream.next())>;
+        std::deque<T> result;
+        stream | copy(std::back_inserter(result));
+        return result;
+    });
+}
+
+/// <summary>
+/// Copies the stream into a <c>std::deque&lt;T, Allocator&gt;</c> in order.
+/// </summary>
+/// <param name="alloc">The allocator to use in the returned container.</param>
+/// <returns>The detail::Terminal operation which copies the stream into a <c>std::deque</c>.</returns>
+template <typename Allocator>
+auto to_deque(const Allocator& alloc) {
+    return detail::make_terminal([alloc](auto&& stream) {
+        using T = std::decay_t<decltype(stream.next())>;
+        std::deque<T, Allocator> result(alloc);
+        stream | copy(std::back_inserter(result));
+        return result;
+    });
+}
+
+/// <summary>
+/// Copies the stream into a <c>std::forward_list&lt;T&gt;</c> in reverse order.
 /// <para>Due to a lack of <c>forward_list::push_back</c>, the list contains the stream elements in reverse order,
 /// as they are pushed to the front of the list instead.</para>
 /// </summary>
 /// <returns>The detail::Terminal operation which copies the stream into a <c>std::forward_list</c>.</returns>
-template <template <typename> class Alloc = std::allocator>
-auto to_forward_list() {
+inline auto to_forward_list() {
     return detail::make_terminal([](auto&& stream) {
         using T = std::decay_t<decltype(stream.next())>;
-        std::forward_list<T, Alloc<T>> result;
+        std::forward_list<T> result;
         stream | copy(std::front_inserter(result));
         return result;
     });
 }
 
 /// <summary>
-/// Copies the stream into a <c>std::list&lt;T, Alloc&lt;T&gt;&gt;</c> in order.
+/// Copies the stream into a <c>std::forward_list&lt;T, Allocator&gt;</c> in reverse order.
+/// <para>Due to a lack of <c>forward_list::push_back</c>, the list contains the stream elements in reverse order,
+/// as they are pushed to the front of the list instead.</para>
+/// </summary>
+/// <param name="alloc">The allocator to use in the returned container.</param>
+/// <returns>The detail::Terminal operation which copies the stream into a <c>std::forward_list</c>.</returns>
+template <typename Allocator>
+auto to_forward_list(const Allocator& alloc) {
+    return detail::make_terminal([alloc](auto&& stream) {
+        using T = std::decay_t<decltype(stream.next())>;
+        std::forward_list<T, Allocator> result(alloc);
+        stream | copy(std::front_inserter(result));
+        return result;
+    });
+}
+
+/// <summary>
+/// Copies the stream into a <c>std::list&lt;T&gt;</c> in order.
 /// </summary>
 /// <returns>The detail::Terminal operation which copies the stream into a <c>std::list</c>.</returns>
-template <template <typename> class Alloc = std::allocator>
-auto to_list() {
+inline auto to_list() {
     return detail::make_terminal([](auto&& stream) {
         using T = std::decay_t<decltype(stream.next())>;
-        std::list<T, Alloc<T>> result;
+        std::list<T> result;
         stream | copy(std::back_inserter(result));
+        return result;
+    });
+}
+
+/// <summary>
+/// Copies the stream into a <c>std::list&lt;T, Allocator&gt;</c> in order.
+/// </summary>
+/// <param name="alloc">The allocator to use in the returned container.</param>
+/// <returns>The detail::Terminal operation which copies the stream into a <c>std::list</c>.</returns>
+template <typename Allocator>
+auto to_list(const Allocator& alloc) {
+    return detail::make_terminal([alloc](auto&& stream) {
+        using T = std::decay_t<decltype(stream.next())>;
+        std::list<T, Allocator> result(alloc);
+        stream | copy(std::back_inserter(result));
+        return result;
+    });
+}
+
+/// <summary>
+/// Copies the stream into a <c>std::set&lt;T&gt;</c>.
+/// </summary>
+/// <returns>The detail::Terminal operation which copies the stream into a <c>std::set</c>.</returns>
+inline auto to_set() {
+    return detail::make_terminal([](auto&& stream) {
+        using T = std::decay_t<decltype(stream.next())>;
+        std::set<T> result;
+        stream | copy(std::inserter(result, result.end()));
+        return result;
+    });
+}
+
+/// <summary>
+/// Copies the stream into a <c>std::set&lt;T, Compare&gt;</c>.
+/// </summary>
+/// <param name="compare">The comparator to use in the set.</param>
+/// <returns>The detail::Terminal operation which copies the stream into a <c>std::set</c>.</returns>
+template <typename Compare>
+auto to_set(Compare compare) {
+    return detail::make_terminal([compare](auto&& stream) {
+        using T = std::decay_t<decltype(stream.next())>;
+        std::set<T, Compare> result(compare);
+        stream | copy(std::inserter(result, result.end()));
         return result;
     });
 }
@@ -113,12 +188,42 @@ auto to_list() {
 /// <summary>
 /// Copies the stream into a <c>std::set&lt;T, Compare, Alloc&lt;T&gt;&gt;</c>.
 /// </summary>
+/// <param name="compare">The comparator to use in the set.</param>
+/// <param name="alloc">The allocator to use in the returned container.</param>
 /// <returns>The detail::Terminal operation which copies the stream into a <c>std::set</c>.</returns>
-template <typename Compare = std::less<void>, template <typename> class Alloc = std::allocator>
-auto to_set() {
+template <typename Compare, typename Allocator>
+auto to_set(Compare compare, const Allocator& alloc) {
+    return detail::make_terminal([compare, alloc](auto&& stream) {
+        using T = std::decay_t<decltype(stream.next())>;
+        std::set<T, Compare, Allocator> result(compare, alloc);
+        stream | copy(std::inserter(result, result.end()));
+        return result;
+    });
+}
+
+/// <summary>
+/// Copies the stream into a <c>std::multiset&lt;T&gt;</c>.
+/// </summary>
+/// <returns>The detail::Terminal operation which copies the stream into a <c>std::multiset</c>.</returns>
+inline auto to_multiset() {
     return detail::make_terminal([](auto&& stream) {
         using T = std::decay_t<decltype(stream.next())>;
-        std::set<T, Compare, Alloc<T>> result;
+        std::multiset<T> result;
+        stream | copy(std::inserter(result, result.end()));
+        return result;
+    });
+}
+
+/// <summary>
+/// Copies the stream into a <c>std::multiset&lt;T, Compare&gt;</c>.
+/// </summary>
+/// <param name="compare">The comparator to use in the set.</param>
+/// <returns>The detail::Terminal operation which copies the stream into a <c>std::multiset</c>.</returns>
+template <typename Compare>
+auto to_multiset(Compare compare) {
+    return detail::make_terminal([compare](auto&& stream) {
+        using T = std::decay_t<decltype(stream.next())>;
+        std::multiset<T, Compare> result(compare);
         stream | copy(std::inserter(result, result.end()));
         return result;
     });
@@ -127,40 +232,136 @@ auto to_set() {
 /// <summary>
 /// Copies the stream into a <c>std::multiset&lt;T, Compare, Alloc&lt;T&gt;&gt;</c>.
 /// </summary>
+/// <param name="compare">The comparator to use in the set.</param>
+/// <param name="alloc">The allocator to use in the returned container.</param>
 /// <returns>The detail::Terminal operation which copies the stream into a <c>std::multiset</c>.</returns>
-template <typename Compare = std::less<void>, template <typename> class Alloc = std::allocator>
-auto to_multiset() {
-    return detail::make_terminal([](auto&& stream) {
+template <typename Compare, typename Allocator>
+auto to_multiset(Compare compare, const Allocator& alloc) {
+    return detail::make_terminal([compare, alloc](auto&& stream) {
         using T = std::decay_t<decltype(stream.next())>;
-        std::multiset<T, Compare, Alloc<T>> result;
+        std::multiset<T, Compare, Allocator> result(compare, alloc);
         stream | copy(std::inserter(result, result.end()));
         return result;
     });
 }
 
 /// <summary>
-/// Copies the stream into a <c>std::unordered_set&lt;T, Hash, UnaryPredicate, Alloc&lt;T&gt;&gt;</c>.
+/// Copies the stream into a <c>std::unordered_set&lt;T&gt;</c>.
 /// </summary>
 /// <returns>The detail::Terminal operation which copies the stream into a <c>std::unordered_set</c>.</returns>
-template <typename Hash = detail::hash, typename UnaryPredicate = std::equal_to<void>, template <typename> class Alloc = std::allocator>
-auto to_unordered_set() {
+inline auto to_unordered_set() {
     return detail::make_terminal([](auto&& stream) {
         using T = std::decay_t<decltype(stream.next())>;
-        std::unordered_set<T, Hash, UnaryPredicate, Alloc<T>> result;
+        std::unordered_set<T> result;
         stream | copy(std::inserter(result, result.end()));
         return result;
     });
 }
 
 /// <summary>
-/// Copies the stream into a <c>std::unordered_multiset&lt;T, Hash, UnaryPredicate, Alloc&lt;T&gt;&gt;</c>.
+/// Copies the stream into a <c>std::unordered_set&lt;T, Hash&gt;</c>.
+/// </summary>
+/// <param name="hash">The hash function to use.</param>
+/// <returns>The detail::Terminal operation which copies the stream into a <c>std::unordered_set</c>.</returns>
+template <typename Hash>
+auto to_unordered_set(const Hash& hash) {
+    return detail::make_terminal([hash](auto&& stream) {
+        using T = std::decay_t<decltype(stream.next())>;
+        std::unordered_set<T, Hash> result(16, hash);
+        stream | copy(std::inserter(result, result.end()));
+        return result;
+    });
+}
+
+/// <summary>
+/// Copies the stream into a <c>std::unordered_set&lt;T, Hash, EqualPredicate&gt;</c>.
+/// </summary>
+/// <param name="hash">The hash function to use.</param>
+/// <param name="equal">The function to use for the equality predicate in the hash table.</param>
+/// <returns>The detail::Terminal operation which copies the stream into a <c>std::unordered_set</c>.</returns>
+template <typename Hash, typename EqualPredicate>
+auto to_unordered_set(const Hash& hash, EqualPredicate equal) {
+    return detail::make_terminal([hash, equal](auto&& stream) {
+        using T = std::decay_t<decltype(stream.next())>;
+        std::unordered_set<T, Hash, EqualPredicate> result(16, hash, equal);
+        stream | copy(std::inserter(result, result.end()));
+        return result;
+    });
+}
+
+/// <summary>
+/// Copies the stream into a <c>std::unordered_set&lt;T, Hash, EqualPredicate, Allocator&gt;</c>.
+/// </summary>
+/// <param name="hash">The hash function to use.</param>
+/// <param name="equal">The function to use for the equality predicate in the hash table.</param>
+/// <param name="alloc">The allocator to use in the returned container.</param>
+/// <returns>The detail::Terminal operation which copies the stream into a <c>std::unordered_set</c>.</returns>
+template <typename Hash, typename EqualPredicate, typename Allocator>
+auto to_unordered_set(const Hash& hash, EqualPredicate equal, const Allocator& alloc) {
+    return detail::make_terminal([hash, equal, alloc](auto&& stream) {
+        using T = std::decay_t<decltype(stream.next())>;
+        std::unordered_set<T, Hash, EqualPredicate, Allocator> result(16, hash, equal, alloc);
+        stream | copy(std::inserter(result, result.end()));
+        return result;
+    });
+}
+
+/// <summary>
+/// Copies the stream into a <c>std::unordered_multiset&lt;T&gt;</c>.
 /// </summary>
 /// <returns>The detail::Terminal operation which copies the stream into a <c>std::unordered_multiset</c>.</returns>
-template <typename Hash = detail::hash, typename UnaryPredicate = std::equal_to<void>, template <typename> class Alloc = std::allocator>
-auto to_unordered_multiset() {
+inline auto to_unordered_multiset() {
     return detail::make_terminal([](auto&& stream) {
         using T = std::decay_t<decltype(stream.next())>;
-        std::unordered_multiset<T, Hash, UnaryPredicate, Alloc<T>> result;
+        std::unordered_multiset<T> result;
+        stream | copy(std::inserter(result, result.end()));
+        return result;
+    });
+}
+
+/// <summary>
+/// Copies the stream into a <c>std::unordered_multiset&lt;T, Hash&gt;</c>.
+/// </summary>
+/// <param name="hash">The hash function to use.</param>
+/// <returns>The detail::Terminal operation which copies the stream into a <c>std::unordered_multiset</c>.</returns>
+template <typename Hash>
+auto to_unordered_multiset(const Hash& hash) {
+    return detail::make_terminal([hash](auto&& stream) {
+        using T = std::decay_t<decltype(stream.next())>;
+        std::unordered_multiset<T, Hash> result(16, hash);
+        stream | copy(std::inserter(result, result.end()));
+        return result;
+    });
+}
+
+/// <summary>
+/// Copies the stream into a <c>std::unordered_multiset&lt;T, Hash, EqualPredicate&gt;</c>.
+/// </summary>
+/// <param name="hash">The hash function to use.</param>
+/// <param name="equal">The function to use for the equality predicate in the hash table.</param>
+/// <returns>The detail::Terminal operation which copies the stream into a <c>std::unordered_multiset</c>.</returns>
+template <typename Hash, typename EqualPredicate>
+auto to_unordered_multiset(const Hash& hash, EqualPredicate equal) {
+    return detail::make_terminal([hash, equal](auto&& stream) {
+        using T = std::decay_t<decltype(stream.next())>;
+        std::unordered_multiset<T, Hash, EqualPredicate> result(16, hash, equal);
+        stream | copy(std::inserter(result, result.end()));
+        return result;
+    });
+}
+
+/// <summary>
+/// Copies the stream into a <c>std::unordered_multiset&lt;T, Hash, EqualPredicate, Allocator&gt;</c>.
+/// </summary>
+/// <param name="hash">The hash function to use.</param>
+/// <param name="equal">The function to use for the equality predicate in the hash table.</param>
+/// <param name="alloc">The allocator to use in the returned container.</param>
+/// <returns>The detail::Terminal operation which copies the stream into a <c>std::unordered_multiset</c>.</returns>
+template <typename Hash, typename EqualPredicate, typename Allocator>
+auto to_unordered_multiset(const Hash& hash, EqualPredicate equal, const Allocator& alloc) {
+    return detail::make_terminal([hash, equal, alloc](auto&& stream) {
+        using T = std::decay_t<decltype(stream.next())>;
+        std::unordered_multiset<T, Hash, EqualPredicate, Allocator> result(16, hash, equal, alloc);
         stream | copy(std::inserter(result, result.end()));
         return result;
     });

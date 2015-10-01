@@ -88,6 +88,10 @@ int main(int argc, char** argv) {
     auto endl = []() { std::cout << std::endl; };
 
     std::vector<int> cw{ 1, 2, 3 };
+
+    cycle(cw, 4) | unique() | dump();
+    endl();
+
     //cycle(cw, 1) | replace(1, 3) | dump();
     //range(0, 26, 5) | dump();
     cycle_move(std::move(cw), 4) | take_while([](int i) { return i == 1; }) | dump();

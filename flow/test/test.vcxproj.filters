@@ -22,6 +22,9 @@
     <Filter Include="Source Files\intermediate">
       <UniqueIdentifier>{2d25bc65-4ed5-480d-8749-b3d68300900c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\core">
+      <UniqueIdentifier>{5179e8d5-c95d-4d7c-9b3f-d4f6e3784e07}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test.cpp">
@@ -116,6 +119,30 @@
     </ClCompile>
     <ClCompile Include="intermediate\slice.cpp">
       <Filter>Source Files\intermediate</Filter>
+    </ClCompile>
+    <ClCompile Include="intermediate\sort.cpp">
+      <Filter>Source Files\intermediate</Filter>
+    </ClCompile>
+    <ClCompile Include="intermediate\take_while.cpp">
+      <Filter>Source Files\intermediate</Filter>
+    </ClCompile>
+    <ClCompile Include="intermediate\unique.cpp">
+      <Filter>Source Files\intermediate</Filter>
+    </ClCompile>
+    <ClCompile Include="intermediate\zip.cpp">
+      <Filter>Source Files\intermediate</Filter>
+    </ClCompile>
+    <ClCompile Include="uncurry.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="generator\from.cpp">
+      <Filter>Source Files\generator</Filter>
+    </ClCompile>
+    <ClCompile Include="generator\closed_range.cpp">
+      <Filter>Source Files\generator</Filter>
+    </ClCompile>
+    <ClCompile Include="generator\cycle.cpp">
+      <Filter>Source Files\generator</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -3,8 +3,6 @@
 
 BOOST_AUTO_TEST_SUITE(flow_intermediate)
 
-auto less_3 = std::bind(std::less<int>(), std::placeholders::_1, 3);
-
 BOOST_AUTO_TEST_CASE(drop_while_func) {
     std::vector<int> vec1 = { 3, 4, 5, 6 };
     auto vec2 = from({ 1, 2, 3, 4, 5, 6 }) | drop_while(less_3) | to_vector();

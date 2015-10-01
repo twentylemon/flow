@@ -114,16 +114,6 @@ template <typename Container, typename = std::enable_if_t<detail::has_const_iter
 auto rfrom(Container& container) {
     return from(container.rbegin(), container.rend());
 }
-
-/// <summary>
-/// Creates a Stream over <paramref name="list"/> in reverse order.
-/// </summary>
-/// <param name="list">The list to create a stream from.</param>
-/// <returns>A reversed stream over <paramref name="list"/>.</returns>
-template <typename T>
-auto rfrom(std::initializer_list<T> list) {
-    return from(list.rbegin(), list.rend());
-}
     }
 }
 #endif

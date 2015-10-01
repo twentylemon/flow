@@ -257,6 +257,21 @@ auto zip(Container& container, BinaryOperation zipper) {
 }
 
 /// <summary>
+/// Zips the two streams together using <paramref name="zipper"/> as the zipping operation.
+/// This is the same as <c>zip(from(list), zipper)</c>.
+/// <para>A zipping operation is any function that takes an element from either stream as input and produces
+/// a single output which is used for the resultant stream. The resultant stream is as long as the shortest input stream.</para>
+/// </summary>
+/// <param name="list">The list to zip together with this stream.</param>
+/// <param name="zipper">The zipping operation that combines the two streams.</param>
+/// <returns>A detail::Intermediate operation that zips the two streams.</returns>
+/// <seealso cref="from()"/>
+template <typename T, typename BinaryOperation>
+auto zip(std::initializer_list<T> list, BinaryOperation zipper) {
+    return zip(generator::from(list), zipper);
+}
+
+/// <summary>
 /// Zips the two streams together using the default zipping operation. The default zip operation
 /// creates tuples of the stream elements like <c>std::tuple&lt;T1, T2&gt;</c>. Multiple
 /// <c>zip</c> operations concatenates these tuples together rather than nesting them.
@@ -284,6 +299,21 @@ auto zip(Stream<RightSource>&& right) {
 template <typename Container, typename = std::enable_if_t<generator::detail::has_const_iterator<Container>::value>>
 auto zip(Container& container) {
     return zip(generator::from(container));
+}
+
+/// <summary>
+/// Zips the two streams together using the default zipping operation. The default zip
+/// creates tuples of the stream elements like <c>std::tuple&lt;T1, T2&gt;</c>. Multiple
+/// <c>zip</c> operations concatenates these tuples together rather than nesting them.
+/// This is the same as <c>zip(from(list))</c>.
+/// <para>The resultant stream is as long as the shortest input stream.</para>
+/// </summary>
+/// <param name="list">The list to zip together with this stream.</param>
+/// <returns>A detail::Intermediate operation that zips the two streams.</returns>
+/// <seealso cref="from()"/>
+template <typename T>
+auto zip(std::initializer_list<T> list) {
+    return zip(generator::from(list));
 }
     }
 }

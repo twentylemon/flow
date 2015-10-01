@@ -26,7 +26,6 @@
 #ifndef FLOW_SOURCE_GENERATORSOURCE_H
 #define FLOW_SOURCE_GENERATORSOURCE_H
 
-#include <limits>
 #include <vector>
 
 namespace flow {
@@ -74,11 +73,11 @@ public:
 
     /// <summary>
     /// Returns the max value of <c>std::size_t</c>. This is an infinite stream.
-    /// Default implementation returns std::size_t max value.
+    /// Default implementation returns 128; no reason really.
     /// </summary>
     /// <returns>The estimated size of the remainder of the stream.</returns>
     constexpr std::size_t estimate_size() const {
-        return std::numeric_limits<std::size_t>::max();
+        return 128;
     }
 
 protected:

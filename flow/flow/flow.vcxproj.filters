@@ -225,9 +225,6 @@
     <ClInclude Include="source\Sort.h">
       <Filter>Header Files\source</Filter>
     </ClInclude>
-    <ClInclude Include="source\Unique.h">
-      <Filter>Header Files\source</Filter>
-    </ClInclude>
     <ClInclude Include="generator\range.h">
       <Filter>Header Files\generator</Filter>
     </ClInclude>

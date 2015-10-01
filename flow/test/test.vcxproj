@@ -137,6 +137,9 @@
     <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="generator\closed_range.cpp" />
+    <ClCompile Include="generator\cycle.cpp" />
+    <ClCompile Include="generator\from.cpp" />
     <ClCompile Include="intermediate\concat.cpp" />
     <ClCompile Include="intermediate\drop_while.cpp" />
     <ClCompile Include="intermediate\filter.cpp" />
@@ -148,6 +151,10 @@
     <ClCompile Include="intermediate\reverse.cpp" />
     <ClCompile Include="intermediate\skip.cpp" />
     <ClCompile Include="intermediate\slice.cpp" />
+    <ClCompile Include="intermediate\sort.cpp" />
+    <ClCompile Include="intermediate\take_while.cpp" />
+    <ClCompile Include="intermediate\unique.cpp" />
+    <ClCompile Include="intermediate\zip.cpp" />
     <ClCompile Include="terminal\all.cpp" />
     <ClCompile Include="terminal\any.cpp" />
     <ClCompile Include="terminal\contains.cpp" />
@@ -168,6 +175,7 @@
     <ClCompile Include="terminal\sum.cpp" />
     <ClCompile Include="terminal\to.cpp" />
     <ClCompile Include="test.cpp" />
+    <ClCompile Include="uncurry.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="test.h" />
