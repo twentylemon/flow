@@ -38,7 +38,7 @@ namespace flow {
 /// </summary>
 /// <param name="container">The container to create a stream from.</param>
 /// <returns>A stream over <paramref name="container"/>.</returns>
-template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
+template <typename Container, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto from_move(Container&& container) {
     return cycle_move(std::move(container), 1);
 }
@@ -49,8 +49,8 @@ auto from_move(Container&& container) {
 /// safe to use temporaries as long as they are moved in.</para>
 /// </summary>
 /// <param name="container">The container to create a stream from.</param>
-/// <returns>A stream over <paramref name="container"/>.</returns>
-template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
+/// <returns>A reversed stream over <paramref name="container"/>.</returns>
+template <typename Container, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto rfrom_move(Container&& container) {
     return rcycle_move(std::move(container), 1);
 }

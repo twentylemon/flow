@@ -66,7 +66,7 @@ std::enable_if_t<(N > 0 && N < sizeof...(T))> print_tuple(std::ostream& out, con
     }
 
 /// <summary>
-/// Overload operator&lt;&lt; to display tuple types. The tuple is printed as <code>(item1, item2, ...)</code>.
+/// Overload operator&lt;&lt; to display tuple types. The tuple is printed as <c>(item1, item2, ...)</c>.
 /// Each item is displayed using operator&lt;&lt; on the elements.
 /// </summary>
 /// <param name="out">The out stream.</param>
@@ -85,10 +85,10 @@ std::ostream& operator<<(std::ostream& out, const std::tuple<T...>& tuple) {
 namespace std {
 
 /// <summary>
-/// Overload operator&lt;&lt; to display tuple types. The tuple is printed as <code>(item1, item2, ...)</code>.
+/// Overload operator&lt;&lt; to display tuple types. The tuple is printed as <c>(item1, item2, ...)</c>.
 /// Each item is displayed using operator&lt;&lt; on the elements.
-/// <para>This is defined in the <code>std</code> namespace to allow dump() to work correctly.
-/// To exclude this function from being defined in <code>std</code>, <code>\#define FLOW_PRINTTUPLE_NO_STD</code>
+/// <para>This is defined in the <c>std</c> namespace to allow dump() to work correctly.
+/// To exclude this function from being defined in <c>std</c>, <c>\#define FLOW_PRINTTUPLE_NO_STD</c>
 /// will remove it.</para>
 /// </summary>
 /// <param name="out">The out stream.</param>

@@ -28,7 +28,6 @@
 
 #include "from.h"
 #include "generate.h"
-#include "../intermediate/limit.h"
 #include "../intermediate/flat_map.h"
 
 namespace flow {
@@ -41,7 +40,7 @@ namespace flow {
 /// </summary>
 /// <param name="container">The container to cycle through.</param>
 /// <returns>An infinite stream which cycles <paramref name="container"/>.</returns>
-template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
+template <typename Container, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto cycle_move(Container&& container) {
     return generate([container = std::move(container)](){ return std::make_pair(container.begin(), container.end()); })
         | intermediate::flat_map([](auto&& itr) { return from(itr.first, itr.second); });
@@ -55,37 +54,37 @@ auto cycle_move(Container&& container) {
 /// <param name="container">The container to cycle through.</param>
 /// <param name="n">The number of times to repeat <paramref name="container"/>.</param>
 /// <returns>A stream which cycles <paramref name="container"/> <paramref name="n"/> times.</returns>
-template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
+template <typename Container, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto cycle_move(Container&& container, std::size_t n) {
-    return generate([container = std::move(container)](){ return std::make_pair(container.begin(), container.end()); })
-        | intermediate::limit(n) | intermediate::flat_map([](auto&& itr) { return from(itr.first, itr.second); });
+    return generate([container = std::move(container)](){ return std::make_pair(container.begin(), container.end()); }, n)
+        | intermediate::flat_map([](auto&& itr) { return from(itr.first, itr.second); });
 }
 
 /// <summary>
-/// Creates an infinite stream which cycles <paramref name="container"/>.
+/// Creates an infinite stream which cycles <paramref name="container"/> in reverse order.
 /// <para>This extends the lifetime of temporary containers that are passed to it. That is, it is
 /// safe to use temporaries as long as they are moved in.</para>
 /// </summary>
 /// <param name="container">The container to cycle through.</param>
 /// <returns>An infinite stream which cycles <paramref name="container"/>.</returns>
-template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
+template <typename Container, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto rcycle_move(Container&& container) {
     return generate([container = std::move(container)](){ return std::make_pair(container.rbegin(), container.rend()); })
         | intermediate::flat_map([](auto&& itr) { return from(itr.first, itr.second); });
 }
 
 /// <summary>
-/// Creates a stream which cycles through <paramref name="container"/> <paramref name="n"/> times.
+/// Creates a stream which cycles through <paramref name="container"/> <paramref name="n"/> times in reverse order.
 /// <para>This extends the lifetime of temporary containers that are passed to it. That is, it is
 /// safe to use temporaries as long as they are moved in.</para>
 /// </summary>
 /// <param name="container">The container to cycle through.</param>
 /// <param name="n">The number of times to repeat <paramref name="container"/>.</param>
 /// <returns>A stream which cycles <paramref name="container"/> <paramref name="n"/> times.</returns>
-template <typename Container, typename = typename std::enable_if_t<detail::has_const_iterator<Container>::value>>
+template <typename Container, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto rcycle_move(Container&& container, std::size_t n) {
-    return generate([container = std::move(container)](){ return std::make_pair(container.rbegin(), container.rend()); })
-        | intermediate::limit(n) | intermediate::flat_map([](auto&& itr) { return from(itr.first, itr.second); });
+    return generate([container = std::move(container)](){ return std::make_pair(container.rbegin(), container.rend()); }, n)
+        | intermediate::flat_map([](auto&& itr) { return from(itr.first, itr.second); });
 }
     }
 }

@@ -43,7 +43,7 @@ namespace flow {
 template <typename UnaryPredicate>
 auto filter(UnaryPredicate predicate) {
     return detail::make_intermediate([predicate](auto&& stream) {
-        return Stream<source::Filter<typename std::remove_reference_t<decltype(stream)>::source_type, UnaryPredicate>>(std::move(stream.source()), predicate);
+        return Stream<source::Filter<std::remove_reference_t<decltype(stream.source())>, UnaryPredicate>>(std::move(stream.source()), predicate);
     });
 }
 

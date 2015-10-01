@@ -43,8 +43,8 @@ namespace flow {
 /// is the size of the stream. For most applications, it will be beneficial to sort the source of the stream beforehand if possible.
 /// For example, the following should be <em>avoided</em>:</para>
 /// <code>int min = my_vector | sort() | first(); // just an example</code>
-/// <para>Instead, sorting the container in place beforehand will be more efficient as no copying takes place.</para>
-/// <code>std::sort(my_vector.begin(), my_vector.end());
+/// <para>Instead, sorting the container in place beforehand will be more efficient as no additional copying takes place.</para>
+/// <code>std::sort(my_vector.begin(), my_vector.end());<br>
 /// int min = my_vector | first();</code>
 /// </summary>
 /// <param name="compare">The compare function, by default <c>std::less&lt;void&gt;</c>.</param>
@@ -55,7 +55,7 @@ auto sort(Compare compare = Compare()) {
         auto vec = stream | terminal::to_vector();
         std::sort(vec.begin(), vec.end(), compare);
         return generator::from_move(std::move(vec));
-        //return Stream<source::Sort<typename std::remove_reference_t<decltype(stream)>::source_type>>(std::move(stream.source()), compare, false);
+        //return Stream<source::Sort<std::remove_reference_t<decltype(stream.source())>>>(std::move(stream.source()), compare, false);
     });
 }
 
@@ -67,8 +67,8 @@ auto sort(Compare compare = Compare()) {
 /// is the size of the stream. For most applications, it will be beneficial to sort the source of the stream beforehand if possible.
 /// For example, the following should be <em>avoided</em>:</para>
 /// <code>int min = my_vector | stable_sort() | first(); // just an example</code>
-/// <para>Instead, sorting the container in place beforehand will be more efficient as no copying takes place.</para>
-/// <code>std::stable_sort(my_vector.begin(), my_vector.end());
+/// <para>Instead, sorting the container in place beforehand will be more efficient as no additional copying takes place.</para>
+/// <code>std::stable_sort(my_vector.begin(), my_vector.end());<br>
 /// int min = my_vector | first();</code>
 /// </summary>
 /// <param name="compare">The compare function, by default <c>std::less&lt;void&gt;</c>.</param>
@@ -79,7 +79,7 @@ auto stable_sort(Compare compare = Compare()) {
         auto vec = stream | terminal::to_vector();
         std::stable_sort(vec.begin(), vec.end(), compare);
         return generator::from_move(std::move(vec));
-        //return Stream<source::Sort<typename std::remove_reference_t<decltype(stream)>::source_type>>(std::move(stream.source()), compare, true);
+        //return Stream<source::Sort<std::remove_reference_t<decltype(stream.source())>>>(std::move(stream.source()), compare, true);
     });
 }
     }

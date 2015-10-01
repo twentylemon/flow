@@ -41,8 +41,8 @@ namespace flow {
 /// <param name="equals">The equals predicate, by default <c>operator==</c> is used.</param>
 /// <returns>The detail::Terminal operation which returns <c>true</c> if the stream contains <c>val</c>.</returns>
 template <typename T, typename EqualPredicate = std::equal_to<T>>
-auto contains(const T& val, EqualPredicate equals = EqualPredicate()) {
-    return any(std::bind(equals, val, std::placeholders::_1));
+auto contains(T&& val, EqualPredicate equals = EqualPredicate()) {
+    return any(std::bind(equals, std::forward<T>(val), std::placeholders::_1));
 }
     }
 }

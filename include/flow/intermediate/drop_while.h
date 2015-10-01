@@ -44,7 +44,7 @@ namespace flow {
 template <typename UnaryPredicate>
 auto drop_while(UnaryPredicate predicate) {
     return detail::make_intermediate([predicate](auto&& stream) {
-        return Stream<source::DropWhile<typename std::remove_reference_t<decltype(stream)>::source_type, UnaryPredicate>>(std::move(stream.source()), predicate);
+        return Stream<source::DropWhile<std::remove_reference_t<decltype(stream.source())>, UnaryPredicate>>(std::move(stream.source()), predicate);
     });
 }
 

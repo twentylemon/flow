@@ -34,8 +34,7 @@ namespace flow {
     namespace intermediate {
 
 /// <summary>
-/// Lazily executes <paramref name="action"/> for each element in the Stream as a detail::Intermediate operation.
-/// This is an intermediate operation equivalent of each().
+/// Executes <paramref name="action"/> for each element in the Stream.
 /// </summary>
 /// <param name="action">The function to apply to each element of the stream.</param>
 /// <returns>A detail::Intermediate operation that executes a function for each stream element.</returns>
@@ -43,13 +42,12 @@ namespace flow {
 template <typename UnaryFunction>
 auto peek(UnaryFunction action) {
     return detail::make_intermediate([action](auto&& stream) {
-        return Stream<source::Peek<typename std::remove_reference_t<decltype(stream)>::source_type, UnaryFunction>>(std::move(stream.source()), action);
+        return Stream<source::Peek<std::remove_reference_t<decltype(stream.source())>, UnaryFunction>>(std::move(stream.source()), action);
     });
 }
 
 /// <summary>
-/// Lazily executes <paramref name="member"/> for each element in the Stream as a detail::Intermediate operation.
-/// This is an intermediate operation equivalent of each().
+/// Executes <paramref name="member"/> for each element in the Stream.
 /// </summary>
 /// <param name="member">The function to apply to each element of the stream.</param>
 /// <returns>A detail::Intermediate operation that executes a function for each stream element.</returns>
@@ -60,8 +58,7 @@ auto peek(Ret(Class::*member)()) {
 }
 
 /// <summary>
-/// Lazily executes <paramref name="member"/> for each element in the Stream as a detail::Intermediate operation.
-/// This is an intermediate operation equivalent of each().
+/// Executes <paramref name="member"/> for each element in the Stream.
 /// </summary>
 /// <param name="member">The function to apply to each element of the stream.</param>
 /// <returns>A detail::Intermediate operation that executes a function for each stream element.</returns>

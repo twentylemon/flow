@@ -26,8 +26,6 @@
 #ifndef FLOW_GENERATOR_EMPTY_H
 #define FLOW_GENERATOR_EMPTY_H
 
-#include <vector>
-
 #include "from.h"
 
 namespace flow {
@@ -38,9 +36,8 @@ namespace flow {
 /// </summary>
 /// <returns>An empty stream with the template type of elements.</returns>
 template <typename T>
-Stream<source::Iterator<typename std::vector<T>::iterator>> empty() {
-    std::vector<T> v;
-    return from(v.end(), v.end());
+auto empty() {
+    return from(static_cast<T*>(nullptr), static_cast<T*>(nullptr));
 }
     }
 }

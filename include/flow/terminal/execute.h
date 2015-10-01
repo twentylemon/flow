@@ -23,26 +23,29 @@
  * SOFTWARE.
  */
  
-#ifndef FLOW_INTERMEDIATE_FLATMAP_H
-#define FLOW_INTERMEDIATE_FLATMAP_H
+#ifndef FLOW_TERMINAL_EXECUTE_H
+#define FLOW_TERMINAL_EXECUTE_H
 
-#include "../Stream.h"
-#include "Intermediate.h"
-#include "../source/FlatMap.h"
+#include "Terminal.h"
 
 namespace flow {
-    namespace intermediate {
+    namespace terminal {
 
 /// <summary>
-/// Transforms each element in the Stream using <paramref name="operation"/>.
-/// Each element is transformed into a new stream. The resultant stream is a concatenation of all created streams.
+/// Forces the stream to be evaluated entirely.
+/// <para>The stream will not normally be evaluated unless a terminal operation is applied, or an eager intermediate
+/// operation is applied. This terminal forces evaluation of the entire stream. For example:</para>
+/// <code>widgets | zip(iota(1), [](Widget& w, int i) { w.set_id(i); return i; });</code>
+/// <para>The above stream assigns a unique id to each Widget, and the stream contains the ids. However, no terminal
+/// operation is applied, no value is ever needed so none of the stream is ever evaluated. Appending <c> | execute()</c>
+/// will force the stream to be evaluated, assigning the ids but ignoring the stream itself.</para>
 /// </summary>
-/// <param name="operation">The operation that creates a new stream from a stream element.</param>
-/// <returns>A detail::Intermediate operation that creates new streams and concatenations them together.</returns>
-template <typename UnaryOperation>
-auto flat_map(UnaryOperation operation) {
-    return detail::make_intermediate([operation](auto&& stream) {
-        return Stream<source::FlatMap<std::remove_reference_t<decltype(stream.source())>, UnaryOperation>>(std::move(stream.source()), operation);
+/// <returns>A detail::Terminal operation that evaluates the entire stream but ignores the elements.</returns>
+inline auto execute() {
+    return detail::make_terminal([](auto&& stream) {
+        while (stream.has_next()) {
+            stream.next();
+        }
     });
 }
     }

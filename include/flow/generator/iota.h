@@ -43,9 +43,11 @@ auto iota(T&& begin) {
 
 /// <summary>
 /// Creates an infinite Stream of values by incrementing <paramref name="begin"/> by <paramref name="increment"/>
-/// using <c>operator+</c>
+/// using <c>operator+</c>.
+/// <para>The stream elements are computed using the function <c>operator+(T, U)</c>; the <paramref name="increment"/> type
+/// is on the right hand side of the <c>+</c> operand.</para>
 /// </summary>
-/// <param name="begin">The beginning element of the stream, later elements are calculated by applying <c>operator+</c> to <paramref name="increment"/>.</param>
+/// <param name="begin">The beginning element of the stream, later elements are calculated by applying <c>operator+</c> by <paramref name="increment"/>.</param>
 /// <param name="increment">The value by which to increment each step in the stream.</param>
 /// <returns>A Stream of values starting at <paramref name="begin"/>, counting up using <c>operator+</c> by <paramref name="increment"/> each time.</returns>
 template <typename T, typename U>

@@ -37,11 +37,12 @@ namespace flow {
 /// Returns the minimum and maximum elements as a pair from the stream according to <paramref name="compare"/>.
 /// The first element is the minimum and the second element is the maximum. By default <c>operator&lt;</c>
 /// is used for comparisons.
+/// <para>If there are multiple min/max elements, the <em>first</em> min element and the <em>last</em>
+/// max element are returned.</para>
 /// </summary>
 /// <param name="compare">The compare function, by default <c>std::less&lt;void&gt;</c>.</param>
 /// <returns>A detail::Terminal operation which gives the min and max elements from the stream.</returns>
 /// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
-/// \todo naive implementation that uses 2n - 2 comparisons; can this be improved to the 3n / 2 solution?
 template <typename Compare = std::less<void>>
 auto minmax(Compare compare = Compare()) {
     return detail::make_terminal([compare](auto&& stream) {
@@ -52,27 +53,25 @@ auto minmax(Compare compare = Compare()) {
         auto max = min;
         while (stream.has_next()) {
             auto& next = stream.next();
-            if (compare(next, min)) {
-                min = next;
+            if (!stream.has_next()) {
+                if (compare(next, min)) { min = next; }
+                else if (compare(max, next)) { max = next; }
+                break;  // skip next has_next() call
             }
-            else if (compare(max, next)) {
-                max = next;
+            else {
+                auto& later = stream.next();
+                if (compare(later, next)) {
+                    if (compare(later, min)) { min = later; }
+                    if (compare(max, next)) { max = next; }
+                }
+                else {
+                    if (compare(next, min)) { min = next; }
+                    if (compare(max, later)) { max = later; }
+                }
             }
         }
-        return std::make_pair(min, max);
+        return std::make_pair(std::move(min), std::move(max));
     });
-    /*
-    // this implementation is much slower; odd as min/max were faster as fold operations
-    return fold_id([compare](auto&& pair, auto&& value) {
-        if (compare(value, pair.first)) {
-            pair.first = value;
-        }
-        else if (compare(pair.second, value)) {
-            pair.second = value;
-        }
-        return pair;
-    }, [](auto&& value) { return std::make_pair(value, value); });
-    */
 }
     }
 }

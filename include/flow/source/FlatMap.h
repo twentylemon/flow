@@ -38,10 +38,10 @@ namespace flow {
 /// of all the created streams.
 /// </summary>
 template <typename Source, typename UnaryOperation>
-class FlatMap : public IntermediateSource<Source, typename std::result_of_t<UnaryOperation(typename Source::value_type)>::value_type>
+class FlatMap : public IntermediateSource<Source, std::remove_reference_t<decltype(std::declval<std::result_of_t<UnaryOperation(typename Source::value_type)>>().next())>>
 {
 public:
-    using base = IntermediateSource<Source, typename std::result_of_t<UnaryOperation(typename Source::value_type)>::value_type>;
+    using base = IntermediateSource<Source, std::remove_reference_t<decltype(std::declval<std::result_of_t<UnaryOperation(typename Source::value_type)>>().next())>>;
     using stream_type = std::result_of_t<UnaryOperation(typename Source::value_type)>;
     using value_type = typename base::value_type;
 
@@ -72,10 +72,13 @@ public:
     /// Returns the estimated size of the remainder of the stream.
     /// This value cannot be accurately estimated. We assume that each stream created
     /// is the same size as the number of remaining elements in this stream,
-    /// making the estimate <code>_source.estimate_size() * _current_stream.estimate_size()</code>.
+    /// making the estimate <c>_source.estimate_size() * _current_stream.estimate_size()</c>.
     /// </summary>
     /// <returns>The estimated size of the remainder of the stream.</returns>
     std::size_t estimate_size() const {
+        if (_stream == nullptr) {
+            return 128; // to_vector can crash; just return something
+        }
         return base::estimate_size() * _stream->estimate_size();
     }
 

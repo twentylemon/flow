@@ -28,9 +28,7 @@
 
 #include <functional>
 
-#include "../Stream.h"
 #include "Intermediate.h"
-#include "../source/Unique.h"
 
 namespace flow {
     namespace intermediate {
@@ -38,20 +36,17 @@ namespace flow {
 /// <summary>
 /// Sorts and extracts only unique elements from the Stream. By default, <c>operator&lt;</c> is used for comparisons
 /// and equality.
-/// <para<As with sorting, this operation is eager, the entire stream up to this operation's creation
+/// <para>As with sorting, this operation is eager, the entire stream up to this operation's creation
 /// is evaluated and stored. Thus, the <c>unique</c> operation takes <c>O(n)</c> extra space and time plus the time to sort,
 /// where <c>n</c> is the size of the stream.</para>
 /// </summary>
 /// <param name="compare">The compare function, by default <c>std::less&lt;void&gt;</c>.</param>
 /// <returns>A detail::Intermediate operation that sorts the stream according to the compare function and keeps only unique elements.</returns>
+/// <seealso cref="sort()"/>
 template <typename Compare = std::less<void>>
 auto unique(Compare compare = Compare()) {
     return detail::make_intermediate([compare](auto&& stream) {
-        auto vec = stream | terminal::to_vector();
-        std::sort(vec.begin(), vec.end(), compare);
-        vec.erase(std::unique(vec.begin(), vec.end(), compare), vec.end());
-        return generator::from_move(std::move(vec));
-        //return Stream<source::Unique<typename std::remove_reference_t<decltype(stream)>::source_type>>(std::move(stream.source()), compare);
+        return generator::from_move(stream | terminal::to_set(compare));
     });
 }
     }

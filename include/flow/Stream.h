@@ -62,9 +62,6 @@ template <typename Source>
 class Stream
 {
 public:
-    using source_type = Source;
-    using value_type = typename Source::value_type;
-
     /// <summary>
     /// Initializes a new instance of the Stream class.
     /// </summary>
@@ -92,7 +89,7 @@ public:
     /// Returns the next element from the stream.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
-    value_type& next() {
+    auto& next() {
         return _source.next();
     }
 
@@ -138,23 +135,23 @@ public:
     /// <para>Additionally, only the first iterator ever used is valid. To extend the lifetime
     /// of a stream, use one of the to_container terminal operations.</para>
     /// </summary>
-    class const_iterator : public std::iterator<std::forward_iterator_tag, value_type>
+    class iterator : public std::iterator<std::forward_iterator_tag, typename Source::value_type>
     {
     public:
-        using base = std::iterator<std::forward_iterator_tag, value_type>;
+        using base = std::iterator<std::forward_iterator_tag, typename Source::value_type>;
         using value_type = typename base::value_type;
         using reference = typename base::reference;
         using pointer = typename base::pointer;
         using difference_type = typename base::difference_type;
         using iterator_category = typename base::iterator_category;
 
-        const_iterator() : _current(nullptr), _stream(nullptr) { }
-        const_iterator(Stream<Source>* stream) : _current(nullptr), _stream(stream) { operator++(); }
-        bool operator==(const const_iterator& rhs) const { return _current == rhs._current; }
-        bool operator!=(const const_iterator& rhs) const { return _current != rhs._current; }
+        iterator() : _current(nullptr), _stream(nullptr) { }
+        iterator(Stream<Source>* stream) : _current(nullptr), _stream(stream) { operator++(); }
+        bool operator==(const iterator& rhs) const { return _current == rhs._current; }
+        bool operator!=(const iterator& rhs) const { return _current != rhs._current; }
         reference operator*() { return *_current; }
         pointer operator->() { return _current; }
-        const_iterator& operator++() {
+        iterator& operator++() {
             if (_stream->has_next()) {
                 _current = &_stream->next();
             }
@@ -163,38 +160,33 @@ public:
             }
             return *this;
         }
-        const_iterator operator++(int){
+        iterator operator++(int){
             iterator ret = *this;
             return ++ret;
         }
     private:
-        pointer _current;
-        Stream<Source>* _stream;
+        pointer _current;           // the current stream element, null once off end
+        Stream<Source>* _stream;    // the stream this iterator belongs to
     };
-
-    using iterator = const_iterator;
 
     /// <summary>
     /// Returns an iterator to the first element in the stream.
     /// </summary>
     /// <returns>An iterator to the first element in the stream.</returns>
-    const_iterator begin() {
-        return const_iterator(this);
+    iterator begin() {
+        return iterator(this);
     }
 
     /// <summary>
     /// Returns an iterator to the first off-end element of the stream.
     /// </summary>
     /// <returns>An iterator to the first off-end element of the stream.</returns>
-    const_iterator end() {
-        return const_iterator();
+    iterator end() {
+        return iterator();
     }
 
-protected:
-    /// <summary>
-    /// The source of this stream, where values are pulled from.
-    /// </summary>
-    Source _source;
+private:
+    Source _source; // the source of stream elements
 };
 }
 #endif

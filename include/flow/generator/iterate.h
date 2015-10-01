@@ -46,17 +46,18 @@ struct HeadType
 
 /// <summary>
 /// Creates an infinite Stream where values are created using successive calls to
-/// the <paramref name="function"/>, starting with the values given. For example, <c>iterate(std::plus&lt;int&gt;(), 0, 1)</c>
-/// would result in the stream <c>0, 1, 1, 2, 3, 5, 8...</c>. <c>0</c> and <c>1</c> are given, then the rest
-/// are calculated as <c>0+1=1</c>, <c>1+1=2</c>, <c>f_i = f_{i-2} + f_{i-1}</c>.
+/// the <paramref name="function"/>, starting with the values given.
+/// <para>For example, <c>iterate(std::plus&lt;int&gt;(), 0, 1)</c> would result in the stream
+/// <c>0, 1, 1, 2, 3, 5, 8...</c>. <c>0</c> and <c>1</c> are given, then the rest
+/// are calculated as <c>0+1=1</c>, <c>1+1=2</c>, <c>f_i = f_{i-2} + f_{i-1}</c>.</para>
 /// </summary>
 /// <param name="function">The iterating function.</param>
-/// <param name="...initial">The values the stream will contain, and initial values to send to the iterating function.</param>
+/// <param name="...initial">The first values the stream will contain, and initial values to send to the iterating function
+/// to calculate further elements.</param>
 /// <returns>An infinite stream that iterates the function given.</returns>
 template <typename IteratingFunction, typename... Args>
 auto iterate(IteratingFunction function, Args&&... initial) {
-    using T = std::remove_reference_t<typename detail::HeadType<Args...>::type>;
-    return Stream<source::IterateFunc<IteratingFunction, T, sizeof...(Args)>>(function, std::forward<Args>(initial)...);
+    return Stream<source::IterateFunc<IteratingFunction, std::remove_reference_t<typename detail::HeadType<Args...>::type>, sizeof...(Args)>>(function, std::forward<Args>(initial)...);
 }
     }
 }

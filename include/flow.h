@@ -59,6 +59,7 @@
 #include "flow/terminal/copy.h"
 #include "flow/terminal/dump.h"
 #include "flow/terminal/to.h"
+#include "flow/terminal/execute.h"
 
 #include "flow/intermediate/map.h"
 #include "flow/intermediate/flat_map.h"

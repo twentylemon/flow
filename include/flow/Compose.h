@@ -64,19 +64,12 @@ public:
     /// <returns>The result of the composition of the operations on the stream.</returns>
     template <typename Source>
     std::result_of_t<F(std::result_of_t<G(Stream<Source>&&)>)> operator()(Stream<Source>&& stream) {
-        return _f(_g(stream));
+        return _f(_g(std::move(stream)));
     }
 
-protected:
-    /// <summary>
-    /// The outer operation.
-    /// </summary>
-    F _f;
-
-    /// <summary>
-    /// The inner operation.
-    /// </summary>
-    G _g;
+private:
+    F _f;   // the outer operation
+    G _g;   // the inner operation
 };
     }
 }
