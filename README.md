@@ -25,8 +25,8 @@ common generator used is `from()`, which creates a Stream from an iterator range
 auto stream = from(my_vector); // a stream over the entire vector in the same order
 ```
 
-Other common stream generators are `iota()`, which counts up from a value, and `repeat()`, which repeats a value or
-cycles a container.
+Other common stream generators are `iota()`, which counts up from a value, and `repeat()`, which repeats a value.
+Several others are included in the flow::generator namespace.
 
 Manipulating a Sick Flow
 ------------------------
