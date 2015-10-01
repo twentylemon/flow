@@ -88,19 +88,26 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">GeneratorSource.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;limits&gt;</code><br />
+<div class="textblock"><code>#include &lt;vector&gt;</code><br />
 </div>
 <p><a href="../../d5/daf/_generator_source_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d72/classflow_1_1source_1_1_generator_source.html">flow::source::GeneratorSource&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for original stream sources; sources that initially create the stream. Provides default implementations for infinite streams.  <a href="../../d3/d72/classflow_1_1source_1_1_generator_source.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d80/classflow_1_1source_1_1_generator_source_base.html">flow::source::GeneratorSourceBase&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for original stream sources; sources that initially create the stream. Provides default implementations for infinite streams.  <a href="../../d7/d80/classflow_1_1source_1_1_generator_source_base.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d34/classflow_1_1source_1_1_generator_source_no_default.html">flow::source::GeneratorSourceNoDefault&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for original stream sources without default constructible types.  <a href="../../db/d34/classflow_1_1source_1_1_generator_source_no_default.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfd/classflow_1_1source_1_1_generator_source_default.html">flow::source::GeneratorSourceDefault&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for original stream sources with default constructible types.  <a href="../../d4/dfd/classflow_1_1source_1_1_generator_source_default.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -109,6 +116,12 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:dc/de6/namespaceflow_1_1source"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/de6/namespaceflow_1_1source.html">flow::source</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ad7bc3233ee33321d7d85e1a2c56ce464"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ad7bc3233ee33321d7d85e1a2c56ce464"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/de6/namespaceflow_1_1source.html#ad7bc3233ee33321d7d85e1a2c56ce464">flow::source::GeneratorSource</a> = std::conditional_t&lt; std::is_default_constructible&lt; T &gt;::value, GeneratorSourceDefault&lt; T &gt;, GeneratorSourceNoDefault&lt; T &gt; &gt;</td></tr>
+<tr class="separator:ad7bc3233ee33321d7d85e1a2c56ce464"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -107,6 +107,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a53340c4b4e3903b6dfd789901760b973"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; LeftType, RightType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d34/structflow_1_1intermediate_1_1detail_1_1tuple__zipper.html#a53340c4b4e3903b6dfd789901760b973">operator()</a> (const LeftType &amp;left, const RightType &amp;right) const </td></tr>
 <tr class="memdesc:a53340c4b4e3903b6dfd789901760b973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a tuple of the two elements.  <a href="#a53340c4b4e3903b6dfd789901760b973">More...</a><br /></td></tr>
 <tr class="separator:a53340c4b4e3903b6dfd789901760b973"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0acabba8bcd1e9736baaea6744bd9759"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; LeftType, RightType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d34/structflow_1_1intermediate_1_1detail_1_1tuple__zipper.html#a0acabba8bcd1e9736baaea6744bd9759">operator()</a> (LeftType &amp;&amp;left, const RightType &amp;right) const </td></tr>
+<tr class="memdesc:a0acabba8bcd1e9736baaea6744bd9759"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a tuple of the two elements.  <a href="#a0acabba8bcd1e9736baaea6744bd9759">More...</a><br /></td></tr>
+<tr class="separator:a0acabba8bcd1e9736baaea6744bd9759"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f4aa6ea16dcc946c9a506e6dcf99388"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; LeftType, RightType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d34/structflow_1_1intermediate_1_1detail_1_1tuple__zipper.html#a7f4aa6ea16dcc946c9a506e6dcf99388">operator()</a> (const LeftType &amp;left, RightType &amp;&amp;right) const </td></tr>
+<tr class="memdesc:a7f4aa6ea16dcc946c9a506e6dcf99388"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a tuple of the two elements.  <a href="#a7f4aa6ea16dcc946c9a506e6dcf99388">More...</a><br /></td></tr>
+<tr class="separator:a7f4aa6ea16dcc946c9a506e6dcf99388"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename LeftType, typename RightType&gt;<br />
@@ -133,6 +139,98 @@ template&lt;typename LeftType , typename RightType &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const RightType &amp;&#160;</td>
+          <td class="paramname"><em>right</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a tuple of the two elements. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">left</td><td>The left stream element.</td></tr>
+    <tr><td class="paramname">right</td><td>The right stream element.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <code>std::tuple</code> of the two elements.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0acabba8bcd1e9736baaea6744bd9759"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename LeftType , typename RightType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::tuple&lt;LeftType, RightType&gt; <a class="el" href="../../d2/d34/structflow_1_1intermediate_1_1detail_1_1tuple__zipper.html">flow::intermediate::detail::tuple_zipper</a>&lt; LeftType, RightType &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">LeftType &amp;&amp;&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const RightType &amp;&#160;</td>
+          <td class="paramname"><em>right</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a tuple of the two elements. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">left</td><td>The left stream element.</td></tr>
+    <tr><td class="paramname">right</td><td>The right stream element.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <code>std::tuple</code> of the two elements.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7f4aa6ea16dcc946c9a506e6dcf99388"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename LeftType , typename RightType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::tuple&lt;LeftType, RightType&gt; <a class="el" href="../../d2/d34/structflow_1_1intermediate_1_1detail_1_1tuple__zipper.html">flow::intermediate::detail::tuple_zipper</a>&lt; LeftType, RightType &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const LeftType &amp;&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RightType &amp;&amp;&#160;</td>
           <td class="paramname"><em>right</em>&#160;</td>
         </tr>
         <tr>

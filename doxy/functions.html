@@ -133,15 +133,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>_end
 : <a class="el" href="d6/ddc/classflow_1_1source_1_1_iterator.html#aaa05e42a77aebf0427ca8236448ec893">flow::source::Iterator&lt; Itr &gt;</a>
 </li>
-<li>_f
-: <a class="el" href="d3/d93/classflow_1_1detail_1_1_compose.html#a9f677be4146637efb617f47683698fe8">flow::detail::Compose&lt; F, G &gt;</a>
-</li>
-<li>_g
-: <a class="el" href="d3/d93/classflow_1_1detail_1_1_compose.html#ad6b7012d88f61a7bf2c8cca67b208f6f">flow::detail::Compose&lt; F, G &gt;</a>
-</li>
-<li>_source
-: <a class="el" href="d9/dcd/classflow_1_1_stream.html#a250b5e524d5d4a6e4a8a72066382e98c">flow::Stream&lt; Source &gt;</a>
-</li>
 <li>_step_size
 : <a class="el" href="dd/d62/classflow_1_1source_1_1_skip.html#ad4ba690fad4c806fd03de36c685d0885">flow::source::Skip&lt; Source &gt;</a>
 </li>
@@ -153,12 +144,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
 <li>assign_current()
-: <a class="el" href="d3/d72/classflow_1_1source_1_1_generator_source.html#abd3d218f6c755bc5493190843376cf36">flow::source::GeneratorSource&lt; T &gt;</a>
-, <a class="el" href="da/dea/classflow_1_1source_1_1_intermediate_source.html#ac0438bd5d5d528a0d0e20c6ab2f07940">flow::source::IntermediateSource&lt; Source, T &gt;</a>
+: <a class="el" href="d7/d80/classflow_1_1source_1_1_generator_source_base.html#a2d87744beac14748c2567efa2c2ea239">flow::source::GeneratorSourceBase&lt; T &gt;</a>
+, <a class="el" href="d7/d08/classflow_1_1source_1_1_intermediate_source_base.html#a2df7945ff9ce38191f09f6cf5ed10a38">flow::source::IntermediateSourceBase&lt; Source, T &gt;</a>
 </li>
 <li>assign_temp_current()
-: <a class="el" href="d3/d72/classflow_1_1source_1_1_generator_source.html#a129b5f3ca0a0fc63be3f6e063282df36">flow::source::GeneratorSource&lt; T &gt;</a>
-, <a class="el" href="da/dea/classflow_1_1source_1_1_intermediate_source.html#a2962d2ea3082e9d111609fb9f0bf5e67">flow::source::IntermediateSource&lt; Source, T &gt;</a>
+: <a class="el" href="d4/dfd/classflow_1_1source_1_1_generator_source_default.html#ac5a0366a246e34c75068404d601b65db">flow::source::GeneratorSourceDefault&lt; T &gt;</a>
+, <a class="el" href="db/d34/classflow_1_1source_1_1_generator_source_no_default.html#ac42caaad7bcf3210b777e9ab414bce49">flow::source::GeneratorSourceNoDefault&lt; T &gt;</a>
+, <a class="el" href="d3/dc7/classflow_1_1source_1_1_intermediate_source_default.html#ab559a05ee3f27f2a4d29cf217d885599">flow::source::IntermediateSourceDefault&lt; Source, T &gt;</a>
+, <a class="el" href="d5/d0b/classflow_1_1source_1_1_intermediate_source_no_default.html#a9ab72520e22fb6e66ccce91cde5fb69d">flow::source::IntermediateSourceNoDefault&lt; Source, T &gt;</a>
 </li>
 </ul>
 
@@ -168,8 +161,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="da/dbc/classflow_1_1source_1_1_concat.html#ab263b1221ed0e7e640112434b8daaf93">flow::source::Concat&lt; Head, Tail &gt;</a>
 , <a class="el" href="de/d70/classflow_1_1source_1_1_drop_while.html#acfbb089d35553f2ef3c9ced766790247">flow::source::DropWhile&lt; Source, UnaryPredicate &gt;</a>
 , <a class="el" href="d0/d3f/classflow_1_1source_1_1_filter.html#a498760d7f819f776245a8979b16954b5">flow::source::Filter&lt; Source, UnaryPredicate &gt;</a>
-, <a class="el" href="d9/db6/classflow_1_1source_1_1_flat_map.html#a97be87049f08118cf198cc22800b3753">flow::source::FlatMap&lt; Source, UnaryOperation &gt;</a>
+, <a class="el" href="d9/db6/classflow_1_1source_1_1_flat_map.html#ad69a5112affe7ee09b990c87605a9a35">flow::source::FlatMap&lt; Source, UnaryOperation &gt;</a>
 , <a class="el" href="d3/d03/classflow_1_1source_1_1_generate.html#aa9a72285baa4042a3deb7fa4dba8facb">flow::source::Generate&lt; Generator &gt;</a>
+, <a class="el" href="d4/dfd/classflow_1_1source_1_1_generator_source_default.html#a942be407999d9e50704fd318de60bb1b">flow::source::GeneratorSourceDefault&lt; T &gt;</a>
+, <a class="el" href="db/d34/classflow_1_1source_1_1_generator_source_no_default.html#acbcf4cc754450f30e898416c0b6e0fe9">flow::source::GeneratorSourceNoDefault&lt; T &gt;</a>
+, <a class="el" href="d3/dc7/classflow_1_1source_1_1_intermediate_source_default.html#a7785e46b3d73e46b1fa7d8cc709bd341">flow::source::IntermediateSourceDefault&lt; Source, T &gt;</a>
+, <a class="el" href="d5/d0b/classflow_1_1source_1_1_intermediate_source_no_default.html#aebd8342bef4d4127317cdc0941649157">flow::source::IntermediateSourceNoDefault&lt; Source, T &gt;</a>
 , <a class="el" href="de/d8c/classflow_1_1source_1_1_iterate_func.html#a3c7690ee4f09fa7e96a0ba5a66e2c27b">flow::source::IterateFunc&lt; IteratingFunction, T, N &gt;</a>
 , <a class="el" href="d6/ddc/classflow_1_1source_1_1_iterator.html#af405de6b3556d75e0231fc7d37ac72a5">flow::source::Iterator&lt; Itr &gt;</a>
 , <a class="el" href="d7/dff/classflow_1_1source_1_1_map.html#a396f4a2d9e17da275b0829395d4c734b">flow::source::Map&lt; Source, UnaryOperation &gt;</a>
@@ -179,10 +176,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="de/d82/classflow_1_1source_1_1_sort.html#a3b706ad4a7c44bb5917102bd65cc8aaa">flow::source::Sort&lt; Source &gt;</a>
 , <a class="el" href="d5/d29/classflow_1_1source_1_1_take_while.html#af3f078c92d15d70f74e8e2da099df469">flow::source::TakeWhile&lt; Source, UnaryPredicate &gt;</a>
 , <a class="el" href="de/df4/classflow_1_1source_1_1_zip.html#a3839b489c8c4dc6fe331800d3830bfce">flow::source::Zip&lt; LeftSource, RightSource, Zipper &gt;</a>
-, <a class="el" href="db/d07/classflow_1_1_stream_1_1const__iterator.html#a06976a5cbcede76ba096ad732d9abf41">flow::Stream&lt; Source &gt;::const_iterator</a>
+, <a class="el" href="d0/d2d/classflow_1_1_stream_1_1iterator.html#ad94e5078c6aec113d643e5a2ffee9652">flow::Stream&lt; Source &gt;::iterator</a>
 </li>
 <li>begin()
-: <a class="el" href="d9/dcd/classflow_1_1_stream.html#ae01be8948668196ff7d7e23fb6c64bf6">flow::Stream&lt; Source &gt;</a>
+: <a class="el" href="d9/dcd/classflow_1_1_stream.html#a31245115ba05ca2632a0eff967a0f2b0">flow::Stream&lt; Source &gt;</a>
 </li>
 </ul>
 
@@ -194,19 +191,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Concat()
 : <a class="el" href="da/dbc/classflow_1_1source_1_1_concat.html#aa26287330d1de3a7de42353a3f56bf41">flow::source::Concat&lt; Head, Tail &gt;</a>
 </li>
-<li>const_iterator()
-: <a class="el" href="db/d07/classflow_1_1_stream_1_1const__iterator.html#a3bd34a3c6d41f62e9c6d878085dddbb1">flow::Stream&lt; Source &gt;::const_iterator</a>
-</li>
 </ul>
 
 
 <h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
 <li>decay_type
-: <a class="el" href="d3/d72/classflow_1_1source_1_1_generator_source.html#ac3678f2d83a9bfcbca11bec6bdb26039">flow::source::GeneratorSource&lt; T &gt;</a>
-, <a class="el" href="da/dea/classflow_1_1source_1_1_intermediate_source.html#ac1cb00f37b944cc3923e6e6ee2de7cf5">flow::source::IntermediateSource&lt; Source, T &gt;</a>
+: <a class="el" href="d7/d80/classflow_1_1source_1_1_generator_source_base.html#a6ec075320395c970bf3fb1844340e28e">flow::source::GeneratorSourceBase&lt; T &gt;</a>
+, <a class="el" href="d4/dfd/classflow_1_1source_1_1_generator_source_default.html#af2db609dba8fec59c6ea161feeb5e88c">flow::source::GeneratorSourceDefault&lt; T &gt;</a>
+, <a class="el" href="db/d34/classflow_1_1source_1_1_generator_source_no_default.html#a6f2c8b6f6366c5c563f3c86711bd40aa">flow::source::GeneratorSourceNoDefault&lt; T &gt;</a>
+, <a class="el" href="d7/d08/classflow_1_1source_1_1_intermediate_source_base.html#aae2eb13911186926187f235f849ebaab">flow::source::IntermediateSourceBase&lt; Source, T &gt;</a>
+, <a class="el" href="d3/dc7/classflow_1_1source_1_1_intermediate_source_default.html#ae186b392a83acfb5cafd184e3c344da6">flow::source::IntermediateSourceDefault&lt; Source, T &gt;</a>
+, <a class="el" href="d5/d0b/classflow_1_1source_1_1_intermediate_source_no_default.html#a90d30492bdcbc585e8b7b33881ff606a">flow::source::IntermediateSourceNoDefault&lt; Source, T &gt;</a>
 </li>
 <li>difference_type
-: <a class="el" href="db/d07/classflow_1_1_stream_1_1const__iterator.html#ad732ee7e50864d0491f56e707df04198">flow::Stream&lt; Source &gt;::const_iterator</a>
+: <a class="el" href="d0/d2d/classflow_1_1_stream_1_1iterator.html#aa5b3c0cf8bbcff7c6199bbcfb4fdafe3">flow::Stream&lt; Source &gt;::iterator</a>
 </li>
 <li>DropWhile()
 : <a class="el" href="de/d70/classflow_1_1source_1_1_drop_while.html#a694bb35ec02882cad3af917d9741ef02">flow::source::DropWhile&lt; Source, UnaryPredicate &gt;</a>
@@ -216,13 +214,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
 <li>end()
-: <a class="el" href="d9/dcd/classflow_1_1_stream.html#a2aaa26f5c0b7761093b995a657ef2a22">flow::Stream&lt; Source &gt;</a>
+: <a class="el" href="d9/dcd/classflow_1_1_stream.html#ab71996af0de1a9ab8ae35b8d8b7d7110">flow::Stream&lt; Source &gt;</a>
 </li>
 <li>estimate_size()
 : <a class="el" href="da/dbc/classflow_1_1source_1_1_concat.html#ad2f4c64820b9c21dd89272147be3ea69">flow::source::Concat&lt; Head, Tail &gt;</a>
 , <a class="el" href="d9/db6/classflow_1_1source_1_1_flat_map.html#ac9b401286d433c2db6e68a514ff1f82b">flow::source::FlatMap&lt; Source, UnaryOperation &gt;</a>
-, <a class="el" href="d3/d72/classflow_1_1source_1_1_generator_source.html#a680b8ba911cc307057a8b4cc35740cb7">flow::source::GeneratorSource&lt; T &gt;</a>
-, <a class="el" href="da/dea/classflow_1_1source_1_1_intermediate_source.html#a2775091c8051036e35263cb0f7e5d21e">flow::source::IntermediateSource&lt; Source, T &gt;</a>
+, <a class="el" href="d7/d80/classflow_1_1source_1_1_generator_source_base.html#a608a31b0927237554a0d3f225a02788b">flow::source::GeneratorSourceBase&lt; T &gt;</a>
+, <a class="el" href="d7/d08/classflow_1_1source_1_1_intermediate_source_base.html#a1d9fed18033264fd9f1a7277db0e101a">flow::source::IntermediateSourceBase&lt; Source, T &gt;</a>
 , <a class="el" href="d6/ddc/classflow_1_1source_1_1_iterator.html#a3469e75689ed9f57a70cc5affebcad04">flow::source::Iterator&lt; Itr &gt;</a>
 , <a class="el" href="d9/d22/classflow_1_1source_1_1_reverse.html#a7f377cb88aedf866765032f503e7ba17">flow::source::Reverse&lt; Source &gt;</a>
 , <a class="el" href="dd/d62/classflow_1_1source_1_1_skip.html#a65515f7c3015c5a8627351a301971b05">flow::source::Skip&lt; Source &gt;</a>
@@ -247,8 +245,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Generate()
 : <a class="el" href="d3/d03/classflow_1_1source_1_1_generate.html#a93cc8987a5b18d3f8f7581d14e29f70b">flow::source::Generate&lt; Generator &gt;</a>
 </li>
-<li>GeneratorSource()
-: <a class="el" href="d3/d72/classflow_1_1source_1_1_generator_source.html#a998b16063e95875408d5a7016dc365a2">flow::source::GeneratorSource&lt; T &gt;</a>
+<li>GeneratorSourceBase()
+: <a class="el" href="d7/d80/classflow_1_1source_1_1_generator_source_base.html#adcb45a79f29333a8f2621cd1a09a8dcf">flow::source::GeneratorSourceBase&lt; T &gt;</a>
+</li>
+<li>GeneratorSourceDefault()
+: <a class="el" href="d4/dfd/classflow_1_1source_1_1_generator_source_default.html#a2ad23be2c73c91e2b126fae1f7235076">flow::source::GeneratorSourceDefault&lt; T &gt;</a>
+</li>
+<li>GeneratorSourceNoDefault()
+: <a class="el" href="db/d34/classflow_1_1source_1_1_generator_source_no_default.html#a34596acb920d4d4379959762e0657d8c">flow::source::GeneratorSourceNoDefault&lt; T &gt;</a>
 </li>
 </ul>
 
@@ -259,8 +263,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="de/d70/classflow_1_1source_1_1_drop_while.html#a28b87ad18ad4998aa9219a9636eb1a52">flow::source::DropWhile&lt; Source, UnaryPredicate &gt;</a>
 , <a class="el" href="d0/d3f/classflow_1_1source_1_1_filter.html#a1c436d442cee1ddb2d4986aa51b2eb9e">flow::source::Filter&lt; Source, UnaryPredicate &gt;</a>
 , <a class="el" href="d9/db6/classflow_1_1source_1_1_flat_map.html#a8d8bb9507e33d8486bb6e087d89319b7">flow::source::FlatMap&lt; Source, UnaryOperation &gt;</a>
-, <a class="el" href="d3/d72/classflow_1_1source_1_1_generator_source.html#ac5c8ce352d9ae8d33d0ecb8ec1145324">flow::source::GeneratorSource&lt; T &gt;</a>
-, <a class="el" href="da/dea/classflow_1_1source_1_1_intermediate_source.html#a2896fe83d026f18cf24c4cb92b0e901c">flow::source::IntermediateSource&lt; Source, T &gt;</a>
+, <a class="el" href="d7/d80/classflow_1_1source_1_1_generator_source_base.html#a25cd9571aaba7d6cfad999687dd0134f">flow::source::GeneratorSourceBase&lt; T &gt;</a>
+, <a class="el" href="d7/d08/classflow_1_1source_1_1_intermediate_source_base.html#ad9d1e2259457c9c1e62d982e65908d3e">flow::source::IntermediateSourceBase&lt; Source, T &gt;</a>
 , <a class="el" href="d6/ddc/classflow_1_1source_1_1_iterator.html#aea0a7770cf11a8da01ac658f5ca040d1">flow::source::Iterator&lt; Itr &gt;</a>
 , <a class="el" href="d9/d22/classflow_1_1source_1_1_reverse.html#a3497bb201888909f9d6781f0340b0838">flow::source::Reverse&lt; Source &gt;</a>
 , <a class="el" href="dd/d62/classflow_1_1source_1_1_skip.html#acf3bc87660651d54a3a08afb0efe4c10">flow::source::Skip&lt; Source &gt;</a>
@@ -280,8 +284,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>intermediate::detail::Intermediate
 : <a class="el" href="d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html#a4b3f56d2b086c60c4343d25e6d07c2d9">flow::terminal::detail::Terminal&lt; F &gt;</a>
 </li>
-<li>IntermediateSource()
-: <a class="el" href="da/dea/classflow_1_1source_1_1_intermediate_source.html#afc56be56e20da61d1351dd8bb8af46a9">flow::source::IntermediateSource&lt; Source, T &gt;</a>
+<li>IntermediateSourceBase()
+: <a class="el" href="d7/d08/classflow_1_1source_1_1_intermediate_source_base.html#a93ae3e3d91f82d17195cd21606fdee9e">flow::source::IntermediateSourceBase&lt; Source, T &gt;</a>
+</li>
+<li>IntermediateSourceDefault()
+: <a class="el" href="d3/dc7/classflow_1_1source_1_1_intermediate_source_default.html#a17cb5cd2c161dda031c9568f39a60d45">flow::source::IntermediateSourceDefault&lt; Source, T &gt;</a>
+</li>
+<li>IntermediateSourceNoDefault()
+: <a class="el" href="d5/d0b/classflow_1_1source_1_1_intermediate_source_no_default.html#a8264551cb69261e765c88414da9af283">flow::source::IntermediateSourceNoDefault&lt; Source, T &gt;</a>
 </li>
 <li>IterateFunc()
 : <a class="el" href="de/d8c/classflow_1_1source_1_1_iterate_func.html#a4e3823be3433f85f3a5196ab081e7de4">flow::source::IterateFunc&lt; IteratingFunction, T, N &gt;</a>
@@ -289,11 +299,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Iterator()
 : <a class="el" href="d6/ddc/classflow_1_1source_1_1_iterator.html#a8f656f251d89cb46541bdec812983d7e">flow::source::Iterator&lt; Itr &gt;</a>
 </li>
-<li>iterator
-: <a class="el" href="d9/dcd/classflow_1_1_stream.html#ad5c47fe98d14d9c74c169b5dd8f9f3c4">flow::Stream&lt; Source &gt;</a>
+<li>iterator()
+: <a class="el" href="d0/d2d/classflow_1_1_stream_1_1iterator.html#ae78d37bc0e7b4dde364515f359706467">flow::Stream&lt; Source &gt;::iterator</a>
 </li>
 <li>iterator_category
-: <a class="el" href="db/d07/classflow_1_1_stream_1_1const__iterator.html#a3184495e46f05e7d6f5a8a1f5093101f">flow::Stream&lt; Source &gt;::const_iterator</a>
+: <a class="el" href="d0/d2d/classflow_1_1_stream_1_1iterator.html#ace1423f12623d198dfd9e4a93c215c44">flow::Stream&lt; Source &gt;::iterator</a>
 </li>
 </ul>
 
@@ -301,8 +311,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
 <li>lazy_next()
 : <a class="el" href="da/dbc/classflow_1_1source_1_1_concat.html#ae729ac49fec9ddb8da9e9ab6447a17d3">flow::source::Concat&lt; Head, Tail &gt;</a>
-, <a class="el" href="d3/d72/classflow_1_1source_1_1_generator_source.html#ab9fbf72d2b37c927a72e411f12488612">flow::source::GeneratorSource&lt; T &gt;</a>
-, <a class="el" href="da/dea/classflow_1_1source_1_1_intermediate_source.html#a1409e1385d33d5c8daa2b7e4284711a3">flow::source::IntermediateSource&lt; Source, T &gt;</a>
+, <a class="el" href="d3/d03/classflow_1_1source_1_1_generate.html#a860e3d91b7045bbbc056578bd85fcf30">flow::source::Generate&lt; Generator &gt;</a>
+, <a class="el" href="d7/d80/classflow_1_1source_1_1_generator_source_base.html#a80544ff443ccdeff3780efedf3a9bd1f">flow::source::GeneratorSourceBase&lt; T &gt;</a>
+, <a class="el" href="d7/d08/classflow_1_1source_1_1_intermediate_source_base.html#ab173b53ac632f06b87e5af1b246dfbb9">flow::source::IntermediateSourceBase&lt; Source, T &gt;</a>
 , <a class="el" href="de/d8c/classflow_1_1source_1_1_iterate_func.html#aef1f6d2e536c85c0f5ce4d1b06dd6a8d">flow::source::IterateFunc&lt; IteratingFunction, T, N &gt;</a>
 , <a class="el" href="d6/ddc/classflow_1_1source_1_1_iterator.html#aebd9316211d33d757a2bacfb9782408d">flow::source::Iterator&lt; Itr &gt;</a>
 , <a class="el" href="d8/d78/classflow_1_1source_1_1_peek.html#afc54fd132e1ecb1ffaf61c434c710911">flow::source::Peek&lt; Source, Action &gt;</a>
@@ -325,8 +336,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>next()
 : <a class="el" href="da/dbc/classflow_1_1source_1_1_concat.html#a499589cbf3de5b38ba38e0815101caaf">flow::source::Concat&lt; Head, Tail &gt;</a>
 , <a class="el" href="d3/d03/classflow_1_1source_1_1_generate.html#abc6586491261dd79b2d944e0f595bdf2">flow::source::Generate&lt; Generator &gt;</a>
-, <a class="el" href="d3/d72/classflow_1_1source_1_1_generator_source.html#a9eb788bf2727aead63f19237cd1ff699">flow::source::GeneratorSource&lt; T &gt;</a>
-, <a class="el" href="da/dea/classflow_1_1source_1_1_intermediate_source.html#aef10ac201639f0d8682e25498d624763">flow::source::IntermediateSource&lt; Source, T &gt;</a>
+, <a class="el" href="d7/d80/classflow_1_1source_1_1_generator_source_base.html#a699470b5267ffce1adb5a334d86a491f">flow::source::GeneratorSourceBase&lt; T &gt;</a>
+, <a class="el" href="d7/d08/classflow_1_1source_1_1_intermediate_source_base.html#a1f4806d8176175388d06a6a2b0f9fd41">flow::source::IntermediateSourceBase&lt; Source, T &gt;</a>
 , <a class="el" href="de/d8c/classflow_1_1source_1_1_iterate_func.html#a9e24a9a7912235cae00da4dcdb0a1ccf">flow::source::IterateFunc&lt; IteratingFunction, T, N &gt;</a>
 , <a class="el" href="d6/ddc/classflow_1_1source_1_1_iterator.html#af73d6d2879bdabd15c327f3c18b61b88">flow::source::Iterator&lt; Itr &gt;</a>
 , <a class="el" href="d7/dff/classflow_1_1source_1_1_map.html#a85b7122b4766933e1e45c092afb6201b">flow::source::Map&lt; Source, UnaryOperation &gt;</a>
@@ -335,37 +346,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="dd/d62/classflow_1_1source_1_1_skip.html#a6a6a17d53ebf1badd9ce62949b1a4ab0">flow::source::Skip&lt; Source &gt;</a>
 , <a class="el" href="de/d82/classflow_1_1source_1_1_sort.html#a98301e54bc352ff7987e5dcb7deea649">flow::source::Sort&lt; Source &gt;</a>
 , <a class="el" href="de/df4/classflow_1_1source_1_1_zip.html#a059df44b54fa7ded7a01d949eec34d8d">flow::source::Zip&lt; LeftSource, RightSource, Zipper &gt;</a>
-, <a class="el" href="d9/dcd/classflow_1_1_stream.html#a2a731930d4dfc99029ef080660e53ded">flow::Stream&lt; Source &gt;</a>
+, <a class="el" href="d9/dcd/classflow_1_1_stream.html#a95181462db6cc97126b578bed1264f4f">flow::Stream&lt; Source &gt;</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_o"></a>- o -</h3><ul>
 <li>operator!=()
-: <a class="el" href="db/d07/classflow_1_1_stream_1_1const__iterator.html#aeda22e6e75102f7583929b9fdcd924d9">flow::Stream&lt; Source &gt;::const_iterator</a>
+: <a class="el" href="d0/d2d/classflow_1_1_stream_1_1iterator.html#af2abe18a6b63750ff5cad5468de2dc4b">flow::Stream&lt; Source &gt;::iterator</a>
 </li>
 <li>operator()()
 : <a class="el" href="d3/d93/classflow_1_1detail_1_1_compose.html#acf99a2867ccaa1b61aa7b94f17c3ca77">flow::detail::Compose&lt; F, G &gt;</a>
-, <a class="el" href="d0/d2d/structflow_1_1detail_1_1uncurrier.html#a47c2c2a387f45e2f8afbae07e20ad1e3">flow::detail::uncurrier&lt; CurryFunction &gt;</a>
+, <a class="el" href="d0/d2d/structflow_1_1detail_1_1uncurrier.html#a2c41107c1bfba8615a02c3891934fc7b">flow::detail::uncurrier&lt; CurryFunction &gt;</a>
 , <a class="el" href="de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html#a48ec5316571763f590145b7dcdf63bd3">flow::intermediate::detail::Intermediate&lt; F &gt;</a>
-, <a class="el" href="d2/d34/structflow_1_1intermediate_1_1detail_1_1tuple__zipper.html#a53340c4b4e3903b6dfd789901760b973">flow::intermediate::detail::tuple_zipper&lt; LeftType, RightType &gt;</a>
-, <a class="el" href="d3/dc1/structflow_1_1intermediate_1_1detail_1_1tuple__zipper_3_01_left_type_00_01std_1_1tuple_3_01_right_types_8_8_8_4_01_4.html#a901e3f4fdcf1ddb9b384bdd47c3f694b">flow::intermediate::detail::tuple_zipper&lt; LeftType, std::tuple&lt; RightTypes...&gt; &gt;</a>
-, <a class="el" href="db/ded/structflow_1_1intermediate_1_1detail_1_1tuple__zipper_3_01std_1_1tuple_3_01_left_types_8_8_8_4_00_01_right_type_01_4.html#aa0979d0bf77991b8454478eba646fb9a">flow::intermediate::detail::tuple_zipper&lt; std::tuple&lt; LeftTypes...&gt;, RightType &gt;</a>
+, <a class="el" href="d2/d34/structflow_1_1intermediate_1_1detail_1_1tuple__zipper.html#a7f4aa6ea16dcc946c9a506e6dcf99388">flow::intermediate::detail::tuple_zipper&lt; LeftType, RightType &gt;</a>
+, <a class="el" href="d3/dc1/structflow_1_1intermediate_1_1detail_1_1tuple__zipper_3_01_left_type_00_01std_1_1tuple_3_01_right_types_8_8_8_4_01_4.html#ae8927233e620fbf11186c28d92777dc3">flow::intermediate::detail::tuple_zipper&lt; LeftType, std::tuple&lt; RightTypes...&gt; &gt;</a>
+, <a class="el" href="db/ded/structflow_1_1intermediate_1_1detail_1_1tuple__zipper_3_01std_1_1tuple_3_01_left_types_8_8_8_4_00_01_right_type_01_4.html#ada89ed070c23f0210df73eee7804467b">flow::intermediate::detail::tuple_zipper&lt; std::tuple&lt; LeftTypes...&gt;, RightType &gt;</a>
 , <a class="el" href="df/d0a/structflow_1_1intermediate_1_1detail_1_1tuple__zipper_3_01std_1_1tuple_3_01_left_types_8_8_8_4_0968c2e4e4ec2f83930e57176743abeff.html#a4b420b74885400fed2f02e2de0fdb718">flow::intermediate::detail::tuple_zipper&lt; std::tuple&lt; LeftTypes...&gt;, std::tuple&lt; RightTypes...&gt; &gt;</a>
-, <a class="el" href="db/d87/structflow_1_1terminal_1_1detail_1_1hash.html#a429b5af26ababfca0a55447bceb6ac65">flow::terminal::detail::hash</a>
 , <a class="el" href="d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html#a9080c0b91c34dac21584b96badb7f4ef">flow::terminal::detail::Terminal&lt; F &gt;</a>
 </li>
 <li>operator*()
-: <a class="el" href="db/d07/classflow_1_1_stream_1_1const__iterator.html#a753cf2fd6d127c83ca02167df556a918">flow::Stream&lt; Source &gt;::const_iterator</a>
+: <a class="el" href="d0/d2d/classflow_1_1_stream_1_1iterator.html#aaaa5354c80ea646ea42168aa0060423b">flow::Stream&lt; Source &gt;::iterator</a>
 </li>
 <li>operator++()
-: <a class="el" href="db/d07/classflow_1_1_stream_1_1const__iterator.html#af4647c5c6a20b4bfc00f93e81c22416f">flow::Stream&lt; Source &gt;::const_iterator</a>
+: <a class="el" href="d0/d2d/classflow_1_1_stream_1_1iterator.html#a41fc157d1e411d8a52d8a5689e91e949">flow::Stream&lt; Source &gt;::iterator</a>
 </li>
 <li>operator-&gt;()
-: <a class="el" href="db/d07/classflow_1_1_stream_1_1const__iterator.html#a5eae6699a7c5fbc8d6424c0707ffdaa0">flow::Stream&lt; Source &gt;::const_iterator</a>
+: <a class="el" href="d0/d2d/classflow_1_1_stream_1_1iterator.html#af87b0b61f664a2690f3afadd745b22a2">flow::Stream&lt; Source &gt;::iterator</a>
 </li>
 <li>operator==()
-: <a class="el" href="db/d07/classflow_1_1_stream_1_1const__iterator.html#a01647881173e1996ce5224713753ff3f">flow::Stream&lt; Source &gt;::const_iterator</a>
+: <a class="el" href="d0/d2d/classflow_1_1_stream_1_1iterator.html#a299dc5b21442d47d9785e894dac2c08e">flow::Stream&lt; Source &gt;::iterator</a>
 </li>
 <li>operator|()
 : <a class="el" href="de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html#a3eb91735fb8faccdcd97146f82a40c07">flow::intermediate::detail::Intermediate&lt; F &gt;</a>
@@ -379,33 +389,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="d9/d22/classflow_1_1source_1_1_reverse.html#ab1ebfbcb02e5596ab42ea26ab9c0d39d">flow::source::Reverse&lt; Source &gt;</a>
 , <a class="el" href="da/d25/classflow_1_1source_1_1_slice.html#abe8de5589c7e5d037a194de29e999bf8">flow::source::Slice&lt; Source &gt;</a>
 , <a class="el" href="de/d82/classflow_1_1source_1_1_sort.html#aa6b7b942ebabf36217c3392d48f51cc3">flow::source::Sort&lt; Source &gt;</a>
-, <a class="el" href="d2/d42/classflow_1_1source_1_1_unique.html#aea34042b7b82b5aecd80ff3d04e4f6e6">flow::source::Unique&lt; Source &gt;</a>
 </li>
 <li>Peek()
 : <a class="el" href="d8/d78/classflow_1_1source_1_1_peek.html#a21d5ab8c4c25ca9a658ce23d469f6266">flow::source::Peek&lt; Source, Action &gt;</a>
 </li>
 <li>pointer
-: <a class="el" href="db/d07/classflow_1_1_stream_1_1const__iterator.html#ae4815c26a6180a1aba92591aac021631">flow::Stream&lt; Source &gt;::const_iterator</a>
+: <a class="el" href="d0/d2d/classflow_1_1_stream_1_1iterator.html#a51ef418c000c9068e3e85f8f55d886fe">flow::Stream&lt; Source &gt;::iterator</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
 <li>raw_current()
-: <a class="el" href="d3/d72/classflow_1_1source_1_1_generator_source.html#a71536cedb7f0f72bb130635a2283c4ba">flow::source::GeneratorSource&lt; T &gt;</a>
-, <a class="el" href="da/dea/classflow_1_1source_1_1_intermediate_source.html#a9c58887c6dc00871144ffc965c6c7aba">flow::source::IntermediateSource&lt; Source, T &gt;</a>
+: <a class="el" href="d7/d80/classflow_1_1source_1_1_generator_source_base.html#afda58ced2b2b91d61c5aea3648785e21">flow::source::GeneratorSourceBase&lt; T &gt;</a>
+, <a class="el" href="d7/d08/classflow_1_1source_1_1_intermediate_source_base.html#a8d4b0e47a2f562956d1ca8e1ebef96fb">flow::source::IntermediateSourceBase&lt; Source, T &gt;</a>
 </li>
 <li>raw_next()
-: <a class="el" href="da/dea/classflow_1_1source_1_1_intermediate_source.html#aa6a234b64dd3d337e123f8f35fafc1ef">flow::source::IntermediateSource&lt; Source, T &gt;</a>
+: <a class="el" href="d7/d08/classflow_1_1source_1_1_intermediate_source_base.html#a55eda70cde4cc848a9fdc0fe9c886743">flow::source::IntermediateSourceBase&lt; Source, T &gt;</a>
 </li>
 <li>reference
-: <a class="el" href="db/d07/classflow_1_1_stream_1_1const__iterator.html#a38c80d193a2fe8c450b9409d7fc7c14f">flow::Stream&lt; Source &gt;::const_iterator</a>
-</li>
-<li>Reverse()
-: <a class="el" href="d9/d22/classflow_1_1source_1_1_reverse.html#a6b131831c4fbe834ed0aff7fd38f218a">flow::source::Reverse&lt; Source &gt;</a>
+: <a class="el" href="d0/d2d/classflow_1_1_stream_1_1iterator.html#a1e6de82a44ebf0998b05832f3004673a">flow::Stream&lt; Source &gt;::iterator</a>
 </li>
 <li>reverse()
 : <a class="el" href="d9/d22/classflow_1_1source_1_1_reverse.html#a83a0446b8aacb524ed2fce04ba136431">flow::source::Reverse&lt; Source &gt;</a>
+</li>
+<li>Reverse()
+: <a class="el" href="d9/d22/classflow_1_1source_1_1_reverse.html#a6b131831c4fbe834ed0aff7fd38f218a">flow::source::Reverse&lt; Source &gt;</a>
 </li>
 </ul>
 
@@ -427,8 +436,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="d9/dcd/classflow_1_1_stream.html#a2ba3ee37c4e132838681519c0f4dfdda">flow::Stream&lt; Source &gt;</a>
 </li>
 <li>source_type
-: <a class="el" href="da/dea/classflow_1_1source_1_1_intermediate_source.html#af0c4d39f15edbe214cc3a3dfb0e1cbba">flow::source::IntermediateSource&lt; Source, T &gt;</a>
-, <a class="el" href="d9/dcd/classflow_1_1_stream.html#a1f5a9b22df89ffc576bbc37548864ee8">flow::Stream&lt; Source &gt;</a>
+: <a class="el" href="d7/d08/classflow_1_1source_1_1_intermediate_source_base.html#a2d7e785832d68633b4c71be03e7a7d04">flow::source::IntermediateSourceBase&lt; Source, T &gt;</a>
+, <a class="el" href="d3/dc7/classflow_1_1source_1_1_intermediate_source_default.html#a6c7484920622c38607bc6e57415978d2">flow::source::IntermediateSourceDefault&lt; Source, T &gt;</a>
+, <a class="el" href="d5/d0b/classflow_1_1source_1_1_intermediate_source_no_default.html#a2ca1a60add1ca08601bef035e2ff1c40">flow::source::IntermediateSourceNoDefault&lt; Source, T &gt;</a>
 </li>
 <li>step_to()
 : <a class="el" href="dd/d62/classflow_1_1source_1_1_skip.html#a2b04c02bebb4c68bc37fe4df59b7baca">flow::source::Skip&lt; Source &gt;</a>
@@ -462,12 +472,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>uncurrier()
 : <a class="el" href="d0/d2d/structflow_1_1detail_1_1uncurrier.html#aaeadc4d4e942f071def6bd6e0a083e28">flow::detail::uncurrier&lt; CurryFunction &gt;</a>
 </li>
-<li>unique()
-: <a class="el" href="d2/d42/classflow_1_1source_1_1_unique.html#adf518688bda7f79bf5bb41c2ef39ca5c">flow::source::Unique&lt; Source &gt;</a>
-</li>
-<li>Unique()
-: <a class="el" href="d2/d42/classflow_1_1source_1_1_unique.html#a3427e6a35151cd66f1e62b717440abf7">flow::source::Unique&lt; Source &gt;</a>
-</li>
 </ul>
 
 
@@ -481,8 +485,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="d0/d3f/classflow_1_1source_1_1_filter.html#ae0d5560632948be5c9bae7a84fc58d62">flow::source::Filter&lt; Source, UnaryPredicate &gt;</a>
 , <a class="el" href="d9/db6/classflow_1_1source_1_1_flat_map.html#a5a48b9ad1b1c47e21e57b237ccbcaf52">flow::source::FlatMap&lt; Source, UnaryOperation &gt;</a>
 , <a class="el" href="d3/d03/classflow_1_1source_1_1_generate.html#a74b057e80e1f02c250380c30ba95cf1b">flow::source::Generate&lt; Generator &gt;</a>
-, <a class="el" href="d3/d72/classflow_1_1source_1_1_generator_source.html#afc04489376e75fc0c931d51f0151fb3f">flow::source::GeneratorSource&lt; T &gt;</a>
-, <a class="el" href="da/dea/classflow_1_1source_1_1_intermediate_source.html#aed66112d78b000bee00a5df8aad93193">flow::source::IntermediateSource&lt; Source, T &gt;</a>
+, <a class="el" href="d7/d80/classflow_1_1source_1_1_generator_source_base.html#a615853269db2ca25374b88d3fd7a109f">flow::source::GeneratorSourceBase&lt; T &gt;</a>
+, <a class="el" href="d4/dfd/classflow_1_1source_1_1_generator_source_default.html#a67f0921ce340ab5966071a1481c618d3">flow::source::GeneratorSourceDefault&lt; T &gt;</a>
+, <a class="el" href="db/d34/classflow_1_1source_1_1_generator_source_no_default.html#a793e0da3584b9df446e20d0de47c9ce0">flow::source::GeneratorSourceNoDefault&lt; T &gt;</a>
+, <a class="el" href="d7/d08/classflow_1_1source_1_1_intermediate_source_base.html#ad71a2c2e92df58392a8b5a6fbbc527a3">flow::source::IntermediateSourceBase&lt; Source, T &gt;</a>
+, <a class="el" href="d3/dc7/classflow_1_1source_1_1_intermediate_source_default.html#a61b2756f00eb779dcd1e0705632aa21e">flow::source::IntermediateSourceDefault&lt; Source, T &gt;</a>
+, <a class="el" href="d5/d0b/classflow_1_1source_1_1_intermediate_source_no_default.html#aa2eaa2ce8183ba90ddf4f2de07b6bd9e">flow::source::IntermediateSourceNoDefault&lt; Source, T &gt;</a>
 , <a class="el" href="de/d8c/classflow_1_1source_1_1_iterate_func.html#a0ae65d4590271c79e26eb1a550a0e830">flow::source::IterateFunc&lt; IteratingFunction, T, N &gt;</a>
 , <a class="el" href="d6/ddc/classflow_1_1source_1_1_iterator.html#acf672848015a3edcf83138d1b70fac45">flow::source::Iterator&lt; Itr &gt;</a>
 , <a class="el" href="d7/dff/classflow_1_1source_1_1_map.html#abc7501cee6869ff0dc3114e639a2796c">flow::source::Map&lt; Source, UnaryOperation &gt;</a>
@@ -490,10 +498,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="d9/d22/classflow_1_1source_1_1_reverse.html#a2a09759c9bc3c6a721681ba18aa3f2cb">flow::source::Reverse&lt; Source &gt;</a>
 , <a class="el" href="dd/d62/classflow_1_1source_1_1_skip.html#ad78bd0e55cbb16dd64d43f99e8193a9e">flow::source::Skip&lt; Source &gt;</a>
 , <a class="el" href="de/d82/classflow_1_1source_1_1_sort.html#aba3f67bbdd795ded39eb97051060bc3a">flow::source::Sort&lt; Source &gt;</a>
-, <a class="el" href="d2/d42/classflow_1_1source_1_1_unique.html#a52b91583401edb0663f1cb92d8634936">flow::source::Unique&lt; Source &gt;</a>
 , <a class="el" href="de/df4/classflow_1_1source_1_1_zip.html#acd2ba9836e4c37c114161ec28986a121">flow::source::Zip&lt; LeftSource, RightSource, Zipper &gt;</a>
-, <a class="el" href="db/d07/classflow_1_1_stream_1_1const__iterator.html#aa4f808636a28c82349a470742a7f91b8">flow::Stream&lt; Source &gt;::const_iterator</a>
-, <a class="el" href="d9/dcd/classflow_1_1_stream.html#af34fe4571912244e3c3b180871bb38e6">flow::Stream&lt; Source &gt;</a>
+, <a class="el" href="d0/d2d/classflow_1_1_stream_1_1iterator.html#af32900e9945b39ad90c57f3852542cd9">flow::Stream&lt; Source &gt;::iterator</a>
 </li>
 </ul>
 

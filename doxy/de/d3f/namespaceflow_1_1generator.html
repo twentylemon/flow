@@ -118,35 +118,43 @@ Functions</h2></td></tr>
 <tr class="memitem:aee082be5c661f7e6f39ec1b79fbc84c5"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#aee082be5c661f7e6f39ec1b79fbc84c5">cycle</a> (Itr begin, Itr end, std::size_t n)</td></tr>
 <tr class="memdesc:aee082be5c661f7e6f39ec1b79fbc84c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a stream which cycles the iterator range <em>n</em>  times.  <a href="#aee082be5c661f7e6f39ec1b79fbc84c5">More...</a><br /></td></tr>
 <tr class="separator:aee082be5c661f7e6f39ec1b79fbc84c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a267de18abe7035c265dd3ceebd9a322b"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a267de18abe7035c265dd3ceebd9a322b"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:a267de18abe7035c265dd3ceebd9a322b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a267de18abe7035c265dd3ceebd9a322b">cycle</a> (Container &amp;container)</td></tr>
 <tr class="memdesc:a267de18abe7035c265dd3ceebd9a322b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an infinite stream which cycles <em>container</em> .  <a href="#a267de18abe7035c265dd3ceebd9a322b">More...</a><br /></td></tr>
 <tr class="separator:a267de18abe7035c265dd3ceebd9a322b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a069ead831228c97b9bb9c8f657d9ad08"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a069ead831228c97b9bb9c8f657d9ad08"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:a069ead831228c97b9bb9c8f657d9ad08"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a069ead831228c97b9bb9c8f657d9ad08">cycle</a> (Container &amp;container, std::size_t n)</td></tr>
 <tr class="memdesc:a069ead831228c97b9bb9c8f657d9ad08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a stream which cycles through <em>container</em>  <em>n</em>  times.  <a href="#a069ead831228c97b9bb9c8f657d9ad08">More...</a><br /></td></tr>
 <tr class="separator:a069ead831228c97b9bb9c8f657d9ad08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19f2046f7478ce9c2ce68e4946ade84d"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:aea0a33e9246e1e1e98dba7070eadee99"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aea0a33e9246e1e1e98dba7070eadee99"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#aea0a33e9246e1e1e98dba7070eadee99">cycle</a> (std::initializer_list&lt; T &gt; list)</td></tr>
+<tr class="memdesc:aea0a33e9246e1e1e98dba7070eadee99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an infinite stream which cycles <em>list</em> .  <a href="#aea0a33e9246e1e1e98dba7070eadee99">More...</a><br /></td></tr>
+<tr class="separator:aea0a33e9246e1e1e98dba7070eadee99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acce35864627a389f4443a52e3596fab7"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:acce35864627a389f4443a52e3596fab7"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#acce35864627a389f4443a52e3596fab7">cycle</a> (std::initializer_list&lt; T &gt; list, std::size_t n)</td></tr>
+<tr class="memdesc:acce35864627a389f4443a52e3596fab7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a stream which cycles through <em>list</em>  <em>n</em>  times.  <a href="#acce35864627a389f4443a52e3596fab7">More...</a><br /></td></tr>
+<tr class="separator:acce35864627a389f4443a52e3596fab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19f2046f7478ce9c2ce68e4946ade84d"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:a19f2046f7478ce9c2ce68e4946ade84d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a19f2046f7478ce9c2ce68e4946ade84d">rcycle</a> (Container &amp;container)</td></tr>
 <tr class="memdesc:a19f2046f7478ce9c2ce68e4946ade84d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an infinite stream which cycles <em>container</em>  in reverse order.  <a href="#a19f2046f7478ce9c2ce68e4946ade84d">More...</a><br /></td></tr>
 <tr class="separator:a19f2046f7478ce9c2ce68e4946ade84d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8cf0278f995971ffae89f787ebb4e53"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:aa8cf0278f995971ffae89f787ebb4e53"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:aa8cf0278f995971ffae89f787ebb4e53"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#aa8cf0278f995971ffae89f787ebb4e53">rcycle</a> (Container &amp;container, std::size_t n)</td></tr>
 <tr class="memdesc:aa8cf0278f995971ffae89f787ebb4e53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a stream which cycles through <em>container</em>  <em>n</em>  times in reverse order.  <a href="#aa8cf0278f995971ffae89f787ebb4e53">More...</a><br /></td></tr>
 <tr class="separator:aa8cf0278f995971ffae89f787ebb4e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a310257dc777fbb0d65a405453a6df9"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a1a310257dc777fbb0d65a405453a6df9"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:a1a310257dc777fbb0d65a405453a6df9"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a1a310257dc777fbb0d65a405453a6df9">cycle_move</a> (Container &amp;&amp;container)</td></tr>
 <tr class="memdesc:a1a310257dc777fbb0d65a405453a6df9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an infinite stream which cycles <em>container</em> .  <a href="#a1a310257dc777fbb0d65a405453a6df9">More...</a><br /></td></tr>
 <tr class="separator:a1a310257dc777fbb0d65a405453a6df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af21e1e625f61bda095d543ac26f27167"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:af21e1e625f61bda095d543ac26f27167"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:af21e1e625f61bda095d543ac26f27167"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#af21e1e625f61bda095d543ac26f27167">cycle_move</a> (Container &amp;&amp;container, std::size_t n)</td></tr>
 <tr class="memdesc:af21e1e625f61bda095d543ac26f27167"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a stream which cycles through <em>container</em>  <em>n</em>  times.  <a href="#af21e1e625f61bda095d543ac26f27167">More...</a><br /></td></tr>
 <tr class="separator:af21e1e625f61bda095d543ac26f27167"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3307eb1fb7521e10723eec340591042"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:aa3307eb1fb7521e10723eec340591042"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:aa3307eb1fb7521e10723eec340591042"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#aa3307eb1fb7521e10723eec340591042">rcycle_move</a> (Container &amp;&amp;container)</td></tr>
 <tr class="memdesc:aa3307eb1fb7521e10723eec340591042"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an infinite stream which cycles <em>container</em>  in reverse order.  <a href="#aa3307eb1fb7521e10723eec340591042">More...</a><br /></td></tr>
 <tr class="separator:aa3307eb1fb7521e10723eec340591042"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad08ac97ea330f2f2dcb2086860d90e6b"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:ad08ac97ea330f2f2dcb2086860d90e6b"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:ad08ac97ea330f2f2dcb2086860d90e6b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad08ac97ea330f2f2dcb2086860d90e6b">rcycle_move</a> (Container &amp;&amp;container, std::size_t n)</td></tr>
 <tr class="memdesc:ad08ac97ea330f2f2dcb2086860d90e6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a stream which cycles through <em>container</em>  <em>n</em>  times in reverse order.  <a href="#ad08ac97ea330f2f2dcb2086860d90e6b">More...</a><br /></td></tr>
 <tr class="separator:ad08ac97ea330f2f2dcb2086860d90e6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -154,42 +162,42 @@ Functions</h2></td></tr>
 <tr class="memitem:af89b482574e82df455be487db4dd18bd"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#af89b482574e82df455be487db4dd18bd">empty</a> ()</td></tr>
 <tr class="memdesc:af89b482574e82df455be487db4dd18bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> that contains no elements.  <a href="#af89b482574e82df455be487db4dd18bd">More...</a><br /></td></tr>
 <tr class="separator:af89b482574e82df455be487db4dd18bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abff3916ae173286065e12f1ff3e4a60c"><td class="memTemplParams" colspan="2">template&lt;typename Itr &gt; </td></tr>
-<tr class="memitem:abff3916ae173286065e12f1ff3e4a60c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; <a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">source::Iterator</a>&lt; Itr &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c">from</a> (Itr begin, Itr end)</td></tr>
-<tr class="memdesc:abff3916ae173286065e12f1ff3e4a60c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> from the given iterator range.  <a href="#abff3916ae173286065e12f1ff3e4a60c">More...</a><br /></td></tr>
-<tr class="separator:abff3916ae173286065e12f1ff3e4a60c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cd0f99ac8fd7825758fd97d4b099244"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a7cd0f99ac8fd7825758fd97d4b099244"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; T &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a7cd0f99ac8fd7825758fd97d4b099244">from</a> (<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; T &gt; &amp;stream)</td></tr>
-<tr class="memdesc:a7cd0f99ac8fd7825758fd97d4b099244"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c" title="Creates a Stream from the given iterator range. ">from()</a> to catch streams.  <a href="#a7cd0f99ac8fd7825758fd97d4b099244">More...</a><br /></td></tr>
-<tr class="separator:a7cd0f99ac8fd7825758fd97d4b099244"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaacf2459cc735b5c6731a65cee51f270"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:ad70162f218f4b05d3ad1a3dca7f1cd3b"><td class="memTemplParams" colspan="2">template&lt;typename Itr &gt; </td></tr>
+<tr class="memitem:ad70162f218f4b05d3ad1a3dca7f1cd3b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b">from</a> (Itr begin, Itr end)</td></tr>
+<tr class="memdesc:ad70162f218f4b05d3ad1a3dca7f1cd3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> from the given iterator range.  <a href="#ad70162f218f4b05d3ad1a3dca7f1cd3b">More...</a><br /></td></tr>
+<tr class="separator:ad70162f218f4b05d3ad1a3dca7f1cd3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaacf2459cc735b5c6731a65cee51f270"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:aaacf2459cc735b5c6731a65cee51f270"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#aaacf2459cc735b5c6731a65cee51f270">from</a> (Container &amp;container)</td></tr>
 <tr class="memdesc:aaacf2459cc735b5c6731a65cee51f270"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> over <em>container</em> .  <a href="#aaacf2459cc735b5c6731a65cee51f270">More...</a><br /></td></tr>
 <tr class="separator:aaacf2459cc735b5c6731a65cee51f270"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a600c0179388a946baf8aaf03350ed7"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename F , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a874bfa518cc8c716f585a644774b6ddb"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a874bfa518cc8c716f585a644774b6ddb"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a874bfa518cc8c716f585a644774b6ddb">from</a> (std::initializer_list&lt; T &gt; list)</td></tr>
+<tr class="memdesc:a874bfa518cc8c716f585a644774b6ddb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> over <em>list</em> .  <a href="#a874bfa518cc8c716f585a644774b6ddb">More...</a><br /></td></tr>
+<tr class="separator:a874bfa518cc8c716f585a644774b6ddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a600c0179388a946baf8aaf03350ed7"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename F , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:a3a600c0179388a946baf8aaf03350ed7"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a3a600c0179388a946baf8aaf03350ed7">operator|</a> (Container &amp;container, <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html">intermediate::detail::Intermediate</a>&lt; F &gt; &amp;&amp;op)</td></tr>
 <tr class="memdesc:a3a600c0179388a946baf8aaf03350ed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overrides <code>|</code> for containers, <code>container | operation</code> is a shorthand for <code>from(container) | operation</code>.  <a href="#a3a600c0179388a946baf8aaf03350ed7">More...</a><br /></td></tr>
 <tr class="separator:a3a600c0179388a946baf8aaf03350ed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5bab90bcea83ba6a0658275bb4fdc28e"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename F , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a5bab90bcea83ba6a0658275bb4fdc28e"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename F , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:a5bab90bcea83ba6a0658275bb4fdc28e"><td class="memTemplItemLeft" align="right" valign="top">decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a5bab90bcea83ba6a0658275bb4fdc28e">operator|</a> (Container &amp;container, <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html">terminal::detail::Terminal</a>&lt; F &gt; &amp;&amp;op)</td></tr>
 <tr class="memdesc:a5bab90bcea83ba6a0658275bb4fdc28e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overrides <code>|</code> for containers, <code>container | operation</code> is a shorthand for <code>from(container) | operation</code>.  <a href="#a5bab90bcea83ba6a0658275bb4fdc28e">More...</a><br /></td></tr>
 <tr class="separator:a5bab90bcea83ba6a0658275bb4fdc28e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5e12b528b2fa20549b7714efd2a6814"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:ad5e12b528b2fa20549b7714efd2a6814"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:ad5e12b528b2fa20549b7714efd2a6814"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad5e12b528b2fa20549b7714efd2a6814">rfrom</a> (Container &amp;container)</td></tr>
 <tr class="memdesc:ad5e12b528b2fa20549b7714efd2a6814"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> over <em>container</em>  in reverse order.  <a href="#ad5e12b528b2fa20549b7714efd2a6814">More...</a><br /></td></tr>
 <tr class="separator:ad5e12b528b2fa20549b7714efd2a6814"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a408fc4ca9a170eca886474ba7efa07f2"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a408fc4ca9a170eca886474ba7efa07f2"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:a408fc4ca9a170eca886474ba7efa07f2"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a408fc4ca9a170eca886474ba7efa07f2">from_move</a> (Container &amp;&amp;container)</td></tr>
 <tr class="memdesc:a408fc4ca9a170eca886474ba7efa07f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> over <em>container</em> .  <a href="#a408fc4ca9a170eca886474ba7efa07f2">More...</a><br /></td></tr>
 <tr class="separator:a408fc4ca9a170eca886474ba7efa07f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a635ab9f20905160edc337cc25720097f"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a635ab9f20905160edc337cc25720097f"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:a635ab9f20905160edc337cc25720097f"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a635ab9f20905160edc337cc25720097f">rfrom_move</a> (Container &amp;&amp;container)</td></tr>
 <tr class="memdesc:a635ab9f20905160edc337cc25720097f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> over <em>container</em>  in reverse order.  <a href="#a635ab9f20905160edc337cc25720097f">More...</a><br /></td></tr>
 <tr class="separator:a635ab9f20905160edc337cc25720097f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1233462a5ce649e3eb3bc58ef9ae131e"><td class="memTemplParams" colspan="2">template&lt;typename Generator &gt; </td></tr>
-<tr class="memitem:a1233462a5ce649e3eb3bc58ef9ae131e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; <a class="el" href="../../d3/d03/classflow_1_1source_1_1_generate.html">source::Generate</a>&lt; Generator &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a1233462a5ce649e3eb3bc58ef9ae131e">generate</a> (Generator generator)</td></tr>
-<tr class="memdesc:a1233462a5ce649e3eb3bc58ef9ae131e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an infinite <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> where values are created using successive calls to <code>generator()</code>.  <a href="#a1233462a5ce649e3eb3bc58ef9ae131e">More...</a><br /></td></tr>
-<tr class="separator:a1233462a5ce649e3eb3bc58ef9ae131e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b8fd258f7d86d373d2f2126ecbdcad2"><td class="memTemplParams" colspan="2">template&lt;typename Generator &gt; </td></tr>
+<tr class="memitem:a5b8fd258f7d86d373d2f2126ecbdcad2"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a5b8fd258f7d86d373d2f2126ecbdcad2">generate</a> (Generator generator)</td></tr>
+<tr class="memdesc:a5b8fd258f7d86d373d2f2126ecbdcad2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an infinite <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> where values are created using successive calls to <code>generator()</code>.  <a href="#a5b8fd258f7d86d373d2f2126ecbdcad2">More...</a><br /></td></tr>
+<tr class="separator:a5b8fd258f7d86d373d2f2126ecbdcad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7179e76c68bec7289e33eab2d5301a29"><td class="memTemplParams" colspan="2">template&lt;typename Generator &gt; </td></tr>
 <tr class="memitem:a7179e76c68bec7289e33eab2d5301a29"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a7179e76c68bec7289e33eab2d5301a29">generate</a> (Generator generator, std::size_t length)</td></tr>
 <tr class="memdesc:a7179e76c68bec7289e33eab2d5301a29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> where values are created using successive calls to <code>generator()</code> limited to <em>length</em>  elements.  <a href="#a7179e76c68bec7289e33eab2d5301a29">More...</a><br /></td></tr>
@@ -340,6 +348,7 @@ template&lt;typename Itr &gt; </div>
 </div><div class="memdoc">
 
 <p>Creates an infinite stream which cycles the iterator range. </p>
+<p>If the range is empty, this operation will crash via stack overflow. This can be avoided by using <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#aee082be5c661f7e6f39ec1b79fbc84c5" title="Creates a stream which cycles the iterator range n  times. ">cycle(Itr,Itr,std::size_t)</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">begin</td><td>The beginning of the range.</td></tr>
@@ -400,7 +409,7 @@ template&lt;typename Itr &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
+template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto flow::generator::cycle </td>
@@ -413,6 +422,7 @@ template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail
 </div><div class="memdoc">
 
 <p>Creates an infinite stream which cycles <em>container</em> . </p>
+<p>If the container is empty, this operation will crash via stack overflow. This can be avoided by using cycle(Container,std::size_t).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">container</td><td>The container to cycle through.</td></tr>
@@ -427,7 +437,7 @@ template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
+template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto flow::generator::cycle </td>
@@ -461,11 +471,78 @@ template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail
 
 </div>
 </div>
+<a class="anchor" id="aea0a33e9246e1e1e98dba7070eadee99"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::generator::cycle </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>list</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates an infinite stream which cycles <em>list</em> . </p>
+<p>If the list is empty, this operation will crash via stack overflow. This can be avoided by using cycle(std::initializer_list&lt;T&gt;,std::size_t).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>The list to cycle through.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An infinite stream which cycles <em>list</em> .</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acce35864627a389f4443a52e3596fab7"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::generator::cycle </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a stream which cycles through <em>list</em>  <em>n</em>  times. </p>
+<p>To cycle a singleton list, use <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ac91cc015f53a6efeea386b04b9486572" title="Creates an infinite stream containing value  repeated over and over. ">repeat()</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>The list to cycle through.</td></tr>
+    <tr><td class="paramname">n</td><td>The number of times to repeat <em>list</em> .</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A stream which cycles <em>list</em>  <em>n</em>  times.</dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a1a310257dc777fbb0d65a405453a6df9"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
+template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto flow::generator::cycle_move </td>
@@ -493,7 +570,7 @@ template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
+template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto flow::generator::cycle_move </td>
@@ -548,14 +625,14 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="abff3916ae173286065e12f1ff3e4a60c"></a>
+<a class="anchor" id="ad70162f218f4b05d3ad1a3dca7f1cd3b"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename Itr &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt;<a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">source::Iterator</a>&lt;Itr&gt; &gt; flow::generator::from </td>
+          <td class="memname">auto flow::generator::from </td>
           <td>(</td>
           <td class="paramtype">Itr&#160;</td>
           <td class="paramname"><em>begin</em>, </td>
@@ -586,38 +663,11 @@ template&lt;typename Itr &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a7cd0f99ac8fd7825758fd97d4b099244"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt;T&gt;&amp; flow::generator::from </td>
-          <td>(</td>
-          <td class="paramtype">Stream&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>stream</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Specialization of <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c" title="Creates a Stream from the given iterator range. ">from()</a> to catch streams. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">stream</td><td>The stream to return.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><em>stream</em> </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="aaacf2459cc735b5c6731a65cee51f270"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
+template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto flow::generator::from </td>
@@ -640,11 +690,38 @@ template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail
 
 </div>
 </div>
+<a class="anchor" id="a874bfa518cc8c716f585a644774b6ddb"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::generator::from </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>list</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> over <em>list</em> . </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>The list to create a stream from.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A stream over <em>list</em> .</dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a408fc4ca9a170eca886474ba7efa07f2"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
+template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto flow::generator::from_move </td>
@@ -668,14 +745,14 @@ template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail
 
 </div>
 </div>
-<a class="anchor" id="a1233462a5ce649e3eb3bc58ef9ae131e"></a>
+<a class="anchor" id="a5b8fd258f7d86d373d2f2126ecbdcad2"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename Generator &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt;<a class="el" href="../../d3/d03/classflow_1_1source_1_1_generate.html">source::Generate</a>&lt;Generator&gt; &gt; flow::generator::generate </td>
+          <td class="memname">auto flow::generator::generate </td>
           <td>(</td>
           <td class="paramtype">Generator&#160;</td>
           <td class="paramname"><em>generator</em></td><td>)</td>
@@ -843,7 +920,7 @@ template&lt;typename IteratingFunction , typename... Args&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Container , typename F , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
+template&lt;typename Container , typename F , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto flow::generator::operator| </td>
@@ -874,7 +951,7 @@ template&lt;typename Container , typename F , typename  = typename std::enable_i
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>from(container) | op</code></dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>
@@ -882,7 +959,7 @@ template&lt;typename Container , typename F , typename  = typename std::enable_i
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Container , typename F , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
+template&lt;typename Container , typename F , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">decltype(auto) flow::generator::operator| </td>
@@ -913,7 +990,7 @@ template&lt;typename Container , typename F , typename  = typename std::enable_i
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>from(container) | op</code></dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#abff3916ae173286065e12f1ff3e4a60c" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>
@@ -1010,7 +1087,7 @@ template&lt;typename T , typename U &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
+template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto flow::generator::rcycle </td>
@@ -1023,6 +1100,7 @@ template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail
 </div><div class="memdoc">
 
 <p>Creates an infinite stream which cycles <em>container</em>  in reverse order. </p>
+<p>If the container is empty, this operation will crash via stack overflow. This can be avoided by using rcycle(Container,std::size_t).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">container</td><td>The container to cycle through.</td></tr>
@@ -1037,7 +1115,7 @@ template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
+template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto flow::generator::rcycle </td>
@@ -1075,7 +1153,7 @@ template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
+template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto flow::generator::rcycle_move </td>
@@ -1103,7 +1181,7 @@ template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
+template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto flow::generator::rcycle_move </td>
@@ -1207,7 +1285,7 @@ template&lt;typename T &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
+template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto flow::generator::rfrom </td>
@@ -1234,7 +1312,7 @@ template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Container , typename  = typename std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
+template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto flow::generator::rfrom_move </td>

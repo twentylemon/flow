@@ -124,10 +124,10 @@ Functions</h2></td></tr>
 <tr class="memitem:aed588ae01b14be839486b94bb87f2ed8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aed588ae01b14be839486b94bb87f2ed8">any</a> (Ret(Class::*member)())</td></tr>
 <tr class="memdesc:aed588ae01b14be839486b94bb87f2ed8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if any of the elements in the stream return <code>true</code> for the predicate given. This operation is short circuited and will stop executing once any <code>true</code> value is found. If the stream is empty, this will return <code>false</code>.  <a href="#aed588ae01b14be839486b94bb87f2ed8">More...</a><br /></td></tr>
 <tr class="separator:aed588ae01b14be839486b94bb87f2ed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed3749b3050892e328fa6b38417806cf"><td class="memTemplParams" colspan="2">template&lt;typename T , typename EqualPredicate  = std::equal_to&lt;T&gt;&gt; </td></tr>
-<tr class="memitem:aed3749b3050892e328fa6b38417806cf"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aed3749b3050892e328fa6b38417806cf">contains</a> (const T &amp;val, EqualPredicate equals=EqualPredicate())</td></tr>
-<tr class="memdesc:aed3749b3050892e328fa6b38417806cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if an element in the stream compares equal to <code>val</code> by <em>equals</em> . By default, <code>operator==</code> is used for equality comparisons.  <a href="#aed3749b3050892e328fa6b38417806cf">More...</a><br /></td></tr>
-<tr class="separator:aed3749b3050892e328fa6b38417806cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56cac6d09f37c126c0b3b4a509c8cc27"><td class="memTemplParams" colspan="2">template&lt;typename T , typename EqualPredicate  = std::equal_to&lt;T&gt;&gt; </td></tr>
+<tr class="memitem:a56cac6d09f37c126c0b3b4a509c8cc27"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a56cac6d09f37c126c0b3b4a509c8cc27">contains</a> (T &amp;&amp;val, EqualPredicate equals=EqualPredicate())</td></tr>
+<tr class="memdesc:a56cac6d09f37c126c0b3b4a509c8cc27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if an element in the stream compares equal to <code>val</code> by <em>equals</em> . By default, <code>operator==</code> is used for equality comparisons.  <a href="#a56cac6d09f37c126c0b3b4a509c8cc27">More...</a><br /></td></tr>
+<tr class="separator:a56cac6d09f37c126c0b3b4a509c8cc27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2e701e11c61d1038e3b0581e2f32df0"><td class="memTemplParams" colspan="2">template&lt;typename OutputIterator &gt; </td></tr>
 <tr class="memitem:aa2e701e11c61d1038e3b0581e2f32df0"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aa2e701e11c61d1038e3b0581e2f32df0">copy</a> (OutputIterator result)</td></tr>
 <tr class="memdesc:aa2e701e11c61d1038e3b0581e2f32df0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the elements in the stream into the range beginning at <code>result</code>. An iterator to the end of the destination range is returned, pointing to the element after the last element copied.  <a href="#aa2e701e11c61d1038e3b0581e2f32df0">More...</a><br /></td></tr>
@@ -146,6 +146,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a89c7d99f1f196e5f9b55032c60097ece"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a89c7d99f1f196e5f9b55032c60097ece">each</a> (Ret(Class::*member)())</td></tr>
 <tr class="memdesc:a89c7d99f1f196e5f9b55032c60097ece"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a function for each element in the stream. The executed function is returned.  <a href="#a89c7d99f1f196e5f9b55032c60097ece">More...</a><br /></td></tr>
 <tr class="separator:a89c7d99f1f196e5f9b55032c60097ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc1e1a50b753d81652abaa28a9292eb4"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afc1e1a50b753d81652abaa28a9292eb4">execute</a> ()</td></tr>
+<tr class="memdesc:afc1e1a50b753d81652abaa28a9292eb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forces the stream to be evaluated entirely.  <a href="#afc1e1a50b753d81652abaa28a9292eb4">More...</a><br /></td></tr>
+<tr class="separator:afc1e1a50b753d81652abaa28a9292eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2088cf5443957cdf935652bccc0b612"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612">first</a> ()</td></tr>
 <tr class="memdesc:ae2088cf5443957cdf935652bccc0b612"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element from the stream.  <a href="#ae2088cf5443957cdf935652bccc0b612">More...</a><br /></td></tr>
 <tr class="separator:ae2088cf5443957cdf935652bccc0b612"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -208,38 +211,86 @@ Functions</h2></td></tr>
 <tr class="memitem:a21f36f6877d4af5794b93a8f1c0af92d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a21f36f6877d4af5794b93a8f1c0af92d">sum</a> (T &amp;&amp;init)</td></tr>
 <tr class="memdesc:a21f36f6877d4af5794b93a8f1c0af92d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the sum of all the elements in the stream using <code>operator+</code>, starting the sum at <em>init</em> .  <a href="#a21f36f6877d4af5794b93a8f1c0af92d">More...</a><br /></td></tr>
 <tr class="separator:a21f36f6877d4af5794b93a8f1c0af92d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4dc13099ad26de78eccc63f7efad271"><td class="memTemplParams" colspan="2">template&lt;template&lt; typename &gt; class Alloc = std::allocator&gt; </td></tr>
-<tr class="memitem:ae4dc13099ad26de78eccc63f7efad271"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae4dc13099ad26de78eccc63f7efad271">to_vector</a> ()</td></tr>
-<tr class="memdesc:ae4dc13099ad26de78eccc63f7efad271"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::vector&lt;T, Alloc&lt;T&gt;&gt;</code> in order.  <a href="#ae4dc13099ad26de78eccc63f7efad271">More...</a><br /></td></tr>
-<tr class="separator:ae4dc13099ad26de78eccc63f7efad271"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab64d8c770e599993b993036e25af893"><td class="memTemplParams" colspan="2">template&lt;template&lt; typename &gt; class Alloc = std::allocator&gt; </td></tr>
-<tr class="memitem:aab64d8c770e599993b993036e25af893"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aab64d8c770e599993b993036e25af893">to_deque</a> ()</td></tr>
-<tr class="memdesc:aab64d8c770e599993b993036e25af893"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::deque&lt;T, Alloc&lt;T&gt;&gt;</code> in order.  <a href="#aab64d8c770e599993b993036e25af893">More...</a><br /></td></tr>
-<tr class="separator:aab64d8c770e599993b993036e25af893"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0220b84a0d18c61162cac48cd1bf7925"><td class="memTemplParams" colspan="2">template&lt;template&lt; typename &gt; class Alloc = std::allocator&gt; </td></tr>
-<tr class="memitem:a0220b84a0d18c61162cac48cd1bf7925"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a0220b84a0d18c61162cac48cd1bf7925">to_forward_list</a> ()</td></tr>
-<tr class="memdesc:a0220b84a0d18c61162cac48cd1bf7925"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::forward_list&lt;T, Alloc&lt;T&gt;&gt;</code> in reverse order.  <a href="#a0220b84a0d18c61162cac48cd1bf7925">More...</a><br /></td></tr>
-<tr class="separator:a0220b84a0d18c61162cac48cd1bf7925"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7b7ba1e4981b0e2df9254b4831aa3b1"><td class="memTemplParams" colspan="2">template&lt;template&lt; typename &gt; class Alloc = std::allocator&gt; </td></tr>
-<tr class="memitem:ac7b7ba1e4981b0e2df9254b4831aa3b1"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ac7b7ba1e4981b0e2df9254b4831aa3b1">to_list</a> ()</td></tr>
-<tr class="memdesc:ac7b7ba1e4981b0e2df9254b4831aa3b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::list&lt;T, Alloc&lt;T&gt;&gt;</code> in order.  <a href="#ac7b7ba1e4981b0e2df9254b4831aa3b1">More...</a><br /></td></tr>
-<tr class="separator:ac7b7ba1e4981b0e2df9254b4831aa3b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a931b21e882fc9666304d7205886f4452"><td class="memTemplParams" colspan="2">template&lt;typename Compare  = std::less&lt;void&gt;, template&lt; typename &gt; class Alloc = std::allocator&gt; </td></tr>
-<tr class="memitem:a931b21e882fc9666304d7205886f4452"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a931b21e882fc9666304d7205886f4452">to_set</a> ()</td></tr>
-<tr class="memdesc:a931b21e882fc9666304d7205886f4452"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::set&lt;T, Compare, Alloc&lt;T&gt;&gt;</code>.  <a href="#a931b21e882fc9666304d7205886f4452">More...</a><br /></td></tr>
-<tr class="separator:a931b21e882fc9666304d7205886f4452"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad3fbccb7a7a86e960f60b5b686519d9"><td class="memTemplParams" colspan="2">template&lt;typename Compare  = std::less&lt;void&gt;, template&lt; typename &gt; class Alloc = std::allocator&gt; </td></tr>
-<tr class="memitem:aad3fbccb7a7a86e960f60b5b686519d9"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aad3fbccb7a7a86e960f60b5b686519d9">to_multiset</a> ()</td></tr>
-<tr class="memdesc:aad3fbccb7a7a86e960f60b5b686519d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::multiset&lt;T, Compare, Alloc&lt;T&gt;&gt;</code>.  <a href="#aad3fbccb7a7a86e960f60b5b686519d9">More...</a><br /></td></tr>
-<tr class="separator:aad3fbccb7a7a86e960f60b5b686519d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a738f8a51a1b5cdbee93236f39b5fca43"><td class="memTemplParams" colspan="2">template&lt;typename Hash  = detail::hash, typename UnaryPredicate  = std::equal_to&lt;void&gt;, template&lt; typename &gt; class Alloc = std::allocator&gt; </td></tr>
-<tr class="memitem:a738f8a51a1b5cdbee93236f39b5fca43"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a738f8a51a1b5cdbee93236f39b5fca43">to_unordered_set</a> ()</td></tr>
-<tr class="memdesc:a738f8a51a1b5cdbee93236f39b5fca43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_set&lt;T, Hash, UnaryPredicate, Alloc&lt;T&gt;&gt;</code>.  <a href="#a738f8a51a1b5cdbee93236f39b5fca43">More...</a><br /></td></tr>
-<tr class="separator:a738f8a51a1b5cdbee93236f39b5fca43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d98aaaa327fd861f35ccaab3c81f075"><td class="memTemplParams" colspan="2">template&lt;typename Hash  = detail::hash, typename UnaryPredicate  = std::equal_to&lt;void&gt;, template&lt; typename &gt; class Alloc = std::allocator&gt; </td></tr>
-<tr class="memitem:a6d98aaaa327fd861f35ccaab3c81f075"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a6d98aaaa327fd861f35ccaab3c81f075">to_unordered_multiset</a> ()</td></tr>
-<tr class="memdesc:a6d98aaaa327fd861f35ccaab3c81f075"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_multiset&lt;T, Hash, UnaryPredicate, Alloc&lt;T&gt;&gt;</code>.  <a href="#a6d98aaaa327fd861f35ccaab3c81f075">More...</a><br /></td></tr>
-<tr class="separator:a6d98aaaa327fd861f35ccaab3c81f075"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae65b798b18b47576c1ffed6f63814fc0"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae65b798b18b47576c1ffed6f63814fc0">to_vector</a> ()</td></tr>
+<tr class="memdesc:ae65b798b18b47576c1ffed6f63814fc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::vector&lt;T&gt;</code> in order.  <a href="#ae65b798b18b47576c1ffed6f63814fc0">More...</a><br /></td></tr>
+<tr class="separator:ae65b798b18b47576c1ffed6f63814fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67f68b3569f0a73e2bbc6e42d83bbe85"><td class="memTemplParams" colspan="2">template&lt;typename Allocator &gt; </td></tr>
+<tr class="memitem:a67f68b3569f0a73e2bbc6e42d83bbe85"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a67f68b3569f0a73e2bbc6e42d83bbe85">to_vector</a> (const Allocator &amp;alloc)</td></tr>
+<tr class="memdesc:a67f68b3569f0a73e2bbc6e42d83bbe85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::vector&lt;T, Allocator&gt;</code> in order.  <a href="#a67f68b3569f0a73e2bbc6e42d83bbe85">More...</a><br /></td></tr>
+<tr class="separator:a67f68b3569f0a73e2bbc6e42d83bbe85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f69e7aa0b702ed9ed611b1dc8924f53"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9f69e7aa0b702ed9ed611b1dc8924f53">to_deque</a> ()</td></tr>
+<tr class="memdesc:a9f69e7aa0b702ed9ed611b1dc8924f53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::deque&lt;T&gt;</code> in order.  <a href="#a9f69e7aa0b702ed9ed611b1dc8924f53">More...</a><br /></td></tr>
+<tr class="separator:a9f69e7aa0b702ed9ed611b1dc8924f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a6d5c159456a5fe32760b642506cad8"><td class="memTemplParams" colspan="2">template&lt;typename Allocator &gt; </td></tr>
+<tr class="memitem:a0a6d5c159456a5fe32760b642506cad8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a0a6d5c159456a5fe32760b642506cad8">to_deque</a> (const Allocator &amp;alloc)</td></tr>
+<tr class="memdesc:a0a6d5c159456a5fe32760b642506cad8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::deque&lt;T, Allocator&gt;</code> in order.  <a href="#a0a6d5c159456a5fe32760b642506cad8">More...</a><br /></td></tr>
+<tr class="separator:a0a6d5c159456a5fe32760b642506cad8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35cb281944a17abb919efac5d789999e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a35cb281944a17abb919efac5d789999e">to_forward_list</a> ()</td></tr>
+<tr class="memdesc:a35cb281944a17abb919efac5d789999e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::forward_list&lt;T&gt;</code> in reverse order.  <a href="#a35cb281944a17abb919efac5d789999e">More...</a><br /></td></tr>
+<tr class="separator:a35cb281944a17abb919efac5d789999e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75ac4e649cbf6e807c5b3fc172e5f32f"><td class="memTemplParams" colspan="2">template&lt;typename Allocator &gt; </td></tr>
+<tr class="memitem:a75ac4e649cbf6e807c5b3fc172e5f32f"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a75ac4e649cbf6e807c5b3fc172e5f32f">to_forward_list</a> (const Allocator &amp;alloc)</td></tr>
+<tr class="memdesc:a75ac4e649cbf6e807c5b3fc172e5f32f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::forward_list&lt;T, Allocator&gt;</code> in reverse order.  <a href="#a75ac4e649cbf6e807c5b3fc172e5f32f">More...</a><br /></td></tr>
+<tr class="separator:a75ac4e649cbf6e807c5b3fc172e5f32f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64d9ff6882dec88df1da9db8858a8e2e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a64d9ff6882dec88df1da9db8858a8e2e">to_list</a> ()</td></tr>
+<tr class="memdesc:a64d9ff6882dec88df1da9db8858a8e2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::list&lt;T&gt;</code> in order.  <a href="#a64d9ff6882dec88df1da9db8858a8e2e">More...</a><br /></td></tr>
+<tr class="separator:a64d9ff6882dec88df1da9db8858a8e2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a226ef35682dc28c41693bfabbb73b806"><td class="memTemplParams" colspan="2">template&lt;typename Allocator &gt; </td></tr>
+<tr class="memitem:a226ef35682dc28c41693bfabbb73b806"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a226ef35682dc28c41693bfabbb73b806">to_list</a> (const Allocator &amp;alloc)</td></tr>
+<tr class="memdesc:a226ef35682dc28c41693bfabbb73b806"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::list&lt;T, Allocator&gt;</code> in order.  <a href="#a226ef35682dc28c41693bfabbb73b806">More...</a><br /></td></tr>
+<tr class="separator:a226ef35682dc28c41693bfabbb73b806"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e813962b033f984b9265ebe1cccf6ee"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a1e813962b033f984b9265ebe1cccf6ee">to_set</a> ()</td></tr>
+<tr class="memdesc:a1e813962b033f984b9265ebe1cccf6ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::set&lt;T&gt;</code>.  <a href="#a1e813962b033f984b9265ebe1cccf6ee">More...</a><br /></td></tr>
+<tr class="separator:a1e813962b033f984b9265ebe1cccf6ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0029787ab7a32a1e95cce8f36c04233b"><td class="memTemplParams" colspan="2">template&lt;typename Compare &gt; </td></tr>
+<tr class="memitem:a0029787ab7a32a1e95cce8f36c04233b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a0029787ab7a32a1e95cce8f36c04233b">to_set</a> (Compare compare)</td></tr>
+<tr class="memdesc:a0029787ab7a32a1e95cce8f36c04233b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::set&lt;T, Compare&gt;</code>.  <a href="#a0029787ab7a32a1e95cce8f36c04233b">More...</a><br /></td></tr>
+<tr class="separator:a0029787ab7a32a1e95cce8f36c04233b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af476d5605e9d8316ac0c8dcc876188a5"><td class="memTemplParams" colspan="2">template&lt;typename Compare , typename Allocator &gt; </td></tr>
+<tr class="memitem:af476d5605e9d8316ac0c8dcc876188a5"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#af476d5605e9d8316ac0c8dcc876188a5">to_set</a> (Compare compare, const Allocator &amp;alloc)</td></tr>
+<tr class="memdesc:af476d5605e9d8316ac0c8dcc876188a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::set&lt;T, Compare, Alloc&lt;T&gt;&gt;</code>.  <a href="#af476d5605e9d8316ac0c8dcc876188a5">More...</a><br /></td></tr>
+<tr class="separator:af476d5605e9d8316ac0c8dcc876188a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbd4938a06689d3fb2c137bf8eca77e1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afbd4938a06689d3fb2c137bf8eca77e1">to_multiset</a> ()</td></tr>
+<tr class="memdesc:afbd4938a06689d3fb2c137bf8eca77e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::multiset&lt;T&gt;</code>.  <a href="#afbd4938a06689d3fb2c137bf8eca77e1">More...</a><br /></td></tr>
+<tr class="separator:afbd4938a06689d3fb2c137bf8eca77e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a986c64c957274751366cb8a0c9b8107a"><td class="memTemplParams" colspan="2">template&lt;typename Compare &gt; </td></tr>
+<tr class="memitem:a986c64c957274751366cb8a0c9b8107a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a986c64c957274751366cb8a0c9b8107a">to_multiset</a> (Compare compare)</td></tr>
+<tr class="memdesc:a986c64c957274751366cb8a0c9b8107a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::multiset&lt;T, Compare&gt;</code>.  <a href="#a986c64c957274751366cb8a0c9b8107a">More...</a><br /></td></tr>
+<tr class="separator:a986c64c957274751366cb8a0c9b8107a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef7db31d2cf47771a86218a49e8a5948"><td class="memTemplParams" colspan="2">template&lt;typename Compare , typename Allocator &gt; </td></tr>
+<tr class="memitem:aef7db31d2cf47771a86218a49e8a5948"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aef7db31d2cf47771a86218a49e8a5948">to_multiset</a> (Compare compare, const Allocator &amp;alloc)</td></tr>
+<tr class="memdesc:aef7db31d2cf47771a86218a49e8a5948"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::multiset&lt;T, Compare, Alloc&lt;T&gt;&gt;</code>.  <a href="#aef7db31d2cf47771a86218a49e8a5948">More...</a><br /></td></tr>
+<tr class="separator:aef7db31d2cf47771a86218a49e8a5948"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6d5aa7c8fa867dceca1bbca79e2ac1a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ab6d5aa7c8fa867dceca1bbca79e2ac1a">to_unordered_set</a> ()</td></tr>
+<tr class="memdesc:ab6d5aa7c8fa867dceca1bbca79e2ac1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_set&lt;T&gt;</code>.  <a href="#ab6d5aa7c8fa867dceca1bbca79e2ac1a">More...</a><br /></td></tr>
+<tr class="separator:ab6d5aa7c8fa867dceca1bbca79e2ac1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6bc84b6fa611511105abe67f63ff983"><td class="memTemplParams" colspan="2">template&lt;typename Hash &gt; </td></tr>
+<tr class="memitem:ae6bc84b6fa611511105abe67f63ff983"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae6bc84b6fa611511105abe67f63ff983">to_unordered_set</a> (const Hash &amp;hash)</td></tr>
+<tr class="memdesc:ae6bc84b6fa611511105abe67f63ff983"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_set&lt;T, Hash&gt;</code>.  <a href="#ae6bc84b6fa611511105abe67f63ff983">More...</a><br /></td></tr>
+<tr class="separator:ae6bc84b6fa611511105abe67f63ff983"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4e4dba597728fea66fd360b4ad69791"><td class="memTemplParams" colspan="2">template&lt;typename Hash , typename EqualPredicate &gt; </td></tr>
+<tr class="memitem:af4e4dba597728fea66fd360b4ad69791"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#af4e4dba597728fea66fd360b4ad69791">to_unordered_set</a> (const Hash &amp;hash, EqualPredicate equal)</td></tr>
+<tr class="memdesc:af4e4dba597728fea66fd360b4ad69791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_set&lt;T, Hash, EqualPredicate&gt;</code>.  <a href="#af4e4dba597728fea66fd360b4ad69791">More...</a><br /></td></tr>
+<tr class="separator:af4e4dba597728fea66fd360b4ad69791"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a969446e33e7a16cfcbf417c42eaab3ba"><td class="memTemplParams" colspan="2">template&lt;typename Hash , typename EqualPredicate , typename Allocator &gt; </td></tr>
+<tr class="memitem:a969446e33e7a16cfcbf417c42eaab3ba"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a969446e33e7a16cfcbf417c42eaab3ba">to_unordered_set</a> (const Hash &amp;hash, EqualPredicate equal, const Allocator &amp;alloc)</td></tr>
+<tr class="memdesc:a969446e33e7a16cfcbf417c42eaab3ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_set&lt;T, Hash, EqualPredicate, Allocator&gt;</code>.  <a href="#a969446e33e7a16cfcbf417c42eaab3ba">More...</a><br /></td></tr>
+<tr class="separator:a969446e33e7a16cfcbf417c42eaab3ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba2326e9fec317a54a1e151a94cde753"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aba2326e9fec317a54a1e151a94cde753">to_unordered_multiset</a> ()</td></tr>
+<tr class="memdesc:aba2326e9fec317a54a1e151a94cde753"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_multiset&lt;T&gt;</code>.  <a href="#aba2326e9fec317a54a1e151a94cde753">More...</a><br /></td></tr>
+<tr class="separator:aba2326e9fec317a54a1e151a94cde753"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cfedb440c13860b072c5731f8ab1d46"><td class="memTemplParams" colspan="2">template&lt;typename Hash &gt; </td></tr>
+<tr class="memitem:a6cfedb440c13860b072c5731f8ab1d46"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a6cfedb440c13860b072c5731f8ab1d46">to_unordered_multiset</a> (const Hash &amp;hash)</td></tr>
+<tr class="memdesc:a6cfedb440c13860b072c5731f8ab1d46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_multiset&lt;T, Hash&gt;</code>.  <a href="#a6cfedb440c13860b072c5731f8ab1d46">More...</a><br /></td></tr>
+<tr class="separator:a6cfedb440c13860b072c5731f8ab1d46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3fbd598715bc9ace15baecac72b154f"><td class="memTemplParams" colspan="2">template&lt;typename Hash , typename EqualPredicate &gt; </td></tr>
+<tr class="memitem:ad3fbd598715bc9ace15baecac72b154f"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ad3fbd598715bc9ace15baecac72b154f">to_unordered_multiset</a> (const Hash &amp;hash, EqualPredicate equal)</td></tr>
+<tr class="memdesc:ad3fbd598715bc9ace15baecac72b154f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_multiset&lt;T, Hash, EqualPredicate&gt;</code>.  <a href="#ad3fbd598715bc9ace15baecac72b154f">More...</a><br /></td></tr>
+<tr class="separator:ad3fbd598715bc9ace15baecac72b154f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4dc941b1b4aeac95b072216a663057e"><td class="memTemplParams" colspan="2">template&lt;typename Hash , typename EqualPredicate , typename Allocator &gt; </td></tr>
+<tr class="memitem:aa4dc941b1b4aeac95b072216a663057e"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aa4dc941b1b4aeac95b072216a663057e">to_unordered_multiset</a> (const Hash &amp;hash, EqualPredicate equal, const Allocator &amp;alloc)</td></tr>
+<tr class="memdesc:aa4dc941b1b4aeac95b072216a663057e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_multiset&lt;T, Hash, EqualPredicate, Allocator&gt;</code>.  <a href="#aa4dc941b1b4aeac95b072216a663057e">More...</a><br /></td></tr>
+<tr class="separator:aa4dc941b1b4aeac95b072216a663057e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="afb46a36fe4c6693d7b05e3bd0fc05f4d"></a>
@@ -416,7 +467,7 @@ template&lt;typename Ret , typename Class &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="aed3749b3050892e328fa6b38417806cf"></a>
+<a class="anchor" id="a56cac6d09f37c126c0b3b4a509c8cc27"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -425,7 +476,7 @@ template&lt;typename T , typename EqualPredicate  = std::equal_to&lt;T&gt;&gt; <
         <tr>
           <td class="memname">auto flow::terminal::contains </td>
           <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
           <td class="paramname"><em>val</em>, </td>
         </tr>
         <tr>
@@ -613,6 +664,35 @@ template&lt;typename Ret , typename Class &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation that executes a function for each stream element.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af" title="Executes action  for each element in the Stream. ">peek()</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afc1e1a50b753d81652abaa28a9292eb4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::execute </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Forces the stream to be evaluated entirely. </p>
+<p>The stream will not normally be evaluated unless a terminal operation is applied, or an eager intermediate operation is applied. This terminal forces evaluation of the entire stream. For example:</p>
+<p><code>widgets | zip(iota(1), [](Widget&amp; w, int i) { w.set_id(i); return i; });</code> </p>
+<p>The above stream assigns a unique id to each Widget, and the stream contains the ids. However, no terminal operation is applied, no value is ever needed so none of the stream is ever evaluated. Appending <code> | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afc1e1a50b753d81652abaa28a9292eb4" title="Forces the stream to be evaluated entirely. ">execute()</a></code> will force the stream to be evaluated, assigning the ids but ignoring the stream itself.</p>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation that evaluates the entire stream but ignores the elements.</dd></dl>
 
 </div>
 </div>
@@ -839,7 +919,7 @@ template&lt;typename Accumulator , typename UnaryFunction , typename T &gt; </di
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000005">Todo:</a></b></dt><dd>is there a way to lazily step to the end of the stream? </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000004">Todo:</a></b></dt><dd>is there a way to lazily step to the end of the stream? </dd></dl>
 
 </div>
 </div>
@@ -860,6 +940,7 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
 </div><div class="memdoc">
 
 <p>Returns the maximum element from the stream according to <em>compare</em> . By default <code>operator&lt;</code> is used for comparisons. </p>
+<p>If there are multiple maximum elements, the first such element is returned.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">compare</td><td>The compare function, by default <code>std::less&lt;void&gt;</code>.</td></tr>
@@ -873,7 +954,7 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000006">Todo:</a></b></dt><dd>benchmark non-fold implementation </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000005">Todo:</a></b></dt><dd>benchmark non-fold implementation </dd></dl>
 
 </div>
 </div>
@@ -894,6 +975,7 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
 </div><div class="memdoc">
 
 <p>Returns the minimum element from the stream according to <em>compare</em> . By default <code>operator&lt;</code> is used for comparisons. </p>
+<p>If there are multiple minimum elements, the first such element is returned.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">compare</td><td>The compare function, by default <code>std::less&lt;void&gt;</code>.</td></tr>
@@ -907,7 +989,7 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000007">Todo:</a></b></dt><dd>benchmark non-fold implementation </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000006">Todo:</a></b></dt><dd>benchmark non-fold implementation </dd></dl>
 
 </div>
 </div>
@@ -928,6 +1010,7 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
 </div><div class="memdoc">
 
 <p>Returns the minimum and maximum elements as a pair from the stream according to <em>compare</em> . The first element is the minimum and the second element is the maximum. By default <code>operator&lt;</code> is used for comparisons. </p>
+<p>If there are multiple min/max elements, the <em>first</em> min element and the <em>last</em> max element are returned.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">compare</td><td>The compare function, by default <code>std::less&lt;void&gt;</code>.</td></tr>
@@ -941,7 +1024,6 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000008">Todo:</a></b></dt><dd>naive implementation that uses 2n - 2 comparisons; can this be improved to the 3n / 2 solution? </dd></dl>
 
 </div>
 </div>
@@ -1189,11 +1271,12 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="aab64d8c770e599993b993036e25af893"></a>
+<a class="anchor" id="a9f69e7aa0b702ed9ed611b1dc8924f53"></a>
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;template&lt; typename &gt; class Alloc = std::allocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto flow::terminal::to_deque </td>
@@ -1202,18 +1285,51 @@ template&lt;template&lt; typename &gt; class Alloc = std::allocator&gt; </div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Copies the stream into a <code>std::deque&lt;T, Alloc&lt;T&gt;&gt;</code> in order. </p>
+<p>Copies the stream into a <code>std::deque&lt;T&gt;</code> in order. </p>
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::deque</code>.</dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a0220b84a0d18c61162cac48cd1bf7925"></a>
+<a class="anchor" id="a0a6d5c159456a5fe32760b642506cad8"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;template&lt; typename &gt; class Alloc = std::allocator&gt; </div>
+template&lt;typename Allocator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::to_deque </td>
+          <td>(</td>
+          <td class="paramtype">const Allocator &amp;&#160;</td>
+          <td class="paramname"><em>alloc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copies the stream into a <code>std::deque&lt;T, Allocator&gt;</code> in order. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alloc</td><td>The allocator to use in the returned container.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::deque</code>.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a35cb281944a17abb919efac5d789999e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto flow::terminal::to_forward_list </td>
@@ -1222,19 +1338,53 @@ template&lt;template&lt; typename &gt; class Alloc = std::allocator&gt; </div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Copies the stream into a <code>std::forward_list&lt;T, Alloc&lt;T&gt;&gt;</code> in reverse order. </p>
+<p>Copies the stream into a <code>std::forward_list&lt;T&gt;</code> in reverse order. </p>
 <p>Due to a lack of <code>forward_list::push_back</code>, the list contains the stream elements in reverse order, as they are pushed to the front of the list instead.</p>
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::forward_list</code>.</dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ac7b7ba1e4981b0e2df9254b4831aa3b1"></a>
+<a class="anchor" id="a75ac4e649cbf6e807c5b3fc172e5f32f"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;template&lt; typename &gt; class Alloc = std::allocator&gt; </div>
+template&lt;typename Allocator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::to_forward_list </td>
+          <td>(</td>
+          <td class="paramtype">const Allocator &amp;&#160;</td>
+          <td class="paramname"><em>alloc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copies the stream into a <code>std::forward_list&lt;T, Allocator&gt;</code> in reverse order. </p>
+<p>Due to a lack of <code>forward_list::push_back</code>, the list contains the stream elements in reverse order, as they are pushed to the front of the list instead.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alloc</td><td>The allocator to use in the returned container.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::forward_list</code>.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a64d9ff6882dec88df1da9db8858a8e2e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto flow::terminal::to_list </td>
@@ -1243,18 +1393,51 @@ template&lt;template&lt; typename &gt; class Alloc = std::allocator&gt; </div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Copies the stream into a <code>std::list&lt;T, Alloc&lt;T&gt;&gt;</code> in order. </p>
+<p>Copies the stream into a <code>std::list&lt;T&gt;</code> in order. </p>
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::list</code>.</dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="aad3fbccb7a7a86e960f60b5b686519d9"></a>
+<a class="anchor" id="a226ef35682dc28c41693bfabbb73b806"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Compare  = std::less&lt;void&gt;, template&lt; typename &gt; class Alloc = std::allocator&gt; </div>
+template&lt;typename Allocator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::to_list </td>
+          <td>(</td>
+          <td class="paramtype">const Allocator &amp;&#160;</td>
+          <td class="paramname"><em>alloc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copies the stream into a <code>std::list&lt;T, Allocator&gt;</code> in order. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alloc</td><td>The allocator to use in the returned container.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::list</code>.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afbd4938a06689d3fb2c137bf8eca77e1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto flow::terminal::to_multiset </td>
@@ -1263,18 +1446,89 @@ template&lt;typename Compare  = std::less&lt;void&gt;, template&lt; typename &gt
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Copies the stream into a <code>std::multiset&lt;T, Compare, Alloc&lt;T&gt;&gt;</code>. </p>
+<p>Copies the stream into a <code>std::multiset&lt;T&gt;</code>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::multiset</code>.</dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a931b21e882fc9666304d7205886f4452"></a>
+<a class="anchor" id="a986c64c957274751366cb8a0c9b8107a"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Compare  = std::less&lt;void&gt;, template&lt; typename &gt; class Alloc = std::allocator&gt; </div>
+template&lt;typename Compare &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::to_multiset </td>
+          <td>(</td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"><em>compare</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copies the stream into a <code>std::multiset&lt;T, Compare&gt;</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">compare</td><td>The comparator to use in the set.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::multiset</code>.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aef7db31d2cf47771a86218a49e8a5948"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Compare , typename Allocator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::to_multiset </td>
+          <td>(</td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"><em>compare</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Allocator &amp;&#160;</td>
+          <td class="paramname"><em>alloc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copies the stream into a <code>std::multiset&lt;T, Compare, Alloc&lt;T&gt;&gt;</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">compare</td><td>The comparator to use in the set.</td></tr>
+    <tr><td class="paramname">alloc</td><td>The allocator to use in the returned container.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::multiset</code>.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1e813962b033f984b9265ebe1cccf6ee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto flow::terminal::to_set </td>
@@ -1283,18 +1537,89 @@ template&lt;typename Compare  = std::less&lt;void&gt;, template&lt; typename &gt
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Copies the stream into a <code>std::set&lt;T, Compare, Alloc&lt;T&gt;&gt;</code>. </p>
+<p>Copies the stream into a <code>std::set&lt;T&gt;</code>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::set</code>.</dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a6d98aaaa327fd861f35ccaab3c81f075"></a>
+<a class="anchor" id="a0029787ab7a32a1e95cce8f36c04233b"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Hash  = detail::hash, typename UnaryPredicate  = std::equal_to&lt;void&gt;, template&lt; typename &gt; class Alloc = std::allocator&gt; </div>
+template&lt;typename Compare &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::to_set </td>
+          <td>(</td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"><em>compare</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copies the stream into a <code>std::set&lt;T, Compare&gt;</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">compare</td><td>The comparator to use in the set.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::set</code>.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af476d5605e9d8316ac0c8dcc876188a5"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Compare , typename Allocator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::to_set </td>
+          <td>(</td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"><em>compare</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Allocator &amp;&#160;</td>
+          <td class="paramname"><em>alloc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copies the stream into a <code>std::set&lt;T, Compare, Alloc&lt;T&gt;&gt;</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">compare</td><td>The comparator to use in the set.</td></tr>
+    <tr><td class="paramname">alloc</td><td>The allocator to use in the returned container.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::set</code>.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aba2326e9fec317a54a1e151a94cde753"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto flow::terminal::to_unordered_multiset </td>
@@ -1303,18 +1628,134 @@ template&lt;typename Hash  = detail::hash, typename UnaryPredicate  = std::equal
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Copies the stream into a <code>std::unordered_multiset&lt;T, Hash, UnaryPredicate, Alloc&lt;T&gt;&gt;</code>. </p>
+<p>Copies the stream into a <code>std::unordered_multiset&lt;T&gt;</code>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::unordered_multiset</code>.</dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a738f8a51a1b5cdbee93236f39b5fca43"></a>
+<a class="anchor" id="a6cfedb440c13860b072c5731f8ab1d46"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Hash  = detail::hash, typename UnaryPredicate  = std::equal_to&lt;void&gt;, template&lt; typename &gt; class Alloc = std::allocator&gt; </div>
+template&lt;typename Hash &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::to_unordered_multiset </td>
+          <td>(</td>
+          <td class="paramtype">const Hash &amp;&#160;</td>
+          <td class="paramname"><em>hash</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copies the stream into a <code>std::unordered_multiset&lt;T, Hash&gt;</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hash</td><td>The hash function to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::unordered_multiset</code>.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad3fbd598715bc9ace15baecac72b154f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Hash , typename EqualPredicate &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::to_unordered_multiset </td>
+          <td>(</td>
+          <td class="paramtype">const Hash &amp;&#160;</td>
+          <td class="paramname"><em>hash</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EqualPredicate&#160;</td>
+          <td class="paramname"><em>equal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copies the stream into a <code>std::unordered_multiset&lt;T, Hash, EqualPredicate&gt;</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hash</td><td>The hash function to use.</td></tr>
+    <tr><td class="paramname">equal</td><td>The function to use for the equality predicate in the hash table.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::unordered_multiset</code>.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa4dc941b1b4aeac95b072216a663057e"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Hash , typename EqualPredicate , typename Allocator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::to_unordered_multiset </td>
+          <td>(</td>
+          <td class="paramtype">const Hash &amp;&#160;</td>
+          <td class="paramname"><em>hash</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EqualPredicate&#160;</td>
+          <td class="paramname"><em>equal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Allocator &amp;&#160;</td>
+          <td class="paramname"><em>alloc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copies the stream into a <code>std::unordered_multiset&lt;T, Hash, EqualPredicate, Allocator&gt;</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hash</td><td>The hash function to use.</td></tr>
+    <tr><td class="paramname">equal</td><td>The function to use for the equality predicate in the hash table.</td></tr>
+    <tr><td class="paramname">alloc</td><td>The allocator to use in the returned container.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::unordered_multiset</code>.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab6d5aa7c8fa867dceca1bbca79e2ac1a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto flow::terminal::to_unordered_set </td>
@@ -1323,18 +1764,134 @@ template&lt;typename Hash  = detail::hash, typename UnaryPredicate  = std::equal
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Copies the stream into a <code>std::unordered_set&lt;T, Hash, UnaryPredicate, Alloc&lt;T&gt;&gt;</code>. </p>
+<p>Copies the stream into a <code>std::unordered_set&lt;T&gt;</code>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::unordered_set</code>.</dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ae4dc13099ad26de78eccc63f7efad271"></a>
+<a class="anchor" id="ae6bc84b6fa611511105abe67f63ff983"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;template&lt; typename &gt; class Alloc = std::allocator&gt; </div>
+template&lt;typename Hash &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::to_unordered_set </td>
+          <td>(</td>
+          <td class="paramtype">const Hash &amp;&#160;</td>
+          <td class="paramname"><em>hash</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copies the stream into a <code>std::unordered_set&lt;T, Hash&gt;</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hash</td><td>The hash function to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::unordered_set</code>.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af4e4dba597728fea66fd360b4ad69791"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Hash , typename EqualPredicate &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::to_unordered_set </td>
+          <td>(</td>
+          <td class="paramtype">const Hash &amp;&#160;</td>
+          <td class="paramname"><em>hash</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EqualPredicate&#160;</td>
+          <td class="paramname"><em>equal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copies the stream into a <code>std::unordered_set&lt;T, Hash, EqualPredicate&gt;</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hash</td><td>The hash function to use.</td></tr>
+    <tr><td class="paramname">equal</td><td>The function to use for the equality predicate in the hash table.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::unordered_set</code>.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a969446e33e7a16cfcbf417c42eaab3ba"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Hash , typename EqualPredicate , typename Allocator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::to_unordered_set </td>
+          <td>(</td>
+          <td class="paramtype">const Hash &amp;&#160;</td>
+          <td class="paramname"><em>hash</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EqualPredicate&#160;</td>
+          <td class="paramname"><em>equal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Allocator &amp;&#160;</td>
+          <td class="paramname"><em>alloc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copies the stream into a <code>std::unordered_set&lt;T, Hash, EqualPredicate, Allocator&gt;</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hash</td><td>The hash function to use.</td></tr>
+    <tr><td class="paramname">equal</td><td>The function to use for the equality predicate in the hash table.</td></tr>
+    <tr><td class="paramname">alloc</td><td>The allocator to use in the returned container.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::unordered_set</code>.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae65b798b18b47576c1ffed6f63814fc0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto flow::terminal::to_vector </td>
@@ -1343,9 +1900,41 @@ template&lt;template&lt; typename &gt; class Alloc = std::allocator&gt; </div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Copies the stream into a <code>std::vector&lt;T, Alloc&lt;T&gt;&gt;</code> in order. </p>
+<p>Copies the stream into a <code>std::vector&lt;T&gt;</code> in order. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::vector</code>.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a67f68b3569f0a73e2bbc6e42d83bbe85"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::to_vector </td>
+          <td>(</td>
+          <td class="paramtype">const Allocator &amp;&#160;</td>
+          <td class="paramname"><em>alloc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copies the stream into a <code>std::vector&lt;T, Allocator&gt;</code> in order. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alloc</td><td>The allocator to use in the returned container.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::vector</code>.</dd></dl>
 
 </div>

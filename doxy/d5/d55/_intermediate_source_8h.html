@@ -88,18 +88,26 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">IntermediateSource.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &lt;vector&gt;</code><br />
+</div>
 <p><a href="../../d5/d55/_intermediate_source_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dea/classflow_1_1source_1_1_intermediate_source.html">flow::source::IntermediateSource&lt; Source, T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for intermediate operation sources. Provides default implementations for basic methods, type aliases and common member variable definitions.  <a href="../../da/dea/classflow_1_1source_1_1_intermediate_source.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d08/classflow_1_1source_1_1_intermediate_source_base.html">flow::source::IntermediateSourceBase&lt; Source, T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for intermediate operation sources. Provides default implementations for basic methods, type aliases and common member variable definitions.  <a href="../../d7/d08/classflow_1_1source_1_1_intermediate_source_base.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d0b/classflow_1_1source_1_1_intermediate_source_no_default.html">flow::source::IntermediateSourceNoDefault&lt; Source, T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for intermediate operation sources without default constructible types.  <a href="../../d5/d0b/classflow_1_1source_1_1_intermediate_source_no_default.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dc7/classflow_1_1source_1_1_intermediate_source_default.html">flow::source::IntermediateSourceDefault&lt; Source, T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for intermediate operation sources with default constructible types.  <a href="../../d3/dc7/classflow_1_1source_1_1_intermediate_source_default.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -108,6 +116,12 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:dc/de6/namespaceflow_1_1source"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/de6/namespaceflow_1_1source.html">flow::source</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ae0363965dc7fec87258017467d830230"><td class="memTemplParams" colspan="2">template&lt;typename Source , typename T  = typename Source::value_type&gt; </td></tr>
+<tr class="memitem:ae0363965dc7fec87258017467d830230"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/de6/namespaceflow_1_1source.html#ae0363965dc7fec87258017467d830230">flow::source::IntermediateSource</a> = std::conditional_t&lt; std::is_default_constructible&lt; T &gt;::value, IntermediateSourceDefault&lt; Source, T &gt;, IntermediateSourceNoDefault&lt; Source, T &gt; &gt;</td></tr>
+<tr class="separator:ae0363965dc7fec87258017467d830230"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

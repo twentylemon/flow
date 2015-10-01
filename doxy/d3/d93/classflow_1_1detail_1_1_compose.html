@@ -91,7 +91,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="../../d4/d14/classflow_1_1detail_1_1_compose-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">flow::detail::Compose&lt; F, G &gt; Class Template Reference</div>  </div>
@@ -112,15 +111,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acf99a2867ccaa1b61aa7b94f17c3ca77"><td class="memTemplItemLeft" align="right" valign="top">std::result_of_t&lt; F(std::result_of_t&lt; G(<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; Source &gt; &amp;&amp;)&gt;)&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d93/classflow_1_1detail_1_1_compose.html#acf99a2867ccaa1b61aa7b94f17c3ca77">operator()</a> (<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; Source &gt; &amp;&amp;stream)</td></tr>
 <tr class="memdesc:acf99a2867ccaa1b61aa7b94f17c3ca77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the composition of operations on the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> given.  <a href="#acf99a2867ccaa1b61aa7b94f17c3ca77">More...</a><br /></td></tr>
 <tr class="separator:acf99a2867ccaa1b61aa7b94f17c3ca77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a9f677be4146637efb617f47683698fe8"><td class="memItemLeft" align="right" valign="top">F&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d93/classflow_1_1detail_1_1_compose.html#a9f677be4146637efb617f47683698fe8">_f</a></td></tr>
-<tr class="memdesc:a9f677be4146637efb617f47683698fe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The outer operation.  <a href="#a9f677be4146637efb617f47683698fe8">More...</a><br /></td></tr>
-<tr class="separator:a9f677be4146637efb617f47683698fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6b7012d88f61a7bf2c8cca67b208f6f"><td class="memItemLeft" align="right" valign="top">G&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d93/classflow_1_1detail_1_1_compose.html#ad6b7012d88f61a7bf2c8cca67b208f6f">_g</a></td></tr>
-<tr class="memdesc:ad6b7012d88f61a7bf2c8cca67b208f6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The inner operation.  <a href="#ad6b7012d88f61a7bf2c8cca67b208f6f">More...</a><br /></td></tr>
-<tr class="separator:ad6b7012d88f61a7bf2c8cca67b208f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename F, typename G&gt;<br />
@@ -208,55 +198,6 @@ template&lt;typename Source &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of the composition of the operations on the stream.</dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a9f677be4146637efb617f47683698fe8"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename F , typename G &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">F <a class="el" href="../../d3/d93/classflow_1_1detail_1_1_compose.html">flow::detail::Compose</a>&lt; F, G &gt;::_f</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The outer operation. </p>
-
-</div>
-</div>
-<a class="anchor" id="ad6b7012d88f61a7bf2c8cca67b208f6f"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename F , typename G &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">G <a class="el" href="../../d3/d93/classflow_1_1detail_1_1_compose.html">flow::detail::Compose</a>&lt; F, G &gt;::_g</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The inner operation. </p>
 
 </div>
 </div>
