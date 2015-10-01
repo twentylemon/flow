@@ -9,7 +9,11 @@
 using namespace flow;
 
 #define BOOST_TEST_MODULE flow_test
+#ifdef _WIN32
+#include <boost/test/unit_test.hpp>
+#else
 #include <boost/test/included/unit_test.hpp>
+#endif
 
 #define DO_OP1(cls) \
     namespace std { \
