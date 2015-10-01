@@ -137,54 +137,148 @@
     <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="generator\closed_range.cpp" />
-    <ClCompile Include="generator\cycle.cpp" />
-    <ClCompile Include="generator\cycle_move.cpp" />
-    <ClCompile Include="generator\empty.cpp" />
-    <ClCompile Include="generator\from.cpp" />
-    <ClCompile Include="generator\from_move.cpp" />
-    <ClCompile Include="generator\generate.cpp" />
-    <ClCompile Include="generator\iota.cpp" />
-    <ClCompile Include="generator\iterate.cpp" />
-    <ClCompile Include="generator\range.cpp" />
-    <ClCompile Include="generator\repeat.cpp" />
-    <ClCompile Include="intermediate\concat.cpp" />
-    <ClCompile Include="intermediate\drop_while.cpp" />
-    <ClCompile Include="intermediate\filter.cpp" />
-    <ClCompile Include="intermediate\flat_map.cpp" />
-    <ClCompile Include="intermediate\limit.cpp" />
-    <ClCompile Include="intermediate\map.cpp" />
-    <ClCompile Include="intermediate\peek.cpp" />
-    <ClCompile Include="intermediate\replace.cpp" />
-    <ClCompile Include="intermediate\reverse.cpp" />
-    <ClCompile Include="intermediate\skip.cpp" />
-    <ClCompile Include="intermediate\slice.cpp" />
-    <ClCompile Include="intermediate\sort.cpp" />
-    <ClCompile Include="intermediate\take_while.cpp" />
-    <ClCompile Include="intermediate\unique.cpp" />
-    <ClCompile Include="intermediate\zip.cpp" />
-    <ClCompile Include="iterator.cpp" />
-    <ClCompile Include="terminal\all.cpp" />
-    <ClCompile Include="terminal\any.cpp" />
-    <ClCompile Include="terminal\contains.cpp" />
-    <ClCompile Include="terminal\copy.cpp" />
-    <ClCompile Include="terminal\count.cpp" />
-    <ClCompile Include="terminal\dump.cpp" />
-    <ClCompile Include="terminal\each.cpp" />
-    <ClCompile Include="terminal\execute.cpp" />
-    <ClCompile Include="terminal\first.cpp" />
-    <ClCompile Include="terminal\fold.cpp" />
-    <ClCompile Include="terminal\last.cpp" />
-    <ClCompile Include="terminal\max.cpp" />
-    <ClCompile Include="terminal\min.cpp" />
-    <ClCompile Include="terminal\minmax.cpp" />
-    <ClCompile Include="terminal\none.cpp" />
-    <ClCompile Include="terminal\nth.cpp" />
-    <ClCompile Include="terminal\product.cpp" />
-    <ClCompile Include="terminal\sum.cpp" />
-    <ClCompile Include="terminal\to.cpp" />
+    <ClInclude Include="generator\closed_range.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="generator\cycle.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="generator\cycle_move.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="generator\empty.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="generator\from.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="generator\from_move.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="generator\generate.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="generator\iota.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="generator\iterate.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="generator\range.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="generator\repeat.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="intermediate\concat.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="intermediate\drop_while.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="intermediate\filter.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="intermediate\flat_map.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="intermediate\limit.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="intermediate\map.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="intermediate\peek.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="intermediate\replace.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="intermediate\reverse.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="intermediate\skip.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="intermediate\slice.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="intermediate\sort.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="intermediate\take_while.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="intermediate\unique.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="intermediate\zip.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="iterator.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="terminal\all.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="terminal\any.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="terminal\contains.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="terminal\copy.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="terminal\count.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="terminal\dump.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="terminal\each.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="terminal\execute.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="terminal\first.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="terminal\fold.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="terminal\last.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="terminal\max.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="terminal\min.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="terminal\minmax.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="terminal\none.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="terminal\nth.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="terminal\product.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="terminal\sum.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="terminal\to.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
     <ClCompile Include="test.cpp" />
-    <ClCompile Include="uncurry.cpp" />
+    <ClInclude Include="uncurry.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="test.h" />

@@ -8,6 +8,7 @@
 #include <flow.h>
 using namespace flow;
 
+#define BOOST_TEST_MODULE flow_test
 #include <boost/test/unit_test.hpp>
 
 #define DO_OP1(cls) \
@@ -114,6 +115,6 @@ inline bool square_less_widget(const Widget& lhs, const Widget& rhs) {
     return std::pow(lhs._value, 2) < std::pow(rhs._value, 2);
 }
 
-extern std::initializer_list<int> init_list;
+std::initializer_list<int> init_list = { 1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6, -1, -2, -3, -4, -5, -6 };
 
 #endif
