@@ -40,23 +40,11 @@ namespace flow {
 /// </summary>
 /// <param name="idx">The index list.</param>
 /// <param name="function">The curried function.</param>
-/// <param name="ary">The array to apply to the function.</param>
-/// <returns>The return value of the function.</returns>
-template <std::size_t... index, typename Function, typename Array>
-constexpr auto apply(std::index_sequence<index...> idx, Function function, Array& ary) {
-    return function(std::get<index>(ary)...);
-}
-
-/// <summary>
-/// Applies the tuple/array to the curried function.
-/// </summary>
-/// <param name="idx">The index list.</param>
-/// <param name="function">The curried function.</param>
-/// <param name="tuple">The tuple to apply to the function.</param>
+/// <param name="tuple">The tuple or array to apply to the function.</param>
 /// <returns>The return value of the function.</returns>
 template <std::size_t... index, typename Function, typename Tuple>
-constexpr auto apply(std::index_sequence<index...> idx, Function function, const Tuple& tuple) {
-    return function(std::get<index>(tuple)...);
+constexpr auto apply(std::index_sequence<index...> idx, Function function, Tuple&& tuple) {
+    return function(std::get<index>(std::forward<Tuple>(tuple))...);
 }
 
 /// <summary>
@@ -88,8 +76,8 @@ public:
     /// <param name="tuple">The tuple to apply.</param>
     /// <returns>The return value of the curried function.</returns>
     template <typename... Types>
-    constexpr auto operator()(const std::tuple<Types...>& tuple) const {
-        return apply(std::make_index_sequence<sizeof...(Types)>(), _curry_function, tuple);
+    constexpr auto operator()(std::tuple<Types...>&& tuple) const {
+        return apply(std::make_index_sequence<sizeof...(Types)>(), _curry_function, std::move(tuple));
     }
 
     /// <summary>

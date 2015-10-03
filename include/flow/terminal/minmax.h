@@ -52,7 +52,7 @@ auto minmax(Compare compare = Compare()) {
         auto min = stream.next();
         auto max = min;
         while (stream.has_next()) {
-            auto& next = stream.next();
+            auto next = stream.next();
             if (!stream.has_next()) {
                 if (compare(next, min)) { min = next; }
                 else if (compare(max, next)) { max = next; }
