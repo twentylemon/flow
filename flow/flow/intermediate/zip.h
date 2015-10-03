@@ -49,38 +49,9 @@ struct tuple_zipper
     /// <param name="left">The left stream element.</param>
     /// <param name="right">The right stream element.</param>
     /// <returns>A <c>std::tuple</c> of the two elements.</returns>
-    auto operator()(LeftType&& left, RightType&& right) const {
-        return std::make_tuple(std::move(left), std::move(right));
-    }
-
-    /// <summary>
-    /// Returns a tuple of the two elements.
-    /// </summary>
-    /// <param name="left">The left stream element.</param>
-    /// <param name="right">The right stream element.</param>
-    /// <returns>A <c>std::tuple</c> of the two elements.</returns>
-    auto operator()(const LeftType& left, RightType&& right) const {
-        return std::make_tuple(left, std::move(right));
-    }
-
-    /// <summary>
-    /// Returns a tuple of the two elements.
-    /// </summary>
-    /// <param name="left">The left stream element.</param>
-    /// <param name="right">The right stream element.</param>
-    /// <returns>A <c>std::tuple</c> of the two elements.</returns>
-    auto operator()(LeftType&& left, const RightType& right) const {
-        return std::make_tuple(std::move(left), right);
-    }
-
-    /// <summary>
-    /// Returns a tuple of the two elements.
-    /// </summary>
-    /// <param name="left">The left stream element.</param>
-    /// <param name="right">The right stream element.</param>
-    /// <returns>A <c>std::tuple</c> of the two elements.</returns>
-    auto operator()(const LeftType& left, const RightType& right) const {
-        return std::make_tuple(left, right);
+    template <typename Left, typename Right>
+    auto operator()(Left&& left, Right&& right) const {
+        return std::make_tuple(std::forward<Left>(left), std::forward<Right>(right));
     }
 };
 
@@ -97,20 +68,9 @@ struct tuple_zipper<LeftType, std::tuple<RightTypes...>>
     /// <param name="left">The left stream element.</param>
     /// <param name="right">The right tuple; already zipped.</param>
     /// <returns>A concatenated <c>std::tuple</c> of the two elements.</returns>
-    template <typename Tuple>
-    auto operator()(const LeftType& left, Tuple&& right) const {
-        return std::tuple_cat(std::make_tuple(left), std::forward<Tuple>(right));
-    }
-
-    /// <summary>
-    /// Returns a concatenated tuple of the tuple and value.
-    /// </summary>
-    /// <param name="left">The left stream element.</param>
-    /// <param name="right">The right tuple; already zipped.</param>
-    /// <returns>A concatenated <c>std::tuple</c> of the two elements.</returns>
-    template <typename Tuple>
-    auto operator()(LeftType&& left, Tuple&& right) const {
-        return std::tuple_cat(std::make_tuple(std::move(left)), std::forward<Tuple>(right));
+    template <typename Left, typename Tuple>
+    auto operator()(Left&& left, Tuple&& right) const {
+        return std::tuple_cat(std::make_tuple(std::forward<Left>(left)), std::forward<Tuple>(right));
     }
 };
 
@@ -127,20 +87,9 @@ struct tuple_zipper<std::tuple<LeftTypes...>, RightType>
     /// <param name="left">The left tuple; already zipped.</param>
     /// <param name="right">The right stream element.</param>
     /// <returns>A concatenated <c>std::tuple</c> of the two elements.</returns>
-    template <typename Tuple>
-    auto operator()(Tuple&& left, const RightType& right) const {
-        return std::tuple_cat(std::forward<Tuple>(left), std::make_tuple(right));
-    }
-
-    /// <summary>
-    /// Returns a concatenated tuple of the tuple and value.
-    /// </summary>
-    /// <param name="left">The left tuple; already zipped.</param>
-    /// <param name="right">The right stream element.</param>
-    /// <returns>A concatenated <c>std::tuple</c> of the two elements.</returns>
-    template <typename Tuple>
-    auto operator()(Tuple&& left, RightType&& right) const {
-        return std::tuple_cat(std::forward<Tuple>(left), std::make_tuple(std::move(right)));
+    template <typename Tuple, typename Right>
+    auto operator()(Tuple&& left, Right&& right) const {
+        return std::tuple_cat(std::forward<Tuple>(left), std::make_tuple(std::forward<Right>(right)));
     }
 };
 
@@ -221,6 +170,7 @@ auto zip(std::initializer_list<T> list, BinaryOperation zipper) {
 /// creates tuples of the stream elements like <c>std::tuple&lt;T1, T2&gt;</c>. Multiple
 /// <c>zip</c> operations concatenates these tuples together rather than nesting them.
 /// <para>The resultant stream is as long as the shortest input stream.</para>
+/// <para>When using the default zipper, the types being zipped together must be default constructible.</para>
 /// </summary>
 /// <param name="right">The right stream to zip together with the operated stream.</param>
 /// <returns>A detail::Intermediate operation that zips the two streams.</returns>
@@ -236,6 +186,7 @@ auto zip(Stream<RightSource>&& right) {
 /// <c>zip</c> operations concatenates these tuples together rather than nesting them.
 /// This is the same as <c>zip(from(container))</c>.
 /// <para>The resultant stream is as long as the shortest input stream.</para>
+/// <para>When using the default zipper, the types being zipped together must be default constructible.</para>
 /// </summary>
 /// <param name="container">The container to zip together with this stream.</param>
 /// <returns>A detail::Intermediate operation that zips the two streams.</returns>
@@ -252,10 +203,12 @@ auto zip(Container& container) {
 /// <c>zip</c> operations concatenates these tuples together rather than nesting them.
 /// This is the same as <c>zip(from(list))</c>.
 /// <para>The resultant stream is as long as the shortest input stream.</para>
+/// <para>When using the default zipper, the types being zipped together must be default constructible.</para>
 /// </summary>
 /// <param name="list">The list to zip together with this stream.</param>
 /// <returns>A detail::Intermediate operation that zips the two streams.</returns>
 /// <seealso cref="from()"/>
+/// <seealso cref="uncurry()"/>
 template <typename T>
 auto zip(std::initializer_list<T> list) {
     return zip(generator::from(list));
