@@ -87,28 +87,21 @@ struct tuple_zipper<LeftType, std::tuple<RightTypes...>>
     /// <param name="left">The left stream element.</param>
     /// <param name="right">The right tuple; already zipped.</param>
     /// <returns>A concatenated <c>std::tuple</c> of the two elements.</returns>
-    std::tuple<LeftType, RightTypes...> operator()(const LeftType& left, std::tuple<RightTypes...>&& right) const {
-        return std::tuple_cat(std::make_tuple(left), std::move(right));
+    template <typename Tuple>
+    std::tuple<LeftType, RightTypes...> operator()(const LeftType& left, Tuple&& right) const {
+        return std::tuple_cat(std::make_tuple(left), std::forward<Tuple>(right));
     }
-
     /// <summary>
     /// Returns a concatenated tuple of the tuple and value.
     /// </summary>
     /// <param name="left">The left stream element.</param>
     /// <param name="right">The right tuple; already zipped.</param>
     /// <returns>A concatenated <c>std::tuple</c> of the two elements.</returns>
-    std::tuple<LeftType, RightTypes...> operator()(const LeftType& left, const std::tuple<RightTypes...>& right) const {
-        return std::tuple_cat(std::make_tuple(left), right);
+    template <typename Tuple>
+    std::tuple<LeftType, RightTypes...> operator()(LeftType&& left, Tuple&& right) const {
+        return std::tuple_cat(std::make_tuple(std::move(left)), std::forward<Tuple>(right));
     }
 };
-
-/// <summary>
-/// Default zip operation which concatenates tuple elements.
-/// Specialized to capture left-zips, the right parameter is a tuple.
-/// </summary>
-template <typename LeftType, typename... RightTypes>
-struct tuple_zipper<LeftType, const std::tuple<RightTypes...>> : tuple_zipper<LeftType, std::tuple<RightTypes...>>
-{ };
 
 /// <summary>
 /// Default zip operation which concatenates tuple elements.
@@ -123,28 +116,21 @@ struct tuple_zipper<std::tuple<LeftTypes...>, RightType>
     /// <param name="left">The left tuple; already zipped.</param>
     /// <param name="right">The right stream element.</param>
     /// <returns>A concatenated <c>std::tuple</c> of the two elements.</returns>
-    std::tuple<LeftTypes..., RightType> operator()(std::tuple<LeftTypes...>&& left, const RightType& right) const {
-        return std::tuple_cat(std::move(left), std::make_tuple(right));
+    template <typename Tuple>
+    std::tuple<LeftTypes..., RightType> operator()(Tuple&& left, const RightType& right) const {
+        return std::tuple_cat(std::forward<Tuple>(left), std::make_tuple(right));
     }
-
     /// <summary>
     /// Returns a concatenated tuple of the tuple and value.
     /// </summary>
     /// <param name="left">The left tuple; already zipped.</param>
     /// <param name="right">The right stream element.</param>
     /// <returns>A concatenated <c>std::tuple</c> of the two elements.</returns>
-    std::tuple<LeftTypes..., RightType> operator()(const std::tuple<LeftTypes...>& left, const RightType& right) const {
-        return std::tuple_cat(left, std::make_tuple(right));
+    template <typename Tuple>
+    std::tuple<LeftTypes..., RightType> operator()(Tuple&& left, RightType&& right) const {
+        return std::tuple_cat(std::forward<Tuple>(left), std::make_tuple(std::move(right)));
     }
 };
-
-/// <summary>
-/// Default zip operation which concatenates tuple elements.
-/// Specialized to capture right-zips, the left parameter is a tuple.
-/// </summary>
-template <typename... LeftTypes, typename RightType>
-struct tuple_zipper<const std::tuple<LeftTypes...>, RightType> : tuple_zipper<std::tuple<LeftTypes...>, RightType> 
-{ };
 
 /// <summary>
 /// Default zip operation which concatenates tuple elements.
@@ -159,64 +145,11 @@ struct tuple_zipper<std::tuple<LeftTypes...>, std::tuple<RightTypes...>>
     /// <param name="left">The left tuple; already zipped.</param>
     /// <param name="right">The right tuple; already zipped.</param>
     /// <returns>A concatenated <c>std::tuple</c> of the two tuples.</returns>
-    std::tuple<LeftTypes..., RightTypes...> operator()(std::tuple<LeftTypes...>&& left, std::tuple<RightTypes...>&& right) const {
-        return std::tuple_cat(std::move(left), std::move(right));
-    }
-
-    /// <summary>
-    /// Returns a concatenated tuple of the two tuples.
-    /// </summary>
-    /// <param name="left">The left tuple; already zipped.</param>
-    /// <param name="right">The right tuple; already zipped.</param>
-    /// <returns>A concatenated <c>std::tuple</c> of the two tuples.</returns>
-    std::tuple<LeftTypes..., RightTypes...> operator()(const std::tuple<LeftTypes...>& left, std::tuple<RightTypes...>&& right) const {
-        return std::tuple_cat(left, std::move(right));
-    }
-
-    /// <summary>
-    /// Returns a concatenated tuple of the two tuples.
-    /// </summary>
-    /// <param name="left">The left tuple; already zipped.</param>
-    /// <param name="right">The right tuple; already zipped.</param>
-    /// <returns>A concatenated <c>std::tuple</c> of the two tuples.</returns>
-    std::tuple<LeftTypes..., RightTypes...> operator()(std::tuple<LeftTypes...>&& left, const std::tuple<RightTypes...>& right) const {
-        return std::tuple_cat(std::move(left), right);
-    }
-
-    /// <summary>
-    /// Returns a concatenated tuple of the two tuples.
-    /// </summary>
-    /// <param name="left">The left tuple; already zipped.</param>
-    /// <param name="right">The right tuple; already zipped.</param>
-    /// <returns>A concatenated <c>std::tuple</c> of the two tuples.</returns>
-    std::tuple<LeftTypes..., RightTypes...> operator()(const std::tuple<LeftTypes...>& left, const std::tuple<RightTypes...>& right) const {
-        return std::tuple_cat(left, right);
+    template <typename Left, typename Right>
+    std::tuple<LeftTypes..., RightTypes...> operator()(Left&& left, Right&& right) const {
+        return std::tuple_cat(std::foward<Left>(left), std::forward<Right>(right));
     }
 };
-
-/// <summary>
-/// Default zip operation which concatenates tuple elements.
-/// Specialized to capture re-zips. Both parameters are tuples.
-/// </summary>
-template <typename... LeftTypes, typename... RightTypes>
-struct tuple_zipper<const std::tuple<LeftTypes...>, std::tuple<RightTypes...>> : tuple_zipper<std::tuple<LeftTypes...>, std::tuple<RightTypes...>>
-{ };
-
-/// <summary>
-/// Default zip operation which concatenates tuple elements.
-/// Specialized to capture re-zips. Both parameters are tuples.
-/// </summary>
-template <typename... LeftTypes, typename... RightTypes>
-struct tuple_zipper<std::tuple<LeftTypes...>, const std::tuple<RightTypes...>> : tuple_zipper<std::tuple<LeftTypes...>, std::tuple<RightTypes...>>
-{ };
-
-/// <summary>
-/// Default zip operation which concatenates tuple elements.
-/// Specialized to capture re-zips. Both parameters are tuples.
-/// </summary>
-template <typename... LeftTypes, typename... RightTypes>
-struct tuple_zipper<const std::tuple<LeftTypes...>, const std::tuple<RightTypes...>> : tuple_zipper<std::tuple<LeftTypes...>, std::tuple<RightTypes...>>
-{ };
 
 /// <summary>
 /// The default zipper wrapper function. Zips streams by concatenating them together as tuples.
