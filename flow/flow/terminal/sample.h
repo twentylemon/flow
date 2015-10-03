@@ -68,7 +68,7 @@ inline auto sample_heap(std::size_t n) {
                 heap.pop_back();
             }
         }
-        return heap | map([](std::pair<U, T>& p) { return std::move(p.second); }) | to_vector();
+        return heap | intermediate::map([](std::pair<U, T>& p) { return std::move(p.second); }) | to_vector();
     });
 }
 

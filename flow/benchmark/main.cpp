@@ -63,7 +63,7 @@ std::vector<int> vec(maxv);
 
 void run_timer() {
     using T = int;
-    std::vector<T> vec(100000);
+    std::vector<T> vec(1000000);
     std::generate(vec.begin(), vec.end(), std::rand);
     T vv(0);
     boost::timer tv;
