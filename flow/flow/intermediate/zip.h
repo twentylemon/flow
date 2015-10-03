@@ -49,8 +49,8 @@ struct tuple_zipper
     /// <param name="left">The left stream element.</param>
     /// <param name="right">The right stream element.</param>
     /// <returns>A <c>std::tuple</c> of the two elements.</returns>
-    std::tuple<LeftType, RightType> operator()(const LeftType& left, const RightType& right) const {
-        return std::make_tuple(left, right);
+    auto operator()(LeftType&& left, RightType&& right) const {
+        return std::make_tuple(std::move(left), std::move(right));
     }
 
     /// <summary>
@@ -59,7 +59,17 @@ struct tuple_zipper
     /// <param name="left">The left stream element.</param>
     /// <param name="right">The right stream element.</param>
     /// <returns>A <c>std::tuple</c> of the two elements.</returns>
-    std::tuple<LeftType, RightType> operator()(LeftType&& left, const RightType& right) const {
+    auto operator()(const LeftType& left, RightType&& right) const {
+        return std::make_tuple(left, std::move(right));
+    }
+
+    /// <summary>
+    /// Returns a tuple of the two elements.
+    /// </summary>
+    /// <param name="left">The left stream element.</param>
+    /// <param name="right">The right stream element.</param>
+    /// <returns>A <c>std::tuple</c> of the two elements.</returns>
+    auto operator()(LeftType&& left, const RightType& right) const {
         return std::make_tuple(std::move(left), right);
     }
 
@@ -69,8 +79,8 @@ struct tuple_zipper
     /// <param name="left">The left stream element.</param>
     /// <param name="right">The right stream element.</param>
     /// <returns>A <c>std::tuple</c> of the two elements.</returns>
-    std::tuple<LeftType, RightType> operator()(const LeftType& left, RightType&& right) const {
-        return std::make_tuple(left, std::move(right));
+    auto operator()(const LeftType& left, const RightType& right) const {
+        return std::make_tuple(left, right);
     }
 };
 
@@ -88,9 +98,10 @@ struct tuple_zipper<LeftType, std::tuple<RightTypes...>>
     /// <param name="right">The right tuple; already zipped.</param>
     /// <returns>A concatenated <c>std::tuple</c> of the two elements.</returns>
     template <typename Tuple>
-    std::tuple<LeftType, RightTypes...> operator()(const LeftType& left, Tuple&& right) const {
+    auto operator()(const LeftType& left, Tuple&& right) const {
         return std::tuple_cat(std::make_tuple(left), std::forward<Tuple>(right));
     }
+
     /// <summary>
     /// Returns a concatenated tuple of the tuple and value.
     /// </summary>
@@ -98,7 +109,7 @@ struct tuple_zipper<LeftType, std::tuple<RightTypes...>>
     /// <param name="right">The right tuple; already zipped.</param>
     /// <returns>A concatenated <c>std::tuple</c> of the two elements.</returns>
     template <typename Tuple>
-    std::tuple<LeftType, RightTypes...> operator()(LeftType&& left, Tuple&& right) const {
+    auto operator()(LeftType&& left, Tuple&& right) const {
         return std::tuple_cat(std::make_tuple(std::move(left)), std::forward<Tuple>(right));
     }
 };
@@ -117,9 +128,10 @@ struct tuple_zipper<std::tuple<LeftTypes...>, RightType>
     /// <param name="right">The right stream element.</param>
     /// <returns>A concatenated <c>std::tuple</c> of the two elements.</returns>
     template <typename Tuple>
-    std::tuple<LeftTypes..., RightType> operator()(Tuple&& left, const RightType& right) const {
+    auto operator()(Tuple&& left, const RightType& right) const {
         return std::tuple_cat(std::forward<Tuple>(left), std::make_tuple(right));
     }
+
     /// <summary>
     /// Returns a concatenated tuple of the tuple and value.
     /// </summary>
@@ -127,7 +139,7 @@ struct tuple_zipper<std::tuple<LeftTypes...>, RightType>
     /// <param name="right">The right stream element.</param>
     /// <returns>A concatenated <c>std::tuple</c> of the two elements.</returns>
     template <typename Tuple>
-    std::tuple<LeftTypes..., RightType> operator()(Tuple&& left, RightType&& right) const {
+    auto operator()(Tuple&& left, RightType&& right) const {
         return std::tuple_cat(std::forward<Tuple>(left), std::make_tuple(std::move(right)));
     }
 };
@@ -146,7 +158,7 @@ struct tuple_zipper<std::tuple<LeftTypes...>, std::tuple<RightTypes...>>
     /// <param name="right">The right tuple; already zipped.</param>
     /// <returns>A concatenated <c>std::tuple</c> of the two tuples.</returns>
     template <typename Left, typename Right>
-    std::tuple<LeftTypes..., RightTypes...> operator()(Left&& left, Right&& right) const {
+    auto operator()(Left&& left, Right&& right) const {
         return std::tuple_cat(std::forward<Left>(left), std::forward<Right>(right));
     }
 };
