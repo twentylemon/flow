@@ -35,9 +35,7 @@ namespace flow {
 inline auto sample(std::size_t n) {
     return detail::make_terminal([n](auto&& stream) {
         auto results = stream | limit(n) | to_vector();
-        while (stream.has_next()) {
-            results.push_back(std::move(stream.next()));
-        }
+        stream | copy(std::back_inserter(results));
         return results;
         /*
         using T = std::decay_t<decltype(stream.next())>;

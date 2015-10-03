@@ -60,7 +60,7 @@ std::ostream& print(std::ostream& out, const Container& container) {
 
 std::vector<int> vec(maxv);
 
-
+/*
 void run_timer() {
     using T = int;
     std::vector<T> vec(10000000);
@@ -78,23 +78,27 @@ void run_timer() {
     }
     std::cout << std::endl << "stream_: " << t_.elapsed() << "\t" << v_ << std::endl;
 }
-
+*/
 
 int main(int argc, char** argv) {
     std::iota(vec.begin(), vec.end(), 0);
     using T = decltype(vec)::value_type;
     std::size_t inc = iota(0) | nth(50);
     std::cout << inc << '\t' << vec.size() << std::endl;
-    auto endl = []() { std::cout << std::endl; };
+    auto endl = [](int i = 1) { for (int j = 0; j < i; ++j) std::cout << std::endl; };
 
+
+    endl();
+    auto e = cycle(vec, 3) | sample(10);
+    endl(2);
+    e | dump();
+
+    /*
     std::vector<int> cw{ 1, 2, 3 };
 
     cycle(cw, 4) | unique() | dump();
     endl();
 
-    endl();
-    auto e = iota(0) | limit(100) | sample(10);
-    e | dump();
 
     //cycle(cw, 1) | replace(1, 3) | dump();
     //range(0, 26, 5) | dump();
@@ -146,7 +150,7 @@ int main(int argc, char** argv) {
     vec | zip(vec | zip(vec | zip(vec))) | limit(1) | each([](auto&& t) { std::cout << typeid(t).name() << std::endl; });
     */
     //run_timer();
-
+    
     std::cout << std::endl;
     system("pause");
     return 0;
