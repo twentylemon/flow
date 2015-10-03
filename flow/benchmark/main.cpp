@@ -60,45 +60,37 @@ std::ostream& print(std::ostream& out, const Container& container) {
 
 std::vector<int> vec(maxv);
 
-/*
+
 void run_timer() {
     using T = int;
-    std::vector<T> vec(10000000);
+    std::vector<T> vec(100000);
     std::generate(vec.begin(), vec.end(), std::rand);
     T vv(0);
     boost::timer tv;
     for (int i = 0; i < maxit; i++) {
-        vv = vec | filter([](int i) { return i % 17 == 0; }) | reverse() | max();
+        auto w = vec | sample_heap(200);
     }
     std::cout << std::endl << "streamv: " << tv.elapsed() << "\t" << vv << std::endl;
     T v_(0);
     boost::timer t_;
     for (int i = 0; i < maxit; i++) {
-        //v_ = vec | filter([](int i) { return i % 17 == 0; }) | reverse_() | max();
+        auto w = vec | sample_shuffle(200);
     }
     std::cout << std::endl << "stream_: " << t_.elapsed() << "\t" << v_ << std::endl;
 }
-*/
+
 
 int main(int argc, char** argv) {
     std::iota(vec.begin(), vec.end(), 0);
     using T = decltype(vec)::value_type;
-    std::size_t inc = iota(0) | nth(50);
-    std::cout << inc << '\t' << vec.size() << std::endl;
+    //std::size_t inc = iota(0) | nth(50);
+    //std::cout << inc << '\t' << vec.size() << std::endl;
     auto endl = [](int i = 1) { for (int j = 0; j < i; ++j) std::cout << std::endl; };
 
-
-    endl();
-    auto e = cycle(vec, 3) | sample(10);
-    endl(2);
-    e | dump();
-
-    /*
     std::vector<int> cw{ 1, 2, 3 };
 
     cycle(cw, 4) | unique() | dump();
     endl();
-
 
     //cycle(cw, 1) | replace(1, 3) | dump();
     //range(0, 26, 5) | dump();
@@ -149,7 +141,7 @@ int main(int argc, char** argv) {
 
     vec | zip(vec | zip(vec | zip(vec))) | limit(1) | each([](auto&& t) { std::cout << typeid(t).name() << std::endl; });
     */
-    //run_timer();
+    run_timer();
     
     std::cout << std::endl;
     system("pause");
