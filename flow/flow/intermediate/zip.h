@@ -147,7 +147,7 @@ struct tuple_zipper<std::tuple<LeftTypes...>, std::tuple<RightTypes...>>
     /// <returns>A concatenated <c>std::tuple</c> of the two tuples.</returns>
     template <typename Left, typename Right>
     std::tuple<LeftTypes..., RightTypes...> operator()(Left&& left, Right&& right) const {
-        return std::tuple_cat(std::foward<Left>(left), std::forward<Right>(right));
+        return std::tuple_cat(std::forward<Left>(left), std::forward<Right>(right));
     }
 };
 

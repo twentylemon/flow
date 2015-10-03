@@ -43,8 +43,8 @@ namespace flow {
 /// <param name="tuple">The tuple or array to apply to the function.</param>
 /// <returns>The return value of the function.</returns>
 template <std::size_t... index, typename Function, typename Tuple>
-constexpr auto apply(std::index_sequence<index...> idx, Function function, Tuple& tuple) {
-    return function(std::get<index>(tuple)...);
+constexpr auto apply(std::index_sequence<index...> idx, Function function, Tuple&& tuple) {
+    return function(std::get<index>(std::forward<Tuple>(tuple))...);
 }
 
 /// <summary>
