@@ -15,6 +15,11 @@ BOOST_AUTO_TEST_CASE(map_func) {
     ex2 = {};
     s2 = empty<int>() | map([](int i) { return 0.0; }) | to_vector();
     BOOST_CHECK_EQUAL_COLLECTIONS(s2.begin(), s2.end(), ex2.begin(), ex2.end());
+    
+    std::vector<Widget> w = { Widget(1), Widget(2), Widget(3) };
+    std::vector<bool> ex3 = { true, false, true };
+    auto s3 = w | map([](Widget& w){ return !w.is_even(); }) | to_vector();
+    BOOST_CHECK_EQUAL_COLLECTIONS(s3.begin(), s3.end(), ex3.begin(), ex3.end());
 }
 
 BOOST_AUTO_TEST_CASE(map_member) {

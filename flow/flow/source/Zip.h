@@ -35,10 +35,10 @@ namespace flow {
 /// Stream source that zips two streams together.
 /// </summary>
 template <typename LeftSource, typename RightSource, typename Zipper>
-class Zip : public IntermediateSource<LeftSource, std::result_of_t<Zipper(typename LeftSource::value_type, typename RightSource::value_type)>>
+class Zip : public IntermediateSource<LeftSource, std::result_of_t<Zipper(typename LeftSource::value_type&, typename RightSource::value_type&)>>
 {
 public:
-    using base = IntermediateSource<LeftSource, std::result_of_t<Zipper(typename LeftSource::value_type, typename RightSource::value_type)>>;
+    using base = IntermediateSource<LeftSource, std::result_of_t<Zipper(typename LeftSource::value_type&, typename RightSource::value_type&)>>;
     using value_type = typename base::value_type;
 
     /// <summary>

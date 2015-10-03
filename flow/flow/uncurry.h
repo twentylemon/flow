@@ -71,6 +71,16 @@ public:
     }
 
     /// <summary>
+    /// Applies the tuple to the curried function.
+    /// </summary>
+    /// <param name="tuple">The tuple to apply.</param>
+    /// <returns>The return value of the curried function.</returns>
+    template <typename... Types>
+    constexpr auto operator()(std::tuple<Types...>&& tuple) const {
+        return apply(std::make_index_sequence<sizeof...(Types)>(), _curry_function, std::move(tuple));
+    }
+
+    /// <summary>
     /// Applies the array to the curried function.
     /// </summary>
     /// <param name="ary">The array to apply to the curried function.</param>
