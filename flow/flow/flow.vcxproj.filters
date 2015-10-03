@@ -153,9 +153,6 @@
     <ClInclude Include="source\Peek.h">
       <Filter>Header Files\source</Filter>
     </ClInclude>
-    <ClInclude Include="source\Reverse.h">
-      <Filter>Header Files\source</Filter>
-    </ClInclude>
     <ClInclude Include="source\Skip.h">
       <Filter>Header Files\source</Filter>
     </ClInclude>
@@ -232,6 +229,9 @@
       <Filter>Header Files\generator</Filter>
     </ClInclude>
     <ClInclude Include="terminal\execute.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="terminal\sample.h">
       <Filter>Header Files\terminal</Filter>
     </ClInclude>
   </ItemGroup>

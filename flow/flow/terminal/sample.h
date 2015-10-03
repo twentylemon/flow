@@ -23,28 +23,31 @@
  * SOFTWARE.
  */
  
-#ifndef FLOW_INTERMEDIATE_REVERSE_H
-#define FLOW_INTERMEDIATE_REVERSE_H
+#ifndef FLOW_TERMINAL_SAMPLE_H
+#define FLOW_TERMINAL_SAMPLE_H
 
-#include <algorithm>
-
-#include "../generator/from_move.h"
-#include "../terminal/to.h"
+#include "Terminal.h"
+#include "to.h"
 
 namespace flow {
-    namespace intermediate {
+    namespace terminal {
 
-/// <summary>
-/// Reverses the elements in the Stream.
-/// <para>Reversing is an eager operation. On the creation of the <c>reverse</c> operation,
-/// the entire stream up to that point is evaluated and stored before continuing with the remainder of the stream.
-/// Thus, the <c>reverse</c> operation takes <c>O(n)</c> extra space and time, where <c>n</c> is the size of the stream.
-/// For most applications, it will be beneficial to reverse the stream beforehand by rfrom() or rcycle().</para>
-/// </summary>
-/// <returns>A detail::Intermediate operation that reverses the stream.</returns>
-inline auto reverse() {
-    return detail::make_intermediate([](auto&& stream) {
-        return generator::rfrom_move(stream | terminal::to_vector());
+inline auto sample(std::size_t n) {
+    return detail::make_terminal([n](auto&& stream) {
+        auto results = stream | limit(n) | to_vector();
+        while (stream.has_next()) {
+            results.push_back(std::move(stream.next()));
+        }
+        return results;
+        /*
+        using T = std::decay_t<decltype(stream.next())>;
+        std::size_t size = 0;
+        std::vector<T> results;
+        results.reserve(n);
+        while (size < n && stream.has_next()) {
+            results.push_back(std::move(stream.next()));
+        }
+        */
     });
 }
     }

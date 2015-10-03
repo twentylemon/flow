@@ -28,10 +28,6 @@
 
 #include <algorithm>
 
-#include "../Stream.h"
-#include "Intermediate.h"
-#include "../source/Reverse.h"
-
 #include "../generator/from_move.h"
 #include "../terminal/to.h"
 

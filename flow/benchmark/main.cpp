@@ -92,6 +92,10 @@ int main(int argc, char** argv) {
     cycle(cw, 4) | unique() | dump();
     endl();
 
+    endl();
+    auto e = iota(0) | limit(100) | sample(10);
+    e | dump();
+
     //cycle(cw, 1) | replace(1, 3) | dump();
     //range(0, 26, 5) | dump();
     cycle_move(std::move(cw), 4) | take_while([](int i) { return i == 1; }) | dump();

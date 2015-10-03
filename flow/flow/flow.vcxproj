@@ -139,6 +139,7 @@
     <ClInclude Include="source\IntermediateSource.h" />
     <ClInclude Include="source\Sort.h" />
     <ClInclude Include="terminal\execute.h" />
+    <ClInclude Include="terminal\sample.h" />
     <ClInclude Include="uncurry.h" />
     <ClInclude Include="generator\from.h" />
     <ClInclude Include="intermediate\concat.h" />
@@ -162,7 +163,6 @@
     <ClInclude Include="source\Iterator.h" />
     <ClInclude Include="source\Map.h" />
     <ClInclude Include="source\Peek.h" />
-    <ClInclude Include="source\Reverse.h" />
     <ClInclude Include="source\Skip.h" />
     <ClInclude Include="source\Slice.h" />
     <ClInclude Include="source\TakeWhile.h" />
