@@ -26,9 +26,12 @@
 #ifndef FLOW_GENERATOR_CYCLE_H
 #define FLOW_GENERATOR_CYCLE_H
 
+#include <deque>
+
 #include "from.h"
 #include "repeat.h"
 #include "../intermediate/flat_map.h"
+#include "cycle_move.h"
 
 namespace flow {
     namespace generator {
@@ -90,7 +93,7 @@ auto cycle(Container& container, std::size_t n) {
 /// <returns>An infinite stream which cycles <paramref name="list"/>.</returns>
 template <typename T>
 auto cycle(std::initializer_list<T> list) {
-    return cycle(list.begin(), list.end());
+    return cycle_move(std::deque<T>(list));
 }
 
 /// <summary>
@@ -102,7 +105,7 @@ auto cycle(std::initializer_list<T> list) {
 /// <returns>A stream which cycles <paramref name="list"/> <paramref name="n"/> times.</returns>
 template <typename T>
 auto cycle(std::initializer_list<T> list, std::size_t n) {
-    return cycle(list.begin(), list.end(), n);
+    return cycle_move(std::deque<T>(list), n);
 }
 
 /// <summary>

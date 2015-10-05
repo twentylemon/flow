@@ -15,4 +15,9 @@ BOOST_AUTO_TEST_CASE(iterator_t) {
     auto s3 = empty<int>();
     ex = {};
     BOOST_CHECK_EQUAL_COLLECTIONS(s3.begin(), s3.end(), ex.begin(), ex.end());
+
+    vec = { 1, 2, 3, 4 };
+    ex = { 1, 2, 3, 4 };
+    auto s4 = from(vec);
+    BOOST_CHECK_EQUAL_COLLECTIONS(s4.begin(), s4.end(), ex.begin(), ex.end());
 }

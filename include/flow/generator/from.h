@@ -26,8 +26,11 @@
 #ifndef FLOW_GENERATOR_FROM_H
 #define FLOW_GENERATOR_FROM_H
 
+#include <deque>
+
 #include "../Stream.h"
 #include "../source/Iterator.h"
+#include "from_move.h"
 
 namespace flow {
     namespace generator {
@@ -76,7 +79,7 @@ auto from(Container& container) {
 /// <returns>A stream over <paramref name="list"/>.</returns>
 template <typename T>
 auto from(std::initializer_list<T> list) {
-    return from(list.begin(), list.end());
+    return from_move(std::deque<T>(list));
 }
 
 /// <summary>
