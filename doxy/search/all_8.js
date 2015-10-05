@@ -1,6 +1,14 @@
 var searchData=
 [
-  ['has_5fconst_5fiterator',['has_const_iterator',['../d6/de2/structflow_1_1generator_1_1detail_1_1has__const__iterator.html',1,'flow::generator::detail']]],
-  ['has_5fnext',['has_next',['../da/dbc/classflow_1_1source_1_1_concat.html#adc7a74971d1135cd31fa7c3d6d0f5fc3',1,'flow::source::Concat::has_next()'],['../de/d70/classflow_1_1source_1_1_drop_while.html#a28b87ad18ad4998aa9219a9636eb1a52',1,'flow::source::DropWhile::has_next()'],['../d0/d3f/classflow_1_1source_1_1_filter.html#a1c436d442cee1ddb2d4986aa51b2eb9e',1,'flow::source::Filter::has_next()'],['../d9/db6/classflow_1_1source_1_1_flat_map.html#a8d8bb9507e33d8486bb6e087d89319b7',1,'flow::source::FlatMap::has_next()'],['../d7/d80/classflow_1_1source_1_1_generator_source_base.html#a25cd9571aaba7d6cfad999687dd0134f',1,'flow::source::GeneratorSourceBase::has_next()'],['../d7/d08/classflow_1_1source_1_1_intermediate_source_base.html#ad9d1e2259457c9c1e62d982e65908d3e',1,'flow::source::IntermediateSourceBase::has_next()'],['../d6/ddc/classflow_1_1source_1_1_iterator.html#aea0a7770cf11a8da01ac658f5ca040d1',1,'flow::source::Iterator::has_next()'],['../dd/d62/classflow_1_1source_1_1_skip.html#acf3bc87660651d54a3a08afb0efe4c10',1,'flow::source::Skip::has_next()'],['../da/d25/classflow_1_1source_1_1_slice.html#aa6d01e8ba0f0e22fbc5b8fe4e3381370',1,'flow::source::Slice::has_next()'],['../d5/d29/classflow_1_1source_1_1_take_while.html#a3d774eda39292696f0c3a2aad10a1b7f',1,'flow::source::TakeWhile::has_next()'],['../de/df4/classflow_1_1source_1_1_zip.html#a99a468969be302ad18c3e285ef34b1f1',1,'flow::source::Zip::has_next()'],['../d9/dcd/classflow_1_1_stream.html#a0149b290da84d9e75a5071713431af19',1,'flow::Stream::has_next()']]],
-  ['headtype',['HeadType',['../d2/df6/structflow_1_1generator_1_1detail_1_1_head_type.html',1,'flow::generator::detail']]]
+  ['intermediate_2eh',['Intermediate.h',['../d9/df2/_intermediate_8h.html',1,'']]],
+  ['intermediatesource_2eh',['IntermediateSource.h',['../d5/d55/_intermediate_source_8h.html',1,'']]],
+  ['iota',['iota',['../de/d3f/namespaceflow_1_1generator.html#ad3e468cd8e943a73900891b99f7a2ded',1,'flow::generator::iota(T &amp;&amp;begin)'],['../de/d3f/namespaceflow_1_1generator.html#a4b086b2a970996cb283820b9f50f77f8',1,'flow::generator::iota(T &amp;&amp;begin, U &amp;&amp;increment)']]],
+  ['iota_2eh',['iota.h',['../db/d3e/iota_8h.html',1,'']]],
+  ['iterate',['iterate',['../de/d3f/namespaceflow_1_1generator.html#a6eb74edc2bf991250c0a54d721285fd6',1,'flow::generator']]],
+  ['iterate_2eh',['iterate.h',['../d0/dbc/iterate_8h.html',1,'']]],
+  ['iteratefunc_2eh',['IterateFunc.h',['../dc/d89/_iterate_func_8h.html',1,'']]],
+  ['iterator',['iterator',['../d0/d2d/classflow_1_1_stream_1_1iterator.html#a127c49df4b436579aa6ca5df76983dd6',1,'flow::Stream::iterator::iterator()'],['../d0/d2d/classflow_1_1_stream_1_1iterator.html#ae78d37bc0e7b4dde364515f359706467',1,'flow::Stream::iterator::iterator(Stream&lt; Source &gt; *stream)']]],
+  ['iterator',['iterator',['../d0/d2d/classflow_1_1_stream_1_1iterator.html',1,'flow::Stream']]],
+  ['iterator_2eh',['Iterator.h',['../d3/d38/_iterator_8h.html',1,'']]],
+  ['iterator_5fcategory',['iterator_category',['../d0/d2d/classflow_1_1_stream_1_1iterator.html#ace1423f12623d198dfd9e4a93c215c44',1,'flow::Stream::iterator']]]
 ];

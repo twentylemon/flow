@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -94,29 +94,21 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;deque&gt;</code><br />
-<code>#include &quot;<a class="el" href="../../d9/d4b/from_8h_source.html">from.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../de/d49/generator_2generate_8h_source.html">generate.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../dd/d68/flat__map_8h_source.html">../intermediate/flat_map.h</a>&quot;</code><br />
-</div>
-<p><a href="../../d5/d6b/cycle__move_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+<code>#include &quot;<a class="el" href="../../d9/d4b/from_8h.html">from.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../de/d49/generator_2generate_8h.html">generate.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dd/d68/flat__map_8h.html">../intermediate/flat_map.h</a>&quot;</code><br />
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:d9/de2/namespaceflow"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/de2/namespaceflow.html">flow</a></td></tr>
+<tr class="memdesc:d9/de2/namespaceflow"><td class="mdescLeft">&#160;</td><td class="mdescRight">The entire flow library is contained in the flow namespace. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:de/d3f/namespaceflow_1_1generator"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html">flow::generator</a></td></tr>
+<tr class="memdesc:de/d3f/namespaceflow_1_1generator"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> factory methods, all of which are also aliased in the flow namespace. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1a310257dc777fbb0d65a405453a6df9"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:a1a310257dc777fbb0d65a405453a6df9"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a1a310257dc777fbb0d65a405453a6df9">flow::generator::cycle_move</a> (Container &amp;&amp;container)</td></tr>
-<tr class="memdesc:a1a310257dc777fbb0d65a405453a6df9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an infinite stream which cycles <em>container</em> .  <a href="#a1a310257dc777fbb0d65a405453a6df9">More...</a><br /></td></tr>
-<tr class="separator:a1a310257dc777fbb0d65a405453a6df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af21e1e625f61bda095d543ac26f27167"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:af21e1e625f61bda095d543ac26f27167"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#af21e1e625f61bda095d543ac26f27167">flow::generator::cycle_move</a> (Container &amp;&amp;container, std::size_t n)</td></tr>
-<tr class="memdesc:af21e1e625f61bda095d543ac26f27167"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a stream which cycles through <em>container</em>  <em>n</em>  times.  <a href="#af21e1e625f61bda095d543ac26f27167">More...</a><br /></td></tr>
-<tr class="separator:af21e1e625f61bda095d543ac26f27167"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea0a33e9246e1e1e98dba7070eadee99"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:aea0a33e9246e1e1e98dba7070eadee99"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#aea0a33e9246e1e1e98dba7070eadee99">flow::generator::cycle</a> (std::initializer_list&lt; T &gt; list)</td></tr>
 <tr class="memdesc:aea0a33e9246e1e1e98dba7070eadee99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an infinite stream which cycles <em>list</em> .  <a href="#aea0a33e9246e1e1e98dba7070eadee99">More...</a><br /></td></tr>
@@ -125,6 +117,14 @@ Functions</h2></td></tr>
 <tr class="memitem:acce35864627a389f4443a52e3596fab7"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#acce35864627a389f4443a52e3596fab7">flow::generator::cycle</a> (std::initializer_list&lt; T &gt; list, std::size_t n)</td></tr>
 <tr class="memdesc:acce35864627a389f4443a52e3596fab7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a stream which cycles through <em>list</em>  <em>n</em>  times.  <a href="#acce35864627a389f4443a52e3596fab7">More...</a><br /></td></tr>
 <tr class="separator:acce35864627a389f4443a52e3596fab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a310257dc777fbb0d65a405453a6df9"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a1a310257dc777fbb0d65a405453a6df9"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a1a310257dc777fbb0d65a405453a6df9">flow::generator::cycle_move</a> (Container &amp;&amp;container)</td></tr>
+<tr class="memdesc:a1a310257dc777fbb0d65a405453a6df9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an infinite stream which cycles <em>container</em> .  <a href="#a1a310257dc777fbb0d65a405453a6df9">More...</a><br /></td></tr>
+<tr class="separator:a1a310257dc777fbb0d65a405453a6df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af21e1e625f61bda095d543ac26f27167"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:af21e1e625f61bda095d543ac26f27167"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#af21e1e625f61bda095d543ac26f27167">flow::generator::cycle_move</a> (Container &amp;&amp;container, std::size_t n)</td></tr>
+<tr class="memdesc:af21e1e625f61bda095d543ac26f27167"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a stream which cycles through <em>container</em>  <em>n</em>  times.  <a href="#af21e1e625f61bda095d543ac26f27167">More...</a><br /></td></tr>
+<tr class="separator:af21e1e625f61bda095d543ac26f27167"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3307eb1fb7521e10723eec340591042"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:aa3307eb1fb7521e10723eec340591042"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#aa3307eb1fb7521e10723eec340591042">flow::generator::rcycle_move</a> (Container &amp;&amp;container)</td></tr>
 <tr class="memdesc:aa3307eb1fb7521e10723eec340591042"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an infinite stream which cycles <em>container</em>  in reverse order.  <a href="#aa3307eb1fb7521e10723eec340591042">More...</a><br /></td></tr>

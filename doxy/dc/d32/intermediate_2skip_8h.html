@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,29 +93,29 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="title">skip.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="../../d3/d99/_stream_8h_source.html">../Stream.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d9/df2/_intermediate_8h_source.html">Intermediate.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d1/df2/source_2skip_8h_source.html">../source/Skip.h</a>&quot;</code><br />
-</div>
-<p><a href="../../dc/d32/intermediate_2skip_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d3/d99/_stream_8h.html">../Stream.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d9/df2/_intermediate_8h.html">Intermediate.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/df2/source_2skip_8h.html">../source/Skip.h</a>&quot;</code><br />
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:d9/de2/namespaceflow"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/de2/namespaceflow.html">flow</a></td></tr>
+<tr class="memdesc:d9/de2/namespaceflow"><td class="mdescLeft">&#160;</td><td class="mdescRight">The entire flow library is contained in the flow namespace. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:dc/d09/namespaceflow_1_1intermediate"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html">flow::intermediate</a></td></tr>
+<tr class="memdesc:dc/d09/namespaceflow_1_1intermediate"><td class="mdescLeft">&#160;</td><td class="mdescRight">Intermediate operations, all of which are also aliased in the flow namespace. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a2725d9fb49cd0c4fe25658500c2fa1f1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a2725d9fb49cd0c4fe25658500c2fa1f1">flow::intermediate::skip</a> (std::size_t begin, std::size_t step_size)</td></tr>
-<tr class="memdesc:a2725d9fb49cd0c4fe25658500c2fa1f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skips the first elements of a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. Keeps only the elements with index <code>&gt;=</code> <em>begin</em>  in the stream. This operation will skip every <em>step_size</em>  elements after the initial jump to <em>begin</em> .  <a href="#a2725d9fb49cd0c4fe25658500c2fa1f1">More...</a><br /></td></tr>
+<tr class="memdesc:a2725d9fb49cd0c4fe25658500c2fa1f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skips the first elements of a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>.  <a href="#a2725d9fb49cd0c4fe25658500c2fa1f1">More...</a><br /></td></tr>
 <tr class="separator:a2725d9fb49cd0c4fe25658500c2fa1f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f8b2e7e5cc41ecd02cb4381a706d545"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a2f8b2e7e5cc41ecd02cb4381a706d545">flow::intermediate::skip</a> (std::size_t begin)</td></tr>
-<tr class="memdesc:a2f8b2e7e5cc41ecd02cb4381a706d545"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skips the first elements of a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>. Keeps only the elements with index <code>&gt;=</code> <em>begin</em>  in the stream.  <a href="#a2f8b2e7e5cc41ecd02cb4381a706d545">More...</a><br /></td></tr>
+<tr class="memdesc:a2f8b2e7e5cc41ecd02cb4381a706d545"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skips the first elements of a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>.  <a href="#a2f8b2e7e5cc41ecd02cb4381a706d545">More...</a><br /></td></tr>
 <tr class="separator:a2f8b2e7e5cc41ecd02cb4381a706d545"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeef64fd0f533b9b084b83c46fe8352d4"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aeef64fd0f533b9b084b83c46fe8352d4">flow::intermediate::skip_every</a> (std::size_t step_size)</td></tr>
-<tr class="memdesc:aeef64fd0f533b9b084b83c46fe8352d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skips every <em>step_size</em>  elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>, keeping the first element.  <a href="#aeef64fd0f533b9b084b83c46fe8352d4">More...</a><br /></td></tr>
+<tr class="memdesc:aeef64fd0f533b9b084b83c46fe8352d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skips every <em>step_size</em>  elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>, keeping the first element.  <a href="#aeef64fd0f533b9b084b83c46fe8352d4">More...</a><br /></td></tr>
 <tr class="separator:aeef64fd0f533b9b084b83c46fe8352d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->

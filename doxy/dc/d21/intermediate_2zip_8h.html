@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -87,44 +87,25 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">zip.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;tuple&gt;</code><br />
-<code>#include &quot;<a class="el" href="../../d3/d99/_stream_8h_source.html">../Stream.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d9/df2/_intermediate_8h_source.html">Intermediate.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../de/d5c/source_2zip_8h_source.html">../source/Zip.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d9/d4b/from_8h_source.html">../generator/from.h</a>&quot;</code><br />
-</div>
-<p><a href="../../dc/d21/intermediate_2zip_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d34/structflow_1_1intermediate_1_1detail_1_1tuple__zipper.html">flow::intermediate::detail::tuple_zipper&lt; LeftType, RightType &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default zip operation which creates a tuple of the elements.  <a href="../../d2/d34/structflow_1_1intermediate_1_1detail_1_1tuple__zipper.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dc1/structflow_1_1intermediate_1_1detail_1_1tuple__zipper_3_01_left_type_00_01std_1_1tuple_3_01_right_types_8_8_8_4_01_4.html">flow::intermediate::detail::tuple_zipper&lt; LeftType, std::tuple&lt; RightTypes...&gt; &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default zip operation which concatenates tuple elements. Specialized to capture left-zips, the right parameter is a tuple.  <a href="../../d3/dc1/structflow_1_1intermediate_1_1detail_1_1tuple__zipper_3_01_left_type_00_01std_1_1tuple_3_01_right_types_8_8_8_4_01_4.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/ded/structflow_1_1intermediate_1_1detail_1_1tuple__zipper_3_01std_1_1tuple_3_01_left_types_8_8_8_4_00_01_right_type_01_4.html">flow::intermediate::detail::tuple_zipper&lt; std::tuple&lt; LeftTypes...&gt;, RightType &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default zip operation which concatenates tuple elements. Specialized to capture right-zips, the left parameter is a tuple.  <a href="../../db/ded/structflow_1_1intermediate_1_1detail_1_1tuple__zipper_3_01std_1_1tuple_3_01_left_types_8_8_8_4_00_01_right_type_01_4.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/structflow_1_1intermediate_1_1detail_1_1tuple__zipper_3_01std_1_1tuple_3_01_left_types_8_8_8_4_0968c2e4e4ec2f83930e57176743abeff.html">flow::intermediate::detail::tuple_zipper&lt; std::tuple&lt; LeftTypes...&gt;, std::tuple&lt; RightTypes...&gt; &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default zip operation which concatenates tuple elements. Specialized to capture re-zips. Both parameters are tuples.  <a href="../../df/d0a/structflow_1_1intermediate_1_1detail_1_1tuple__zipper_3_01std_1_1tuple_3_01_left_types_8_8_8_4_0968c2e4e4ec2f83930e57176743abeff.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
+<code>#include &quot;<a class="el" href="../../d3/d99/_stream_8h.html">../Stream.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d9/df2/_intermediate_8h.html">Intermediate.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../de/d5c/source_2zip_8h.html">../source/Zip.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d9/d4b/from_8h.html">../generator/from.h</a>&quot;</code><br />
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:d9/de2/namespaceflow"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/de2/namespaceflow.html">flow</a></td></tr>
+<tr class="memdesc:d9/de2/namespaceflow"><td class="mdescLeft">&#160;</td><td class="mdescRight">The entire flow library is contained in the flow namespace. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:dc/d09/namespaceflow_1_1intermediate"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html">flow::intermediate</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:da/df5/namespaceflow_1_1intermediate_1_1detail"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df5/namespaceflow_1_1intermediate_1_1detail.html">flow::intermediate::detail</a></td></tr>
+<tr class="memdesc:dc/d09/namespaceflow_1_1intermediate"><td class="mdescLeft">&#160;</td><td class="mdescRight">Intermediate operations, all of which are also aliased in the flow namespace. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -135,30 +116,24 @@ Functions</h2></td></tr>
 <tr class="separator:ae25b0a8475258acc29173c4a37e13e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a573b95c3fc149372b6659127f7d47814"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename BinaryOperation , typename  = std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:a573b95c3fc149372b6659127f7d47814"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a573b95c3fc149372b6659127f7d47814">flow::intermediate::zip</a> (Container &amp;container, BinaryOperation zipper)</td></tr>
-<tr class="memdesc:a573b95c3fc149372b6659127f7d47814"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using <em>zipper</em>  as the zipping operation. This is the same as <code>zip(from(container), zipper)</code>.  <a href="#a573b95c3fc149372b6659127f7d47814">More...</a><br /></td></tr>
+<tr class="memdesc:a573b95c3fc149372b6659127f7d47814"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using <em>zipper</em>  as the zipping operation.  <a href="#a573b95c3fc149372b6659127f7d47814">More...</a><br /></td></tr>
 <tr class="separator:a573b95c3fc149372b6659127f7d47814"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7916efdf915b8224595dd84557f20874"><td class="memTemplParams" colspan="2">template&lt;typename T , typename BinaryOperation &gt; </td></tr>
 <tr class="memitem:a7916efdf915b8224595dd84557f20874"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a7916efdf915b8224595dd84557f20874">flow::intermediate::zip</a> (std::initializer_list&lt; T &gt; list, BinaryOperation zipper)</td></tr>
-<tr class="memdesc:a7916efdf915b8224595dd84557f20874"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using <em>zipper</em>  as the zipping operation. This is the same as <code>zip(from(list), zipper)</code>.  <a href="#a7916efdf915b8224595dd84557f20874">More...</a><br /></td></tr>
+<tr class="memdesc:a7916efdf915b8224595dd84557f20874"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using <em>zipper</em>  as the zipping operation.  <a href="#a7916efdf915b8224595dd84557f20874">More...</a><br /></td></tr>
 <tr class="separator:a7916efdf915b8224595dd84557f20874"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f1ec0323daa06ef6b093f1d0aa4c1cc"><td class="memTemplParams" colspan="2">template&lt;typename RightSource &gt; </td></tr>
 <tr class="memitem:a7f1ec0323daa06ef6b093f1d0aa4c1cc"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a7f1ec0323daa06ef6b093f1d0aa4c1cc">flow::intermediate::zip</a> (Stream&lt; RightSource &gt; &amp;&amp;right)</td></tr>
-<tr class="memdesc:a7f1ec0323daa06ef6b093f1d0aa4c1cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using the default zipping operation. The default zip operation creates tuples of the stream elements like <code>std::tuple&lt;T1, T2&gt;</code>. Multiple <code>zip</code> operations concatenates these tuples together rather than nesting them.  <a href="#a7f1ec0323daa06ef6b093f1d0aa4c1cc">More...</a><br /></td></tr>
+<tr class="memdesc:a7f1ec0323daa06ef6b093f1d0aa4c1cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using the default zipping operation.  <a href="#a7f1ec0323daa06ef6b093f1d0aa4c1cc">More...</a><br /></td></tr>
 <tr class="separator:a7f1ec0323daa06ef6b093f1d0aa4c1cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2fc82a612a709360fac445a46001509"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:ab2fc82a612a709360fac445a46001509"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ab2fc82a612a709360fac445a46001509">flow::intermediate::zip</a> (Container &amp;container)</td></tr>
-<tr class="memdesc:ab2fc82a612a709360fac445a46001509"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using the default zipping operation. The default zip creates tuples of the stream elements like <code>std::tuple&lt;T1, T2&gt;</code>. Multiple <code>zip</code> operations concatenates these tuples together rather than nesting them. This is the same as <code>zip(from(container))</code>.  <a href="#ab2fc82a612a709360fac445a46001509">More...</a><br /></td></tr>
+<tr class="memdesc:ab2fc82a612a709360fac445a46001509"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using the default zipping operation.  <a href="#ab2fc82a612a709360fac445a46001509">More...</a><br /></td></tr>
 <tr class="separator:ab2fc82a612a709360fac445a46001509"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5b531057c1a25cd2488f1f6817c0d63"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ab5b531057c1a25cd2488f1f6817c0d63"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ab5b531057c1a25cd2488f1f6817c0d63">flow::intermediate::zip</a> (std::initializer_list&lt; T &gt; list)</td></tr>
-<tr class="memdesc:ab5b531057c1a25cd2488f1f6817c0d63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using the default zipping operation. The default zip creates tuples of the stream elements like <code>std::tuple&lt;T1, T2&gt;</code>. Multiple <code>zip</code> operations concatenates these tuples together rather than nesting them. This is the same as <code>zip(from(list))</code>.  <a href="#ab5b531057c1a25cd2488f1f6817c0d63">More...</a><br /></td></tr>
+<tr class="memdesc:ab5b531057c1a25cd2488f1f6817c0d63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using the default zipping operation.  <a href="#ab5b531057c1a25cd2488f1f6817c0d63">More...</a><br /></td></tr>
 <tr class="separator:ab5b531057c1a25cd2488f1f6817c0d63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a032c13f295ee62c6fd712b86aa09cdcb"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df5/namespaceflow_1_1intermediate_1_1detail.html#a032c13f295ee62c6fd712b86aa09cdcb">flow::intermediate::detail::zipper</a></td></tr>
-<tr class="memdesc:a032c13f295ee62c6fd712b86aa09cdcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default zipper wrapper function. Zips streams by concatenating them together as tuples.  <a href="#a032c13f295ee62c6fd712b86aa09cdcb">More...</a><br /></td></tr>
-<tr class="separator:a032c13f295ee62c6fd712b86aa09cdcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

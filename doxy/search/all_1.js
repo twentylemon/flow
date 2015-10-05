@@ -1,10 +1,5 @@
 var searchData=
 [
-  ['all',['all',['../d1/d6c/namespaceflow_1_1terminal.html#afb46a36fe4c6693d7b05e3bd0fc05f4d',1,'flow::terminal::all(UnaryPredicate predicate)'],['../d1/d6c/namespaceflow_1_1terminal.html#ab69ca58eca0161111d95306425586634',1,'flow::terminal::all()'],['../d1/d6c/namespaceflow_1_1terminal.html#ab756d99bb6fe64ace09d278028f0f539',1,'flow::terminal::all(Ret(Class::*member)())']]],
-  ['all_2eh',['all.h',['../da/d0d/all_8h.html',1,'']]],
-  ['any',['any',['../d1/d6c/namespaceflow_1_1terminal.html#aef6844ddc5a40bb68764bc31f6070107',1,'flow::terminal::any(UnaryPredicate predicate)'],['../d1/d6c/namespaceflow_1_1terminal.html#af592d8f034ddf176998928a0d3b86bd0',1,'flow::terminal::any()'],['../d1/d6c/namespaceflow_1_1terminal.html#aed588ae01b14be839486b94bb87f2ed8',1,'flow::terminal::any(Ret(Class::*member)())']]],
-  ['any_2eh',['any.h',['../df/d8d/any_8h.html',1,'']]],
-  ['apply',['apply',['../db/d6c/namespaceflow_1_1detail.html#a21ceda685045c8a8db7675318e6e4c67',1,'flow::detail']]],
-  ['assign_5fcurrent',['assign_current',['../d7/d80/classflow_1_1source_1_1_generator_source_base.html#a2d87744beac14748c2567efa2c2ea239',1,'flow::source::GeneratorSourceBase::assign_current()'],['../d7/d08/classflow_1_1source_1_1_intermediate_source_base.html#a2df7945ff9ce38191f09f6cf5ed10a38',1,'flow::source::IntermediateSourceBase::assign_current()'],['../d7/d08/classflow_1_1source_1_1_intermediate_source_base.html#afae03f7e7cf84356ac321e1096e9edf3',1,'flow::source::IntermediateSourceBase::assign_current(value_type *current)']]],
-  ['assign_5ftemp_5fcurrent',['assign_temp_current',['../db/d34/classflow_1_1source_1_1_generator_source_no_default.html#ac42caaad7bcf3210b777e9ab414bce49',1,'flow::source::GeneratorSourceNoDefault::assign_temp_current()'],['../d4/dfd/classflow_1_1source_1_1_generator_source_default.html#ac5a0366a246e34c75068404d601b65db',1,'flow::source::GeneratorSourceDefault::assign_temp_current()'],['../d5/d0b/classflow_1_1source_1_1_intermediate_source_no_default.html#a9ab72520e22fb6e66ccce91cde5fb69d',1,'flow::source::IntermediateSourceNoDefault::assign_temp_current()'],['../d3/dc7/classflow_1_1source_1_1_intermediate_source_default.html#ab559a05ee3f27f2a4d29cf217d885599',1,'flow::source::IntermediateSourceDefault::assign_temp_current()']]]
+  ['base',['base',['../d0/d2d/classflow_1_1_stream_1_1iterator.html#ad94e5078c6aec113d643e5a2ffee9652',1,'flow::Stream::iterator']]],
+  ['begin',['begin',['../d9/dcd/classflow_1_1_stream.html#a31245115ba05ca2632a0eff967a0f2b0',1,'flow::Stream']]]
 ];

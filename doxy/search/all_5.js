@@ -1,12 +1,22 @@
 var searchData=
 [
-  ['each',['each',['../d1/d6c/namespaceflow_1_1terminal.html#a6b3d0ede6c9489aebb9ce1ed684c31a0',1,'flow::terminal::each(UnaryFunction func)'],['../d1/d6c/namespaceflow_1_1terminal.html#a89c7d99f1f196e5f9b55032c60097ece',1,'flow::terminal::each(Ret(Class::*member)())']]],
-  ['each_2eh',['each.h',['../dc/dc9/each_8h.html',1,'']]],
-  ['empty',['empty',['../de/d3f/namespaceflow_1_1generator.html#af89b482574e82df455be487db4dd18bd',1,'flow::generator']]],
-  ['empty_2eh',['empty.h',['../d0/d4d/empty_8h.html',1,'']]],
-  ['end',['end',['../d9/dcd/classflow_1_1_stream.html#ab71996af0de1a9ab8ae35b8d8b7d7110',1,'flow::Stream']]],
-  ['estimate_5fsize',['estimate_size',['../da/dbc/classflow_1_1source_1_1_concat.html#ad2f4c64820b9c21dd89272147be3ea69',1,'flow::source::Concat::estimate_size()'],['../d9/db6/classflow_1_1source_1_1_flat_map.html#ac9b401286d433c2db6e68a514ff1f82b',1,'flow::source::FlatMap::estimate_size()'],['../d7/d80/classflow_1_1source_1_1_generator_source_base.html#a608a31b0927237554a0d3f225a02788b',1,'flow::source::GeneratorSourceBase::estimate_size()'],['../d7/d08/classflow_1_1source_1_1_intermediate_source_base.html#a1d9fed18033264fd9f1a7277db0e101a',1,'flow::source::IntermediateSourceBase::estimate_size()'],['../d6/ddc/classflow_1_1source_1_1_iterator.html#a3469e75689ed9f57a70cc5affebcad04',1,'flow::source::Iterator::estimate_size()'],['../dd/d62/classflow_1_1source_1_1_skip.html#a65515f7c3015c5a8627351a301971b05',1,'flow::source::Skip::estimate_size()'],['../da/d25/classflow_1_1source_1_1_slice.html#aa0e2ec49e28d153dc6223ee75aa544c8',1,'flow::source::Slice::estimate_size()'],['../de/df4/classflow_1_1source_1_1_zip.html#a2e42988abc52dc05838d638e036f957b',1,'flow::source::Zip::estimate_size()'],['../d9/dcd/classflow_1_1_stream.html#a10867bd380fe28c2a27a23db8813d71f',1,'flow::Stream::estimate_size()']]],
-  ['examples_2etxt',['examples.txt',['../d3/d41/examples_8txt.html',1,'']]],
-  ['execute',['execute',['../d1/d6c/namespaceflow_1_1terminal.html#afc1e1a50b753d81652abaa28a9292eb4',1,'flow::terminal']]],
-  ['execute_2eh',['execute.h',['../d8/d71/execute_8h.html',1,'']]]
+  ['filter',['filter',['../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c',1,'flow::intermediate::filter(UnaryPredicate predicate)'],['../dc/d09/namespaceflow_1_1intermediate.html#a99debd4465f5e92791995d9a985a0a2d',1,'flow::intermediate::filter()'],['../dc/d09/namespaceflow_1_1intermediate.html#a6e1f3921d4f70c95c8e576ec40f8cdd2',1,'flow::intermediate::filter(Ret(Class::*member)())']]],
+  ['filter_2eh',['Filter.h',['../d2/db6/source_2filter_8h.html',1,'']]],
+  ['filter_2eh',['filter.h',['../dd/d51/intermediate_2filter_8h.html',1,'']]],
+  ['first',['first',['../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612',1,'flow::terminal']]],
+  ['first_2eh',['first.h',['../db/d87/first_8h.html',1,'']]],
+  ['flat_5fmap',['flat_map',['../dc/d09/namespaceflow_1_1intermediate.html#ae5917010c6f56abf7ba421dbe0f5e92b',1,'flow::intermediate']]],
+  ['flat_5fmap_2eh',['flat_map.h',['../dd/d68/flat__map_8h.html',1,'']]],
+  ['flatmap_2eh',['FlatMap.h',['../db/d7f/_flat_map_8h.html',1,'']]],
+  ['flow',['flow',['../d9/de2/namespaceflow.html',1,'']]],
+  ['fold',['fold',['../d1/d6c/namespaceflow_1_1terminal.html#ad76999f9b4b01425b09c070cc7154ec8',1,'flow::terminal::fold(Accumulator accumulator, T &amp;&amp;init)'],['../d1/d6c/namespaceflow_1_1terminal.html#aabf7db53b2573f8f651420cc508170f8',1,'flow::terminal::fold(Accumulator accumulator)']]],
+  ['fold_2eh',['fold.h',['../d2/ddd/fold_8h.html',1,'']]],
+  ['fold_5fid',['fold_id',['../d1/d6c/namespaceflow_1_1terminal.html#a439e3f4a1be79bae0105092613415773',1,'flow::terminal::fold_id(Accumulator accumulator, UnaryFunction initializer)'],['../d1/d6c/namespaceflow_1_1terminal.html#a71feb02eace70a6babe98181f1e7c579',1,'flow::terminal::fold_id(Accumulator accumulator, UnaryFunction initializer, T &amp;&amp;init)']]],
+  ['from',['from',['../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b',1,'flow::generator::from(Itr begin, Itr end)'],['../de/d3f/namespaceflow_1_1generator.html#aaacf2459cc735b5c6731a65cee51f270',1,'flow::generator::from(Container &amp;container)'],['../de/d3f/namespaceflow_1_1generator.html#a874bfa518cc8c716f585a644774b6ddb',1,'flow::generator::from(std::initializer_list&lt; T &gt; list)']]],
+  ['from_2eh',['from.h',['../d9/d4b/from_8h.html',1,'']]],
+  ['from_5fmove',['from_move',['../de/d3f/namespaceflow_1_1generator.html#a408fc4ca9a170eca886474ba7efa07f2',1,'flow::generator']]],
+  ['from_5fmove_2eh',['from_move.h',['../dc/d36/from__move_8h.html',1,'']]],
+  ['generator',['generator',['../de/d3f/namespaceflow_1_1generator.html',1,'flow']]],
+  ['intermediate',['intermediate',['../dc/d09/namespaceflow_1_1intermediate.html',1,'flow']]],
+  ['terminal',['terminal',['../d1/d6c/namespaceflow_1_1terminal.html',1,'flow']]]
 ];

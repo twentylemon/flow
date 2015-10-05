@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -95,34 +95,25 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="contents">
 <div class="textblock"><code>#include &lt;tuple&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
-</div>
-<p><a href="../../df/ddb/print__tuple_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:d9/de2/namespaceflow"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/de2/namespaceflow.html">flow</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:db/d6c/namespaceflow_1_1detail"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d6c/namespaceflow_1_1detail.html">flow::detail</a></td></tr>
+<tr class="memdesc:d9/de2/namespaceflow"><td class="mdescLeft">&#160;</td><td class="mdescRight">The entire flow library is contained in the flow namespace. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:d8/dcc/namespacestd"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dcc/namespacestd.html">std</a></td></tr>
+<tr class="memdesc:d8/dcc/namespacestd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload <code>operator&lt;&lt;</code> for <code>std::tuple</code>. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8d96d6ad854cd1a2b66bee3259e25112"><td class="memTemplParams" colspan="2">template&lt;std::size_t N, typename... T&gt; </td></tr>
-<tr class="memitem:a8d96d6ad854cd1a2b66bee3259e25112"><td class="memTemplItemLeft" align="right" valign="top">typename T std::enable_if_t&lt;(N &gt; 0 &amp;&amp;N&lt; sizeof...(T))&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d6c/namespaceflow_1_1detail.html#a8d96d6ad854cd1a2b66bee3259e25112">flow::detail::print_tuple</a> (std::ostream &amp;out, const std::tuple&lt; T...&gt; &amp;tuple)</td></tr>
-<tr class="separator:a8d96d6ad854cd1a2b66bee3259e25112"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91c2ddcea98625a66a996d0574c3851b"><td class="memTemplParams" colspan="2">template&lt;std::size_t N, typename... T&gt; </td></tr>
-<tr class="memitem:a91c2ddcea98625a66a996d0574c3851b"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; N==0 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d6c/namespaceflow_1_1detail.html#a91c2ddcea98625a66a996d0574c3851b">flow::detail::print_tuple</a> (std::ostream &amp;out, const std::tuple&lt; T...&gt; &amp;tuple)</td></tr>
-<tr class="memdesc:a91c2ddcea98625a66a996d0574c3851b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start recursive case for printing tuples. No comma is printed before the item.  <a href="#a91c2ddcea98625a66a996d0574c3851b">More...</a><br /></td></tr>
-<tr class="separator:a91c2ddcea98625a66a996d0574c3851b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90f7b62e83eb2d3a5c96f737df87a336"><td class="memTemplParams" colspan="2">template&lt;typename... T&gt; </td></tr>
 <tr class="memitem:a90f7b62e83eb2d3a5c96f737df87a336"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/de2/namespaceflow.html#a90f7b62e83eb2d3a5c96f737df87a336">flow::operator&lt;&lt;</a> (std::ostream &amp;out, const std::tuple&lt; T...&gt; &amp;tuple)</td></tr>
-<tr class="memdesc:a90f7b62e83eb2d3a5c96f737df87a336"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload operator&lt;&lt; to display tuple types. The tuple is printed as <code>(item1, item2, ...)</code>. Each item is displayed using operator&lt;&lt; on the elements.  <a href="#a90f7b62e83eb2d3a5c96f737df87a336">More...</a><br /></td></tr>
+<tr class="memdesc:a90f7b62e83eb2d3a5c96f737df87a336"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload operator&lt;&lt; to display tuple types.  <a href="#a90f7b62e83eb2d3a5c96f737df87a336">More...</a><br /></td></tr>
 <tr class="separator:a90f7b62e83eb2d3a5c96f737df87a336"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a396aea5c0f720b5f6d39743dae2ab839"><td class="memTemplParams" colspan="2">template&lt;typename... T&gt; </td></tr>
 <tr class="memitem:a396aea5c0f720b5f6d39743dae2ab839"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/dcc/namespacestd.html#a396aea5c0f720b5f6d39743dae2ab839">std::operator&lt;&lt;</a> (std::ostream &amp;out, const std::tuple&lt; T...&gt; &amp;tuple)</td></tr>
-<tr class="memdesc:a396aea5c0f720b5f6d39743dae2ab839"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload operator&lt;&lt; to display tuple types. The tuple is printed as <code>(item1, item2, ...)</code>. Each item is displayed using operator&lt;&lt; on the elements.  <a href="#a396aea5c0f720b5f6d39743dae2ab839">More...</a><br /></td></tr>
+<tr class="memdesc:a396aea5c0f720b5f6d39743dae2ab839"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload operator&lt;&lt; to display tuple types.  <a href="#a396aea5c0f720b5f6d39743dae2ab839">More...</a><br /></td></tr>
 <tr class="separator:a396aea5c0f720b5f6d39743dae2ab839"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->

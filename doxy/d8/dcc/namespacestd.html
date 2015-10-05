@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,15 +89,27 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="title">std Namespace Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Overload <code>operator&lt;&lt;</code> for <code>std::tuple</code>.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a396aea5c0f720b5f6d39743dae2ab839"><td class="memTemplParams" colspan="2">template&lt;typename... T&gt; </td></tr>
 <tr class="memitem:a396aea5c0f720b5f6d39743dae2ab839"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/dcc/namespacestd.html#a396aea5c0f720b5f6d39743dae2ab839">operator&lt;&lt;</a> (std::ostream &amp;out, const std::tuple&lt; T...&gt; &amp;tuple)</td></tr>
-<tr class="memdesc:a396aea5c0f720b5f6d39743dae2ab839"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload operator&lt;&lt; to display tuple types. The tuple is printed as <code>(item1, item2, ...)</code>. Each item is displayed using operator&lt;&lt; on the elements.  <a href="#a396aea5c0f720b5f6d39743dae2ab839">More...</a><br /></td></tr>
+<tr class="memdesc:a396aea5c0f720b5f6d39743dae2ab839"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload operator&lt;&lt; to display tuple types.  <a href="#a396aea5c0f720b5f6d39743dae2ab839">More...</a><br /></td></tr>
 <tr class="separator:a396aea5c0f720b5f6d39743dae2ab839"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Overload <code>operator&lt;&lt;</code> for <code>std::tuple</code>. </p>
+<p>Defines <code>operator&lt;&lt;</code> for <code>std::tuple</code>. This definition is required by <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f" title="Prints the stream elements to the std::ostream with the delimiter  printed between each element...">dump()</a> for a tuple stream, such as a stream that uses the default <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ae25b0a8475258acc29173c4a37e13e22" title="Zips the two streams together using zipper  as the zipping operation. ">zip()</a> operation. For example,</p>
+<div class="fragment"><div class="line">intstream | <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#ae25b0a8475258acc29173c4a37e13e22">zip</a>(more_ints) | <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f">dump</a>(); <span class="comment">// requires std::operator&lt;&lt; for tuples </span></div>
+</div><!-- fragment --> <p>This namespace and function can be removed by defining <code>#define FLOW_PRINTTUPLE_NO_STD</code> before including <code>flow.h</code>.</p>
+<div class="fragment"><div class="line"><span class="comment">// remove std::operator&lt;&lt;</span></div>
+<div class="line"><span class="preprocessor">#define FLOW_PRINTTUPLE_NO_STD</span></div>
+<div class="line"><span class="preprocessor">#include &lt;flow.h&gt; </span></div>
+</div><!-- fragment --> <p>This will cause statements like the above to be a compile error unless the operator is defined elsewhere.</p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a396aea5c0f720b5f6d39743dae2ab839"></a>
 <div class="memitem">
 <div class="memproto">
@@ -124,7 +136,8 @@ template&lt;typename... T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Overload operator&lt;&lt; to display tuple types. The tuple is printed as <code>(item1, item2, ...)</code>. Each item is displayed using operator&lt;&lt; on the elements. </p>
+<p>Overload operator&lt;&lt; to display tuple types. </p>
+<p>The tuple is printed as <code>(item1, item2, ...)</code>. Each item is displayed using operator&lt;&lt; on the elements. </p>
 <p>This is defined in the <code>std</code> namespace to allow <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f" title="Prints the stream elements to the std::ostream with the delimiter  printed between each element...">dump()</a> to work correctly. To exclude this function from being defined in <code>std</code>, <code>#define FLOW_PRINTTUPLE_NO_STD</code> will remove it.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

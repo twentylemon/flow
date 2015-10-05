@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -94,31 +94,31 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;functional&gt;</code><br />
-<code>#include &quot;<a class="el" href="../../d3/d99/_stream_8h_source.html">../Stream.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d9/df2/_intermediate_8h_source.html">Intermediate.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../de/d92/_drop_while_8h_source.html">../source/DropWhile.h</a>&quot;</code><br />
-</div>
-<p><a href="../../d4/db5/drop__while_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+<code>#include &quot;<a class="el" href="../../d3/d99/_stream_8h.html">../Stream.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d9/df2/_intermediate_8h.html">Intermediate.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../de/d92/_drop_while_8h.html">../source/DropWhile.h</a>&quot;</code><br />
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:d9/de2/namespaceflow"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/de2/namespaceflow.html">flow</a></td></tr>
+<tr class="memdesc:d9/de2/namespaceflow"><td class="mdescLeft">&#160;</td><td class="mdescRight">The entire flow library is contained in the flow namespace. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:dc/d09/namespaceflow_1_1intermediate"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html">flow::intermediate</a></td></tr>
+<tr class="memdesc:dc/d09/namespaceflow_1_1intermediate"><td class="mdescLeft">&#160;</td><td class="mdescRight">Intermediate operations, all of which are also aliased in the flow namespace. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a1c6e57bccb66cfbfae54134b500ea8c0"><td class="memTemplParams" colspan="2">template&lt;typename UnaryPredicate &gt; </td></tr>
 <tr class="memitem:a1c6e57bccb66cfbfae54134b500ea8c0"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1c6e57bccb66cfbfae54134b500ea8c0">flow::intermediate::drop_while</a> (UnaryPredicate predicate)</td></tr>
-<tr class="memdesc:a1c6e57bccb66cfbfae54134b500ea8c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drops elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> until the <em>predicate</em>  returns <code>false</code> for a stream element. All elements before the first <code>false</code> are discarded, the rest are kept.  <a href="#a1c6e57bccb66cfbfae54134b500ea8c0">More...</a><br /></td></tr>
+<tr class="memdesc:a1c6e57bccb66cfbfae54134b500ea8c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drops elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> until the <em>predicate</em>  returns <code>false</code> for a stream element.  <a href="#a1c6e57bccb66cfbfae54134b500ea8c0">More...</a><br /></td></tr>
 <tr class="separator:a1c6e57bccb66cfbfae54134b500ea8c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af375a0d8fadc8ec0e0d2b97a1d2907a5"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af375a0d8fadc8ec0e0d2b97a1d2907a5">flow::intermediate::drop_while</a> ()</td></tr>
-<tr class="memdesc:af375a0d8fadc8ec0e0d2b97a1d2907a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drops elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> until a stream element is <code>false</code>. All elements before the first <code>false</code> are discarded, the rest are kept. This is an overload for streams with types convertible to <code>bool</code>.  <a href="#af375a0d8fadc8ec0e0d2b97a1d2907a5">More...</a><br /></td></tr>
+<tr class="memdesc:af375a0d8fadc8ec0e0d2b97a1d2907a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drops elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> until a stream element is <code>false</code>.  <a href="#af375a0d8fadc8ec0e0d2b97a1d2907a5">More...</a><br /></td></tr>
 <tr class="separator:af375a0d8fadc8ec0e0d2b97a1d2907a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a680ea915183bfa1bd72ff0a342a6bb1f"><td class="memTemplParams" colspan="2">template&lt;typename Ret , typename Class &gt; </td></tr>
 <tr class="memitem:a680ea915183bfa1bd72ff0a342a6bb1f"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a680ea915183bfa1bd72ff0a342a6bb1f">flow::intermediate::drop_while</a> (Ret(Class::*member)())</td></tr>
-<tr class="memdesc:a680ea915183bfa1bd72ff0a342a6bb1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drops elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> until the <em>member</em>  returns <code>false</code>. All elements before the first <code>true</code> are discarded, the rest are kept.  <a href="#a680ea915183bfa1bd72ff0a342a6bb1f">More...</a><br /></td></tr>
+<tr class="memdesc:a680ea915183bfa1bd72ff0a342a6bb1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drops elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> until the <em>member</em>  returns <code>false</code>.  <a href="#a680ea915183bfa1bd72ff0a342a6bb1f">More...</a><br /></td></tr>
 <tr class="separator:a680ea915183bfa1bd72ff0a342a6bb1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->

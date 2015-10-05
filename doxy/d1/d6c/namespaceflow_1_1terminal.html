@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -88,63 +88,60 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">flow::terminal Namespace Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Terminal operations, all of which are also aliased in the flow namespace.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:de/d8a/namespaceflow_1_1terminal_1_1detail"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d8a/namespaceflow_1_1terminal_1_1detail.html">detail</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:afb46a36fe4c6693d7b05e3bd0fc05f4d"><td class="memTemplParams" colspan="2">template&lt;typename UnaryPredicate &gt; </td></tr>
 <tr class="memitem:afb46a36fe4c6693d7b05e3bd0fc05f4d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afb46a36fe4c6693d7b05e3bd0fc05f4d">all</a> (UnaryPredicate predicate)</td></tr>
-<tr class="memdesc:afb46a36fe4c6693d7b05e3bd0fc05f4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if all of the elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> return <code>true</code> for <em>predicate</em> . This operation is short circuited and will stop executing once any <code>false</code> value is found. If the stream is empty, this will return <code>true</code>.  <a href="#afb46a36fe4c6693d7b05e3bd0fc05f4d">More...</a><br /></td></tr>
+<tr class="memdesc:afb46a36fe4c6693d7b05e3bd0fc05f4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if all of the elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> return <code>true</code> for <em>predicate</em> .  <a href="#afb46a36fe4c6693d7b05e3bd0fc05f4d">More...</a><br /></td></tr>
 <tr class="separator:afb46a36fe4c6693d7b05e3bd0fc05f4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab69ca58eca0161111d95306425586634"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ab69ca58eca0161111d95306425586634">all</a> ()</td></tr>
-<tr class="memdesc:ab69ca58eca0161111d95306425586634"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if all elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> can be evaluated to <code>true</code>. This is an overload for streams with types convertible to <code>bool</code>. This operation is short circuited and will stop executing once any <code>false</code> value is found. If the stream is empty, this will return <code>true</code>.  <a href="#ab69ca58eca0161111d95306425586634">More...</a><br /></td></tr>
+<tr class="memdesc:ab69ca58eca0161111d95306425586634"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if all elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> can be evaluated to <code>true</code>.  <a href="#ab69ca58eca0161111d95306425586634">More...</a><br /></td></tr>
 <tr class="separator:ab69ca58eca0161111d95306425586634"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab756d99bb6fe64ace09d278028f0f539"><td class="memTemplParams" colspan="2">template&lt;typename Ret , typename Class &gt; </td></tr>
 <tr class="memitem:ab756d99bb6fe64ace09d278028f0f539"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ab756d99bb6fe64ace09d278028f0f539">all</a> (Ret(Class::*member)())</td></tr>
-<tr class="memdesc:ab756d99bb6fe64ace09d278028f0f539"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if all of the elements in the stream return <code>true</code> for the predicate given. This operation is short circuited and will stop executing once any <code>false</code> value is found. If the stream is empty, this will return <code>true</code>.  <a href="#ab756d99bb6fe64ace09d278028f0f539">More...</a><br /></td></tr>
+<tr class="memdesc:ab756d99bb6fe64ace09d278028f0f539"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if all of the elements in the stream return <code>true</code> for the predicate given.  <a href="#ab756d99bb6fe64ace09d278028f0f539">More...</a><br /></td></tr>
 <tr class="separator:ab756d99bb6fe64ace09d278028f0f539"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef6844ddc5a40bb68764bc31f6070107"><td class="memTemplParams" colspan="2">template&lt;typename UnaryPredicate &gt; </td></tr>
 <tr class="memitem:aef6844ddc5a40bb68764bc31f6070107"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aef6844ddc5a40bb68764bc31f6070107">any</a> (UnaryPredicate predicate)</td></tr>
-<tr class="memdesc:aef6844ddc5a40bb68764bc31f6070107"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if any of the elements in the stream return <code>true</code> for <em>predicate</em> . This operation is short circuited and will stop executing once any <code>true</code> value is found. If the stream is empty, this will return <code>false</code>.  <a href="#aef6844ddc5a40bb68764bc31f6070107">More...</a><br /></td></tr>
+<tr class="memdesc:aef6844ddc5a40bb68764bc31f6070107"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if any of the elements in the stream return <code>true</code> for <em>predicate</em> .  <a href="#aef6844ddc5a40bb68764bc31f6070107">More...</a><br /></td></tr>
 <tr class="separator:aef6844ddc5a40bb68764bc31f6070107"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af592d8f034ddf176998928a0d3b86bd0"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#af592d8f034ddf176998928a0d3b86bd0">any</a> ()</td></tr>
-<tr class="memdesc:af592d8f034ddf176998928a0d3b86bd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if any element in the stream can be evaluated to <code>true</code>. This is an overload for streams with types convertible to <code>bool</code>. This operation is short circuited and will stop executing once any <code>true</code> value is found. If the stream is empty, this will return <code>false</code>.  <a href="#af592d8f034ddf176998928a0d3b86bd0">More...</a><br /></td></tr>
+<tr class="memdesc:af592d8f034ddf176998928a0d3b86bd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if any element in the stream can be evaluated to <code>true</code>.  <a href="#af592d8f034ddf176998928a0d3b86bd0">More...</a><br /></td></tr>
 <tr class="separator:af592d8f034ddf176998928a0d3b86bd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed588ae01b14be839486b94bb87f2ed8"><td class="memTemplParams" colspan="2">template&lt;typename Ret , typename Class &gt; </td></tr>
 <tr class="memitem:aed588ae01b14be839486b94bb87f2ed8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aed588ae01b14be839486b94bb87f2ed8">any</a> (Ret(Class::*member)())</td></tr>
-<tr class="memdesc:aed588ae01b14be839486b94bb87f2ed8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if any of the elements in the stream return <code>true</code> for the predicate given. This operation is short circuited and will stop executing once any <code>true</code> value is found. If the stream is empty, this will return <code>false</code>.  <a href="#aed588ae01b14be839486b94bb87f2ed8">More...</a><br /></td></tr>
+<tr class="memdesc:aed588ae01b14be839486b94bb87f2ed8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if any of the elements in the stream return <code>true</code> for the predicate given.  <a href="#aed588ae01b14be839486b94bb87f2ed8">More...</a><br /></td></tr>
 <tr class="separator:aed588ae01b14be839486b94bb87f2ed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56cac6d09f37c126c0b3b4a509c8cc27"><td class="memTemplParams" colspan="2">template&lt;typename T , typename EqualPredicate  = std::equal_to&lt;T&gt;&gt; </td></tr>
 <tr class="memitem:a56cac6d09f37c126c0b3b4a509c8cc27"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a56cac6d09f37c126c0b3b4a509c8cc27">contains</a> (T &amp;&amp;val, EqualPredicate equals=EqualPredicate())</td></tr>
-<tr class="memdesc:a56cac6d09f37c126c0b3b4a509c8cc27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if an element in the stream compares equal to <code>val</code> by <em>equals</em> . By default, <code>operator==</code> is used for equality comparisons.  <a href="#a56cac6d09f37c126c0b3b4a509c8cc27">More...</a><br /></td></tr>
+<tr class="memdesc:a56cac6d09f37c126c0b3b4a509c8cc27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if an element in the stream compares equal to <code>val</code> by <em>equals</em> .  <a href="#a56cac6d09f37c126c0b3b4a509c8cc27">More...</a><br /></td></tr>
 <tr class="separator:a56cac6d09f37c126c0b3b4a509c8cc27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2e701e11c61d1038e3b0581e2f32df0"><td class="memTemplParams" colspan="2">template&lt;typename OutputIterator &gt; </td></tr>
 <tr class="memitem:aa2e701e11c61d1038e3b0581e2f32df0"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aa2e701e11c61d1038e3b0581e2f32df0">copy</a> (OutputIterator result)</td></tr>
-<tr class="memdesc:aa2e701e11c61d1038e3b0581e2f32df0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the elements in the stream into the range beginning at <code>result</code>. An iterator to the end of the destination range is returned, pointing to the element after the last element copied.  <a href="#aa2e701e11c61d1038e3b0581e2f32df0">More...</a><br /></td></tr>
+<tr class="memdesc:aa2e701e11c61d1038e3b0581e2f32df0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the elements in the stream into the range beginning at <code>result</code>.  <a href="#aa2e701e11c61d1038e3b0581e2f32df0">More...</a><br /></td></tr>
 <tr class="separator:aa2e701e11c61d1038e3b0581e2f32df0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52dfcc0ff79f7c3d74ea2e80a3f9a65f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a52dfcc0ff79f7c3d74ea2e80a3f9a65f">count</a> ()</td></tr>
-<tr class="memdesc:a52dfcc0ff79f7c3d74ea2e80a3f9a65f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts the number of elements in the stream. The count is returned as <code>std::size_t</code>.  <a href="#a52dfcc0ff79f7c3d74ea2e80a3f9a65f">More...</a><br /></td></tr>
+<tr class="memdesc:a52dfcc0ff79f7c3d74ea2e80a3f9a65f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts the number of elements in the stream.  <a href="#a52dfcc0ff79f7c3d74ea2e80a3f9a65f">More...</a><br /></td></tr>
 <tr class="separator:a52dfcc0ff79f7c3d74ea2e80a3f9a65f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc0afd1d9f8846d76814248e4d6a164f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f">dump</a> (std::ostream &amp;out=std::cout, const std::string &amp;delimiter=&quot; &quot;)</td></tr>
-<tr class="memdesc:acc0afd1d9f8846d76814248e4d6a164f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the stream elements to the <code>std::ostream</code> with the <em>delimiter</em>  printed between each element. A reference to the output stream is returned.  <a href="#acc0afd1d9f8846d76814248e4d6a164f">More...</a><br /></td></tr>
+<tr class="memdesc:acc0afd1d9f8846d76814248e4d6a164f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the stream elements to the <code>std::ostream</code> with the <em>delimiter</em>  printed between each element.  <a href="#acc0afd1d9f8846d76814248e4d6a164f">More...</a><br /></td></tr>
 <tr class="separator:acc0afd1d9f8846d76814248e4d6a164f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b3d0ede6c9489aebb9ce1ed684c31a0"><td class="memTemplParams" colspan="2">template&lt;typename UnaryFunction &gt; </td></tr>
 <tr class="memitem:a6b3d0ede6c9489aebb9ce1ed684c31a0"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a6b3d0ede6c9489aebb9ce1ed684c31a0">each</a> (UnaryFunction func)</td></tr>
-<tr class="memdesc:a6b3d0ede6c9489aebb9ce1ed684c31a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a function for each element in the stream. The executed function is returned.  <a href="#a6b3d0ede6c9489aebb9ce1ed684c31a0">More...</a><br /></td></tr>
+<tr class="memdesc:a6b3d0ede6c9489aebb9ce1ed684c31a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a function for each element in the stream.  <a href="#a6b3d0ede6c9489aebb9ce1ed684c31a0">More...</a><br /></td></tr>
 <tr class="separator:a6b3d0ede6c9489aebb9ce1ed684c31a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89c7d99f1f196e5f9b55032c60097ece"><td class="memTemplParams" colspan="2">template&lt;typename Ret , typename Class &gt; </td></tr>
 <tr class="memitem:a89c7d99f1f196e5f9b55032c60097ece"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a89c7d99f1f196e5f9b55032c60097ece">each</a> (Ret(Class::*member)())</td></tr>
-<tr class="memdesc:a89c7d99f1f196e5f9b55032c60097ece"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a function for each element in the stream. The executed function is returned.  <a href="#a89c7d99f1f196e5f9b55032c60097ece">More...</a><br /></td></tr>
+<tr class="memdesc:a89c7d99f1f196e5f9b55032c60097ece"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a function for each element in the stream.  <a href="#a89c7d99f1f196e5f9b55032c60097ece">More...</a><br /></td></tr>
 <tr class="separator:a89c7d99f1f196e5f9b55032c60097ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc1e1a50b753d81652abaa28a9292eb4"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afc1e1a50b753d81652abaa28a9292eb4">execute</a> ()</td></tr>
 <tr class="memdesc:afc1e1a50b753d81652abaa28a9292eb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forces the stream to be evaluated entirely.  <a href="#afc1e1a50b753d81652abaa28a9292eb4">More...</a><br /></td></tr>
@@ -158,41 +155,41 @@ Functions</h2></td></tr>
 <tr class="separator:ad76999f9b4b01425b09c070cc7154ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabf7db53b2573f8f651420cc508170f8"><td class="memTemplParams" colspan="2">template&lt;typename Accumulator &gt; </td></tr>
 <tr class="memitem:aabf7db53b2573f8f651420cc508170f8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aabf7db53b2573f8f651420cc508170f8">fold</a> (Accumulator accumulator)</td></tr>
-<tr class="memdesc:aabf7db53b2573f8f651420cc508170f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Folds the stream using <em>accumulator</em> . The first element of the stream is used for the initial folding value.  <a href="#aabf7db53b2573f8f651420cc508170f8">More...</a><br /></td></tr>
+<tr class="memdesc:aabf7db53b2573f8f651420cc508170f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Folds the stream using <em>accumulator</em> .  <a href="#aabf7db53b2573f8f651420cc508170f8">More...</a><br /></td></tr>
 <tr class="separator:aabf7db53b2573f8f651420cc508170f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a439e3f4a1be79bae0105092613415773"><td class="memTemplParams" colspan="2">template&lt;typename Accumulator , typename UnaryFunction &gt; </td></tr>
 <tr class="memitem:a439e3f4a1be79bae0105092613415773"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a439e3f4a1be79bae0105092613415773">fold_id</a> (Accumulator accumulator, UnaryFunction initializer)</td></tr>
-<tr class="memdesc:a439e3f4a1be79bae0105092613415773"><td class="mdescLeft">&#160;</td><td class="mdescRight">Folds the stream using <em>accumulator</em> . The result of <em>initializer</em>  applied to the first element of the stream is used for the initial folding value.  <a href="#a439e3f4a1be79bae0105092613415773">More...</a><br /></td></tr>
+<tr class="memdesc:a439e3f4a1be79bae0105092613415773"><td class="mdescLeft">&#160;</td><td class="mdescRight">Folds the stream using <em>accumulator</em> .  <a href="#a439e3f4a1be79bae0105092613415773">More...</a><br /></td></tr>
 <tr class="separator:a439e3f4a1be79bae0105092613415773"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71feb02eace70a6babe98181f1e7c579"><td class="memTemplParams" colspan="2">template&lt;typename Accumulator , typename UnaryFunction , typename T &gt; </td></tr>
 <tr class="memitem:a71feb02eace70a6babe98181f1e7c579"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a71feb02eace70a6babe98181f1e7c579">fold_id</a> (Accumulator accumulator, UnaryFunction initializer, T &amp;&amp;init)</td></tr>
-<tr class="memdesc:a71feb02eace70a6babe98181f1e7c579"><td class="mdescLeft">&#160;</td><td class="mdescRight">Folds the stream using <em>accumulator</em> . The result of <em>initializer</em>  applied to <em>init</em>  is used for the initial folding value.  <a href="#a71feb02eace70a6babe98181f1e7c579">More...</a><br /></td></tr>
+<tr class="memdesc:a71feb02eace70a6babe98181f1e7c579"><td class="mdescLeft">&#160;</td><td class="mdescRight">Folds the stream using <em>accumulator</em> .  <a href="#a71feb02eace70a6babe98181f1e7c579">More...</a><br /></td></tr>
 <tr class="separator:a71feb02eace70a6babe98181f1e7c579"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fe0dda56d4f64d94e607e73b9187960"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a4fe0dda56d4f64d94e607e73b9187960">last</a> ()</td></tr>
-<tr class="memdesc:a4fe0dda56d4f64d94e607e73b9187960"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last element from the stream. This is a potentially expensive operation as the entire stream must be evaluated.  <a href="#a4fe0dda56d4f64d94e607e73b9187960">More...</a><br /></td></tr>
+<tr class="memdesc:a4fe0dda56d4f64d94e607e73b9187960"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last element from the stream.  <a href="#a4fe0dda56d4f64d94e607e73b9187960">More...</a><br /></td></tr>
 <tr class="separator:a4fe0dda56d4f64d94e607e73b9187960"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa878b5ae4e25bf654161a5004ca025b3"><td class="memTemplParams" colspan="2">template&lt;typename Compare  = std::less&lt;void&gt;&gt; </td></tr>
 <tr class="memitem:aa878b5ae4e25bf654161a5004ca025b3"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aa878b5ae4e25bf654161a5004ca025b3">max</a> (Compare compare=Compare())</td></tr>
-<tr class="memdesc:aa878b5ae4e25bf654161a5004ca025b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum element from the stream according to <em>compare</em> . By default <code>operator&lt;</code> is used for comparisons.  <a href="#aa878b5ae4e25bf654161a5004ca025b3">More...</a><br /></td></tr>
+<tr class="memdesc:aa878b5ae4e25bf654161a5004ca025b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum element from the stream according to <em>compare</em> .  <a href="#aa878b5ae4e25bf654161a5004ca025b3">More...</a><br /></td></tr>
 <tr class="separator:aa878b5ae4e25bf654161a5004ca025b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad02d008becaf1d5d64d2ae358ae7306e"><td class="memTemplParams" colspan="2">template&lt;typename Compare  = std::less&lt;void&gt;&gt; </td></tr>
 <tr class="memitem:ad02d008becaf1d5d64d2ae358ae7306e"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ad02d008becaf1d5d64d2ae358ae7306e">min</a> (Compare compare=Compare())</td></tr>
-<tr class="memdesc:ad02d008becaf1d5d64d2ae358ae7306e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the minimum element from the stream according to <em>compare</em> . By default <code>operator&lt;</code> is used for comparisons.  <a href="#ad02d008becaf1d5d64d2ae358ae7306e">More...</a><br /></td></tr>
+<tr class="memdesc:ad02d008becaf1d5d64d2ae358ae7306e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the minimum element from the stream according to <em>compare</em> .  <a href="#ad02d008becaf1d5d64d2ae358ae7306e">More...</a><br /></td></tr>
 <tr class="separator:ad02d008becaf1d5d64d2ae358ae7306e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae944c0b98f14746eb980b9883e36a7e4"><td class="memTemplParams" colspan="2">template&lt;typename Compare  = std::less&lt;void&gt;&gt; </td></tr>
 <tr class="memitem:ae944c0b98f14746eb980b9883e36a7e4"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae944c0b98f14746eb980b9883e36a7e4">minmax</a> (Compare compare=Compare())</td></tr>
-<tr class="memdesc:ae944c0b98f14746eb980b9883e36a7e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the minimum and maximum elements as a pair from the stream according to <em>compare</em> . The first element is the minimum and the second element is the maximum. By default <code>operator&lt;</code> is used for comparisons.  <a href="#ae944c0b98f14746eb980b9883e36a7e4">More...</a><br /></td></tr>
+<tr class="memdesc:ae944c0b98f14746eb980b9883e36a7e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the minimum and maximum elements as a pair from the stream according to <em>compare</em> .  <a href="#ae944c0b98f14746eb980b9883e36a7e4">More...</a><br /></td></tr>
 <tr class="separator:ae944c0b98f14746eb980b9883e36a7e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e6d1f983184706c6ec3a976c449ee6d"><td class="memTemplParams" colspan="2">template&lt;typename UnaryPredicate &gt; </td></tr>
 <tr class="memitem:a9e6d1f983184706c6ec3a976c449ee6d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9e6d1f983184706c6ec3a976c449ee6d">none</a> (UnaryPredicate predicate)</td></tr>
-<tr class="memdesc:a9e6d1f983184706c6ec3a976c449ee6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if none of the elements in the stream return <code>true</code> for <em>predicate</em> . This operation is short circuited and will stop executing once any <code>true</code> value is found. If the stream is empty, this will return <code>true</code>.  <a href="#a9e6d1f983184706c6ec3a976c449ee6d">More...</a><br /></td></tr>
+<tr class="memdesc:a9e6d1f983184706c6ec3a976c449ee6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if none of the elements in the stream return <code>true</code> for <em>predicate</em> .  <a href="#a9e6d1f983184706c6ec3a976c449ee6d">More...</a><br /></td></tr>
 <tr class="separator:a9e6d1f983184706c6ec3a976c449ee6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4c81d966a9a314a18cc091bbca744fc"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae4c81d966a9a314a18cc091bbca744fc">none</a> ()</td></tr>
-<tr class="memdesc:ae4c81d966a9a314a18cc091bbca744fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if none of the elements in the stream can be evaluated to <code>true</code>. This is an overload for streams with types convertible to <code>bool</code>. This operation is short circuited and will stop executing once any <code>true</code> value is found.  <a href="#ae4c81d966a9a314a18cc091bbca744fc">More...</a><br /></td></tr>
+<tr class="memdesc:ae4c81d966a9a314a18cc091bbca744fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if none of the elements in the stream can be evaluated to <code>true</code>.  <a href="#ae4c81d966a9a314a18cc091bbca744fc">More...</a><br /></td></tr>
 <tr class="separator:ae4c81d966a9a314a18cc091bbca744fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a774947b90963349171b7964c524fb23a"><td class="memTemplParams" colspan="2">template&lt;typename Ret , typename Class &gt; </td></tr>
 <tr class="memitem:a774947b90963349171b7964c524fb23a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a774947b90963349171b7964c524fb23a">none</a> (Ret(Class::*member)())</td></tr>
-<tr class="memdesc:a774947b90963349171b7964c524fb23a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if none of the elements in the stream return <code>true</code> for the predicate given. This operation is short circuited and will stop executing once any <code>true</code> value is found.  <a href="#a774947b90963349171b7964c524fb23a">More...</a><br /></td></tr>
+<tr class="memdesc:a774947b90963349171b7964c524fb23a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if none of the elements in the stream return <code>true</code> for the predicate given.  <a href="#a774947b90963349171b7964c524fb23a">More...</a><br /></td></tr>
 <tr class="separator:a774947b90963349171b7964c524fb23a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9eb644e7c13c0b2805f1e565763285da"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9eb644e7c13c0b2805f1e565763285da">nth</a> (std::size_t n)</td></tr>
 <tr class="memdesc:a9eb644e7c13c0b2805f1e565763285da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the nth element from the stream.  <a href="#a9eb644e7c13c0b2805f1e565763285da">More...</a><br /></td></tr>
@@ -210,15 +207,15 @@ Functions</h2></td></tr>
 <tr class="memitem:aa44a519f0dc4368647050c9b1857dd40"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aa44a519f0dc4368647050c9b1857dd40">reservoir</a> (std::size_t n)</td></tr>
 <tr class="memdesc:aa44a519f0dc4368647050c9b1857dd40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random sample from the potentially infinite stream in a <code>std::vector</code>.  <a href="#aa44a519f0dc4368647050c9b1857dd40">More...</a><br /></td></tr>
 <tr class="separator:aa44a519f0dc4368647050c9b1857dd40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae875fa53b5a07351a74291d1814e5eb3"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae875fa53b5a07351a74291d1814e5eb3">sample</a> (std::size_t n)</td></tr>
+<tr class="memdesc:ae875fa53b5a07351a74291d1814e5eb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random sample from the finite stream in a <code>std::vector</code>.  <a href="#ae875fa53b5a07351a74291d1814e5eb3">More...</a><br /></td></tr>
+<tr class="separator:ae875fa53b5a07351a74291d1814e5eb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac43d66a22a81d6c1499d6240f74f31e4"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ac43d66a22a81d6c1499d6240f74f31e4">sample_heap</a> (std::size_t n)</td></tr>
-<tr class="memdesc:ac43d66a22a81d6c1499d6240f74f31e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random sample from the finite stream in a <code>std::vector</code>. This implementation uses a heap-sample method.  <a href="#ac43d66a22a81d6c1499d6240f74f31e4">More...</a><br /></td></tr>
+<tr class="memdesc:ac43d66a22a81d6c1499d6240f74f31e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random sample from the finite stream in a <code>std::vector</code>.  <a href="#ac43d66a22a81d6c1499d6240f74f31e4">More...</a><br /></td></tr>
 <tr class="separator:ac43d66a22a81d6c1499d6240f74f31e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3cad9fb8be0557995c03f1eb6045c7be"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a3cad9fb8be0557995c03f1eb6045c7be">sample_shuffle</a> (std::size_t n)</td></tr>
-<tr class="memdesc:a3cad9fb8be0557995c03f1eb6045c7be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random sample from the finite stream in a <code>std::vector</code>. This implementation uses a shuffle-sample method.  <a href="#a3cad9fb8be0557995c03f1eb6045c7be">More...</a><br /></td></tr>
+<tr class="memdesc:a3cad9fb8be0557995c03f1eb6045c7be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random sample from the finite stream in a <code>std::vector</code>.  <a href="#a3cad9fb8be0557995c03f1eb6045c7be">More...</a><br /></td></tr>
 <tr class="separator:a3cad9fb8be0557995c03f1eb6045c7be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae875fa53b5a07351a74291d1814e5eb3"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae875fa53b5a07351a74291d1814e5eb3">sample</a> (std::size_t n)</td></tr>
-<tr class="memdesc:ae875fa53b5a07351a74291d1814e5eb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random sample from the finite stream in a <code>std::vector</code>. This method tries to pick the better of <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ac43d66a22a81d6c1499d6240f74f31e4" title="Returns a random sample from the finite stream in a std::vector. This implementation uses a heap-samp...">sample_heap()</a> and <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a3cad9fb8be0557995c03f1eb6045c7be" title="Returns a random sample from the finite stream in a std::vector. This implementation uses a shuffle-s...">sample_shuffle()</a> using the estimated size of the stream.  <a href="#ae875fa53b5a07351a74291d1814e5eb3">More...</a><br /></td></tr>
-<tr class="separator:ae875fa53b5a07351a74291d1814e5eb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d36eab187f4b501c07a00f39e4f2381"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9d36eab187f4b501c07a00f39e4f2381">sum</a> ()</td></tr>
 <tr class="memdesc:a9d36eab187f4b501c07a00f39e4f2381"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the sum of all the elements in the stream using <code>operator+</code>.  <a href="#a9d36eab187f4b501c07a00f39e4f2381">More...</a><br /></td></tr>
 <tr class="separator:a9d36eab187f4b501c07a00f39e4f2381"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -226,13 +223,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a21f36f6877d4af5794b93a8f1c0af92d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a21f36f6877d4af5794b93a8f1c0af92d">sum</a> (T &amp;&amp;init)</td></tr>
 <tr class="memdesc:a21f36f6877d4af5794b93a8f1c0af92d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the sum of all the elements in the stream using <code>operator+</code>, starting the sum at <em>init</em> .  <a href="#a21f36f6877d4af5794b93a8f1c0af92d">More...</a><br /></td></tr>
 <tr class="separator:a21f36f6877d4af5794b93a8f1c0af92d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae65b798b18b47576c1ffed6f63814fc0"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae65b798b18b47576c1ffed6f63814fc0">to_vector</a> ()</td></tr>
-<tr class="memdesc:ae65b798b18b47576c1ffed6f63814fc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::vector&lt;T&gt;</code> in order.  <a href="#ae65b798b18b47576c1ffed6f63814fc0">More...</a><br /></td></tr>
-<tr class="separator:ae65b798b18b47576c1ffed6f63814fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67f68b3569f0a73e2bbc6e42d83bbe85"><td class="memTemplParams" colspan="2">template&lt;typename Allocator &gt; </td></tr>
-<tr class="memitem:a67f68b3569f0a73e2bbc6e42d83bbe85"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a67f68b3569f0a73e2bbc6e42d83bbe85">to_vector</a> (const Allocator &amp;alloc)</td></tr>
-<tr class="memdesc:a67f68b3569f0a73e2bbc6e42d83bbe85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::vector&lt;T, Allocator&gt;</code> in order.  <a href="#a67f68b3569f0a73e2bbc6e42d83bbe85">More...</a><br /></td></tr>
-<tr class="separator:a67f68b3569f0a73e2bbc6e42d83bbe85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f69e7aa0b702ed9ed611b1dc8924f53"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9f69e7aa0b702ed9ed611b1dc8924f53">to_deque</a> ()</td></tr>
 <tr class="memdesc:a9f69e7aa0b702ed9ed611b1dc8924f53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::deque&lt;T&gt;</code> in order.  <a href="#a9f69e7aa0b702ed9ed611b1dc8924f53">More...</a><br /></td></tr>
 <tr class="separator:a9f69e7aa0b702ed9ed611b1dc8924f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -254,17 +244,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a226ef35682dc28c41693bfabbb73b806"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a226ef35682dc28c41693bfabbb73b806">to_list</a> (const Allocator &amp;alloc)</td></tr>
 <tr class="memdesc:a226ef35682dc28c41693bfabbb73b806"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::list&lt;T, Allocator&gt;</code> in order.  <a href="#a226ef35682dc28c41693bfabbb73b806">More...</a><br /></td></tr>
 <tr class="separator:a226ef35682dc28c41693bfabbb73b806"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e813962b033f984b9265ebe1cccf6ee"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a1e813962b033f984b9265ebe1cccf6ee">to_set</a> ()</td></tr>
-<tr class="memdesc:a1e813962b033f984b9265ebe1cccf6ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::set&lt;T&gt;</code>.  <a href="#a1e813962b033f984b9265ebe1cccf6ee">More...</a><br /></td></tr>
-<tr class="separator:a1e813962b033f984b9265ebe1cccf6ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0029787ab7a32a1e95cce8f36c04233b"><td class="memTemplParams" colspan="2">template&lt;typename Compare &gt; </td></tr>
-<tr class="memitem:a0029787ab7a32a1e95cce8f36c04233b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a0029787ab7a32a1e95cce8f36c04233b">to_set</a> (Compare compare)</td></tr>
-<tr class="memdesc:a0029787ab7a32a1e95cce8f36c04233b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::set&lt;T, Compare&gt;</code>.  <a href="#a0029787ab7a32a1e95cce8f36c04233b">More...</a><br /></td></tr>
-<tr class="separator:a0029787ab7a32a1e95cce8f36c04233b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af476d5605e9d8316ac0c8dcc876188a5"><td class="memTemplParams" colspan="2">template&lt;typename Compare , typename Allocator &gt; </td></tr>
-<tr class="memitem:af476d5605e9d8316ac0c8dcc876188a5"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#af476d5605e9d8316ac0c8dcc876188a5">to_set</a> (Compare compare, const Allocator &amp;alloc)</td></tr>
-<tr class="memdesc:af476d5605e9d8316ac0c8dcc876188a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::set&lt;T, Compare, Alloc&lt;T&gt;&gt;</code>.  <a href="#af476d5605e9d8316ac0c8dcc876188a5">More...</a><br /></td></tr>
-<tr class="separator:af476d5605e9d8316ac0c8dcc876188a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbd4938a06689d3fb2c137bf8eca77e1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afbd4938a06689d3fb2c137bf8eca77e1">to_multiset</a> ()</td></tr>
 <tr class="memdesc:afbd4938a06689d3fb2c137bf8eca77e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::multiset&lt;T&gt;</code>.  <a href="#afbd4938a06689d3fb2c137bf8eca77e1">More...</a><br /></td></tr>
 <tr class="separator:afbd4938a06689d3fb2c137bf8eca77e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -276,21 +255,17 @@ Functions</h2></td></tr>
 <tr class="memitem:aef7db31d2cf47771a86218a49e8a5948"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aef7db31d2cf47771a86218a49e8a5948">to_multiset</a> (Compare compare, const Allocator &amp;alloc)</td></tr>
 <tr class="memdesc:aef7db31d2cf47771a86218a49e8a5948"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::multiset&lt;T, Compare, Alloc&lt;T&gt;&gt;</code>.  <a href="#aef7db31d2cf47771a86218a49e8a5948">More...</a><br /></td></tr>
 <tr class="separator:aef7db31d2cf47771a86218a49e8a5948"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6d5aa7c8fa867dceca1bbca79e2ac1a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ab6d5aa7c8fa867dceca1bbca79e2ac1a">to_unordered_set</a> ()</td></tr>
-<tr class="memdesc:ab6d5aa7c8fa867dceca1bbca79e2ac1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_set&lt;T&gt;</code>.  <a href="#ab6d5aa7c8fa867dceca1bbca79e2ac1a">More...</a><br /></td></tr>
-<tr class="separator:ab6d5aa7c8fa867dceca1bbca79e2ac1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6bc84b6fa611511105abe67f63ff983"><td class="memTemplParams" colspan="2">template&lt;typename Hash &gt; </td></tr>
-<tr class="memitem:ae6bc84b6fa611511105abe67f63ff983"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae6bc84b6fa611511105abe67f63ff983">to_unordered_set</a> (const Hash &amp;hash)</td></tr>
-<tr class="memdesc:ae6bc84b6fa611511105abe67f63ff983"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_set&lt;T, Hash&gt;</code>.  <a href="#ae6bc84b6fa611511105abe67f63ff983">More...</a><br /></td></tr>
-<tr class="separator:ae6bc84b6fa611511105abe67f63ff983"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4e4dba597728fea66fd360b4ad69791"><td class="memTemplParams" colspan="2">template&lt;typename Hash , typename EqualPredicate &gt; </td></tr>
-<tr class="memitem:af4e4dba597728fea66fd360b4ad69791"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#af4e4dba597728fea66fd360b4ad69791">to_unordered_set</a> (const Hash &amp;hash, EqualPredicate equal)</td></tr>
-<tr class="memdesc:af4e4dba597728fea66fd360b4ad69791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_set&lt;T, Hash, EqualPredicate&gt;</code>.  <a href="#af4e4dba597728fea66fd360b4ad69791">More...</a><br /></td></tr>
-<tr class="separator:af4e4dba597728fea66fd360b4ad69791"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a969446e33e7a16cfcbf417c42eaab3ba"><td class="memTemplParams" colspan="2">template&lt;typename Hash , typename EqualPredicate , typename Allocator &gt; </td></tr>
-<tr class="memitem:a969446e33e7a16cfcbf417c42eaab3ba"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a969446e33e7a16cfcbf417c42eaab3ba">to_unordered_set</a> (const Hash &amp;hash, EqualPredicate equal, const Allocator &amp;alloc)</td></tr>
-<tr class="memdesc:a969446e33e7a16cfcbf417c42eaab3ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_set&lt;T, Hash, EqualPredicate, Allocator&gt;</code>.  <a href="#a969446e33e7a16cfcbf417c42eaab3ba">More...</a><br /></td></tr>
-<tr class="separator:a969446e33e7a16cfcbf417c42eaab3ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e813962b033f984b9265ebe1cccf6ee"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a1e813962b033f984b9265ebe1cccf6ee">to_set</a> ()</td></tr>
+<tr class="memdesc:a1e813962b033f984b9265ebe1cccf6ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::set&lt;T&gt;</code>.  <a href="#a1e813962b033f984b9265ebe1cccf6ee">More...</a><br /></td></tr>
+<tr class="separator:a1e813962b033f984b9265ebe1cccf6ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0029787ab7a32a1e95cce8f36c04233b"><td class="memTemplParams" colspan="2">template&lt;typename Compare &gt; </td></tr>
+<tr class="memitem:a0029787ab7a32a1e95cce8f36c04233b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a0029787ab7a32a1e95cce8f36c04233b">to_set</a> (Compare compare)</td></tr>
+<tr class="memdesc:a0029787ab7a32a1e95cce8f36c04233b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::set&lt;T, Compare&gt;</code>.  <a href="#a0029787ab7a32a1e95cce8f36c04233b">More...</a><br /></td></tr>
+<tr class="separator:a0029787ab7a32a1e95cce8f36c04233b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af476d5605e9d8316ac0c8dcc876188a5"><td class="memTemplParams" colspan="2">template&lt;typename Compare , typename Allocator &gt; </td></tr>
+<tr class="memitem:af476d5605e9d8316ac0c8dcc876188a5"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#af476d5605e9d8316ac0c8dcc876188a5">to_set</a> (Compare compare, const Allocator &amp;alloc)</td></tr>
+<tr class="memdesc:af476d5605e9d8316ac0c8dcc876188a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::set&lt;T, Compare, Alloc&lt;T&gt;&gt;</code>.  <a href="#af476d5605e9d8316ac0c8dcc876188a5">More...</a><br /></td></tr>
+<tr class="separator:af476d5605e9d8316ac0c8dcc876188a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba2326e9fec317a54a1e151a94cde753"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aba2326e9fec317a54a1e151a94cde753">to_unordered_multiset</a> ()</td></tr>
 <tr class="memdesc:aba2326e9fec317a54a1e151a94cde753"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_multiset&lt;T&gt;</code>.  <a href="#aba2326e9fec317a54a1e151a94cde753">More...</a><br /></td></tr>
 <tr class="separator:aba2326e9fec317a54a1e151a94cde753"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -306,8 +281,33 @@ Functions</h2></td></tr>
 <tr class="memitem:aa4dc941b1b4aeac95b072216a663057e"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aa4dc941b1b4aeac95b072216a663057e">to_unordered_multiset</a> (const Hash &amp;hash, EqualPredicate equal, const Allocator &amp;alloc)</td></tr>
 <tr class="memdesc:aa4dc941b1b4aeac95b072216a663057e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_multiset&lt;T, Hash, EqualPredicate, Allocator&gt;</code>.  <a href="#aa4dc941b1b4aeac95b072216a663057e">More...</a><br /></td></tr>
 <tr class="separator:aa4dc941b1b4aeac95b072216a663057e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6d5aa7c8fa867dceca1bbca79e2ac1a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ab6d5aa7c8fa867dceca1bbca79e2ac1a">to_unordered_set</a> ()</td></tr>
+<tr class="memdesc:ab6d5aa7c8fa867dceca1bbca79e2ac1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_set&lt;T&gt;</code>.  <a href="#ab6d5aa7c8fa867dceca1bbca79e2ac1a">More...</a><br /></td></tr>
+<tr class="separator:ab6d5aa7c8fa867dceca1bbca79e2ac1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6bc84b6fa611511105abe67f63ff983"><td class="memTemplParams" colspan="2">template&lt;typename Hash &gt; </td></tr>
+<tr class="memitem:ae6bc84b6fa611511105abe67f63ff983"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae6bc84b6fa611511105abe67f63ff983">to_unordered_set</a> (const Hash &amp;hash)</td></tr>
+<tr class="memdesc:ae6bc84b6fa611511105abe67f63ff983"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_set&lt;T, Hash&gt;</code>.  <a href="#ae6bc84b6fa611511105abe67f63ff983">More...</a><br /></td></tr>
+<tr class="separator:ae6bc84b6fa611511105abe67f63ff983"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4e4dba597728fea66fd360b4ad69791"><td class="memTemplParams" colspan="2">template&lt;typename Hash , typename EqualPredicate &gt; </td></tr>
+<tr class="memitem:af4e4dba597728fea66fd360b4ad69791"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#af4e4dba597728fea66fd360b4ad69791">to_unordered_set</a> (const Hash &amp;hash, EqualPredicate equal)</td></tr>
+<tr class="memdesc:af4e4dba597728fea66fd360b4ad69791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_set&lt;T, Hash, EqualPredicate&gt;</code>.  <a href="#af4e4dba597728fea66fd360b4ad69791">More...</a><br /></td></tr>
+<tr class="separator:af4e4dba597728fea66fd360b4ad69791"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a969446e33e7a16cfcbf417c42eaab3ba"><td class="memTemplParams" colspan="2">template&lt;typename Hash , typename EqualPredicate , typename Allocator &gt; </td></tr>
+<tr class="memitem:a969446e33e7a16cfcbf417c42eaab3ba"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a969446e33e7a16cfcbf417c42eaab3ba">to_unordered_set</a> (const Hash &amp;hash, EqualPredicate equal, const Allocator &amp;alloc)</td></tr>
+<tr class="memdesc:a969446e33e7a16cfcbf417c42eaab3ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_set&lt;T, Hash, EqualPredicate, Allocator&gt;</code>.  <a href="#a969446e33e7a16cfcbf417c42eaab3ba">More...</a><br /></td></tr>
+<tr class="separator:a969446e33e7a16cfcbf417c42eaab3ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae65b798b18b47576c1ffed6f63814fc0"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae65b798b18b47576c1ffed6f63814fc0">to_vector</a> ()</td></tr>
+<tr class="memdesc:ae65b798b18b47576c1ffed6f63814fc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::vector&lt;T&gt;</code> in order.  <a href="#ae65b798b18b47576c1ffed6f63814fc0">More...</a><br /></td></tr>
+<tr class="separator:ae65b798b18b47576c1ffed6f63814fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67f68b3569f0a73e2bbc6e42d83bbe85"><td class="memTemplParams" colspan="2">template&lt;typename Allocator &gt; </td></tr>
+<tr class="memitem:a67f68b3569f0a73e2bbc6e42d83bbe85"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a67f68b3569f0a73e2bbc6e42d83bbe85">to_vector</a> (const Allocator &amp;alloc)</td></tr>
+<tr class="memdesc:a67f68b3569f0a73e2bbc6e42d83bbe85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::vector&lt;T, Allocator&gt;</code> in order.  <a href="#a67f68b3569f0a73e2bbc6e42d83bbe85">More...</a><br /></td></tr>
+<tr class="separator:a67f68b3569f0a73e2bbc6e42d83bbe85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Terminal operations, all of which are also aliased in the flow namespace. </p>
+<p>The functions in the <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html" title="Terminal operations, all of which are also aliased in the flow namespace. ">flow::terminal</a> namespace all produce a terminal operation. The terminal operation does not operate on a stream until the pipe <code>operator|</code> has been applied, after which the terminal's return value is calculated.</p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="afb46a36fe4c6693d7b05e3bd0fc05f4d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -324,14 +324,15 @@ template&lt;typename UnaryPredicate &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Returns <code>true</code> if all of the elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> return <code>true</code> for <em>predicate</em> . This operation is short circuited and will stop executing once any <code>false</code> value is found. If the stream is empty, this will return <code>true</code>. </p>
+<p>Returns <code>true</code> if all of the elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> return <code>true</code> for <em>predicate</em> . </p>
+<p>This operation is short circuited and will stop executing once any <code>false</code> value is found. If the stream is empty, this will return <code>true</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">predicate</td><td>The predicate to test each element with.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which returns <code>true</code> if all stream elements return <code>true</code> for <em>predicate</em> .</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which returns <code>true</code> if all stream elements return <code>true</code> for <em>predicate</em> .</dd></dl>
 
 </div>
 </div>
@@ -356,8 +357,9 @@ template&lt;typename UnaryPredicate &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns <code>true</code> if all elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> can be evaluated to <code>true</code>. This is an overload for streams with types convertible to <code>bool</code>. This operation is short circuited and will stop executing once any <code>false</code> value is found. If the stream is empty, this will return <code>true</code>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which returns <code>true</code> if all stream elements are <code>true</code>.</dd></dl>
+<p>Returns <code>true</code> if all elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> can be evaluated to <code>true</code>. </p>
+<p>This is an overload for streams with types convertible to <code>bool</code>. This operation is short circuited and will stop executing once any <code>false</code> value is found. If the stream is empty, this will return <code>true</code>. </p>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which returns <code>true</code> if all stream elements are <code>true</code>.</dd></dl>
 
 </div>
 </div>
@@ -377,21 +379,23 @@ template&lt;typename Ret , typename Class &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Returns <code>true</code> if all of the elements in the stream return <code>true</code> for the predicate given. This operation is short circuited and will stop executing once any <code>false</code> value is found. If the stream is empty, this will return <code>true</code>. </p>
+<p>Returns <code>true</code> if all of the elements in the stream return <code>true</code> for the predicate given. </p>
+<p>This operation is short circuited and will stop executing once any <code>false</code> value is found. If the stream is empty, this will return <code>true</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">member</td><td>The class member function to use as the predicate.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which returns <code>true</code> if all stream element returns <code>true</code> for the given predicate.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which returns <code>true</code> if all stream element returns <code>true</code> for the given predicate.</dd></dl>
+<p>This operation is short circuited and will stop executing once any <code>false</code> value is found. If the stream is empty, this will return <code>true</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">member</td><td>The const class member function to use as the predicate.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which returns <code>true</code> if all stream element returns <code>true</code> for the given predicate.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which returns <code>true</code> if all stream element returns <code>true</code> for the given predicate.</dd></dl>
 
 </div>
 </div>
@@ -411,14 +415,15 @@ template&lt;typename UnaryPredicate &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Returns <code>true</code> if any of the elements in the stream return <code>true</code> for <em>predicate</em> . This operation is short circuited and will stop executing once any <code>true</code> value is found. If the stream is empty, this will return <code>false</code>. </p>
+<p>Returns <code>true</code> if any of the elements in the stream return <code>true</code> for <em>predicate</em> . </p>
+<p>This operation is short circuited and will stop executing once any <code>true</code> value is found. If the stream is empty, this will return <code>false</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">predicate</td><td>The predicate to test each element with.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which returns <code>true</code> if any stream element returns <code>true</code> for <em>predicate</em> .</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which returns <code>true</code> if any stream element returns <code>true</code> for <em>predicate</em> .</dd></dl>
 
 </div>
 </div>
@@ -443,8 +448,9 @@ template&lt;typename UnaryPredicate &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns <code>true</code> if any element in the stream can be evaluated to <code>true</code>. This is an overload for streams with types convertible to <code>bool</code>. This operation is short circuited and will stop executing once any <code>true</code> value is found. If the stream is empty, this will return <code>false</code>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which returns <code>true</code> if any stream element is <code>true</code>.</dd></dl>
+<p>Returns <code>true</code> if any element in the stream can be evaluated to <code>true</code>. </p>
+<p>This is an overload for streams with types convertible to <code>bool</code>. This operation is short circuited and will stop executing once any <code>true</code> value is found. If the stream is empty, this will return <code>false</code>. </p>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which returns <code>true</code> if any stream element is <code>true</code>.</dd></dl>
 
 </div>
 </div>
@@ -464,21 +470,23 @@ template&lt;typename Ret , typename Class &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Returns <code>true</code> if any of the elements in the stream return <code>true</code> for the predicate given. This operation is short circuited and will stop executing once any <code>true</code> value is found. If the stream is empty, this will return <code>false</code>. </p>
+<p>Returns <code>true</code> if any of the elements in the stream return <code>true</code> for the predicate given. </p>
+<p>This operation is short circuited and will stop executing once any <code>true</code> value is found. If the stream is empty, this will return <code>false</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">member</td><td>The class member function to use as the predicate.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which returns <code>true</code> if any stream element returns <code>true</code> for the given predicate.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which returns <code>true</code> if any stream element returns <code>true</code> for the given predicate.</dd></dl>
+<p>This operation is short circuited and will stop executing once any <code>true</code> value is found. If the stream is empty, this will return <code>false</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">member</td><td>The const class member function to use as the predicate.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which returns <code>true</code> if any stream element returns <code>true</code> for the given predicate.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which returns <code>true</code> if any stream element returns <code>true</code> for the given predicate.</dd></dl>
 
 </div>
 </div>
@@ -508,7 +516,8 @@ template&lt;typename T , typename EqualPredicate  = std::equal_to&lt;T&gt;&gt; <
       </table>
 </div><div class="memdoc">
 
-<p>Returns <code>true</code> if an element in the stream compares equal to <code>val</code> by <em>equals</em> . By default, <code>operator==</code> is used for equality comparisons. </p>
+<p>Returns <code>true</code> if an element in the stream compares equal to <code>val</code> by <em>equals</em> . </p>
+<p>By default, <code>operator==</code> is used for equality comparisons. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">val</td><td>The value to search for in the stream.</td></tr>
@@ -516,7 +525,7 @@ template&lt;typename T , typename EqualPredicate  = std::equal_to&lt;T&gt;&gt; <
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which returns <code>true</code> if the stream contains <code>val</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which returns <code>true</code> if the stream contains <code>val</code>.</dd></dl>
 
 </div>
 </div>
@@ -536,14 +545,15 @@ template&lt;typename OutputIterator &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Copies the elements in the stream into the range beginning at <code>result</code>. An iterator to the end of the destination range is returned, pointing to the element after the last element copied. </p>
+<p>Copies the elements in the stream into the range beginning at <code>result</code>. </p>
+<p>An iterator to the end of the destination range is returned, pointing to the element after the last element copied. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">result</td><td>The output iterator to the initial position in the destination range.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into the <code>result</code> range.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which copies the stream into the <code>result</code> range.</dd></dl>
 
 </div>
 </div>
@@ -568,8 +578,9 @@ template&lt;typename OutputIterator &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Counts the number of elements in the stream. The count is returned as <code>std::size_t</code>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which counts the number of elements in the stream.</dd></dl>
+<p>Counts the number of elements in the stream. </p>
+<p>The count is returned as <code>std::size_t</code>. </p>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which counts the number of elements in the stream.</dd></dl>
 
 </div>
 </div>
@@ -605,7 +616,8 @@ template&lt;typename OutputIterator &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Prints the stream elements to the <code>std::ostream</code> with the <em>delimiter</em>  printed between each element. A reference to the output stream is returned. </p>
+<p>Prints the stream elements to the <code>std::ostream</code> with the <em>delimiter</em>  printed between each element. </p>
+<p>A reference to the output stream is returned. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>The output stream to print to.</td></tr>
@@ -613,7 +625,7 @@ template&lt;typename OutputIterator &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which print the stream elements to <em>out</em> .</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which print the stream elements to <em>out</em> .</dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d7/db4/concat_8cpp-example.html#a1">concat.cpp</a>, <a class="el" href="../../d1/d7e/sort_8cpp-example.html#a1">sort.cpp</a>, and <a class="el" href="../../d0/d76/zip_8cpp-example.html#a1">zip.cpp</a>.</dd>
 </dl>
 </div>
@@ -634,14 +646,15 @@ template&lt;typename UnaryFunction &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Executes a function for each element in the stream. The executed function is returned. </p>
+<p>Executes a function for each element in the stream. </p>
+<p>The executed function is returned. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">func</td><td>The function to apply to each element of the stream.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation that executes a function for each stream element.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation that executes a function for each stream element.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af" title="Executes action  for each element in the Stream. ">peek()</a></dd></dl>
 
 </div>
@@ -662,22 +675,24 @@ template&lt;typename Ret , typename Class &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Executes a function for each element in the stream. The executed function is returned. </p>
+<p>Executes a function for each element in the stream. </p>
+<p>The executed function is returned. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">member</td><td>The class member function to use as the operation.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation that executes a function for each stream element.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation that executes a function for each stream element.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af" title="Executes action  for each element in the Stream. ">peek()</a></dd></dl>
+<p>The executed function is returned. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">member</td><td>The const class member function to use as the operation.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation that executes a function for each stream element.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation that executes a function for each stream element.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af" title="Executes action  for each element in the Stream. ">peek()</a></dd></dl>
 
 </div>
@@ -707,7 +722,7 @@ template&lt;typename Ret , typename Class &gt; </div>
 <p>The stream will not normally be evaluated unless a terminal operation is applied, or an eager intermediate operation is applied. This terminal forces evaluation of the entire stream. For example:</p>
 <p><code>widgets | zip(iota(1), [](Widget&amp; w, int i) { w.set_id(i); return i; });</code> </p>
 <p>The above stream assigns a unique id to each Widget, and the stream contains the ids. However, no terminal operation is applied, no value is ever needed so none of the stream is ever evaluated. Appending <code> | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afc1e1a50b753d81652abaa28a9292eb4" title="Forces the stream to be evaluated entirely. ">execute()</a></code> will force the stream to be evaluated, assigning the ids but ignoring the stream itself.</p>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation that evaluates the entire stream but ignores the elements.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A detail::Terminal operation that evaluates the entire stream but ignores the elements.</dd></dl>
 
 </div>
 </div>
@@ -733,7 +748,7 @@ template&lt;typename Ret , typename Class &gt; </div>
 </div><div class="memdoc">
 
 <p>Returns the first element from the stream. </p>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which gives the first element from the stream.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which gives the first element from the stream.</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">std::out_of_range</td><td>Thrown when the stream is empty.</td></tr>
@@ -779,7 +794,7 @@ template&lt;typename Accumulator , typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which folds the stream.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which folds the stream.</dd></dl>
 
 </div>
 </div>
@@ -799,14 +814,15 @@ template&lt;typename Accumulator &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Folds the stream using <em>accumulator</em> . The first element of the stream is used for the initial folding value. </p>
+<p>Folds the stream using <em>accumulator</em> . </p>
+<p>The first element of the stream is used for the initial folding value. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">accumulator</td><td>The function through which the stream is folded.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which folds the stream.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which folds the stream.</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">std::out_of_range</td><td>Thrown when the stream is empty.</td></tr>
@@ -842,7 +858,8 @@ template&lt;typename Accumulator , typename UnaryFunction &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Folds the stream using <em>accumulator</em> . The result of <em>initializer</em>  applied to the first element of the stream is used for the initial folding value. </p>
+<p>Folds the stream using <em>accumulator</em> . </p>
+<p>The result of <em>initializer</em>  applied to the first element of the stream is used for the initial folding value. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">accumulator</td><td>The function through which the stream is folded.</td></tr>
@@ -850,7 +867,7 @@ template&lt;typename Accumulator , typename UnaryFunction &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which folds the stream.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which folds the stream.</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">std::out_of_range</td><td>Thrown when the stream is empty.</td></tr>
@@ -892,7 +909,8 @@ template&lt;typename Accumulator , typename UnaryFunction , typename T &gt; </di
       </table>
 </div><div class="memdoc">
 
-<p>Folds the stream using <em>accumulator</em> . The result of <em>initializer</em>  applied to <em>init</em>  is used for the initial folding value. </p>
+<p>Folds the stream using <em>accumulator</em> . </p>
+<p>The result of <em>initializer</em>  applied to <em>init</em>  is used for the initial folding value. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">accumulator</td><td>The accumulator, the function through which the stream is folded.</td></tr>
@@ -901,7 +919,7 @@ template&lt;typename Accumulator , typename UnaryFunction , typename T &gt; </di
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which folds the stream.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which folds the stream.</dd></dl>
 
 </div>
 </div>
@@ -926,8 +944,9 @@ template&lt;typename Accumulator , typename UnaryFunction , typename T &gt; </di
 </table>
 </div><div class="memdoc">
 
-<p>Returns the last element from the stream. This is a potentially expensive operation as the entire stream must be evaluated. </p>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which gives the last element from the stream.</dd></dl>
+<p>Returns the last element from the stream. </p>
+<p>This is a potentially expensive operation as the entire stream must be evaluated. </p>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which gives the last element from the stream.</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">std::out_of_range</td><td>Thrown when the stream is empty.</td></tr>
@@ -954,7 +973,8 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the maximum element from the stream according to <em>compare</em> . By default <code>operator&lt;</code> is used for comparisons. </p>
+<p>Returns the maximum element from the stream according to <em>compare</em> . </p>
+<p>By default <code>operator&lt;</code> is used for comparisons. </p>
 <p>If there are multiple maximum elements, the first such element is returned.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -962,7 +982,7 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which gives the maximum element from the stream.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A detail::Terminal operation which gives the maximum element from the stream.</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">std::out_of_range</td><td>Thrown when the stream is empty.</td></tr>
@@ -989,7 +1009,8 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the minimum element from the stream according to <em>compare</em> . By default <code>operator&lt;</code> is used for comparisons. </p>
+<p>Returns the minimum element from the stream according to <em>compare</em> . </p>
+<p>By default <code>operator&lt;</code> is used for comparisons. </p>
 <p>If there are multiple minimum elements, the first such element is returned.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -997,7 +1018,7 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which gives the minimum element from the stream.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A detail::Terminal operation which gives the minimum element from the stream.</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">std::out_of_range</td><td>Thrown when the stream is empty.</td></tr>
@@ -1024,7 +1045,8 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the minimum and maximum elements as a pair from the stream according to <em>compare</em> . The first element is the minimum and the second element is the maximum. By default <code>operator&lt;</code> is used for comparisons. </p>
+<p>Returns the minimum and maximum elements as a pair from the stream according to <em>compare</em> . </p>
+<p>The first element is the minimum and the second element is the maximum. By default <code>operator&lt;</code> is used for comparisons. </p>
 <p>If there are multiple min/max elements, the <em>first</em> min element and the <em>last</em> max element are returned.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1032,7 +1054,7 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which gives the min and max elements from the stream.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A detail::Terminal operation which gives the min and max elements from the stream.</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">std::out_of_range</td><td>Thrown when the stream is empty.</td></tr>
@@ -1058,14 +1080,15 @@ template&lt;typename UnaryPredicate &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Returns <code>true</code> if none of the elements in the stream return <code>true</code> for <em>predicate</em> . This operation is short circuited and will stop executing once any <code>true</code> value is found. If the stream is empty, this will return <code>true</code>. </p>
+<p>Returns <code>true</code> if none of the elements in the stream return <code>true</code> for <em>predicate</em> . </p>
+<p>This operation is short circuited and will stop executing once any <code>true</code> value is found. If the stream is empty, this will return <code>true</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">predicate</td><td>The predicate to test each element with.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which returns <code>true</code> if none of stream elements return <code>true</code> for <em>predicate</em> .</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which returns <code>true</code> if none of stream elements return <code>true</code> for <em>predicate</em> .</dd></dl>
 
 </div>
 </div>
@@ -1090,8 +1113,9 @@ template&lt;typename UnaryPredicate &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns <code>true</code> if none of the elements in the stream can be evaluated to <code>true</code>. This is an overload for streams with types convertible to <code>bool</code>. This operation is short circuited and will stop executing once any <code>true</code> value is found. </p>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which returns <code>true</code> if none of the stream elements are <code>true</code>.</dd></dl>
+<p>Returns <code>true</code> if none of the elements in the stream can be evaluated to <code>true</code>. </p>
+<p>This is an overload for streams with types convertible to <code>bool</code>. This operation is short circuited and will stop executing once any <code>true</code> value is found. </p>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which returns <code>true</code> if none of the stream elements are <code>true</code>.</dd></dl>
 
 </div>
 </div>
@@ -1111,21 +1135,23 @@ template&lt;typename Ret , typename Class &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Returns <code>true</code> if none of the elements in the stream return <code>true</code> for the predicate given. This operation is short circuited and will stop executing once any <code>true</code> value is found. </p>
+<p>Returns <code>true</code> if none of the elements in the stream return <code>true</code> for the predicate given. </p>
+<p>This operation is short circuited and will stop executing once any <code>true</code> value is found. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">member</td><td>The class member function to use as the predicate.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which returns <code>true</code> if none of the stream elements return <code>true</code> for the given predicate.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which returns <code>true</code> if none of the stream elements return <code>true</code> for the given predicate.</dd></dl>
+<p>This operation is short circuited and will stop executing once any <code>true</code> value is found. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">member</td><td>The const class member function to use as the predicate.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which returns <code>true</code> if none of the stream elements return <code>true</code> for the given predicate.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which returns <code>true</code> if none of the stream elements return <code>true</code> for the given predicate.</dd></dl>
 
 </div>
 </div>
@@ -1158,7 +1184,7 @@ template&lt;typename Ret , typename Class &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which gives the nth element from the stream.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which gives the nth element from the stream.</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">std::out_of_range</td><td>Thrown when the stream has fewer than <code>n</code> elements.</td></tr>
@@ -1190,7 +1216,7 @@ template&lt;typename Ret , typename Class &gt; </div>
 </div><div class="memdoc">
 
 <p>Computes the product of all the elements in the stream using <code>operator*</code>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which multiplies the elements in the stream.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which multiplies the elements in the stream.</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">std::out_of_range</td><td>Thrown when the stream is empty.</td></tr>
@@ -1223,7 +1249,7 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which multiplies the elements in the stream.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which multiplies the elements in the stream.</dd></dl>
 
 </div>
 </div>
@@ -1269,8 +1295,8 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation that returns a <code>std::vector</code> of <em>n</em>  random stream elements.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae875fa53b5a07351a74291d1814e5eb3" title="Returns a random sample from the finite stream in a std::vector. This method tries to pick the better...">sample()</a></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A detail::Terminal operation that returns a <code>std::vector</code> of <em>n</em>  random stream elements.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae875fa53b5a07351a74291d1814e5eb3" title="Returns a random sample from the finite stream in a std::vector. ">sample()</a></dd></dl>
 
 </div>
 </div>
@@ -1297,7 +1323,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Returns a random sample from the potentially infinite stream in a <code>std::vector</code>. </p>
-<p>For infinite streams, execution stops once 16,777,216 stream elements have been seen. For finite streams, execution stops once the estimated number of stream elements have been seen or once the stream has ended, whichever comes first. The estimated size can potentially be an over- or underestimate. For known finite streams, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae875fa53b5a07351a74291d1814e5eb3" title="Returns a random sample from the finite stream in a std::vector. This method tries to pick the better...">sample()</a> is a better option.</p>
+<p>For infinite streams, execution stops once 16,777,216 stream elements have been seen. For finite streams, execution stops once the estimated number of stream elements have been seen or once the stream has ended, whichever comes first. The estimated size can potentially be an over- or underestimate. For known finite streams, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae875fa53b5a07351a74291d1814e5eb3" title="Returns a random sample from the finite stream in a std::vector. ">sample()</a> is a better option.</p>
 <p>Each element in the stream has a <code>1 / min(stream_size, 16,777,216)</code> chance to appear in the returned sample.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1305,8 +1331,8 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation that returns a <code>std::vector</code> of <em>n</em>  random stream elements.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae875fa53b5a07351a74291d1814e5eb3" title="Returns a random sample from the finite stream in a std::vector. This method tries to pick the better...">sample()</a></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A detail::Terminal operation that returns a <code>std::vector</code> of <em>n</em>  random stream elements.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae875fa53b5a07351a74291d1814e5eb3" title="Returns a random sample from the finite stream in a std::vector. ">sample()</a></dd></dl>
 
 </div>
 </div>
@@ -1332,15 +1358,16 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns a random sample from the finite stream in a <code>std::vector</code>. This method tries to pick the better of <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ac43d66a22a81d6c1499d6240f74f31e4" title="Returns a random sample from the finite stream in a std::vector. This implementation uses a heap-samp...">sample_heap()</a> and <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a3cad9fb8be0557995c03f1eb6045c7be" title="Returns a random sample from the finite stream in a std::vector. This implementation uses a shuffle-s...">sample_shuffle()</a> using the estimated size of the stream. </p>
+<p>Returns a random sample from the finite stream in a <code>std::vector</code>. </p>
+<p>This method tries to pick the better of <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ac43d66a22a81d6c1499d6240f74f31e4" title="Returns a random sample from the finite stream in a std::vector. ">sample_heap()</a> and <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a3cad9fb8be0557995c03f1eb6045c7be" title="Returns a random sample from the finite stream in a std::vector. ">sample_shuffle()</a> using the estimated size of the stream. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">n</td><td>The number of elements to obtain from the stream. If the stream is smaller, all elements are returned.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation that returns a <code>std::vector</code> of <em>n</em>  random stream elements.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ac43d66a22a81d6c1499d6240f74f31e4" title="Returns a random sample from the finite stream in a std::vector. This implementation uses a heap-samp...">sample_heap()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a3cad9fb8be0557995c03f1eb6045c7be" title="Returns a random sample from the finite stream in a std::vector. This implementation uses a shuffle-s...">sample_shuffle()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afb323e26fb0ea79bd18bba9edfd8ec86" title="Returns a random sample from the potentially infinite stream in a std::vector. ">reservoir()</a></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A detail::Terminal operation that returns a <code>std::vector</code> of <em>n</em>  random stream elements.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ac43d66a22a81d6c1499d6240f74f31e4" title="Returns a random sample from the finite stream in a std::vector. ">sample_heap()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a3cad9fb8be0557995c03f1eb6045c7be" title="Returns a random sample from the finite stream in a std::vector. ">sample_shuffle()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afb323e26fb0ea79bd18bba9edfd8ec86" title="Returns a random sample from the potentially infinite stream in a std::vector. ">reservoir()</a></dd></dl>
 
 </div>
 </div>
@@ -1366,7 +1393,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns a random sample from the finite stream in a <code>std::vector</code>. This implementation uses a heap-sample method. </p>
+<p>Returns a random sample from the finite stream in a <code>std::vector</code>. </p>
+<p>This implementation uses a heap-sample method. </p>
 <p>The heap-sample method takes <code>O(N log n)</code> time where <code>N</code> is the number of elements in the stream and <code>n</code> is the sample size parameter, <em>n</em> . This method generates a random number <code>r</code> for each stream element <code>e</code> and places the pair <code>(r, e)</code> into a heap ordered by <code>r</code>. If the heap has more than <em>n</em>  elements, a remove operation is performed on the heap. Finally, the actual elements from the heap are moved into a <code>std::vector</code>.</p>
 <p>This method essentially assigns a random number to each element, and keeps the <em>n</em>  elements with the smallest number. It should be used when the sample size you want to obtain is small compared to the size of the container.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -1375,7 +1403,7 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation that returns a <code>std::vector</code> of <em>n</em>  random stream elements.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A detail::Terminal operation that returns a <code>std::vector</code> of <em>n</em>  random stream elements.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afb323e26fb0ea79bd18bba9edfd8ec86" title="Returns a random sample from the potentially infinite stream in a std::vector. ">reservoir()</a></dd></dl>
 
 </div>
@@ -1402,7 +1430,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns a random sample from the finite stream in a <code>std::vector</code>. This implementation uses a shuffle-sample method. </p>
+<p>Returns a random sample from the finite stream in a <code>std::vector</code>. </p>
+<p>This implementation uses a shuffle-sample method. </p>
 <p>The shuffle-sample method takes <code>O(N + n)</code> time where <code>N</code> is the number of elements in the stream and <code>n</code> is the sample size parameter, <em>n</em> . This method copies the entire stream into a vector, shuffles it, then erases elements so that there are only <em>n</em>  elements. This method should be used when the sample size is relatively large.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1410,7 +1439,7 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation that returns a <code>std::vector</code> of <em>n</em>  random stream elements.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A detail::Terminal operation that returns a <code>std::vector</code> of <em>n</em>  random stream elements.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afb323e26fb0ea79bd18bba9edfd8ec86" title="Returns a random sample from the potentially infinite stream in a std::vector. ">reservoir()</a></dd></dl>
 
 </div>
@@ -1437,7 +1466,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Computes the sum of all the elements in the stream using <code>operator+</code>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which sums the elements in the stream.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which sums the elements in the stream.</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">std::out_of_range</td><td>Thrown when the stream is empty.</td></tr>
@@ -1470,7 +1499,7 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which sums the elements in the stream.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which sums the elements in the stream.</dd></dl>
 
 </div>
 </div>
@@ -1496,7 +1525,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Copies the stream into a <code>std::deque&lt;T&gt;</code> in order. </p>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::deque</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which copies the stream into a <code>std::deque</code>.</dd></dl>
 
 </div>
 </div>
@@ -1523,7 +1552,7 @@ template&lt;typename Allocator &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::deque</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which copies the stream into a <code>std::deque</code>.</dd></dl>
 
 </div>
 </div>
@@ -1550,7 +1579,7 @@ template&lt;typename Allocator &gt; </div>
 
 <p>Copies the stream into a <code>std::forward_list&lt;T&gt;</code> in reverse order. </p>
 <p>Due to a lack of <code>forward_list::push_back</code>, the list contains the stream elements in reverse order, as they are pushed to the front of the list instead.</p>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::forward_list</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which copies the stream into a <code>std::forward_list</code>.</dd></dl>
 
 </div>
 </div>
@@ -1578,7 +1607,7 @@ template&lt;typename Allocator &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::forward_list</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which copies the stream into a <code>std::forward_list</code>.</dd></dl>
 
 </div>
 </div>
@@ -1604,7 +1633,7 @@ template&lt;typename Allocator &gt; </div>
 </div><div class="memdoc">
 
 <p>Copies the stream into a <code>std::list&lt;T&gt;</code> in order. </p>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::list</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which copies the stream into a <code>std::list</code>.</dd></dl>
 
 </div>
 </div>
@@ -1631,7 +1660,7 @@ template&lt;typename Allocator &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::list</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which copies the stream into a <code>std::list</code>.</dd></dl>
 
 </div>
 </div>
@@ -1657,7 +1686,7 @@ template&lt;typename Allocator &gt; </div>
 </div><div class="memdoc">
 
 <p>Copies the stream into a <code>std::multiset&lt;T&gt;</code>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::multiset</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which copies the stream into a <code>std::multiset</code>.</dd></dl>
 
 </div>
 </div>
@@ -1684,7 +1713,7 @@ template&lt;typename Compare &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::multiset</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which copies the stream into a <code>std::multiset</code>.</dd></dl>
 
 </div>
 </div>
@@ -1722,7 +1751,7 @@ template&lt;typename Compare , typename Allocator &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::multiset</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which copies the stream into a <code>std::multiset</code>.</dd></dl>
 
 </div>
 </div>
@@ -1748,7 +1777,7 @@ template&lt;typename Compare , typename Allocator &gt; </div>
 </div><div class="memdoc">
 
 <p>Copies the stream into a <code>std::set&lt;T&gt;</code>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::set</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which copies the stream into a <code>std::set</code>.</dd></dl>
 
 </div>
 </div>
@@ -1775,7 +1804,7 @@ template&lt;typename Compare &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::set</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which copies the stream into a <code>std::set</code>.</dd></dl>
 
 </div>
 </div>
@@ -1813,7 +1842,7 @@ template&lt;typename Compare , typename Allocator &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::set</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which copies the stream into a <code>std::set</code>.</dd></dl>
 
 </div>
 </div>
@@ -1839,7 +1868,7 @@ template&lt;typename Compare , typename Allocator &gt; </div>
 </div><div class="memdoc">
 
 <p>Copies the stream into a <code>std::unordered_multiset&lt;T&gt;</code>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::unordered_multiset</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which copies the stream into a <code>std::unordered_multiset</code>.</dd></dl>
 
 </div>
 </div>
@@ -1866,7 +1895,7 @@ template&lt;typename Hash &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::unordered_multiset</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which copies the stream into a <code>std::unordered_multiset</code>.</dd></dl>
 
 </div>
 </div>
@@ -1904,7 +1933,7 @@ template&lt;typename Hash , typename EqualPredicate &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::unordered_multiset</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which copies the stream into a <code>std::unordered_multiset</code>.</dd></dl>
 
 </div>
 </div>
@@ -1949,7 +1978,7 @@ template&lt;typename Hash , typename EqualPredicate , typename Allocator &gt; </
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::unordered_multiset</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which copies the stream into a <code>std::unordered_multiset</code>.</dd></dl>
 
 </div>
 </div>
@@ -1975,7 +2004,7 @@ template&lt;typename Hash , typename EqualPredicate , typename Allocator &gt; </
 </div><div class="memdoc">
 
 <p>Copies the stream into a <code>std::unordered_set&lt;T&gt;</code>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::unordered_set</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which copies the stream into a <code>std::unordered_set</code>.</dd></dl>
 
 </div>
 </div>
@@ -2002,7 +2031,7 @@ template&lt;typename Hash &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::unordered_set</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which copies the stream into a <code>std::unordered_set</code>.</dd></dl>
 
 </div>
 </div>
@@ -2040,7 +2069,7 @@ template&lt;typename Hash , typename EqualPredicate &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::unordered_set</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which copies the stream into a <code>std::unordered_set</code>.</dd></dl>
 
 </div>
 </div>
@@ -2085,7 +2114,7 @@ template&lt;typename Hash , typename EqualPredicate , typename Allocator &gt; </
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::unordered_set</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which copies the stream into a <code>std::unordered_set</code>.</dd></dl>
 
 </div>
 </div>
@@ -2111,7 +2140,7 @@ template&lt;typename Hash , typename EqualPredicate , typename Allocator &gt; </
 </div><div class="memdoc">
 
 <p>Copies the stream into a <code>std::vector&lt;T&gt;</code> in order. </p>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::vector</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which copies the stream into a <code>std::vector</code>.</dd></dl>
 
 </div>
 </div>
@@ -2138,7 +2167,7 @@ template&lt;typename Allocator &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which copies the stream into a <code>std::vector</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The detail::Terminal operation which copies the stream into a <code>std::vector</code>.</dd></dl>
 
 </div>
 </div>

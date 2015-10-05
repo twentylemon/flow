@@ -74,7 +74,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -98,68 +98,64 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p> 
+<p>The stream class provides lazy evaluation and functional style transformations on ordered data.  
  <a href="../../d9/dcd/classflow_1_1_stream.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../df/d85/_compose_8h_source.html">Compose.h</a>&gt;</code></p>
+<p><code>#include &lt;Stream.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d2d/classflow_1_1_stream_1_1iterator.html">iterator</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows STL-like iterator access to the stream. <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> iterators are forward and single-pass, once a stream has been iterated in any way (including terminal operations), the iterators are invalidated.  <a href="../../d0/d2d/classflow_1_1_stream_1_1iterator.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows STL-like iterator access to the stream.  <a href="../../d0/d2d/classflow_1_1_stream_1_1iterator.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8bb7d10321101656ba68f420eec020ef"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
 <tr class="memitem:a8bb7d10321101656ba68f420eec020ef"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#a8bb7d10321101656ba68f420eec020ef">Stream</a> (Args &amp;&amp;...args)</td></tr>
-<tr class="memdesc:a8bb7d10321101656ba68f420eec020ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> class.  <a href="#a8bb7d10321101656ba68f420eec020ef">More...</a><br /></td></tr>
+<tr class="memdesc:a8bb7d10321101656ba68f420eec020ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> class.  <a href="#a8bb7d10321101656ba68f420eec020ef">More...</a><br /></td></tr>
 <tr class="separator:a8bb7d10321101656ba68f420eec020ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9adf625c26720676b26ec86add981f89"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#a9adf625c26720676b26ec86add981f89">Stream</a> (const <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; Source &gt; &amp;)=delete</td></tr>
 <tr class="separator:a9adf625c26720676b26ec86add981f89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1207df21a4d8242e48527de55bb3e28"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#ab1207df21a4d8242e48527de55bb3e28">Stream</a> (<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; Source &gt; &amp;&amp;)=default</td></tr>
 <tr class="separator:ab1207df21a4d8242e48527de55bb3e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ba3ee37c4e132838681519c0f4dfdda"><td class="memItemLeft" align="right" valign="top">Source &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#a2ba3ee37c4e132838681519c0f4dfdda">source</a> ()</td></tr>
-<tr class="memdesc:a2ba3ee37c4e132838681519c0f4dfdda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the source of this stream.  <a href="#a2ba3ee37c4e132838681519c0f4dfdda">More...</a><br /></td></tr>
-<tr class="separator:a2ba3ee37c4e132838681519c0f4dfdda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0149b290da84d9e75a5071713431af19"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#a0149b290da84d9e75a5071713431af19">has_next</a> ()</td></tr>
-<tr class="memdesc:a0149b290da84d9e75a5071713431af19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if this stream has more elements.  <a href="#a0149b290da84d9e75a5071713431af19">More...</a><br /></td></tr>
-<tr class="separator:a0149b290da84d9e75a5071713431af19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95181462db6cc97126b578bed1264f4f"><td class="memItemLeft" align="right" valign="top">auto &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#a95181462db6cc97126b578bed1264f4f">next</a> ()</td></tr>
-<tr class="memdesc:a95181462db6cc97126b578bed1264f4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next element from the stream.  <a href="#a95181462db6cc97126b578bed1264f4f">More...</a><br /></td></tr>
-<tr class="separator:a95181462db6cc97126b578bed1264f4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad190af15ebba62f43f3485a9986e9e3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#ad190af15ebba62f43f3485a9986e9e3b">lazy_next</a> ()</td></tr>
-<tr class="memdesc:ad190af15ebba62f43f3485a9986e9e3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ignores the next value from the stream.  <a href="#ad190af15ebba62f43f3485a9986e9e3b">More...</a><br /></td></tr>
-<tr class="separator:ad190af15ebba62f43f3485a9986e9e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10867bd380fe28c2a27a23db8813d71f"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#a10867bd380fe28c2a27a23db8813d71f">estimate_size</a> () const </td></tr>
-<tr class="memdesc:a10867bd380fe28c2a27a23db8813d71f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the estimated size of the remainder of the stream.  <a href="#a10867bd380fe28c2a27a23db8813d71f">More...</a><br /></td></tr>
-<tr class="separator:a10867bd380fe28c2a27a23db8813d71f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad32394d5fb0dfc4ad197f88b87a6dc38"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
-<tr class="memitem:ad32394d5fb0dfc4ad197f88b87a6dc38"><td class="memTemplItemLeft" align="right" valign="top">std::result_of_t&lt; <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html">intermediate::detail::Intermediate</a>&lt; F &gt;<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; Source &gt; &amp;&amp;)&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#ad32394d5fb0dfc4ad197f88b87a6dc38">operator|</a> (<a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html">intermediate::detail::Intermediate</a>&lt; F &gt; &amp;&amp;op)</td></tr>
-<tr class="memdesc:ad32394d5fb0dfc4ad197f88b87a6dc38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an additional operation to the stream pipeline, returning the new stream.  <a href="#ad32394d5fb0dfc4ad197f88b87a6dc38">More...</a><br /></td></tr>
-<tr class="separator:ad32394d5fb0dfc4ad197f88b87a6dc38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3dbf75b1a4abcdc4305e3cf7ef972fb"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
-<tr class="memitem:aa3dbf75b1a4abcdc4305e3cf7ef972fb"><td class="memTemplItemLeft" align="right" valign="top">std::result_of_t&lt; <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html">terminal::detail::Terminal</a>&lt; F &gt;<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; Source &gt; &amp;&amp;)&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#aa3dbf75b1a4abcdc4305e3cf7ef972fb">operator|</a> (<a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html">terminal::detail::Terminal</a>&lt; F &gt; &amp;&amp;op)</td></tr>
-<tr class="memdesc:aa3dbf75b1a4abcdc4305e3cf7ef972fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an additional operation to the stream pipeline, returning the new stream.  <a href="#aa3dbf75b1a4abcdc4305e3cf7ef972fb">More...</a><br /></td></tr>
-<tr class="separator:aa3dbf75b1a4abcdc4305e3cf7ef972fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31245115ba05ca2632a0eff967a0f2b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d2d/classflow_1_1_stream_1_1iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#a31245115ba05ca2632a0eff967a0f2b0">begin</a> ()</td></tr>
 <tr class="memdesc:a31245115ba05ca2632a0eff967a0f2b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the first element in the stream.  <a href="#a31245115ba05ca2632a0eff967a0f2b0">More...</a><br /></td></tr>
 <tr class="separator:a31245115ba05ca2632a0eff967a0f2b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab71996af0de1a9ab8ae35b8d8b7d7110"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d2d/classflow_1_1_stream_1_1iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#ab71996af0de1a9ab8ae35b8d8b7d7110">end</a> ()</td></tr>
 <tr class="memdesc:ab71996af0de1a9ab8ae35b8d8b7d7110"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the first off-end element of the stream.  <a href="#ab71996af0de1a9ab8ae35b8d8b7d7110">More...</a><br /></td></tr>
 <tr class="separator:ab71996af0de1a9ab8ae35b8d8b7d7110"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10867bd380fe28c2a27a23db8813d71f"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#a10867bd380fe28c2a27a23db8813d71f">estimate_size</a> () const </td></tr>
+<tr class="memdesc:a10867bd380fe28c2a27a23db8813d71f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the estimated size of the remainder of the stream.  <a href="#a10867bd380fe28c2a27a23db8813d71f">More...</a><br /></td></tr>
+<tr class="separator:a10867bd380fe28c2a27a23db8813d71f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0149b290da84d9e75a5071713431af19"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#a0149b290da84d9e75a5071713431af19">has_next</a> ()</td></tr>
+<tr class="memdesc:a0149b290da84d9e75a5071713431af19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if this stream has more elements.  <a href="#a0149b290da84d9e75a5071713431af19">More...</a><br /></td></tr>
+<tr class="separator:a0149b290da84d9e75a5071713431af19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad190af15ebba62f43f3485a9986e9e3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#ad190af15ebba62f43f3485a9986e9e3b">lazy_next</a> ()</td></tr>
+<tr class="memdesc:ad190af15ebba62f43f3485a9986e9e3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ignores the next value from the stream.  <a href="#ad190af15ebba62f43f3485a9986e9e3b">More...</a><br /></td></tr>
+<tr class="separator:ad190af15ebba62f43f3485a9986e9e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95181462db6cc97126b578bed1264f4f"><td class="memItemLeft" align="right" valign="top">auto &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#a95181462db6cc97126b578bed1264f4f">next</a> ()</td></tr>
+<tr class="memdesc:a95181462db6cc97126b578bed1264f4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next element from the stream.  <a href="#a95181462db6cc97126b578bed1264f4f">More...</a><br /></td></tr>
+<tr class="separator:a95181462db6cc97126b578bed1264f4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad32394d5fb0dfc4ad197f88b87a6dc38"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
+<tr class="memitem:ad32394d5fb0dfc4ad197f88b87a6dc38"><td class="memTemplItemLeft" align="right" valign="top">std::result_of_t&lt; intermediate::detail::Intermediate&lt; F &gt;<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; Source &gt; &amp;&amp;)&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#ad32394d5fb0dfc4ad197f88b87a6dc38">operator|</a> (intermediate::detail::Intermediate&lt; F &gt; &amp;&amp;op)</td></tr>
+<tr class="memdesc:ad32394d5fb0dfc4ad197f88b87a6dc38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an additional operation to the stream pipeline, returning the new stream.  <a href="#ad32394d5fb0dfc4ad197f88b87a6dc38">More...</a><br /></td></tr>
+<tr class="separator:ad32394d5fb0dfc4ad197f88b87a6dc38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3dbf75b1a4abcdc4305e3cf7ef972fb"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
+<tr class="memitem:aa3dbf75b1a4abcdc4305e3cf7ef972fb"><td class="memTemplItemLeft" align="right" valign="top">std::result_of_t&lt; terminal::detail::Terminal&lt; F &gt;<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; Source &gt; &amp;&amp;)&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#aa3dbf75b1a4abcdc4305e3cf7ef972fb">operator|</a> (terminal::detail::Terminal&lt; F &gt; &amp;&amp;op)</td></tr>
+<tr class="memdesc:aa3dbf75b1a4abcdc4305e3cf7ef972fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an additional operation to the stream pipeline, returning the new stream.  <a href="#aa3dbf75b1a4abcdc4305e3cf7ef972fb">More...</a><br /></td></tr>
+<tr class="separator:aa3dbf75b1a4abcdc4305e3cf7ef972fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ba3ee37c4e132838681519c0f4dfdda"><td class="memItemLeft" align="right" valign="top">Source &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#a2ba3ee37c4e132838681519c0f4dfdda">source</a> ()</td></tr>
+<tr class="memdesc:a2ba3ee37c4e132838681519c0f4dfdda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the source of this stream.  <a href="#a2ba3ee37c4e132838681519c0f4dfdda">More...</a><br /></td></tr>
+<tr class="separator:a2ba3ee37c4e132838681519c0f4dfdda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename Source&gt;<br />
 class flow::Stream&lt; Source &gt;</h3>
 
-<p>The stream class. Provides lazy evaluation and functional style transformations on data. Streams support pipelining of multiple operations. Streams can be transformed using <code>operator|</code> to create a new stream given a detail::Intermediate operation (anything from the <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html">flow::intermediate</a> namespace) or can return a value given a detail::Terminal operation (anything from the <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html">flow::terminal</a> namespace).</p>
-<p>While streams can be constructed, it is recommended that any stream created is done through the functions in the <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html">flow::generator</a> namespace, as all the stream operations are embedded in the potentially long template type. This means you can't do operations like:</p>
-<p><code>auto stream = <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>(...);<br />
- stream = stream | <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the Stream that return false for predicate . ">filter()</a>; // not possible; types are not compatible</code> </p>
-<p>Instead, if you want a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> object, write out the entire stream right away.</p>
-<p><code>auto stream = <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>(...) | <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the Stream that return false for predicate . ">filter()</a>;<br />
- auto min = stream | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ad02d008becaf1d5d64d2ae358ae7306e" title="Returns the minimum element from the stream according to compare . By default operator< is used for c...">min()</a>;</code> </p>
+<p>The stream class provides lazy evaluation and functional style transformations on ordered data. </p>
+<p>Streams support pipelining of multiple operations. Streams can be transformed using <code>operator|</code> to create a new stream given a detail::Intermediate operation (anything from the <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html" title="Intermediate operations, all of which are also aliased in the flow namespace. ">flow::intermediate</a> namespace) or can return a value given a detail::Terminal operation (anything from the <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html" title="Terminal operations, all of which are also aliased in the flow namespace. ">flow::terminal</a> namespace).</p>
+<p>Streams can be constructed using the functions in the <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html" title="Stream factory methods, all of which are also aliased in the flow namespace. ">flow::generator</a> namespace.</p>
 <dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000001">Todo:</a></b></dt><dd><p class="startdd">flow::intermediate::merge - combine two sorted streams while maintaining sorted order </p>
 <p>flow::intermediate::union - union two sorted/unique streams </p>
 <p>flow::intermediate::intersect - intersect two sorted/unique streams </p>
@@ -197,7 +193,7 @@ template&lt;typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> class. </p>
+<p>Initializes a new instance of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> class. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">...args</td><td>Arguments to forward to the Source constructor.</td></tr>
@@ -439,9 +435,9 @@ template&lt;typename F &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::result_of_t&lt;<a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html">intermediate::detail::Intermediate</a>&lt;F&gt;<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt;Source&gt;&amp;&amp;)&gt; <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">flow::Stream</a>&lt; Source &gt;::operator| </td>
+          <td class="memname">std::result_of_t&lt;intermediate::detail::Intermediate&lt;F&gt;<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt;Source&gt;&amp;&amp;)&gt; <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">flow::Stream</a>&lt; Source &gt;::operator| </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html">intermediate::detail::Intermediate</a>&lt; F &gt; &amp;&amp;&#160;</td>
+          <td class="paramtype">intermediate::detail::Intermediate&lt; F &gt; &amp;&amp;&#160;</td>
           <td class="paramname"><em>op</em></td><td>)</td>
           <td></td>
         </tr>
@@ -476,9 +472,9 @@ template&lt;typename F &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::result_of_t&lt;<a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html">terminal::detail::Terminal</a>&lt;F&gt;<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt;Source&gt;&amp;&amp;)&gt; <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">flow::Stream</a>&lt; Source &gt;::operator| </td>
+          <td class="memname">std::result_of_t&lt;terminal::detail::Terminal&lt;F&gt;<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt;Source&gt;&amp;&amp;)&gt; <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">flow::Stream</a>&lt; Source &gt;::operator| </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html">terminal::detail::Terminal</a>&lt; F &gt; &amp;&amp;&#160;</td>
+          <td class="paramtype">terminal::detail::Terminal&lt; F &gt; &amp;&amp;&#160;</td>
           <td class="paramname"><em>op</em></td><td>)</td>
           <td></td>
         </tr>
@@ -530,8 +526,8 @@ template&lt;typename Source &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>flow/<a class="el" href="../../df/d85/_compose_8h_source.html">Compose.h</a></li>
-<li>flow/<a class="el" href="../../d3/d99/_stream_8h_source.html">Stream.h</a></li>
+<li>flow/<a class="el" href="../../df/d85/_compose_8h.html">Compose.h</a></li>
+<li>flow/<a class="el" href="../../d3/d99/_stream_8h.html">Stream.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

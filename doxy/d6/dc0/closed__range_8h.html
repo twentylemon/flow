@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -94,27 +94,27 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;functional&gt;</code><br />
-<code>#include &quot;<a class="el" href="../../db/d3e/iota_8h_source.html">iota.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d9/dd7/take__while_8h_source.html">../intermediate/take_while.h</a>&quot;</code><br />
-</div>
-<p><a href="../../d6/dc0/closed__range_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+<code>#include &quot;<a class="el" href="../../db/d3e/iota_8h.html">iota.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d9/dd7/take__while_8h.html">../intermediate/take_while.h</a>&quot;</code><br />
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:d9/de2/namespaceflow"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/de2/namespaceflow.html">flow</a></td></tr>
+<tr class="memdesc:d9/de2/namespaceflow"><td class="mdescLeft">&#160;</td><td class="mdescRight">The entire flow library is contained in the flow namespace. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:de/d3f/namespaceflow_1_1generator"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html">flow::generator</a></td></tr>
+<tr class="memdesc:de/d3f/namespaceflow_1_1generator"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> factory methods, all of which are also aliased in the flow namespace. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a6f51a56b3ed1208e7f344ed6983889f8"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a6f51a56b3ed1208e7f344ed6983889f8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a6f51a56b3ed1208e7f344ed6983889f8">flow::generator::closed_range</a> (T &amp;&amp;lower, T &amp;&amp;upper)</td></tr>
-<tr class="memdesc:a6f51a56b3ed1208e7f344ed6983889f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Produces a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> containing the elements in the range <code>[lower, upper]</code>, including <em>upper</em> .  <a href="#a6f51a56b3ed1208e7f344ed6983889f8">More...</a><br /></td></tr>
+<tr class="memdesc:a6f51a56b3ed1208e7f344ed6983889f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Produces a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> containing the elements in the range <code>[lower, upper]</code>, including <em>upper</em> .  <a href="#a6f51a56b3ed1208e7f344ed6983889f8">More...</a><br /></td></tr>
 <tr class="separator:a6f51a56b3ed1208e7f344ed6983889f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a247e5f34e3d9d8c9c60ba22c1e0f9b5d"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U &gt; </td></tr>
 <tr class="memitem:a247e5f34e3d9d8c9c60ba22c1e0f9b5d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a247e5f34e3d9d8c9c60ba22c1e0f9b5d">flow::generator::closed_range</a> (T &amp;&amp;lower, T &amp;&amp;upper, U &amp;&amp;increment)</td></tr>
-<tr class="memdesc:a247e5f34e3d9d8c9c60ba22c1e0f9b5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Produces a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> containing the elements in the range <code>[lower, upper]</code>, including <em>upper</em>  counting up by <em>increment</em>  each step.  <a href="#a247e5f34e3d9d8c9c60ba22c1e0f9b5d">More...</a><br /></td></tr>
+<tr class="memdesc:a247e5f34e3d9d8c9c60ba22c1e0f9b5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Produces a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> containing the elements in the range <code>[lower, upper]</code>, including <em>upper</em>  counting up by <em>increment</em>  each step.  <a href="#a247e5f34e3d9d8c9c60ba22c1e0f9b5d">More...</a><br /></td></tr>
 <tr class="separator:a247e5f34e3d9d8c9c60ba22c1e0f9b5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->

@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['_5fcurrent',['_current',['../d6/ddc/classflow_1_1source_1_1_iterator.html#aaae1b8376b95a5f5bdbf0ad4cdb9d146',1,'flow::source::Iterator::_current()'],['../dd/d62/classflow_1_1source_1_1_skip.html#af00b097d1e2dacfdec86b4c6250014d2',1,'flow::source::Skip::_current()']]],
-  ['_5fcurry_5ffunction',['_curry_function',['../d0/d2d/structflow_1_1detail_1_1uncurrier.html#a5a42ec715dfb883249deab0364828fbe',1,'flow::detail::uncurrier']]],
-  ['_5fend',['_end',['../d6/ddc/classflow_1_1source_1_1_iterator.html#aaa05e42a77aebf0427ca8236448ec893',1,'flow::source::Iterator']]],
-  ['_5fstep_5fsize',['_step_size',['../dd/d62/classflow_1_1source_1_1_skip.html#ad4ba690fad4c806fd03de36c685d0885',1,'flow::source::Skip']]]
+  ['all',['all',['../d1/d6c/namespaceflow_1_1terminal.html#afb46a36fe4c6693d7b05e3bd0fc05f4d',1,'flow::terminal::all(UnaryPredicate predicate)'],['../d1/d6c/namespaceflow_1_1terminal.html#ab69ca58eca0161111d95306425586634',1,'flow::terminal::all()'],['../d1/d6c/namespaceflow_1_1terminal.html#ab756d99bb6fe64ace09d278028f0f539',1,'flow::terminal::all(Ret(Class::*member)())']]],
+  ['all_2eh',['all.h',['../da/d0d/all_8h.html',1,'']]],
+  ['any',['any',['../d1/d6c/namespaceflow_1_1terminal.html#aef6844ddc5a40bb68764bc31f6070107',1,'flow::terminal::any(UnaryPredicate predicate)'],['../d1/d6c/namespaceflow_1_1terminal.html#af592d8f034ddf176998928a0d3b86bd0',1,'flow::terminal::any()'],['../d1/d6c/namespaceflow_1_1terminal.html#aed588ae01b14be839486b94bb87f2ed8',1,'flow::terminal::any(Ret(Class::*member)())']]],
+  ['any_2eh',['any.h',['../df/d8d/any_8h.html',1,'']]]
 ];
