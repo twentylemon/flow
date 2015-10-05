@@ -25,6 +25,9 @@
     <Filter Include="Header Files\source">
       <UniqueIdentifier>{e17b005e-b8cf-4856-a289-f7af2e83bd8d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Doc Files">
+      <UniqueIdentifier>{de7adb85-4845-490a-abb8-a90728e8ea07}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Compose.h">
@@ -236,11 +239,19 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="flow.licenseheader" />
-    <None Include="..\..\README.md" />
+    <None Include="flow.licenseheader">
+      <Filter>Doc Files</Filter>
+    </None>
+    <None Include="..\..\README.md">
+      <Filter>Doc Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="mainpage.txt" />
-    <Text Include="examples.txt" />
+    <Text Include="examples.txt">
+      <Filter>Doc Files</Filter>
+    </Text>
+    <Text Include="mainpage.txt">
+      <Filter>Doc Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

@@ -1,5 +1,6 @@
 
 /**
+ * \cond LICENSE
  * The MIT License (MIT)
  * 
  * Copyright (c) 2015 Taras Mychaskiw
@@ -21,6 +22,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
+ * \endcond
  */
  
 #ifndef FLOW_STREAM_H
@@ -34,18 +36,11 @@
 namespace flow {
 
 /// <summary>
-/// <para>The stream class. Provides lazy evaluation and functional style transformations on data.
-/// Streams support pipelining of multiple operations. Streams can be transformed using <c>operator|</c>
+/// The stream class provides lazy evaluation and functional style transformations on ordered data.
+///  <para>Streams support pipelining of multiple operations. Streams can be transformed using <c>operator|</c>
 /// to create a new stream given a detail::Intermediate operation (anything from the flow::intermediate namespace)
 /// or can return a value given a detail::Terminal operation (anything from the flow::terminal namespace).</para>
-/// <para>While streams can be constructed, it is recommended that any stream created is done through the functions
-/// in the flow::generator namespace, as all the stream operations are embedded in the potentially long template type.
-/// This means you can't do operations like:</para>
-/// <code>auto stream = Stream(...);<br/>
-/// stream = stream | filter(); // not possible; types are not compatible</code>
-/// <para>Instead, if you want a Stream object, write out the entire stream right away.</para>
-/// <code>auto stream = Stream(...) | filter();<br/>
-/// auto min = stream | min();</code>
+/// <para>Streams can be constructed using the functions in the flow::generator namespace.</para>
 /// </summary>
 /// \todo flow::intermediate::merge - combine two sorted streams while maintaining sorted order
 /// \todo flow::intermediate::union - union two sorted/unique streams
