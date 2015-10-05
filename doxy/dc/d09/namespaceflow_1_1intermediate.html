@@ -1389,6 +1389,7 @@ template&lt;typename RightSource &gt; </div>
 
 <p>Zips the two streams together using the default zipping operation. The default zip operation creates tuples of the stream elements like <code>std::tuple&lt;T1, T2&gt;</code>. Multiple <code>zip</code> operations concatenates these tuples together rather than nesting them. </p>
 <p>The resultant stream is as long as the shortest input stream.</p>
+<p>When using the default zipper, the types being zipped together must be default constructible.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">right</td><td>The right stream to zip together with the operated stream.</td></tr>
@@ -1418,6 +1419,7 @@ template&lt;typename Container , typename  = std::enable_if_t&lt;generator::deta
 
 <p>Zips the two streams together using the default zipping operation. The default zip creates tuples of the stream elements like <code>std::tuple&lt;T1, T2&gt;</code>. Multiple <code>zip</code> operations concatenates these tuples together rather than nesting them. This is the same as <code>zip(from(container))</code>. </p>
 <p>The resultant stream is as long as the shortest input stream.</p>
+<p>When using the default zipper, the types being zipped together must be default constructible.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">container</td><td>The container to zip together with this stream.</td></tr>
@@ -1447,6 +1449,7 @@ template&lt;typename T &gt; </div>
 
 <p>Zips the two streams together using the default zipping operation. The default zip creates tuples of the stream elements like <code>std::tuple&lt;T1, T2&gt;</code>. Multiple <code>zip</code> operations concatenates these tuples together rather than nesting them. This is the same as <code>zip(from(list))</code>. </p>
 <p>The resultant stream is as long as the shortest input stream.</p>
+<p>When using the default zipper, the types being zipped together must be default constructible.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">list</td><td>The list to zip together with this stream.</td></tr>
@@ -1454,7 +1457,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../de/dad/classflow_1_1intermediate_1_1detail_1_1_intermediate.html" title="An intermediate stream operation. Takes over the stream and applies some transformation to the stream...">detail::Intermediate</a> operation that zips the two streams.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a>, <a class="el" href="../../d9/de2/namespaceflow.html#ad795c672b7e52516485e7ffb2d6c4ad7" title="Uncurries curry_function . ">uncurry()</a></dd></dl>
 
 </div>
 </div>

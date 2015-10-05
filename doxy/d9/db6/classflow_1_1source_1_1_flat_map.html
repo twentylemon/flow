@@ -113,10 +113,10 @@ Inheritance diagram for flow::source::FlatMap&lt; Source, UnaryOperation &gt;:</
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ad69a5112affe7ee09b990c87605a9a35"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/classflow_1_1source_1_1_flat_map.html#ad69a5112affe7ee09b990c87605a9a35">base</a> = <a class="el" href="../../dc/de6/namespaceflow_1_1source.html#ae0363965dc7fec87258017467d830230">IntermediateSource</a>&lt; Source, std::remove_reference_t&lt; decltype(std::declval&lt; std::result_of_t&lt; UnaryOperation(typename Source::value_type)&gt;&gt;().next())&gt;&gt;</td></tr>
-<tr class="separator:ad69a5112affe7ee09b990c87605a9a35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac72dec61bf269190fc97b658f95de350"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/classflow_1_1source_1_1_flat_map.html#ac72dec61bf269190fc97b658f95de350">stream_type</a> = std::result_of_t&lt; UnaryOperation(typename Source::value_type)&gt;</td></tr>
-<tr class="separator:ac72dec61bf269190fc97b658f95de350"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5f698f84c37f7b092662d4f042f84e2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/classflow_1_1source_1_1_flat_map.html#aa5f698f84c37f7b092662d4f042f84e2">base</a> = <a class="el" href="../../dc/de6/namespaceflow_1_1source.html#ae0363965dc7fec87258017467d830230">IntermediateSource</a>&lt; Source, std::remove_reference_t&lt; decltype(std::declval&lt; std::result_of_t&lt; UnaryOperation(typename Source::value_type &amp;)&gt;&gt;().next())&gt;&gt;</td></tr>
+<tr class="separator:aa5f698f84c37f7b092662d4f042f84e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9116b398b0dffc2f065c65721498ca4d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/classflow_1_1source_1_1_flat_map.html#a9116b398b0dffc2f065c65721498ca4d">stream_type</a> = std::result_of_t&lt; UnaryOperation(typename Source::value_type &amp;)&gt;</td></tr>
+<tr class="separator:a9116b398b0dffc2f065c65721498ca4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a48b9ad1b1c47e21e57b237ccbcaf52"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/classflow_1_1source_1_1_flat_map.html#a5a48b9ad1b1c47e21e57b237ccbcaf52">value_type</a> = typename base::value_type</td></tr>
 <tr class="separator:a5a48b9ad1b1c47e21e57b237ccbcaf52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -125,6 +125,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a86e108e0d079bd7502a0f026ec20861e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/classflow_1_1source_1_1_flat_map.html#a86e108e0d079bd7502a0f026ec20861e">FlatMap</a> (Source &amp;&amp;source, UnaryOperation operation)</td></tr>
 <tr class="memdesc:a86e108e0d079bd7502a0f026ec20861e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the FlatMap{Source, UnaryOperation} class.  <a href="#a86e108e0d079bd7502a0f026ec20861e">More...</a><br /></td></tr>
 <tr class="separator:a86e108e0d079bd7502a0f026ec20861e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5854fe5c4fc543857b1fd2b23995c0cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/classflow_1_1source_1_1_flat_map.html#a5854fe5c4fc543857b1fd2b23995c0cd">FlatMap</a> (const <a class="el" href="../../d9/db6/classflow_1_1source_1_1_flat_map.html">FlatMap</a>&lt; Source, UnaryOperation &gt; &amp;)=delete</td></tr>
+<tr class="separator:a5854fe5c4fc543857b1fd2b23995c0cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4733483cf185c34afe0c6169d561ec68"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/classflow_1_1source_1_1_flat_map.html#a4733483cf185c34afe0c6169d561ec68">FlatMap</a> (<a class="el" href="../../d9/db6/classflow_1_1source_1_1_flat_map.html">FlatMap</a>&lt; Source, UnaryOperation &gt; &amp;&amp;)=default</td></tr>
+<tr class="separator:a4733483cf185c34afe0c6169d561ec68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d8bb9507e33d8486bb6e087d89319b7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/classflow_1_1source_1_1_flat_map.html#a8d8bb9507e33d8486bb6e087d89319b7">has_next</a> ()</td></tr>
 <tr class="memdesc:a8d8bb9507e33d8486bb6e087d89319b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if this source has more elements.  <a href="#a8d8bb9507e33d8486bb6e087d89319b7">More...</a><br /></td></tr>
 <tr class="separator:a8d8bb9507e33d8486bb6e087d89319b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,28 +142,28 @@ class flow::source::FlatMap&lt; Source, UnaryOperation &gt;</h3>
 
 <p><a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> source that maps elements into new streams. The resultant stream is the concatenation of all the created streams. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a class="anchor" id="ad69a5112affe7ee09b990c87605a9a35"></a>
+<a class="anchor" id="aa5f698f84c37f7b092662d4f042f84e2"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename Source , typename UnaryOperation &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d9/db6/classflow_1_1source_1_1_flat_map.html">flow::source::FlatMap</a>&lt; Source, UnaryOperation &gt;::<a class="el" href="../../d9/db6/classflow_1_1source_1_1_flat_map.html#ad69a5112affe7ee09b990c87605a9a35">base</a> =  <a class="el" href="../../dc/de6/namespaceflow_1_1source.html#ae0363965dc7fec87258017467d830230">IntermediateSource</a>&lt;Source, std::remove_reference_t&lt;decltype(std::declval&lt;std::result_of_t&lt;UnaryOperation(typename Source::value_type)&gt;&gt;().next())&gt;&gt;</td>
+          <td class="memname">using <a class="el" href="../../d9/db6/classflow_1_1source_1_1_flat_map.html">flow::source::FlatMap</a>&lt; Source, UnaryOperation &gt;::<a class="el" href="../../d9/db6/classflow_1_1source_1_1_flat_map.html#aa5f698f84c37f7b092662d4f042f84e2">base</a> =  <a class="el" href="../../dc/de6/namespaceflow_1_1source.html#ae0363965dc7fec87258017467d830230">IntermediateSource</a>&lt;Source, std::remove_reference_t&lt;decltype(std::declval&lt;std::result_of_t&lt;UnaryOperation(typename Source::value_type&amp;)&gt;&gt;().next())&gt;&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="ac72dec61bf269190fc97b658f95de350"></a>
+<a class="anchor" id="a9116b398b0dffc2f065c65721498ca4d"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename Source , typename UnaryOperation &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d9/db6/classflow_1_1source_1_1_flat_map.html">flow::source::FlatMap</a>&lt; Source, UnaryOperation &gt;::<a class="el" href="../../d9/db6/classflow_1_1source_1_1_flat_map.html#ac72dec61bf269190fc97b658f95de350">stream_type</a> =  std::result_of_t&lt;UnaryOperation(typename Source::value_type)&gt;</td>
+          <td class="memname">using <a class="el" href="../../d9/db6/classflow_1_1source_1_1_flat_map.html">flow::source::FlatMap</a>&lt; Source, UnaryOperation &gt;::<a class="el" href="../../d9/db6/classflow_1_1source_1_1_flat_map.html#a9116b398b0dffc2f065c65721498ca4d">stream_type</a> =  std::result_of_t&lt;UnaryOperation(typename Source::value_type&amp;)&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -223,6 +227,58 @@ template&lt;typename Source , typename UnaryOperation &gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="a5854fe5c4fc543857b1fd2b23995c0cd"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Source , typename UnaryOperation &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/db6/classflow_1_1source_1_1_flat_map.html">flow::source::FlatMap</a>&lt; Source, UnaryOperation &gt;::<a class="el" href="../../d9/db6/classflow_1_1source_1_1_flat_map.html">FlatMap</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/db6/classflow_1_1source_1_1_flat_map.html">FlatMap</a>&lt; Source, UnaryOperation &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4733483cf185c34afe0c6169d561ec68"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Source , typename UnaryOperation &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/db6/classflow_1_1source_1_1_flat_map.html">flow::source::FlatMap</a>&lt; Source, UnaryOperation &gt;::<a class="el" href="../../d9/db6/classflow_1_1source_1_1_flat_map.html">FlatMap</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d9/db6/classflow_1_1source_1_1_flat_map.html">FlatMap</a>&lt; Source, UnaryOperation &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

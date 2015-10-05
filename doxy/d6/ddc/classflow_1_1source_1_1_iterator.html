@@ -125,6 +125,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8f656f251d89cb46541bdec812983d7e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#a8f656f251d89cb46541bdec812983d7e">Iterator</a> (Itr begin, Itr end)</td></tr>
 <tr class="memdesc:a8f656f251d89cb46541bdec812983d7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the Iterator{Itr} class.  <a href="#a8f656f251d89cb46541bdec812983d7e">More...</a><br /></td></tr>
 <tr class="separator:a8f656f251d89cb46541bdec812983d7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c9da37c98b847a322bbf98bd504a421"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#a0c9da37c98b847a322bbf98bd504a421">Iterator</a> (const <a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">Iterator</a>&lt; Itr &gt; &amp;)=delete</td></tr>
+<tr class="separator:a0c9da37c98b847a322bbf98bd504a421"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6449da713c520d042e0b23fba9161aa6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#a6449da713c520d042e0b23fba9161aa6">Iterator</a> (<a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">Iterator</a>&lt; Itr &gt; &amp;&amp;)=default</td></tr>
+<tr class="separator:a6449da713c520d042e0b23fba9161aa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea0a7770cf11a8da01ac658f5ca040d1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#aea0a7770cf11a8da01ac658f5ca040d1">has_next</a> () const </td></tr>
 <tr class="memdesc:aea0a7770cf11a8da01ac658f5ca040d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if this source has more elements.  <a href="#aea0a7770cf11a8da01ac658f5ca040d1">More...</a><br /></td></tr>
 <tr class="separator:aea0a7770cf11a8da01ac658f5ca040d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -163,7 +167,7 @@ class flow::source::Iterator&lt; Itr &gt;</h3>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Itr&gt; </div>
+template&lt;typename Itr &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">flow::source::Iterator</a>&lt; Itr &gt;::<a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#af405de6b3556d75e0231fc7d37ac72a5">base</a> =  <a class="el" href="../../dc/de6/namespaceflow_1_1source.html#ad7bc3233ee33321d7d85e1a2c56ce464">GeneratorSource</a>&lt;std::remove_reference_t&lt;typename std::iterator_traits&lt;Itr&gt;::reference&gt;&gt;</td>
@@ -177,7 +181,7 @@ template&lt;typename Itr&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Itr&gt; </div>
+template&lt;typename Itr &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">flow::source::Iterator</a>&lt; Itr &gt;::<a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html#acf672848015a3edcf83138d1b70fac45">value_type</a> =  typename base::value_type</td>
@@ -192,7 +196,7 @@ template&lt;typename Itr&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Itr&gt; </div>
+template&lt;typename Itr &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -233,11 +237,63 @@ template&lt;typename Itr&gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a0c9da37c98b847a322bbf98bd504a421"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Itr &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">flow::source::Iterator</a>&lt; Itr &gt;::<a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">Iterator</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">Iterator</a>&lt; Itr &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6449da713c520d042e0b23fba9161aa6"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Itr &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">flow::source::Iterator</a>&lt; Itr &gt;::<a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">Iterator</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d6/ddc/classflow_1_1source_1_1_iterator.html">Iterator</a>&lt; Itr &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a697001246de189dff967134abc8e0b33"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Itr&gt; </div>
+template&lt;typename Itr &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -265,7 +321,7 @@ template&lt;typename Itr&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Itr&gt; </div>
+template&lt;typename Itr &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -293,7 +349,7 @@ template&lt;typename Itr&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Itr&gt; </div>
+template&lt;typename Itr &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -321,7 +377,7 @@ template&lt;typename Itr&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Itr&gt; </div>
+template&lt;typename Itr &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -348,7 +404,7 @@ template&lt;typename Itr&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Itr&gt; </div>
+template&lt;typename Itr &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -377,7 +433,7 @@ template&lt;typename Itr&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Itr&gt; </div>
+template&lt;typename Itr &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -401,7 +457,7 @@ template&lt;typename Itr&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Itr&gt; </div>
+template&lt;typename Itr &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

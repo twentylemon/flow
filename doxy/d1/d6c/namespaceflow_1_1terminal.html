@@ -204,6 +204,21 @@ Functions</h2></td></tr>
 <tr class="memitem:ac41837040615447514b15b28c578d829"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ac41837040615447514b15b28c578d829">product</a> (T &amp;&amp;init)</td></tr>
 <tr class="memdesc:ac41837040615447514b15b28c578d829"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the product of all the elements in the stream using <code>operator*</code>, starting the product at <em>init</em> .  <a href="#ac41837040615447514b15b28c578d829">More...</a><br /></td></tr>
 <tr class="separator:ac41837040615447514b15b28c578d829"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb323e26fb0ea79bd18bba9edfd8ec86"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afb323e26fb0ea79bd18bba9edfd8ec86">reservoir</a> (std::size_t n, std::size_t execution_limit)</td></tr>
+<tr class="memdesc:afb323e26fb0ea79bd18bba9edfd8ec86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random sample from the potentially infinite stream in a <code>std::vector</code>.  <a href="#afb323e26fb0ea79bd18bba9edfd8ec86">More...</a><br /></td></tr>
+<tr class="separator:afb323e26fb0ea79bd18bba9edfd8ec86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa44a519f0dc4368647050c9b1857dd40"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aa44a519f0dc4368647050c9b1857dd40">reservoir</a> (std::size_t n)</td></tr>
+<tr class="memdesc:aa44a519f0dc4368647050c9b1857dd40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random sample from the potentially infinite stream in a <code>std::vector</code>.  <a href="#aa44a519f0dc4368647050c9b1857dd40">More...</a><br /></td></tr>
+<tr class="separator:aa44a519f0dc4368647050c9b1857dd40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac43d66a22a81d6c1499d6240f74f31e4"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ac43d66a22a81d6c1499d6240f74f31e4">sample_heap</a> (std::size_t n)</td></tr>
+<tr class="memdesc:ac43d66a22a81d6c1499d6240f74f31e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random sample from the finite stream in a <code>std::vector</code>. This implementation uses a heap-sample method.  <a href="#ac43d66a22a81d6c1499d6240f74f31e4">More...</a><br /></td></tr>
+<tr class="separator:ac43d66a22a81d6c1499d6240f74f31e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cad9fb8be0557995c03f1eb6045c7be"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a3cad9fb8be0557995c03f1eb6045c7be">sample_shuffle</a> (std::size_t n)</td></tr>
+<tr class="memdesc:a3cad9fb8be0557995c03f1eb6045c7be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random sample from the finite stream in a <code>std::vector</code>. This implementation uses a shuffle-sample method.  <a href="#a3cad9fb8be0557995c03f1eb6045c7be">More...</a><br /></td></tr>
+<tr class="separator:a3cad9fb8be0557995c03f1eb6045c7be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae875fa53b5a07351a74291d1814e5eb3"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae875fa53b5a07351a74291d1814e5eb3">sample</a> (std::size_t n)</td></tr>
+<tr class="memdesc:ae875fa53b5a07351a74291d1814e5eb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random sample from the finite stream in a <code>std::vector</code>. This method tries to pick the better of <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ac43d66a22a81d6c1499d6240f74f31e4" title="Returns a random sample from the finite stream in a std::vector. This implementation uses a heap-samp...">sample_heap()</a> and <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a3cad9fb8be0557995c03f1eb6045c7be" title="Returns a random sample from the finite stream in a std::vector. This implementation uses a shuffle-s...">sample_shuffle()</a> using the estimated size of the stream.  <a href="#ae875fa53b5a07351a74291d1814e5eb3">More...</a><br /></td></tr>
+<tr class="separator:ae875fa53b5a07351a74291d1814e5eb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d36eab187f4b501c07a00f39e4f2381"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9d36eab187f4b501c07a00f39e4f2381">sum</a> ()</td></tr>
 <tr class="memdesc:a9d36eab187f4b501c07a00f39e4f2381"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the sum of all the elements in the stream using <code>operator+</code>.  <a href="#a9d36eab187f4b501c07a00f39e4f2381">More...</a><br /></td></tr>
 <tr class="separator:a9d36eab187f4b501c07a00f39e4f2381"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -919,7 +934,7 @@ template&lt;typename Accumulator , typename UnaryFunction , typename T &gt; </di
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000004">Todo:</a></b></dt><dd>is there a way to lazily step to the end of the stream? </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000002">Todo:</a></b></dt><dd>is there a way to lazily step to the end of the stream? </dd></dl>
 
 </div>
 </div>
@@ -954,7 +969,7 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000005">Todo:</a></b></dt><dd>benchmark non-fold implementation </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000003">Todo:</a></b></dt><dd>benchmark non-fold implementation </dd></dl>
 
 </div>
 </div>
@@ -989,7 +1004,7 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000006">Todo:</a></b></dt><dd>benchmark non-fold implementation </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000004">Todo:</a></b></dt><dd>benchmark non-fold implementation </dd></dl>
 
 </div>
 </div>
@@ -1209,6 +1224,194 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation which multiplies the elements in the stream.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afb323e26fb0ea79bd18bba9edfd8ec86"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::reservoir </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>execution_limit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a random sample from the potentially infinite stream in a <code>std::vector</code>. </p>
+<p>For infinite streams, execution stops once <em>execution_limit</em>  stream elements have been seen. For finite streams, execution stops once <em>execution_limit</em>  stream elements have been seen or once the stream has ended, whichever comes first.</p>
+<p>Each element in the stream has a <code>1 / min(stream_size, execution_limit)</code> chance to appear in the returned sample.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>The number of elements to obtain from the stream. If the stream is smaller, all elements are returned.</td></tr>
+    <tr><td class="paramname">execution_limit</td><td>Once this many stream elements have been seen, a sample is returned.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation that returns a <code>std::vector</code> of <em>n</em>  random stream elements.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae875fa53b5a07351a74291d1814e5eb3" title="Returns a random sample from the finite stream in a std::vector. This method tries to pick the better...">sample()</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa44a519f0dc4368647050c9b1857dd40"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::reservoir </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a random sample from the potentially infinite stream in a <code>std::vector</code>. </p>
+<p>For infinite streams, execution stops once 16,777,216 stream elements have been seen. For finite streams, execution stops once the estimated number of stream elements have been seen or once the stream has ended, whichever comes first. The estimated size can potentially be an over- or underestimate. For known finite streams, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae875fa53b5a07351a74291d1814e5eb3" title="Returns a random sample from the finite stream in a std::vector. This method tries to pick the better...">sample()</a> is a better option.</p>
+<p>Each element in the stream has a <code>1 / min(stream_size, 16,777,216)</code> chance to appear in the returned sample.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>The number of elements to obtain from the stream. If the stream is smaller, all elements are returned.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation that returns a <code>std::vector</code> of <em>n</em>  random stream elements.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae875fa53b5a07351a74291d1814e5eb3" title="Returns a random sample from the finite stream in a std::vector. This method tries to pick the better...">sample()</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae875fa53b5a07351a74291d1814e5eb3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::sample </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a random sample from the finite stream in a <code>std::vector</code>. This method tries to pick the better of <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ac43d66a22a81d6c1499d6240f74f31e4" title="Returns a random sample from the finite stream in a std::vector. This implementation uses a heap-samp...">sample_heap()</a> and <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a3cad9fb8be0557995c03f1eb6045c7be" title="Returns a random sample from the finite stream in a std::vector. This implementation uses a shuffle-s...">sample_shuffle()</a> using the estimated size of the stream. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>The number of elements to obtain from the stream. If the stream is smaller, all elements are returned.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation that returns a <code>std::vector</code> of <em>n</em>  random stream elements.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ac43d66a22a81d6c1499d6240f74f31e4" title="Returns a random sample from the finite stream in a std::vector. This implementation uses a heap-samp...">sample_heap()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a3cad9fb8be0557995c03f1eb6045c7be" title="Returns a random sample from the finite stream in a std::vector. This implementation uses a shuffle-s...">sample_shuffle()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afb323e26fb0ea79bd18bba9edfd8ec86" title="Returns a random sample from the potentially infinite stream in a std::vector. ">reservoir()</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac43d66a22a81d6c1499d6240f74f31e4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::sample_heap </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a random sample from the finite stream in a <code>std::vector</code>. This implementation uses a heap-sample method. </p>
+<p>The heap-sample method takes <code>O(N log n)</code> time where <code>N</code> is the number of elements in the stream and <code>n</code> is the sample size parameter, <em>n</em> . This method generates a random number <code>r</code> for each stream element <code>e</code> and places the pair <code>(r, e)</code> into a heap ordered by <code>r</code>. If the heap has more than <em>n</em>  elements, a remove operation is performed on the heap. Finally, the actual elements from the heap are moved into a <code>std::vector</code>.</p>
+<p>This method essentially assigns a random number to each element, and keeps the <em>n</em>  elements with the smallest number. It should be used when the sample size you want to obtain is small compared to the size of the container.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>The number of elements to obtain from the stream. If the stream is smaller, all elements are returned.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation that returns a <code>std::vector</code> of <em>n</em>  random stream elements.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afb323e26fb0ea79bd18bba9edfd8ec86" title="Returns a random sample from the potentially infinite stream in a std::vector. ">reservoir()</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3cad9fb8be0557995c03f1eb6045c7be"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::sample_shuffle </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a random sample from the finite stream in a <code>std::vector</code>. This implementation uses a shuffle-sample method. </p>
+<p>The shuffle-sample method takes <code>O(N + n)</code> time where <code>N</code> is the number of elements in the stream and <code>n</code> is the sample size parameter, <em>n</em> . This method copies the entire stream into a vector, shuffles it, then erases elements so that there are only <em>n</em>  elements. This method should be used when the sample size is relatively large.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>The number of elements to obtain from the stream. If the stream is smaller, all elements are returned.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../d7/de5/classflow_1_1terminal_1_1detail_1_1_terminal.html" title="A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation li...">detail::Terminal</a> operation that returns a <code>std::vector</code> of <em>n</em>  random stream elements.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afb323e26fb0ea79bd18bba9edfd8ec86" title="Returns a random sample from the potentially infinite stream in a std::vector. ">reservoir()</a></dd></dl>
 
 </div>
 </div>

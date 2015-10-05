@@ -107,6 +107,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4b3e44faef41bef97afa215d38c3b23e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d93/classflow_1_1detail_1_1_compose.html#a4b3e44faef41bef97afa215d38c3b23e">Compose</a> (F &amp;&amp;f, G &amp;&amp;g)</td></tr>
 <tr class="memdesc:a4b3e44faef41bef97afa215d38c3b23e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="../../d3/d93/classflow_1_1detail_1_1_compose.html" title="Composes the two functions F and G. Represents the composition F(G(...)). ">Compose</a> class. Represents the composition <code>F(G(...))</code>.  <a href="#a4b3e44faef41bef97afa215d38c3b23e">More...</a><br /></td></tr>
 <tr class="separator:a4b3e44faef41bef97afa215d38c3b23e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d1b2a88599aa032398311216c459aa7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d93/classflow_1_1detail_1_1_compose.html#a8d1b2a88599aa032398311216c459aa7">Compose</a> (const <a class="el" href="../../d3/d93/classflow_1_1detail_1_1_compose.html">Compose</a>&lt; F, G &gt; &amp;)=delete</td></tr>
+<tr class="separator:a8d1b2a88599aa032398311216c459aa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea3489cc7d64d38b719aeef0f15adc7c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d93/classflow_1_1detail_1_1_compose.html#aea3489cc7d64d38b719aeef0f15adc7c">Compose</a> (<a class="el" href="../../d3/d93/classflow_1_1detail_1_1_compose.html">Compose</a>&lt; F, G &gt; &amp;&amp;)=default</td></tr>
+<tr class="separator:aea3489cc7d64d38b719aeef0f15adc7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf99a2867ccaa1b61aa7b94f17c3ca77"><td class="memTemplParams" colspan="2">template&lt;typename Source &gt; </td></tr>
 <tr class="memitem:acf99a2867ccaa1b61aa7b94f17c3ca77"><td class="memTemplItemLeft" align="right" valign="top">std::result_of_t&lt; F(std::result_of_t&lt; G(<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; Source &gt; &amp;&amp;)&gt;)&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d93/classflow_1_1detail_1_1_compose.html#acf99a2867ccaa1b61aa7b94f17c3ca77">operator()</a> (<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; Source &gt; &amp;&amp;stream)</td></tr>
 <tr class="memdesc:acf99a2867ccaa1b61aa7b94f17c3ca77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the composition of operations on the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> given.  <a href="#acf99a2867ccaa1b61aa7b94f17c3ca77">More...</a><br /></td></tr>
@@ -160,6 +164,58 @@ template&lt;typename F , typename G &gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="a8d1b2a88599aa032398311216c459aa7"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename F , typename G &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d93/classflow_1_1detail_1_1_compose.html">flow::detail::Compose</a>&lt; F, G &gt;::<a class="el" href="../../d3/d93/classflow_1_1detail_1_1_compose.html">Compose</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d3/d93/classflow_1_1detail_1_1_compose.html">Compose</a>&lt; F, G &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aea3489cc7d64d38b719aeef0f15adc7c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename F , typename G &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d93/classflow_1_1detail_1_1_compose.html">flow::detail::Compose</a>&lt; F, G &gt;::<a class="el" href="../../d3/d93/classflow_1_1detail_1_1_compose.html">Compose</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/d93/classflow_1_1detail_1_1_compose.html">Compose</a>&lt; F, G &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

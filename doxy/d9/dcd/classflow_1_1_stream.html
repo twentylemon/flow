@@ -115,6 +115,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8bb7d10321101656ba68f420eec020ef"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#a8bb7d10321101656ba68f420eec020ef">Stream</a> (Args &amp;&amp;...args)</td></tr>
 <tr class="memdesc:a8bb7d10321101656ba68f420eec020ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> class.  <a href="#a8bb7d10321101656ba68f420eec020ef">More...</a><br /></td></tr>
 <tr class="separator:a8bb7d10321101656ba68f420eec020ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9adf625c26720676b26ec86add981f89"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#a9adf625c26720676b26ec86add981f89">Stream</a> (const <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; Source &gt; &amp;)=delete</td></tr>
+<tr class="separator:a9adf625c26720676b26ec86add981f89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1207df21a4d8242e48527de55bb3e28"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#ab1207df21a4d8242e48527de55bb3e28">Stream</a> (<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; Source &gt; &amp;&amp;)=default</td></tr>
+<tr class="separator:ab1207df21a4d8242e48527de55bb3e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ba3ee37c4e132838681519c0f4dfdda"><td class="memItemLeft" align="right" valign="top">Source &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#a2ba3ee37c4e132838681519c0f4dfdda">source</a> ()</td></tr>
 <tr class="memdesc:a2ba3ee37c4e132838681519c0f4dfdda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the source of this stream.  <a href="#a2ba3ee37c4e132838681519c0f4dfdda">More...</a><br /></td></tr>
 <tr class="separator:a2ba3ee37c4e132838681519c0f4dfdda"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,9 +160,7 @@ class flow::Stream&lt; Source &gt;</h3>
 <p>Instead, if you want a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> object, write out the entire stream right away.</p>
 <p><code>auto stream = <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>(...) | <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the Stream that return false for predicate . ">filter()</a>;<br />
  auto min = stream | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ad02d008becaf1d5d64d2ae358ae7306e" title="Returns the minimum element from the stream according to compare . By default operator< is used for c...">min()</a>;</code> </p>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000003">Todo:</a></b></dt><dd><p class="startdd">flow::terminal::sample - take a random sample of n elements from a finite stream </p>
-<p>flow::terminal::reservoir - take a random sample of n elements from an infinite stream </p>
-<p>flow::intermediate::merge - combine two sorted streams while maintaining sorted order </p>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000001">Todo:</a></b></dt><dd><p class="startdd">flow::intermediate::merge - combine two sorted streams while maintaining sorted order </p>
 <p>flow::intermediate::union - union two sorted/unique streams </p>
 <p>flow::intermediate::intersect - intersect two sorted/unique streams </p>
 <p>flow::intermediate::difference - compute the difference of two sorted/unique streams </p>
@@ -202,6 +204,58 @@ template&lt;typename... Args&gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="a9adf625c26720676b26ec86add981f89"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Source &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html">flow::Stream</a>&lt; Source &gt;::<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; Source &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab1207df21a4d8242e48527de55bb3e28"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Source &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html">flow::Stream</a>&lt; Source &gt;::<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; Source &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

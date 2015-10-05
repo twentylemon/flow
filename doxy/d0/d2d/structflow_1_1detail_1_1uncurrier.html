@@ -112,10 +112,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a47c2c2a387f45e2f8afbae07e20ad1e3"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d2d/structflow_1_1detail_1_1uncurrier.html#a47c2c2a387f45e2f8afbae07e20ad1e3">operator()</a> (std::tuple&lt; Types...&gt; &amp;tuple) const </td></tr>
 <tr class="memdesc:a47c2c2a387f45e2f8afbae07e20ad1e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the tuple to the curried function.  <a href="#a47c2c2a387f45e2f8afbae07e20ad1e3">More...</a><br /></td></tr>
 <tr class="separator:a47c2c2a387f45e2f8afbae07e20ad1e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a357095aeb151a9d6885e90315ea00737"><td class="memTemplParams" colspan="2">template&lt;typename... Types&gt; </td></tr>
-<tr class="memitem:a357095aeb151a9d6885e90315ea00737"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d2d/structflow_1_1detail_1_1uncurrier.html#a357095aeb151a9d6885e90315ea00737">operator()</a> (const std::tuple&lt; Types...&gt; &amp;tuple) const </td></tr>
-<tr class="memdesc:a357095aeb151a9d6885e90315ea00737"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the tuple to the curried function.  <a href="#a357095aeb151a9d6885e90315ea00737">More...</a><br /></td></tr>
-<tr class="separator:a357095aeb151a9d6885e90315ea00737"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07866282147088f15da1eac711f93f38"><td class="memTemplParams" colspan="2">template&lt;typename... Types&gt; </td></tr>
+<tr class="memitem:a07866282147088f15da1eac711f93f38"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d2d/structflow_1_1detail_1_1uncurrier.html#a07866282147088f15da1eac711f93f38">operator()</a> (std::tuple&lt; Types...&gt; &amp;&amp;tuple) const </td></tr>
+<tr class="memdesc:a07866282147088f15da1eac711f93f38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the tuple to the curried function.  <a href="#a07866282147088f15da1eac711f93f38">More...</a><br /></td></tr>
+<tr class="separator:a07866282147088f15da1eac711f93f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c41107c1bfba8615a02c3891934fc7b"><td class="memTemplParams" colspan="2">template&lt;typename T , std::size_t N&gt; </td></tr>
 <tr class="memitem:a2c41107c1bfba8615a02c3891934fc7b"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d2d/structflow_1_1detail_1_1uncurrier.html#a2c41107c1bfba8615a02c3891934fc7b">operator()</a> (std::array&lt; T, N &gt; &amp;ary) const </td></tr>
 <tr class="memdesc:a2c41107c1bfba8615a02c3891934fc7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the array to the curried function.  <a href="#a2c41107c1bfba8615a02c3891934fc7b">More...</a><br /></td></tr>
@@ -205,7 +205,7 @@ template&lt;typename... Types&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a357095aeb151a9d6885e90315ea00737"></a>
+<a class="anchor" id="a07866282147088f15da1eac711f93f38"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -219,7 +219,7 @@ template&lt;typename... Types&gt; </div>
         <tr>
           <td class="memname">constexpr auto <a class="el" href="../../d0/d2d/structflow_1_1detail_1_1uncurrier.html">flow::detail::uncurrier</a>&lt; CurryFunction &gt;::operator() </td>
           <td>(</td>
-          <td class="paramtype">const std::tuple&lt; Types...&gt; &amp;&#160;</td>
+          <td class="paramtype">std::tuple&lt; Types...&gt; &amp;&amp;&#160;</td>
           <td class="paramname"><em>tuple</em></td><td>)</td>
           <td> const</td>
         </tr>

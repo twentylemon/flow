@@ -113,8 +113,8 @@ Inheritance diagram for flow::source::Zip&lt; LeftSource, RightSource, Zipper &g
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a3839b489c8c4dc6fe331800d3830bfce"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html#a3839b489c8c4dc6fe331800d3830bfce">base</a> = <a class="el" href="../../dc/de6/namespaceflow_1_1source.html#ae0363965dc7fec87258017467d830230">IntermediateSource</a>&lt; LeftSource, std::result_of_t&lt; Zipper(typename LeftSource::value_type, typename RightSource::value_type)&gt;&gt;</td></tr>
-<tr class="separator:a3839b489c8c4dc6fe331800d3830bfce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a4ceac6ad39a5b0e09a95ca66d0a601"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html#a8a4ceac6ad39a5b0e09a95ca66d0a601">base</a> = <a class="el" href="../../dc/de6/namespaceflow_1_1source.html#ae0363965dc7fec87258017467d830230">IntermediateSource</a>&lt; LeftSource, std::result_of_t&lt; Zipper(typename LeftSource::value_type &amp;, typename RightSource::value_type &amp;)&gt;&gt;</td></tr>
+<tr class="separator:a8a4ceac6ad39a5b0e09a95ca66d0a601"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd2ba9836e4c37c114161ec28986a121"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html#acd2ba9836e4c37c114161ec28986a121">value_type</a> = typename base::value_type</td></tr>
 <tr class="separator:acd2ba9836e4c37c114161ec28986a121"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -123,6 +123,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7879f3d8888203d254cad0e5c460e2b5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html#a7879f3d8888203d254cad0e5c460e2b5">Zip</a> (LeftSource &amp;&amp;left, RightSource &amp;&amp;right, Zipper zipper)</td></tr>
 <tr class="memdesc:a7879f3d8888203d254cad0e5c460e2b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the Zip{LeftSource, RightSource, Zipper} class.  <a href="#a7879f3d8888203d254cad0e5c460e2b5">More...</a><br /></td></tr>
 <tr class="separator:a7879f3d8888203d254cad0e5c460e2b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24b55f43a219d03d4fab806a2d352f81"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html#a24b55f43a219d03d4fab806a2d352f81">Zip</a> (const <a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html">Zip</a>&lt; LeftSource, RightSource, Zipper &gt; &amp;)=delete</td></tr>
+<tr class="separator:a24b55f43a219d03d4fab806a2d352f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa05b00ab193f7ef451739c5d60844d86"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html#aa05b00ab193f7ef451739c5d60844d86">Zip</a> (<a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html">Zip</a>&lt; LeftSource, RightSource, Zipper &gt; &amp;&amp;)=default</td></tr>
+<tr class="separator:aa05b00ab193f7ef451739c5d60844d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99a468969be302ad18c3e285ef34b1f1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html#a99a468969be302ad18c3e285ef34b1f1">has_next</a> ()</td></tr>
 <tr class="memdesc:a99a468969be302ad18c3e285ef34b1f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if this source has more elements.  <a href="#a99a468969be302ad18c3e285ef34b1f1">More...</a><br /></td></tr>
 <tr class="separator:a99a468969be302ad18c3e285ef34b1f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,14 +146,14 @@ class flow::source::Zip&lt; LeftSource, RightSource, Zipper &gt;</h3>
 
 <p><a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> source that zips two streams together. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a class="anchor" id="a3839b489c8c4dc6fe331800d3830bfce"></a>
+<a class="anchor" id="a8a4ceac6ad39a5b0e09a95ca66d0a601"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename LeftSource , typename RightSource , typename Zipper &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html">flow::source::Zip</a>&lt; LeftSource, RightSource, Zipper &gt;::<a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html#a3839b489c8c4dc6fe331800d3830bfce">base</a> =  <a class="el" href="../../dc/de6/namespaceflow_1_1source.html#ae0363965dc7fec87258017467d830230">IntermediateSource</a>&lt;LeftSource, std::result_of_t&lt;Zipper(typename LeftSource::value_type, typename RightSource::value_type)&gt;&gt;</td>
+          <td class="memname">using <a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html">flow::source::Zip</a>&lt; LeftSource, RightSource, Zipper &gt;::<a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html#a8a4ceac6ad39a5b0e09a95ca66d0a601">base</a> =  <a class="el" href="../../dc/de6/namespaceflow_1_1source.html#ae0363965dc7fec87258017467d830230">IntermediateSource</a>&lt;LeftSource, std::result_of_t&lt;Zipper(typename LeftSource::value_type&amp;, typename RightSource::value_type&amp;)&gt;&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -220,6 +224,58 @@ template&lt;typename LeftSource , typename RightSource , typename Zipper &gt; </
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="a24b55f43a219d03d4fab806a2d352f81"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename LeftSource , typename RightSource , typename Zipper &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html">flow::source::Zip</a>&lt; LeftSource, RightSource, Zipper &gt;::<a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html">Zip</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html">Zip</a>&lt; LeftSource, RightSource, Zipper &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa05b00ab193f7ef451739c5d60844d86"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename LeftSource , typename RightSource , typename Zipper &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html">flow::source::Zip</a>&lt; LeftSource, RightSource, Zipper &gt;::<a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html">Zip</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/df4/classflow_1_1source_1_1_zip.html">Zip</a>&lt; LeftSource, RightSource, Zipper &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

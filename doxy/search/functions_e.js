@@ -8,7 +8,8 @@ var searchData=
   ['repeat',['repeat',['../de/d3f/namespaceflow_1_1generator.html#ac91cc015f53a6efeea386b04b9486572',1,'flow::generator::repeat(T &amp;&amp;value)'],['../de/d3f/namespaceflow_1_1generator.html#a8a58b8df495070ec677c6c28b713bf20',1,'flow::generator::repeat(T &amp;&amp;value, std::size_t n)']]],
   ['replace',['replace',['../dc/d09/namespaceflow_1_1intermediate.html#a11854b160914181e130029b111facf55',1,'flow::intermediate::replace(UnaryPredicate predicate, T &amp;&amp;replace_by)'],['../dc/d09/namespaceflow_1_1intermediate.html#a25fa6ade81d666f3e4f85f5ad5502047',1,'flow::intermediate::replace(T &amp;&amp;old_value, T &amp;&amp;new_value)']]],
   ['replace_5fmap',['replace_map',['../dc/d09/namespaceflow_1_1intermediate.html#a0db61e00aa587124edb99e065385ef16',1,'flow::intermediate']]],
-  ['reverse',['reverse',['../d9/d22/classflow_1_1source_1_1_reverse.html#a83a0446b8aacb524ed2fce04ba136431',1,'flow::source::Reverse::reverse()'],['../d9/d22/classflow_1_1source_1_1_reverse.html#a6b131831c4fbe834ed0aff7fd38f218a',1,'flow::source::Reverse::Reverse(Source &amp;&amp;source)'],['../dc/d09/namespaceflow_1_1intermediate.html#a13397178496f74369fc8dae063415b7a',1,'flow::intermediate::reverse()']]],
+  ['reservoir',['reservoir',['../d1/d6c/namespaceflow_1_1terminal.html#afb323e26fb0ea79bd18bba9edfd8ec86',1,'flow::terminal::reservoir(std::size_t n, std::size_t execution_limit)'],['../d1/d6c/namespaceflow_1_1terminal.html#aa44a519f0dc4368647050c9b1857dd40',1,'flow::terminal::reservoir(std::size_t n)']]],
+  ['reverse',['reverse',['../dc/d09/namespaceflow_1_1intermediate.html#a13397178496f74369fc8dae063415b7a',1,'flow::intermediate']]],
   ['rfrom',['rfrom',['../de/d3f/namespaceflow_1_1generator.html#ad5e12b528b2fa20549b7714efd2a6814',1,'flow::generator']]],
   ['rfrom_5fmove',['rfrom_move',['../de/d3f/namespaceflow_1_1generator.html#a635ab9f20905160edc337cc25720097f',1,'flow::generator']]]
 ];
