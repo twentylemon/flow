@@ -60,4 +60,5 @@ BOOST_AUTO_TEST_SUITE(flow_terminal)
 #include "terminal/sum.h"
 #include "terminal/to.h"
 #include "terminal/sample.h"
+#include "terminal/reservoir.h"
 BOOST_AUTO_TEST_SUITE_END()

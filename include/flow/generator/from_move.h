@@ -44,6 +44,16 @@ auto from_move(Container&& container) {
 }
 
 /// <summary>
+/// Creates a Stream over <paramref name="list"/>.
+/// </summary>
+/// <param name="list">The list to create a stream from.</param>
+/// <returns>A stream over <paramref name="list"/>.</returns>
+template <typename T>
+auto from(std::initializer_list<T> list) {
+    return from_move(std::deque<T>(list));
+}
+
+/// <summary>
 /// Creates a Stream over <paramref name="container"/> in reverse order.
 /// <para>This extends the lifetime of temporary containers that are passed to it. That is, it is
 /// safe to use temporaries as long as they are moved in.</para>

@@ -52,6 +52,7 @@ namespace flow {
 /// </summary>
 /// <param name="n">The number of elements to obtain from the stream. If the stream is smaller, all elements are returned.</param>
 /// <returns>A detail::Terminal operation that returns a <c>std::vector</c> of <paramref name="n"/> random stream elements.</returns>
+/// <seealso cref="reservoir()"/>
 inline auto sample_heap(std::size_t n) {
     return detail::make_terminal([n](auto&& stream) {
         using T = std::decay_t<decltype(stream.next())>;
@@ -81,6 +82,7 @@ inline auto sample_heap(std::size_t n) {
 /// </summary>
 /// <param name="n">The number of elements to obtain from the stream. If the stream is smaller, all elements are returned.</param>
 /// <returns>A detail::Terminal operation that returns a <c>std::vector</c> of <paramref name="n"/> random stream elements.</returns>
+/// <seealso cref="reservoir()"/>
 inline auto sample_shuffle(std::size_t n) {
     return detail::make_terminal([n](auto&& stream) {
         using T = std::decay_t<decltype(stream.next())>;
@@ -102,6 +104,7 @@ inline auto sample_shuffle(std::size_t n) {
 /// <returns>A detail::Terminal operation that returns a <c>std::vector</c> of <paramref name="n"/> random stream elements.</returns>
 /// <seealso cref="sample_heap()"/>
 /// <seealso cref="sample_shuffle()"/>
+/// <seealso cref="reservoir()"/>
 inline auto sample(std::size_t n) {
     return detail::make_terminal([n](auto&& stream) {
         double N = static_cast<double>(stream.estimate_size());

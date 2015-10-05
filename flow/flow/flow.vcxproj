@@ -138,6 +138,7 @@
     <ClInclude Include="source\IterateFunc.h" />
     <ClInclude Include="source\IntermediateSource.h" />
     <ClInclude Include="terminal\execute.h" />
+    <ClInclude Include="terminal\reservoir.h" />
     <ClInclude Include="terminal\sample.h" />
     <ClInclude Include="uncurry.h" />
     <ClInclude Include="generator\from.h" />

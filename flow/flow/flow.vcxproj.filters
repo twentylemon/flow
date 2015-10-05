@@ -231,6 +231,9 @@
     <ClInclude Include="terminal\sample.h">
       <Filter>Header Files\terminal</Filter>
     </ClInclude>
+    <ClInclude Include="terminal\reservoir.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="flow.licenseheader" />

@@ -80,7 +80,7 @@ public:
     /// </summary>
     /// <returns>The estimated size of the remainder of the stream.</returns>
     constexpr std::size_t estimate_size() const {
-        return 128;
+        return 16777216;
     }
 
 protected:

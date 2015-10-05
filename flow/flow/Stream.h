@@ -47,8 +47,6 @@ namespace flow {
 /// <code>auto stream = Stream(...) | filter();<br/>
 /// auto min = stream | min();</code>
 /// </summary>
-/// \todo flow::terminal::sample - take a random sample of n elements from a finite stream
-/// \todo flow::terminal::reservoir - take a random sample of n elements from an infinite stream
 /// \todo flow::intermediate::merge - combine two sorted streams while maintaining sorted order
 /// \todo flow::intermediate::union - union two sorted/unique streams
 /// \todo flow::intermediate::intersect - intersect two sorted/unique streams
