@@ -51,6 +51,9 @@ public:
     Slice(Source&& source, std::size_t begin, std::size_t end, std::size_t step_size) :
         parent_type(std::forward<Source>(source), begin, step_size), _end(end) { }
 
+    Slice(const Slice<Source>&) = delete;
+    Slice(Slice<Source>&&) = default;
+
     /// <summary>
     /// Returns true if this source has more elements.
     /// </summary>

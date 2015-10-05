@@ -49,6 +49,9 @@ public:
     /// <param name="predicate">The predicate used to filter stream elements.</param>
     Filter(Source&& source, UnaryPredicate predicate) : base(std::forward<Source>(source)), _predicate(predicate) { }
 
+    Filter(const Filter<Source, UnaryPredicate>&) = delete;
+    Filter(Filter<Source, UnaryPredicate>&&) = default;
+
     /// <summary>
     /// Returns true if this source has more elements.
     /// </summary>

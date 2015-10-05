@@ -176,5 +176,8 @@
     <ClInclude Include="uncurry.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
+    <ClInclude Include="terminal\sample.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

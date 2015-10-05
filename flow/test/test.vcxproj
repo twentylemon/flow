@@ -269,6 +269,7 @@
     <ClInclude Include="terminal\product.h">
       <FileType>CppCode</FileType>
     </ClInclude>
+    <ClInclude Include="terminal\sample.h" />
     <ClInclude Include="terminal\sum.h">
       <FileType>CppCode</FileType>
     </ClInclude>

@@ -54,6 +54,9 @@ public:
     template <typename... Args>
     IterateFunc(IteratingFunction function, Args&&... initial) : base(), _function(uncurry(function)), _values({std::forward<Args>(initial)...}) { }
 
+    IterateFunc(const IterateFunc<IteratingFunction, T, N>&) = delete;
+    IterateFunc(IterateFunc<IteratingFunction, T, N>&&) = default;
+
     /// <summary>
     /// Returns the next element from the stream.
     /// </summary>

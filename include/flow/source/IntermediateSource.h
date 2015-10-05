@@ -49,6 +49,9 @@ public:
     /// <param name="source">The stream source to read elements from.</param>
     IntermediateSourceBase(Source&& source) : _source(std::move(source)), _current(nullptr) { }
 
+    IntermediateSourceBase(const IntermediateSourceBase<Source, T>&) = delete;
+    IntermediateSourceBase(IntermediateSourceBase<Source, T>&&) = default;
+
     /// <summary>
     /// Returns true if the source has more elements. Default implementation returns <c>_source.has_next()</c>.
     /// </summary>
@@ -138,6 +141,9 @@ public:
     /// <param name="source">The stream source to read elements from.</param>
     IntermediateSourceNoDefault(Source&& source) : base(std::move(source)), _temp() { }
 
+    IntermediateSourceNoDefault(const IntermediateSourceNoDefault<Source, T>&) = delete;
+    IntermediateSourceNoDefault(IntermediateSourceNoDefault<Source, T>&&) = default;
+
 protected:
     /// <summary>
     /// Updates the current stream value pointer to a temporary value. The lifetime of the
@@ -175,6 +181,9 @@ public:
     /// </summary>
     /// <param name="source">The stream source to read elements from.</param>
     IntermediateSourceDefault(Source&& source) : base(std::move(source)), _temp_current() { }
+
+    IntermediateSourceDefault(const IntermediateSourceDefault<Source, T>&) = delete;
+    IntermediateSourceDefault(IntermediateSourceDefault<Source, T>&&) = default;
 
 protected:
     /// <summary>

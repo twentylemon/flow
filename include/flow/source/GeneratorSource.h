@@ -47,6 +47,9 @@ public:
     /// </summary>
     GeneratorSourceBase() : _current(nullptr) { }
 
+    GeneratorSourceBase(const GeneratorSourceBase<T>&) = delete;
+    GeneratorSourceBase(GeneratorSourceBase<T>&&) = default;
+
     /// <summary>
     /// Returns true if this source has more elements.
     /// Default implementation returns <c>_source.has_next()</c>.
@@ -117,6 +120,9 @@ public:
     /// </summary>
     GeneratorSourceNoDefault() : base(), _temp() { }
 
+    GeneratorSourceNoDefault(const GeneratorSourceNoDefault<T>&) = delete;
+    GeneratorSourceNoDefault(GeneratorSourceNoDefault<T>&&) = default;
+
 protected:
     /// <summary>
     /// Updates the current stream value pointer to a temporary value. The lifetime of the
@@ -152,6 +158,9 @@ public:
     /// Initializes a new instance of the <see cref="GeneratorSourceDefault{T}"/> class.
     /// </summary>
     GeneratorSourceDefault() : base(), _temp_current() { }
+
+    GeneratorSourceDefault(const GeneratorSourceDefault<T>&) = delete;
+    GeneratorSourceDefault(GeneratorSourceDefault<T>&&) = default;
 
 protected:
     /// <summary>
