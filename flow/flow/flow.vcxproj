@@ -190,6 +190,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\README.md" />
+    <None Include="flow.conf" />
     <None Include="flow.licenseheader" />
   </ItemGroup>
   <ItemGroup>

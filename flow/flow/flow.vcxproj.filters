@@ -245,6 +245,9 @@
     <None Include="..\..\README.md">
       <Filter>Doc Files</Filter>
     </None>
+    <None Include="flow.conf">
+      <Filter>Doc Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Text Include="examples.txt">
