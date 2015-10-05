@@ -57,6 +57,9 @@ public:
     /// <param name="g">The g function.</param>
     Compose(F&& f, G&& g) : _f(std::forward<F>(f)), _g(std::forward<G>(g)) { }
 
+    Compose(const Compose<F, G>&) = delete;
+    Compose(Compose<F, G>&&) = default;
+
     /// <summary>
     /// Executes the composition of operations on the Stream given.
     /// </summary>

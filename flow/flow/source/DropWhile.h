@@ -49,6 +49,9 @@ public:
     /// <param name="predicate">The predicate, drop stream elements until this returns <c>false</c>.</param>
     DropWhile(Source&& source, UnaryPredicate predicate) : base(std::forward<Source>(source)), _predicate(predicate), _initial(true) { }
 
+    DropWhile(const DropWhile<Source, UnaryPredicate>&) = delete;
+    DropWhile(DropWhile<Source, UnaryPredicate>&&) = default;
+
     /// <summary>
     /// Returns true if this source has more elements.
     /// </summary>

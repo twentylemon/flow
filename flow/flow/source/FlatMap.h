@@ -52,6 +52,9 @@ public:
     /// <param name="operation">The mapping operation.</param>
     FlatMap(Source&& source, UnaryOperation operation) : base(std::forward<Source>(source)), _operation(operation), _stream(nullptr) { }
 
+    FlatMap(const FlatMap<Source, UnaryOperation>&) = delete;
+    FlatMap(FlatMap<Source, UnaryOperation>&&) = default;
+
     /// <summary>
     /// Returns true if this source has more elements.
     /// </summary>

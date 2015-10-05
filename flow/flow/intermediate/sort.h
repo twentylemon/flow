@@ -28,9 +28,8 @@
 
 #include <functional>
 
-#include "../Stream.h"
-#include "Intermediate.h"
-#include "../source/Sort.h"
+#include "../terminal/to.h"
+#include "../generator/from_move.h"
 
 namespace flow {
     namespace intermediate {
@@ -55,7 +54,6 @@ auto sort(Compare compare = Compare()) {
         auto vec = stream | terminal::to_vector();
         std::sort(vec.begin(), vec.end(), compare);
         return generator::from_move(std::move(vec));
-        //return Stream<source::Sort<std::remove_reference_t<decltype(stream.source())>>>(std::move(stream.source()), compare, false);
     });
 }
 
@@ -79,7 +77,6 @@ auto stable_sort(Compare compare = Compare()) {
         auto vec = stream | terminal::to_vector();
         std::stable_sort(vec.begin(), vec.end(), compare);
         return generator::from_move(std::move(vec));
-        //return Stream<source::Sort<std::remove_reference_t<decltype(stream.source())>>>(std::move(stream.source()), compare, true);
     });
 }
     }

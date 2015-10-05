@@ -49,6 +49,9 @@ public:
     /// <param name="zipper">The function used to zip the two streams together.</param>
     Zip(LeftSource&& left, RightSource&& right, Zipper zipper) : base(std::forward<LeftSource>(left)), _right(std::move(right)), _zipper(zipper) { }
 
+    Zip(const Zip<LeftSource, RightSource, Zipper>&) = delete;
+    Zip(Zip<LeftSource, RightSource, Zipper>&&) = default;
+
     /// <summary>
     /// Returns true if this source has more elements.
     /// </summary>

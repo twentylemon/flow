@@ -48,6 +48,9 @@ public:
     /// <param name="operation">The mapping operation.</param>
     Map(Source&& source, UnaryOperation operation) : base(std::forward<Source>(source)), _operation(operation) { }
 
+    Map(const Map<Source, UnaryOperation>&) = delete;
+    Map(Map<Source, UnaryOperation>&&) = default;
+
     /// <summary>
     /// Returns the next element from the stream.
     /// </summary>

@@ -47,6 +47,9 @@ public:
     /// <param name="generator">The generator used to create stream elements.</param>
     Generate(Generator generator) : base(), _generator(generator) { }
 
+    Generate(const Generate<Generator>&) = delete;
+    Generate(Generate<Generator>&&) = default;
+
     /// <summary>
     /// Returns the next element from the stream.
     /// </summary>

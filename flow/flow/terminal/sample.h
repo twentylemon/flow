@@ -56,7 +56,7 @@ inline auto sample_heap(std::size_t n) {
     return detail::make_terminal([n](auto&& stream) {
         using T = std::decay_t<decltype(stream.next())>;
         using U = typename std::default_random_engine::result_type;
-        std::default_random_engine gen(std::chrono::system_clock::now().time_since_epoch().count());
+        std::default_random_engine gen(static_cast<unsigned int>(std::chrono::system_clock::now().time_since_epoch().count()));
         auto comp = [](const std::pair<U, T>& lhs, const std::pair<U, T>& rhs) { return lhs.first < rhs.first; };
         std::vector<std::pair<U, T>> heap;
         heap.reserve(n + 1);
@@ -84,13 +84,32 @@ inline auto sample_heap(std::size_t n) {
 inline auto sample_shuffle(std::size_t n) {
     return detail::make_terminal([n](auto&& stream) {
         using T = std::decay_t<decltype(stream.next())>;
-        std::default_random_engine gen(std::chrono::system_clock::now().time_since_epoch().count());
+        std::default_random_engine gen(static_cast<unsigned int>(std::chrono::system_clock::now().time_since_epoch().count()));
         auto results = stream | to_vector();
         if (results.size() > n) {
             std::shuffle(results.begin(), results.end(), gen);
             results.erase(results.begin() + n, results.end());
         }
         return results;
+    });
+}
+
+/// <summary>
+/// Returns a random sample from the finite stream in a <c>std::vector</c>. This method tries to pick the better
+/// of sample_heap() and sample_shuffle() using the estimated size of the stream.
+/// </summary>
+/// <param name="n">The number of elements to obtain from the stream. If the stream is smaller, all elements are returned.</param>
+/// <returns>A detail::Terminal operation that returns a <c>std::vector</c> of <paramref name="n"/> random stream elements.</returns>
+/// <seealso cref="sample_heap()"/>
+/// <seealso cref="sample_shuffle()"/>
+inline auto sample(std::size_t n) {
+    return detail::make_terminal([n](auto&& stream) {
+        double N = static_cast<double>(stream.estimate_size());
+        double s = static_cast<double>(n);
+        if (2 * (N - s) * std::log2(s) + s < 3 * N - s) {
+            return stream | sample_heap(n);
+        }
+        return stream | sample_shuffle(n);
     });
 }
     }

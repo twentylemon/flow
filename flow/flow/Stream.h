@@ -69,6 +69,9 @@ public:
     template <typename... Args>
     Stream(Args&&... args) : _source(std::forward<Args>(args)...) { }
 
+    Stream(const Stream<Source>&) = delete;
+    Stream(Stream<Source>&&) = default;
+
     /// <summary>
     /// Returns the source of this stream.
     /// </summary>

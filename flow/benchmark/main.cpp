@@ -63,18 +63,18 @@ std::vector<int> vec(maxv);
 
 void run_timer() {
     using T = int;
-    std::vector<T> vec(1000000);
+    std::vector<T> vec(10000);
     std::generate(vec.begin(), vec.end(), std::rand);
     T vv(0);
     boost::timer tv;
     for (int i = 0; i < maxit; i++) {
-        auto w = vec | sample_heap(200);
+        auto w = vec | sample_heap(1);
     }
     std::cout << std::endl << "streamv: " << tv.elapsed() << "\t" << vv << std::endl;
     T v_(0);
     boost::timer t_;
     for (int i = 0; i < maxit; i++) {
-        auto w = vec | sample_shuffle(200);
+        auto w = vec | sample_shuffle(1);
     }
     std::cout << std::endl << "stream_: " << t_.elapsed() << "\t" << v_ << std::endl;
 }
@@ -87,6 +87,13 @@ int main(int argc, char** argv) {
     //std::cout << inc << '\t' << vec.size() << std::endl;
     auto endl = [](int i = 1) { for (int j = 0; j < i; ++j) std::cout << std::endl; };
 
+    /*
+    auto s = from(vec);
+    auto a = s | limit(4) | to_vector();
+    auto b = s | to_vector();
+    std::cout << "a = "; a | dump(); endl();
+    std::cout << "b = "; b | dump(); endl();
+    */
     std::vector<int> cw{ 1, 2, 3 };
 
     cycle(cw, 4) | unique() | dump();

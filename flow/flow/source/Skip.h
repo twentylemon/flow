@@ -51,6 +51,9 @@ public:
     Skip(Source&& source, std::size_t begin, std::size_t step_size) : base(std::forward<Source>(source)),
         _current(0), _step_size(step_size), _begin(begin), _initial(true) { }
 
+    Skip(const Skip<Source>&) = delete;
+    Skip(Skip<Source>&&) = default;
+
     /// <summary>
     /// Returns true if this source has more elements.
     /// </summary>

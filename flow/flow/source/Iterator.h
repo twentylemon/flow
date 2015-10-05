@@ -50,6 +50,9 @@ public:
     /// <param name="end">The end iterator.</param>
     Iterator(Itr begin, Itr end) : base(), _current(begin), _end(end) { }
 
+    Iterator(const Iterator<Itr>&) = delete;
+    Iterator(Iterator<Itr>&&) = default;
+
     /// <summary>
     /// Returns true if this source has more elements.
     /// </summary>
