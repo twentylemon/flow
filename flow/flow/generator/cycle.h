@@ -26,12 +26,9 @@
 #ifndef FLOW_GENERATOR_CYCLE_H
 #define FLOW_GENERATOR_CYCLE_H
 
-#include <deque>
-
 #include "from.h"
 #include "repeat.h"
 #include "../intermediate/flat_map.h"
-#include "cycle_move.h"
 
 namespace flow {
     namespace generator {
@@ -82,30 +79,6 @@ auto cycle(Container& container) {
 template <typename Container, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto cycle(Container& container, std::size_t n) {
     return cycle(container.begin(), container.end(), n);
-}
-
-/// <summary>
-/// Creates an infinite stream which cycles <paramref name="list"/>.
-/// <para>If the list is empty, this operation will crash via stack overflow. This can be
-/// avoided by using cycle(std::initializer_list&lt;T&gt;,std::size_t).</para>
-/// </summary>
-/// <param name="list">The list to cycle through.</param>
-/// <returns>An infinite stream which cycles <paramref name="list"/>.</returns>
-template <typename T>
-auto cycle(std::initializer_list<T> list) {
-    return cycle_move(std::deque<T>(list));
-}
-
-/// <summary>
-/// Creates a stream which cycles through <paramref name="list"/> <paramref name="n"/> times.
-/// <para>To cycle a singleton list, use repeat().</para>
-/// </summary>
-/// <param name="list">The list to cycle through.</param>
-/// <param name="n">The number of times to repeat <paramref name="list"/>.</param>
-/// <returns>A stream which cycles <paramref name="list"/> <paramref name="n"/> times.</returns>
-template <typename T>
-auto cycle(std::initializer_list<T> list, std::size_t n) {
-    return cycle_move(std::deque<T>(list), n);
 }
 
 /// <summary>
