@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Flow: flow/source/Peek.h File Reference</title>
+<title>Flow: flow/intermediate/filter.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -82,23 +82,44 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="../../dir_2420eba184a3676f5a7fb84b29bc58a5.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_27f4a12829f4687a70b5d5cc33ec1f57.html">source</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../dir_2420eba184a3676f5a7fb84b29bc58a5.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_a0e9e98f8cff90e425322a8947b4aaff.html">intermediate</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Peek.h File Reference</div>  </div>
+<div class="title">filter.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="../../d5/d55/_intermediate_source_8h.html">IntermediateSource.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;functional&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../d3/d99/_stream_8h.html">../Stream.h</a>&quot;</code><br />
+<code>#include &quot;Intermediate.h&quot;</code><br />
+<code>#include &quot;../source/Filter.h&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:d9/de2/namespaceflow"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/de2/namespaceflow.html">flow</a></td></tr>
 <tr class="memdesc:d9/de2/namespaceflow"><td class="mdescLeft">&#160;</td><td class="mdescRight">The entire flow library is contained in the flow namespace. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:dc/d09/namespaceflow_1_1intermediate"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html">flow::intermediate</a></td></tr>
+<tr class="memdesc:dc/d09/namespaceflow_1_1intermediate"><td class="mdescLeft">&#160;</td><td class="mdescRight">Intermediate operations, all of which are also aliased in the flow namespace. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aa74be97ab2dbd180f7d1127a88cfcf8c"><td class="memTemplParams" colspan="2">template&lt;typename UnaryPredicate &gt; </td></tr>
+<tr class="memitem:aa74be97ab2dbd180f7d1127a88cfcf8c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c">flow::intermediate::filter</a> (UnaryPredicate predicate)</td></tr>
+<tr class="memdesc:aa74be97ab2dbd180f7d1127a88cfcf8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> that return <code>false</code> for <em>predicate</em> .  <a href="#aa74be97ab2dbd180f7d1127a88cfcf8c">More...</a><br /></td></tr>
+<tr class="separator:aa74be97ab2dbd180f7d1127a88cfcf8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99debd4465f5e92791995d9a985a0a2d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a99debd4465f5e92791995d9a985a0a2d">flow::intermediate::filter</a> ()</td></tr>
+<tr class="memdesc:a99debd4465f5e92791995d9a985a0a2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> which are evaluated to <code>false</code>.  <a href="#a99debd4465f5e92791995d9a985a0a2d">More...</a><br /></td></tr>
+<tr class="separator:a99debd4465f5e92791995d9a985a0a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e1f3921d4f70c95c8e576ec40f8cdd2"><td class="memTemplParams" colspan="2">template&lt;typename Ret , typename Class &gt; </td></tr>
+<tr class="memitem:a6e1f3921d4f70c95c8e576ec40f8cdd2"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a6e1f3921d4f70c95c8e576ec40f8cdd2">flow::intermediate::filter</a> (Ret(Class::*member)())</td></tr>
+<tr class="memdesc:a6e1f3921d4f70c95c8e576ec40f8cdd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> that return <code>false</code> for <em>member</em> .  <a href="#a6e1f3921d4f70c95c8e576ec40f8cdd2">More...</a><br /></td></tr>
+<tr class="separator:a6e1f3921d4f70c95c8e576ec40f8cdd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -154,18 +154,8 @@ Public Member Functions</h2></td></tr>
 class flow::Stream&lt; Source &gt;</h3>
 
 <p>The stream class provides lazy evaluation and functional style transformations on ordered data. </p>
-<p>Streams support pipelining of multiple operations. Streams can be transformed using <code>operator|</code> to create a new stream given a detail::Intermediate operation (anything from the <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html" title="Intermediate operations, all of which are also aliased in the flow namespace. ">flow::intermediate</a> namespace) or can return a value given a detail::Terminal operation (anything from the <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html" title="Terminal operations, all of which are also aliased in the flow namespace. ">flow::terminal</a> namespace).</p>
+<p>Streams support pipelining of multiple operations. Streams can be transformed using <code>operator|</code> to create a new stream given an intermediate operation (anything from the <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html" title="Intermediate operations, all of which are also aliased in the flow namespace. ">flow::intermediate</a> namespace) or can return a value given a detail::Terminal operation (anything from the <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html" title="Terminal operations, all of which are also aliased in the flow namespace. ">flow::terminal</a> namespace).</p>
 <p>Streams can be constructed using the functions in the <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html" title="Stream factory methods, all of which are also aliased in the flow namespace. ">flow::generator</a> namespace.</p>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000001">Todo:</a></b></dt><dd><p class="startdd">flow::intermediate::merge - combine two sorted streams while maintaining sorted order </p>
-<p>flow::intermediate::union - union two sorted/unique streams </p>
-<p>flow::intermediate::intersect - intersect two sorted/unique streams </p>
-<p>flow::intermediate::difference - compute the difference of two sorted/unique streams </p>
-<p>flow::intermediate::symmetric_difference - compute the symmetric difference of two sorted/unique streams </p>
-<p>flow::generator::random - generate stream values from a random number generator </p>
-<p>flow::generator::parallel_* - create a parallel version of other generators? </p>
-<p>flow::terminal::parallel_* - chunking parallelization of terminal operations </p>
-<p class="enddd">parallel pipelining of stream operations? </p>
-</dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a8bb7d10321101656ba68f420eec020ef"></a>
 <div class="memitem">
@@ -525,10 +515,6 @@ template&lt;typename Source &gt; </div>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>flow/<a class="el" href="../../df/d85/_compose_8h.html">Compose.h</a></li>
-<li>flow/<a class="el" href="../../d3/d99/_stream_8h.html">Stream.h</a></li>
-</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

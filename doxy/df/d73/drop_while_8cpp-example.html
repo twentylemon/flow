@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Flow: flow/intermediate/Intermediate.h File Reference</title>
+<title>Flow: drop_while.cpp</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -41,7 +41,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="../../namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="../../annotated.html"><span>Classes</span></a></li>
-      <li class="current"><a href="../../files.html"><span>Files</span></a></li>
+      <li><a href="../../files.html"><span>Files</span></a></li>
       <li><a href="../../examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -61,11 +61,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       </li>
     </ul>
   </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="../../files.html"><span>File&#160;List</span></a></li>
-    </ul>
-  </div>
+</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -80,32 +76,36 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="../../dir_2420eba184a3676f5a7fb84b29bc58a5.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_a0e9e98f8cff90e425322a8947b4aaff.html">intermediate</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">Intermediate.h File Reference</div>  </div>
+<div class="title">drop_while.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="../../df/d85/_compose_8h.html">../Compose.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d6/ddd/_terminal_8h.html">../terminal/Terminal.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d3/d99/_stream_8h.html">../Stream.h</a>&quot;</code><br />
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:d9/de2/namespaceflow"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/de2/namespaceflow.html">flow</a></td></tr>
-<tr class="memdesc:d9/de2/namespaceflow"><td class="mdescLeft">&#160;</td><td class="mdescRight">The entire flow library is contained in the flow namespace. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:dc/d09/namespaceflow_1_1intermediate"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html">flow::intermediate</a></td></tr>
-<tr class="memdesc:dc/d09/namespaceflow_1_1intermediate"><td class="mdescLeft">&#160;</td><td class="mdescRight">Intermediate operations, all of which are also aliased in the flow namespace. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-</div><!-- contents -->
+<p>A simple flow::drop_while example. This operation removes elements from the front of the stream as long as the elements return <code>true</code> for a given predicate. Once an element returns <code>false</code>, all elements after and including that element are kept, even if later elements would be dropped by the predicate.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the Stream that return false for predicate . ">filter()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af694d1a9aa88f1dd8ff3d3e66d2cb6c9" title="Takes elements from the Stream until predicate  returns false for an element. ">take_while()</a></dd></dl>
+<div class="fragment"><div class="line"></div>
+<div class="line"><span class="preprocessor">#include &lt;examples.h&gt;</span>   <span class="comment">// defines vec1to4 = {1,2,3,4}, vec5to8 = {5,6,7,8}</span></div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> drop_while_example() {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;flow::drop_while&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"></div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;vec1to4 | drop_while([](int i) { return i &lt; 2; }) = &quot;</span>;</div>
+<div class="line">    vec1to4 | <a name="a0"></a><a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1c6e57bccb66cfbfae54134b500ea8c0">drop_while</a>([](<span class="keywordtype">int</span> i) { <span class="keywordflow">return</span> i &lt; 2; }) | <a name="a1"></a><a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f">dump</a>();     <span class="comment">// 2 3 4</span></div>
+<div class="line">    std::cout &lt;&lt; std::endl;</div>
+<div class="line"></div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;vec1to4 | drop_while([](int i) { return i == 0; }) = &quot;</span>;</div>
+<div class="line">    vec1to4 | <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1c6e57bccb66cfbfae54134b500ea8c0">drop_while</a>([](<span class="keywordtype">int</span> i) { <span class="keywordflow">return</span> i == 0; }) | <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f">dump</a>();    <span class="comment">// 1 2 3 4</span></div>
+<div class="line">    std::cout &lt;&lt; std::endl;</div>
+<div class="line"></div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;{1, 2, 1, 1} | drop_while([](int i) { return i == 1; }) = &quot;</span>;</div>
+<div class="line">    <a name="a2"></a><a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b">from</a>({ 1, 2, 1, 1 }) | <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1c6e57bccb66cfbfae54134b500ea8c0">drop_while</a>([](<span class="keywordtype">int</span> i) { <span class="keywordflow">return</span> i == 1; }) | <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f">dump</a>();   <span class="comment">// 2 1 1</span></div>
+<div class="line">    std::cout &lt;&lt; std::endl;</div>
+<div class="line"></div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;vec1to4 | drop_while([](int i) { return i &gt; 0; }) = &quot;</span>;</div>
+<div class="line">    vec1to4 | <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1c6e57bccb66cfbfae54134b500ea8c0">drop_while</a>([](<span class="keywordtype">int</span> i) { <span class="keywordflow">return</span> i &gt; 0; }) | <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f">dump</a>();     <span class="comment">// empty</span></div>
+<div class="line">    std::cout &lt;&lt; std::endl &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+</div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -95,8 +95,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="contents">
 <div class="textblock"><code>#include &lt;tuple&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../d3/d99/_stream_8h.html">../Stream.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d9/df2/_intermediate_8h.html">Intermediate.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../de/d5c/source_2zip_8h.html">../source/Zip.h</a>&quot;</code><br />
+<code>#include &quot;Intermediate.h&quot;</code><br />
+<code>#include &quot;../source/Zip.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d9/d4b/from_8h.html">../generator/from.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -114,25 +114,33 @@ Functions</h2></td></tr>
 <tr class="memitem:ae25b0a8475258acc29173c4a37e13e22"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ae25b0a8475258acc29173c4a37e13e22">flow::intermediate::zip</a> (Stream&lt; RightSource &gt; &amp;&amp;right, BinaryOperation zipper)</td></tr>
 <tr class="memdesc:ae25b0a8475258acc29173c4a37e13e22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using <em>zipper</em>  as the zipping operation.  <a href="#ae25b0a8475258acc29173c4a37e13e22">More...</a><br /></td></tr>
 <tr class="separator:ae25b0a8475258acc29173c4a37e13e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb00402c75a7be66d0d82652d275889d"><td class="memTemplParams" colspan="2">template&lt;typename Itr , typename BinaryOperation &gt; </td></tr>
+<tr class="memitem:afb00402c75a7be66d0d82652d275889d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#afb00402c75a7be66d0d82652d275889d">flow::intermediate::zip</a> (Itr begin, Itr end, BinaryOperation zipper)</td></tr>
+<tr class="memdesc:afb00402c75a7be66d0d82652d275889d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using <em>zipper</em>  as the zipping operation, this is the same as <code>zip(from(begin, end), zipper)</code>.  <a href="#afb00402c75a7be66d0d82652d275889d">More...</a><br /></td></tr>
+<tr class="separator:afb00402c75a7be66d0d82652d275889d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a573b95c3fc149372b6659127f7d47814"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename BinaryOperation , typename  = std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:a573b95c3fc149372b6659127f7d47814"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a573b95c3fc149372b6659127f7d47814">flow::intermediate::zip</a> (Container &amp;container, BinaryOperation zipper)</td></tr>
-<tr class="memdesc:a573b95c3fc149372b6659127f7d47814"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using <em>zipper</em>  as the zipping operation.  <a href="#a573b95c3fc149372b6659127f7d47814">More...</a><br /></td></tr>
+<tr class="memdesc:a573b95c3fc149372b6659127f7d47814"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using <em>zipper</em>  as the zipping operation, this is the same as <code>zip(from(container), zipper)</code>.  <a href="#a573b95c3fc149372b6659127f7d47814">More...</a><br /></td></tr>
 <tr class="separator:a573b95c3fc149372b6659127f7d47814"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7916efdf915b8224595dd84557f20874"><td class="memTemplParams" colspan="2">template&lt;typename T , typename BinaryOperation &gt; </td></tr>
 <tr class="memitem:a7916efdf915b8224595dd84557f20874"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a7916efdf915b8224595dd84557f20874">flow::intermediate::zip</a> (std::initializer_list&lt; T &gt; list, BinaryOperation zipper)</td></tr>
-<tr class="memdesc:a7916efdf915b8224595dd84557f20874"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using <em>zipper</em>  as the zipping operation.  <a href="#a7916efdf915b8224595dd84557f20874">More...</a><br /></td></tr>
+<tr class="memdesc:a7916efdf915b8224595dd84557f20874"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using <em>zipper</em>  as the zipping operation, this is the same as <code>zip(from(list), zipper)</code>.  <a href="#a7916efdf915b8224595dd84557f20874">More...</a><br /></td></tr>
 <tr class="separator:a7916efdf915b8224595dd84557f20874"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f1ec0323daa06ef6b093f1d0aa4c1cc"><td class="memTemplParams" colspan="2">template&lt;typename RightSource &gt; </td></tr>
 <tr class="memitem:a7f1ec0323daa06ef6b093f1d0aa4c1cc"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a7f1ec0323daa06ef6b093f1d0aa4c1cc">flow::intermediate::zip</a> (Stream&lt; RightSource &gt; &amp;&amp;right)</td></tr>
 <tr class="memdesc:a7f1ec0323daa06ef6b093f1d0aa4c1cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using the default zipping operation.  <a href="#a7f1ec0323daa06ef6b093f1d0aa4c1cc">More...</a><br /></td></tr>
 <tr class="separator:a7f1ec0323daa06ef6b093f1d0aa4c1cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af07acbb7524420dd6b7b05f609212395"><td class="memTemplParams" colspan="2">template&lt;typename Itr &gt; </td></tr>
+<tr class="memitem:af07acbb7524420dd6b7b05f609212395"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af07acbb7524420dd6b7b05f609212395">flow::intermediate::zip</a> (Itr begin, Itr end)</td></tr>
+<tr class="memdesc:af07acbb7524420dd6b7b05f609212395"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using the default zipping operation, this is the same as <code>zip(from(begin, end))</code>.  <a href="#af07acbb7524420dd6b7b05f609212395">More...</a><br /></td></tr>
+<tr class="separator:af07acbb7524420dd6b7b05f609212395"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2fc82a612a709360fac445a46001509"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:ab2fc82a612a709360fac445a46001509"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ab2fc82a612a709360fac445a46001509">flow::intermediate::zip</a> (Container &amp;container)</td></tr>
-<tr class="memdesc:ab2fc82a612a709360fac445a46001509"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using the default zipping operation.  <a href="#ab2fc82a612a709360fac445a46001509">More...</a><br /></td></tr>
+<tr class="memdesc:ab2fc82a612a709360fac445a46001509"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using the default zipping operation, this is the same as <code>zip(from(container))</code>.  <a href="#ab2fc82a612a709360fac445a46001509">More...</a><br /></td></tr>
 <tr class="separator:ab2fc82a612a709360fac445a46001509"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5b531057c1a25cd2488f1f6817c0d63"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ab5b531057c1a25cd2488f1f6817c0d63"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ab5b531057c1a25cd2488f1f6817c0d63">flow::intermediate::zip</a> (std::initializer_list&lt; T &gt; list)</td></tr>
-<tr class="memdesc:ab5b531057c1a25cd2488f1f6817c0d63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using the default zipping operation.  <a href="#ab5b531057c1a25cd2488f1f6817c0d63">More...</a><br /></td></tr>
+<tr class="memdesc:ab5b531057c1a25cd2488f1f6817c0d63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using the default zipping operation, this is the same as <code>zip(from(list))</code>.  <a href="#ab5b531057c1a25cd2488f1f6817c0d63">More...</a><br /></td></tr>
 <tr class="separator:ab5b531057c1a25cd2488f1f6817c0d63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->

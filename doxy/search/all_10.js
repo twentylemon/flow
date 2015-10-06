@@ -2,8 +2,6 @@ var searchData=
 [
   ['take_5fwhile',['take_while',['../dc/d09/namespaceflow_1_1intermediate.html#af694d1a9aa88f1dd8ff3d3e66d2cb6c9',1,'flow::intermediate::take_while(UnaryPredicate predicate)'],['../dc/d09/namespaceflow_1_1intermediate.html#a213755b414a7d31af11bb96c129c6667',1,'flow::intermediate::take_while()'],['../dc/d09/namespaceflow_1_1intermediate.html#adf3882ef78e687785e2c1402e4a62ea1',1,'flow::intermediate::take_while(Ret(Class::*member)())']]],
   ['take_5fwhile_2eh',['take_while.h',['../d9/dd7/take__while_8h.html',1,'']]],
-  ['takewhile_2eh',['TakeWhile.h',['../d4/d7c/_take_while_8h.html',1,'']]],
-  ['terminal_2eh',['Terminal.h',['../d6/ddd/_terminal_8h.html',1,'']]],
   ['to_2eh',['to.h',['../d1/d9d/to_8h.html',1,'']]],
   ['to_5fdeque',['to_deque',['../d1/d6c/namespaceflow_1_1terminal.html#a9f69e7aa0b702ed9ed611b1dc8924f53',1,'flow::terminal::to_deque()'],['../d1/d6c/namespaceflow_1_1terminal.html#a0a6d5c159456a5fe32760b642506cad8',1,'flow::terminal::to_deque(const Allocator &amp;alloc)']]],
   ['to_5fforward_5flist',['to_forward_list',['../d1/d6c/namespaceflow_1_1terminal.html#a35cb281944a17abb919efac5d789999e',1,'flow::terminal::to_forward_list()'],['../d1/d6c/namespaceflow_1_1terminal.html#a75ac4e649cbf6e807c5b3fc172e5f32f',1,'flow::terminal::to_forward_list(const Allocator &amp;alloc)']]],

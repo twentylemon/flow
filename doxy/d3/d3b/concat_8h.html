@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Flow: flow/intermediate/map.h File Reference</title>
+<title>Flow: flow/intermediate/concat.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -90,13 +90,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">map.h File Reference</div>  </div>
+<div class="title">concat.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;functional&gt;</code><br />
-<code>#include &quot;<a class="el" href="../../d3/d99/_stream_8h.html">../Stream.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d9/df2/_intermediate_8h.html">Intermediate.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../db/d48/source_2map_8h.html">../source/Map.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d3/d99/_stream_8h.html">../Stream.h</a>&quot;</code><br />
+<code>#include &quot;Intermediate.h&quot;</code><br />
+<code>#include &quot;../source/Concat.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d9/d4b/from_8h.html">../generator/from.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -109,14 +109,22 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af704cfd8b681a9cd8b2437d249487f78"><td class="memTemplParams" colspan="2">template&lt;typename UnaryOperation &gt; </td></tr>
-<tr class="memitem:af704cfd8b681a9cd8b2437d249487f78"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af704cfd8b681a9cd8b2437d249487f78">flow::intermediate::map</a> (UnaryOperation mapper)</td></tr>
-<tr class="memdesc:af704cfd8b681a9cd8b2437d249487f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> using <em>mapper</em> .  <a href="#af704cfd8b681a9cd8b2437d249487f78">More...</a><br /></td></tr>
-<tr class="separator:af704cfd8b681a9cd8b2437d249487f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae7bef0ac778a95140e38bb9e81ae83a"><td class="memTemplParams" colspan="2">template&lt;typename Ret , typename Class &gt; </td></tr>
-<tr class="memitem:aae7bef0ac778a95140e38bb9e81ae83a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aae7bef0ac778a95140e38bb9e81ae83a">flow::intermediate::map</a> (Ret(Class::*member)())</td></tr>
-<tr class="memdesc:aae7bef0ac778a95140e38bb9e81ae83a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> to the return value of <em>member</em>  for each stream element.  <a href="#aae7bef0ac778a95140e38bb9e81ae83a">More...</a><br /></td></tr>
-<tr class="separator:aae7bef0ac778a95140e38bb9e81ae83a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0551274cc05f2c668d5612bfe1716cb"><td class="memTemplParams" colspan="2">template&lt;typename Tail &gt; </td></tr>
+<tr class="memitem:aa0551274cc05f2c668d5612bfe1716cb"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa0551274cc05f2c668d5612bfe1716cb">flow::intermediate::concat</a> (Stream&lt; Tail &gt; &amp;&amp;tail)</td></tr>
+<tr class="memdesc:aa0551274cc05f2c668d5612bfe1716cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates the given <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> onto the end of the operated stream.  <a href="#aa0551274cc05f2c668d5612bfe1716cb">More...</a><br /></td></tr>
+<tr class="separator:aa0551274cc05f2c668d5612bfe1716cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac535fea33e2424506d0bbf56409f99a7"><td class="memTemplParams" colspan="2">template&lt;typename Itr &gt; </td></tr>
+<tr class="memitem:ac535fea33e2424506d0bbf56409f99a7"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac535fea33e2424506d0bbf56409f99a7">flow::intermediate::concat</a> (Itr begin, Itr end)</td></tr>
+<tr class="memdesc:ac535fea33e2424506d0bbf56409f99a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates the given iterator range onto the end of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>, this is the same as <code>concat(from(begin, end))</code>.  <a href="#ac535fea33e2424506d0bbf56409f99a7">More...</a><br /></td></tr>
+<tr class="separator:ac535fea33e2424506d0bbf56409f99a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a955cba2286efa38c29c17ee9d2fd43f5"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a955cba2286efa38c29c17ee9d2fd43f5"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a955cba2286efa38c29c17ee9d2fd43f5">flow::intermediate::concat</a> (Container &amp;container)</td></tr>
+<tr class="memdesc:a955cba2286efa38c29c17ee9d2fd43f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates <em>container</em>  onto the end of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>, this is the same as <code>concat(from(container))</code>.  <a href="#a955cba2286efa38c29c17ee9d2fd43f5">More...</a><br /></td></tr>
+<tr class="separator:a955cba2286efa38c29c17ee9d2fd43f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29b48f9084349825be7f428ee4b7883d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a29b48f9084349825be7f428ee4b7883d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a29b48f9084349825be7f428ee4b7883d">flow::intermediate::concat</a> (std::initializer_list&lt; T &gt; list)</td></tr>
+<tr class="memdesc:a29b48f9084349825be7f428ee4b7883d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates <em>list</em>  onto the end of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>, this is the same as <code>concat(from(list))</code>.  <a href="#a29b48f9084349825be7f428ee4b7883d">More...</a><br /></td></tr>
+<tr class="separator:a29b48f9084349825be7f428ee4b7883d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
