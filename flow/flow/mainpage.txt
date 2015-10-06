@@ -37,7 +37,7 @@
 /// }\endcode
 /// 
 /// <para>Not bad, but it's not quickly clear what is going on. The same operation can be done as a sick flow instead:</para>
-/// \code{.cpp}list | filter([](int i){ return i % 2 == 0; }) | limit(10) | map([](int i){ return i*i; }) | each(process);\endcode
+/// \code{.cpp}list | filter([](int i) { return i % 2 == 0; }) | limit(10) | map([](int i) { return i*i; }) | each(process);\endcode
 /// 
 /// <para>Reading the line aloud, it's obvious what is happening. Take the list, keep even values, limit it to 10 elements,
 /// map the elements to their square, and then process each of those. Fun. This is just a trivial example, there many other

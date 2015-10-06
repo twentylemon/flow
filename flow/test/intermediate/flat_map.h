@@ -9,11 +9,11 @@ BOOST_AUTO_TEST_CASE(flat_map_t) {
     }
     
     std::vector<int> ex = { 1, 1, 2, 2, 3, 3 };
-    auto s = vec | flat_map([](int i){ return repeat(i, 2); }) | to_vector();
+    auto s = vec | flat_map([](int i) { return repeat(i, 2); }) | to_vector();
     BOOST_CHECK_EQUAL_COLLECTIONS(ex.begin(), ex.end(), s.begin(), s.end());
     
     ex = { 1, 2, 3, 1, 2, 3, 1, 2, 3 };
-    s = bigvec | flat_map([](std::vector<int>& v){ return from(v); }) | to_vector();
+    s = bigvec | flat_map([](std::vector<int>& v) { return from(v); }) | to_vector();
     BOOST_CHECK_EQUAL_COLLECTIONS(ex.begin(), ex.end(), s.begin(), s.end());
 
     ex = {};

@@ -46,7 +46,7 @@ for (auto it = list.begin(), end = list.end(); it != end & count < 10; ++it) {
 Not bad, but it's not quickly clear what is going on. The same operation can be done as a sick flow instead:
 
 ```C++
-list | filter([](int i){ return i % 2 == 0; }) | limit(10) | map([](int i){ return i*i; }) | each(process);
+list | filter([](int i) { return i % 2 == 0; }) | limit(10) | map([](int i) { return i*i; }) | each(process);
 ```
 
 Reading the line aloud, it's obvious what is happening. Take the list, keep even values, limit it to 10 elements,

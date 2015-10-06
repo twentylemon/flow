@@ -18,7 +18,7 @@ BOOST_AUTO_TEST_CASE(map_func) {
     
     std::vector<Widget> w = { Widget(1), Widget(2), Widget(3) };
     std::vector<bool> ex3 = { true, false, true };
-    auto s3 = w | map([](Widget& w){ return !w.is_even(); }) | to_vector();
+    auto s3 = w | map([](Widget& w) { return !w.is_even(); }) | to_vector();
     BOOST_CHECK_EQUAL_COLLECTIONS(s3.begin(), s3.end(), ex3.begin(), ex3.end());
 }
 

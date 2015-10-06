@@ -147,7 +147,7 @@ public:
             }
             return *this;
         }
-        iterator operator++(int){
+        iterator operator++(int) {
             iterator ret = *this;
             return ++ret;
         }

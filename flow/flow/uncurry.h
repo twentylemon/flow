@@ -106,7 +106,7 @@ protected:
 /// into a function which takes one <c>std::tuple</c> of those arguments instead. This is useful when zipping streams
 /// together as it allows you to write a function which takes normal arguments instead of a tuple.
 /// For example, this allows the syntax:</para>
-/// <code>intlist | zip(more_ints) | map(uncurry([](int l, int r){ l and r things })) | ...</code>
+/// <code>intlist | zip(more_ints) | map(uncurry([](int l, int r) { l and r things })) | ...</code>
 /// <para>as opposed to using <c>std::tuple&lt;int,int&gt;</c> and <c>std::get&lt;i&gt;</c>.</para>
 /// </summary>
 /// <param name="curry_function">The curried function to wrap.</param>

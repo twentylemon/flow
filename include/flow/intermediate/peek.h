@@ -40,8 +40,8 @@ namespace flow {
 /// <para>This does not explicitly change the elements in the stream. The <paramref name="action"/> is
 /// performed, then the stream value is passed on to the next operation. The <paramref name="action"/> will
 /// only be performed if the stream element is actually reached. For example,</para>
-/// <code>ints | peek([](int i){ std::cout << i << " "; }) | filter(is_even) | ...; // will display all elements<br>
-/// ints | filter(is_even) | peek([](int i){ std::cout << i << " "; }) | ...;       // will only display even elements</code>
+/// <code>ints | peek([](int i) { std::cout << i << " "; }) | filter(is_even) | ...;    // will display all elements<br>
+/// ints | filter(is_even) | peek([](int i) { std::cout << i << " "; }) | ...;          // will only display even elements</code>
 /// </summary>
 /// <param name="action">The function to apply to each element of the stream.</param>
 /// <returns>An intermediate operation that executes a function for each stream element.</returns>
@@ -58,8 +58,8 @@ auto peek(UnaryFunction action) {
 /// <para>This does not explicitly change the elements in the stream. The <paramref name="member"/> is
 /// called, then the stream value is passed on to the next operation. The <paramref name="member"/> will
 /// only be called if the stream element is actually reached. For example,</para>
-/// <code>things | peek([](Thing& i){ std::cout << i << " "; }) | filter(is_something) | ...;   // will display all elements<br>
-/// things | filter(is_something) | peek([](Thing& i){ std::cout << i << " "; }) | ...;         // will only display "something" elements</code>
+/// <code>things | peek([](Thing& i) { std::cout << i << " "; }) | filter(is_something) | ...;  // will display all elements<br>
+/// things | filter(is_something) | peek([](Thing& i) { std::cout << i << " "; }) | ...;        // will only display "something" elements</code>
 /// </summary>
 /// <param name="member">The function to apply to each element of the stream.</param>
 /// <returns>An intermediate operation that executes a function for each stream element.</returns>
@@ -74,8 +74,8 @@ auto peek(Ret(Class::*member)()) {
 /// <para>This does not explicitly change the elements in the stream. The <paramref name="member"/> is
 /// called, then the stream value is passed on to the next operation. The <paramref name="member"/> will
 /// only be called if the stream element is actually reached. For example,</para>
-/// <code>things | peek([](Thing& i){ std::cout << i << " "; }) | filter(is_something) | ...;   // will display all elements<br>
-/// things | filter(is_something) | peek([](Thing& i){ std::cout << i << " "; }) | ...;         // will only display "something" elements</code>
+/// <code>things | peek([](Thing& i) { std::cout << i << " "; }) | filter(is_something) | ...;  // will display all elements<br>
+/// things | filter(is_something) | peek([](Thing& i) { std::cout << i << " "; }) | ...;        // will only display "something" elements</code>
 /// </summary>
 /// <param name="member">The function to apply to each element of the stream.</param>
 /// <returns>An intermediate operation that executes a function for each stream element.</returns>

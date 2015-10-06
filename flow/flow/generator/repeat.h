@@ -41,7 +41,7 @@ namespace flow {
 /// <returns>An infinite stream containing only <paramref name="value"/>.</returns>
 template <typename T>
 auto repeat(T&& value) {
-    return generate([value = std::forward<T>(value)](){ return value; });
+    return generate([value = std::forward<T>(value)]() { return value; });
 }
 
 /// <summary>
