@@ -38,7 +38,7 @@ namespace flow {
 /// <summary>
 /// Computes the sum of all the elements in the stream using <c>operator+</c>.
 /// </summary>
-/// <returns>The detail::Terminal operation which sums the elements in the stream.</returns>
+/// <returns>A terminal operation which sums the elements in the stream.</returns>
 /// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
 inline auto sum() {
     return fold(std::plus<void>());
@@ -49,7 +49,7 @@ inline auto sum() {
 /// the sum at <paramref name="init"/>.
 /// </summary>
 /// <param name="init">The initial value to start the sum at.</param>
-/// <returns>The detail::Terminal operation which sums the elements in the stream.</returns>
+/// <returns>A terminal operation which sums the elements in the stream.</returns>
 template <typename T>
 auto sum(T&& init) {
     return fold(std::plus<T>(), std::forward<T>(init));

@@ -34,11 +34,12 @@ namespace flow {
     namespace terminal {
 
 /// <summary>
-/// Copies the elements in the stream into the range beginning at <c>result</c>. An iterator to the end
-/// of the destination range is returned, pointing to the element after the last element copied.
+/// Copies the elements in the stream into the range beginning at <c>result</c>.
+/// <para>An iterator to the end of the destination range is returned, pointing to the
+/// element after the last element copied.</para>
 /// </summary>
 /// <param name="result">The output iterator to the initial position in the destination range.</param>
-/// <returns>The detail::Terminal operation which copies the stream into the <c>result</c> range.</returns>
+/// <returns>A terminal operation which copies the stream into the <c>result</c> range.</returns>
 template <typename OutputIterator>
 auto copy(OutputIterator result) {
     return detail::make_terminal([result](auto&& stream) mutable {

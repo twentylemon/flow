@@ -66,7 +66,7 @@ public:
     /// of this and rhs' operations on the stream.
     /// </summary>
     /// <param name="rhs">The Intermediate operation to pipe into the stream.</param>
-    /// <returns>The composition of this and rhs as A detail::Intermediate operation.</returns>
+    /// <returns>The composition of this and rhs as an intermediate operation.</returns>
     template <typename G>
     Intermediate<flow::detail::Compose<G, F>> operator|(Intermediate<G>&& rhs) {
         return Intermediate<flow::detail::Compose<G, F>>(flow::detail::Compose<G, F>(std::move(rhs._operation), std::move(_operation)));
@@ -91,7 +91,7 @@ private:
 /// Constructs An Intermediate object using the function given.
 /// </summary>
 /// <param name="function">The function.</param>
-/// <returns>A detail::Intermediate operation wrapping the function.</returns>
+/// <returns>An intermediate operation wrapping the function.</returns>
 template <typename Function>
 Intermediate<Function> make_intermediate(Function&& function) {
     return Intermediate<Function>(std::forward<Function>(function));

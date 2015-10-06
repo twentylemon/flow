@@ -40,7 +40,7 @@ namespace flow {
 /// <summary>
 /// Creates an infinite stream which cycles <paramref name="container"/>.
 /// <para>This extends the lifetime of temporary containers that are passed to it. That is, it is
-/// safe to use temporaries as long as they are moved in.</para>
+/// safe to use temporaries or other variables as long as they are moved in.</para>
 /// </summary>
 /// <param name="container">The container to cycle through.</param>
 /// <returns>An infinite stream which cycles <paramref name="container"/>.</returns>
@@ -53,7 +53,7 @@ auto cycle_move(Container&& container) {
 /// <summary>
 /// Creates a stream which cycles through <paramref name="container"/> <paramref name="n"/> times.
 /// <para>This extends the lifetime of temporary containers that are passed to it. That is, it is
-/// safe to use temporaries as long as they are moved in.</para>
+/// safe to use temporaries or other variables as long as they are moved in.</para>
 /// </summary>
 /// <param name="container">The container to cycle through.</param>
 /// <param name="n">The number of times to repeat <paramref name="container"/>.</param>
@@ -67,10 +67,12 @@ auto cycle_move(Container&& container, std::size_t n) {
 /// <summary>
 /// Creates an infinite stream which cycles <paramref name="list"/>.
 /// <para>If the list is empty, this operation will crash via stack overflow. This can be
-/// avoided by using cycle(std::initializer_list&lt;T&gt;,std::size_t).</para>
+/// avoided by using cycle(std::initializer_list&lt;T&gt;, std::size_t), or empty().</para>
+/// <para>To cycle a singleton list, use repeat().</para>
 /// </summary>
 /// <param name="list">The list to cycle through.</param>
 /// <returns>An infinite stream which cycles <paramref name="list"/>.</returns>
+/// <seealso cref="repeat()"/>
 template <typename T>
 auto cycle(std::initializer_list<T> list) {
     return cycle_move(std::deque<T>(list));
@@ -83,6 +85,7 @@ auto cycle(std::initializer_list<T> list) {
 /// <param name="list">The list to cycle through.</param>
 /// <param name="n">The number of times to repeat <paramref name="list"/>.</param>
 /// <returns>A stream which cycles <paramref name="list"/> <paramref name="n"/> times.</returns>
+/// <seealso cref="repeat()"/>
 template <typename T>
 auto cycle(std::initializer_list<T> list, std::size_t n) {
     return cycle_move(std::deque<T>(list), n);
@@ -90,8 +93,9 @@ auto cycle(std::initializer_list<T> list, std::size_t n) {
 
 /// <summary>
 /// Creates an infinite stream which cycles <paramref name="container"/> in reverse order.
-/// <para>This extends the lifetime of temporary containers that are passed to it. That is, it is
-/// safe to use temporaries as long as they are moved in.</para>
+/// <para>The container requires bidirectional iterators and the functions <c>rbegin()</c> and <c>rend()</c>.
+/// This extends the lifetime of temporary containers that are passed to it. That is, it is
+/// safe to use temporaries or other variables as long as they are moved in.</para>
 /// </summary>
 /// <param name="container">The container to cycle through.</param>
 /// <returns>An infinite stream which cycles <paramref name="container"/>.</returns>
@@ -103,8 +107,9 @@ auto rcycle_move(Container&& container) {
 
 /// <summary>
 /// Creates a stream which cycles through <paramref name="container"/> <paramref name="n"/> times in reverse order.
-/// <para>This extends the lifetime of temporary containers that are passed to it. That is, it is
-/// safe to use temporaries as long as they are moved in.</para>
+/// <para>The container requires bidirectional iterators and the functions <c>rbegin()</c> and <c>rend()</c>.
+/// This extends the lifetime of temporary containers that are passed to it. That is, it is
+/// safe to use temporaries or other variables as long as they are moved in.</para>
 /// </summary>
 /// <param name="container">The container to cycle through.</param>
 /// <param name="n">The number of times to repeat <paramref name="container"/>.</param>

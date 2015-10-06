@@ -65,7 +65,7 @@ public:
     /// Composes this operation with another function.
     /// </summary>
     /// <param name="function">The function.</param>
-    /// <returns>The detail::Terminal operation of this composes with the function given.</returns>
+    /// <returns>A terminal operation of this composes with the function given.</returns>
     template <typename G>
     Terminal<flow::detail::Compose<G, F>> then(G&& function) {
         return Terminal<flow::detail::Compose<G, F>>(flow::detail::Compose<G, F>(std::forward<G>(function), std::move(_operation)));

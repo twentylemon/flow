@@ -129,7 +129,7 @@ const auto zipper = [](auto&& left, auto&& right) {
 /// </summary>
 /// <param name="right">The right stream to zip together with the operated stream.</param>
 /// <param name="zipper">The zipping operation that combines the two streams.</param>
-/// <returns>A detail::Intermediate operation that zips the two streams.</returns>
+/// <returns>An intermediate operation that zips the two streams.</returns>
 template <typename RightSource, typename BinaryOperation>
 auto zip(Stream<RightSource>&& right, BinaryOperation zipper) {
     return detail::make_intermediate([right = std::move(right), zipper](auto&& left) mutable {
@@ -138,14 +138,30 @@ auto zip(Stream<RightSource>&& right, BinaryOperation zipper) {
 }
 
 /// <summary>
-/// Zips the two streams together using <paramref name="zipper"/> as the zipping operation.
-/// This is the same as <c>zip(from(container), zipper)</c>.
+/// Zips the two streams together using <paramref name="zipper"/> as the zipping operation,
+/// this is the same as <c>zip(from(begin, end), zipper)</c>.
+/// <para>A zipping operation is any function that takes an element from either stream as input and produces
+/// a single output which is used for the resultant stream. The resultant stream is as long as the shortest input stream.</para>
+/// </summary>
+/// <param name="begin">The beginning of the range to zip with this stream.</param>
+/// <param name="end">The end of the range to zip with this stream.</param>
+/// <param name="zipper">The zipping operation that combines the two streams.</param>
+/// <returns>An intermediate operation that zips the two streams.</returns>
+/// <seealso cref="from()"/>
+template <typename Itr, typename BinaryOperation>
+auto zip(Itr begin, Itr end, BinaryOperation zipper) {
+    return zip(generator::from(begin, end), zipper);
+}
+
+/// <summary>
+/// Zips the two streams together using <paramref name="zipper"/> as the zipping operation,
+/// this is the same as <c>zip(from(container), zipper)</c>.
 /// <para>A zipping operation is any function that takes an element from either stream as input and produces
 /// a single output which is used for the resultant stream. The resultant stream is as long as the shortest input stream.</para>
 /// </summary>
 /// <param name="container">The container to zip together with this stream.</param>
 /// <param name="zipper">The zipping operation that combines the two streams.</param>
-/// <returns>A detail::Intermediate operation that zips the two streams.</returns>
+/// <returns>An intermediate operation that zips the two streams.</returns>
 /// <seealso cref="from()"/>
 template <typename Container, typename BinaryOperation, typename = std::enable_if_t<generator::detail::has_const_iterator<Container>::value>>
 auto zip(Container& container, BinaryOperation zipper) {
@@ -153,14 +169,14 @@ auto zip(Container& container, BinaryOperation zipper) {
 }
 
 /// <summary>
-/// Zips the two streams together using <paramref name="zipper"/> as the zipping operation.
-/// This is the same as <c>zip(from(list), zipper)</c>.
+/// Zips the two streams together using <paramref name="zipper"/> as the zipping operation,
+/// this is the same as <c>zip(from(list), zipper)</c>.
 /// <para>A zipping operation is any function that takes an element from either stream as input and produces
 /// a single output which is used for the resultant stream. The resultant stream is as long as the shortest input stream.</para>
 /// </summary>
 /// <param name="list">The list to zip together with this stream.</param>
 /// <param name="zipper">The zipping operation that combines the two streams.</param>
-/// <returns>A detail::Intermediate operation that zips the two streams.</returns>
+/// <returns>An intermediate operation that zips the two streams.</returns>
 /// <seealso cref="from()"/>
 template <typename T, typename BinaryOperation>
 auto zip(std::initializer_list<T> list, BinaryOperation zipper) {
@@ -168,14 +184,14 @@ auto zip(std::initializer_list<T> list, BinaryOperation zipper) {
 }
 
 /// <summary>
-/// Zips the two streams together using the default zipping operation. The default zip operation
-/// creates tuples of the stream elements like <c>std::tuple&lt;T1, T2&gt;</c>. Multiple
-/// <c>zip</c> operations concatenates these tuples together rather than nesting them.
+/// Zips the two streams together using the default zipping operation.
+/// <para>The default zip operation creates tuples of the stream elements like <c>std::tuple&lt;T1, T2&gt;</c>.
+/// Multiple <c>zip</c> operations concatenates these tuples together rather than nesting them.
+/// When using the default zipper, the types being zipped together must be default constructible.</para>
 /// <para>The resultant stream is as long as the shortest input stream.</para>
-/// <para>When using the default zipper, the types being zipped together must be default constructible.</para>
 /// </summary>
 /// <param name="right">The right stream to zip together with the operated stream.</param>
-/// <returns>A detail::Intermediate operation that zips the two streams.</returns>
+/// <returns>An intermediate operation that zips the two streams.</returns>
 /// <seealso cref="uncurry()"/>
 template <typename RightSource>
 auto zip(Stream<RightSource>&& right) {
@@ -183,15 +199,33 @@ auto zip(Stream<RightSource>&& right) {
 }
 
 /// <summary>
-/// Zips the two streams together using the default zipping operation. The default zip
-/// creates tuples of the stream elements like <c>std::tuple&lt;T1, T2&gt;</c>. Multiple
-/// <c>zip</c> operations concatenates these tuples together rather than nesting them.
-/// This is the same as <c>zip(from(container))</c>.
+/// Zips the two streams together using the default zipping operation,
+/// this is the same as <c>zip(from(begin, end))</c>.
+/// <para>The default zip operation creates tuples of the stream elements like <c>std::tuple&lt;T1, T2&gt;</c>.
+/// Multiple <c>zip</c> operations concatenates these tuples together rather than nesting them.
+/// When using the default zipper, the types being zipped together must be default constructible.</para>
 /// <para>The resultant stream is as long as the shortest input stream.</para>
-/// <para>When using the default zipper, the types being zipped together must be default constructible.</para>
+/// </summary>
+/// <param name="begin">The beginning of the range to zip with this stream.</param>
+/// <param name="end">The end of the range to zip with this stream.</param>
+/// <returns>An intermediate operation that zips the two streams.</returns>
+/// <seealso cref="from()"/>
+/// <seealso cref="uncurry()"/>
+template <typename Itr>
+auto zip(Itr begin, Itr end) {
+    return zip(generator::from(begin, end));
+}
+
+/// <summary>
+/// Zips the two streams together using the default zipping operation,
+/// this is the same as <c>zip(from(container))</c>.
+/// <para>The default zip operation creates tuples of the stream elements like <c>std::tuple&lt;T1, T2&gt;</c>.
+/// Multiple <c>zip</c> operations concatenates these tuples together rather than nesting them.
+/// When using the default zipper, the types being zipped together must be default constructible.</para>
+/// <para>The resultant stream is as long as the shortest input stream.</para>
 /// </summary>
 /// <param name="container">The container to zip together with this stream.</param>
-/// <returns>A detail::Intermediate operation that zips the two streams.</returns>
+/// <returns>An intermediate operation that zips the two streams.</returns>
 /// <seealso cref="from()"/>
 /// <seealso cref="uncurry()"/>
 template <typename Container, typename = std::enable_if_t<generator::detail::has_const_iterator<Container>::value>>
@@ -200,15 +234,15 @@ auto zip(Container& container) {
 }
 
 /// <summary>
-/// Zips the two streams together using the default zipping operation. The default zip
-/// creates tuples of the stream elements like <c>std::tuple&lt;T1, T2&gt;</c>. Multiple
-/// <c>zip</c> operations concatenates these tuples together rather than nesting them.
-/// This is the same as <c>zip(from(list))</c>.
+/// Zips the two streams together using the default zipping operation,
+/// this is the same as <c>zip(from(list))</c>.
+/// <para>The default zip operation creates tuples of the stream elements like <c>std::tuple&lt;T1, T2&gt;</c>.
+/// Multiple <c>zip</c> operations concatenates these tuples together rather than nesting them.
+/// When using the default zipper, the types being zipped together must be default constructible.</para>
 /// <para>The resultant stream is as long as the shortest input stream.</para>
-/// <para>When using the default zipper, the types being zipped together must be default constructible.</para>
 /// </summary>
 /// <param name="list">The list to zip together with this stream.</param>
-/// <returns>A detail::Intermediate operation that zips the two streams.</returns>
+/// <returns>An intermediate operation that zips the two streams.</returns>
 /// <seealso cref="from()"/>
 /// <seealso cref="uncurry()"/>
 template <typename T>

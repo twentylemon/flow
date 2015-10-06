@@ -37,20 +37,11 @@ namespace flow {
 
 /// <summary>
 /// The stream class provides lazy evaluation and functional style transformations on ordered data.
-///  <para>Streams support pipelining of multiple operations. Streams can be transformed using <c>operator|</c>
-/// to create a new stream given a detail::Intermediate operation (anything from the flow::intermediate namespace)
+/// <para>Streams support pipelining of multiple operations. Streams can be transformed using <c>operator|</c>
+/// to create a new stream given an intermediate operation (anything from the flow::intermediate namespace)
 /// or can return a value given a detail::Terminal operation (anything from the flow::terminal namespace).</para>
 /// <para>Streams can be constructed using the functions in the flow::generator namespace.</para>
 /// </summary>
-/// \todo flow::intermediate::merge - combine two sorted streams while maintaining sorted order
-/// \todo flow::intermediate::union - union two sorted/unique streams
-/// \todo flow::intermediate::intersect - intersect two sorted/unique streams
-/// \todo flow::intermediate::difference - compute the difference of two sorted/unique streams
-/// \todo flow::intermediate::symmetric_difference - compute the symmetric difference of two sorted/unique streams
-/// \todo flow::generator::random - generate stream values from a random number generator
-/// \todo flow::generator::parallel_* - create a parallel version of other generators?
-/// \todo flow::terminal::parallel_* - chunking parallelization of terminal operations
-/// \todo parallel pipelining of stream operations?
 template <typename Source>
 class Stream
 {

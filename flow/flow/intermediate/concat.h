@@ -37,11 +37,11 @@ namespace flow {
     namespace intermediate {
 
 /// <summary>
-/// Concatenates the given Stream onto the end of the operated stream. The <paramref name="tail"/> stream elements
-/// must be convertible to the same type of elements as the head stream.
+/// Concatenates the given Stream onto the end of the operated stream.
+/// <para>The <paramref name="tail"/> stream elements must be convertible to the same type of elements as the head stream.</para>
 /// </summary>
 /// <param name="tail">The tail stream to put after the end of the operated head stream.</param>
-/// <returns>A detail::Intermediate operation that concatenates the two Stream objects.</returns>
+/// <returns>An intermediate operation that concatenates the two Stream objects.</returns>
 template <typename Tail>
 auto concat(Stream<Tail>&& tail) {
     return detail::make_intermediate([tail = std::move(tail)](auto&& head) mutable {
@@ -50,12 +50,12 @@ auto concat(Stream<Tail>&& tail) {
 }
 
 /// <summary>
-/// Concatenates the given iterator range onto the end of the Stream. This is the same as <c>concat(from(begin, end))</c>.
-/// The <paramref name="tail"/> stream elements must be convertible to the same type of elements as the head stream.
+/// Concatenates the given iterator range onto the end of the Stream, this is the same as <c>concat(from(begin, end))</c>.
+/// <para>The <paramref name="tail"/> stream elements must be convertible to the same type of elements as the head stream.</para>
 /// </summary>
 /// <param name="begin">The beginning of the range to concat.</param>
 /// <param name="end">The end of the range to concat.</param>
-/// <returns>A detail::Intermediate operation that concatenates the container onto the stream.</returns>
+/// <returns>An intermediate operation that concatenates the container onto the stream.</returns>
 /// <seealso cref="from()"/>
 template <typename Itr>
 auto concat(Itr begin, Itr end) {
@@ -63,11 +63,11 @@ auto concat(Itr begin, Itr end) {
 }
 
 /// <summary>
-/// Concatenates <paramref name="container"/> onto the end of the Stream. This is the same as <c>concat(from(container))</c>.
-/// The <paramref name="tail"/> stream elements must be convertible to the same type of elements as the head stream.
+/// Concatenates <paramref name="container"/> onto the end of the Stream, this is the same as <c>concat(from(container))</c>.
+/// <para>The <paramref name="tail"/> stream elements must be convertible to the same type of elements as the head stream.</para>
 /// </summary>
 /// <param name="container">The container to concatenate onto the end of the stream.</param>
-/// <returns>A detail::Intermediate operation that concatenates the container onto the stream.</returns>
+/// <returns>An intermediate operation that concatenates the container onto the stream.</returns>
 /// <seealso cref="from()"/>
 template <typename Container, typename = std::enable_if_t<generator::detail::has_const_iterator<Container>::value>>
 auto concat(Container& container) {
@@ -75,11 +75,11 @@ auto concat(Container& container) {
 }
 
 /// <summary>
-/// Concatenates <paramref name="list"/> onto the end of the Stream. This is the same as <c>concat(from(list))</c>.
-/// The <paramref name="tail"/> stream elements must be convertible to the same type of elements as the head stream.
+/// Concatenates <paramref name="list"/> onto the end of the Stream, this is the same as <c>concat(from(list))</c>.
+/// <para>The <paramref name="tail"/> stream elements must be convertible to the same type of elements as the head stream.</para>
 /// </summary>
 /// <param name="list">The list to concatenate onto the end of the stream.</param>
-/// <returns>A detail::Intermediate operation that concatenates the container onto the stream.</returns>
+/// <returns>An intermediate operation that concatenates the container onto the stream.</returns>
 /// <seealso cref="from()"/>
 template <typename T>
 auto concat(std::initializer_list<T> list) {

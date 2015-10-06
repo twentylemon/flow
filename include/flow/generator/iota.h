@@ -38,6 +38,8 @@ namespace flow {
 /// </summary>
 /// <param name="begin">The beginning element of the stream, later elements are calculated by applying <c>operator++</c>.</param>
 /// <returns>A Stream of values starting at <paramref name="begin"/>, counting up using <c>operator++</c> each time.</returns>
+/// <seealso cref="range()"/>
+/// <seealso cref="closed_range()"/>
 template <typename T>
 auto iota(T&& begin) {
     return iterate([](T& val) -> T& { return ++val; }, std::forward<T>(begin));
@@ -52,6 +54,8 @@ auto iota(T&& begin) {
 /// <param name="begin">The beginning element of the stream, later elements are calculated by applying <c>operator+</c> by <paramref name="increment"/>.</param>
 /// <param name="increment">The value by which to increment each step in the stream.</param>
 /// <returns>A Stream of values starting at <paramref name="begin"/>, counting up using <c>operator+</c> by <paramref name="increment"/> each time.</returns>
+/// <seealso cref="range()"/>
+/// <seealso cref="closed_range()"/>
 template <typename T, typename U>
 auto iota(T&& begin, U&& increment) {
     return iterate([increment = std::forward<U>(increment)](auto&& val) { return std::move(val) + increment;  }, std::forward<T>(begin));

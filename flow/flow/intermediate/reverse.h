@@ -38,12 +38,12 @@ namespace flow {
 
 /// <summary>
 /// Reverses the elements in the Stream.
-/// <para>Reversing is an eager operation. On the creation of the <c>reverse</c> operation,
+/// <para>Reversing is an eager operation. On application of the <c>reverse</c> operation,
 /// the entire stream up to that point is evaluated and stored before continuing with the remainder of the stream.
 /// Thus, the <c>reverse</c> operation takes <c>O(n)</c> extra space and time, where <c>n</c> is the size of the stream.
 /// For most applications, it will be beneficial to reverse the stream beforehand by rfrom() or rcycle().</para>
 /// </summary>
-/// <returns>A detail::Intermediate operation that reverses the stream.</returns>
+/// <returns>An intermediate operation that reverses the stream.</returns>
 inline auto reverse() {
     return detail::make_intermediate([](auto&& stream) {
         return generator::rfrom_move(stream | terminal::to_vector());

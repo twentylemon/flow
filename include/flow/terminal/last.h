@@ -34,9 +34,10 @@ namespace flow {
     namespace terminal {
 
 /// <summary>
-/// Returns the last element from the stream. This is a potentially expensive operation as the entire stream must be evaluated.
+/// Returns the last element from the stream.
+/// <para>This is a potentially expensive operation as the entire stream must be evaluated.</para>
 /// </summary>
-/// <returns>The detail::Terminal operation which gives the last element from the stream.</returns>
+/// <returns>A terminal operation which gives the last element from the stream.</returns>
 /// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
 /// \todo is there a way to lazily step to the end of the stream?
 inline auto last() {

@@ -56,7 +56,8 @@ auto closed_range(T&& lower, T&& upper) {
 /// <summary>
 /// Produces a Stream containing the elements in the range <c>[lower, upper]</c>, including <paramref name="upper"/>
 /// counting up by <paramref name="increment"/> each step.
-/// <para>Stream elements are incremented using the function <c>operator+(T, U)</c>, and the range is computed using <c>operator&lt;=</c>.
+/// <para>Stream elements are incremented using the function <c>operator+(T, U)</c> with the <paramref name="increment"/> on the right
+/// hand side of the operand, and the range is computed using <c>operator&lt;=</c>.
 /// The stream ends once <c>element &lt;= upper</c> returns <c>false</c>. That is, the stream produced is equivalent to:</para>
 /// <code>iota(lower, increment) | take_while([upper](T e) { return e &lt;= upper; })</code>
 /// </summary>

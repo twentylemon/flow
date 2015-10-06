@@ -36,8 +36,7 @@ namespace flow {
     namespace terminal {
 
 /// <summary>
-/// Returns the maximum element from the stream according to <paramref name="compare"/>. By default <c>operator&lt;</c>
-/// is used for comparisons.
+/// Returns the maximum element from the stream according to <paramref name="compare"/>, <c>operator&lt;</c> by default.
 /// </summary>
 /// <para>If there are multiple maximum elements, the first such element is returned.</para>
 /// <param name="compare">The compare function, by default <c>std::less&lt;void&gt;</c>.</param>

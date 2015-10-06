@@ -99,6 +99,7 @@ decltype(auto) operator|(Container& container, terminal::detail::Terminal<F>&& o
 
 /// <summary>
 /// Creates a Stream over <paramref name="container"/> in reverse order.
+/// <para>The container requires bidirectional iterators and the functions <c>rbegin()</c> and <c>rend()</c>.</para>
 /// </summary>
 /// <param name="container">The container to create a stream from.</param>
 /// <returns>A reversed stream over <paramref name="container"/>.</returns>

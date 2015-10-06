@@ -37,10 +37,11 @@ namespace flow {
 
 /// <summary>
 /// Maps Stream elements to new values if the original element returns <c>true</c> for <paramref name="predicate"/>.
+/// <para>Values that return <c>false</c> for <paramref name="predicate"/> are left unchanged.</para>
 /// </summary>
 /// <param name="predicate">Stream elements that return <c>true</c> will be mapped through <paramref name="mapper"/>.</param>
 /// <param name="mapper">The mapping operation to apply to elements that return <c>true</c> for <paramref name="predicate"/>.</param>
-/// <returns>A detail::Intermediate operation that replaces stream elements.</returns>
+/// <returns>An intermediate operation that replaces stream elements.</returns>
 template <typename UnaryPredicate, typename UnaryOperation>
 auto replace_map(UnaryPredicate predicate, UnaryOperation mapper) {
     return map([mapper, predicate](auto&& ele) {
@@ -53,10 +54,11 @@ auto replace_map(UnaryPredicate predicate, UnaryOperation mapper) {
 
 /// <summary>
 /// Replaces elements in the Stream by <paramref name="replace_by"/> if the stream element returns <c>true</c> for <paramref name="predicate"/>.
+/// <para>Values that return <c>false</c> for <paramref name="predicate"/> are left unchanged.</para>
 /// </summary>
 /// <param name="predicate">The predicate, stream elements that return <c>true</c> will be replaced by <paramref name="replace_by"/>.</param>
 /// <param name="replace_by">The value to replace stream elements by when <paramref name="predicate"/> returns <c>true</c>.</param>
-/// <returns>A detail::Intermediate operation that replaces stream elements.</returns>
+/// <returns>An intermediate operation that replaces stream elements.</returns>
 template <typename UnaryPredicate, typename T>
 auto replace(UnaryPredicate predicate, T&& replace_by) {
     return replace_map(predicate, [replace_by = std::forward<T>(replace_by)](auto&&) { return replace_by; });
@@ -64,11 +66,12 @@ auto replace(UnaryPredicate predicate, T&& replace_by) {
 
 /// <summary>
 /// Replaces elements in the Stream by <paramref name="new_value"/> if they are equal to <paramref name="old_value"/>.
-/// Equality is checked by using <c>operator==</c> on the elements.
+/// <para>Equality is checked by using <c>operator==</c> on the elements. Values not equal to <paramref name="old_value"/>
+/// are left unchanged.</para>
 /// </summary>
 /// <param name="old_value">The value to replace in the stream by <paramref name="new_value"/>.</param>
 /// <param name="new_value">The value to replace with.</param>
-/// <returns>A detail::Intermediate operation that replaces stream elements.</returns>
+/// <returns>An intermediate operation that replaces stream elements.</returns>
 template <typename T>
 auto replace(T&& old_value, T&& new_value) {
     return replace(std::bind(std::equal_to<T>(), std::placeholders::_1, std::forward<T>(old_value)), std::forward<T>(new_value));

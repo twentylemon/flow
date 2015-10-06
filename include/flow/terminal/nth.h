@@ -38,7 +38,7 @@ namespace flow {
 /// Returns the nth element from the stream.
 /// </summary>
 /// <param name="n">The index of the element to retrieve.</param>
-/// <returns>The detail::Terminal operation which gives the nth element from the stream.</returns>
+/// <returns>A terminal operation which gives the nth element from the stream.</returns>
 /// <exception cref="std::out_of_range">Thrown when the stream has fewer than <c>n</c> elements.</exception>
 inline auto nth(std::size_t n) {
     return intermediate::skip(n) | first();

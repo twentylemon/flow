@@ -49,9 +49,11 @@ struct HeadType
 /// <summary>
 /// Creates an infinite Stream where values are created using successive calls to
 /// the <paramref name="function"/>, starting with the values given.
+/// <para>The next stream element is computed using the previous <c>n</c> stream elements applied to <paramref name="function"/>,
+/// where <c>n</c> is the number of parameters that <paramref name="function"/> takes.</para>
 /// <para>For example, <c>iterate(std::plus&lt;int&gt;(), 0, 1)</c> would result in the stream
-/// <c>0, 1, 1, 2, 3, 5, 8...</c>. <c>0</c> and <c>1</c> are given, then the rest
-/// are calculated as <c>0+1=1</c>, <c>1+1=2</c>, <c>f_i = f_{i-2} + f_{i-1}</c>.</para>
+/// <c>0, 1, 1, 2, 3, 5, 8...</c> (the Fibonacci numbers). <c>0</c> and <c>1</c> are given, then the rest
+/// are calculated as <c>0+1=1</c>, <c>1+1=2</c>, <c>1+2=3</c>, and <c>f_i = f_{i-2} + f_{i-1}</c> in general.</para>
 /// </summary>
 /// <param name="function">The iterating function.</param>
 /// <param name="...initial">The first values the stream will contain, and initial values to send to the iterating function

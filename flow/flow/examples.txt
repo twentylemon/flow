@@ -3,7 +3,14 @@
 /// <para>A simple flow::concat example. This operation appends a stream onto the end of another stream.
 /// The type of elements in the <em>tail</em> stream must be convertible to the type of element in
 /// the <em>head</em> stream.</para>
-/// <para>Overrides are available which are shorthands for calling from().</para>
+/// <para>Overloads are available which are shorthands for calling from().</para>
+
+/// \example drop_while.cpp
+/// <para>A simple flow::drop_while example. This operation removes elements from the front of the stream as long
+/// as the elements return <c>true</c> for a given predicate. Once an element returns <c>false</c>, all elements
+/// after and including that element are kept, even if later elements would be dropped by the predicate.</para>
+/// <seealso cref="filter()"/>
+/// <seealso cref="take_while()"/>
 
 /// \example sort.cpp
 /// <para>A flow::sort example. This is an eager operation that sorts the stream. During the sort, the entire
@@ -14,6 +21,7 @@
 /// takes place.</para>
 /// <para>The second example is not as trivial, so sort should be used in that case. Other examples
 /// may include times when the stream is filtered or mapped, or otherwise transformed.</para>
+/// <seealso cref="stable_sort()"/>
 
 /// \example zip.cpp
 /// <para>A flow::zip example. The zip operation combines two streams into a single stream using a

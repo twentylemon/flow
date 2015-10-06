@@ -131,6 +131,7 @@
   <ItemGroup>
     <ClCompile Include="examples.cpp" />
     <ClCompile Include="intermediate\concat.cpp" />
+    <ClCompile Include="intermediate\drop_while.cpp" />
     <ClCompile Include="intermediate\sort.cpp" />
     <ClCompile Include="intermediate\zip.cpp" />
   </ItemGroup>

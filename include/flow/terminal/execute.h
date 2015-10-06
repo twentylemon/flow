@@ -35,7 +35,7 @@ namespace flow {
 
 /// <summary>
 /// Forces the stream to be evaluated entirely.
-/// <para>The stream will not normally be evaluated unless a terminal operation is applied, or an eager intermediate
+/// <para>The stream will not normally be evaluated unless a terminal operation or an eager intermediate
 /// operation is applied. This terminal forces evaluation of the entire stream. For example:</para>
 /// <code>widgets | zip(iota(1), [](Widget& w, int i) { w.set_id(i); return i; });</code>
 /// <para>The above stream assigns a unique id to each Widget, and the stream contains the ids. However, no terminal

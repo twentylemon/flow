@@ -34,12 +34,12 @@ namespace flow {
     namespace terminal {
 
 /// <summary>
-/// Returns <c>true</c> if any of the elements in the stream return <c>true</c> for <paramref name="predicate" />.
-/// This operation is short circuited and will stop executing once any <c>true</c> value is found.
-/// If the stream is empty, this will return <c>false</c>.
+/// Returns <c>true</c> if any of the elements in the stream return <c>true</c> for <paramref name="predicate"/>.
+/// <para>This operation is short circuited and will stop executing once any <c>true</c> value is found.
+/// If the stream is empty, this will return <c>false</c>.</para>
 /// </summary>
 /// <param name="predicate">The predicate to test each element with.</param>
-/// <returns>The detail::Terminal operation which returns <c>true</c> if any stream element returns <c>true</c> for <paramref name="predicate" />.</returns>
+/// <returns>A terminal operation which returns <c>true</c> if any stream element returns <c>true</c> for <paramref name="predicate" />.</returns>
 template <typename UnaryPredicate>
 auto any(UnaryPredicate predicate) {
     return detail::make_terminal([predicate](auto&& stream) {
@@ -54,34 +54,34 @@ auto any(UnaryPredicate predicate) {
 
 /// <summary>
 /// Returns <c>true</c> if any element in the stream can be evaluated to <c>true</c>.
-/// This is an overload for streams with types convertible to <c>bool</c>.
+/// <para>This is an overload for streams with types convertible to <c>bool</c>.
 /// This operation is short circuited and will stop executing once any <c>true</c> value is found.
-/// If the stream is empty, this will return <c>false</c>.
+/// If the stream is empty, this will return <c>false</c>.</para>
 /// </summary>
-/// <returns>The detail::Terminal operation which returns <c>true</c> if any stream element is <c>true</c>.</returns>
+/// <returns>A terminal operation which returns <c>true</c> if any stream element is <c>true</c>.</returns>
 inline auto any() {
     return any([](const auto& ele) { return static_cast<bool>(ele); });
 }
 
 /// <summary>
-/// Returns <c>true</c> if any of the elements in the stream return <c>true</c> for the predicate given.
-/// This operation is short circuited and will stop executing once any <c>true</c> value is found.
-/// If the stream is empty, this will return <c>false</c>.
+/// Returns <c>true</c> if any of the elements in the stream return <c>true</c> for <paramref name="member"/>.
+/// <para>This operation is short circuited and will stop executing once any <c>true</c> value is found.
+/// If the stream is empty, this will return <c>false</c>.</para>
 /// </summary>
 /// <param name="member">The class member function to use as the predicate.</param>
-/// <returns>The detail::Terminal operation which returns <c>true</c> if any stream element returns <c>true</c> for the given predicate.</returns>
+/// <returns>A terminal operation which returns <c>true</c> if any stream element returns <c>true</c> for the given predicate.</returns>
 template <typename Ret, typename Class>
 auto any(Ret(Class::*member)()) {
     return any(std::mem_fn(member));
 }
 
 /// <summary>
-/// Returns <c>true</c> if any of the elements in the stream return <c>true</c> for the predicate given.
-/// This operation is short circuited and will stop executing once any <c>true</c> value is found.
-/// If the stream is empty, this will return <c>false</c>.
+/// Returns <c>true</c> if any of the elements in the stream return <c>true</c> for <paramref name="member"/>.
+/// <para>This operation is short circuited and will stop executing once any <c>true</c> value is found.
+/// If the stream is empty, this will return <c>false</c>.</para>
 /// </summary>
 /// <param name="member">The const class member function to use as the predicate.</param>
-/// <returns>The detail::Terminal operation which returns <c>true</c> if any stream element returns <c>true</c> for the given predicate.</returns>
+/// <returns>A terminal operation which returns <c>true</c> if any stream element returns <c>true</c> for the given predicate.</returns>
 template <typename Ret, typename Class>
 auto any(Ret(Class::*member)() const) {
     return any(std::mem_fn(member));

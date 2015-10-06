@@ -36,11 +36,11 @@ namespace flow {
     namespace intermediate {
 
 /// <summary>
-/// Transforms each element in the Stream using <paramref name="operation"/>.
-/// Each element is transformed into a new stream. The resultant stream is a concatenation of all created streams.
+/// Transforms each element in the Stream using <paramref name="operation"/> into a new stream.
+/// <para>Each element is transformed into a new stream. The resultant stream is a concatenation of all created streams.</para>
 /// </summary>
-/// <param name="operation">The operation that creates a new stream from a stream element.</param>
-/// <returns>A detail::Intermediate operation that creates new streams and concatenations them together.</returns>
+/// <param name="operation">The function that creates a new stream from a stream element.</param>
+/// <returns>An intermediate operation that creates new streams and concatenations them together.</returns>
 template <typename UnaryOperation>
 auto flat_map(UnaryOperation operation) {
     return detail::make_intermediate([operation](auto&& stream) {

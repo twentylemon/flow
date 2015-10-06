@@ -36,11 +36,10 @@ namespace flow {
     namespace terminal {
 
 /// <summary>
-/// Returns the minimum and maximum elements as a pair from the stream according to <paramref name="compare"/>.
-/// The first element is the minimum and the second element is the maximum. By default <c>operator&lt;</c>
-/// is used for comparisons.
-/// <para>If there are multiple min/max elements, the <em>first</em> min element and the <em>last</em>
-/// max element are returned.</para>
+/// Returns the minimum and maximum elements as a pair from the stream according to <paramref name="compare"/>,
+/// <c>operator&lt;</c> by default.
+/// <para>The first element is the minimum and the second element is the maximum. If there are multiple min/max
+/// elements, the <em>first</em> minimum element and the <em>last</em> maximum element are returned.</para>
 /// </summary>
 /// <param name="compare">The compare function, by default <c>std::less&lt;void&gt;</c>.</param>
 /// <returns>A detail::Terminal operation which gives the min and max elements from the stream.</returns>

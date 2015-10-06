@@ -38,11 +38,14 @@ namespace flow {
     namespace intermediate {
 
 /// <summary>
-/// Drops elements from the Stream until the <paramref name="predicate"/> returns <c>false</c> for a stream
-/// element. All elements before the first <c>false</c> are discarded, the rest are kept.
+/// Drops elements from the Stream until the <paramref name="predicate"/> returns <c>false</c> for a stream element.
+/// <para>All elements before the first <c>false</c> are discarded, the rest are kept, even if later elements would
+/// return <c>true</c> for <paramref name="predicate"/>.</para>
 /// </summary>
 /// <param name="predicate">The predicate used to drop stream elements.</param>
-/// <returns>A detail::Intermediate operation that drops stream elements while the <paramref name="predicate"/> is <c>true</c>.</returns>
+/// <returns>An intermediate operation that drops stream elements while the <paramref name="predicate"/> is <c>true</c>.</returns>
+/// <seealso cref="take_while()"/>
+/// <seealso cref="filter()"/>
 template <typename UnaryPredicate>
 auto drop_while(UnaryPredicate predicate) {
     return detail::make_intermediate([predicate](auto&& stream) {
@@ -51,31 +54,40 @@ auto drop_while(UnaryPredicate predicate) {
 }
 
 /// <summary>
-/// Drops elements from the Stream until a stream element is <c>false</c>. All elements before the first
-/// <c>false</c> are discarded, the rest are kept. This is an overload for streams with types convertible to <c>bool</c>.
+/// Drops elements from the Stream until a stream element is <c>false</c>.
+/// <para>All elements before the first <c>false</c> are discarded, the rest are kept, even if later elements are
+/// <c>true</c>. This is an overload for streams with types convertible to <c>bool</c>.</para>
 /// </summary>
-/// <returns>A detail::Intermediate operation that drops stream elements while they are <c>true</c>.</returns>
+/// <returns>An intermediate operation that drops stream elements while they are <c>true</c>.</returns>
+/// <seealso cref="take_while()"/>
+/// <seealso cref="filter()"/>
 inline auto drop_while() {
     return drop_while([](const auto& ele) { return static_cast<bool>(ele); });
 }
 
 /// <summary>
-/// Drops elements from the Stream until the <paramref name="member"/> returns <c>false</c>. All elements before the first
-/// <c>true</c> are discarded, the rest are kept.
+/// Drops elements from the Stream until the <paramref name="member"/> returns <c>false</c>.
+/// <para>All elements before the first <c>false</c> are discarded, the rest are kept, even if later elements would
+/// return <c>true</c> for <paramref name="member"/>.</para>
 /// </summary>
 /// <param name="member">The class member function used to drop elements, the return type must be convertible to <c>bool</c>.</param>
-/// <returns>A detail::Intermediate operation that drops stream elements while the <paramref name="member"/> is <c>true</c>.</returns>
+/// <returns>An intermediate operation that drops stream elements while the <paramref name="member"/> is <c>true</c>.</returns>
+/// <seealso cref="take_while()"/>
+/// <seealso cref="filter()"/>
 template <typename Ret, typename Class>
 auto drop_while(Ret(Class::*member)()) {
     return drop_while(std::mem_fn(member));
 }
 
 /// <summary>
-/// Drops elements from the Stream until the <paramref name="member"/> returns <c>false</c>. All elements before the first
-/// <c>true</c> are discarded, the rest are kept.
+/// Drops elements from the Stream until the <paramref name="member"/> returns <c>false</c>.
+/// <para>All elements before the first <c>false</c> are discarded, the rest are kept, even if later elements would
+/// return <c>true</c> for <paramref name="member"/>.</para>
 /// </summary>
 /// <param name="member">The const class member function used to drop elements, the return type must be convertible to <c>bool</c>.</param>
-/// <returns>A detail::Intermediate operation that drops stream elements while the <paramref name="member"/> is <c>true</c>.</returns>
+/// <returns>An intermediate operation that drops stream elements while the <paramref name="member"/> is <c>true</c>.</returns>
+/// <seealso cref="take_while()"/>
+/// <seealso cref="filter()"/>
 template <typename Ret, typename Class>
 auto drop_while(Ret(Class::*member)() const) {
     return drop_while(std::mem_fn(member));

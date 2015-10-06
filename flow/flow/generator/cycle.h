@@ -38,7 +38,7 @@ namespace flow {
 /// <summary>
 /// Creates an infinite stream which cycles the iterator range.
 /// <para>If the range is empty, this operation will crash via stack overflow. This can be
-/// avoided by using cycle(Itr,Itr,std::size_t).</para>
+/// avoided by using cycle(Itr, Itr, std::size_t).</para>
 /// </summary>
 /// <param name="begin">The beginning of the range.</param>
 /// <param name="end">The end of the range.</param>
@@ -63,7 +63,7 @@ auto cycle(Itr begin, Itr end, std::size_t n) {
 /// <summary>
 /// Creates an infinite stream which cycles <paramref name="container"/>.
 /// <para>If the container is empty, this operation will crash via stack overflow. This can be
-/// avoided by using cycle(Container,std::size_t).</para>
+/// avoided by using cycle(Container, std::size_t).</para>
 /// </summary>
 /// <param name="container">The container to cycle through.</param>
 /// <returns>An infinite stream which cycles <paramref name="container"/>.</returns>
@@ -85,8 +85,9 @@ auto cycle(Container& container, std::size_t n) {
 
 /// <summary>
 /// Creates an infinite stream which cycles <paramref name="container"/> in reverse order.
-/// <para>If the container is empty, this operation will crash via stack overflow. This can be
-/// avoided by using rcycle(Container,std::size_t).</para>
+/// <para>The container requires bidirectional iterators and the functions <c>rbegin()</c> and <c>rend()</c>.
+/// If the container is empty, this operation will crash via stack overflow. This can be
+/// avoided by using rcycle(Container, std::size_t).</para>
 /// </summary>
 /// <param name="container">The container to cycle through.</param>
 /// <returns>An infinite stream which cycles <paramref name="container"/>.</returns>
@@ -97,6 +98,7 @@ auto rcycle(Container& container) {
 
 /// <summary>
 /// Creates a stream which cycles through <paramref name="container"/> <paramref name="n"/> times in reverse order.
+/// <para>The container requires bidirectional iterators and the functions <c>rbegin()</c> and <c>rend()</c>.</para>
 /// </summary>
 /// <param name="container">The container to cycle through.</param>
 /// <param name="n">The number of times to repeat <paramref name="container"/>.</param>
