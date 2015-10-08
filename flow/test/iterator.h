@@ -20,4 +20,18 @@ BOOST_AUTO_TEST_CASE(iterator_t) {
     ex = { 1, 2, 3, 4 };
     auto s4 = from(vec);
     BOOST_CHECK_EQUAL_COLLECTIONS(s4.begin(), s4.end(), ex.begin(), ex.end());
+
+    vec = {};
+    auto s5 = from({ 1, 2, 3, 4 });
+    for (auto it = s5.begin(), end = s5.end(); it != end; it++) {
+        vec.push_back(*it);
+    }
+    BOOST_CHECK_EQUAL_COLLECTIONS(vec.begin(), vec.end(), ex.begin(), ex.end());
+
+    vec = {};
+    auto s6 = from({ 1, 2, 3, 4 });
+    for (auto it = s6.begin(), end = s6.end(); it != end; ++it) {
+        vec.push_back(*it);
+    }
+    BOOST_CHECK_EQUAL_COLLECTIONS(vec.begin(), vec.end(), ex.begin(), ex.end());
 }

@@ -237,17 +237,24 @@
     <ClInclude Include="terminal\reservoir.h">
       <Filter>Header Files\terminal</Filter>
     </ClInclude>
+    <ClInclude Include="source\SetSource.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Merge.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="intermediate\merge.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="flow.licenseheader">
-      <Filter>Doc Files</Filter>
-    </None>
     <None Include="..\..\README.md">
       <Filter>Doc Files</Filter>
     </None>
     <None Include="flow.conf">
       <Filter>Doc Files</Filter>
     </None>
+    <None Include="flow.licenseheader" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="examples.txt">

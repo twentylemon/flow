@@ -49,13 +49,13 @@ public:
     /// </summary>
     /// <param name="head">The head stream source to start with.</param>
     /// <param name="tail">The stream source to concatenate onto the end of the head source.</param>
-    Concat(Head&& head, Tail&& tail) : base(std::forward<Head>(head)), _tail(std::move(tail)), _from_head(true) { }
+    Concat(Head&& head, Tail&& tail) : base(std::move(head)), _tail(std::move(tail)), _from_head(true) { }
 
     Concat(const Concat<Head, Tail>&) = delete;
     Concat(Concat<Head, Tail>&&) = default;
 
     /// <summary>
-    /// Returns true if this source has more elements.
+    /// Returns <c>true</c> if this source has more elements.
     /// </summary>
     /// <returns><c>true</c> if this source has more stream elements.</returns>
     bool has_next() {

@@ -38,7 +38,7 @@ namespace flow {
     namespace intermediate {
 
 /// <summary>
-/// Takes elements from the Stream until <paramref name="predicate"/> returns <c>false</c> for an element.
+/// Takes elements from the stream until <paramref name="predicate"/> returns <c>false</c> for an element.
 /// <para>Elements after and including the first <c>false</c> are discarded, even if later elements would return
 /// <c>true</c> for <paramref name="predicate"/>.</para>
 /// </summary>
@@ -54,7 +54,7 @@ auto take_while(UnaryPredicate predicate) {
 }
 
 /// <summary>
-/// Takes elements from the Stream until an element is <c>false</c>.
+/// Takes elements from the stream until an element is <c>false</c>.
 /// <para>Elements after and including the first <c>false</c> are discarded, even if later elements are
 /// <c>true</c>. This is an overload for streams with types convertible to <c>bool</c>.</para>
 /// </summary>
@@ -66,7 +66,7 @@ inline auto take_while() {
 }
 
 /// <summary>
-/// Takes elements from the Stream until the <paramref name="member"/> returns <c>false</c>.
+/// Takes elements from the stream until the <paramref name="member"/> returns <c>false</c>.
 /// <para>Elements after and including the first <c>false</c> are discarded, even if later elements would return
 /// <c>true</c> for <paramref name="member"/>.</para>
 /// </summary>
@@ -80,7 +80,7 @@ auto take_while(Ret(Class::*member)()) {
 }
 
 /// <summary>
-/// Takes elements from the Stream until the <paramref name="member"/> returns <c>false</c>.
+/// Takes elements from the stream until the <paramref name="member"/> returns <c>false</c>.
 /// <para>Elements after and including the first <c>false</c> are discarded, even if later elements would return
 /// <c>true</c> for <paramref name="member"/>.</para>
 /// </summary>

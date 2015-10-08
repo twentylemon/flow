@@ -182,5 +182,8 @@
     <ClInclude Include="terminal\reservoir.h">
       <Filter>Header Files\terminal</Filter>
     </ClInclude>
+    <ClInclude Include="intermediate\merge.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

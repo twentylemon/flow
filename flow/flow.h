@@ -80,6 +80,7 @@
 #include "flow/intermediate/reverse.h"
 #include "flow/intermediate/unique.h"
 #include "flow/intermediate/zip.h"
+#include "flow/intermediate/merge.h"
 
 namespace flow {
     using namespace generator;

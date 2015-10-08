@@ -37,7 +37,7 @@ namespace flow {
     namespace intermediate {
 
 /// <summary>
-/// Sorts the Stream using the given comparator, <c>operator&lt;</c> by default.
+/// Sorts the stream using the given comparator, <c>operator&lt;</c> by default.
 /// <para>Sorting is an eager operation. On application of the <c>sort</c> operation, the entire stream
 /// up to that point is evaluated and stored, then finally sorted before continuing with the sorted version
 /// of the stream. Thus, the <c>sort</c> operation takes <c>O(n)</c> extra space and time to copy the stream,
@@ -61,7 +61,7 @@ auto sort(Compare compare = Compare()) {
 }
 
 /// <summary>
-/// Sorts the Stream preserving relative order of elements using the given comparator, <c>operator&lt;</c> by default.
+/// Sorts the stream preserving relative order of elements using the given comparator, <c>operator&lt;</c> by default.
 /// <para>Sorting is an eager operation. On application of the <c>stable_sort</c> operation, the entire stream
 /// up to that point is evaluated and stored, then finally sorted before continuing with the sorted version
 /// of the stream. Thus, the <c>stable_sort</c> operation takes <c>O(n)</c> extra space and time to copy the stream,

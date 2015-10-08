@@ -36,7 +36,7 @@ namespace flow {
     namespace intermediate {
 
 /// <summary>
-/// Executes <paramref name="action"/> for each element in the Stream.
+/// Executes <paramref name="action"/> for each element in the stream.
 /// <para>This does not explicitly change the elements in the stream. The <paramref name="action"/> is
 /// performed, then the stream value is passed on to the next operation. The <paramref name="action"/> will
 /// only be performed if the stream element is actually reached. For example,</para>

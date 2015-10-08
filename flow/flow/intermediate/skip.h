@@ -36,7 +36,7 @@ namespace flow {
     namespace intermediate {
 
 /// <summary>
-/// Skips the first elements of a Stream, keeping only the elements with index <c>&gt;=</c> <paramref name="begin"/> in the stream.
+/// Skips the first elements of a stream, keeping only the elements with index <c>&gt;=</c> <paramref name="begin"/> in the stream.
 /// <para>This operation will skip every <paramref name="step_size"/> elements after the initial jump to <paramref name="begin"/>.
 /// For example a <paramref name="step_size"/> of 2 will keep only every other element, eg <c>begin, begin+2, begin+4</c> etc.
 /// If <paramref name="begin"/> is out of bounds, then the result is an empty stream.</para>
@@ -52,7 +52,7 @@ inline auto skip(std::size_t begin, std::size_t step_size) {
 }
 
 /// <summary>
-/// Skips the first elements of a Stream, keeping only the elements with index <c>&gt;=</c> <paramref name="begin"/> in the stream.
+/// Skips the first elements of a stream, keeping only the elements with index <c>&gt;=</c> <paramref name="begin"/> in the stream.
 /// <para>If <paramref name="begin"/> is out of bounds, then the result is an empty stream.</para>
 /// </summary>
 /// <param name="begin">The begin index to slice the stream at, inclusive.</param>
@@ -62,7 +62,7 @@ inline auto skip(std::size_t begin) {
 }
 
 /// <summary>
-/// Skips every <paramref name="step_size"/> elements in the Stream, keeping the first element.
+/// Skips every <paramref name="step_size"/> elements in the stream, keeping the first element.
 /// <para>For example, a <paramref name="step_size"/> of 2 will only keep stream elements with index 0, 2, 4 etc.</para>
 /// </summary>
 /// <param name="step_size">The step size, must be positive.</param>

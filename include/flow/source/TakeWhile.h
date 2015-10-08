@@ -48,13 +48,13 @@ public:
     /// </summary>
     /// <param name="source">The source to take elements from.</param>
     /// <param name="predicate">The predicate, take stream elements until this returns <c>false</c>.</param>
-    TakeWhile(Source&& source, UnaryPredicate predicate) : base(std::forward<Source>(source)), _predicate(predicate) { }
+    TakeWhile(Source&& source, UnaryPredicate predicate) : base(std::move(source)), _predicate(predicate) { }
 
     TakeWhile(const TakeWhile<Source, UnaryPredicate>&) = delete;
     TakeWhile(TakeWhile<Source, UnaryPredicate>&&) = default;
 
     /// <summary>
-    /// Returns true if this source has more elements.
+    /// Returns <c>true</c> if this source has more elements.
     /// </summary>
     /// <returns><c>true</c> if this source has more stream elements.</returns>
     bool has_next() {

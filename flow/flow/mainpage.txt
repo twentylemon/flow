@@ -129,7 +129,6 @@
 /// <para>The functions in the flow::intermediate namespace all produce an intermediate operation. The
 /// intermediate operation does not operate on a stream until the pipe <c>operator|</c> has been applied,
 /// including eager operations. Only after being applied to a stream is the new stream created.</para>
-/// \todo flow::intermediate::merge - combine two sorted streams while maintaining sorted order
 /// \todo flow::intermediate::union - union two sorted/unique streams
 /// \todo flow::intermediate::intersect - intersect two sorted/unique streams
 /// \todo flow::intermediate::difference - compute the difference of two sorted/unique streams

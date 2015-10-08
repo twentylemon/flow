@@ -34,7 +34,7 @@ namespace flow {
     namespace terminal {
 
 /// <summary>
-/// Returns <c>true</c> if all of the elements in the Stream return <c>true</c> for <paramref name="predicate"/>.
+/// Returns <c>true</c> if all of the elements in the stream return <c>true</c> for <paramref name="predicate"/>.
 /// <para>This operation is short circuited and will stop executing once any <c>false</c> value is found.
 /// If the stream is empty, this will return <c>true</c>.</para>
 /// </summary>
@@ -53,7 +53,7 @@ auto all(UnaryPredicate predicate) {
 }
 
 /// <summary>
-/// Returns <c>true</c> if all elements in the Stream can be evaluated to <c>true</c>.
+/// Returns <c>true</c> if all elements in the stream can be evaluated to <c>true</c>.
 /// <para>This is an overload for streams with types convertible to <c>bool</c>.
 /// This operation is short circuited and will stop executing once any <c>false</c> value is found.
 /// If the stream is empty, this will return <c>true</c>.</para>

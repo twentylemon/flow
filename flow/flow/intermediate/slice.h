@@ -36,7 +36,7 @@ namespace flow {
     namespace intermediate {
 
 /// <summary>
-/// Slices the Stream, keeping only elements with index in the range <c>[begin..end)</c> in the stream, excluding
+/// Slices the stream, keeping only elements with index in the range <c>[begin..end)</c> in the stream, excluding
 /// the <paramref name="end"/> index.
 /// <para>If <paramref name="end"/> is out of bounds of the stream, the entire stream from <paramref name="begin"/> is kept.
 /// If <paramref name="begin"/> is out of bounds, then the result is an empty stream. The operation will skip every
@@ -54,7 +54,7 @@ inline auto slice(std::size_t begin, std::size_t end, std::size_t step_size) {
 }
 
 /// <summary>
-/// Slices the Stream, keeping only elements with index in the range <c>[begin..end)</c> in the stream, excluding
+/// Slices the stream, keeping only elements with index in the range <c>[begin..end)</c> in the stream, excluding
 /// the <paramref name="end"/> index.
 /// <para>If <c>end</c> is out of bounds of the stream, the entire stream from  <paramref name="begin"/> is kept.
 /// If <paramref name="begin"/> is out of bounds, then the result is an empty stream.</para>

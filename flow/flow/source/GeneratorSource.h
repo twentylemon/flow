@@ -53,7 +53,7 @@ public:
     GeneratorSourceBase(GeneratorSourceBase<T>&&) = default;
 
     /// <summary>
-    /// Returns true if this source has more elements.
+    /// Returns <c>true</c> if this source has more elements.
     /// Default implementation returns <c>_source.has_next()</c>.
     /// </summary>
     /// <returns><c>true</c> if this source has more stream elements.</returns>

@@ -56,7 +56,7 @@ public:
     Iterator(Iterator<Itr>&&) = default;
 
     /// <summary>
-    /// Returns true if this source has more elements.
+    /// Returns <c>true</c> if this source has more elements.
     /// </summary>
     /// <returns><c>true</c> if this source has more stream elements.</returns>
     bool has_next() const {

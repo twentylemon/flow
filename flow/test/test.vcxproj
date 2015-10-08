@@ -188,6 +188,7 @@
     <ClInclude Include="intermediate\map.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
+    <ClInclude Include="intermediate\merge.h" />
     <ClInclude Include="intermediate\peek.h">
       <FileType>CppHeader</FileType>
     </ClInclude>

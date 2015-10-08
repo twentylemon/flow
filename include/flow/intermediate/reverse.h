@@ -37,7 +37,7 @@ namespace flow {
     namespace intermediate {
 
 /// <summary>
-/// Reverses the elements in the Stream.
+/// Reverses the elements in the stream.
 /// <para>Reversing is an eager operation. On application of the <c>reverse</c> operation,
 /// the entire stream up to that point is evaluated and stored before continuing with the remainder of the stream.
 /// Thus, the <c>reverse</c> operation takes <c>O(n)</c> extra space and time, where <c>n</c> is the size of the stream.

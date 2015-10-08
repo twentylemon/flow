@@ -38,7 +38,7 @@ namespace flow {
     namespace intermediate {
 
 /// <summary>
-/// Removes elements from the Stream that return <c>false</c> for <paramref name="predicate"/>.
+/// Removes elements from the stream that return <c>false</c> for <paramref name="predicate"/>.
 /// </summary>
 /// <param name="predicate">The predicate used to filter stream elements.</param>
 /// <returns>An intermediate operation that filters the stream elements.</returns>
@@ -50,7 +50,7 @@ auto filter(UnaryPredicate predicate) {
 }
 
 /// <summary>
-/// Removes elements from the Stream which are evaluated to <c>false</c>. This is an overload for streams
+/// Removes elements from the stream which are evaluated to <c>false</c>. This is an overload for streams
 /// with types convertible to <c>bool</c>.
 /// </summary>
 /// <returns>An intermediate operation that filters the stream elements.</returns>
@@ -59,7 +59,7 @@ inline auto filter() {
 }
 
 /// <summary>
-/// Removes elements from the Stream that return <c>false</c> for <paramref name="member"/>.
+/// Removes elements from the stream that return <c>false</c> for <paramref name="member"/>.
 /// </summary>
 /// <param name="member">The class member function to use for filtering, the return type must be convertible to <c>bool</c>.</param>
 /// <returns>An intermediate operation that filters the stream elements.</returns>
@@ -69,7 +69,7 @@ auto filter(Ret(Class::*member)()) {
 }
 
 /// <summary>
-/// Removes elements from the Stream that return <c>false</c> for <paramref name="member"/>.
+/// Removes elements from the stream that return <c>false</c> for <paramref name="member"/>.
 /// </summary>
 /// <param name="member">The const class member function to use for filtering, the return type must be convertible to <c>bool</c>.</param>
 /// <returns>An intermediate operation that filters the stream elements.</returns>

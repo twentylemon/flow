@@ -50,14 +50,14 @@ public:
     /// <param name="source">The source to skip elements of.</param>
     /// <param name="begin">The index to skip to.</param>
     /// <param name="step_size">The step value, eg 2 will give every 2nd element after <paramref name="begin"/>.</param>
-    Skip(Source&& source, std::size_t begin, std::size_t step_size) : base(std::forward<Source>(source)),
+    Skip(Source&& source, std::size_t begin, std::size_t step_size) : base(std::move(source)),
         _current(0), _step_size(step_size), _begin(begin), _initial(true) { }
 
     Skip(const Skip<Source>&) = delete;
     Skip(Skip<Source>&&) = default;
 
     /// <summary>
-    /// Returns true if this source has more elements.
+    /// Returns <c>true</c> if this source has more elements.
     /// </summary>
     /// <returns><c>true</c> if this source has more stream elements.</returns>
     bool has_next() {

@@ -37,7 +37,7 @@ namespace flow {
     namespace generator {
 
 /// <summary>
-/// Produces a Stream containing the elements in the range <c>[lower, upper]</c>, including <paramref name="upper"/>.
+/// Creates a stream containing the elements in the range <c>[lower, upper]</c>, including <paramref name="upper"/>.
 /// <para>Stream elements are incremented using <c>operator++</c>, and the range is computed using <c>operator&lt;=</c>.
 /// The stream ends once <c>element &lt;= upper</c> returns <c>false</c>. That is, the stream produced is equivalent to:</para>
 /// <code>iota(lower) | take_while([upper](T e) { return e &lt;= upper; })</code>
@@ -54,7 +54,7 @@ auto closed_range(T&& lower, T&& upper) {
 }
 
 /// <summary>
-/// Produces a Stream containing the elements in the range <c>[lower, upper]</c>, including <paramref name="upper"/>
+/// Creates a stream containing the elements in the range <c>[lower, upper]</c>, including <paramref name="upper"/>
 /// counting up by <paramref name="increment"/> each step.
 /// <para>Stream elements are incremented using the function <c>operator+(T, U)</c> with the <paramref name="increment"/> on the right
 /// hand side of the operand, and the range is computed using <c>operator&lt;=</c>.

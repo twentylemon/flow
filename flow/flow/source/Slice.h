@@ -51,13 +51,13 @@ public:
     /// <param name="end">The end index to slice to.</param>
     /// <param name="step_size">The step value, eg 2 will give every 2nd element in the range.</param>
     Slice(Source&& source, std::size_t begin, std::size_t end, std::size_t step_size) :
-        parent_type(std::forward<Source>(source), begin, step_size), _end(end) { }
+        parent_type(std::move(source), begin, step_size), _end(end) { }
 
     Slice(const Slice<Source>&) = delete;
     Slice(Slice<Source>&&) = default;
 
     /// <summary>
-    /// Returns true if this source has more elements.
+    /// Returns <c>true</c> if this source has more elements.
     /// </summary>
     /// <returns><c>true</c> if this source has more stream elements.</returns>
     bool has_next() {

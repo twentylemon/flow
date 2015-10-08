@@ -131,12 +131,15 @@
     <ClInclude Include="generator\range.h" />
     <ClInclude Include="generator\repeat.h" />
     <ClInclude Include="intermediate\flat_map.h" />
+    <ClInclude Include="intermediate\merge.h" />
     <ClInclude Include="print_tuple.h" />
     <ClInclude Include="source\FlatMap.h" />
     <ClInclude Include="source\Generate.h" />
     <ClInclude Include="source\GeneratorSource.h" />
     <ClInclude Include="source\IterateFunc.h" />
     <ClInclude Include="source\IntermediateSource.h" />
+    <ClInclude Include="source\Merge.h" />
+    <ClInclude Include="source\SetSource.h" />
     <ClInclude Include="terminal\execute.h" />
     <ClInclude Include="terminal\reservoir.h" />
     <ClInclude Include="terminal\sample.h" />

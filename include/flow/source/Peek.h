@@ -48,7 +48,7 @@ public:
     /// </summary>
     /// <param name="source">The source to peek at the elements of.</param>
     /// <param name="action">The action to apply to each stream element.</param>
-    Peek(Source&& source, Action action) : base(std::forward<Source>(source)), _action(action) { }
+    Peek(Source&& source, Action action) : base(std::move(source)), _action(action) { }
 
     Peek(const Peek<Source, Action>&) = delete;
     Peek(Peek<Source, Action>&&) = default;

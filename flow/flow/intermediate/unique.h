@@ -36,7 +36,7 @@ namespace flow {
     namespace intermediate {
 
 /// <summary>
-/// Sorts and extracts only unique elements from the Stream.
+/// Sorts and extracts only unique elements from the stream.
 /// <para>By default, <c>operator&lt;</c> is used for comparisons. As with sorting, this operation is eager,
 /// the entire stream up to this operation's application is evaluated and stored. Thus, the <c>unique</c> operation takes
 /// <c>O(n)</c> extra space and time plus <c>O(n logn)</c> time to sort, where <c>n</c> is the size of the stream.</para>

@@ -25,28 +25,45 @@
  * \endcond
  */
  
-#ifndef FLOW_INTERMEDIATE_FLATMAP_H
-#define FLOW_INTERMEDIATE_FLATMAP_H
+#ifndef FLOW_SOURCE_SETMERGE_H
+#define FLOW_SOURCE_SETMERGE_H
 
-#include "../Stream.h"
-#include "Intermediate.h"
-#include "../source/FlatMap.h"
+#include "SetSource.h"
 
 namespace flow {
-    namespace intermediate {
+    namespace source {
 
 /// <summary>
-/// Transforms each element in the stream using <paramref name="operation"/> into a new stream.
-/// <para>Each element is transformed into a new stream. The resultant stream is a concatenation of all created streams.</para>
+/// The set operation which merges sorted streams and maintains sorted order.
 /// </summary>
-/// <param name="operation">The function that creates a new stream from a stream element.</param>
-/// <returns>An intermediate operation that creates new streams and concatenations them together.</returns>
-template <typename UnaryOperation>
-auto flat_map(UnaryOperation operation) {
-    return detail::make_intermediate([operation](auto&& stream) {
-        return Stream<source::FlatMap<std::remove_reference_t<decltype(stream.source())>, UnaryOperation>>(std::move(stream.source()), operation);
-    });
-}
+class MergeOperation : public SetOperation
+{
+public:
+    /// <summary>
+    /// Action to perform when neither source is empty.
+    /// <para>Assigns the next value of the set source to be the lower of the two possible values.</para>
+    /// </summary>
+    /// <param name="source">The set source.</param>
+    /// <returns><c>UpdateState::UpdateComplete</c> -- the operation always completes after one call.</returns>
+    template <typename Source>
+    UpdateState none_empty(Source& source) {
+        if (source.compare()) {
+            source.set_advance(AdvanceState::Left);
+            source.set_next_to_left();
+        }
+        else {
+            source.set_advance(AdvanceState::Right);
+            source.set_next_to_right();
+        }
+        return UpdateState::UpdateComplete;
+    }
+};
+
+/// <summary>
+/// Alias the Merge source as a SetSource which uses the MergeOperation.
+/// </summary>
+template <typename LeftSource, typename RightSource, typename Compare>
+using Merge = SetSource<LeftSource, RightSource, Compare, MergeOperation>;
     }
 }
 #endif

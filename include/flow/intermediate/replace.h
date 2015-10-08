@@ -36,7 +36,7 @@ namespace flow {
     namespace intermediate {
 
 /// <summary>
-/// Maps Stream elements to new values if the original element returns <c>true</c> for <paramref name="predicate"/>.
+/// Maps stream elements to new values if the original element returns <c>true</c> for <paramref name="predicate"/>.
 /// <para>Values that return <c>false</c> for <paramref name="predicate"/> are left unchanged.</para>
 /// </summary>
 /// <param name="predicate">Stream elements that return <c>true</c> will be mapped through <paramref name="mapper"/>.</param>
@@ -53,7 +53,7 @@ auto replace_map(UnaryPredicate predicate, UnaryOperation mapper) {
 }
 
 /// <summary>
-/// Replaces elements in the Stream by <paramref name="replace_by"/> if the stream element returns <c>true</c> for <paramref name="predicate"/>.
+/// Replaces elements in the stream by <paramref name="replace_by"/> if the stream element returns <c>true</c> for <paramref name="predicate"/>.
 /// <para>Values that return <c>false</c> for <paramref name="predicate"/> are left unchanged.</para>
 /// </summary>
 /// <param name="predicate">The predicate, stream elements that return <c>true</c> will be replaced by <paramref name="replace_by"/>.</param>
@@ -65,7 +65,7 @@ auto replace(UnaryPredicate predicate, T&& replace_by) {
 }
 
 /// <summary>
-/// Replaces elements in the Stream by <paramref name="new_value"/> if they are equal to <paramref name="old_value"/>.
+/// Replaces elements in the stream by <paramref name="new_value"/> if they are equal to <paramref name="old_value"/>.
 /// <para>Equality is checked by using <c>operator==</c> on the elements. Values not equal to <paramref name="old_value"/>
 /// are left unchanged.</para>
 /// </summary>

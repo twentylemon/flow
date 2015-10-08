@@ -38,7 +38,7 @@ namespace flow {
     namespace intermediate {
 
 /// <summary>
-/// Transforms each element in the Stream using <paramref name="mapper"/>.
+/// Transforms each element in the stream using <paramref name="mapper"/>.
 /// <para>Elements can be mapped to the same type as the source stream, or a new type.</para>
 /// </summary>
 /// <param name="mapper">The operation to apply to each element in the stream.</param>
@@ -51,7 +51,7 @@ auto map(UnaryOperation mapper) {
 }
 
 /// <summary>
-/// Transforms each element in the Stream to the return value of <paramref name="member"/> for each stream element.
+/// Transforms each element in the stream to the return value of <paramref name="member"/> for each stream element.
 /// </summary>
 /// <param name="member">The class member function to use as the transformation.</param>
 /// <returns>An intermediate operation that maps the stream to new values.</returns>
@@ -61,7 +61,7 @@ auto map(Ret(Class::*member)()) {
 }
 
 /// <summary>
-/// Transforms each element in the Stream to the return value of <paramref name="member"/> for each stream element.
+/// Transforms each element in the stream to the return value of <paramref name="member"/> for each stream element.
 /// </summary>
 /// <param name="member">The const class member function to use as the transformation.</param>
 /// <returns>An intermediate operation that maps the stream to new values.</returns>

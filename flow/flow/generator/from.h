@@ -43,10 +43,10 @@ template <typename T>
 struct has_const_iterator
 {
 private:
-    template <typename C> static char test(typename C::const_iterator*);
-    template <typename C> static int test(...);
+    template <typename C> static std::true_type test(typename C::const_iterator*);
+    template <typename C> static std::false_type test(...);
 public:
-    enum { value = sizeof(test<T>(0)) == sizeof(char) };
+    constexpr static bool value = decltype(test<T>(0))::value;
 };
         }
 

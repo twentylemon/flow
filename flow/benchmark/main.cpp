@@ -87,13 +87,12 @@ int main(int argc, char** argv) {
     //std::cout << inc << '\t' << vec.size() << std::endl;
     auto endl = [](int i = 1) { for (int j = 0; j < i; ++j) std::cout << std::endl; };
 
+    std::vector<int> v1 = { 1, 3, 5, 7 };
+    std::vector<int> v2 = { 2, 4, 6, 8 };
+
+    from(v1) | merge(from(v2)) | dump();
+
     /*
-    auto s = from(vec);
-    auto a = s | limit(4) | to_vector();
-    auto b = s | to_vector();
-    std::cout << "a = "; a | dump(); endl();
-    std::cout << "b = "; b | dump(); endl();
-    */
     std::vector<int> cw{ 1, 2, 3 };
 
     cycle(cw, 4) | unique() | dump();
@@ -148,7 +147,7 @@ int main(int argc, char** argv) {
 
     vec | zip(vec | zip(vec | zip(vec))) | limit(1) | each([](auto&& t) { std::cout << typeid(t).name() << std::endl; });
     */
-    run_timer();
+    //run_timer();
     
     std::cout << std::endl;
     system("pause");

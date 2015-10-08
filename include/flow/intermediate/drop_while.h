@@ -38,7 +38,7 @@ namespace flow {
     namespace intermediate {
 
 /// <summary>
-/// Drops elements from the Stream until the <paramref name="predicate"/> returns <c>false</c> for a stream element.
+/// Drops elements from the stream until the <paramref name="predicate"/> returns <c>false</c> for a stream element.
 /// <para>All elements before the first <c>false</c> are discarded, the rest are kept, even if later elements would
 /// return <c>true</c> for <paramref name="predicate"/>.</para>
 /// </summary>
@@ -54,7 +54,7 @@ auto drop_while(UnaryPredicate predicate) {
 }
 
 /// <summary>
-/// Drops elements from the Stream until a stream element is <c>false</c>.
+/// Drops elements from the stream until a stream element is <c>false</c>.
 /// <para>All elements before the first <c>false</c> are discarded, the rest are kept, even if later elements are
 /// <c>true</c>. This is an overload for streams with types convertible to <c>bool</c>.</para>
 /// </summary>
@@ -66,7 +66,7 @@ inline auto drop_while() {
 }
 
 /// <summary>
-/// Drops elements from the Stream until the <paramref name="member"/> returns <c>false</c>.
+/// Drops elements from the stream until the <paramref name="member"/> returns <c>false</c>.
 /// <para>All elements before the first <c>false</c> are discarded, the rest are kept, even if later elements would
 /// return <c>true</c> for <paramref name="member"/>.</para>
 /// </summary>
@@ -80,7 +80,7 @@ auto drop_while(Ret(Class::*member)()) {
 }
 
 /// <summary>
-/// Drops elements from the Stream until the <paramref name="member"/> returns <c>false</c>.
+/// Drops elements from the stream until the <paramref name="member"/> returns <c>false</c>.
 /// <para>All elements before the first <c>false</c> are discarded, the rest are kept, even if later elements would
 /// return <c>true</c> for <paramref name="member"/>.</para>
 /// </summary>

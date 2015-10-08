@@ -48,7 +48,7 @@ public:
     /// </summary>
     /// <param name="source">The source to map from.</param>
     /// <param name="operation">The mapping operation.</param>
-    Map(Source&& source, UnaryOperation operation) : base(std::forward<Source>(source)), _operation(operation) { }
+    Map(Source&& source, UnaryOperation operation) : base(std::move(source)), _operation(operation) { }
 
     Map(const Map<Source, UnaryOperation>&) = delete;
     Map(Map<Source, UnaryOperation>&&) = default;

@@ -37,6 +37,7 @@ BOOST_AUTO_TEST_SUITE(flow_intermediate)
 #include "intermediate/take_while.h"
 #include "intermediate/unique.h"
 #include "intermediate/zip.h"
+#include "intermediate/merge.h"
 BOOST_AUTO_TEST_SUITE_END()
 
 BOOST_AUTO_TEST_SUITE(flow_terminal)

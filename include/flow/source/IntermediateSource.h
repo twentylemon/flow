@@ -33,6 +33,9 @@
 namespace flow {
     namespace source {
 
+template <typename LeftSource, typename RightSource, typename Compare, typename Operation>
+class SetSource;
+
 /// <summary>
 /// Base class for intermediate operation sources. Provides default implementations
 /// for basic methods, type aliases and common member variable definitions.
@@ -45,6 +48,9 @@ public:
     using value_type = T;
     using decay_type = std::decay_t<value_type>;
 
+    template <typename LeftSource, typename RightSource, typename Compare, typename Operation>
+    friend class SetSource;
+
     /// <summary>
     /// Initializes a new instance of the <see cref="IntermediateSourceBase{Source, T}"/> class.
     /// </summary>
@@ -55,7 +61,7 @@ public:
     IntermediateSourceBase(IntermediateSourceBase<Source, T>&&) = default;
 
     /// <summary>
-    /// Returns true if the source has more elements. Default implementation returns <c>_source.has_next()</c>.
+    /// Returns <c>true</c> if the source has more elements. Default implementation returns <c>_source.has_next()</c>.
     /// </summary>
     /// <returns><c>true</c> if this source has more stream elements.</returns>
     bool has_next() {

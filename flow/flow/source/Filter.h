@@ -49,13 +49,13 @@ public:
     /// </summary>
     /// <param name="source">The source to filter.</param>
     /// <param name="predicate">The predicate used to filter stream elements.</param>
-    Filter(Source&& source, UnaryPredicate predicate) : base(std::forward<Source>(source)), _predicate(predicate) { }
+    Filter(Source&& source, UnaryPredicate predicate) : base(std::move(source)), _predicate(predicate) { }
 
     Filter(const Filter<Source, UnaryPredicate>&) = delete;
     Filter(Filter<Source, UnaryPredicate>&&) = default;
 
     /// <summary>
-    /// Returns true if this source has more elements.
+    /// Returns <c>true</c> if this source has more elements.
     /// </summary>
     /// <returns><c>true</c> if this source has more stream elements.</returns>
     bool has_next() {

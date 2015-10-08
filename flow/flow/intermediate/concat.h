@@ -37,8 +37,8 @@ namespace flow {
     namespace intermediate {
 
 /// <summary>
-/// Concatenates the given Stream onto the end of the operated stream.
-/// <para>The <paramref name="tail"/> stream elements must be convertible to the same type of elements as the head stream.</para>
+/// Concatenates the <paramref name="tail"/> stream onto the end of the operated (<paramref name="head"/>) stream.
+/// <para>The <paramref name="tail"/> stream elements must be convertible to the same type of elements as the <paramref name="head"/> stream.</para>
 /// </summary>
 /// <param name="tail">The tail stream to put after the end of the operated head stream.</param>
 /// <returns>An intermediate operation that concatenates the two Stream objects.</returns>
@@ -50,8 +50,8 @@ auto concat(Stream<Tail>&& tail) {
 }
 
 /// <summary>
-/// Concatenates the given iterator range onto the end of the Stream, this is the same as <c>concat(from(begin, end))</c>.
-/// <para>The <paramref name="tail"/> stream elements must be convertible to the same type of elements as the head stream.</para>
+/// Concatenates the given iterator range onto the end of the stream, this is the same as <c>concat(from(begin, end))</c>.
+/// <para>The <paramref name="tail"/> stream elements must be convertible to the same type of elements as the <paramref name="head"/> stream.</para>
 /// </summary>
 /// <param name="begin">The beginning of the range to concat.</param>
 /// <param name="end">The end of the range to concat.</param>
@@ -63,8 +63,8 @@ auto concat(Itr begin, Itr end) {
 }
 
 /// <summary>
-/// Concatenates <paramref name="container"/> onto the end of the Stream, this is the same as <c>concat(from(container))</c>.
-/// <para>The <paramref name="tail"/> stream elements must be convertible to the same type of elements as the head stream.</para>
+/// Concatenates <paramref name="container"/> onto the end of the stream, this is the same as <c>concat(from(container))</c>.
+/// <para>The <paramref name="tail"/> stream elements must be convertible to the same type of elements as the <paramref name="head"/> stream.</para>
 /// </summary>
 /// <param name="container">The container to concatenate onto the end of the stream.</param>
 /// <returns>An intermediate operation that concatenates the container onto the stream.</returns>
@@ -75,8 +75,8 @@ auto concat(Container& container) {
 }
 
 /// <summary>
-/// Concatenates <paramref name="list"/> onto the end of the Stream, this is the same as <c>concat(from(list))</c>.
-/// <para>The <paramref name="tail"/> stream elements must be convertible to the same type of elements as the head stream.</para>
+/// Concatenates <paramref name="list"/> onto the end of the stream, this is the same as <c>concat(from(list))</c>.
+/// <para>The <paramref name="tail"/> stream elements must be convertible to the same type of elements as the <paramref name="head"/> stream.</para>
 /// </summary>
 /// <param name="list">The list to concatenate onto the end of the stream.</param>
 /// <returns>An intermediate operation that concatenates the container onto the stream.</returns>

@@ -47,7 +47,7 @@ class Stream
 {
 public:
     /// <summary>
-    /// Initializes a new instance of the Stream class.
+    /// Initializes a new instance of the <see cref="Stream{Source}"/> class.
     /// </summary>
     /// <param name="...args">Arguments to forward to the Source constructor.</param>
     template <typename... Args>
@@ -65,7 +65,7 @@ public:
     }
 
     /// <summary>
-    /// Returns true if this stream has more elements.
+    /// Returns <c>true</c> if this stream has more elements.
     /// </summary>
     /// <returns><c>true</c> if this stream has more elements.</returns>
     bool has_next() {
@@ -116,9 +116,9 @@ public:
     }
 
     /// <summary>
-    /// Allows STL-like iterator access to the stream. Stream iterators are forward and single-pass,
-    /// once a stream has been iterated in any way (including terminal operations), the
-    /// iterators are invalidated.
+    /// Allows STL-like iterator access to the stream.
+    /// <para>Stream iterators are forward and single-pass, once a stream has been iterated in
+    /// any way (including terminal operations), the iterators are invalidated.</para>
     /// <para>Additionally, only the first iterator ever used is valid. To extend the lifetime
     /// of a stream, use one of the to_container terminal operations.</para>
     /// </summary>
@@ -132,12 +132,47 @@ public:
         using difference_type = typename base::difference_type;
         using iterator_category = typename base::iterator_category;
 
+        /// <summary>
+        /// Initializes an off-end instance of the <see cref="Stream{Source}.iterator"/> class.
+        /// </summary>
         iterator() : _current(nullptr), _stream(nullptr) { }
+
+        /// <summary>
+        /// Initializes a begin instance of the <see cref="Stream{Source}.iterator"/> class.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
         iterator(Stream<Source>* stream) : _current(nullptr), _stream(stream) { operator++(); }
+
+        /// <summary>
+        /// Returns <c>true</c> if the two iterators point to the same object.
+        /// </summary>
+        /// <param name="rhs">The other iterator to compare to.</param>
+        /// <returns><c>true</c> if this iterator and <paramref name="rhs"/> point to the same object.</returns>
         bool operator==(const iterator& rhs) const { return _current == rhs._current; }
+
+        /// <summary>
+        /// Returns <c>true</c> if the two iterators point to the different objects.
+        /// </summary>
+        /// <param name="rhs">The other iterator to compare to.</param>
+        /// <returns><c>true</c> if this iterator and <paramref name="rhs"/> point to different objects.</returns>
         bool operator!=(const iterator& rhs) const { return _current != rhs._current; }
+
+        /// <summary>
+        /// Returns a reference to the underlying object.
+        /// </summary>
+        /// <returns>A reference to the underlying object.</returns>
         reference operator*() { return *_current; }
+
+        /// <summary>
+        /// Returns a pointer to the underlying object.
+        /// </summary>
+        /// <returns>A pointer to the underlying object.</returns>
         pointer operator->() { return _current; }
+
+        /// <summary>
+        /// Advances this iterator to the next element in the stream as a pre-increment.
+        /// </summary>
+        /// <returns><c>*this</c></returns>
         iterator& operator++() {
             if (_stream->has_next()) {
                 _current = &_stream->next();
@@ -147,10 +182,17 @@ public:
             }
             return *this;
         }
+
+        /// <summary>
+        /// Advances this iterator to the next element in the stream as a post-increment.
+        /// </summary>
+        /// <returns>A copy of <c>*this</c> before the increment was performed.</returns>
         iterator operator++(int) {
             iterator ret = *this;
-            return ++ret;
+            ++*this;
+            return ret;
         }
+
     private:
         pointer _current;           // the current stream element, null once off end
         Stream<Source>* _stream;    // the stream this iterator belongs to
