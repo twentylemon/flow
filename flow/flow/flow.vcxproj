@@ -132,6 +132,9 @@
     <ClInclude Include="generator\repeat.h" />
     <ClInclude Include="intermediate\flat_map.h" />
     <ClInclude Include="intermediate\merge.h" />
+    <ClInclude Include="intermediate\set_diff.h" />
+    <ClInclude Include="intermediate\set_intersect.h" />
+    <ClInclude Include="intermediate\set_union.h" />
     <ClInclude Include="print_tuple.h" />
     <ClInclude Include="source\FlatMap.h" />
     <ClInclude Include="source\Generate.h" />
@@ -139,7 +142,10 @@
     <ClInclude Include="source\IterateFunc.h" />
     <ClInclude Include="source\IntermediateSource.h" />
     <ClInclude Include="source\Merge.h" />
+    <ClInclude Include="source\SetDifference.h" />
+    <ClInclude Include="source\SetIntersect.h" />
     <ClInclude Include="source\SetSource.h" />
+    <ClInclude Include="source\SetUnion.h" />
     <ClInclude Include="terminal\execute.h" />
     <ClInclude Include="terminal\reservoir.h" />
     <ClInclude Include="terminal\sample.h" />

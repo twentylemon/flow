@@ -42,7 +42,7 @@ namespace flow {
 /// Merges the <paramref name="right"/> stream into the operated (<paramref name="left"/>) stream while maintaining sorted order.
 /// <para>Both the <paramref name="left"/> and <paramref name="right"/> streams are assumed to already be sorted
 /// according to <paramref name="compare"/>. If not, this operation produces undefined results. By default, <c>operator&lt;</c>
-/// is used as the comparator.</para>
+/// is used as the comparator. The merge operation is stable.</para>
 /// </summary>
 /// <param name="right">The right stream to merge into the left stream while maintaining sorted order.</param>
 /// <param name="compare">The compare function by which both streams are sorted.</param>
@@ -59,7 +59,7 @@ auto merge(Stream<RightSource>&& right, Compare compare = Compare()) {
 /// this is the same as <c>merge(from(begin, end), compare)</c>.
 /// <para>Both the <paramref name="left"/> stream and iterator range are assumed to already be sorted
 /// according to <paramref name="compare"/>. If not, this operation produces undefined results. By default, <c>operator&lt;</c>
-/// is used as the comparator.</para>
+/// is used as the comparator. The merge operation is stable.</para>
 /// </summary>
 /// <param name="begin">The beginning of the range to merge.</param>
 /// <param name="end">The end of the range to merge.</param>
@@ -76,7 +76,7 @@ auto merge(Itr begin, Itr end, Compare compare = Compare()) {
 /// this is the same as <c>merge(from(container), compare)</c>.
 /// <para>Both the <paramref name="left"/> stream and <paramref name="container"/> are assumed to already be sorted
 /// according to <paramref name="compare"/>. If not, this operation produces undefined results. By default, <c>operator&lt;</c>
-/// is used as the comparator.</para>
+/// is used as the comparator. The merge operation is stable.</para>
 /// </summary>
 /// <param name="container">The container to merge into the stream while maintaining sorted order.</param>
 /// <param name="compare">The compare function by which both streams are sorted.</param>
@@ -92,7 +92,7 @@ auto merge(Container& container, Compare compare = Compare()) {
 /// this is the same as <c>merge(from(list), compare)</c>.
 /// <para>Both the <paramref name="left"/> stream and <paramref name="list"/> are assumed to already be sorted
 /// according to <paramref name="compare"/>. If not, this operation produces undefined results. By default, <c>operator&lt;</c>
-/// is used as the comparator.</para>
+/// is used as the comparator. The merge operation is stable.</para>
 /// </summary>
 /// <param name="list">The list to merge into the stream while maintaining sorted order.</param>
 /// <param name="compare">The compare function by which both streams are sorted.</param>

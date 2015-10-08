@@ -25,8 +25,8 @@
  * \endcond
  */
  
-#ifndef FLOW_SOURCE_SETMERGE_H
-#define FLOW_SOURCE_SETMERGE_H
+#ifndef FLOW_SOURCE_SETUNION_H
+#define FLOW_SOURCE_SETUNION_H
 
 #include "SetSource.h"
 
@@ -34,25 +34,30 @@ namespace flow {
     namespace source {
 
 /// <summary>
-/// The set operation which merges sorted streams and maintains sorted order.
+/// The set operation which unions set-streams and maintains sorted order.
 /// </summary>
-class MergeOperation : public SetOperation
+class UnionOperation : public SetOperation
 {
 public:
     /// <summary>
     /// Action to perform when neither source is empty.
-    /// <para>Assigns the next value of the set source to be the lower of the two possible values.</para>
+    /// <para>Assigns the next value of the set source to be the lower of the two possible values.
+    /// If the two values are equal, then the duplicate value is ignored.</para>
     /// </summary>
     /// <param name="source">The set source.</param>
     /// <returns><c>UpdateState::UpdateComplete</c> -- the operation always completes after one call.</returns>
     template <typename Source>
     UpdateState none_empty(Source& source) {
-        if (source.compare_right_less()) {
+        if (source.compare_left_less()) {
+            source.set_advance(AdvanceState::Left);
+            source.set_next_to_left();
+        }
+        else if (source.compare_right_less()) {
             source.set_advance(AdvanceState::Right);
             source.set_next_to_right();
         }
         else {
-            source.set_advance(AdvanceState::Left);
+            source.set_advance(AdvanceState::Both);
             source.set_next_to_left();
         }
         return UpdateState::UpdateComplete;
@@ -60,10 +65,10 @@ public:
 };
 
 /// <summary>
-/// Alias the Merge source as a SetSource which uses the MergeOperation.
+/// Alias the SetUnion source as a SetSource which uses the UnionOperation.
 /// </summary>
 template <typename LeftSource, typename RightSource, typename Compare>
-using Merge = SetSource<LeftSource, RightSource, Compare, MergeOperation>;
+using SetUnion = SetSource<LeftSource, RightSource, Compare, UnionOperation>;
     }
 }
 #endif

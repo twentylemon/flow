@@ -81,6 +81,9 @@
 #include "flow/intermediate/unique.h"
 #include "flow/intermediate/zip.h"
 #include "flow/intermediate/merge.h"
+#include "flow/intermediate/set_union.h"
+#include "flow/intermediate/set_intersect.h"
+#include "flow/intermediate/set_diff.h"
 
 namespace flow {
     using namespace generator;

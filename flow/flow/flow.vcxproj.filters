@@ -246,6 +246,24 @@
     <ClInclude Include="intermediate\merge.h">
       <Filter>Header Files\intermediate</Filter>
     </ClInclude>
+    <ClInclude Include="intermediate\set_union.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
+    <ClInclude Include="source\SetUnion.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="intermediate\set_intersect.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
+    <ClInclude Include="source\SetIntersect.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\SetDifference.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="intermediate\set_diff.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\README.md">

@@ -129,8 +129,16 @@ public:
     /// Returns <c>true</c> if the left value compares less than the right value.
     /// </summary>
     /// <returns><c>true</c> if the left value compares less than the right value.</returns>
-    bool compare() {
+    bool compare_left_less() {
         return _compare(base::next(), _right.next());
+    }
+
+    /// <summary>
+    /// Returns <c>true</c> if the right value compares less than the left value.
+    /// </summary>
+    /// <returns><c>true</c> if the right value compares less than the left value.</returns>
+    bool compare_right_less() {
+        return _compare(_right.next(), base::next());
     }
 
     /// <summary>

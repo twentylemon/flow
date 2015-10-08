@@ -47,13 +47,13 @@ public:
     /// <returns><c>UpdateState::UpdateComplete</c> -- the operation always completes after one call.</returns>
     template <typename Source>
     UpdateState none_empty(Source& source) {
-        if (source.compare()) {
-            source.set_advance(AdvanceState::Left);
-            source.set_next_to_left();
-        }
-        else {
+        if (source.compare_right_less()) {
             source.set_advance(AdvanceState::Right);
             source.set_next_to_right();
+        }
+        else {
+            source.set_advance(AdvanceState::Left);
+            source.set_next_to_left();
         }
         return UpdateState::UpdateComplete;
     }
