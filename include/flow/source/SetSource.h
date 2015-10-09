@@ -33,8 +33,27 @@
 namespace flow {
     namespace source {
 
+/// <summary>
+/// Which stream source to pull a new value from in a set operation.
+/// <para>This is analogous to iterator incrementation in normal code,
+/// ie <c>Left</c> will only incrememnt the left stream source.</para>
+/// </summary>
 enum class AdvanceState { None, Left, Right, Both };
+
+/// <summary>
+/// Which stream source is empty after an advance operation.
+/// <para>This is analogous to checking for a base case in normal code,
+/// ie having a call to <c>std::copy</c> once a range is empty.</para>
+/// </summary>
 enum class EmptyState { None, Left, Right, Both };
+
+/// <summary>
+/// Flag to indicate something analogous to copying the value in normal code.
+/// <para>No value is copied, but a state of <c>UpdateComplete</c> means
+/// a value was found and a call to next() should occur. <c>UpdateContinue</c>
+/// means a value was not found, and further stream iteration should occur.
+/// Finally, <c>EmptyStream</c> means both stream sources are empty.</para>
+/// </summary>
 enum class UpdateState { UpdateComplete, EmptyStream, UpdateContinue };
 
 /// <summary>
@@ -115,14 +134,14 @@ public:
     /// Sets the next value to be returned by next() to the result from the left source.
     /// </summary>
     void set_next_to_left() {
-        _current = &base::raw_current();
+        _current = base::_current;
     }
 
     /// <summary>
     /// Sets the next value to be returned by next() to the result from the right source.
     /// </summary>
     void set_next_to_right() {
-        _current = &_right.raw_current();
+        _current = _right._current;
     }
 
     /// <summary>
@@ -172,7 +191,6 @@ public:
 
     /// <summary>
     /// Returns the next element from the stream. The value is <em>moved</em>. Successive calls to next() will fail.
-    /// Default implementation returns <c>std::move(*_current);</c>.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
     value_type& next() {

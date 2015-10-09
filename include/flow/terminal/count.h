@@ -28,15 +28,19 @@
 #ifndef FLOW_TERMINAL_COUNT_H
 #define FLOW_TERMINAL_COUNT_H
 
+#include <functional>
+
 #include "Terminal.h"
+#include "../intermediate/filter.h"
 
 namespace flow {
     namespace terminal {
 
 /// <summary>
-/// Returns the counts of the number of elements in the stream as <c>std::size_t</c>.
+/// Returns the number of elements in the stream as <c>std::size_t</c>.
 /// </summary>
 /// <returns>A terminal operation which counts the number of elements in the stream.</returns>
+/// <seealso cref="count_if()"/>
 inline auto count() {
     return detail::make_terminal([](auto&& stream) {
         std::size_t size = 0;
@@ -46,6 +50,32 @@ inline auto count() {
         }
         return size;
     });
+}
+
+/// <summary>
+/// Returns the number of elements in the stream that return <c>true</c>
+/// for <paramref name="predicate"/> as <c>std::size_t</c>.
+/// <para>This operation is a shorthand for <c>filter(predicate) | count()</c>.</para>
+/// </summary>
+/// <returns>A terminal operation which counts the number of elements in the stream that return <c>true</c> for <paramref name="predicate"/>.</returns>
+/// <seealso cref="count()"/>
+/// <seealso cref="filter()"/>
+template <typename UnaryPredicate>
+auto count_if(UnaryPredicate predicate) {
+    return intermediate::filter(predicate) | count();
+}
+
+/// <summary>
+/// Returns the number of the occurrences of <paramref name="value"/> in the stream as <c>std::size_t</c>.
+/// <para>Equality is checking using <c>operator==</c>. This operation is equivalent to
+/// <c>filter([value](T e) { return value == e; }) | count()</c>.</para>
+/// </summary>
+/// <returns>A terminal operation which counts of the occurrences of <paramref name="value"/> in the stream.</returns>
+/// <seealso cref="count_if()"/>
+/// <seealso cref="contains()"/>
+template <typename T>
+auto count(T&& value) {
+    return count_if(std::bind(std::equal_to<T>(), std::forward<T>(value), std::placeholders::_1));
 }
     }
 }
