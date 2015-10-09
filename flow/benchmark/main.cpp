@@ -90,7 +90,9 @@ int main(int argc, char** argv) {
     std::vector<int> v1 = { 1, 3, 5, 7 };
     std::vector<int> v2 = { 2, 4, 6, 8 };
 
-    from(v1) | merge(from(v2)) | dump();
+    auto f = cycle(v1, 5) | to_map();
+    
+    f | dump();
 
     /*
     std::vector<int> cw{ 1, 2, 3 };

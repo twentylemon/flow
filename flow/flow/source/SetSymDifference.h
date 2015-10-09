@@ -42,7 +42,7 @@ public:
     /// <summary>
     /// Action to perform when neither source is empty.
     /// <para>Assigns the next value of the set source to be the value in whichever stream contains
-	/// the lower value. If they are equal, both streams are advanced.</para>
+    /// the lower value. If they are equal, both streams are advanced.</para>
     /// </summary>
     /// <param name="source">The set source.</param>
     /// <returns><c>UpdateState::UpdateContinue</c> if the elements are equal, <c>UpdateState::UpdateComplete</c> otherwise.</returns>
@@ -55,7 +55,7 @@ public:
         }
         else if (source.compare_right_less()) {
             source.set_advance(AdvanceState::Right);
-			source.set_next_to_right();
+            source.set_next_to_right();
             return UpdateState::UpdateComplete;
         }
         else {

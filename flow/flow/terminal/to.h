@@ -34,12 +34,40 @@
 #include <list>
 #include <set>
 #include <unordered_set>
+#include <map>
+#include <unordered_map>
 #include <iterator>
 
 #include "copy.h"
+#include "each.h"
 
 namespace flow {
     namespace terminal {
+        namespace detail {
+
+/// <summary>
+/// The <c>std::map</c> inserter for counting occurrences of each stream element.
+/// </summary>
+const auto map_inserter = [](auto& result, auto&& element) {
+    auto lower = result.lower_bound(element);
+    if (lower != result.end() && !(result.key_comp()(element, lower->first))) {
+        ++lower->second;
+    }
+    else {
+        result.insert(lower, std::make_pair(std::move(element), 1));
+    }
+};
+
+/// <summary>
+/// The <c>std::unordered_map</c> inserter for counting occurrences of each stream element.
+/// </summary>
+const auto unordered_map_inserter = [](auto& result, auto&& element) {
+    auto ret = result.insert(std::make_pair(std::move(element), 1));
+    if (!ret.second) {    // element already exists, increment the count
+        ++ret.first->second;
+    }
+};
+        }
 
 /// <summary>
 /// Copies the stream into a <c>std::vector&lt;T&gt;</c> in order.
@@ -365,6 +393,111 @@ auto to_unordered_multiset(const Hash& hash, EqualPredicate equal, const Allocat
         using T = std::decay_t<decltype(stream.next())>;
         std::unordered_multiset<T, Hash, EqualPredicate, Allocator> result(16, hash, equal, alloc);
         stream | copy(std::inserter(result, result.end()));
+        return result;
+    });
+}
+
+/// <summary>
+/// Copies the stream into a <c>std::map&lt;T, std::size_t&gt;</c>.
+/// <para>The map keys are stream elements and each mapped value in the number of occurrences of that key in the stream.</para>
+/// </summary>
+inline auto to_map() {
+    return detail::make_terminal([](auto&& stream) {
+        using T = std::decay_t<decltype(stream.next())>;
+        std::map<T, std::size_t> result;
+        stream | each(std::bind(detail::map_inserter, std::ref(result), std::placeholders::_1));
+        return result;
+    });
+}
+
+/// <summary>
+/// Copies the stream into a <c>std::map&lt;T, std::size_t&gt;</c>.
+/// <para>The map keys are stream elements and each mapped value in the number of occurrences of that key in the stream.</para>
+/// </summary>
+/// <param name="compare">The comparator to use in the map.</param>
+template <typename KeyCompare>
+auto to_map(KeyCompare key_compare) {
+    return detail::make_terminal([key_compare](auto&& stream) {
+        using T = std::decay_t<decltype(stream.next())>;
+        std::map<T, std::size_t, KeyCompare> result(key_compare);
+        stream | each(std::bind(detail::map_inserter, std::ref(result), std::placeholders::_1));
+        return result;
+    });
+}
+
+/// <summary>
+/// Copies the stream into a <c>std::map&lt;T, std::size_t&gt;</c>.
+/// <para>The map keys are stream elements and each mapped value in the number of occurrences of that key in the stream.</para>
+/// </summary>
+/// <param name="compare">The comparator to use in the map.</param>
+/// <param name="alloc">The allocator to use in the returned container.</param>
+template <typename KeyCompare, typename Allocator>
+auto to_map(KeyCompare key_compare, const Allocator& alloc) {
+    return detail::make_terminal([key_compare, alloc](auto&& stream) {
+        using T = std::decay_t<decltype(stream.next())>;
+        std::map<T, std::size_t, KeyCompare, Allocator> result(key_compare, alloc);
+        stream | each(std::bind(detail::map_inserter, std::ref(result), std::placeholders::_1));
+        return result;
+    });
+}
+
+/// <summary>
+/// Copies the stream into a <c>std::unordered_map&lt;T, std::size_t&gt;</c>.
+/// <para>The map keys are stream elements and each mapped value in the number of occurrences of that key in the stream.</para>
+/// </summary>
+inline auto to_unordered_map() {
+    return detail::make_terminal([](auto&& stream) {
+        using T = std::decay_t<decltype(stream.next())>;
+        std::unordered_map<T, std::size_t> result;
+        stream | each(std::bind(detail::unordered_map_inserter, std::ref(result), std::placeholders::_1));
+        return result;
+    });
+}
+
+/// <summary>
+/// Copies the stream into a <c>std::unordered_map&lt;T, std::size_t, Hash, EqualPredicate&gt;</c>.
+/// <para>The map keys are stream elements and each mapped value in the number of occurrences of that key in the stream.</para>
+/// </summary>
+/// <param name="hash">The hash function to use.</param>
+template <typename Hash>
+auto to_unordered_map(const Hash& hash) {
+    return detail::make_terminal([hash](auto&& stream) {
+        using T = std::decay_t<decltype(stream.next())>;
+        std::unordered_map<T, std::size_t, Hash> result(16, hash);
+        stream | each(std::bind(detail::unordered_map_inserter, std::ref(result), std::placeholders::_1));
+        return result;
+    });
+}
+
+/// <summary>
+/// Copies the stream into a <c>std::unordered_map&lt;T, std::size_t, Hash, EqualPredicate&gt;</c>.
+/// <para>The map keys are stream elements and each mapped value in the number of occurrences of that key in the stream.</para>
+/// </summary>
+/// <param name="hash">The hash function to use.</param>
+/// <param name="equal">The function to use for the equality predicate in the hash table.</param>
+template <typename Hash, typename EqualPredicate>
+auto to_unordered_map(const Hash& hash, EqualPredicate equal) {
+    return detail::make_terminal([hash, equal](auto&& stream) {
+        using T = std::decay_t<decltype(stream.next())>;
+        std::unordered_map<T, std::size_t, Hash, EqualPredicate> result(16, hash, equal);
+        stream | each(std::bind(detail::unordered_map_inserter, std::ref(result), std::placeholders::_1));
+        return result;
+    });
+}
+
+/// <summary>
+/// Copies the stream into a <c>std::unordered_map&lt;T, std::size_t, Hash, EqualPredicate, Allocator&gt;</c>.
+/// <para>The map keys are stream elements and each mapped value in the number of occurrences of that key in the stream.</para>
+/// </summary>
+/// <param name="hash">The hash function to use.</param>
+/// <param name="equal">The function to use for the equality predicate in the hash table.</param>
+/// <param name="alloc">The allocator to use in the returned container.</param>
+template <typename Hash, typename EqualPredicate, typename Allocator>
+auto to_unordered_map(const Hash& hash, EqualPredicate equal, const Allocator& alloc) {
+    return detail::make_terminal([hash, equal, alloc](auto&& stream) {
+        using T = std::decay_t<decltype(stream.next())>;
+        std::unordered_map<T, std::size_t, Hash, EqualPredicate, Allocator> result(16, hash, equal, alloc);
+        stream | each(std::bind(detail::unordered_map_inserter, std::ref(result), std::placeholders::_1));
         return result;
     });
 }

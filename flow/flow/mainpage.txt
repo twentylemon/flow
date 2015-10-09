@@ -111,8 +111,8 @@
 /// <para>Also defines <c>operator|</c> for container types to be a shorthand for from().
 /// A container is defined to be any class with a <c>const_iterator</c> inner class,
 /// and methods <c>begin()</c> and <c>end()</c>.</para>
-/// \todo flow::generator::random - generate stream values from a random number generator
-/// \todo flow::generator::parallel_* - create a parallel version of other generators?
+/// \todo random() - generate stream values from a random number generator
+/// \todo parallel_*() - create a parallel version of other generators?
 /// 
 
 /// \namespace flow::terminal
@@ -120,8 +120,9 @@
 /// <para>The functions in the flow::terminal namespace all produce a terminal operation. The terminal
 /// operation does not operate on a stream until the pipe <c>operator|</c> has been applied, after which
 /// the terminal's return value is calculated.</para>
-/// \todo flow::terminal::parallel_* - chunking parallelization of terminal operations
+/// \todo parallel_*() - chunking parallelization of terminal operations
 /// \todo parallel pipelining of stream operations?
+/// \todo stats() - gives mean, median, mode, min, max, count, stddev
 /// 
 
 /// \namespace flow::intermediate

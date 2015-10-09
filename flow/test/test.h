@@ -69,12 +69,6 @@ DO_OP3(std::unordered_set);
 DO_OP3(std::unordered_multiset);
 DO_OP4(std::unordered_set);
 DO_OP4(std::unordered_multiset);
-namespace std {
-    template <typename T, typename U>
-    std::ostream& operator<<(std::ostream& out, const std::pair<T, U>& pair) {
-        return out << '(' << pair.first << ", " << pair.second << ')';
-    }
-}
 
 inline bool is_even(int val) {
     return val % 2 == 0;
