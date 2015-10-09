@@ -41,6 +41,7 @@ BOOST_AUTO_TEST_SUITE(flow_intermediate)
 #include "intermediate/set_union.h"
 #include "intermediate/set_intersect.h"
 #include "intermediate/set_diff.h"
+#include "intermediate/set_sym_diff.h"
 BOOST_AUTO_TEST_SUITE_END()
 
 BOOST_AUTO_TEST_SUITE(flow_terminal)

@@ -84,6 +84,7 @@
 #include "flow/intermediate/set_union.h"
 #include "flow/intermediate/set_intersect.h"
 #include "flow/intermediate/set_diff.h"
+#include "flow/intermediate/set_sym_diff.h"
 
 namespace flow {
     using namespace generator;

@@ -25,8 +25,8 @@
 * \endcond
 */
 
-#ifndef FLOW_SOURCE_SETDIFFERENCE_H
-#define FLOW_SOURCE_SETDIFFERENCE_H
+#ifndef FLOW_SOURCE_SETSYMDIFFERENCE_H
+#define FLOW_SOURCE_SETSYMDIFFERENCE_H
 
 #include "SetSource.h"
 
@@ -34,18 +34,18 @@ namespace flow {
     namespace source {
 
 /// <summary>
-/// The set operation which computes the difference of set-streams and maintains sorted order.
+/// The set operation which computes the symmetric difference of set-streams and maintains sorted order.
 /// </summary>
-class DifferenceOperation : public SetOperation
+class SymmetricDifferenceOperation : public SetOperation
 {
 public:
     /// <summary>
     /// Action to perform when neither source is empty.
-    /// <para>Assigns the next value of the set source to be the value in the left stream if it is lower
-    /// than the value in the right stream. Otherwise, the streams are advanced.</para>
+    /// <para>Assigns the next value of the set source to be the value in whichever stream contains
+	/// the lower value. If they are equal, both streams are advanced.</para>
     /// </summary>
     /// <param name="source">The set source.</param>
-    /// <returns><c>UpdateState::UpdateComplete</c> if the left element is less than the right, <c>UpdateState::UpdateContinue</c> otherwise.</returns>
+    /// <returns><c>UpdateState::UpdateContinue</c> if the elements are equal, <c>UpdateState::UpdateComplete</c> otherwise.</returns>
     template <typename Source>
     UpdateState none_empty(Source& source) {
         if (source.compare_left_less()) {
@@ -55,31 +55,21 @@ public:
         }
         else if (source.compare_right_less()) {
             source.set_advance(AdvanceState::Right);
-            return UpdateState::UpdateContinue;
+			source.set_next_to_right();
+            return UpdateState::UpdateComplete;
         }
         else {
             source.set_advance(AdvanceState::Both);
             return UpdateState::UpdateContinue;
         }
     }
-
-    /// <summary>
-    /// Action to perform when only the left source is empty.
-    /// <para>No action, no more elements can be in the difference when the left source is empty.</para>
-    /// </summary>
-    /// <param name="source">The set source.</param>
-    /// <returns><c>UpdateState::EmptyStream</c> -- there cannot be any further elements.</returns>
-    template <typename Source>
-    UpdateState left_empty(Source& source) {
-        return UpdateState::EmptyStream;
-    }
 };
 
 /// <summary>
-/// Alias the SetDifference source as a SetSource which uses the DifferenceOperation.
+/// Alias the SetSymDifference source as a SetSource which uses the SymmetricDifferenceOperation.
 /// </summary>
 template <typename LeftSource, typename RightSource, typename Compare>
-using SetDifference = SetSource<LeftSource, RightSource, Compare, DifferenceOperation>;
-}
+using SetSymDifference = SetSource<LeftSource, RightSource, Compare, SymmetricDifferenceOperation>;
+    }
 }
 #endif
