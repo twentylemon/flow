@@ -89,10 +89,12 @@ int main(int argc, char** argv) {
 
     std::vector<int> v1 = { 1, 3, 5, 7 };
     std::vector<int> v2 = { 2, 4, 6, 8 };
-
-    auto f = cycle(v1, 5) | to_map();
     
-    f | dump();
+    auto v = cycle({ 1, 2 }, 1) | to_vector();
+    
+    auto stat = v | stats<double, true>();
+    
+    std::cout << stat << std::endl;
 
     /*
     std::vector<int> cw{ 1, 2, 3 };
