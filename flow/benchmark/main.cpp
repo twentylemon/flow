@@ -89,12 +89,22 @@ int main(int argc, char** argv) {
 
     std::vector<int> v1 = { 1, 3, 5, 7 };
     std::vector<int> v2 = { 2, 4, 6, 8 };
+    auto make_v = [](int m) { return generate([m]()->double{ return std::rand() % m; }, 50000000); };
     
-    auto v = cycle({ 1, 2 }, 1) | to_vector();
+    auto v = make_v(std::rand() % 1000) | to_vector();
+    boost::timer t1;
+    auto stat1 = v | stats<double, true>();
+    std::cout << "<true>: " << t1.elapsed() << "\t" << stat1 << std::endl;
     
-    auto stat = v | stats<double, true>();
+    v = make_v(std::rand() % 1000) | to_vector();
+    boost::timer t2;
+    auto stat2 = v | stats();
+    std::cout << "none: " << t2.elapsed() << "\t" << stat2 << std::endl;
     
-    std::cout << stat << std::endl;
+    v = make_v(std::rand() % 1000) | to_vector();
+    boost::timer t3;
+    auto stat3 = v | stats<double, false, true>();
+    std::cout << "<false,true>: " << t3.elapsed() << "\t" << stat3 << std::endl;
 
     /*
     std::vector<int> cw{ 1, 2, 3 };

@@ -146,17 +146,18 @@ public:
     /// but g++ cannot friend an auto return type.</para>
     /// </summary>
     /// <param name="value"/>The next value in the stream.</param>
-    void next(T&& value) {
+    void next(T& value) {
         ++_n;
-        _sum = _sum + value;
-        _sum_squares = _sum_squares + value * value;
-        if (MinMax) {   // slow minmax
-            if (value < _min) {
-                _min = std::move(value);
-            }
-            else if (_max < value) {
-                _max = std::move(value);
-            }
+        _sum += value;
+        _sum_squares += value * value;
+        if (MinMax) {
+            update_minmax(value);
+        }
+        if (Median) {
+            update_median(value);
+        }
+        if (Mode) {
+            update_mode(value);
         }
     }
     
@@ -172,6 +173,33 @@ public:
     }
 
 private:
+    /// <summary>
+    /// Updates the min/max value.
+    /// </summary>
+    /// <param name="value"/>The next value in the stream.</param>
+    void update_minmax(T& value) {
+        if (value < _min) {
+            _min = value;
+        }
+        else if (_max < value) {
+            _max = value;
+        }
+    }
+
+    /// <summary>
+    /// Updates the median value.
+    /// </summary>
+    /// <param name="value"/>The next value in the stream.</param>
+    void update_median(T& value) {
+    }
+
+    /// <summary>
+    /// Updates the mode value.
+    /// </summary>
+    /// <param name="value"/>The next value in the stream.</param>
+    void update_mode(T& value) {
+    }
+
     T _min;                     // conditionally include min value of the stream
     T _max;                     // conditionally included max value of the stream
     ResultType _mean;           // mean of the stream; to be updated at stream end
@@ -191,16 +219,17 @@ private:
 /// </summary>
 /// <param name="out"/>The out stream.</param>
 /// <param name="stats"/>The statistics to display.</param>
-template <typename T, typename R, bool A, bool B>
-void display_minmax(std::ostream& out, const Stats<T, R, false, A, B>& stats) { }
+template <typename T, typename R, bool Median, bool Mode>
+void display_minmax(std::ostream& out, const Stats<T, R, false, Median, Mode>& stats) {
+}
 
 /// <summary>
 /// Wrapper to display of the min/max of a Stats object.
 /// </summary>
 /// <param name="out"/>The out stream.</param>
 /// <param name="stats"/>The statistics to display.</param>
-template <typename T, typename R, bool A, bool B>
-void display_minmax(std::ostream& out, const Stats<T, R, true, A, B>& stats) {
+template <typename T, typename R, bool Median, bool Mode>
+void display_minmax(std::ostream& out, const Stats<T, R, true, Median, Mode>& stats) {
     out << ", min = " << stats.min() << ", max = " << stats.max();
 }
 
@@ -209,16 +238,17 @@ void display_minmax(std::ostream& out, const Stats<T, R, true, A, B>& stats) {
 /// </summary>
 /// <param name="out"/>The out stream.</param>
 /// <param name="stats"/>The statistics to display.</param>
-template <typename T, typename R, bool A, bool B>
-void display_median(std::ostream& out, const Stats<T, R, A, false, B>& stats) { }
+template <typename T, typename R, bool MinMax, bool Mode>
+void display_median(std::ostream& out, const Stats<T, R, MinMax, false, Mode>& stats) {
+}
 
 /// <summary>
 /// Wrapper to display of the median of a Stats object.
 /// </summary>
 /// <param name="out"/>The out stream.</param>
 /// <param name="stats"/>The statistics to display.</param>
-template <typename T, typename R, bool A, bool B>
-void display_median(std::ostream& out, const Stats<T, R, A, true, B>& stats) {
+template <typename T, typename R, bool MinMax, bool Mode>
+void display_median(std::ostream& out, const Stats<T, R, MinMax, true, Mode>& stats) {
     out << ", median = " << stats.median();
 }
 
@@ -227,16 +257,17 @@ void display_median(std::ostream& out, const Stats<T, R, A, true, B>& stats) {
 /// </summary>
 /// <param name="out"/>The out stream.</param>
 /// <param name="stats"/>The statistics to display.</param>
-template <typename T, typename R, bool A, bool B>
-void display_mode(std::ostream& out, const Stats<T, R, A, B, false>& stats) { }
+template <typename T, typename R, bool MinMax, bool Median>
+void display_mode(std::ostream& out, const Stats<T, R, MinMax, Median, false>& stats) {
+}
 
 /// <summary>
 /// Wrapper to display of the mode of a Stats object.
 /// </summary>
 /// <param name="out"/>The out stream.</param>
 /// <param name="stats"/>The statistics to display.</param>
-template <typename T, typename R, bool A, bool B>
-void display_mode(std::ostream& out, const Stats<T, R, A, B, true>& stats) {
+template <typename T, typename R, bool MinMax, bool Median>
+void display_mode(std::ostream& out, const Stats<T, R, MinMax, Median, true>& stats) {
     out << ", mode = " << stats.mode();
 }
     }
@@ -264,7 +295,8 @@ std::ostream& operator<<(std::ostream& out, const Stats<T, R, MinMax, Median, Mo
 /// <para>Some statistical values are calculated as <c>ResultType</c>, <c>double</c> by default, others
 /// are calculated as <c>T</c>, the type of elements in the stream. Calculating statistics requires that
 /// both <c>T</c> and <c>ResultType</c> behave as arithmetic types.</para>
-/// <para>The other template parameters indicate whether or not to calculate additional statistics.
+/// <para>The other template parameters indicate whether or not to calculate additional statistics,
+/// all of which are not calculated by default.
 /// The behavior of of each of them is as follows (<c>n</c> is the size of the stream):</para>
 /// <ul>
 ///     <li><c>MinMax</c> - calculate the minimum and maximum value of the stream. Requires that
@@ -290,7 +322,7 @@ auto stats() {
         using T = std::decay_t<decltype(stream.next())>;
         Stats<T, ResultType, MinMax, Median, Mode> stats(stream.next());
         while (stream.has_next()) {
-            stats.next(std::move(stream.next()));
+            stats.next(stream.next());
         }
         stats.end();
         return stats;
