@@ -89,8 +89,8 @@ int main(int argc, char** argv) {
 
     std::vector<int> v1 = { 1, 3, 5, 7 };
     std::vector<int> v2 = { 2, 4, 6, 8 };
-    auto make_v = [](int m) { return generate([m]()->double{ return std::rand() % m; }, 50000000); };
-    /*
+    auto make_v = [](int m) { return generate([m]()->double{ return std::rand() % m; }, 5000); };
+    
     auto v = make_v(std::rand() % 1000) | to_vector();
     boost::timer t1;
     auto stat1 = v | stats<double, true>();
@@ -105,12 +105,9 @@ int main(int argc, char** argv) {
     boost::timer t3;
     auto stat3 = v | stats<double, false, true>();
     std::cout << "<false,true>: " << t3.elapsed() << "\t" << stat3 << std::endl;
-    */
-    int aa = 1, bb = 1;
-    std::tuple<int&, int&> t(aa, bb);
-    std::get<0>(t) = 2;
-    std::get<1>(t) = 3;
-    std::cout << t;
+    
+    endl(2);
+    std::cout << (from({ 1, 1, 2 }) | stats<long double, true, true>()) << std::endl;
 
     /*
     std::vector<int> cw{ 1, 2, 3 };

@@ -28,9 +28,12 @@
 #ifndef FLOW_TERMINAL_STATS_H
 #define FLOW_TERMINAL_STATS_H
 
+#include <set>
+#include <map>
 #include <iostream>
 
 #include "Terminal.h"
+#include "dump.h"
 
 namespace flow {
 
@@ -43,7 +46,7 @@ namespace flow {
 /// </summary>
 /// <seealso cref="stats()"/>
 /// \todo implement median, mode
-template <typename T, typename ResultType, bool MinMax, bool Median, bool Mode>
+template <typename T, typename ResultType, bool MinMax, bool MedianMode>
 class Stats
 {
 public:
@@ -51,10 +54,10 @@ public:
     /// Initializes a new instance of the <see cref="Stats"/> class.
     /// </summary>
     /// <param name="ele"/>The first element from the stream.</param>
-    Stats(T& ele) : _min(ele), _max(ele), _mean(0), _median(0), _mode(0), _stddev(0), _variance(0), _sum(ele), _sum_squares(ele * ele), _n(1) { }
+    Stats(const T& ele) : _min(ele), _max(ele), _mean(0), _median(0), _modes(), _stddev(0), _variance(0), _sum(ele), _sum_squares(ele * ele), _n(1), _freq({ { ele, 1 } }) { }
         
-    Stats(const Stats<T, ResultType, MinMax, Median, Mode>&) = default;
-    Stats(Stats<T, ResultType, MinMax, Median, Mode>&&) = default;
+    Stats(const Stats<T, ResultType, MinMax, MedianMode>&) = default;
+    Stats(Stats<T, ResultType, MinMax, MedianMode>&&) = default;
     
     /// <summary>
     /// Returns the minimum value calculated [conditionally compiled].
@@ -78,18 +81,27 @@ public:
     /// Returns the median value calculated [conditionally compiled].
     /// </summary>
     /// <returns>The median value of the stream.</returns>
-    template <bool B = Median, typename = std::enable_if_t<B>>
+    template <bool B = MedianMode, typename = std::enable_if_t<B>>
     ResultType median() const {
         return _median;
     }
     
     /// <summary>
-    /// Returns the mode value calculated [conditionally compiled].
+    /// Returns the mode value(s) calculated [conditionally compiled].
+    /// </summary>
+    /// <returns>The mode value(s) of the stream.</returns>
+    template <bool B = MedianMode, typename = std::enable_if_t<B>>
+    const std::vector<T>& modes() const {
+        return _modes;
+    }
+
+    /// <summary>
+    /// Returns the frequency of which each element occurred in the stream [conditionally compiled].
     /// </summary>
     /// <returns>The mode value of the stream.</returns>
-    template <bool B = Median, typename = std::enable_if_t<B>>
-    T mode() const {
-        return _mode;
+    template <bool B = MedianMode, typename = std::enable_if_t<B>>
+    const std::map<T, std::size_t> frequency() const {
+        return _freq;
     }
     
     /// <summary>
@@ -146,18 +158,15 @@ public:
     /// but g++ cannot friend an auto return type.</para>
     /// </summary>
     /// <param name="value"/>The next value in the stream.</param>
-    void next(T& value) {
+    void next(const T& value) {
         ++_n;
         _sum += value;
         _sum_squares += value * value;
         if (MinMax) {
             update_minmax(value);
         }
-        if (Median) {
-            update_median(value);
-        }
-        if (Mode) {
-            update_mode(value);
+        if (MedianMode) {
+            update_medianmode(value);
         }
     }
     
@@ -170,6 +179,9 @@ public:
         _mean = _sum / _n;
         _variance = (_sum_squares * _n - _sum * _sum) / (_n * _n);
         _stddev = std::sqrt(_variance);
+        if (MedianMode) {
+            end_medianmode();
+        }
     }
 
 private:
@@ -177,7 +189,7 @@ private:
     /// Updates the min/max value.
     /// </summary>
     /// <param name="value"/>The next value in the stream.</param>
-    void update_minmax(T& value) {
+    void update_minmax(const T& value) {
         if (value < _min) {
             _min = value;
         }
@@ -187,29 +199,73 @@ private:
     }
 
     /// <summary>
-    /// Updates the median value.
+    /// Updates the median and mode values.
     /// </summary>
     /// <param name="value"/>The next value in the stream.</param>
-    void update_median(T& value) {
+    void update_medianmode(const T& value) {
+        auto lower = _freq.lower_bound(value);
+        if (lower != _freq.end() && !(_freq.key_comp()(value, lower->first))) {
+            ++lower->second;
+        }
+        else {
+            _freq.insert(lower, std::make_pair(value, 1));
+        }
     }
 
     /// <summary>
-    /// Updates the mode value.
+    /// Called once the stream is ended; finishes calculating the median and mode values.
     /// </summary>
-    /// <param name="value"/>The next value in the stream.</param>
-    void update_mode(T& value) {
+    void end_medianmode() {
+        std::size_t mode_count = 0;
+        std::size_t count = 0;
+        std::size_t median_at = (_n + 1) / 2;   // correct if n odd, if even, avg median_at+1 with it
+        bool dead_on = false;
+        bool median_found = false;
+        for (auto it = _freq.begin(), end = _freq.end(); it != end; ++it) {
+            if (mode_count < it->second) {
+                _modes.clear();                 // new mode found
+                _modes.push_back(it->first);
+                mode_count = it->second;
+            }
+            else if (mode_count == it->second) {
+                _modes.push_back(it->first);    // another mode found
+            }
+            if (!median_found) {
+                count += it->second;
+                if (dead_on) {
+                    _median = (_median + static_cast<ResultType>(it->first)) / 2.0;
+                    median_found = true;            // we need to average this and the previous value
+                }
+                else {
+                    if (count > median_at) {
+                        _median = static_cast<ResultType>(it->first);
+                        median_found = true;        // we passed the median; it's this value regardless of n
+                    }
+                    else if (count == median_at) {  // dead on the expected location of the median
+                        _median = static_cast<ResultType>(it->first);
+                        if (_n % 2 == 0) {
+                            dead_on = true;         // median is the average of this and the next number
+                        }
+                        else {
+                            median_found = true;    // or it's just this number
+                        }
+                    }
+                }
+            }
+        }
     }
 
-    T _min;                     // conditionally include min value of the stream
-    T _max;                     // conditionally included max value of the stream
-    ResultType _mean;           // mean of the stream; to be updated at stream end
-    ResultType _median;         // conditionally include the median of the stream
-    T _mode;                    // conditionally include the mode of the stream
-    ResultType _stddev;         // stddev of the stream; to be updated at stream end
-    ResultType _variance;       // variance of the stream; to be updated at stream end
-    ResultType _sum;            // sum of the values
-    ResultType _sum_squares;    // sum of squares of values
-    std::size_t _n;             // the number of elements in the stream
+    T _min;                         // conditionally include min value of the stream
+    T _max;                         // conditionally included max value of the stream
+    ResultType _mean;               // mean of the stream; to be updated at stream end
+    ResultType _median;             // conditionally include the median of the stream
+    std::vector<T> _modes;          // conditionally include the modes of the stream
+    ResultType _stddev;             // stddev of the stream; to be updated at stream end
+    ResultType _variance;           // variance of the stream; to be updated at stream end
+    ResultType _sum;                // sum of the values
+    ResultType _sum_squares;        // sum of squares of values
+    std::size_t _n;                 // the number of elements in the stream
+    std::map<T, std::size_t> _freq; // frequency of each value in the stream
 };
     
     namespace detail {
@@ -219,8 +275,8 @@ private:
 /// </summary>
 /// <param name="out"/>The out stream.</param>
 /// <param name="stats"/>The statistics to display.</param>
-template <typename T, typename R, bool Median, bool Mode>
-void display_minmax(std::ostream& out, const Stats<T, R, false, Median, Mode>& stats) {
+template <typename T, typename R, bool MedianMode>
+void display_minmax(std::ostream& out, const Stats<T, R, false, MedianMode>& stats) {
 }
 
 /// <summary>
@@ -228,8 +284,8 @@ void display_minmax(std::ostream& out, const Stats<T, R, false, Median, Mode>& s
 /// </summary>
 /// <param name="out"/>The out stream.</param>
 /// <param name="stats"/>The statistics to display.</param>
-template <typename T, typename R, bool Median, bool Mode>
-void display_minmax(std::ostream& out, const Stats<T, R, true, Median, Mode>& stats) {
+template <typename T, typename R, bool MedianMode>
+void display_minmax(std::ostream& out, const Stats<T, R, true, MedianMode>& stats) {
     out << ", min = " << stats.min() << ", max = " << stats.max();
 }
 
@@ -238,8 +294,8 @@ void display_minmax(std::ostream& out, const Stats<T, R, true, Median, Mode>& st
 /// </summary>
 /// <param name="out"/>The out stream.</param>
 /// <param name="stats"/>The statistics to display.</param>
-template <typename T, typename R, bool MinMax, bool Mode>
-void display_median(std::ostream& out, const Stats<T, R, MinMax, false, Mode>& stats) {
+template <typename T, typename R, bool MinMax>
+void display_medianmode(std::ostream& out, const Stats<T, R, MinMax, false>& stats) {
 }
 
 /// <summary>
@@ -247,28 +303,11 @@ void display_median(std::ostream& out, const Stats<T, R, MinMax, false, Mode>& s
 /// </summary>
 /// <param name="out"/>The out stream.</param>
 /// <param name="stats"/>The statistics to display.</param>
-template <typename T, typename R, bool MinMax, bool Mode>
-void display_median(std::ostream& out, const Stats<T, R, MinMax, true, Mode>& stats) {
-    out << ", median = " << stats.median();
-}
-
-/// <summary>
-/// Wrapper to avoid the display of the mode of a Stats object.
-/// </summary>
-/// <param name="out"/>The out stream.</param>
-/// <param name="stats"/>The statistics to display.</param>
-template <typename T, typename R, bool MinMax, bool Median>
-void display_mode(std::ostream& out, const Stats<T, R, MinMax, Median, false>& stats) {
-}
-
-/// <summary>
-/// Wrapper to display of the mode of a Stats object.
-/// </summary>
-/// <param name="out"/>The out stream.</param>
-/// <param name="stats"/>The statistics to display.</param>
-template <typename T, typename R, bool MinMax, bool Median>
-void display_mode(std::ostream& out, const Stats<T, R, MinMax, Median, true>& stats) {
-    out << ", mode = " << stats.mode();
+template <typename T, typename R, bool MinMax>
+void display_medianmode(std::ostream& out, const Stats<T, R, MinMax, true>& stats) {
+    out << ", median = " << stats.median() << ", mode = [ ";
+    stats.modes() | terminal::dump(out);
+    out << ']';
 }
     }
 
@@ -278,11 +317,10 @@ void display_mode(std::ostream& out, const Stats<T, R, MinMax, Median, true>& st
 /// <param name="out">The out stream.</param>
 /// <param name="stats"/>The statistics to display.</param>
 /// <returns><paramref name="out"/></returns>
-template <typename T, typename R, bool MinMax, bool Median, bool Mode>
-std::ostream& operator<<(std::ostream& out, const Stats<T, R, MinMax, Median, Mode>& stats) {
+template <typename T, typename R, bool MinMax, bool MedianMode>
+std::ostream& operator<<(std::ostream& out, const Stats<T, R, MinMax, MedianMode>& stats) {
     out << "n = " << stats.n() << ", mu = " << stats.mean() << ", stddev = " << stats.stddev();
-    flow::detail::display_median(out, stats);
-    flow::detail::display_mode(out, stats);
+    flow::detail::display_medianmode(out, stats);
     flow::detail::display_minmax(out, stats);
     return out;
 }
@@ -294,33 +332,30 @@ std::ostream& operator<<(std::ostream& out, const Stats<T, R, MinMax, Median, Mo
 /// <para>The number of elements, mean, standard deviation, variance, sum and sum of squares are always calculated.</para>
 /// <para>Some statistical values are calculated as <c>ResultType</c>, <c>double</c> by default, others
 /// are calculated as <c>T</c>, the type of elements in the stream. Calculating statistics requires that
-/// both <c>T</c> and <c>ResultType</c> behave as arithmetic types.</para>
+/// both <c>T</c> and <c>ResultType</c> behave as arithmetic types (such as <c>int</c>, <c>double</c> or <c>std::complex</c>).</para>
 /// <para>The other template parameters indicate whether or not to calculate additional statistics,
 /// all of which are not calculated by default.
-/// The behavior of of each of them is as follows (<c>n</c> is the size of the stream):</para>
+/// The behavior of each of them is as follows (<c>n</c> is the size of the stream):</para>
 /// <ul>
-///     <li><c>MinMax</c> - calculate the minimum and maximum value of the stream. Requires that
-///         <c>T</c> has <c>operator&lt;</c> implemented. The min and max are calculated as <c>T</c>.
-///         This operation uses an addition <c>2n</c> time.</li>
-///     <li><c>Median</c> - calculate the median value of the stream. Requires that <c>T</c> has both
-///         <c>operator&lt;</c> and <c>operator&gt;</c> implemented. The median is calculated as <c>ResultType</c>.
-///         This operation uses an additional <c>O(n logn)</c> time and <c>O(n)</c> space.</li>
-///     <li><c>Mode</c> - calculate the mode value of the stream. Requires that <c>T</c> has both
-///         <c>std::hash</c> and <c>operator==</c> implemented. The mode is calculated as <c>T</c>.
-///         This operation uses an addition <c>O(n)</c> time (hashes) and <c>O(k)</c> space, where <c>k</c>
-///         is the number of distinct values in the stream.</li>
+///     <li><c>MinMax</c> - calculate the minimum and maximum value of the stream. The min and max are calculated as <c>T</c>.
+///         This operation uses an additional <c>2n</c> time.</li>
+///     <li><c>MedianMode</c> - calculate the median, mode, and frequency of each element of the stream.
+///         The median is calculated as <c>ResultType</c>, the modes as <c>std::vector&lt;T&gt;</c>, and the frequency table as
+///         <c>std::map&lt;T, std::size_t&gt;</c>. If there is an even number of elements in the stream, the median is calculated
+///         as the average of the two possible medians. This operation uses an additional <c>O(n logn)</c> time (<c>n</c> map insertions)
+///         and <c>O(k)</c> space, where <c>k</c> is the number of distinct values in the stream.</li>
 /// </ul>
 /// </summary>
 /// <returns>A terminal operation that calculates various statistical values of the stream.</returns>
 /// <seealso cref="Stats"/>
-template <typename ResultType = double, bool MinMax = false, bool Median = false, bool Mode = false>
+template <typename ResultType = double, bool MinMax = false, bool MedianMode = false>
 auto stats() {
     return detail::make_terminal([](auto&& stream) {
         if (!stream.has_next()) {
             throw std::out_of_range("flow::stats expects a non-empty stream");
         }
         using T = std::decay_t<decltype(stream.next())>;
-        Stats<T, ResultType, MinMax, Median, Mode> stats(stream.next());
+        Stats<T, ResultType, MinMax, MedianMode> stats(stream.next());
         while (stream.has_next()) {
             stats.next(stream.next());
         }
