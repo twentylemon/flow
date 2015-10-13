@@ -99,22 +99,6 @@ std::ostream& operator<<(std::ostream& out, const std::pair<F, S>& pair) {
 namespace std {
 
 /// <summary>
-/// Overload <c>operator&lt;&lt;</c> to display tuple types.
-/// <para>The tuple is printed as <c>(item1, item2, ...)</c>. Each item is displayed using <c>operator&lt;&lt;</c>.</para>
-/// <para>This is defined in the <c>std</c> namespace to allow dump() to work correctly.
-/// To exclude this function from being defined in <c>std</c>, <c>\#define FLOW_PRINTTUPLE_NO_STD</c>
-/// will remove it.</para>
-/// </summary>
-/// <param name="out">The out stream.</param>
-/// <param name="tuple">The tuple to display.</param>
-/// <returns><paramref name="out"/></returns>
-template <typename... T>
-std::ostream& operator<<(std::ostream& out, const std::tuple<T...>& tuple) {
-    return flow::operator<<(out, tuple);
-}
-
-
-/// <summary>
 /// Overload <c>operator&lt;&lt;</c> to display pair types.
 /// <para>The pair is printed as <c>(first, second)</c>. Each item is displayed using <c>operator&lt;&lt;</c>.</para>
 /// <para>This is defined in the <c>std</c> namespace to allow dump() to work correctly.
@@ -127,6 +111,21 @@ std::ostream& operator<<(std::ostream& out, const std::tuple<T...>& tuple) {
 template <typename F, typename S>
 std::ostream& operator<<(std::ostream& out, const std::pair<F, S>& pair) {
     return flow::operator<<(out, pair);
+}
+
+/// <summary>
+/// Overload <c>operator&lt;&lt;</c> to display tuple types.
+/// <para>The tuple is printed as <c>(item1, item2, ...)</c>. Each item is displayed using <c>operator&lt;&lt;</c>.</para>
+/// <para>This is defined in the <c>std</c> namespace to allow dump() to work correctly.
+/// To exclude this function from being defined in <c>std</c>, <c>\#define FLOW_PRINTTUPLE_NO_STD</c>
+/// will remove it.</para>
+/// </summary>
+/// <param name="out">The out stream.</param>
+/// <param name="tuple">The tuple to display.</param>
+/// <returns><paramref name="out"/></returns>
+template <typename... T>
+std::ostream& operator<<(std::ostream& out, const std::tuple<T...>& tuple) {
+    return flow::operator<<(out, tuple);
 }
 #endif
 }

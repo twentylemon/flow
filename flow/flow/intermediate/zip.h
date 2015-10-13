@@ -51,9 +51,8 @@ struct tuple_zipper
     /// <param name="left">The left stream element.</param>
     /// <param name="right">The right stream element.</param>
     /// <returns>A <c>std::tuple</c> of the two elements.</returns>
-    template <typename Left, typename Right>
-    auto operator()(Left&& left, Right&& right) const {
-        return std::make_tuple(std::forward<Left>(left), std::forward<Right>(right));
+    auto operator()(LeftType& left, RightType& right) {
+        return std::tuple<LeftType&, RightType&>(left, right);
     }
 };
 
@@ -70,9 +69,9 @@ struct tuple_zipper<LeftType, std::tuple<RightTypes...>>
     /// <param name="left">The left stream element.</param>
     /// <param name="right">The right tuple; already zipped.</param>
     /// <returns>A concatenated <c>std::tuple</c> of the two elements.</returns>
-    template <typename Left, typename Tuple>
-    auto operator()(Left&& left, Tuple&& right) const {
-        return std::tuple_cat(std::make_tuple(std::forward<Left>(left)), std::forward<Tuple>(right));
+    template <typename Tuple>
+    auto operator()(LeftType& left, Tuple&& right) const {
+        return std::tuple_cat(std::tuple<LeftType&>(left), std::forward<Tuple>(right));
     }
 };
 
@@ -89,9 +88,9 @@ struct tuple_zipper<std::tuple<LeftTypes...>, RightType>
     /// <param name="left">The left tuple; already zipped.</param>
     /// <param name="right">The right stream element.</param>
     /// <returns>A concatenated <c>std::tuple</c> of the two elements.</returns>
-    template <typename Tuple, typename Right>
-    auto operator()(Tuple&& left, Right&& right) const {
-        return std::tuple_cat(std::forward<Tuple>(left), std::make_tuple(std::forward<Right>(right)));
+    template <typename Tuple>
+    auto operator()(Tuple&& left, RightType& right) const {
+        return std::tuple_cat(std::forward<Tuple>(left), std::tuple<RightType&>(right));
     }
 };
 
@@ -185,9 +184,8 @@ auto zip(std::initializer_list<T> list, BinaryOperation zipper) {
 
 /// <summary>
 /// Zips the two streams together using the default zipping operation.
-/// <para>The default zip operation creates tuples of the stream elements like <c>std::tuple&lt;T1, T2&gt;</c>.
-/// Multiple <c>zip</c> operations concatenates these tuples together rather than nesting them.
-/// When using the default zipper, the types being zipped together must be default constructible.</para>
+/// <para>The default zip operation creates tuples of the stream elements like <c>std::tuple&lt;T1&, T2&&gt;</c>.
+/// Multiple <c>zip</c> operations concatenates these tuples together rather than nesting them.</para>
 /// <para>The resultant stream is as long as the shortest input stream.</para>
 /// </summary>
 /// <param name="right">The right stream to zip together with the operated stream.</param>
@@ -201,9 +199,8 @@ auto zip(Stream<RightSource>&& right) {
 /// <summary>
 /// Zips the two streams together using the default zipping operation,
 /// this is the same as <c>zip(from(begin, end))</c>.
-/// <para>The default zip operation creates tuples of the stream elements like <c>std::tuple&lt;T1, T2&gt;</c>.
-/// Multiple <c>zip</c> operations concatenates these tuples together rather than nesting them.
-/// When using the default zipper, the types being zipped together must be default constructible.</para>
+/// <para>The default zip operation creates tuples of the stream elements like <c>std::tuple&lt;T1&, T2&&gt;</c>.
+/// Multiple <c>zip</c> operations concatenates these tuples together rather than nesting them.</para>
 /// <para>The resultant stream is as long as the shortest input stream.</para>
 /// </summary>
 /// <param name="begin">The beginning of the range to zip with this stream.</param>
@@ -219,9 +216,8 @@ auto zip(Itr begin, Itr end) {
 /// <summary>
 /// Zips the two streams together using the default zipping operation,
 /// this is the same as <c>zip(from(container))</c>.
-/// <para>The default zip operation creates tuples of the stream elements like <c>std::tuple&lt;T1, T2&gt;</c>.
-/// Multiple <c>zip</c> operations concatenates these tuples together rather than nesting them.
-/// When using the default zipper, the types being zipped together must be default constructible.</para>
+/// <para>The default zip operation creates tuples of the stream elements like <c>std::tuple&lt;T1&, T2&&gt;</c>.
+/// Multiple <c>zip</c> operations concatenates these tuples together rather than nesting them.</para>
 /// <para>The resultant stream is as long as the shortest input stream.</para>
 /// </summary>
 /// <param name="container">The container to zip together with this stream.</param>
@@ -236,9 +232,8 @@ auto zip(Container& container) {
 /// <summary>
 /// Zips the two streams together using the default zipping operation,
 /// this is the same as <c>zip(from(list))</c>.
-/// <para>The default zip operation creates tuples of the stream elements like <c>std::tuple&lt;T1, T2&gt;</c>.
-/// Multiple <c>zip</c> operations concatenates these tuples together rather than nesting them.
-/// When using the default zipper, the types being zipped together must be default constructible.</para>
+/// <para>The default zip operation creates tuples of the stream elements like <c>std::tuple&lt;T1&, T2&&gt;</c>.
+/// Multiple <c>zip</c> operations concatenates these tuples together rather than nesting them.</para>
 /// <para>The resultant stream is as long as the shortest input stream.</para>
 /// </summary>
 /// <param name="list">The list to zip together with this stream.</param>

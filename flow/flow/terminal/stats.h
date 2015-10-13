@@ -281,9 +281,9 @@ void display_mode(std::ostream& out, const Stats<T, R, MinMax, Median, true>& st
 template <typename T, typename R, bool MinMax, bool Median, bool Mode>
 std::ostream& operator<<(std::ostream& out, const Stats<T, R, MinMax, Median, Mode>& stats) {
     out << "n = " << stats.n() << ", mu = " << stats.mean() << ", stddev = " << stats.stddev();
-    detail::display_median(out, stats);
-    detail::display_mode(out, stats);
-    detail::display_minmax(out, stats);
+    flow::detail::display_median(out, stats);
+    flow::detail::display_mode(out, stats);
+    flow::detail::display_minmax(out, stats);
     return out;
 }
 
