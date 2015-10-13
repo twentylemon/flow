@@ -110,7 +110,7 @@ int main(int argc, char** argv) {
     std::tuple<int&, int&> t(aa, bb);
     std::get<0>(t) = 2;
     std::get<1>(t) = 3;
-    std::cout << aa << " " << bb;
+    std::cout << t;
 
     /*
     std::vector<int> cw{ 1, 2, 3 };

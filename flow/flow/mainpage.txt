@@ -122,7 +122,6 @@
 /// the terminal's return value is calculated.</para>
 /// \todo parallel_*() - chunking parallelization of terminal operations
 /// \todo parallel pipelining of stream operations?
-/// \todo stats() - gives mean, median, mode, min, max, count, stddev
 /// 
 
 /// \namespace flow::intermediate
@@ -139,13 +138,14 @@
 /// 
 
 /// \namespace std
-/// Overload <c>operator&lt;&lt;</c> for <c>std::tuple</c>.
-/// <para>Defines <c>operator&lt;&lt;</c> for <c>std::tuple</c>. This definition is required by dump() for a tuple stream,
-/// such as a stream that uses the default zip() operation. For example,</para>
+/// Overload <c>operator&lt;&lt;</c> for <c>std::tuple</c> and <c>std::pair</c>.
+/// <para>Defines <c>operator&lt;&lt;</c> for <c>std::tuple</c> and <c>std::pair</c>. This definition is required by dump() for a stream
+/// containing these types, such as a stream that uses the default zip() operation. For example,</para>
 /// \code{.cpp}intstream | zip(more_ints) | dump(); // requires std::operator<< for tuples \endcode
-/// <para>This namespace and function can be removed by defining <c>\#define FLOW_PRINTTUPLE_NO_STD</c> before including <c>flow.h</c>.</para>
-/// \code{.cpp}// remove std::operator<<
+/// <para>The <c>std</c> namespace can be removed by defining <c>\#define FLOW_PRINTTUPLE_NO_STD</c> before including <c>flow.h</c>.</para>
+/// \code{.cpp}// remove std::operator<< for tuples and pairs
 /// #define FLOW_PRINTTUPLE_NO_STD
 /// #include <flow.h> \endcode
-/// <para>This will cause statements like the above to be a compile error unless the operator is defined elsewhere.</para>
+/// <para>This will cause statements like the above to be a compile error unless the operator is defined elsewhere inside of the <c>std</c>
+/// namespace. If <c>FLOW_PRINTTUPLE_NO_STD</c> is defined, then <c>operator&lt;&lt;</c> is defined inside of the flow namespace instead.</para>
 /// 

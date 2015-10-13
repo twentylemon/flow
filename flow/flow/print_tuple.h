@@ -66,10 +66,35 @@ std::enable_if_t<N == 0> print_tuple(std::ostream& out, const std::tuple<T...>& 
     print_tuple<N + 1>(out, tuple);
 }
     }
+}
+
+#ifndef FLOW_PRINTTUPLE_NO_STD
+namespace std {
+#else
+namespace flow {
+#endif
+
+/// <summary>
+/// Overload <c>operator&lt;&lt;</c> to display pair types.
+/// <para>The pair is printed as <c>(first, second)</c>. Each item is displayed using <c>operator&lt;&lt;</c>.</para>
+/// <para>This is defined in the <c>std</c> namespace to allow dump() to work correctly.
+/// To exclude this function from being defined in the <c>std</c> namespace, <c>\#define FLOW_PRINTTUPLE_NO_STD</c>
+/// will remove it and define it in the <c>flow</c> namespace instead.</para>
+/// </summary>
+/// <param name="out">The out stream.</param>
+/// <param name="pair">The pair to display.</param>
+/// <returns><paramref name="out"/></returns>
+template <typename F, typename S>
+std::ostream& operator<<(std::ostream& out, const std::pair<F, S>& pair) {
+    return out << '(' << pair.first << ", " << pair.second << ')';
+}
 
 /// <summary>
 /// Overload <c>operator&lt;&lt;</c> to display tuple types.
 /// <para>The tuple is printed as <c>(item1, item2, ...)</c>. Each item is displayed using <c>operator&lt;&lt;</c>.</para>
+/// <para>This is defined in the <c>std</c> namespace to allow dump() to work correctly.
+/// To exclude this function from being defined in the <c>std</c> namespace, <c>\#define FLOW_PRINTTUPLE_NO_STD</c>
+/// will remove it and define it in the <c>flow</c> namespace instead.</para>
 /// </summary>
 /// <param name="out">The out stream.</param>
 /// <param name="tuple">The tuple to display.</param>
@@ -80,53 +105,5 @@ std::ostream& operator<<(std::ostream& out, const std::tuple<T...>& tuple) {
     flow::detail::print_tuple<0>(out, tuple);
     return out << ')';
 }
-
-/// <summary>
-/// Overload <c>operator&lt;&lt;</c> to display pair types.
-/// <para>The pair is printed as <c>(first, second)</c>. Each item is displayed using <c>operator&lt;&lt;</c>.</para>
-/// </summary>
-/// <param name="out">The out stream.</param>
-/// <param name="pair">The pair to display.</param>
-/// <returns><paramref name="out"/></returns>
-template <typename F, typename S>
-std::ostream& operator<<(std::ostream& out, const std::pair<F, S>& pair) {
-    return out << '(' << pair.first << ", " << pair.second << ')';
-}
-}
-
-
-#ifndef FLOW_PRINTTUPLE_NO_STD
-namespace std {
-
-/// <summary>
-/// Overload <c>operator&lt;&lt;</c> to display pair types.
-/// <para>The pair is printed as <c>(first, second)</c>. Each item is displayed using <c>operator&lt;&lt;</c>.</para>
-/// <para>This is defined in the <c>std</c> namespace to allow dump() to work correctly.
-/// To exclude this function from being defined in <c>std</c>, <c>\#define FLOW_PRINTTUPLE_NO_STD</c>
-/// will remove it.</para>
-/// </summary>
-/// <param name="out">The out stream.</param>
-/// <param name="pair">The pair to display.</param>
-/// <returns><paramref name="out"/></returns>
-template <typename F, typename S>
-std::ostream& operator<<(std::ostream& out, const std::pair<F, S>& pair) {
-    return flow::operator<<(out, pair);
-}
-
-/// <summary>
-/// Overload <c>operator&lt;&lt;</c> to display tuple types.
-/// <para>The tuple is printed as <c>(item1, item2, ...)</c>. Each item is displayed using <c>operator&lt;&lt;</c>.</para>
-/// <para>This is defined in the <c>std</c> namespace to allow dump() to work correctly.
-/// To exclude this function from being defined in <c>std</c>, <c>\#define FLOW_PRINTTUPLE_NO_STD</c>
-/// will remove it.</para>
-/// </summary>
-/// <param name="out">The out stream.</param>
-/// <param name="tuple">The tuple to display.</param>
-/// <returns><paramref name="out"/></returns>
-template <typename... T>
-std::ostream& operator<<(std::ostream& out, const std::tuple<T...>& tuple) {
-    return flow::operator<<(out, tuple);
-}
-#endif
 }
 #endif
