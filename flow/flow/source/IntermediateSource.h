@@ -34,24 +34,22 @@
 namespace flow {
     namespace source {
 
+/*
         namespace detail {
 
 /// <summary>
 /// Type trait for a type being a specialization of a template class -- false type.
 /// </summary>
 template <typename T, template <typename...> class Template>
-struct is_specialization_of : std::false_type
-{
-};
+struct is_specialization_of : std::false_type { };
 
 /// <summary>
 /// Type trait for a type being a specialization of a template class -- true type.
 /// </summary>
 template <template <typename...> class Template, typename... Args>
-struct is_specialization_of<Template<Args...>, Template> : std::true_type
-{
-};
+struct is_specialization_of<Template<Args...>, Template> : std::true_type { };
         }
+*/
 
 template <typename LeftSource, typename RightSource, typename Compare, typename Operation>
 class SetSource;
@@ -224,6 +222,9 @@ private:
     decay_type _temp_current;   // the temporary value from the stream, if any
 };
 
+/*
+/// this *would* be the easy way, but tuple::tuple() is a constexpr, so it's evaluated in
+/// is_default_constructible -- g++ gives compiler errors
 /// <summary>
 /// Type alias shorthand to pick the correct base class.
 /// </summary>
@@ -233,6 +234,54 @@ using IntermediateSource = std::conditional_t<
     IntermediateSourceDefault<Source, T>,
     IntermediateSourceNoDefault<Source, T>
 >;
+*/
+/// <summary>
+/// Type alias shorthand to pick the correct base class.
+/// </summary>
+template <typename Source, typename T = typename Source::value_type>
+class IntermediateSource : public std::conditional_t<
+    std::is_default_constructible<T>::value,
+    IntermediateSourceDefault<Source, T>,
+    IntermediateSourceNoDefault<Source, T>
+>
+{
+public:
+    using base = std::conditional_t<std::is_default_constructible<T>::value, IntermediateSourceDefault<Source, T>, IntermediateSourceNoDefault<Source, T>>;
+    using source_type = typename base::source_type;
+    using value_type = typename base::value_type;
+    using decay_type = typename base::decay_type;
+    
+    /// <summary>
+    /// Initializes a new instance of the <see cref="IntermediateSource{Source, T}"/> class.
+    /// </summary>
+    /// <param name="source">The stream source to read elements from.</param>
+    IntermediateSource(Source&& source) : base(std::move(source)) { }
+
+    IntermediateSource(const IntermediateSource<Source, T>&) = delete;
+    IntermediateSource(IntermediateSource<Source, T>&&) = default;
+};
+
+/// <summary>
+/// Type alias shorthand to pick the correct base class for tuple types.
+/// </summary>
+template <typename Source, typename... T>
+class IntermediateSource<Source, std::tuple<T...>> : public IntermediateSourceNoDefault<Source, std::tuple<T...>>
+{
+public:
+    using base = IntermediateSourceNoDefault<Source, std::tuple<T...>>;
+    using source_type = typename base::source_type;
+    using value_type = typename base::value_type;
+    using decay_type = typename base::decay_type;
+    
+    /// <summary>
+    /// Initializes a new instance of the <see cref="IntermediateSource{Source, std::tuple<T...>}"/> class.
+    /// </summary>
+    /// <param name="source">The stream source to read elements from.</param>
+    IntermediateSource(Source&& source) : base(std::move(source)) { }
+
+    IntermediateSource(const IntermediateSource<Source, std::tuple<T...>>&) = delete;
+    IntermediateSource(IntermediateSource<Source, std::tuple<T...>>&&) = default;
+};
     }
 }
 #endif
