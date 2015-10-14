@@ -34,23 +34,6 @@
 namespace flow {
     namespace source {
 
-/*
-        namespace detail {
-
-/// <summary>
-/// Type trait for a type being a specialization of a template class -- false type.
-/// </summary>
-template <typename T, template <typename...> class Template>
-struct is_specialization_of : std::false_type { };
-
-/// <summary>
-/// Type trait for a type being a specialization of a template class -- true type.
-/// </summary>
-template <template <typename...> class Template, typename... Args>
-struct is_specialization_of<Template<Args...>, Template> : std::true_type { };
-        }
-*/
-
 template <typename LeftSource, typename RightSource, typename Compare, typename Operation>
 class SetSource;
 
@@ -62,7 +45,6 @@ template <typename Source, typename T>
 class IntermediateSourceBase
 {
 public:
-    using source_type = Source;
     using value_type = T;
     using decay_type = std::decay_t<value_type>;
 
@@ -157,7 +139,6 @@ class IntermediateSourceNoDefault : public IntermediateSourceBase<Source, T>
 {
 public:
     using base = IntermediateSourceBase<Source, T>;
-    using source_type = typename base::source_type;
     using value_type = typename base::value_type;
     using decay_type = typename base::decay_type;
 
@@ -194,7 +175,6 @@ class IntermediateSourceDefault : public IntermediateSourceBase<Source, T>
 {
 public:
     using base = IntermediateSourceBase<Source, T>;
-    using source_type = typename base::source_type;
     using value_type = typename base::value_type;
     using decay_type = typename base::decay_type;
 
@@ -222,19 +202,6 @@ private:
     decay_type _temp_current;   // the temporary value from the stream, if any
 };
 
-/*
-/// this *would* be the easy way, but tuple::tuple() is a constexpr, so it's evaluated in
-/// is_default_constructible -- g++ gives compiler errors
-/// <summary>
-/// Type alias shorthand to pick the correct base class.
-/// </summary>
-template <typename Source, typename T = typename Source::value_type>
-using IntermediateSource = std::conditional_t<
-    std::is_default_constructible<T>::value && !detail::is_specialization_of<T, std::tuple>::value,
-    IntermediateSourceDefault<Source, T>,
-    IntermediateSourceNoDefault<Source, T>
->;
-*/
 /// <summary>
 /// Type alias shorthand to pick the correct base class.
 /// </summary>
@@ -247,9 +214,7 @@ class IntermediateSource : public std::conditional_t<
 {
 public:
     using base = std::conditional_t<std::is_default_constructible<T>::value, IntermediateSourceDefault<Source, T>, IntermediateSourceNoDefault<Source, T>>;
-    using source_type = typename base::source_type;
     using value_type = typename base::value_type;
-    using decay_type = typename base::decay_type;
     
     /// <summary>
     /// Initializes a new instance of the <see cref="IntermediateSource{Source, T}"/> class.
@@ -269,9 +234,7 @@ class IntermediateSource<Source, std::tuple<T...>> : public IntermediateSourceNo
 {
 public:
     using base = IntermediateSourceNoDefault<Source, std::tuple<T...>>;
-    using source_type = typename base::source_type;
     using value_type = typename base::value_type;
-    using decay_type = typename base::decay_type;
     
     /// <summary>
     /// Initializes a new instance of the <see cref="IntermediateSource{Source, std::tuple<T...>}"/> class.

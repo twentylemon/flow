@@ -171,7 +171,7 @@ protected:
     /// </summary>
     /// <param name="temp_current">The temp_current.</param>
     void assign_temp_current(decay_type&& temp_current) {
-        _temp_current = std::forward<decay_type>(temp_current);
+        _temp_current = std::move(temp_current);
         base::assign_current(&_temp_current);
     }
 
@@ -179,6 +179,9 @@ private:
     decay_type _temp_current;   // the temporary value from the stream, if any
 };
 
+/// <summary>
+/// Type alias shorthand to pick the correct base class.
+/// </summary>
 template <typename T>
 using GeneratorSource = std::conditional_t<
     std::is_default_constructible<T>::value,
