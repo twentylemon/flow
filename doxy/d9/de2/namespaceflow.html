@@ -109,16 +109,19 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d45/classflow_1_1_stats.html">Stats</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to wrap all the statistics returned by <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a900a16920892b0445f890cad56458c9a" title="Returns a Stats object which contains several statistics of the stream values. ">stats()</a>.  <a href="../../dd/d45/classflow_1_1_stats.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The stream class provides lazy evaluation and functional style transformations on ordered data.  <a href="../../d9/dcd/classflow_1_1_stream.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a90f7b62e83eb2d3a5c96f737df87a336"><td class="memTemplParams" colspan="2">template&lt;typename... T&gt; </td></tr>
-<tr class="memitem:a90f7b62e83eb2d3a5c96f737df87a336"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/de2/namespaceflow.html#a90f7b62e83eb2d3a5c96f737df87a336">operator&lt;&lt;</a> (std::ostream &amp;out, const std::tuple&lt; T...&gt; &amp;tuple)</td></tr>
-<tr class="memdesc:a90f7b62e83eb2d3a5c96f737df87a336"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload operator&lt;&lt; to display tuple types.  <a href="#a90f7b62e83eb2d3a5c96f737df87a336">More...</a><br /></td></tr>
-<tr class="separator:a90f7b62e83eb2d3a5c96f737df87a336"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8468f5164d2a75f37d5ae5bd6545db62"><td class="memTemplParams" colspan="2">template&lt;typename T , typename R , bool MinMax, bool MedianMode&gt; </td></tr>
+<tr class="memitem:a8468f5164d2a75f37d5ae5bd6545db62"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/de2/namespaceflow.html#a8468f5164d2a75f37d5ae5bd6545db62">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="../../dd/d45/classflow_1_1_stats.html">Stats</a>&lt; T, R, MinMax, MedianMode &gt; &amp;stats)</td></tr>
+<tr class="memdesc:a8468f5164d2a75f37d5ae5bd6545db62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload <code>operator&lt;&lt;</code> to display <a class="el" href="../../dd/d45/classflow_1_1_stats.html" title="Class to wrap all the statistics returned by stats(). ">Stats</a> objects.  <a href="#a8468f5164d2a75f37d5ae5bd6545db62">More...</a><br /></td></tr>
+<tr class="separator:a8468f5164d2a75f37d5ae5bd6545db62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad795c672b7e52516485e7ffb2d6c4ad7"><td class="memTemplParams" colspan="2">template&lt;typename CurryFunction &gt; </td></tr>
 <tr class="memitem:ad795c672b7e52516485e7ffb2d6c4ad7"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/de2/namespaceflow.html#ad795c672b7e52516485e7ffb2d6c4ad7">uncurry</a> (CurryFunction curry_function)</td></tr>
 <tr class="memdesc:ad795c672b7e52516485e7ffb2d6c4ad7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uncurries <em>curry_function</em> .  <a href="#ad795c672b7e52516485e7ffb2d6c4ad7">More...</a><br /></td></tr>
@@ -135,7 +138,7 @@ Functions</h2></td></tr>
 <li><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html" title="Intermediate operations, all of which are also aliased in the flow namespace. ">flow::intermediate</a> contains intermediate operations. </li>
 <li><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html" title="Terminal operations, all of which are also aliased in the flow namespace. ">flow::terminal</a> contains terminal operations. </li>
 </ul>
-<p>Note that the operations are split into separate namespaces for organizational purposes, but all operations are aliased to be in the flow namespace as well. If you want to, <code>using namespace flow;</code> will give you access to the entire flow library. Otherwise, you only need to write flow::map, not <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af704cfd8b681a9cd8b2437d249487f78" title="Transforms each element in the Stream using mapper . ">flow::intermediate::map</a>.</p>
+<p>Note that the operations are split into separate namespaces for organizational purposes, but all operations are aliased to be in the flow namespace as well. If you want to, <code>using namespace flow;</code> will give you access to the entire flow library. Otherwise, you only need to write flow::map, not <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af704cfd8b681a9cd8b2437d249487f78" title="Transforms each element in the stream using mapper . ">flow::intermediate::map</a>.</p>
 <h2>Operating on a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> </h2>
 <p>All intermediate and terminal operations can be applied to a stream using <code>operator|</code>.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> val = intstream | <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#aa878b5ae4e25bf654161a5004ca025b3">max</a>(); <span class="comment">// apply the `max` terminal to `intstream`</span></div>
@@ -148,11 +151,11 @@ Functions</h2></td></tr>
 </div><!-- fragment --> <p>Terminal operators also have a method <code>then()</code>, which takes a function that uses the value produced and produces a new terminal which composes the operations. For example, this method is used internally by <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9e6d1f983184706c6ec3a976c449ee6d" title="Returns true if none of the elements in the stream return true for predicate . ">none()</a>, a terminal that returns <code>true</code> if none of the stream elements match a predicate. Logically, this is the same as finding if any of the elements match the predicate, then negating the result &ndash; this is exactly what is done.</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> my_none = <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#aef6844ddc5a40bb68764bc31f6070107">any</a>(my_predicate).then(std::logical_not&lt;bool&gt;());</div>
 </div><!-- fragment --> </div><h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a90f7b62e83eb2d3a5c96f737df87a336"></a>
+<a class="anchor" id="a8468f5164d2a75f37d5ae5bd6545db62"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename... T&gt; </div>
+template&lt;typename T , typename R , bool MinMax, bool MedianMode&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">std::ostream&amp; flow::operator&lt;&lt; </td>
@@ -163,8 +166,8 @@ template&lt;typename... T&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::tuple&lt; T...&gt; &amp;&#160;</td>
-          <td class="paramname"><em>tuple</em>&#160;</td>
+          <td class="paramtype">const Stats&lt; T, R, MinMax, MedianMode &gt; &amp;&#160;</td>
+          <td class="paramname"><em>stats</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -174,12 +177,11 @@ template&lt;typename... T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Overload operator&lt;&lt; to display tuple types. </p>
-<p>The tuple is printed as <code>(item1, item2, ...)</code>. Each item is displayed using operator&lt;&lt; on the elements. </p>
+<p>Overload <code>operator&lt;&lt;</code> to display <a class="el" href="../../dd/d45/classflow_1_1_stats.html" title="Class to wrap all the statistics returned by stats(). ">Stats</a> objects. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>The out stream.</td></tr>
-    <tr><td class="paramname">tuple</td><td>The tuple to display.</td></tr>
+    <tr><td class="paramname">stats</td><td>The statistics to display.</td></tr>
   </table>
   </dd>
 </dl>
@@ -205,7 +207,7 @@ template&lt;typename CurryFunction &gt; </div>
 
 <p>Uncurries <em>curry_function</em> . </p>
 <p>Given a function which takes several parameters, converts that function into a function which takes one <code>std::tuple</code> of those arguments instead. This is useful when zipping streams together as it allows you to write a function which takes normal arguments instead of a tuple. For example, this allows the syntax:</p>
-<p><code>intlist | zip(more_ints) | map(uncurry([](int l, int r){ l and r things })) | ...</code> </p>
+<p><code>intlist | zip(more_ints) | map(uncurry([](int l, int r) { l and r things })) | ...</code> </p>
 <p>as opposed to using <code>std::tuple&lt;int,int&gt;</code> and <code>std::get&lt;i&gt;</code>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

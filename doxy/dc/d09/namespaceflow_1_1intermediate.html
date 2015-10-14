@@ -101,60 +101,76 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 Functions</h2></td></tr>
 <tr class="memitem:aa0551274cc05f2c668d5612bfe1716cb"><td class="memTemplParams" colspan="2">template&lt;typename Tail &gt; </td></tr>
 <tr class="memitem:aa0551274cc05f2c668d5612bfe1716cb"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa0551274cc05f2c668d5612bfe1716cb">concat</a> (<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; Tail &gt; &amp;&amp;tail)</td></tr>
-<tr class="memdesc:aa0551274cc05f2c668d5612bfe1716cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates the given <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> onto the end of the operated stream.  <a href="#aa0551274cc05f2c668d5612bfe1716cb">More...</a><br /></td></tr>
+<tr class="memdesc:aa0551274cc05f2c668d5612bfe1716cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates the <em>tail</em>  stream onto the end of the operated (<em>head</em> ) stream.  <a href="#aa0551274cc05f2c668d5612bfe1716cb">More...</a><br /></td></tr>
 <tr class="separator:aa0551274cc05f2c668d5612bfe1716cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac535fea33e2424506d0bbf56409f99a7"><td class="memTemplParams" colspan="2">template&lt;typename Itr &gt; </td></tr>
 <tr class="memitem:ac535fea33e2424506d0bbf56409f99a7"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac535fea33e2424506d0bbf56409f99a7">concat</a> (Itr begin, Itr end)</td></tr>
-<tr class="memdesc:ac535fea33e2424506d0bbf56409f99a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates the given iterator range onto the end of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>, this is the same as <code>concat(from(begin, end))</code>.  <a href="#ac535fea33e2424506d0bbf56409f99a7">More...</a><br /></td></tr>
+<tr class="memdesc:ac535fea33e2424506d0bbf56409f99a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates the given iterator range onto the end of the stream, this is the same as <code>concat(from(begin, end))</code>.  <a href="#ac535fea33e2424506d0bbf56409f99a7">More...</a><br /></td></tr>
 <tr class="separator:ac535fea33e2424506d0bbf56409f99a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a955cba2286efa38c29c17ee9d2fd43f5"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:a955cba2286efa38c29c17ee9d2fd43f5"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a955cba2286efa38c29c17ee9d2fd43f5">concat</a> (Container &amp;container)</td></tr>
-<tr class="memdesc:a955cba2286efa38c29c17ee9d2fd43f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates <em>container</em>  onto the end of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>, this is the same as <code>concat(from(container))</code>.  <a href="#a955cba2286efa38c29c17ee9d2fd43f5">More...</a><br /></td></tr>
+<tr class="memdesc:a955cba2286efa38c29c17ee9d2fd43f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates <em>container</em>  onto the end of the stream, this is the same as <code>concat(from(container))</code>.  <a href="#a955cba2286efa38c29c17ee9d2fd43f5">More...</a><br /></td></tr>
 <tr class="separator:a955cba2286efa38c29c17ee9d2fd43f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29b48f9084349825be7f428ee4b7883d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a29b48f9084349825be7f428ee4b7883d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a29b48f9084349825be7f428ee4b7883d">concat</a> (std::initializer_list&lt; T &gt; list)</td></tr>
-<tr class="memdesc:a29b48f9084349825be7f428ee4b7883d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates <em>list</em>  onto the end of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>, this is the same as <code>concat(from(list))</code>.  <a href="#a29b48f9084349825be7f428ee4b7883d">More...</a><br /></td></tr>
+<tr class="memdesc:a29b48f9084349825be7f428ee4b7883d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates <em>list</em>  onto the end of the stream, this is the same as <code>concat(from(list))</code>.  <a href="#a29b48f9084349825be7f428ee4b7883d">More...</a><br /></td></tr>
 <tr class="separator:a29b48f9084349825be7f428ee4b7883d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c6e57bccb66cfbfae54134b500ea8c0"><td class="memTemplParams" colspan="2">template&lt;typename UnaryPredicate &gt; </td></tr>
 <tr class="memitem:a1c6e57bccb66cfbfae54134b500ea8c0"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1c6e57bccb66cfbfae54134b500ea8c0">drop_while</a> (UnaryPredicate predicate)</td></tr>
-<tr class="memdesc:a1c6e57bccb66cfbfae54134b500ea8c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drops elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> until the <em>predicate</em>  returns <code>false</code> for a stream element.  <a href="#a1c6e57bccb66cfbfae54134b500ea8c0">More...</a><br /></td></tr>
+<tr class="memdesc:a1c6e57bccb66cfbfae54134b500ea8c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drops elements from the stream until the <em>predicate</em>  returns <code>false</code> for a stream element.  <a href="#a1c6e57bccb66cfbfae54134b500ea8c0">More...</a><br /></td></tr>
 <tr class="separator:a1c6e57bccb66cfbfae54134b500ea8c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af375a0d8fadc8ec0e0d2b97a1d2907a5"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af375a0d8fadc8ec0e0d2b97a1d2907a5">drop_while</a> ()</td></tr>
-<tr class="memdesc:af375a0d8fadc8ec0e0d2b97a1d2907a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drops elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> until a stream element is <code>false</code>.  <a href="#af375a0d8fadc8ec0e0d2b97a1d2907a5">More...</a><br /></td></tr>
+<tr class="memdesc:af375a0d8fadc8ec0e0d2b97a1d2907a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drops elements from the stream until a stream element is <code>false</code>.  <a href="#af375a0d8fadc8ec0e0d2b97a1d2907a5">More...</a><br /></td></tr>
 <tr class="separator:af375a0d8fadc8ec0e0d2b97a1d2907a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a680ea915183bfa1bd72ff0a342a6bb1f"><td class="memTemplParams" colspan="2">template&lt;typename Ret , typename Class &gt; </td></tr>
 <tr class="memitem:a680ea915183bfa1bd72ff0a342a6bb1f"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a680ea915183bfa1bd72ff0a342a6bb1f">drop_while</a> (Ret(Class::*member)())</td></tr>
-<tr class="memdesc:a680ea915183bfa1bd72ff0a342a6bb1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drops elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> until the <em>member</em>  returns <code>false</code>.  <a href="#a680ea915183bfa1bd72ff0a342a6bb1f">More...</a><br /></td></tr>
+<tr class="memdesc:a680ea915183bfa1bd72ff0a342a6bb1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drops elements from the stream until the <em>member</em>  returns <code>false</code>.  <a href="#a680ea915183bfa1bd72ff0a342a6bb1f">More...</a><br /></td></tr>
 <tr class="separator:a680ea915183bfa1bd72ff0a342a6bb1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa74be97ab2dbd180f7d1127a88cfcf8c"><td class="memTemplParams" colspan="2">template&lt;typename UnaryPredicate &gt; </td></tr>
 <tr class="memitem:aa74be97ab2dbd180f7d1127a88cfcf8c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c">filter</a> (UnaryPredicate predicate)</td></tr>
-<tr class="memdesc:aa74be97ab2dbd180f7d1127a88cfcf8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> that return <code>false</code> for <em>predicate</em> .  <a href="#aa74be97ab2dbd180f7d1127a88cfcf8c">More...</a><br /></td></tr>
+<tr class="memdesc:aa74be97ab2dbd180f7d1127a88cfcf8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes elements from the stream that return <code>false</code> for <em>predicate</em> .  <a href="#aa74be97ab2dbd180f7d1127a88cfcf8c">More...</a><br /></td></tr>
 <tr class="separator:aa74be97ab2dbd180f7d1127a88cfcf8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99debd4465f5e92791995d9a985a0a2d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a99debd4465f5e92791995d9a985a0a2d">filter</a> ()</td></tr>
-<tr class="memdesc:a99debd4465f5e92791995d9a985a0a2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> which are evaluated to <code>false</code>.  <a href="#a99debd4465f5e92791995d9a985a0a2d">More...</a><br /></td></tr>
+<tr class="memdesc:a99debd4465f5e92791995d9a985a0a2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes elements from the stream which are evaluated to <code>false</code>.  <a href="#a99debd4465f5e92791995d9a985a0a2d">More...</a><br /></td></tr>
 <tr class="separator:a99debd4465f5e92791995d9a985a0a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e1f3921d4f70c95c8e576ec40f8cdd2"><td class="memTemplParams" colspan="2">template&lt;typename Ret , typename Class &gt; </td></tr>
 <tr class="memitem:a6e1f3921d4f70c95c8e576ec40f8cdd2"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a6e1f3921d4f70c95c8e576ec40f8cdd2">filter</a> (Ret(Class::*member)())</td></tr>
-<tr class="memdesc:a6e1f3921d4f70c95c8e576ec40f8cdd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> that return <code>false</code> for <em>member</em> .  <a href="#a6e1f3921d4f70c95c8e576ec40f8cdd2">More...</a><br /></td></tr>
+<tr class="memdesc:a6e1f3921d4f70c95c8e576ec40f8cdd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes elements from the stream that return <code>false</code> for <em>member</em> .  <a href="#a6e1f3921d4f70c95c8e576ec40f8cdd2">More...</a><br /></td></tr>
 <tr class="separator:a6e1f3921d4f70c95c8e576ec40f8cdd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5917010c6f56abf7ba421dbe0f5e92b"><td class="memTemplParams" colspan="2">template&lt;typename UnaryOperation &gt; </td></tr>
 <tr class="memitem:ae5917010c6f56abf7ba421dbe0f5e92b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ae5917010c6f56abf7ba421dbe0f5e92b">flat_map</a> (UnaryOperation operation)</td></tr>
-<tr class="memdesc:ae5917010c6f56abf7ba421dbe0f5e92b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> using <em>operation</em>  into a new stream.  <a href="#ae5917010c6f56abf7ba421dbe0f5e92b">More...</a><br /></td></tr>
+<tr class="memdesc:ae5917010c6f56abf7ba421dbe0f5e92b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms each element in the stream using <em>operation</em>  into a new stream.  <a href="#ae5917010c6f56abf7ba421dbe0f5e92b">More...</a><br /></td></tr>
 <tr class="separator:ae5917010c6f56abf7ba421dbe0f5e92b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a347e52317b201a9e142031724ea4de0a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a347e52317b201a9e142031724ea4de0a">limit</a> (std::size_t length)</td></tr>
-<tr class="memdesc:a347e52317b201a9e142031724ea4de0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limits the length of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> to <em>length</em>  elements.  <a href="#a347e52317b201a9e142031724ea4de0a">More...</a><br /></td></tr>
+<tr class="memdesc:a347e52317b201a9e142031724ea4de0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limits the length of the stream to <em>length</em>  elements.  <a href="#a347e52317b201a9e142031724ea4de0a">More...</a><br /></td></tr>
 <tr class="separator:a347e52317b201a9e142031724ea4de0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af704cfd8b681a9cd8b2437d249487f78"><td class="memTemplParams" colspan="2">template&lt;typename UnaryOperation &gt; </td></tr>
 <tr class="memitem:af704cfd8b681a9cd8b2437d249487f78"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af704cfd8b681a9cd8b2437d249487f78">map</a> (UnaryOperation mapper)</td></tr>
-<tr class="memdesc:af704cfd8b681a9cd8b2437d249487f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> using <em>mapper</em> .  <a href="#af704cfd8b681a9cd8b2437d249487f78">More...</a><br /></td></tr>
+<tr class="memdesc:af704cfd8b681a9cd8b2437d249487f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms each element in the stream using <em>mapper</em> .  <a href="#af704cfd8b681a9cd8b2437d249487f78">More...</a><br /></td></tr>
 <tr class="separator:af704cfd8b681a9cd8b2437d249487f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae7bef0ac778a95140e38bb9e81ae83a"><td class="memTemplParams" colspan="2">template&lt;typename Ret , typename Class &gt; </td></tr>
 <tr class="memitem:aae7bef0ac778a95140e38bb9e81ae83a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aae7bef0ac778a95140e38bb9e81ae83a">map</a> (Ret(Class::*member)())</td></tr>
-<tr class="memdesc:aae7bef0ac778a95140e38bb9e81ae83a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> to the return value of <em>member</em>  for each stream element.  <a href="#aae7bef0ac778a95140e38bb9e81ae83a">More...</a><br /></td></tr>
+<tr class="memdesc:aae7bef0ac778a95140e38bb9e81ae83a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms each element in the stream to the return value of <em>member</em>  for each stream element.  <a href="#aae7bef0ac778a95140e38bb9e81ae83a">More...</a><br /></td></tr>
 <tr class="separator:aae7bef0ac778a95140e38bb9e81ae83a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fb2b65333a532367af81f9ff82149f4"><td class="memTemplParams" colspan="2">template&lt;typename RightSource , typename Compare  = std::less&lt;void&gt;&gt; </td></tr>
+<tr class="memitem:a6fb2b65333a532367af81f9ff82149f4"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a6fb2b65333a532367af81f9ff82149f4">merge</a> (<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; RightSource &gt; &amp;&amp;right, Compare compare=Compare())</td></tr>
+<tr class="memdesc:a6fb2b65333a532367af81f9ff82149f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merges the <em>right</em>  stream into the operated (<em>left</em> ) stream while maintaining sorted order.  <a href="#a6fb2b65333a532367af81f9ff82149f4">More...</a><br /></td></tr>
+<tr class="separator:a6fb2b65333a532367af81f9ff82149f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdce04079f1718a815a7e46718b1c432"><td class="memTemplParams" colspan="2">template&lt;typename Itr , typename Compare  = std::less&lt;void&gt;&gt; </td></tr>
+<tr class="memitem:acdce04079f1718a815a7e46718b1c432"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#acdce04079f1718a815a7e46718b1c432">merge</a> (Itr begin, Itr end, Compare compare=Compare())</td></tr>
+<tr class="memdesc:acdce04079f1718a815a7e46718b1c432"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merges the iterator range into the operated (<em>left</em> ) stream while maintaining sorted order, this is the same as <code>merge(from(begin, end), compare)</code>.  <a href="#acdce04079f1718a815a7e46718b1c432">More...</a><br /></td></tr>
+<tr class="separator:acdce04079f1718a815a7e46718b1c432"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afacae60f668337190c275857590b158c"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename Compare  = std::less&lt;void&gt;, typename  = std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:afacae60f668337190c275857590b158c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#afacae60f668337190c275857590b158c">merge</a> (Container &amp;container, Compare compare=Compare())</td></tr>
+<tr class="memdesc:afacae60f668337190c275857590b158c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merges <em>container</em>  into the operated (<em>left</em> ) stream while maintaining sorted order, this is the same as <code>merge(from(container), compare)</code>.  <a href="#afacae60f668337190c275857590b158c">More...</a><br /></td></tr>
+<tr class="separator:afacae60f668337190c275857590b158c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a857d36211d87bff95b2e41425933e8ec"><td class="memTemplParams" colspan="2">template&lt;typename T , typename Compare  = std::less&lt;void&gt;&gt; </td></tr>
+<tr class="memitem:a857d36211d87bff95b2e41425933e8ec"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a857d36211d87bff95b2e41425933e8ec">merge</a> (std::initializer_list&lt; T &gt; list, Compare compare=Compare())</td></tr>
+<tr class="memdesc:a857d36211d87bff95b2e41425933e8ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merges <em>list</em>  into the operated (<em>left</em> ) stream while maintaining sorted order, this is the same as <code>merge(from(list), compare)</code>.  <a href="#a857d36211d87bff95b2e41425933e8ec">More...</a><br /></td></tr>
+<tr class="separator:a857d36211d87bff95b2e41425933e8ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9078ec57972888d23411f8c3ea209af"><td class="memTemplParams" colspan="2">template&lt;typename UnaryFunction &gt; </td></tr>
 <tr class="memitem:ac9078ec57972888d23411f8c3ea209af"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af">peek</a> (UnaryFunction action)</td></tr>
-<tr class="memdesc:ac9078ec57972888d23411f8c3ea209af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes <em>action</em>  for each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>.  <a href="#ac9078ec57972888d23411f8c3ea209af">More...</a><br /></td></tr>
+<tr class="memdesc:ac9078ec57972888d23411f8c3ea209af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes <em>action</em>  for each element in the stream.  <a href="#ac9078ec57972888d23411f8c3ea209af">More...</a><br /></td></tr>
 <tr class="separator:ac9078ec57972888d23411f8c3ea209af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af32b7bf1f105167d576b779b3b5f0297"><td class="memTemplParams" colspan="2">template&lt;typename Ret , typename Class &gt; </td></tr>
 <tr class="memitem:af32b7bf1f105167d576b779b3b5f0297"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af32b7bf1f105167d576b779b3b5f0297">peek</a> (Ret(Class::*member)())</td></tr>
@@ -162,56 +178,120 @@ Functions</h2></td></tr>
 <tr class="separator:af32b7bf1f105167d576b779b3b5f0297"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11854b160914181e130029b111facf55"><td class="memTemplParams" colspan="2">template&lt;typename UnaryPredicate , typename T &gt; </td></tr>
 <tr class="memitem:a11854b160914181e130029b111facf55"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a11854b160914181e130029b111facf55">replace</a> (UnaryPredicate predicate, T &amp;&amp;replace_by)</td></tr>
-<tr class="memdesc:a11854b160914181e130029b111facf55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> by <em>replace_by</em>  if the stream element returns <code>true</code> for <em>predicate</em> .  <a href="#a11854b160914181e130029b111facf55">More...</a><br /></td></tr>
+<tr class="memdesc:a11854b160914181e130029b111facf55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces elements in the stream by <em>replace_by</em>  if the stream element returns <code>true</code> for <em>predicate</em> .  <a href="#a11854b160914181e130029b111facf55">More...</a><br /></td></tr>
 <tr class="separator:a11854b160914181e130029b111facf55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25fa6ade81d666f3e4f85f5ad5502047"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a25fa6ade81d666f3e4f85f5ad5502047"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a25fa6ade81d666f3e4f85f5ad5502047">replace</a> (T &amp;&amp;old_value, T &amp;&amp;new_value)</td></tr>
-<tr class="memdesc:a25fa6ade81d666f3e4f85f5ad5502047"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> by <em>new_value</em>  if they are equal to <em>old_value</em> .  <a href="#a25fa6ade81d666f3e4f85f5ad5502047">More...</a><br /></td></tr>
+<tr class="memdesc:a25fa6ade81d666f3e4f85f5ad5502047"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces elements in the stream by <em>new_value</em>  if they are equal to <em>old_value</em> .  <a href="#a25fa6ade81d666f3e4f85f5ad5502047">More...</a><br /></td></tr>
 <tr class="separator:a25fa6ade81d666f3e4f85f5ad5502047"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0db61e00aa587124edb99e065385ef16"><td class="memTemplParams" colspan="2">template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </td></tr>
 <tr class="memitem:a0db61e00aa587124edb99e065385ef16"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0db61e00aa587124edb99e065385ef16">replace_map</a> (UnaryPredicate predicate, UnaryOperation mapper)</td></tr>
-<tr class="memdesc:a0db61e00aa587124edb99e065385ef16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> elements to new values if the original element returns <code>true</code> for <em>predicate</em> .  <a href="#a0db61e00aa587124edb99e065385ef16">More...</a><br /></td></tr>
+<tr class="memdesc:a0db61e00aa587124edb99e065385ef16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps stream elements to new values if the original element returns <code>true</code> for <em>predicate</em> .  <a href="#a0db61e00aa587124edb99e065385ef16">More...</a><br /></td></tr>
 <tr class="separator:a0db61e00aa587124edb99e065385ef16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13397178496f74369fc8dae063415b7a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a13397178496f74369fc8dae063415b7a">reverse</a> ()</td></tr>
-<tr class="memdesc:a13397178496f74369fc8dae063415b7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverses the elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>.  <a href="#a13397178496f74369fc8dae063415b7a">More...</a><br /></td></tr>
+<tr class="memdesc:a13397178496f74369fc8dae063415b7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverses the elements in the stream.  <a href="#a13397178496f74369fc8dae063415b7a">More...</a><br /></td></tr>
 <tr class="separator:a13397178496f74369fc8dae063415b7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad934301c4575e60e7fa4f8acac75e471"><td class="memTemplParams" colspan="2">template&lt;typename RightSource , typename Compare  = std::less&lt;void&gt;&gt; </td></tr>
+<tr class="memitem:ad934301c4575e60e7fa4f8acac75e471"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ad934301c4575e60e7fa4f8acac75e471">set_diff</a> (<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; RightSource &gt; &amp;&amp;right, Compare compare=Compare())</td></tr>
+<tr class="memdesc:ad934301c4575e60e7fa4f8acac75e471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the difference of the operated (<em>left</em> ) stream and the <em>right</em>  stream while maintaining sorted order.  <a href="#ad934301c4575e60e7fa4f8acac75e471">More...</a><br /></td></tr>
+<tr class="separator:ad934301c4575e60e7fa4f8acac75e471"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6e3e38fbff02cb68a8d88ee83f1ed10"><td class="memTemplParams" colspan="2">template&lt;typename Itr , typename Compare  = std::less&lt;void&gt;&gt; </td></tr>
+<tr class="memitem:ab6e3e38fbff02cb68a8d88ee83f1ed10"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ab6e3e38fbff02cb68a8d88ee83f1ed10">set_diff</a> (Itr begin, Itr end, Compare compare=Compare())</td></tr>
+<tr class="memdesc:ab6e3e38fbff02cb68a8d88ee83f1ed10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the difference of the operated (<em>left</em> ) stream and the iterator range while maintaining sorted order, this is the same as <code>set_diff(from(begin, end), compare)</code>.  <a href="#ab6e3e38fbff02cb68a8d88ee83f1ed10">More...</a><br /></td></tr>
+<tr class="separator:ab6e3e38fbff02cb68a8d88ee83f1ed10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56200dc064f3c59c0fce20242ae80e4a"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename Compare  = std::less&lt;void&gt;, typename  = std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a56200dc064f3c59c0fce20242ae80e4a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a56200dc064f3c59c0fce20242ae80e4a">set_diff</a> (Container &amp;container, Compare compare=Compare())</td></tr>
+<tr class="memdesc:a56200dc064f3c59c0fce20242ae80e4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the difference of the operated (<em>left</em> ) stream and <em>container</em>  while maintaining sorted order, this is the same as <code>set_diff(from(container), compare)</code>.  <a href="#a56200dc064f3c59c0fce20242ae80e4a">More...</a><br /></td></tr>
+<tr class="separator:a56200dc064f3c59c0fce20242ae80e4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea643c657fff06efd5a4d7c07fc1659b"><td class="memTemplParams" colspan="2">template&lt;typename T , typename Compare  = std::less&lt;void&gt;&gt; </td></tr>
+<tr class="memitem:aea643c657fff06efd5a4d7c07fc1659b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aea643c657fff06efd5a4d7c07fc1659b">set_diff</a> (std::initializer_list&lt; T &gt; list, Compare compare=Compare())</td></tr>
+<tr class="memdesc:aea643c657fff06efd5a4d7c07fc1659b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the difference of the operated (<em>left</em> ) stream and <em>list</em>  while maintaining sorted order, this is the same as <code>set_diff(from(list), compare)</code>.  <a href="#aea643c657fff06efd5a4d7c07fc1659b">More...</a><br /></td></tr>
+<tr class="separator:aea643c657fff06efd5a4d7c07fc1659b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a414b603609b514656419e512f8b8d8c2"><td class="memTemplParams" colspan="2">template&lt;typename RightSource , typename Compare  = std::less&lt;void&gt;&gt; </td></tr>
+<tr class="memitem:a414b603609b514656419e512f8b8d8c2"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a414b603609b514656419e512f8b8d8c2">set_intersect</a> (<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; RightSource &gt; &amp;&amp;right, Compare compare=Compare())</td></tr>
+<tr class="memdesc:a414b603609b514656419e512f8b8d8c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Intersects the <em>right</em>  stream into the operated (<em>left</em> ) stream while maintaining sorted order.  <a href="#a414b603609b514656419e512f8b8d8c2">More...</a><br /></td></tr>
+<tr class="separator:a414b603609b514656419e512f8b8d8c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27ce01f16c8bd1911ed6735ab6876507"><td class="memTemplParams" colspan="2">template&lt;typename Itr , typename Compare  = std::less&lt;void&gt;&gt; </td></tr>
+<tr class="memitem:a27ce01f16c8bd1911ed6735ab6876507"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a27ce01f16c8bd1911ed6735ab6876507">set_intersect</a> (Itr begin, Itr end, Compare compare=Compare())</td></tr>
+<tr class="memdesc:a27ce01f16c8bd1911ed6735ab6876507"><td class="mdescLeft">&#160;</td><td class="mdescRight">Intersects the iterator range into the operated (<em>left</em> ) stream while maintaining sorted order, this is the same as <code>set_intersect(from(begin, end), compare)</code>.  <a href="#a27ce01f16c8bd1911ed6735ab6876507">More...</a><br /></td></tr>
+<tr class="separator:a27ce01f16c8bd1911ed6735ab6876507"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c367fd8127d79dc9b73068cb6f41a6f"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename Compare  = std::less&lt;void&gt;, typename  = std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a9c367fd8127d79dc9b73068cb6f41a6f"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a9c367fd8127d79dc9b73068cb6f41a6f">set_intersect</a> (Container &amp;container, Compare compare=Compare())</td></tr>
+<tr class="memdesc:a9c367fd8127d79dc9b73068cb6f41a6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Intersects <em>container</em>  into the operated (<em>left</em> ) stream while maintaining sorted order, this is the same as <code>set_intersect(from(container), compare)</code>.  <a href="#a9c367fd8127d79dc9b73068cb6f41a6f">More...</a><br /></td></tr>
+<tr class="separator:a9c367fd8127d79dc9b73068cb6f41a6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad77ba087a55f3703d2d812f8da9655ad"><td class="memTemplParams" colspan="2">template&lt;typename T , typename Compare  = std::less&lt;void&gt;&gt; </td></tr>
+<tr class="memitem:ad77ba087a55f3703d2d812f8da9655ad"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ad77ba087a55f3703d2d812f8da9655ad">set_intersect</a> (std::initializer_list&lt; T &gt; list, Compare compare=Compare())</td></tr>
+<tr class="memdesc:ad77ba087a55f3703d2d812f8da9655ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Intersects <em>list</em>  into the operated (<em>left</em> ) stream while maintaining sorted order, this is the same as <code>set_intersect(from(list), compare)</code>.  <a href="#ad77ba087a55f3703d2d812f8da9655ad">More...</a><br /></td></tr>
+<tr class="separator:ad77ba087a55f3703d2d812f8da9655ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16bf95f0e80dcb00c805775a0b799adf"><td class="memTemplParams" colspan="2">template&lt;typename RightSource , typename Compare  = std::less&lt;void&gt;&gt; </td></tr>
+<tr class="memitem:a16bf95f0e80dcb00c805775a0b799adf"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a16bf95f0e80dcb00c805775a0b799adf">set_sym_diff</a> (<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; RightSource &gt; &amp;&amp;right, Compare compare=Compare())</td></tr>
+<tr class="memdesc:a16bf95f0e80dcb00c805775a0b799adf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the symmetric difference of the operated (<em>left</em> ) stream and the <em>right</em>  stream while maintaining sorted order.  <a href="#a16bf95f0e80dcb00c805775a0b799adf">More...</a><br /></td></tr>
+<tr class="separator:a16bf95f0e80dcb00c805775a0b799adf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f01de329bfbe82b66fecc70d6fb338b"><td class="memTemplParams" colspan="2">template&lt;typename Itr , typename Compare  = std::less&lt;void&gt;&gt; </td></tr>
+<tr class="memitem:a5f01de329bfbe82b66fecc70d6fb338b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a5f01de329bfbe82b66fecc70d6fb338b">set_sym_diff</a> (Itr begin, Itr end, Compare compare=Compare())</td></tr>
+<tr class="memdesc:a5f01de329bfbe82b66fecc70d6fb338b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the symmetric difference of the operated (<em>left</em> ) stream and the iterator range while maintaining sorted order, this is the same as <code>set_sym_diff(from(begin, end), compare)</code>.  <a href="#a5f01de329bfbe82b66fecc70d6fb338b">More...</a><br /></td></tr>
+<tr class="separator:a5f01de329bfbe82b66fecc70d6fb338b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1be578ea731acfba3a2473b5a44e98e2"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename Compare  = std::less&lt;void&gt;, typename  = std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a1be578ea731acfba3a2473b5a44e98e2"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1be578ea731acfba3a2473b5a44e98e2">set_sym_diff</a> (Container &amp;container, Compare compare=Compare())</td></tr>
+<tr class="memdesc:a1be578ea731acfba3a2473b5a44e98e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the symmetric difference of the operated (<em>left</em> ) stream and <em>container</em>  while maintaining sorted order, this is the same as <code>set_sym_diff(from(container), compare)</code>.  <a href="#a1be578ea731acfba3a2473b5a44e98e2">More...</a><br /></td></tr>
+<tr class="separator:a1be578ea731acfba3a2473b5a44e98e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fcafd1b53147e51a9af8fab6e35dc5b"><td class="memTemplParams" colspan="2">template&lt;typename T , typename Compare  = std::less&lt;void&gt;&gt; </td></tr>
+<tr class="memitem:a6fcafd1b53147e51a9af8fab6e35dc5b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a6fcafd1b53147e51a9af8fab6e35dc5b">set_sym_diff</a> (std::initializer_list&lt; T &gt; list, Compare compare=Compare())</td></tr>
+<tr class="memdesc:a6fcafd1b53147e51a9af8fab6e35dc5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the symmetric difference of the operated (<em>left</em> ) stream and <em>list</em>  while maintaining sorted order, this is the same as <code>set_sym_diff(from(list), compare)</code>.  <a href="#a6fcafd1b53147e51a9af8fab6e35dc5b">More...</a><br /></td></tr>
+<tr class="separator:a6fcafd1b53147e51a9af8fab6e35dc5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a497f972f0f5add67935c3bb47a44d104"><td class="memTemplParams" colspan="2">template&lt;typename RightSource , typename Compare  = std::less&lt;void&gt;&gt; </td></tr>
+<tr class="memitem:a497f972f0f5add67935c3bb47a44d104"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a497f972f0f5add67935c3bb47a44d104">set_union</a> (<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; RightSource &gt; &amp;&amp;right, Compare compare=Compare())</td></tr>
+<tr class="memdesc:a497f972f0f5add67935c3bb47a44d104"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unions the <em>right</em>  stream into the operated (<em>left</em> ) stream while maintaining sorted order.  <a href="#a497f972f0f5add67935c3bb47a44d104">More...</a><br /></td></tr>
+<tr class="separator:a497f972f0f5add67935c3bb47a44d104"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7938e2d876a879ee6edf0e2e31ffec8"><td class="memTemplParams" colspan="2">template&lt;typename Itr , typename Compare  = std::less&lt;void&gt;&gt; </td></tr>
+<tr class="memitem:aa7938e2d876a879ee6edf0e2e31ffec8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa7938e2d876a879ee6edf0e2e31ffec8">set_union</a> (Itr begin, Itr end, Compare compare=Compare())</td></tr>
+<tr class="memdesc:aa7938e2d876a879ee6edf0e2e31ffec8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unions the iterator range into the operated (<em>left</em> ) stream while maintaining sorted order, this is the same as <code>set_union(from(begin, end), compare)</code>.  <a href="#aa7938e2d876a879ee6edf0e2e31ffec8">More...</a><br /></td></tr>
+<tr class="separator:aa7938e2d876a879ee6edf0e2e31ffec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41227f6665b9a8fcdb8b066ea3226028"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename Compare  = std::less&lt;void&gt;, typename  = std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a41227f6665b9a8fcdb8b066ea3226028"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a41227f6665b9a8fcdb8b066ea3226028">set_union</a> (Container &amp;container, Compare compare=Compare())</td></tr>
+<tr class="memdesc:a41227f6665b9a8fcdb8b066ea3226028"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unions <em>container</em>  into the operated (<em>left</em> ) stream while maintaining sorted order, this is the same as <code>set_union(from(container), compare)</code>.  <a href="#a41227f6665b9a8fcdb8b066ea3226028">More...</a><br /></td></tr>
+<tr class="separator:a41227f6665b9a8fcdb8b066ea3226028"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac490fe88e884eed9befb822cedbef139"><td class="memTemplParams" colspan="2">template&lt;typename T , typename Compare  = std::less&lt;void&gt;&gt; </td></tr>
+<tr class="memitem:ac490fe88e884eed9befb822cedbef139"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac490fe88e884eed9befb822cedbef139">set_union</a> (std::initializer_list&lt; T &gt; list, Compare compare=Compare())</td></tr>
+<tr class="memdesc:ac490fe88e884eed9befb822cedbef139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unions <em>list</em>  into the operated (<em>left</em> ) stream while maintaining sorted order, this is the same as <code>set_union(from(list), compare)</code>.  <a href="#ac490fe88e884eed9befb822cedbef139">More...</a><br /></td></tr>
+<tr class="separator:ac490fe88e884eed9befb822cedbef139"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2725d9fb49cd0c4fe25658500c2fa1f1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a2725d9fb49cd0c4fe25658500c2fa1f1">skip</a> (std::size_t begin, std::size_t step_size)</td></tr>
-<tr class="memdesc:a2725d9fb49cd0c4fe25658500c2fa1f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skips the first elements of a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>, keeping only the elements with index <code>&gt;=</code> <em>begin</em>  in the stream.  <a href="#a2725d9fb49cd0c4fe25658500c2fa1f1">More...</a><br /></td></tr>
+<tr class="memdesc:a2725d9fb49cd0c4fe25658500c2fa1f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skips the first elements of a stream, keeping only the elements with index <code>&gt;=</code> <em>begin</em>  in the stream.  <a href="#a2725d9fb49cd0c4fe25658500c2fa1f1">More...</a><br /></td></tr>
 <tr class="separator:a2725d9fb49cd0c4fe25658500c2fa1f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f8b2e7e5cc41ecd02cb4381a706d545"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a2f8b2e7e5cc41ecd02cb4381a706d545">skip</a> (std::size_t begin)</td></tr>
-<tr class="memdesc:a2f8b2e7e5cc41ecd02cb4381a706d545"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skips the first elements of a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>, keeping only the elements with index <code>&gt;=</code> <em>begin</em>  in the stream.  <a href="#a2f8b2e7e5cc41ecd02cb4381a706d545">More...</a><br /></td></tr>
+<tr class="memdesc:a2f8b2e7e5cc41ecd02cb4381a706d545"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skips the first elements of a stream, keeping only the elements with index <code>&gt;=</code> <em>begin</em>  in the stream.  <a href="#a2f8b2e7e5cc41ecd02cb4381a706d545">More...</a><br /></td></tr>
 <tr class="separator:a2f8b2e7e5cc41ecd02cb4381a706d545"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeef64fd0f533b9b084b83c46fe8352d4"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aeef64fd0f533b9b084b83c46fe8352d4">skip_every</a> (std::size_t step_size)</td></tr>
-<tr class="memdesc:aeef64fd0f533b9b084b83c46fe8352d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skips every <em>step_size</em>  elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>, keeping the first element.  <a href="#aeef64fd0f533b9b084b83c46fe8352d4">More...</a><br /></td></tr>
+<tr class="memdesc:aeef64fd0f533b9b084b83c46fe8352d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skips every <em>step_size</em>  elements in the stream, keeping the first element.  <a href="#aeef64fd0f533b9b084b83c46fe8352d4">More...</a><br /></td></tr>
 <tr class="separator:aeef64fd0f533b9b084b83c46fe8352d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1954e2f5425b7603794790f7645e776e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1954e2f5425b7603794790f7645e776e">slice</a> (std::size_t begin, std::size_t end, std::size_t step_size)</td></tr>
-<tr class="memdesc:a1954e2f5425b7603794790f7645e776e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slices the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>, keeping only elements with index in the range <code>[begin..end)</code> in the stream, excluding the <em>end</em>  index.  <a href="#a1954e2f5425b7603794790f7645e776e">More...</a><br /></td></tr>
+<tr class="memdesc:a1954e2f5425b7603794790f7645e776e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slices the stream, keeping only elements with index in the range <code>[begin..end)</code> in the stream, excluding the <em>end</em>  index.  <a href="#a1954e2f5425b7603794790f7645e776e">More...</a><br /></td></tr>
 <tr class="separator:a1954e2f5425b7603794790f7645e776e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8468b308d2903331dc966819b373625"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac8468b308d2903331dc966819b373625">slice</a> (std::size_t begin, std::size_t end)</td></tr>
-<tr class="memdesc:ac8468b308d2903331dc966819b373625"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slices the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>, keeping only elements with index in the range <code>[begin..end)</code> in the stream, excluding the <em>end</em>  index.  <a href="#ac8468b308d2903331dc966819b373625">More...</a><br /></td></tr>
+<tr class="memdesc:ac8468b308d2903331dc966819b373625"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slices the stream, keeping only elements with index in the range <code>[begin..end)</code> in the stream, excluding the <em>end</em>  index.  <a href="#ac8468b308d2903331dc966819b373625">More...</a><br /></td></tr>
 <tr class="separator:ac8468b308d2903331dc966819b373625"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0641d6ecc741bd5f346a961e5e8ccf44"><td class="memTemplParams" colspan="2">template&lt;typename Compare  = std::less&lt;void&gt;&gt; </td></tr>
 <tr class="memitem:a0641d6ecc741bd5f346a961e5e8ccf44"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0641d6ecc741bd5f346a961e5e8ccf44">sort</a> (Compare compare=Compare())</td></tr>
-<tr class="memdesc:a0641d6ecc741bd5f346a961e5e8ccf44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> using the given comparator, <code>operator&lt;</code> by default.  <a href="#a0641d6ecc741bd5f346a961e5e8ccf44">More...</a><br /></td></tr>
+<tr class="memdesc:a0641d6ecc741bd5f346a961e5e8ccf44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the stream using the given comparator, <code>operator&lt;</code> by default.  <a href="#a0641d6ecc741bd5f346a961e5e8ccf44">More...</a><br /></td></tr>
 <tr class="separator:a0641d6ecc741bd5f346a961e5e8ccf44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9a5f0773de4aac232e80ae23495e76e"><td class="memTemplParams" colspan="2">template&lt;typename Compare  = std::less&lt;void&gt;&gt; </td></tr>
 <tr class="memitem:ab9a5f0773de4aac232e80ae23495e76e"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ab9a5f0773de4aac232e80ae23495e76e">stable_sort</a> (Compare compare=Compare())</td></tr>
-<tr class="memdesc:ab9a5f0773de4aac232e80ae23495e76e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> preserving relative order of elements using the given comparator, <code>operator&lt;</code> by default.  <a href="#ab9a5f0773de4aac232e80ae23495e76e">More...</a><br /></td></tr>
+<tr class="memdesc:ab9a5f0773de4aac232e80ae23495e76e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the stream preserving relative order of elements using the given comparator, <code>operator&lt;</code> by default.  <a href="#ab9a5f0773de4aac232e80ae23495e76e">More...</a><br /></td></tr>
 <tr class="separator:ab9a5f0773de4aac232e80ae23495e76e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af694d1a9aa88f1dd8ff3d3e66d2cb6c9"><td class="memTemplParams" colspan="2">template&lt;typename UnaryPredicate &gt; </td></tr>
 <tr class="memitem:af694d1a9aa88f1dd8ff3d3e66d2cb6c9"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af694d1a9aa88f1dd8ff3d3e66d2cb6c9">take_while</a> (UnaryPredicate predicate)</td></tr>
-<tr class="memdesc:af694d1a9aa88f1dd8ff3d3e66d2cb6c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> until <em>predicate</em>  returns <code>false</code> for an element.  <a href="#af694d1a9aa88f1dd8ff3d3e66d2cb6c9">More...</a><br /></td></tr>
+<tr class="memdesc:af694d1a9aa88f1dd8ff3d3e66d2cb6c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes elements from the stream until <em>predicate</em>  returns <code>false</code> for an element.  <a href="#af694d1a9aa88f1dd8ff3d3e66d2cb6c9">More...</a><br /></td></tr>
 <tr class="separator:af694d1a9aa88f1dd8ff3d3e66d2cb6c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a213755b414a7d31af11bb96c129c6667"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a213755b414a7d31af11bb96c129c6667">take_while</a> ()</td></tr>
-<tr class="memdesc:a213755b414a7d31af11bb96c129c6667"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> until an element is <code>false</code>.  <a href="#a213755b414a7d31af11bb96c129c6667">More...</a><br /></td></tr>
+<tr class="memdesc:a213755b414a7d31af11bb96c129c6667"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes elements from the stream until an element is <code>false</code>.  <a href="#a213755b414a7d31af11bb96c129c6667">More...</a><br /></td></tr>
 <tr class="separator:a213755b414a7d31af11bb96c129c6667"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf3882ef78e687785e2c1402e4a62ea1"><td class="memTemplParams" colspan="2">template&lt;typename Ret , typename Class &gt; </td></tr>
 <tr class="memitem:adf3882ef78e687785e2c1402e4a62ea1"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#adf3882ef78e687785e2c1402e4a62ea1">take_while</a> (Ret(Class::*member)())</td></tr>
-<tr class="memdesc:adf3882ef78e687785e2c1402e4a62ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> until the <em>member</em>  returns <code>false</code>.  <a href="#adf3882ef78e687785e2c1402e4a62ea1">More...</a><br /></td></tr>
+<tr class="memdesc:adf3882ef78e687785e2c1402e4a62ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes elements from the stream until the <em>member</em>  returns <code>false</code>.  <a href="#adf3882ef78e687785e2c1402e4a62ea1">More...</a><br /></td></tr>
 <tr class="separator:adf3882ef78e687785e2c1402e4a62ea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a304866b3dec4eafe95a024319328ef2c"><td class="memTemplParams" colspan="2">template&lt;typename Compare  = std::less&lt;void&gt;&gt; </td></tr>
 <tr class="memitem:a304866b3dec4eafe95a024319328ef2c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a304866b3dec4eafe95a024319328ef2c">unique</a> (Compare compare=Compare())</td></tr>
-<tr class="memdesc:a304866b3dec4eafe95a024319328ef2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts and extracts only unique elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>.  <a href="#a304866b3dec4eafe95a024319328ef2c">More...</a><br /></td></tr>
+<tr class="memdesc:a304866b3dec4eafe95a024319328ef2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts and extracts only unique elements from the stream.  <a href="#a304866b3dec4eafe95a024319328ef2c">More...</a><br /></td></tr>
 <tr class="separator:a304866b3dec4eafe95a024319328ef2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae25b0a8475258acc29173c4a37e13e22"><td class="memTemplParams" colspan="2">template&lt;typename RightSource , typename BinaryOperation &gt; </td></tr>
 <tr class="memitem:ae25b0a8475258acc29173c4a37e13e22"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ae25b0a8475258acc29173c4a37e13e22">zip</a> (<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; RightSource &gt; &amp;&amp;right, BinaryOperation zipper)</td></tr>
@@ -249,12 +329,6 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Intermediate operations, all of which are also aliased in the flow namespace. </p>
 <p>The functions in the <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html" title="Intermediate operations, all of which are also aliased in the flow namespace. ">flow::intermediate</a> namespace all produce an intermediate operation. The intermediate operation does not operate on a stream until the pipe <code>operator|</code> has been applied, including eager operations. Only after being applied to a stream is the new stream created.</p>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000003">Todo:</a></b></dt><dd><p class="startdd">flow::intermediate::merge - combine two sorted streams while maintaining sorted order </p>
-<p>flow::intermediate::union - union two sorted/unique streams </p>
-<p>flow::intermediate::intersect - intersect two sorted/unique streams </p>
-<p>flow::intermediate::difference - compute the difference of two sorted/unique streams </p>
-<p class="enddd">flow::intermediate::symmetric_difference - compute the symmetric difference of two sorted/unique streams </p>
-</dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="aa0551274cc05f2c668d5612bfe1716cb"></a>
 <div class="memitem">
@@ -272,8 +346,8 @@ template&lt;typename Tail &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Concatenates the given <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> onto the end of the operated stream. </p>
-<p>The <em>tail</em>  stream elements must be convertible to the same type of elements as the head stream.</p>
+<p>Concatenates the <em>tail</em>  stream onto the end of the operated (<em>head</em> ) stream. </p>
+<p>The <em>tail</em>  stream elements must be convertible to the same type of elements as the <em>head</em>  stream.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">tail</td><td>The tail stream to put after the end of the operated head stream.</td></tr>
@@ -311,8 +385,8 @@ template&lt;typename Itr &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Concatenates the given iterator range onto the end of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>, this is the same as <code>concat(from(begin, end))</code>. </p>
-<p>The <em>tail</em>  stream elements must be convertible to the same type of elements as the head stream.</p>
+<p>Concatenates the given iterator range onto the end of the stream, this is the same as <code>concat(from(begin, end))</code>. </p>
+<p>The <em>tail</em>  stream elements must be convertible to the same type of elements as the <em>head</em>  stream.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">begin</td><td>The beginning of the range to concat.</td></tr>
@@ -341,8 +415,8 @@ template&lt;typename Container , typename  = std::enable_if_t&lt;generator::deta
       </table>
 </div><div class="memdoc">
 
-<p>Concatenates <em>container</em>  onto the end of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>, this is the same as <code>concat(from(container))</code>. </p>
-<p>The <em>tail</em>  stream elements must be convertible to the same type of elements as the head stream.</p>
+<p>Concatenates <em>container</em>  onto the end of the stream, this is the same as <code>concat(from(container))</code>. </p>
+<p>The <em>tail</em>  stream elements must be convertible to the same type of elements as the <em>head</em>  stream.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">container</td><td>The container to concatenate onto the end of the stream.</td></tr>
@@ -370,8 +444,8 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Concatenates <em>list</em>  onto the end of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>, this is the same as <code>concat(from(list))</code>. </p>
-<p>The <em>tail</em>  stream elements must be convertible to the same type of elements as the head stream.</p>
+<p>Concatenates <em>list</em>  onto the end of the stream, this is the same as <code>concat(from(list))</code>. </p>
+<p>The <em>tail</em>  stream elements must be convertible to the same type of elements as the <em>head</em>  stream.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">list</td><td>The list to concatenate onto the end of the stream.</td></tr>
@@ -399,7 +473,7 @@ template&lt;typename UnaryPredicate &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Drops elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> until the <em>predicate</em>  returns <code>false</code> for a stream element. </p>
+<p>Drops elements from the stream until the <em>predicate</em>  returns <code>false</code> for a stream element. </p>
 <p>All elements before the first <code>false</code> are discarded, the rest are kept, even if later elements would return <code>true</code> for <em>predicate</em> .</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -408,7 +482,7 @@ template&lt;typename UnaryPredicate &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that drops stream elements while the <em>predicate</em>  is <code>true</code>.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af694d1a9aa88f1dd8ff3d3e66d2cb6c9" title="Takes elements from the Stream until predicate  returns false for an element. ">take_while()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the Stream that return false for predicate . ">filter()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af694d1a9aa88f1dd8ff3d3e66d2cb6c9" title="Takes elements from the stream until predicate  returns false for an element. ">take_while()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the stream that return false for predicate . ">filter()</a></dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/d73/drop_while_8cpp-example.html#a0">drop_while.cpp</a>.</dd>
 </dl>
 </div>
@@ -434,10 +508,10 @@ template&lt;typename UnaryPredicate &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Drops elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> until a stream element is <code>false</code>. </p>
+<p>Drops elements from the stream until a stream element is <code>false</code>. </p>
 <p>All elements before the first <code>false</code> are discarded, the rest are kept, even if later elements are <code>true</code>. This is an overload for streams with types convertible to <code>bool</code>.</p>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that drops stream elements while they are <code>true</code>.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af694d1a9aa88f1dd8ff3d3e66d2cb6c9" title="Takes elements from the Stream until predicate  returns false for an element. ">take_while()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the Stream that return false for predicate . ">filter()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af694d1a9aa88f1dd8ff3d3e66d2cb6c9" title="Takes elements from the stream until predicate  returns false for an element. ">take_while()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the stream that return false for predicate . ">filter()</a></dd></dl>
 
 </div>
 </div>
@@ -457,7 +531,7 @@ template&lt;typename Ret , typename Class &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Drops elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> until the <em>member</em>  returns <code>false</code>. </p>
+<p>Drops elements from the stream until the <em>member</em>  returns <code>false</code>. </p>
 <p>All elements before the first <code>false</code> are discarded, the rest are kept, even if later elements would return <code>true</code> for <em>member</em> .</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -466,7 +540,7 @@ template&lt;typename Ret , typename Class &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that drops stream elements while the <em>member</em>  is <code>true</code>.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af694d1a9aa88f1dd8ff3d3e66d2cb6c9" title="Takes elements from the Stream until predicate  returns false for an element. ">take_while()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the Stream that return false for predicate . ">filter()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af694d1a9aa88f1dd8ff3d3e66d2cb6c9" title="Takes elements from the stream until predicate  returns false for an element. ">take_while()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the stream that return false for predicate . ">filter()</a></dd></dl>
 <p>All elements before the first <code>false</code> are discarded, the rest are kept, even if later elements would return <code>true</code> for <em>member</em> .</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -475,7 +549,7 @@ template&lt;typename Ret , typename Class &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that drops stream elements while the <em>member</em>  is <code>true</code>.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af694d1a9aa88f1dd8ff3d3e66d2cb6c9" title="Takes elements from the Stream until predicate  returns false for an element. ">take_while()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the Stream that return false for predicate . ">filter()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af694d1a9aa88f1dd8ff3d3e66d2cb6c9" title="Takes elements from the stream until predicate  returns false for an element. ">take_while()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the stream that return false for predicate . ">filter()</a></dd></dl>
 
 </div>
 </div>
@@ -495,7 +569,7 @@ template&lt;typename UnaryPredicate &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Removes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> that return <code>false</code> for <em>predicate</em> . </p>
+<p>Removes elements from the stream that return <code>false</code> for <em>predicate</em> . </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">predicate</td><td>The predicate used to filter stream elements.</td></tr>
@@ -528,7 +602,7 @@ template&lt;typename UnaryPredicate &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Removes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> which are evaluated to <code>false</code>. </p>
+<p>Removes elements from the stream which are evaluated to <code>false</code>. </p>
 <p>This is an overload for streams with types convertible to <code>bool</code>. </p>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that filters the stream elements.</dd></dl>
 
@@ -550,7 +624,7 @@ template&lt;typename Ret , typename Class &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Removes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> that return <code>false</code> for <em>member</em> . </p>
+<p>Removes elements from the stream that return <code>false</code> for <em>member</em> . </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">member</td><td>The class member function to use for filtering, the return type must be convertible to <code>bool</code>.</td></tr>
@@ -584,7 +658,7 @@ template&lt;typename UnaryOperation &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Transforms each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> using <em>operation</em>  into a new stream. </p>
+<p>Transforms each element in the stream using <em>operation</em>  into a new stream. </p>
 <p>Each element is transformed into a new stream. The resultant stream is a concatenation of all created streams.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -618,8 +692,8 @@ template&lt;typename UnaryOperation &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Limits the length of the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> to <em>length</em>  elements. </p>
-<p>If the stream is shorter, all elements are kept. </p>
+<p>Limits the length of the stream to <em>length</em>  elements. </p>
+<p>If the stream is shorter, all elements are kept.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">length</td><td>The length to limit the stream at.</td></tr>
@@ -647,7 +721,7 @@ template&lt;typename UnaryOperation &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Transforms each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> using <em>mapper</em> . </p>
+<p>Transforms each element in the stream using <em>mapper</em> . </p>
 <p>Elements can be mapped to the same type as the source stream, or a new type.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -675,7 +749,7 @@ template&lt;typename Ret , typename Class &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Transforms each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> to the return value of <em>member</em>  for each stream element. </p>
+<p>Transforms each element in the stream to the return value of <em>member</em>  for each stream element. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">member</td><td>The class member function to use as the transformation.</td></tr>
@@ -690,6 +764,172 @@ template&lt;typename Ret , typename Class &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that maps the stream to new values.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6fb2b65333a532367af81f9ff82149f4"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename RightSource , typename Compare  = std::less&lt;void&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::intermediate::merge </td>
+          <td>(</td>
+          <td class="paramtype">Stream&lt; RightSource &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>right</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"><em>compare</em> = <code>Compare()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Merges the <em>right</em>  stream into the operated (<em>left</em> ) stream while maintaining sorted order. </p>
+<p>Both the <em>left</em>  and <em>right</em>  streams are assumed to already be sorted according to <em>compare</em> . If not, this operation produces undefined results. By default, <code>operator&lt;</code> is used as the comparator. The merge operation is stable.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">right</td><td>The right stream to merge into the left stream while maintaining sorted order.</td></tr>
+    <tr><td class="paramname">compare</td><td>The compare function by which both streams are sorted.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An intermediate operation that merges the two streams while maintaining sorted order.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acdce04079f1718a815a7e46718b1c432"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Itr , typename Compare  = std::less&lt;void&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::intermediate::merge </td>
+          <td>(</td>
+          <td class="paramtype">Itr&#160;</td>
+          <td class="paramname"><em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Itr&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"><em>compare</em> = <code>Compare()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Merges the iterator range into the operated (<em>left</em> ) stream while maintaining sorted order, this is the same as <code>merge(from(begin, end), compare)</code>. </p>
+<p>Both the <em>left</em>  stream and iterator range are assumed to already be sorted according to <em>compare</em> . If not, this operation produces undefined results. By default, <code>operator&lt;</code> is used as the comparator. The merge operation is stable.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">begin</td><td>The beginning of the range to merge.</td></tr>
+    <tr><td class="paramname">end</td><td>The end of the range to merge.</td></tr>
+    <tr><td class="paramname">compare</td><td>The compare function by which both streams are sorted.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An intermediate operation that merges the two streams while maintaining sorted order.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afacae60f668337190c275857590b158c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Container , typename Compare  = std::less&lt;void&gt;, typename  = std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::intermediate::merge </td>
+          <td>(</td>
+          <td class="paramtype">Container &amp;&#160;</td>
+          <td class="paramname"><em>container</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"><em>compare</em> = <code>Compare()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Merges <em>container</em>  into the operated (<em>left</em> ) stream while maintaining sorted order, this is the same as <code>merge(from(container), compare)</code>. </p>
+<p>Both the <em>left</em>  stream and <em>container</em>  are assumed to already be sorted according to <em>compare</em> . If not, this operation produces undefined results. By default, <code>operator&lt;</code> is used as the comparator. The merge operation is stable.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">container</td><td>The container to merge into the stream while maintaining sorted order.</td></tr>
+    <tr><td class="paramname">compare</td><td>The compare function by which both streams are sorted.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An intermediate operation that merges the two streams while maintaining sorted order.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a857d36211d87bff95b2e41425933e8ec"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename Compare  = std::less&lt;void&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::intermediate::merge </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"><em>compare</em> = <code>Compare()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Merges <em>list</em>  into the operated (<em>left</em> ) stream while maintaining sorted order, this is the same as <code>merge(from(list), compare)</code>. </p>
+<p>Both the <em>left</em>  stream and <em>list</em>  are assumed to already be sorted according to <em>compare</em> . If not, this operation produces undefined results. By default, <code>operator&lt;</code> is used as the comparator. The merge operation is stable.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>The list to merge into the stream while maintaining sorted order.</td></tr>
+    <tr><td class="paramname">compare</td><td>The compare function by which both streams are sorted.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An intermediate operation that merges the two streams while maintaining sorted order.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>
@@ -709,10 +949,10 @@ template&lt;typename UnaryFunction &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Executes <em>action</em>  for each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>. </p>
+<p>Executes <em>action</em>  for each element in the stream. </p>
 <p>This does not explicitly change the elements in the stream. The <em>action</em>  is performed, then the stream value is passed on to the next operation. The <em>action</em>  will only be performed if the stream element is actually reached. For example,</p>
-<p><code>ints | peek([](int i){ std::cout &lt;&lt; i &lt;&lt; " "; }) | filter(is_even) | ...; // will display all elements<br />
- ints | filter(is_even) | peek([](int i){ std::cout &lt;&lt; i &lt;&lt; " "; }) | ...; // will only display even elements</code> </p>
+<p><code>ints | peek([](int i) { std::cout &lt;&lt; i &lt;&lt; " "; }) | filter(is_even) | ...; // will display all elements<br />
+ ints | filter(is_even) | peek([](int i) { std::cout &lt;&lt; i &lt;&lt; " "; }) | ...; // will only display even elements</code> </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">action</td><td>The function to apply to each element of the stream.</td></tr>
@@ -742,8 +982,8 @@ template&lt;typename Ret , typename Class &gt; </div>
 
 <p>Executes <em>member</em>  for each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>. </p>
 <p>This does not explicitly change the elements in the stream. The <em>member</em>  is called, then the stream value is passed on to the next operation. The <em>member</em>  will only be called if the stream element is actually reached. For example,</p>
-<p><code>things | peek([](Thing&amp; i){ std::cout &lt;&lt; i &lt;&lt; " "; }) | filter(is_something) | ...; // will display all elements<br />
- things | filter(is_something) | peek([](Thing&amp; i){ std::cout &lt;&lt; i &lt;&lt; " "; }) | ...; // will only display "something" elements</code> </p>
+<p><code>things | peek([](Thing&amp; i) { std::cout &lt;&lt; i &lt;&lt; " "; }) | filter(is_something) | ...; // will display all elements<br />
+ things | filter(is_something) | peek([](Thing&amp; i) { std::cout &lt;&lt; i &lt;&lt; " "; }) | ...; // will only display "something" elements</code> </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">member</td><td>The function to apply to each element of the stream.</td></tr>
@@ -781,7 +1021,7 @@ template&lt;typename UnaryPredicate , typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Replaces elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> by <em>replace_by</em>  if the stream element returns <code>true</code> for <em>predicate</em> . </p>
+<p>Replaces elements in the stream by <em>replace_by</em>  if the stream element returns <code>true</code> for <em>predicate</em> . </p>
 <p>Values that return <code>false</code> for <em>predicate</em>  are left unchanged.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -820,7 +1060,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Replaces elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> by <em>new_value</em>  if they are equal to <em>old_value</em> . </p>
+<p>Replaces elements in the stream by <em>new_value</em>  if they are equal to <em>old_value</em> . </p>
 <p>Equality is checked by using <code>operator==</code> on the elements. Values not equal to <em>old_value</em>  are left unchanged.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -859,7 +1099,7 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Maps <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> elements to new values if the original element returns <code>true</code> for <em>predicate</em> . </p>
+<p>Maps stream elements to new values if the original element returns <code>true</code> for <em>predicate</em> . </p>
 <p>Values that return <code>false</code> for <em>predicate</em>  are left unchanged.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -893,11 +1133,675 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Reverses the elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>. </p>
+<p>Reverses the elements in the stream. </p>
 <p>Reversing is an eager operation. On application of the <code>reverse</code> operation, the entire stream up to that point is evaluated and stored before continuing with the remainder of the stream. Thus, the <code>reverse</code> operation takes <code>O(n)</code> extra space and time, where <code>n</code> is the size of the stream. For most applications, it will be beneficial to reverse the stream beforehand by <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad5e12b528b2fa20549b7714efd2a6814" title="Creates a Stream over container  in reverse order. ">rfrom()</a> or <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a19f2046f7478ce9c2ce68e4946ade84d" title="Creates an infinite stream which cycles container  in reverse order. ">rcycle()</a>.</p>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that reverses the stream.</dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d7/db4/concat_8cpp-example.html#a3">concat.cpp</a>.</dd>
 </dl>
+</div>
+</div>
+<a class="anchor" id="ad934301c4575e60e7fa4f8acac75e471"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename RightSource , typename Compare  = std::less&lt;void&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::intermediate::set_diff </td>
+          <td>(</td>
+          <td class="paramtype">Stream&lt; RightSource &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>right</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"><em>compare</em> = <code>Compare()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the difference of the operated (<em>left</em> ) stream and the <em>right</em>  stream while maintaining sorted order. </p>
+<p>The difference operation removes elements from the <em>left</em>  stream if they are in the <em>right</em>  stream and maintains sorted order. This operation is directional, <em>left</em>  <code>-</code> <em>right</em>  is performed. Both the <em>left</em>  and <em>right</em>  streams are assumed to already be sorted according to <em>compare</em> . If not, this operation produces undefined results. By default, <code>operator&lt;</code> is used as the comparator. Elements in the result stream are only from the <em>left</em>  stream. If the source streams contain duplicate values such that there are more of those elements in the <em>left</em>  stream than the <em>right</em>  stream, the result stream will contain the number by which the count of those elements in the <em>left</em>  stream exceed the count of those elements in the <em>right</em>  stream.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">right</td><td>The right stream to difference from the left stream while maintaining sorted order.</td></tr>
+    <tr><td class="paramname">compare</td><td>The compare function by which both streams are sorted.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An intermediate operation that computes <em>left</em>  <code>-</code> <em>right</em>  while maintaining sorted order.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab6e3e38fbff02cb68a8d88ee83f1ed10"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Itr , typename Compare  = std::less&lt;void&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::intermediate::set_diff </td>
+          <td>(</td>
+          <td class="paramtype">Itr&#160;</td>
+          <td class="paramname"><em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Itr&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"><em>compare</em> = <code>Compare()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the difference of the operated (<em>left</em> ) stream and the iterator range while maintaining sorted order, this is the same as <code>set_diff(from(begin, end), compare)</code>. </p>
+<p>The difference operation removes elements from the <em>left</em>  stream if they are in the iterator range and maintains sorted order. This operation is directional, <em>left</em>  <code>- [begin, end)</code> is performed. Both the <em>left</em>  stream and iterator range are assumed to already be sorted according to <em>compare</em> . If not, this operation produces undefined results. By default, <code>operator&lt;</code> is used as the comparator. Elements in the result stream are only from the <em>left</em>  stream. If the source streams contain duplicate values such that there are more of those elements in the <em>left</em>  stream than the iterator range, the result stream will contain the number by which the count of those elements in the <em>left</em>  stream exceed the count of those elements in the iterator range.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">begin</td><td>The beginning of the range to subtract from <em>left</em> .</td></tr>
+    <tr><td class="paramname">end</td><td>The end of the range to subtract from <em>left</em> .</td></tr>
+    <tr><td class="paramname">compare</td><td>The compare function by which both streams are sorted.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An intermediate operation that computes <em>left</em>  <code>- [begin,end)</code> while maintaining sorted order.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a56200dc064f3c59c0fce20242ae80e4a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Container , typename Compare  = std::less&lt;void&gt;, typename  = std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::intermediate::set_diff </td>
+          <td>(</td>
+          <td class="paramtype">Container &amp;&#160;</td>
+          <td class="paramname"><em>container</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"><em>compare</em> = <code>Compare()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the difference of the operated (<em>left</em> ) stream and <em>container</em>  while maintaining sorted order, this is the same as <code>set_diff(from(container), compare)</code>. </p>
+<p>The difference operation removes elements from the <em>left</em>  stream if they are in <em>container</em>  and maintains sorted order. This operation is directional, <em>left</em>  <code>-</code> <em>container</em>  is performed. Both the <em>left</em>  stream and <em>container</em>  are assumed to already be sorted according to <em>compare</em> . If not, this operation produces undefined results. By default, <code>operator&lt;</code> is used as the comparator. Elements in the result stream are only from the <em>left</em>  stream. If the source streams contain duplicate values such that there are more of those elements in the <em>left</em>  stream than <em>container</em> , the result stream will contain the number by which the count of those elements in the <em>left</em>  stream exceed the count of those elements in <em>container</em> .</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">container</td><td>The container to subtract from the stream while maintaining sorted order.</td></tr>
+    <tr><td class="paramname">compare</td><td>The compare function by which both streams are sorted.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An intermediate operation that computes <em>left</em>  <code>-</code> <em>container</em>  while maintaining sorted order.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aea643c657fff06efd5a4d7c07fc1659b"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename Compare  = std::less&lt;void&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::intermediate::set_diff </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"><em>compare</em> = <code>Compare()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the difference of the operated (<em>left</em> ) stream and <em>list</em>  while maintaining sorted order, this is the same as <code>set_diff(from(list), compare)</code>. </p>
+<p>The difference operation removes elements from the <em>left</em>  stream if they are in <em>list</em>  and maintains sorted order. This operation is directional, <em>left</em>  <code>-</code> <em>list</em>  is performed. Both the <em>left</em>  stream and <em>container</em>  are assumed to already be sorted according to <em>compare</em> . If not, this operation produces undefined results. By default, <code>operator&lt;</code> is used as the comparator. Elements in the result stream are only from the <em>left</em>  stream. If the source streams contain duplicate values such that there are more of those elements in the <em>left</em>  stream than <em>list</em> , the result stream will contain the number by which the count of those elements in the <em>left</em>  stream exceed the count of those elements in <em>list</em> .</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>The list to subtract from the stream while maintaining sorted order.</td></tr>
+    <tr><td class="paramname">compare</td><td>The compare function by which both streams are sorted.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An intermediate operation that computes <em>left</em>  <code>-</code> <em>list</em>  while maintaining sorted order.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a414b603609b514656419e512f8b8d8c2"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename RightSource , typename Compare  = std::less&lt;void&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::intermediate::set_intersect </td>
+          <td>(</td>
+          <td class="paramtype">Stream&lt; RightSource &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>right</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"><em>compare</em> = <code>Compare()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Intersects the <em>right</em>  stream into the operated (<em>left</em> ) stream while maintaining sorted order. </p>
+<p>The intersection operation combines both streams keeping only elements in both streams and maintains sorted order. Both the <em>left</em>  and <em>right</em>  streams are assumed to already be sorted according to <em>compare</em> . If not, this operation produces undefined results. By default, <code>operator&lt;</code> is used as the comparator. Elements in the result stream are only from the <em>left</em>  stream. If the source streams contain duplicate values, the result stream will contain the minimum number of those elements that appear in both streams.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">right</td><td>The right stream to intersect with the left stream while maintaining sorted order.</td></tr>
+    <tr><td class="paramname">compare</td><td>The compare function by which both streams are sorted.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An intermediate operation that intersects the two streams while maintaining sorted order.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a27ce01f16c8bd1911ed6735ab6876507"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Itr , typename Compare  = std::less&lt;void&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::intermediate::set_intersect </td>
+          <td>(</td>
+          <td class="paramtype">Itr&#160;</td>
+          <td class="paramname"><em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Itr&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"><em>compare</em> = <code>Compare()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Intersects the iterator range into the operated (<em>left</em> ) stream while maintaining sorted order, this is the same as <code>set_intersect(from(begin, end), compare)</code>. </p>
+<p>The intersection operation combines both streams keeping only elements in both streams and maintains sorted order. Both the <em>left</em>  stream and iterator range are assumed to already be sorted according to <em>compare</em> . If not, this operation produces undefined results. By default, <code>operator&lt;</code> is used as the comparator. Elements in the result stream are only from the <em>left</em>  stream. If the source streams contain duplicate values, the result stream will contain the minimum number of those elements that appear in both streams.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">begin</td><td>The beginning of the range to intersect.</td></tr>
+    <tr><td class="paramname">end</td><td>The end of the range to intersect.</td></tr>
+    <tr><td class="paramname">compare</td><td>The compare function by which both streams are sorted.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An intermediate operation that intersects the two streams while maintaining sorted order.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9c367fd8127d79dc9b73068cb6f41a6f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Container , typename Compare  = std::less&lt;void&gt;, typename  = std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::intermediate::set_intersect </td>
+          <td>(</td>
+          <td class="paramtype">Container &amp;&#160;</td>
+          <td class="paramname"><em>container</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"><em>compare</em> = <code>Compare()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Intersects <em>container</em>  into the operated (<em>left</em> ) stream while maintaining sorted order, this is the same as <code>set_intersect(from(container), compare)</code>. </p>
+<p>The intersection operation combines both streams keeping only elements in both streams and maintains sorted order. Both the <em>left</em>  stream and <em>container</em>  are assumed to already be sorted according to <em>compare</em> . If not, this operation produces undefined results. By default, <code>operator&lt;</code> is used as the comparator. Elements in the result stream are only from the <em>left</em>  stream. If the source streams contain duplicate values, the result stream will contain the minimum number of those elements that appear in both streams.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">container</td><td>The container to intersect with the stream while maintaining sorted order.</td></tr>
+    <tr><td class="paramname">compare</td><td>The compare function by which both streams are sorted.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An intermediate operation that intersects the two streams while maintaining sorted order.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad77ba087a55f3703d2d812f8da9655ad"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename Compare  = std::less&lt;void&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::intermediate::set_intersect </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"><em>compare</em> = <code>Compare()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Intersects <em>list</em>  into the operated (<em>left</em> ) stream while maintaining sorted order, this is the same as <code>set_intersect(from(list), compare)</code>. </p>
+<p>The intersection operation combines both streams keeping only elements in both streams and maintains sorted order. Both the <em>left</em>  stream and <em>list</em>  are assumed to already be sorted according to <em>compare</em> . If not, this operation produces undefined results. By default, <code>operator&lt;</code> is used as the comparator. Elements in the result stream are only from the <em>left</em>  stream. If the source streams contain duplicate values, the result stream will contain the minimum number of those elements that appear in both streams.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>The list to intersect with the stream while maintaining sorted order.</td></tr>
+    <tr><td class="paramname">compare</td><td>The compare function by which both streams are sorted.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An intermediate operation that intersects the two streams while maintaining sorted order.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a16bf95f0e80dcb00c805775a0b799adf"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename RightSource , typename Compare  = std::less&lt;void&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::intermediate::set_sym_diff </td>
+          <td>(</td>
+          <td class="paramtype">Stream&lt; RightSource &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>right</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"><em>compare</em> = <code>Compare()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the symmetric difference of the operated (<em>left</em> ) stream and the <em>right</em>  stream while maintaining sorted order. </p>
+<p>The symmetric difference operation removes elements present only in both streams and maintains sorted order. Both the <em>left</em>  and <em>right</em>  streams are assumed to already be sorted according to <em>compare</em> . If not, this operation produces undefined results. By default, <code>operator&lt;</code> is used as the comparator. If the source streams contain duplicate values, then the result stream will contain the number by which the count of those elements in one stream exceeds the count in the other stream.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">right</td><td>The right stream to difference from the left stream while maintaining sorted order.</td></tr>
+    <tr><td class="paramname">compare</td><td>The compare function by which both streams are sorted.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An intermediate operation that computes the symmetric difference between <em>left</em>  and <em>right</em>  while maintaining sorted order.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5f01de329bfbe82b66fecc70d6fb338b"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Itr , typename Compare  = std::less&lt;void&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::intermediate::set_sym_diff </td>
+          <td>(</td>
+          <td class="paramtype">Itr&#160;</td>
+          <td class="paramname"><em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Itr&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"><em>compare</em> = <code>Compare()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the symmetric difference of the operated (<em>left</em> ) stream and the iterator range while maintaining sorted order, this is the same as <code>set_sym_diff(from(begin, end), compare)</code>. </p>
+<p>The symmetric difference operation removes elements present only in both streams and maintains sorted order. Both the <em>left</em>  stream and iterator range are assumed to already be sorted according to <em>compare</em> . If not, this operation produces undefined results. By default, <code>operator&lt;</code> is used as the comparator. If the source streams contain duplicate values, then the result stream will contain the number by which the count of those elements in one stream exceeds the count in the other stream.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">begin</td><td>The beginning of the range to compute symmetric difference with.</td></tr>
+    <tr><td class="paramname">end</td><td>The end of the range to to compute symmetric difference with.</td></tr>
+    <tr><td class="paramname">compare</td><td>The compare function by which both streams are sorted.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An intermediate operation that computes the symetric difference between <em>left</em>  and <code>[begin,end)</code> while maintaining sorted order.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1be578ea731acfba3a2473b5a44e98e2"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Container , typename Compare  = std::less&lt;void&gt;, typename  = std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::intermediate::set_sym_diff </td>
+          <td>(</td>
+          <td class="paramtype">Container &amp;&#160;</td>
+          <td class="paramname"><em>container</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"><em>compare</em> = <code>Compare()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the symmetric difference of the operated (<em>left</em> ) stream and <em>container</em>  while maintaining sorted order, this is the same as <code>set_sym_diff(from(container), compare)</code>. </p>
+<p>The symmetric difference operation removes elements present only in both streams and maintains sorted order. Both the <em>left</em>  stream and <em>container</em>  are assumed to already be sorted according to <em>compare</em> . If not, this operation produces undefined results. By default, <code>operator&lt;</code> is used as the comparator. If the source streams contain duplicate values, then the result stream will contain the number by which the count of those elements in one stream exceeds the count in the other stream.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">container</td><td>The container to compute symmetric difference with.</td></tr>
+    <tr><td class="paramname">compare</td><td>The compare function by which both streams are sorted.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An intermediate operation that computes the symmetric difference between <em>left</em>  and <em>container</em>  while maintaining sorted order.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6fcafd1b53147e51a9af8fab6e35dc5b"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename Compare  = std::less&lt;void&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::intermediate::set_sym_diff </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"><em>compare</em> = <code>Compare()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the symmetric difference of the operated (<em>left</em> ) stream and <em>list</em>  while maintaining sorted order, this is the same as <code>set_sym_diff(from(list), compare)</code>. </p>
+<p>The symmetric difference operation removes elements present only in both streams and maintains sorted order. Both the <em>left</em>  stream and <em>list</em>  are assumed to already be sorted according to <em>compare</em> . If not, this operation produces undefined results. By default, <code>operator&lt;</code> is used as the comparator. If the source streams contain duplicate values, then the result stream will contain the number by which the count of those elements in one stream exceeds the count in the other stream.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>The list to compute symmetric difference with.</td></tr>
+    <tr><td class="paramname">compare</td><td>The compare function by which both streams are sorted.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An intermediate operation that computes the symmetric difference between <em>left</em>  and <em>list</em>  while maintaining sorted order.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a497f972f0f5add67935c3bb47a44d104"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename RightSource , typename Compare  = std::less&lt;void&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::intermediate::set_union </td>
+          <td>(</td>
+          <td class="paramtype">Stream&lt; RightSource &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>right</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"><em>compare</em> = <code>Compare()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Unions the <em>right</em>  stream into the operated (<em>left</em> ) stream while maintaining sorted order. </p>
+<p>The union operation combines both streams but discards duplicates and maintains sorted order. Both the <em>left</em>  and <em>right</em>  streams are assumed to already be sorted according to <em>compare</em> . If not, this operation produces undefined results. By default, <code>operator&lt;</code> is used as the comparator. Elements in the result stream are only from the <em>left</em>  stream. If the source streams contain duplicate values, the result stream will contain the maximum number of those elements that appear in both streams.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">right</td><td>The right stream to union into the left stream while maintaining sorted order.</td></tr>
+    <tr><td class="paramname">compare</td><td>The compare function by which both streams are sorted.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An intermediate operation that unions the two streams while maintaining sorted order.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa7938e2d876a879ee6edf0e2e31ffec8"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Itr , typename Compare  = std::less&lt;void&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::intermediate::set_union </td>
+          <td>(</td>
+          <td class="paramtype">Itr&#160;</td>
+          <td class="paramname"><em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Itr&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"><em>compare</em> = <code>Compare()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Unions the iterator range into the operated (<em>left</em> ) stream while maintaining sorted order, this is the same as <code>set_union(from(begin, end), compare)</code>. </p>
+<p>The union operation combines both streams but discards duplicates and maintains sorted order. Both the <em>left</em>  stream and iterator range are assumed to already be sorted according to <em>compare</em> . If not, this operation produces undefined results. By default, <code>operator&lt;</code> is used as the comparator. Elements in the result stream are only from the <em>left</em>  stream. If the source streams contain duplicate values, the result stream will contain the maximum number of those elements that appear in both streams.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">begin</td><td>The beginning of the range to union.</td></tr>
+    <tr><td class="paramname">end</td><td>The end of the range to union.</td></tr>
+    <tr><td class="paramname">compare</td><td>The compare function by which both streams are sorted.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An intermediate operation that unions the two streams while maintaining sorted order.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a41227f6665b9a8fcdb8b066ea3226028"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Container , typename Compare  = std::less&lt;void&gt;, typename  = std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::intermediate::set_union </td>
+          <td>(</td>
+          <td class="paramtype">Container &amp;&#160;</td>
+          <td class="paramname"><em>container</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"><em>compare</em> = <code>Compare()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Unions <em>container</em>  into the operated (<em>left</em> ) stream while maintaining sorted order, this is the same as <code>set_union(from(container), compare)</code>. </p>
+<p>The union operation combines both streams but discards duplicates and maintains sorted order. Both the <em>left</em>  stream and <em>container</em>  are assumed to already be sorted according to <em>compare</em> . If not, this operation produces undefined results. By default, <code>operator&lt;</code> is used as the comparator. Elements in the result stream are only from the <em>left</em>  stream. If the source streams contain duplicate values, the result stream will contain the maximum number of those elements that appear in both streams.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">container</td><td>The container to union into the stream while maintaining sorted order.</td></tr>
+    <tr><td class="paramname">compare</td><td>The compare function by which both streams are sorted.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An intermediate operation that unions the two streams while maintaining sorted order.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac490fe88e884eed9befb822cedbef139"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename Compare  = std::less&lt;void&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::intermediate::set_union </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"><em>compare</em> = <code>Compare()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Unions <em>list</em>  into the operated (<em>left</em> ) stream while maintaining sorted order, this is the same as <code>set_union(from(list), compare)</code>. </p>
+<p>The union operation combines both streams but discards duplicates and maintains sorted order. Both the <em>left</em>  stream and <em>list</em>  are assumed to already be sorted according to <em>compare</em> . If not, this operation produces undefined results. By default, <code>operator&lt;</code> is used as the comparator. Elements in the result stream are only from the <em>left</em>  stream. If the source streams contain duplicate values, the result stream will contain the maximum number of those elements that appear in both streams.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>The list to union into the stream while maintaining sorted order.</td></tr>
+    <tr><td class="paramname">compare</td><td>The compare function by which both streams are sorted.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An intermediate operation that unions the two streams while maintaining sorted order.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a2725d9fb49cd0c4fe25658500c2fa1f1"></a>
@@ -932,7 +1836,7 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Skips the first elements of a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>, keeping only the elements with index <code>&gt;=</code> <em>begin</em>  in the stream. </p>
+<p>Skips the first elements of a stream, keeping only the elements with index <code>&gt;=</code> <em>begin</em>  in the stream. </p>
 <p>This operation will skip every <em>step_size</em>  elements after the initial jump to <em>begin</em> . For example a <em>step_size</em>  of 2 will keep only every other element, eg <code>begin, begin+2, begin+4</code> etc. If <em>begin</em>  is out of bounds, then the result is an empty stream.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -967,7 +1871,7 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Skips the first elements of a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>, keeping only the elements with index <code>&gt;=</code> <em>begin</em>  in the stream. </p>
+<p>Skips the first elements of a stream, keeping only the elements with index <code>&gt;=</code> <em>begin</em>  in the stream. </p>
 <p>If <em>begin</em>  is out of bounds, then the result is an empty stream.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1001,7 +1905,7 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Skips every <em>step_size</em>  elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>, keeping the first element. </p>
+<p>Skips every <em>step_size</em>  elements in the stream, keeping the first element. </p>
 <p>For example, a <em>step_size</em>  of 2 will only keep stream elements with index 0, 2, 4 etc.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1051,7 +1955,7 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Slices the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>, keeping only elements with index in the range <code>[begin..end)</code> in the stream, excluding the <em>end</em>  index. </p>
+<p>Slices the stream, keeping only elements with index in the range <code>[begin..end)</code> in the stream, excluding the <em>end</em>  index. </p>
 <p>If <em>end</em>  is out of bounds of the stream, the entire stream from <em>begin</em>  is kept. If <em>begin</em>  is out of bounds, then the result is an empty stream. The operation will skip every <em>step_size</em>  elements in the slice. For example a <em>step_size</em>  of 2 will keep only every other element in the range, eg <code>begin, begin+2, begin+4</code> etc.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1097,7 +2001,7 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Slices the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>, keeping only elements with index in the range <code>[begin..end)</code> in the stream, excluding the <em>end</em>  index. </p>
+<p>Slices the stream, keeping only elements with index in the range <code>[begin..end)</code> in the stream, excluding the <em>end</em>  index. </p>
 <p>If <code>end</code> is out of bounds of the stream, the entire stream from <em>begin</em>  is kept. If <em>begin</em>  is out of bounds, then the result is an empty stream.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1126,9 +2030,9 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Sorts the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> using the given comparator, <code>operator&lt;</code> by default. </p>
+<p>Sorts the stream using the given comparator, <code>operator&lt;</code> by default. </p>
 <p>Sorting is an eager operation. On application of the <code>sort</code> operation, the entire stream up to that point is evaluated and stored, then finally sorted before continuing with the sorted version of the stream. Thus, the <code>sort</code> operation takes <code>O(n)</code> extra space and time to copy the stream, and the additional <code>O(n logn)</code> to sort, where <code>n</code> is the size of the stream. For most applications, it will be beneficial to sort the source of the stream beforehand if possible. For example, the following should be <em>avoided</em>:</p>
-<p><code>int min = my_vector | <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0641d6ecc741bd5f346a961e5e8ccf44" title="Sorts the Stream using the given comparator, operator< by default. ">sort()</a> | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612" title="Returns the first element from the stream. ">first()</a>; // just an example</code> </p>
+<p><code>int min = my_vector | <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0641d6ecc741bd5f346a961e5e8ccf44" title="Sorts the stream using the given comparator, operator< by default. ">sort()</a> | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612" title="Returns the first element from the stream. ">first()</a>; // just an example</code> </p>
 <p>Instead, sorting the container in place beforehand will be more efficient as no additional copying takes place.</p>
 <p><code>std::sort(my_vector.begin(), my_vector.end());<br />
  int min = my_vector | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612" title="Returns the first element from the stream. ">first()</a>;</code> </p>
@@ -1159,9 +2063,9 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Sorts the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> preserving relative order of elements using the given comparator, <code>operator&lt;</code> by default. </p>
+<p>Sorts the stream preserving relative order of elements using the given comparator, <code>operator&lt;</code> by default. </p>
 <p>Sorting is an eager operation. On application of the <code>stable_sort</code> operation, the entire stream up to that point is evaluated and stored, then finally sorted before continuing with the sorted version of the stream. Thus, the <code>stable_sort</code> operation takes <code>O(n)</code> extra space and time to copy the stream, and the additional <code>O(n logn)</code> to sort, where <code>n</code> is the size of the stream. For most applications, it will be beneficial to sort the source of the stream beforehand if possible. For example, the following should be <em>avoided</em>:</p>
-<p><code>int min = my_vector | <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ab9a5f0773de4aac232e80ae23495e76e" title="Sorts the Stream preserving relative order of elements using the given comparator, operator< by default. ">stable_sort()</a> | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612" title="Returns the first element from the stream. ">first()</a>; // just an example</code> </p>
+<p><code>int min = my_vector | <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ab9a5f0773de4aac232e80ae23495e76e" title="Sorts the stream preserving relative order of elements using the given comparator, operator< by default. ">stable_sort()</a> | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612" title="Returns the first element from the stream. ">first()</a>; // just an example</code> </p>
 <p>Instead, sorting the container in place beforehand will be more efficient as no additional copying takes place.</p>
 <p><code>std::stable_sort(my_vector.begin(), my_vector.end());<br />
  int min = my_vector | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612" title="Returns the first element from the stream. ">first()</a>;</code> </p>
@@ -1191,7 +2095,7 @@ template&lt;typename UnaryPredicate &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Takes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> until <em>predicate</em>  returns <code>false</code> for an element. </p>
+<p>Takes elements from the stream until <em>predicate</em>  returns <code>false</code> for an element. </p>
 <p>Elements after and including the first <code>false</code> are discarded, even if later elements would return <code>true</code> for <em>predicate</em> .</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1200,7 +2104,7 @@ template&lt;typename UnaryPredicate &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that takes stream elements while <em>predicate</em>  returns <code>true</code>.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1c6e57bccb66cfbfae54134b500ea8c0" title="Drops elements from the Stream until the predicate  returns false for a stream element. ">drop_while()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the Stream that return false for predicate . ">filter()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1c6e57bccb66cfbfae54134b500ea8c0" title="Drops elements from the stream until the predicate  returns false for a stream element. ">drop_while()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the stream that return false for predicate . ">filter()</a></dd></dl>
 
 </div>
 </div>
@@ -1225,10 +2129,10 @@ template&lt;typename UnaryPredicate &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Takes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> until an element is <code>false</code>. </p>
+<p>Takes elements from the stream until an element is <code>false</code>. </p>
 <p>Elements after and including the first <code>false</code> are discarded, even if later elements are <code>true</code>. This is an overload for streams with types convertible to <code>bool</code>.</p>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that takes stream elements while they are <code>true</code>.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1c6e57bccb66cfbfae54134b500ea8c0" title="Drops elements from the Stream until the predicate  returns false for a stream element. ">drop_while()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the Stream that return false for predicate . ">filter()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1c6e57bccb66cfbfae54134b500ea8c0" title="Drops elements from the stream until the predicate  returns false for a stream element. ">drop_while()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the stream that return false for predicate . ">filter()</a></dd></dl>
 
 </div>
 </div>
@@ -1248,7 +2152,7 @@ template&lt;typename Ret , typename Class &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Takes elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> until the <em>member</em>  returns <code>false</code>. </p>
+<p>Takes elements from the stream until the <em>member</em>  returns <code>false</code>. </p>
 <p>Elements after and including the first <code>false</code> are discarded, even if later elements would return <code>true</code> for <em>member</em> .</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1257,7 +2161,7 @@ template&lt;typename Ret , typename Class &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that takes stream elements while the <em>member</em>  is <code>true</code>.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1c6e57bccb66cfbfae54134b500ea8c0" title="Drops elements from the Stream until the predicate  returns false for a stream element. ">drop_while()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the Stream that return false for predicate . ">filter()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1c6e57bccb66cfbfae54134b500ea8c0" title="Drops elements from the stream until the predicate  returns false for a stream element. ">drop_while()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the stream that return false for predicate . ">filter()</a></dd></dl>
 <p>Elements after and including the first <code>false</code> are discarded, even if later elements would return <code>true</code> for <em>member</em> .</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1266,7 +2170,7 @@ template&lt;typename Ret , typename Class &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that takes stream elements while the <em>member</em>  is <code>true</code>.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1c6e57bccb66cfbfae54134b500ea8c0" title="Drops elements from the Stream until the predicate  returns false for a stream element. ">drop_while()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the Stream that return false for predicate . ">filter()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1c6e57bccb66cfbfae54134b500ea8c0" title="Drops elements from the stream until the predicate  returns false for a stream element. ">drop_while()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the stream that return false for predicate . ">filter()</a></dd></dl>
 
 </div>
 </div>
@@ -1286,7 +2190,7 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Sorts and extracts only unique elements from the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>. </p>
+<p>Sorts and extracts only unique elements from the stream. </p>
 <p>By default, <code>operator&lt;</code> is used for comparisons. As with sorting, this operation is eager, the entire stream up to this operation's application is evaluated and stored. Thus, the <code>unique</code> operation takes <code>O(n)</code> extra space and time plus <code>O(n logn)</code> time to sort, where <code>n</code> is the size of the stream.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1295,7 +2199,7 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that sorts the stream according to the compare function and keeps only unique elements.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0641d6ecc741bd5f346a961e5e8ccf44" title="Sorts the Stream using the given comparator, operator< by default. ">sort()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0641d6ecc741bd5f346a961e5e8ccf44" title="Sorts the stream using the given comparator, operator< by default. ">sort()</a></dd></dl>
 
 </div>
 </div>
@@ -1483,7 +2387,7 @@ template&lt;typename RightSource &gt; </div>
 </div><div class="memdoc">
 
 <p>Zips the two streams together using the default zipping operation. </p>
-<p>The default zip operation creates tuples of the stream elements like <code>std::tuple&lt;T1, T2&gt;</code>. Multiple <code>zip</code> operations concatenates these tuples together rather than nesting them. When using the default zipper, the types being zipped together must be default constructible.</p>
+<p>The default zip operation creates tuples of the stream elements like <code>std::tuple&lt;T1&amp;, T2&amp;&gt;</code>. Multiple <code>zip</code> operations concatenates these tuples together rather than nesting them.</p>
 <p>The resultant stream is as long as the shortest input stream.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1523,7 +2427,7 @@ template&lt;typename Itr &gt; </div>
 </div><div class="memdoc">
 
 <p>Zips the two streams together using the default zipping operation, this is the same as <code>zip(from(begin, end))</code>. </p>
-<p>The default zip operation creates tuples of the stream elements like <code>std::tuple&lt;T1, T2&gt;</code>. Multiple <code>zip</code> operations concatenates these tuples together rather than nesting them. When using the default zipper, the types being zipped together must be default constructible.</p>
+<p>The default zip operation creates tuples of the stream elements like <code>std::tuple&lt;T1&amp;, T2&amp;&gt;</code>. Multiple <code>zip</code> operations concatenates these tuples together rather than nesting them.</p>
 <p>The resultant stream is as long as the shortest input stream.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1554,7 +2458,7 @@ template&lt;typename Container , typename  = std::enable_if_t&lt;generator::deta
 </div><div class="memdoc">
 
 <p>Zips the two streams together using the default zipping operation, this is the same as <code>zip(from(container))</code>. </p>
-<p>The default zip operation creates tuples of the stream elements like <code>std::tuple&lt;T1, T2&gt;</code>. Multiple <code>zip</code> operations concatenates these tuples together rather than nesting them. When using the default zipper, the types being zipped together must be default constructible.</p>
+<p>The default zip operation creates tuples of the stream elements like <code>std::tuple&lt;T1&amp;, T2&amp;&gt;</code>. Multiple <code>zip</code> operations concatenates these tuples together rather than nesting them.</p>
 <p>The resultant stream is as long as the shortest input stream.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1584,7 +2488,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Zips the two streams together using the default zipping operation, this is the same as <code>zip(from(list))</code>. </p>
-<p>The default zip operation creates tuples of the stream elements like <code>std::tuple&lt;T1, T2&gt;</code>. Multiple <code>zip</code> operations concatenates these tuples together rather than nesting them. When using the default zipper, the types being zipped together must be default constructible.</p>
+<p>The default zip operation creates tuples of the stream elements like <code>std::tuple&lt;T1&amp;, T2&amp;&gt;</code>. Multiple <code>zip</code> operations concatenates these tuples together rather than nesting them.</p>
 <p>The resultant stream is as long as the shortest input stream.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

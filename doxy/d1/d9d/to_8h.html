@@ -99,8 +99,11 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <code>#include &lt;list&gt;</code><br />
 <code>#include &lt;set&gt;</code><br />
 <code>#include &lt;unordered_set&gt;</code><br />
+<code>#include &lt;map&gt;</code><br />
+<code>#include &lt;unordered_map&gt;</code><br />
 <code>#include &lt;iterator&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../d0/dcf/copy_8h.html">copy.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dc/dc9/each_8h.html">each.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -134,6 +137,17 @@ Functions</h2></td></tr>
 <tr class="memitem:a226ef35682dc28c41693bfabbb73b806"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a226ef35682dc28c41693bfabbb73b806">flow::terminal::to_list</a> (const Allocator &amp;alloc)</td></tr>
 <tr class="memdesc:a226ef35682dc28c41693bfabbb73b806"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::list&lt;T, Allocator&gt;</code> in order.  <a href="#a226ef35682dc28c41693bfabbb73b806">More...</a><br /></td></tr>
 <tr class="separator:a226ef35682dc28c41693bfabbb73b806"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaca68a0c6feaa53446364357148a9b52"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aaca68a0c6feaa53446364357148a9b52">flow::terminal::to_map</a> ()</td></tr>
+<tr class="memdesc:aaca68a0c6feaa53446364357148a9b52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::map&lt;T, std::size_t&gt;</code>.  <a href="#aaca68a0c6feaa53446364357148a9b52">More...</a><br /></td></tr>
+<tr class="separator:aaca68a0c6feaa53446364357148a9b52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fb29362efc30df9f7f40627bc28d8fa"><td class="memTemplParams" colspan="2">template&lt;typename KeyCompare &gt; </td></tr>
+<tr class="memitem:a5fb29362efc30df9f7f40627bc28d8fa"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a5fb29362efc30df9f7f40627bc28d8fa">flow::terminal::to_map</a> (KeyCompare key_compare)</td></tr>
+<tr class="memdesc:a5fb29362efc30df9f7f40627bc28d8fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::map&lt;T, std::size_t, KeyCompare&gt;</code>.  <a href="#a5fb29362efc30df9f7f40627bc28d8fa">More...</a><br /></td></tr>
+<tr class="separator:a5fb29362efc30df9f7f40627bc28d8fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dcacc54b586fb6f7109e9eafb827f4f"><td class="memTemplParams" colspan="2">template&lt;typename KeyCompare , typename Allocator &gt; </td></tr>
+<tr class="memitem:a8dcacc54b586fb6f7109e9eafb827f4f"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a8dcacc54b586fb6f7109e9eafb827f4f">flow::terminal::to_map</a> (KeyCompare key_compare, const Allocator &amp;alloc)</td></tr>
+<tr class="memdesc:a8dcacc54b586fb6f7109e9eafb827f4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::map&lt;T, std::size_t, KeyCompare, Allocator&gt;</code>.  <a href="#a8dcacc54b586fb6f7109e9eafb827f4f">More...</a><br /></td></tr>
+<tr class="separator:a8dcacc54b586fb6f7109e9eafb827f4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbd4938a06689d3fb2c137bf8eca77e1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afbd4938a06689d3fb2c137bf8eca77e1">flow::terminal::to_multiset</a> ()</td></tr>
 <tr class="memdesc:afbd4938a06689d3fb2c137bf8eca77e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::multiset&lt;T&gt;</code>.  <a href="#afbd4938a06689d3fb2c137bf8eca77e1">More...</a><br /></td></tr>
 <tr class="separator:afbd4938a06689d3fb2c137bf8eca77e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,6 +170,21 @@ Functions</h2></td></tr>
 <tr class="memitem:af476d5605e9d8316ac0c8dcc876188a5"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#af476d5605e9d8316ac0c8dcc876188a5">flow::terminal::to_set</a> (Compare compare, const Allocator &amp;alloc)</td></tr>
 <tr class="memdesc:af476d5605e9d8316ac0c8dcc876188a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::set&lt;T, Compare, Allocator&gt;</code>.  <a href="#af476d5605e9d8316ac0c8dcc876188a5">More...</a><br /></td></tr>
 <tr class="separator:af476d5605e9d8316ac0c8dcc876188a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90ea8234ca26319428a71b1595d377a0"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a90ea8234ca26319428a71b1595d377a0">flow::terminal::to_unordered_map</a> ()</td></tr>
+<tr class="memdesc:a90ea8234ca26319428a71b1595d377a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_map&lt;T, std::size_t&gt;</code>.  <a href="#a90ea8234ca26319428a71b1595d377a0">More...</a><br /></td></tr>
+<tr class="separator:a90ea8234ca26319428a71b1595d377a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e793a030ba73a54fe954ec4429231ad"><td class="memTemplParams" colspan="2">template&lt;typename Hash &gt; </td></tr>
+<tr class="memitem:a7e793a030ba73a54fe954ec4429231ad"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a7e793a030ba73a54fe954ec4429231ad">flow::terminal::to_unordered_map</a> (const Hash &amp;hash)</td></tr>
+<tr class="memdesc:a7e793a030ba73a54fe954ec4429231ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_map&lt;T, std::size_t, Hash&gt;</code>.  <a href="#a7e793a030ba73a54fe954ec4429231ad">More...</a><br /></td></tr>
+<tr class="separator:a7e793a030ba73a54fe954ec4429231ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53348532c7654a7f0164f22f98444e9a"><td class="memTemplParams" colspan="2">template&lt;typename Hash , typename EqualPredicate &gt; </td></tr>
+<tr class="memitem:a53348532c7654a7f0164f22f98444e9a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a53348532c7654a7f0164f22f98444e9a">flow::terminal::to_unordered_map</a> (const Hash &amp;hash, EqualPredicate equal)</td></tr>
+<tr class="memdesc:a53348532c7654a7f0164f22f98444e9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_map&lt;T, std::size_t, Hash, EqualPredicate&gt;</code>.  <a href="#a53348532c7654a7f0164f22f98444e9a">More...</a><br /></td></tr>
+<tr class="separator:a53348532c7654a7f0164f22f98444e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e9d7306678c5cab545798fa67144fe3"><td class="memTemplParams" colspan="2">template&lt;typename Hash , typename EqualPredicate , typename Allocator &gt; </td></tr>
+<tr class="memitem:a9e9d7306678c5cab545798fa67144fe3"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9e9d7306678c5cab545798fa67144fe3">flow::terminal::to_unordered_map</a> (const Hash &amp;hash, EqualPredicate equal, const Allocator &amp;alloc)</td></tr>
+<tr class="memdesc:a9e9d7306678c5cab545798fa67144fe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_map&lt;T, std::size_t, Hash, EqualPredicate, Allocator&gt;</code>.  <a href="#a9e9d7306678c5cab545798fa67144fe3">More...</a><br /></td></tr>
+<tr class="separator:a9e9d7306678c5cab545798fa67144fe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba2326e9fec317a54a1e151a94cde753"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aba2326e9fec317a54a1e151a94cde753">flow::terminal::to_unordered_multiset</a> ()</td></tr>
 <tr class="memdesc:aba2326e9fec317a54a1e151a94cde753"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_multiset&lt;T&gt;</code>.  <a href="#aba2326e9fec317a54a1e151a94cde753">More...</a><br /></td></tr>
 <tr class="separator:aba2326e9fec317a54a1e151a94cde753"><td class="memSeparator" colspan="2">&#160;</td></tr>

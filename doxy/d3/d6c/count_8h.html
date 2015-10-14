@@ -93,7 +93,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="title">count.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;Terminal.h&quot;</code><br />
+<div class="textblock"><code>#include &lt;functional&gt;</code><br />
+<code>#include &quot;Terminal.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dd/de7/filter_8h.html">../intermediate/filter.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -107,8 +109,16 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a52dfcc0ff79f7c3d74ea2e80a3f9a65f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a52dfcc0ff79f7c3d74ea2e80a3f9a65f">flow::terminal::count</a> ()</td></tr>
-<tr class="memdesc:a52dfcc0ff79f7c3d74ea2e80a3f9a65f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the counts of the number of elements in the stream as <code>std::size_t</code>.  <a href="#a52dfcc0ff79f7c3d74ea2e80a3f9a65f">More...</a><br /></td></tr>
+<tr class="memdesc:a52dfcc0ff79f7c3d74ea2e80a3f9a65f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements in the stream as <code>std::size_t</code>.  <a href="#a52dfcc0ff79f7c3d74ea2e80a3f9a65f">More...</a><br /></td></tr>
 <tr class="separator:a52dfcc0ff79f7c3d74ea2e80a3f9a65f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6459123c95b8fd67a2771d63addf036"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:af6459123c95b8fd67a2771d63addf036"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#af6459123c95b8fd67a2771d63addf036">flow::terminal::count</a> (T &amp;&amp;value)</td></tr>
+<tr class="memdesc:af6459123c95b8fd67a2771d63addf036"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of the occurrences of <em>value</em>  in the stream as <code>std::size_t</code>.  <a href="#af6459123c95b8fd67a2771d63addf036">More...</a><br /></td></tr>
+<tr class="separator:af6459123c95b8fd67a2771d63addf036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e6b4fef03bc255768e41ab77d3b36ef"><td class="memTemplParams" colspan="2">template&lt;typename UnaryPredicate &gt; </td></tr>
+<tr class="memitem:a9e6b4fef03bc255768e41ab77d3b36ef"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9e6b4fef03bc255768e41ab77d3b36ef">flow::terminal::count_if</a> (UnaryPredicate predicate)</td></tr>
+<tr class="memdesc:a9e6b4fef03bc255768e41ab77d3b36ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements in the stream that return <code>true</code> for <em>predicate</em>  as <code>std::size_t</code>.  <a href="#a9e6b4fef03bc255768e41ab77d3b36ef">More...</a><br /></td></tr>
+<tr class="separator:a9e6b4fef03bc255768e41ab77d3b36ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

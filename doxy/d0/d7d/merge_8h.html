@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Flow: flow/Compose.h File Reference</title>
+<title>Flow: flow/intermediate/merge.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -82,24 +82,23 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="../../dir_2420eba184a3676f5a7fb84b29bc58a5.html">flow</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../dir_2420eba184a3676f5a7fb84b29bc58a5.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_a0e9e98f8cff90e425322a8947b4aaff.html">intermediate</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Compose.h File Reference</div>  </div>
+<div class="title">merge.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html">flow::Stream&lt; Source &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The stream class provides lazy evaluation and functional style transformations on ordered data.  <a href="../../d9/dcd/classflow_1_1_stream.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
+<div class="textblock"><code>#include &lt;functional&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../d3/d99/_stream_8h.html">../Stream.h</a>&quot;</code><br />
+<code>#include &quot;Intermediate.h&quot;</code><br />
+<code>#include &quot;../source/Merge.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d9/d4b/from_8h.html">../generator/from.h</a>&quot;</code><br />
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:d9/de2/namespaceflow"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/de2/namespaceflow.html">flow</a></td></tr>
@@ -108,9 +107,25 @@ Namespaces</h2></td></tr>
 <tr class="memitem:dc/d09/namespaceflow_1_1intermediate"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html">flow::intermediate</a></td></tr>
 <tr class="memdesc:dc/d09/namespaceflow_1_1intermediate"><td class="mdescLeft">&#160;</td><td class="mdescRight">Intermediate operations, all of which are also aliased in the flow namespace. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:d1/d6c/namespaceflow_1_1terminal"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html">flow::terminal</a></td></tr>
-<tr class="memdesc:d1/d6c/namespaceflow_1_1terminal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terminal operations, all of which are also aliased in the flow namespace. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a6fb2b65333a532367af81f9ff82149f4"><td class="memTemplParams" colspan="2">template&lt;typename RightSource , typename Compare  = std::less&lt;void&gt;&gt; </td></tr>
+<tr class="memitem:a6fb2b65333a532367af81f9ff82149f4"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a6fb2b65333a532367af81f9ff82149f4">flow::intermediate::merge</a> (Stream&lt; RightSource &gt; &amp;&amp;right, Compare compare=Compare())</td></tr>
+<tr class="memdesc:a6fb2b65333a532367af81f9ff82149f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merges the <em>right</em>  stream into the operated (<em>left</em> ) stream while maintaining sorted order.  <a href="#a6fb2b65333a532367af81f9ff82149f4">More...</a><br /></td></tr>
+<tr class="separator:a6fb2b65333a532367af81f9ff82149f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdce04079f1718a815a7e46718b1c432"><td class="memTemplParams" colspan="2">template&lt;typename Itr , typename Compare  = std::less&lt;void&gt;&gt; </td></tr>
+<tr class="memitem:acdce04079f1718a815a7e46718b1c432"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#acdce04079f1718a815a7e46718b1c432">flow::intermediate::merge</a> (Itr begin, Itr end, Compare compare=Compare())</td></tr>
+<tr class="memdesc:acdce04079f1718a815a7e46718b1c432"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merges the iterator range into the operated (<em>left</em> ) stream while maintaining sorted order, this is the same as <code>merge(from(begin, end), compare)</code>.  <a href="#acdce04079f1718a815a7e46718b1c432">More...</a><br /></td></tr>
+<tr class="separator:acdce04079f1718a815a7e46718b1c432"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afacae60f668337190c275857590b158c"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename Compare  = std::less&lt;void&gt;, typename  = std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:afacae60f668337190c275857590b158c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#afacae60f668337190c275857590b158c">flow::intermediate::merge</a> (Container &amp;container, Compare compare=Compare())</td></tr>
+<tr class="memdesc:afacae60f668337190c275857590b158c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merges <em>container</em>  into the operated (<em>left</em> ) stream while maintaining sorted order, this is the same as <code>merge(from(container), compare)</code>.  <a href="#afacae60f668337190c275857590b158c">More...</a><br /></td></tr>
+<tr class="separator:afacae60f668337190c275857590b158c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a857d36211d87bff95b2e41425933e8ec"><td class="memTemplParams" colspan="2">template&lt;typename T , typename Compare  = std::less&lt;void&gt;&gt; </td></tr>
+<tr class="memitem:a857d36211d87bff95b2e41425933e8ec"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a857d36211d87bff95b2e41425933e8ec">flow::intermediate::merge</a> (std::initializer_list&lt; T &gt; list, Compare compare=Compare())</td></tr>
+<tr class="memdesc:a857d36211d87bff95b2e41425933e8ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merges <em>list</em>  into the operated (<em>left</em> ) stream while maintaining sorted order, this is the same as <code>merge(from(list), compare)</code>.  <a href="#a857d36211d87bff95b2e41425933e8ec">More...</a><br /></td></tr>
+<tr class="separator:a857d36211d87bff95b2e41425933e8ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

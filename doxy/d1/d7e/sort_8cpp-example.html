@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="contents">
 <p>A flow::sort example. This is an eager operation that sorts the stream. During the sort, the entire stream is evaluated, copied and stored in a new vector, which is sorted afterwards. This means the sorting operation takes an additional <code>O(n)</code> space and time, excluding the actual sort. Because of this, sorting simple streams should be avoided in favor of sorting the original source of the stream in place. The first example here is one such case that should be avoided; it is included to show the output of the stream after the sort operation takes place.</p>
 <p>The second example is not as trivial, so sort should be used in that case. Other examples may include times when the stream is filtered or mapped, or otherwise transformed.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ab9a5f0773de4aac232e80ae23495e76e" title="Sorts the Stream preserving relative order of elements using the given comparator, operator< by default. ">stable_sort()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ab9a5f0773de4aac232e80ae23495e76e" title="Sorts the stream preserving relative order of elements using the given comparator, operator< by default. ">stable_sort()</a></dd></dl>
 <div class="fragment"><div class="line"></div>
 <div class="line"><span class="preprocessor">#include &lt;examples.h&gt;</span></div>
 <div class="line"></div>

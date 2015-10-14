@@ -101,10 +101,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 Functions</h2></td></tr>
 <tr class="memitem:afb46a36fe4c6693d7b05e3bd0fc05f4d"><td class="memTemplParams" colspan="2">template&lt;typename UnaryPredicate &gt; </td></tr>
 <tr class="memitem:afb46a36fe4c6693d7b05e3bd0fc05f4d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afb46a36fe4c6693d7b05e3bd0fc05f4d">all</a> (UnaryPredicate predicate)</td></tr>
-<tr class="memdesc:afb46a36fe4c6693d7b05e3bd0fc05f4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if all of the elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> return <code>true</code> for <em>predicate</em> .  <a href="#afb46a36fe4c6693d7b05e3bd0fc05f4d">More...</a><br /></td></tr>
+<tr class="memdesc:afb46a36fe4c6693d7b05e3bd0fc05f4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if all of the elements in the stream return <code>true</code> for <em>predicate</em> .  <a href="#afb46a36fe4c6693d7b05e3bd0fc05f4d">More...</a><br /></td></tr>
 <tr class="separator:afb46a36fe4c6693d7b05e3bd0fc05f4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab69ca58eca0161111d95306425586634"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ab69ca58eca0161111d95306425586634">all</a> ()</td></tr>
-<tr class="memdesc:ab69ca58eca0161111d95306425586634"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if all elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> can be evaluated to <code>true</code>.  <a href="#ab69ca58eca0161111d95306425586634">More...</a><br /></td></tr>
+<tr class="memdesc:ab69ca58eca0161111d95306425586634"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if all elements in the stream can be evaluated to <code>true</code>.  <a href="#ab69ca58eca0161111d95306425586634">More...</a><br /></td></tr>
 <tr class="separator:ab69ca58eca0161111d95306425586634"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab756d99bb6fe64ace09d278028f0f539"><td class="memTemplParams" colspan="2">template&lt;typename Ret , typename Class &gt; </td></tr>
 <tr class="memitem:ab756d99bb6fe64ace09d278028f0f539"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ab756d99bb6fe64ace09d278028f0f539">all</a> (Ret(Class::*member)())</td></tr>
@@ -121,17 +121,25 @@ Functions</h2></td></tr>
 <tr class="memitem:aed588ae01b14be839486b94bb87f2ed8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aed588ae01b14be839486b94bb87f2ed8">any</a> (Ret(Class::*member)())</td></tr>
 <tr class="memdesc:aed588ae01b14be839486b94bb87f2ed8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if any of the elements in the stream return <code>true</code> for <em>member</em> .  <a href="#aed588ae01b14be839486b94bb87f2ed8">More...</a><br /></td></tr>
 <tr class="separator:aed588ae01b14be839486b94bb87f2ed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56cac6d09f37c126c0b3b4a509c8cc27"><td class="memTemplParams" colspan="2">template&lt;typename T , typename EqualPredicate  = std::equal_to&lt;T&gt;&gt; </td></tr>
-<tr class="memitem:a56cac6d09f37c126c0b3b4a509c8cc27"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a56cac6d09f37c126c0b3b4a509c8cc27">contains</a> (T &amp;&amp;val, EqualPredicate equals=EqualPredicate())</td></tr>
-<tr class="memdesc:a56cac6d09f37c126c0b3b4a509c8cc27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if an element in the stream compares equal to <code>val</code> by <em>equals</em> .  <a href="#a56cac6d09f37c126c0b3b4a509c8cc27">More...</a><br /></td></tr>
-<tr class="separator:a56cac6d09f37c126c0b3b4a509c8cc27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc94fb24c31b8f7e46d8603a6997589b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:afc94fb24c31b8f7e46d8603a6997589b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afc94fb24c31b8f7e46d8603a6997589b">contains</a> (T &amp;&amp;val)</td></tr>
+<tr class="memdesc:afc94fb24c31b8f7e46d8603a6997589b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if an element in the stream compares equal to <code>val</code> by <code>operator==</code>.  <a href="#afc94fb24c31b8f7e46d8603a6997589b">More...</a><br /></td></tr>
+<tr class="separator:afc94fb24c31b8f7e46d8603a6997589b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2e701e11c61d1038e3b0581e2f32df0"><td class="memTemplParams" colspan="2">template&lt;typename OutputIterator &gt; </td></tr>
 <tr class="memitem:aa2e701e11c61d1038e3b0581e2f32df0"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aa2e701e11c61d1038e3b0581e2f32df0">copy</a> (OutputIterator result)</td></tr>
 <tr class="memdesc:aa2e701e11c61d1038e3b0581e2f32df0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the elements in the stream into the range beginning at <code>result</code>.  <a href="#aa2e701e11c61d1038e3b0581e2f32df0">More...</a><br /></td></tr>
 <tr class="separator:aa2e701e11c61d1038e3b0581e2f32df0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52dfcc0ff79f7c3d74ea2e80a3f9a65f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a52dfcc0ff79f7c3d74ea2e80a3f9a65f">count</a> ()</td></tr>
-<tr class="memdesc:a52dfcc0ff79f7c3d74ea2e80a3f9a65f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the counts of the number of elements in the stream as <code>std::size_t</code>.  <a href="#a52dfcc0ff79f7c3d74ea2e80a3f9a65f">More...</a><br /></td></tr>
+<tr class="memdesc:a52dfcc0ff79f7c3d74ea2e80a3f9a65f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements in the stream as <code>std::size_t</code>.  <a href="#a52dfcc0ff79f7c3d74ea2e80a3f9a65f">More...</a><br /></td></tr>
 <tr class="separator:a52dfcc0ff79f7c3d74ea2e80a3f9a65f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6459123c95b8fd67a2771d63addf036"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:af6459123c95b8fd67a2771d63addf036"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#af6459123c95b8fd67a2771d63addf036">count</a> (T &amp;&amp;value)</td></tr>
+<tr class="memdesc:af6459123c95b8fd67a2771d63addf036"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of the occurrences of <em>value</em>  in the stream as <code>std::size_t</code>.  <a href="#af6459123c95b8fd67a2771d63addf036">More...</a><br /></td></tr>
+<tr class="separator:af6459123c95b8fd67a2771d63addf036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e6b4fef03bc255768e41ab77d3b36ef"><td class="memTemplParams" colspan="2">template&lt;typename UnaryPredicate &gt; </td></tr>
+<tr class="memitem:a9e6b4fef03bc255768e41ab77d3b36ef"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9e6b4fef03bc255768e41ab77d3b36ef">count_if</a> (UnaryPredicate predicate)</td></tr>
+<tr class="memdesc:a9e6b4fef03bc255768e41ab77d3b36ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements in the stream that return <code>true</code> for <em>predicate</em>  as <code>std::size_t</code>.  <a href="#a9e6b4fef03bc255768e41ab77d3b36ef">More...</a><br /></td></tr>
+<tr class="separator:a9e6b4fef03bc255768e41ab77d3b36ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc0afd1d9f8846d76814248e4d6a164f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#acc0afd1d9f8846d76814248e4d6a164f">dump</a> (std::ostream &amp;out=std::cout, const std::string &amp;delimiter=&quot; &quot;)</td></tr>
 <tr class="memdesc:acc0afd1d9f8846d76814248e4d6a164f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the stream elements to <em>out</em>  with <em>delimiter</em>  printed after each element.  <a href="#acc0afd1d9f8846d76814248e4d6a164f">More...</a><br /></td></tr>
 <tr class="separator:acc0afd1d9f8846d76814248e4d6a164f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -216,6 +224,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a3cad9fb8be0557995c03f1eb6045c7be"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a3cad9fb8be0557995c03f1eb6045c7be">sample_shuffle</a> (std::size_t n)</td></tr>
 <tr class="memdesc:a3cad9fb8be0557995c03f1eb6045c7be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random sample from the finite stream in a <code>std::vector</code>.  <a href="#a3cad9fb8be0557995c03f1eb6045c7be">More...</a><br /></td></tr>
 <tr class="separator:a3cad9fb8be0557995c03f1eb6045c7be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a900a16920892b0445f890cad56458c9a"><td class="memTemplParams" colspan="2">template&lt;typename ResultType  = double, bool MinMax = false, bool MedianMode = false&gt; </td></tr>
+<tr class="memitem:a900a16920892b0445f890cad56458c9a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a900a16920892b0445f890cad56458c9a">stats</a> ()</td></tr>
+<tr class="memdesc:a900a16920892b0445f890cad56458c9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="../../dd/d45/classflow_1_1_stats.html" title="Class to wrap all the statistics returned by stats(). ">Stats</a> object which contains several statistics of the stream values.  <a href="#a900a16920892b0445f890cad56458c9a">More...</a><br /></td></tr>
+<tr class="separator:a900a16920892b0445f890cad56458c9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d36eab187f4b501c07a00f39e4f2381"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9d36eab187f4b501c07a00f39e4f2381">sum</a> ()</td></tr>
 <tr class="memdesc:a9d36eab187f4b501c07a00f39e4f2381"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the sum of all the elements in the stream using <code>operator+</code>.  <a href="#a9d36eab187f4b501c07a00f39e4f2381">More...</a><br /></td></tr>
 <tr class="separator:a9d36eab187f4b501c07a00f39e4f2381"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -244,6 +256,17 @@ Functions</h2></td></tr>
 <tr class="memitem:a226ef35682dc28c41693bfabbb73b806"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a226ef35682dc28c41693bfabbb73b806">to_list</a> (const Allocator &amp;alloc)</td></tr>
 <tr class="memdesc:a226ef35682dc28c41693bfabbb73b806"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::list&lt;T, Allocator&gt;</code> in order.  <a href="#a226ef35682dc28c41693bfabbb73b806">More...</a><br /></td></tr>
 <tr class="separator:a226ef35682dc28c41693bfabbb73b806"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaca68a0c6feaa53446364357148a9b52"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aaca68a0c6feaa53446364357148a9b52">to_map</a> ()</td></tr>
+<tr class="memdesc:aaca68a0c6feaa53446364357148a9b52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::map&lt;T, std::size_t&gt;</code>.  <a href="#aaca68a0c6feaa53446364357148a9b52">More...</a><br /></td></tr>
+<tr class="separator:aaca68a0c6feaa53446364357148a9b52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fb29362efc30df9f7f40627bc28d8fa"><td class="memTemplParams" colspan="2">template&lt;typename KeyCompare &gt; </td></tr>
+<tr class="memitem:a5fb29362efc30df9f7f40627bc28d8fa"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a5fb29362efc30df9f7f40627bc28d8fa">to_map</a> (KeyCompare key_compare)</td></tr>
+<tr class="memdesc:a5fb29362efc30df9f7f40627bc28d8fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::map&lt;T, std::size_t, KeyCompare&gt;</code>.  <a href="#a5fb29362efc30df9f7f40627bc28d8fa">More...</a><br /></td></tr>
+<tr class="separator:a5fb29362efc30df9f7f40627bc28d8fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dcacc54b586fb6f7109e9eafb827f4f"><td class="memTemplParams" colspan="2">template&lt;typename KeyCompare , typename Allocator &gt; </td></tr>
+<tr class="memitem:a8dcacc54b586fb6f7109e9eafb827f4f"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a8dcacc54b586fb6f7109e9eafb827f4f">to_map</a> (KeyCompare key_compare, const Allocator &amp;alloc)</td></tr>
+<tr class="memdesc:a8dcacc54b586fb6f7109e9eafb827f4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::map&lt;T, std::size_t, KeyCompare, Allocator&gt;</code>.  <a href="#a8dcacc54b586fb6f7109e9eafb827f4f">More...</a><br /></td></tr>
+<tr class="separator:a8dcacc54b586fb6f7109e9eafb827f4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbd4938a06689d3fb2c137bf8eca77e1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afbd4938a06689d3fb2c137bf8eca77e1">to_multiset</a> ()</td></tr>
 <tr class="memdesc:afbd4938a06689d3fb2c137bf8eca77e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::multiset&lt;T&gt;</code>.  <a href="#afbd4938a06689d3fb2c137bf8eca77e1">More...</a><br /></td></tr>
 <tr class="separator:afbd4938a06689d3fb2c137bf8eca77e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -266,6 +289,21 @@ Functions</h2></td></tr>
 <tr class="memitem:af476d5605e9d8316ac0c8dcc876188a5"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#af476d5605e9d8316ac0c8dcc876188a5">to_set</a> (Compare compare, const Allocator &amp;alloc)</td></tr>
 <tr class="memdesc:af476d5605e9d8316ac0c8dcc876188a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::set&lt;T, Compare, Allocator&gt;</code>.  <a href="#af476d5605e9d8316ac0c8dcc876188a5">More...</a><br /></td></tr>
 <tr class="separator:af476d5605e9d8316ac0c8dcc876188a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90ea8234ca26319428a71b1595d377a0"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a90ea8234ca26319428a71b1595d377a0">to_unordered_map</a> ()</td></tr>
+<tr class="memdesc:a90ea8234ca26319428a71b1595d377a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_map&lt;T, std::size_t&gt;</code>.  <a href="#a90ea8234ca26319428a71b1595d377a0">More...</a><br /></td></tr>
+<tr class="separator:a90ea8234ca26319428a71b1595d377a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e793a030ba73a54fe954ec4429231ad"><td class="memTemplParams" colspan="2">template&lt;typename Hash &gt; </td></tr>
+<tr class="memitem:a7e793a030ba73a54fe954ec4429231ad"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a7e793a030ba73a54fe954ec4429231ad">to_unordered_map</a> (const Hash &amp;hash)</td></tr>
+<tr class="memdesc:a7e793a030ba73a54fe954ec4429231ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_map&lt;T, std::size_t, Hash&gt;</code>.  <a href="#a7e793a030ba73a54fe954ec4429231ad">More...</a><br /></td></tr>
+<tr class="separator:a7e793a030ba73a54fe954ec4429231ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53348532c7654a7f0164f22f98444e9a"><td class="memTemplParams" colspan="2">template&lt;typename Hash , typename EqualPredicate &gt; </td></tr>
+<tr class="memitem:a53348532c7654a7f0164f22f98444e9a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a53348532c7654a7f0164f22f98444e9a">to_unordered_map</a> (const Hash &amp;hash, EqualPredicate equal)</td></tr>
+<tr class="memdesc:a53348532c7654a7f0164f22f98444e9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_map&lt;T, std::size_t, Hash, EqualPredicate&gt;</code>.  <a href="#a53348532c7654a7f0164f22f98444e9a">More...</a><br /></td></tr>
+<tr class="separator:a53348532c7654a7f0164f22f98444e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e9d7306678c5cab545798fa67144fe3"><td class="memTemplParams" colspan="2">template&lt;typename Hash , typename EqualPredicate , typename Allocator &gt; </td></tr>
+<tr class="memitem:a9e9d7306678c5cab545798fa67144fe3"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9e9d7306678c5cab545798fa67144fe3">to_unordered_map</a> (const Hash &amp;hash, EqualPredicate equal, const Allocator &amp;alloc)</td></tr>
+<tr class="memdesc:a9e9d7306678c5cab545798fa67144fe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_map&lt;T, std::size_t, Hash, EqualPredicate, Allocator&gt;</code>.  <a href="#a9e9d7306678c5cab545798fa67144fe3">More...</a><br /></td></tr>
+<tr class="separator:a9e9d7306678c5cab545798fa67144fe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba2326e9fec317a54a1e151a94cde753"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aba2326e9fec317a54a1e151a94cde753">to_unordered_multiset</a> ()</td></tr>
 <tr class="memdesc:aba2326e9fec317a54a1e151a94cde753"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the stream into a <code>std::unordered_multiset&lt;T&gt;</code>.  <a href="#aba2326e9fec317a54a1e151a94cde753">More...</a><br /></td></tr>
 <tr class="separator:aba2326e9fec317a54a1e151a94cde753"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -307,7 +345,7 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Terminal operations, all of which are also aliased in the flow namespace. </p>
 <p>The functions in the <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html" title="Terminal operations, all of which are also aliased in the flow namespace. ">flow::terminal</a> namespace all produce a terminal operation. The terminal operation does not operate on a stream until the pipe <code>operator|</code> has been applied, after which the terminal's return value is calculated.</p>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000002">Todo:</a></b></dt><dd><p class="startdd">flow::terminal::parallel_* - chunking parallelization of terminal operations </p>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000002">Todo:</a></b></dt><dd><p class="startdd">parallel_*() - chunking parallelization of terminal operations </p>
 <p class="enddd">parallel pipelining of stream operations? </p>
 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
@@ -327,7 +365,7 @@ template&lt;typename UnaryPredicate &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Returns <code>true</code> if all of the elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> return <code>true</code> for <em>predicate</em> . </p>
+<p>Returns <code>true</code> if all of the elements in the stream return <code>true</code> for <em>predicate</em> . </p>
 <p>This operation is short circuited and will stop executing once any <code>false</code> value is found. If the stream is empty, this will return <code>true</code>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -360,7 +398,7 @@ template&lt;typename UnaryPredicate &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns <code>true</code> if all elements in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> can be evaluated to <code>true</code>. </p>
+<p>Returns <code>true</code> if all elements in the stream can be evaluated to <code>true</code>. </p>
 <p>This is an overload for streams with types convertible to <code>bool</code>. This operation is short circuited and will stop executing once any <code>false</code> value is found. If the stream is empty, this will return <code>true</code>.</p>
 <dl class="section return"><dt>Returns</dt><dd>A terminal operation which returns <code>true</code> if all stream elements are <code>true</code>.</dd></dl>
 
@@ -493,38 +531,26 @@ template&lt;typename Ret , typename Class &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a56cac6d09f37c126c0b3b4a509c8cc27"></a>
+<a class="anchor" id="afc94fb24c31b8f7e46d8603a6997589b"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename EqualPredicate  = std::equal_to&lt;T&gt;&gt; </div>
+template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto flow::terminal::contains </td>
           <td>(</td>
           <td class="paramtype">T &amp;&amp;&#160;</td>
-          <td class="paramname"><em>val</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>val</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">EqualPredicate&#160;</td>
-          <td class="paramname"><em>equals</em> = <code>EqualPredicate()</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns <code>true</code> if an element in the stream compares equal to <code>val</code> by <em>equals</em> . </p>
-<p>By default, <code>operator==</code> is used for equality comparisons.</p>
+<p>Returns <code>true</code> if an element in the stream compares equal to <code>val</code> by <code>operator==</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">val</td><td>The value to search for in the stream.</td></tr>
-    <tr><td class="paramname">equals</td><td>The equals predicate, by default <code>operator==</code> is used.</td></tr>
   </table>
   </dd>
 </dl>
@@ -581,8 +607,55 @@ template&lt;typename OutputIterator &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the counts of the number of elements in the stream as <code>std::size_t</code>. </p>
+<p>Returns the number of elements in the stream as <code>std::size_t</code>. </p>
 <dl class="section return"><dt>Returns</dt><dd>A terminal operation which counts the number of elements in the stream.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9e6b4fef03bc255768e41ab77d3b36ef" title="Returns the number of elements in the stream that return true for predicate  as std::size_t. ">count_if()</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af6459123c95b8fd67a2771d63addf036"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::count </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the number of the occurrences of <em>value</em>  in the stream as <code>std::size_t</code>. </p>
+<p>Equality is checking using <code>operator==</code>. This operation is equivalent to <code>filter([value](T e) { return value == e; }) | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a52dfcc0ff79f7c3d74ea2e80a3f9a65f" title="Returns the number of elements in the stream as std::size_t. ">count()</a></code>.</p>
+<dl class="section return"><dt>Returns</dt><dd>A terminal operation which counts of the occurrences of <em>value</em>  in the stream.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9e6b4fef03bc255768e41ab77d3b36ef" title="Returns the number of elements in the stream that return true for predicate  as std::size_t. ">count_if()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afc94fb24c31b8f7e46d8603a6997589b" title="Returns true if an element in the stream compares equal to val by operator==. ">contains()</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9e6b4fef03bc255768e41ab77d3b36ef"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename UnaryPredicate &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::count_if </td>
+          <td>(</td>
+          <td class="paramtype">UnaryPredicate&#160;</td>
+          <td class="paramname"><em>predicate</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the number of elements in the stream that return <code>true</code> for <em>predicate</em>  as <code>std::size_t</code>. </p>
+<p>This operation is a shorthand for <code>filter(predicate) | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a52dfcc0ff79f7c3d74ea2e80a3f9a65f" title="Returns the number of elements in the stream as std::size_t. ">count()</a></code>.</p>
+<dl class="section return"><dt>Returns</dt><dd>A terminal operation which counts the number of elements in the stream that return <code>true</code> for <em>predicate</em> .</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a52dfcc0ff79f7c3d74ea2e80a3f9a65f" title="Returns the number of elements in the stream as std::size_t. ">count()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the stream that return false for predicate . ">filter()</a></dd></dl>
 
 </div>
 </div>
@@ -657,7 +730,7 @@ template&lt;typename UnaryFunction &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A terminal operation that executes a function for each stream element.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af" title="Executes action  for each element in the Stream. ">peek()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af" title="Executes action  for each element in the stream. ">peek()</a></dd></dl>
 
 </div>
 </div>
@@ -686,7 +759,7 @@ template&lt;typename Ret , typename Class &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A terminal operation that executes a member function for each stream element.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af" title="Executes action  for each element in the Stream. ">peek()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af" title="Executes action  for each element in the stream. ">peek()</a></dd></dl>
 <p>The executed function is returned.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -695,7 +768,7 @@ template&lt;typename Ret , typename Class &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A terminal operation that executes a member function for each stream element.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af" title="Executes action  for each element in the Stream. ">peek()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af" title="Executes action  for each element in the stream. ">peek()</a></dd></dl>
 
 </div>
 </div>
@@ -955,7 +1028,7 @@ template&lt;typename Accumulator , typename UnaryFunction , typename T &gt; </di
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000004">Todo:</a></b></dt><dd>is there a way to lazily step to the end of the stream? </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000003">Todo:</a></b></dt><dd>is there a way to lazily step to the end of the stream? </dd></dl>
 
 </div>
 </div>
@@ -990,7 +1063,7 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000005">Todo:</a></b></dt><dd>benchmark non-fold implementation </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000004">Todo:</a></b></dt><dd>benchmark non-fold implementation </dd></dl>
 
 </div>
 </div>
@@ -1025,7 +1098,7 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000006">Todo:</a></b></dt><dd>benchmark non-fold implementation </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000005">Todo:</a></b></dt><dd>benchmark non-fold implementation </dd></dl>
 
 </div>
 </div>
@@ -1443,6 +1516,36 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a900a16920892b0445f890cad56458c9a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ResultType  = double, bool MinMax = false, bool MedianMode = false&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::stats </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a <a class="el" href="../../dd/d45/classflow_1_1_stats.html" title="Class to wrap all the statistics returned by stats(). ">Stats</a> object which contains several statistics of the stream values. </p>
+<p>The number of elements, mean, standard deviation, variance, sum and sum of squares are always calculated.</p>
+<p>Some statistical values are calculated as <code>ResultType</code>, <code>double</code> by default, others are calculated as <code>T</code>, the type of elements in the stream. Calculating statistics requires that both <code>T</code> and <code>ResultType</code> behave as arithmetic types (such as <code>int</code>, <code>double</code> or <code>std::complex</code>).</p>
+<p>The other template parameters indicate whether or not to calculate additional statistics, all of which are not calculated by default. The behavior of each of them is as follows (<code>n</code> is the size of the stream):</p>
+<ul>
+<li>
+<code>MinMax</code> - calculate the minimum and maximum value of the stream. The min and max are calculated as <code>T</code>. This operation uses an additional <code>2n</code> time. </li>
+<li>
+<code>MedianMode</code> - calculate the median, mode, and frequency of each element of the stream. The median is calculated as <code>ResultType</code>, the modes as <code>std::vector&lt;T&gt;</code>, and the frequency table as <code>std::map&lt;T, std::size_t&gt;</code>. If there is an even number of elements in the stream, the median is calculated as the average of the two possible medians. This operation uses an additional <code>O(n logn)</code> time (<code>n</code> map insertions) and <code>O(k)</code> space, where <code>k</code> is the number of distinct values in the stream. </li>
+</ul>
+<dl class="section return"><dt>Returns</dt><dd>A terminal operation that calculates various statistical values of the stream.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dd/d45/classflow_1_1_stats.html" title="Class to wrap all the statistics returned by stats(). ">Stats</a></dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a9d36eab187f4b501c07a00f39e4f2381"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1663,6 +1766,97 @@ template&lt;typename Allocator &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="aaca68a0c6feaa53446364357148a9b52"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::to_map </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copies the stream into a <code>std::map&lt;T, std::size_t&gt;</code>. </p>
+<p>The map keys are stream elements and each mapped value in the number of occurrences of that key in the stream.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5fb29362efc30df9f7f40627bc28d8fa"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyCompare &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::to_map </td>
+          <td>(</td>
+          <td class="paramtype">KeyCompare&#160;</td>
+          <td class="paramname"><em>key_compare</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copies the stream into a <code>std::map&lt;T, std::size_t, KeyCompare&gt;</code>. </p>
+<p>The map keys are stream elements and each mapped value in the number of occurrences of that key in the stream.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key_compare</td><td>The key comparator to use in the map.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8dcacc54b586fb6f7109e9eafb827f4f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyCompare , typename Allocator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::to_map </td>
+          <td>(</td>
+          <td class="paramtype">KeyCompare&#160;</td>
+          <td class="paramname"><em>key_compare</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Allocator &amp;&#160;</td>
+          <td class="paramname"><em>alloc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copies the stream into a <code>std::map&lt;T, std::size_t, KeyCompare, Allocator&gt;</code>. </p>
+<p>The map keys are stream elements and each mapped value in the number of occurrences of that key in the stream.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key_compare</td><td>The key comparator to use in the map.</td></tr>
+    <tr><td class="paramname">alloc</td><td>The allocator to use in the returned container.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="afbd4938a06689d3fb2c137bf8eca77e1"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1842,6 +2036,142 @@ template&lt;typename Compare , typename Allocator &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A terminal operation which copies the stream into a <code>std::set</code>.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a90ea8234ca26319428a71b1595d377a0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::to_unordered_map </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copies the stream into a <code>std::unordered_map&lt;T, std::size_t&gt;</code>. </p>
+<p>The map keys are stream elements and each mapped value in the number of occurrences of that key in the stream.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7e793a030ba73a54fe954ec4429231ad"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Hash &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::to_unordered_map </td>
+          <td>(</td>
+          <td class="paramtype">const Hash &amp;&#160;</td>
+          <td class="paramname"><em>hash</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copies the stream into a <code>std::unordered_map&lt;T, std::size_t, Hash&gt;</code>. </p>
+<p>The map keys are stream elements and each mapped value in the number of occurrences of that key in the stream.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hash</td><td>The hash function to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a53348532c7654a7f0164f22f98444e9a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Hash , typename EqualPredicate &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::to_unordered_map </td>
+          <td>(</td>
+          <td class="paramtype">const Hash &amp;&#160;</td>
+          <td class="paramname"><em>hash</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EqualPredicate&#160;</td>
+          <td class="paramname"><em>equal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copies the stream into a <code>std::unordered_map&lt;T, std::size_t, Hash, EqualPredicate&gt;</code>. </p>
+<p>The map keys are stream elements and each mapped value in the number of occurrences of that key in the stream.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hash</td><td>The hash function to use.</td></tr>
+    <tr><td class="paramname">equal</td><td>The function to use for the equality predicate in the hash table.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a9e9d7306678c5cab545798fa67144fe3"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Hash , typename EqualPredicate , typename Allocator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::to_unordered_map </td>
+          <td>(</td>
+          <td class="paramtype">const Hash &amp;&#160;</td>
+          <td class="paramname"><em>hash</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EqualPredicate&#160;</td>
+          <td class="paramname"><em>equal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Allocator &amp;&#160;</td>
+          <td class="paramname"><em>alloc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copies the stream into a <code>std::unordered_map&lt;T, std::size_t, Hash, EqualPredicate, Allocator&gt;</code>. </p>
+<p>The map keys are stream elements and each mapped value in the number of occurrences of that key in the stream.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hash</td><td>The hash function to use.</td></tr>
+    <tr><td class="paramname">equal</td><td>The function to use for the equality predicate in the hash table.</td></tr>
+    <tr><td class="paramname">alloc</td><td>The allocator to use in the returned container.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
