@@ -89,25 +89,8 @@ int main(int argc, char** argv) {
 
     std::vector<int> v1 = { 1, 3, 5, 7 };
     std::vector<int> v2 = { 2, 4, 6, 8 };
-    auto make_v = [](int m) { return generate([m]()->double{ return std::rand() % m; }, 5000); };
-    
-    auto v = make_v(std::rand() % 1000) | to_vector();
-    boost::timer t1;
-    auto stat1 = v | stats<double, true>();
-    std::cout << "<true>: " << t1.elapsed() << "\t" << stat1 << std::endl;
-    
-    v = make_v(std::rand() % 1000) | to_vector();
-    boost::timer t2;
-    auto stat2 = v | stats();
-    std::cout << "none: " << t2.elapsed() << "\t" << stat2 << std::endl;
-    
-    v = make_v(std::rand() % 1000) | to_vector();
-    boost::timer t3;
-    auto stat3 = v | stats<double, false, true>();
-    std::cout << "<false,true>: " << t3.elapsed() << "\t" << stat3 << std::endl;
-    
-    endl(2);
-    std::cout << (from({ 1, 1, 2 }) | stats<long double, true, true>()) << std::endl;
+
+    random_bools() | limit(10) | dump();
 
     /*
     std::vector<int> cw{ 1, 2, 3 };

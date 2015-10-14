@@ -134,7 +134,7 @@ private:
 /// <summary>
 /// Base class for intermediate operation sources without default constructible types.
 /// </summary>
-template <typename Source, typename T = typename Source::value_type>
+template <typename Source, typename T>
 class IntermediateSourceNoDefault : public IntermediateSourceBase<Source, T>
 {
 public:
@@ -170,7 +170,7 @@ private:
 /// <summary>
 /// Base class for intermediate operation sources with default constructible types.
 /// </summary>
-template <typename Source, typename T = typename Source::value_type>
+template <typename Source, typename T>
 class IntermediateSourceDefault : public IntermediateSourceBase<Source, T>
 {
 public:
