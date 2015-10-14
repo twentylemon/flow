@@ -64,6 +64,7 @@
 #include "flow/terminal/execute.h"
 #include "flow/terminal/sample.h"
 #include "flow/terminal/reservoir.h"
+#include "flow/terminal/stats.h"
 
 #include "flow/intermediate/map.h"
 #include "flow/intermediate/flat_map.h"

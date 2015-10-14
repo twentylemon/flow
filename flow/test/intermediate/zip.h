@@ -68,4 +68,8 @@ BOOST_AUTO_TEST_CASE(zip_default) {
     w = orig;
     w | zip(iota(1)) | each(uncurry([](Widget& w, int i) { w.set_value(i); }));
     BOOST_CHECK_EQUAL_COLLECTIONS(wex.begin(), wex.end(), w.begin(), w.end());
+
+    w = orig;
+    w | zip(iota(1)) | zip(repeat(0)) | each(uncurry([](Widget& w, int l, int r) { w.set_value(l + r); }));
+    BOOST_CHECK_EQUAL_COLLECTIONS(wex.begin(), wex.end(), w.begin(), w.end());
 }

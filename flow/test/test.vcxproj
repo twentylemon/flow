@@ -276,6 +276,7 @@
     </ClInclude>
     <ClInclude Include="terminal\reservoir.h" />
     <ClInclude Include="terminal\sample.h" />
+    <ClInclude Include="terminal\stats.h" />
     <ClInclude Include="terminal\sum.h">
       <FileType>CppHeader</FileType>
     </ClInclude>

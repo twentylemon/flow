@@ -43,6 +43,7 @@
 
 namespace flow {
     namespace terminal {
+
         namespace detail {
 
 /// <summary>

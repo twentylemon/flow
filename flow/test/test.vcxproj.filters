@@ -197,5 +197,8 @@
     <ClInclude Include="intermediate\set_sym_diff.h">
       <Filter>Header Files\intermediate</Filter>
     </ClInclude>
+    <ClInclude Include="terminal\stats.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
