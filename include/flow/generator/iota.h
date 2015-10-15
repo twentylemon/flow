@@ -34,9 +34,9 @@ namespace flow {
     namespace generator {
 
 /// <summary>
-/// Creates an infinite Stream of values by incrementing <paramref name="begin"/> using <c>operator++</c>.
+/// Creates an infinite stream of values by incrementing <paramref name="begin"/> using <c>operator++</c>.
 /// </summary>
-/// <param name="begin">The beginning element of the stream, later elements are calculated by applying <c>operator++</c>.</param>
+/// <param name="begin">The first element of the stream, later elements are calculated by applying <c>operator++</c>.</param>
 /// <returns>A Stream of values starting at <paramref name="begin"/>, counting up using <c>operator++</c> each time.</returns>
 /// <seealso cref="range()"/>
 /// <seealso cref="closed_range()"/>
@@ -46,19 +46,18 @@ auto iota(T&& begin) {
 }
 
 /// <summary>
-/// Creates an infinite Stream of values by incrementing <paramref name="begin"/> by <paramref name="increment"/>
-/// using <c>operator+</c>.
-/// <para>The stream elements are computed using the function <c>operator+(T, U)</c>; the <paramref name="increment"/> type
-/// is on the right hand side of the <c>+</c> operand.</para>
+/// Creates an infinite stream of values by incrementing <paramref name="begin"/> by <paramref name="increment"/>
+/// using <c>operator+=</c>.
+/// <para>The stream elements are computed using the function <c>operator+=(T, U)</c>.</para>
 /// </summary>
-/// <param name="begin">The beginning element of the stream, later elements are calculated by applying <c>operator+</c> by <paramref name="increment"/>.</param>
+/// <param name="begin">The first element of the stream, later elements are calculated by applying <c>operator+=</c> by <paramref name="increment"/>.</param>
 /// <param name="increment">The value by which to increment each step in the stream.</param>
-/// <returns>A Stream of values starting at <paramref name="begin"/>, counting up using <c>operator+</c> by <paramref name="increment"/> each time.</returns>
+/// <returns>A Stream of values starting at <paramref name="begin"/>, counting up using <c>operator+=</c> by <paramref name="increment"/> each time.</returns>
 /// <seealso cref="range()"/>
 /// <seealso cref="closed_range()"/>
 template <typename T, typename U>
 auto iota(T&& begin, U&& increment) {
-    return iterate([increment = std::forward<U>(increment)](auto&& val) { return std::move(val) + increment;  }, std::forward<T>(begin));
+    return iterate([increment = std::forward<U>(increment)](T& val) -> T& { return val += increment; }, std::forward<T>(begin));
 }
     }
 }

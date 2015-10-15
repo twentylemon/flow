@@ -41,6 +41,8 @@ namespace flow {
 /// Creates an infinite stream which cycles <paramref name="container"/>.
 /// <para>This extends the lifetime of temporary containers that are passed to it. That is, it is
 /// safe to use temporaries or other variables as long as they are moved in.</para>
+/// <para>If the container is empty, this operation will crash via stack overflow. This can be
+/// avoided by using cycle_move(Container, std::size_t) or empty().</para>
 /// </summary>
 /// <param name="container">The container to cycle through.</param>
 /// <returns>An infinite stream which cycles <paramref name="container"/>.</returns>
@@ -96,6 +98,8 @@ auto cycle(std::initializer_list<T> list, std::size_t n) {
 /// <para>The container requires bidirectional iterators and the functions <c>rbegin()</c> and <c>rend()</c>.
 /// This extends the lifetime of temporary containers that are passed to it. That is, it is
 /// safe to use temporaries or other variables as long as they are moved in.</para>
+/// <para>If the container is empty, this operation will crash via stack overflow. This can be
+/// avoided by using rcycle_move(Container, std::size_t) or empty().</para>
 /// </summary>
 /// <param name="container">The container to cycle through.</param>
 /// <returns>An infinite stream which cycles <paramref name="container"/>.</returns>

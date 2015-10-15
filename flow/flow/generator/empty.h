@@ -34,7 +34,7 @@ namespace flow {
     namespace generator {
 
 /// <summary>
-/// Creates a Stream that contains no elements.
+/// Creates a stream that contains no elements.
 /// </summary>
 /// <returns>An empty stream with the template type of elements.</returns>
 template <typename T>

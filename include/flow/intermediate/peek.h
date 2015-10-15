@@ -54,7 +54,7 @@ auto peek(UnaryFunction action) {
 }
 
 /// <summary>
-/// Executes <paramref name="member"/> for each element in the Stream.
+/// Executes <paramref name="member"/> for each element in the stream.
 /// <para>This does not explicitly change the elements in the stream. The <paramref name="member"/> is
 /// called, then the stream value is passed on to the next operation. The <paramref name="member"/> will
 /// only be called if the stream element is actually reached. For example,</para>
@@ -70,7 +70,7 @@ auto peek(Ret(Class::*member)()) {
 }
 
 /// <summary>
-/// Executes <paramref name="member"/> for each element in the Stream.
+/// Executes <paramref name="member"/> for each element in the stream.
 /// <para>This does not explicitly change the elements in the stream. The <paramref name="member"/> is
 /// called, then the stream value is passed on to the next operation. The <paramref name="member"/> will
 /// only be called if the stream element is actually reached. For example,</para>

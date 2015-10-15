@@ -39,7 +39,7 @@ namespace flow {
 /// Maps stream elements to new values if the original element returns <c>true</c> for <paramref name="predicate"/>.
 /// <para>Values that return <c>false</c> for <paramref name="predicate"/> are left unchanged.</para>
 /// </summary>
-/// <param name="predicate">Stream elements that return <c>true</c> will be mapped through <paramref name="mapper"/>.</param>
+/// <param name="predicate">Elements that return <c>true</c> will be mapped through <paramref name="mapper"/>.</param>
 /// <param name="mapper">The mapping operation to apply to elements that return <c>true</c> for <paramref name="predicate"/>.</param>
 /// <returns>An intermediate operation that replaces stream elements.</returns>
 template <typename UnaryPredicate, typename UnaryOperation>

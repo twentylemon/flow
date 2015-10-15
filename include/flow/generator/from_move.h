@@ -34,7 +34,7 @@ namespace flow {
     namespace generator {
 
 /// <summary>
-/// Creates a Stream over <paramref name="container"/>.
+/// Creates a stream over <paramref name="container"/>.
 /// <para>This extends the lifetime of temporary containers that are passed to it. That is, it is
 /// safe to use temporaries or other variables as long as they are moved in.</para>
 /// </summary>
@@ -46,7 +46,7 @@ auto from_move(Container&& container) {
 }
 
 /// <summary>
-/// Creates a Stream over <paramref name="list"/>.
+/// Creates a stream over <paramref name="list"/>.
 /// </summary>
 /// <param name="list">The list to create a stream from.</param>
 /// <returns>A stream over <paramref name="list"/>.</returns>
@@ -56,7 +56,7 @@ auto from(std::initializer_list<T> list) {
 }
 
 /// <summary>
-/// Creates a Stream over <paramref name="container"/> in reverse order.
+/// Creates a stream over <paramref name="container"/> in reverse order.
 /// <para>The container requires bidirectional iterators and the functions <c>rbegin()</c> and <c>rend()</c>.
 /// This extends the lifetime of temporary containers that are passed to it. That is, it is
 /// safe to use temporaries or other variables as long as they are moved in.</para>

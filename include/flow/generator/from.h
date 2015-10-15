@@ -51,7 +51,7 @@ public:
         }
 
 /// <summary>
-/// Creates a Stream from the given iterator range.
+/// Creates a stream from the given iterator range.
 /// </summary>
 /// <param name="begin">The beginning of the range.</param>
 /// <param name="end">The end of the range.</param>
@@ -62,7 +62,7 @@ auto from(Itr begin, Itr end) {
 }
 
 /// <summary>
-/// Creates a Stream over <paramref name="container"/>.
+/// Creates a stream over <paramref name="container"/>.
 /// </summary>
 /// <param name="container">The container to create a stream from.</param>
 /// <returns>A stream over <paramref name="container"/>.</returns>
@@ -98,7 +98,7 @@ decltype(auto) operator|(Container& container, terminal::detail::Terminal<F>&& o
 }
 
 /// <summary>
-/// Creates a Stream over <paramref name="container"/> in reverse order.
+/// Creates a stream over <paramref name="container"/> in reverse order.
 /// <para>The container requires bidirectional iterators and the functions <c>rbegin()</c> and <c>rend()</c>.</para>
 /// </summary>
 /// <param name="container">The container to create a stream from.</param>

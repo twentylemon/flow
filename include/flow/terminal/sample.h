@@ -54,6 +54,7 @@ namespace flow {
 /// </summary>
 /// <param name="n">The number of elements to obtain from the stream. If the stream is smaller, all elements are returned.</param>
 /// <returns>A detail::Terminal operation that returns a <c>std::vector</c> of <paramref name="n"/> random stream elements.</returns>
+/// <seealso cref="sample()"/>
 /// <seealso cref="reservoir()"/>
 inline auto sample_heap(std::size_t n) {
     return detail::make_terminal([n](auto&& stream) {
@@ -84,6 +85,7 @@ inline auto sample_heap(std::size_t n) {
 /// </summary>
 /// <param name="n">The number of elements to obtain from the stream. If the stream is smaller, all elements are returned.</param>
 /// <returns>A detail::Terminal operation that returns a <c>std::vector</c> of <paramref name="n"/> random stream elements.</returns>
+/// <seealso cref="sample()"/>
 /// <seealso cref="reservoir()"/>
 inline auto sample_shuffle(std::size_t n) {
     return detail::make_terminal([n](auto&& stream) {

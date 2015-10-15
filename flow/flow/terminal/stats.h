@@ -45,7 +45,6 @@ namespace flow {
 /// will result in a compiler error.</para>
 /// </summary>
 /// <seealso cref="stats()"/>
-/// \todo implement median, mode
 template <typename T, typename ResultType, bool MinMax, bool MedianMode>
 class Stats
 {
@@ -341,15 +340,14 @@ std::ostream& operator<<(std::ostream& out, const Stats<T, R, MinMax, MedianMode
 /// <summary>
 /// Returns a Stats object which contains several statistics of the stream values.
 /// <para>The number of elements, mean, standard deviation, variance, sum and sum of squares are always calculated.</para>
-/// <para>Some statistical values are calculated as <c>ResultType</c>, <c>double</c> by default, others
-/// are calculated as <c>T</c>, the type of elements in the stream. Calculating statistics requires that
-/// both <c>T</c> and <c>ResultType</c> behave as arithmetic types (such as <c>int</c>, <c>double</c> or <c>std::complex</c>).</para>
-/// <para>The other template parameters indicate whether or not to calculate additional statistics,
-/// all of which are not calculated by default.
-/// The behavior of each of them is as follows (<c>n</c> is the size of the stream):</para>
+/// <para>Some statistical values are calculated as <c>ResultType</c>, others are calculated as <c>T</c>, the type of elements
+/// in the stream. Calculating statistics requires that both <c>T</c> and <c>ResultType</c> behave as arithmetic types
+/// (such as <c>int</c>, <c>double</c> or <c>std::complex</c>).</para>
+/// <para>The other template parameters indicate whether or not to calculate additional statistics, all of which are not
+/// calculated by default. The behavior of each of them is as follows (<c>n</c> is the size of the stream):</para>
 /// <ul>
 ///     <li><c>MinMax</c> - calculate the minimum and maximum value of the stream. The min and max are calculated as <c>T</c>.
-///         This operation uses an additional <c>2n</c> time.</li>
+///         This operation uses an additional <c>2n</c> time (slower than using minmax()).</li>
 ///     <li><c>MedianMode</c> - calculate the median, mode, and frequency of each element of the stream.
 ///         The median is calculated as <c>ResultType</c>, the modes as <c>std::vector&lt;T&gt;</c>, and the frequency table as
 ///         <c>std::map&lt;T, std::size_t&gt;</c>. If there is an even number of elements in the stream, the median is calculated
@@ -359,6 +357,10 @@ std::ostream& operator<<(std::ostream& out, const Stats<T, R, MinMax, MedianMode
 /// </summary>
 /// <returns>A terminal operation that calculates various statistical values of the stream.</returns>
 /// <seealso cref="Stats"/>
+/// <seealso cref="count()"/>
+/// <seealso cref="sum()"/>
+/// <seealso cref="minmax()"/>
+/// <seealso cref="to_map()"/>
 template <typename ResultType = double, bool MinMax = false, bool MedianMode = false>
 auto stats() {
     return detail::make_terminal([](auto&& stream) {

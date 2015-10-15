@@ -41,7 +41,7 @@ namespace flow {
 /// <para>The <paramref name="tail"/> stream elements must be convertible to the same type of elements as the <paramref name="head"/> stream.</para>
 /// </summary>
 /// <param name="tail">The tail stream to put after the end of the operated head stream.</param>
-/// <returns>An intermediate operation that concatenates the two Stream objects.</returns>
+/// <returns>An intermediate operation that concatenates the two streams.</returns>
 template <typename Tail>
 auto concat(Stream<Tail>&& tail) {
     return detail::make_intermediate([tail = std::move(tail)](auto&& head) mutable {

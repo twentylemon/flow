@@ -90,8 +90,6 @@ int main(int argc, char** argv) {
     std::vector<int> v1 = { 1, 3, 5, 7 };
     std::vector<int> v2 = { 2, 4, 6, 8 };
 
-    random_bools() | limit(10) | dump();
-
     /*
     std::vector<int> cw{ 1, 2, 3 };
 

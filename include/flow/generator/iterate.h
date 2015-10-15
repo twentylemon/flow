@@ -47,7 +47,7 @@ struct HeadType
         }
 
 /// <summary>
-/// Creates an infinite Stream where values are created using successive calls to
+/// Creates an infinite stream where values are created using successive calls to
 /// the <paramref name="function"/>, starting with the values given.
 /// <para>The next stream element is computed using the previous <c>n</c> stream elements applied to <paramref name="function"/>,
 /// where <c>n</c> is the number of parameters that <paramref name="function"/> takes.</para>

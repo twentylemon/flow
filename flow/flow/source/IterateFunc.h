@@ -66,7 +66,9 @@ public:
     value_type& next() {
         base::assign_temp_current(std::move(_values[0]));
         _values[0] = _function(_values);    // destroy the first value
-        std::rotate(_values.begin(), _values.begin() + 1, _values.end());
+        if (N > 1) {
+            std::rotate(_values.begin(), _values.begin() + 1, _values.end());
+        }
         return base::next();
     }
 

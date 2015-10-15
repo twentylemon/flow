@@ -38,13 +38,13 @@ namespace flow {
 
 /// <summary>
 /// Creates a stream containing the elements in the range <c>[lower, upper]</c>, including <paramref name="upper"/>.
-/// <para>Stream elements are incremented using <c>operator++</c>, and the range is computed using <c>operator&lt;=</c>.
+/// <para>The stream elements are incremented using <c>operator++</c>, and the range is computed using <c>operator&lt;=</c>.
 /// The stream ends once <c>element &lt;= upper</c> returns <c>false</c>. That is, the stream produced is equivalent to:</para>
 /// <code>iota(lower) | take_while([upper](T e) { return e &lt;= upper; })</code>
 /// </summary>
 /// <param name="lower">The lower bound of the range of elements to appear in the stream, inclusive.</param>
 /// <param name="upper">The upper bound of the range of elements to appear in the stream, inclusive.</param>
-/// <returns>A Stream containing the elements in the range <c>[lower, upper]</c>.</returns>
+/// <returns>A stream containing the elements in the range <c>[lower, upper]</c>.</returns>
 /// <seealso cref="range()"/>
 /// <seealso cref="iota()"/>
 /// <seealso cref="take_while()"/>
@@ -56,7 +56,7 @@ auto closed_range(T&& lower, T&& upper) {
 /// <summary>
 /// Creates a stream containing the elements in the range <c>[lower, upper]</c>, including <paramref name="upper"/>
 /// counting up by <paramref name="increment"/> each step.
-/// <para>Stream elements are incremented using the function <c>operator+(T, U)</c> with the <paramref name="increment"/> on the right
+/// <para>The stream elements are incremented using the function <c>operator+(T, U)</c> with the <paramref name="increment"/> on the right
 /// hand side of the operand, and the range is computed using <c>operator&lt;=</c>.
 /// The stream ends once <c>element &lt;= upper</c> returns <c>false</c>. That is, the stream produced is equivalent to:</para>
 /// <code>iota(lower, increment) | take_while([upper](T e) { return e &lt;= upper; })</code>
@@ -64,7 +64,7 @@ auto closed_range(T&& lower, T&& upper) {
 /// <param name="lower">The lower bound of the range of elements to appear in the stream, inclusive.</param>
 /// <param name="upper">The upper bound of the range of elements to appear in the stream, inclusive.</param>
 /// <param name="increment">The value by which to increment each step in the stream.</param>
-/// <returns>A Stream containing the elements in the range <c>[lower, upper]</c> incremented using <c>operator+</c> <paramref name="increment"/>.</returns>
+/// <returns>A stream containing the elements in the range <c>[lower, upper]</c> incremented using <c>operator+</c> <paramref name="increment"/>.</returns>
 /// <seealso cref="range()"/>
 /// <seealso cref="iota()"/>
 /// <seealso cref="take_while()"/>

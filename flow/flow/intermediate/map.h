@@ -63,7 +63,7 @@ auto map(Ret(Class::*member)()) {
 /// <summary>
 /// Transforms each element in the stream to the return value of <paramref name="member"/> for each stream element.
 /// </summary>
-/// <param name="member">The const class member function to use as the transformation.</param>
+/// <param name="member">The class member function to use as the transformation.</param>
 /// <returns>An intermediate operation that maps the stream to new values.</returns>
 template <typename Ret, typename Class>
 auto map(Ret(Class::*member)() const) {

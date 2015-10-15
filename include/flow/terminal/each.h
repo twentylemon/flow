@@ -66,7 +66,7 @@ auto each(Ret(Class::*member)()) {
 /// Executes the member function for each element in the stream.
 /// <para>The executed function is returned.</para>
 /// </summary>
-/// <param name="member">The const class member function to use as the operation.</param>
+/// <param name="member">The class member function to use as the operation.</param>
 /// <returns>A terminal operation that executes a member function for each stream element.</returns>
 /// <seealso cref="peek()"/>
 template <typename Ret, typename Class>

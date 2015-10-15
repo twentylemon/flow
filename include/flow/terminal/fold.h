@@ -35,7 +35,7 @@ namespace flow {
 
 /// <summary>
 /// Folds the stream using the <paramref name="accumulator"/>.
-/// <para>Applying this operation is the same as doing:</para>
+/// <para>Applying this operation is equivalent to</para>
 /// <code>for (T e : stream) { init = accumulator(init, e); }</code>
 /// </summary>
 /// <param name="accumulator">The function through which the stream is folded.</param>

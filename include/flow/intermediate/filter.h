@@ -71,7 +71,7 @@ auto filter(Ret(Class::*member)()) {
 /// <summary>
 /// Removes elements from the stream that return <c>false</c> for <paramref name="member"/>.
 /// </summary>
-/// <param name="member">The const class member function to use for filtering, the return type must be convertible to <c>bool</c>.</param>
+/// <param name="member">The class member function to use for filtering, the return type must be convertible to <c>bool</c>.</param>
 /// <returns>An intermediate operation that filters the stream elements.</returns>
 template <typename Ret, typename Class>
 auto filter(Ret(Class::*member)() const) {

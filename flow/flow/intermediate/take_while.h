@@ -84,7 +84,7 @@ auto take_while(Ret(Class::*member)()) {
 /// <para>Elements after and including the first <c>false</c> are discarded, even if later elements would return
 /// <c>true</c> for <paramref name="member"/>.</para>
 /// </summary>
-/// <param name="member">The const class member function used to take elements, the return type must be convertible to <c>bool</c>.</param>
+/// <param name="member">The class member function used to take elements, the return type must be convertible to <c>bool</c>.</param>
 /// <returns>An intermediate operation that takes stream elements while the <paramref name="member"/> is <c>true</c>.</returns>
 /// <seealso cref="drop_while()"/>
 /// <seealso cref="filter()"/>

@@ -80,7 +80,7 @@ auto any(Ret(Class::*member)()) {
 /// <para>This operation is short circuited and will stop executing once any <c>true</c> value is found.
 /// If the stream is empty, this will return <c>false</c>.</para>
 /// </summary>
-/// <param name="member">The const class member function to use as the predicate.</param>
+/// <param name="member">The class member function to use as the predicate.</param>
 /// <returns>A terminal operation which returns <c>true</c> if any stream element returns <c>true</c> for the given predicate.</returns>
 template <typename Ret, typename Class>
 auto any(Ret(Class::*member)() const) {

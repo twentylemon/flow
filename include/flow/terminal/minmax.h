@@ -44,6 +44,9 @@ namespace flow {
 /// <param name="compare">The compare function, by default <c>std::less&lt;void&gt;</c>.</param>
 /// <returns>A detail::Terminal operation which gives the min and max elements from the stream.</returns>
 /// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
+/// <seealso cref="min()"/>
+/// <seealso cref="max()"/>
+/// <seealso cref="stats()"/>
 template <typename Compare = std::less<void>>
 auto minmax(Compare compare = Compare()) {
     return detail::make_terminal([compare](auto&& stream) {
