@@ -132,12 +132,8 @@ protected:
     /// </summary>
     /// <param name="temp_current">The temp_current.</param>
     void assign_temp_current(decay_type&& temp_current) {
-        if (_temp.empty()) {
-            _temp.push_back(std::forward<decay_type>(temp_current));
-        }
-        else {
-            _temp[0] = std::forward<decay_type>(temp_current);
-        }
+        _temp.clear();
+        _temp.push_back(std::move(temp_current));
         base::assign_current(_temp.data());
     }
 

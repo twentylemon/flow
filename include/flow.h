@@ -42,6 +42,7 @@
 #include "flow/generator/iota.h"
 #include "flow/generator/range.h"
 #include "flow/generator/closed_range.h"
+#include "flow/generator/random.h"
 
 #include "flow/terminal/fold.h"
 #include "flow/terminal/sum.h"

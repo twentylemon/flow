@@ -19,6 +19,7 @@ BOOST_AUTO_TEST_SUITE(flow_generator)
 #include "generator/iterate.h"
 #include "generator/range.h"
 #include "generator/repeat.h"
+#include "generator/random.h"
 BOOST_AUTO_TEST_SUITE_END()
 
 BOOST_AUTO_TEST_SUITE(flow_intermediate)

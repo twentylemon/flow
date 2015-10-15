@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <functional>
+#include <exception>
 
 #include <flow.h>
 using namespace flow;

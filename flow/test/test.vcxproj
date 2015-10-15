@@ -164,6 +164,7 @@
     <ClInclude Include="generator\iterate.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
+    <ClInclude Include="generator\random.h" />
     <ClInclude Include="generator\range.h">
       <FileType>CppHeader</FileType>
     </ClInclude>

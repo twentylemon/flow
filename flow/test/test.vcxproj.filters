@@ -200,5 +200,8 @@
     <ClInclude Include="terminal\stats.h">
       <Filter>Header Files\terminal</Filter>
     </ClInclude>
+    <ClInclude Include="generator\random.h">
+      <Filter>Header Files\generator</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
