@@ -6,7 +6,7 @@
     BOOST_CHECK(random_engine(name) | check(name)); \
     BOOST_CHECK(random_engine(engine()) | check(name))
 BOOST_AUTO_TEST_CASE(random_engine_t) {
-    auto check = [](auto& rng) { return limit(1000) | all([&rng](std::remove_reference_t<decltype(rng)>::result_type i) { return i >= rng.min() && i <= rng.max(); }); };
+    auto check = [](auto&& rng) { return limit(1000) | all([&rng](auto i) { return i >= rng.min() && i <= rng.max(); }); };
 
     std::default_random_engine rng;
     BOOST_CHECK(random_engine() | check(rng));
@@ -27,7 +27,7 @@ BOOST_AUTO_TEST_CASE(random_engine_t) {
 #define DO_CHECK(distrib) BOOST_CHECK(random_distribution(distrib()) | check(distrib()))
 
 BOOST_AUTO_TEST_CASE(random_distribution_t) {
-    auto check = [](auto& d) { return limit(10) | all([&d](std::remove_reference_t<decltype(d)>::result_type i) { return i >= d.min() && i <= d.max(); }); };
+    auto check = [](auto&& d) { return limit(10) | all([&d](auto i) { return i >= d.min() && i <= d.max(); }); };
 
     DO_CHECK(std::uniform_int_distribution<>);
     DO_CHECK(std::uniform_real_distribution<>);
