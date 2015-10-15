@@ -174,7 +174,7 @@ Functions</h2></td></tr>
 <tr class="separator:ac9078ec57972888d23411f8c3ea209af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af32b7bf1f105167d576b779b3b5f0297"><td class="memTemplParams" colspan="2">template&lt;typename Ret , typename Class &gt; </td></tr>
 <tr class="memitem:af32b7bf1f105167d576b779b3b5f0297"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af32b7bf1f105167d576b779b3b5f0297">peek</a> (Ret(Class::*member)())</td></tr>
-<tr class="memdesc:af32b7bf1f105167d576b779b3b5f0297"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes <em>member</em>  for each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>.  <a href="#af32b7bf1f105167d576b779b3b5f0297">More...</a><br /></td></tr>
+<tr class="memdesc:af32b7bf1f105167d576b779b3b5f0297"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes <em>member</em>  for each element in the stream.  <a href="#af32b7bf1f105167d576b779b3b5f0297">More...</a><br /></td></tr>
 <tr class="separator:af32b7bf1f105167d576b779b3b5f0297"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11854b160914181e130029b111facf55"><td class="memTemplParams" colspan="2">template&lt;typename UnaryPredicate , typename T &gt; </td></tr>
 <tr class="memitem:a11854b160914181e130029b111facf55"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a11854b160914181e130029b111facf55">replace</a> (UnaryPredicate predicate, T &amp;&amp;replace_by)</td></tr>
@@ -329,6 +329,14 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Intermediate operations, all of which are also aliased in the flow namespace. </p>
 <p>The functions in the <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html" title="Intermediate operations, all of which are also aliased in the flow namespace. ">flow::intermediate</a> namespace all produce an intermediate operation. The intermediate operation does not operate on a stream until the pipe <code>operator|</code> has been applied, including eager operations. Only after being applied to a stream is the new stream created.</p>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000003">Todo:</a></b></dt><dd><p class="startdd">group the stream, [1,2,3,4] with group&lt;2&gt; -&gt; [(1,2), (3,4)] </p>
+<p>moving window into the stream, [1,2,3] with window&lt;2&gt; -&gt; [(1,2), (2,3)] </p>
+<p>adjacent_diff - from &lt;numeric&gt; </p>
+<p>partial_sum - from &lt;numeric&gt; </p>
+<p>inner_product - from &lt;numeric&gt; </p>
+<p>overload arithmetic operators as map operations? </p>
+<p class="enddd">shuffle - would have to be eager, take rng as parameter </p>
+</dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="aa0551274cc05f2c668d5612bfe1716cb"></a>
 <div class="memitem">
@@ -354,7 +362,7 @@ template&lt;typename Tail &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>An intermediate operation that concatenates the two <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> objects.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>An intermediate operation that concatenates the two streams.</dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d7/db4/concat_8cpp-example.html#a0">concat.cpp</a>.</dd>
 </dl>
 </div>
@@ -395,7 +403,7 @@ template&lt;typename Itr &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that concatenates the container onto the stream.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>
@@ -424,7 +432,7 @@ template&lt;typename Container , typename  = std::enable_if_t&lt;generator::deta
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that concatenates the container onto the stream.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>
@@ -453,7 +461,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that concatenates the container onto the stream.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>
@@ -541,15 +549,6 @@ template&lt;typename Ret , typename Class &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that drops stream elements while the <em>member</em>  is <code>true</code>.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af694d1a9aa88f1dd8ff3d3e66d2cb6c9" title="Takes elements from the stream until predicate  returns false for an element. ">take_while()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the stream that return false for predicate . ">filter()</a></dd></dl>
-<p>All elements before the first <code>false</code> are discarded, the rest are kept, even if later elements would return <code>true</code> for <em>member</em> .</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">member</td><td>The const class member function used to drop elements, the return type must be convertible to <code>bool</code>.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>An intermediate operation that drops stream elements while the <em>member</em>  is <code>true</code>.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af694d1a9aa88f1dd8ff3d3e66d2cb6c9" title="Takes elements from the stream until predicate  returns false for an element. ">take_while()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the stream that return false for predicate . ">filter()</a></dd></dl>
 
 </div>
 </div>
@@ -628,13 +627,6 @@ template&lt;typename Ret , typename Class &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">member</td><td>The class member function to use for filtering, the return type must be convertible to <code>bool</code>.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>An intermediate operation that filters the stream elements.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">member</td><td>The const class member function to use for filtering, the return type must be convertible to <code>bool</code>.</td></tr>
   </table>
   </dd>
 </dl>
@@ -757,13 +749,6 @@ template&lt;typename Ret , typename Class &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that maps the stream to new values.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">member</td><td>The const class member function to use as the transformation.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>An intermediate operation that maps the stream to new values.</dd></dl>
 
 </div>
 </div>
@@ -849,7 +834,7 @@ template&lt;typename Itr , typename Compare  = std::less&lt;void&gt;&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that merges the two streams while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>
@@ -889,7 +874,7 @@ template&lt;typename Container , typename Compare  = std::less&lt;void&gt;, type
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that merges the two streams while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>
@@ -929,7 +914,7 @@ template&lt;typename T , typename Compare  = std::less&lt;void&gt;&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that merges the two streams while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>
@@ -980,7 +965,7 @@ template&lt;typename Ret , typename Class &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Executes <em>member</em>  for each element in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>. </p>
+<p>Executes <em>member</em>  for each element in the stream. </p>
 <p>This does not explicitly change the elements in the stream. The <em>member</em>  is called, then the stream value is passed on to the next operation. The <em>member</em>  will only be called if the stream element is actually reached. For example,</p>
 <p><code>things | peek([](Thing&amp; i) { std::cout &lt;&lt; i &lt;&lt; " "; }) | filter(is_something) | ...; // will display all elements<br />
  things | filter(is_something) | peek([](Thing&amp; i) { std::cout &lt;&lt; i &lt;&lt; " "; }) | ...; // will only display "something" elements</code> </p>
@@ -1103,7 +1088,7 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
 <p>Values that return <code>false</code> for <em>predicate</em>  are left unchanged.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">predicate</td><td><a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> elements that return <code>true</code> will be mapped through <em>mapper</em> .</td></tr>
+    <tr><td class="paramname">predicate</td><td>Elements that return <code>true</code> will be mapped through <em>mapper</em> .</td></tr>
     <tr><td class="paramname">mapper</td><td>The mapping operation to apply to elements that return <code>true</code> for <em>predicate</em> .</td></tr>
   </table>
   </dd>
@@ -1134,7 +1119,7 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
 </div><div class="memdoc">
 
 <p>Reverses the elements in the stream. </p>
-<p>Reversing is an eager operation. On application of the <code>reverse</code> operation, the entire stream up to that point is evaluated and stored before continuing with the remainder of the stream. Thus, the <code>reverse</code> operation takes <code>O(n)</code> extra space and time, where <code>n</code> is the size of the stream. For most applications, it will be beneficial to reverse the stream beforehand by <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad5e12b528b2fa20549b7714efd2a6814" title="Creates a Stream over container  in reverse order. ">rfrom()</a> or <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a19f2046f7478ce9c2ce68e4946ade84d" title="Creates an infinite stream which cycles container  in reverse order. ">rcycle()</a>.</p>
+<p>Reversing is an eager operation. On application of the <code>reverse</code> operation, the entire stream up to that point is evaluated and stored before continuing with the remainder of the stream. Thus, the <code>reverse</code> operation takes <code>O(n)</code> extra space and time, where <code>n</code> is the size of the stream. For most applications, it will be beneficial to reverse the stream beforehand by <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad5e12b528b2fa20549b7714efd2a6814" title="Creates a stream over container  in reverse order. ">rfrom()</a> or <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a19f2046f7478ce9c2ce68e4946ade84d" title="Creates an infinite stream which cycles container  in reverse order. ">rcycle()</a>.</p>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that reverses the stream.</dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d7/db4/concat_8cpp-example.html#a3">concat.cpp</a>.</dd>
 </dl>
@@ -1222,7 +1207,7 @@ template&lt;typename Itr , typename Compare  = std::less&lt;void&gt;&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that computes <em>left</em>  <code>- [begin,end)</code> while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>
@@ -1262,7 +1247,7 @@ template&lt;typename Container , typename Compare  = std::less&lt;void&gt;, type
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that computes <em>left</em>  <code>-</code> <em>container</em>  while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>
@@ -1302,7 +1287,7 @@ template&lt;typename T , typename Compare  = std::less&lt;void&gt;&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that computes <em>left</em>  <code>-</code> <em>list</em>  while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>
@@ -1388,7 +1373,7 @@ template&lt;typename Itr , typename Compare  = std::less&lt;void&gt;&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that intersects the two streams while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>
@@ -1428,7 +1413,7 @@ template&lt;typename Container , typename Compare  = std::less&lt;void&gt;, type
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that intersects the two streams while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>
@@ -1468,7 +1453,7 @@ template&lt;typename T , typename Compare  = std::less&lt;void&gt;&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that intersects the two streams while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>
@@ -1554,7 +1539,7 @@ template&lt;typename Itr , typename Compare  = std::less&lt;void&gt;&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that computes the symetric difference between <em>left</em>  and <code>[begin,end)</code> while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>
@@ -1594,7 +1579,7 @@ template&lt;typename Container , typename Compare  = std::less&lt;void&gt;, type
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that computes the symmetric difference between <em>left</em>  and <em>container</em>  while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>
@@ -1634,7 +1619,7 @@ template&lt;typename T , typename Compare  = std::less&lt;void&gt;&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that computes the symmetric difference between <em>left</em>  and <em>list</em>  while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>
@@ -1720,7 +1705,7 @@ template&lt;typename Itr , typename Compare  = std::less&lt;void&gt;&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that unions the two streams while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>
@@ -1760,7 +1745,7 @@ template&lt;typename Container , typename Compare  = std::less&lt;void&gt;, type
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that unions the two streams while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>
@@ -1800,7 +1785,7 @@ template&lt;typename T , typename Compare  = std::less&lt;void&gt;&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that unions the two streams while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>
@@ -2162,15 +2147,6 @@ template&lt;typename Ret , typename Class &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that takes stream elements while the <em>member</em>  is <code>true</code>.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1c6e57bccb66cfbfae54134b500ea8c0" title="Drops elements from the stream until the predicate  returns false for a stream element. ">drop_while()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the stream that return false for predicate . ">filter()</a></dd></dl>
-<p>Elements after and including the first <code>false</code> are discarded, even if later elements would return <code>true</code> for <em>member</em> .</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">member</td><td>The const class member function used to take elements, the return type must be convertible to <code>bool</code>.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>An intermediate operation that takes stream elements while the <em>member</em>  is <code>true</code>.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1c6e57bccb66cfbfae54134b500ea8c0" title="Drops elements from the stream until the predicate  returns false for a stream element. ">drop_while()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the stream that return false for predicate . ">filter()</a></dd></dl>
 
 </div>
 </div>
@@ -2286,7 +2262,7 @@ template&lt;typename Itr , typename BinaryOperation &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that zips the two streams.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>
@@ -2326,7 +2302,7 @@ template&lt;typename Container , typename BinaryOperation , typename  = std::ena
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that zips the two streams.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>
@@ -2366,7 +2342,7 @@ template&lt;typename T , typename BinaryOperation &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that zips the two streams.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>
@@ -2437,7 +2413,7 @@ template&lt;typename Itr &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that zips the two streams.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a>, <a class="el" href="../../d9/de2/namespaceflow.html#ad795c672b7e52516485e7ffb2d6c4ad7" title="Uncurries curry_function . ">uncurry()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a>, <a class="el" href="../../d9/de2/namespaceflow.html#ad795c672b7e52516485e7ffb2d6c4ad7" title="Uncurries curry_function . ">uncurry()</a></dd></dl>
 
 </div>
 </div>
@@ -2467,7 +2443,7 @@ template&lt;typename Container , typename  = std::enable_if_t&lt;generator::deta
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that zips the two streams.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a>, <a class="el" href="../../d9/de2/namespaceflow.html#ad795c672b7e52516485e7ffb2d6c4ad7" title="Uncurries curry_function . ">uncurry()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a>, <a class="el" href="../../d9/de2/namespaceflow.html#ad795c672b7e52516485e7ffb2d6c4ad7" title="Uncurries curry_function . ">uncurry()</a></dd></dl>
 
 </div>
 </div>
@@ -2497,7 +2473,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that zips the two streams.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a Stream from the given iterator range. ">from()</a>, <a class="el" href="../../d9/de2/namespaceflow.html#ad795c672b7e52516485e7ffb2d6c4ad7" title="Uncurries curry_function . ">uncurry()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a>, <a class="el" href="../../d9/de2/namespaceflow.html#ad795c672b7e52516485e7ffb2d6c4ad7" title="Uncurries curry_function . ">uncurry()</a></dd></dl>
 
 </div>
 </div>
