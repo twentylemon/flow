@@ -121,8 +121,8 @@ widgets | zip(iota(1), [](Widget& w, int id) { w.set_id(id); return id; }) | exe
 std::vector<int> x = { 1, 2, 3, 4 };
 std::vector<int> y = { 1, 3, 5, 7 };
 
-auto union = x | set_union(y) | to_vector();            // { 1, 2, 3, 4, 5, 7 }
-auto intersection = x | set_intersect(y) | to_vector(); // { 1, 3 }
-auto difference = x | set_diff(y) | to_vector();        // { 2, 4 }
-auto sym_diff = x | set_sym_diff(y) | to_vector();      // { 2, 4, 5, 7 }
+auto xy_union = x | set_union(y) | to_vector();             // { 1, 2, 3, 4, 5, 7 }
+auto xy_intersection = x | set_intersect(y) | to_vector();  // { 1, 3 }
+auto xy_difference = x | set_diff(y) | to_vector();         // { 2, 4 }
+auto xy_sym_diff = x | set_sym_diff(y) | to_vector();       // { 2, 4, 5, 7 }
 ```
