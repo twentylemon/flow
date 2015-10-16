@@ -9,6 +9,8 @@ operations like computing the sum, min and max or simply counting the number or 
 in a nice, easy to read and understand syntax. To use, simply `#include <flow.h>` in your C++14 program. With fully
 optimized code (`-O3` or `/O2`), flow offers minimal performance penalties, so there's no reason not to love.
 
+ * [Documentation](http://twentylemon.github.io/flow/doxy/index.html)
+
 
 What is a Sick Flow?
 --------------------
@@ -23,6 +25,14 @@ common generator used is `from()`, which creates a Stream from an iterator range
 
 ```C++
 auto stream = from(my_vector); // a stream over the entire vector in the same order
+```
+
+Since it's very common, the pipe operator is overloaded for container types as a shorthand for from(). So the following
+statements create and process the same stream.
+
+```C++
+from(my_vector) | each(process);    // process each vector element
+my_vector | each(process);          // shorthand, the same operation as above
 ```
 
 Other common stream generators are `iota()`, which counts up from a value, and `repeat()`, which repeats a value.
@@ -46,12 +56,17 @@ for (auto it = list.begin(), end = list.end(); it != end & count < 10; ++it) {
 Not bad, but it's not quickly clear what is going on. The same operation can be done as a sick flow instead:
 
 ```C++
-list | filter([](int i) { return i % 2 == 0; }) | limit(10) | map([](int i) { return i*i; }) | each(process);
+list
+    | filter([](int i) { return i % 2 == 0; })
+    | map([](int i) { return i*i; })
+    | limit(10)
+    | each(process);
 ```
 
-Reading the line aloud, it's obvious what is happening. Take the list, keep even values, limit it to 10 elements,
-map the elements to their square, and then process each of those. Fun. This is just a trivial example, there many other
+Reading the flow aloud, it's obvious what is happening. Take the list, keep even values, map the elements to their square,
+limit it to 10 elements, and then process each of those. Fun. This is just a trivial example, there many other
 stream operations available to be used.
+
 Stream operations are broken down into two main types: Intermediate and Terminal operations. Intermediate operations
 transform a stream into another stream. We saw three examples above in `filter`, `limit` and `map`. Intermediate
 operations are meaningless without some sort of Terminal operation, such as `each` or `count`. Terminal operations
@@ -80,11 +95,11 @@ my_vector | each([](auto& ele) {
 });
 ```
 
-### Display Attributes
+### Display Streams
 ```C++
-people | map(&Person::name) | dump();   // display to std::cout
+people | map(&Person::name) | dump();       // display to std::cout
 // or, if Person::operator<< exists
-people | dump(why_not_into_a_file, "\n");
+people | dump(why_not_into_a_file, "\n");   // with a new line between each one
 ```
 
 ### Basic Statistics
