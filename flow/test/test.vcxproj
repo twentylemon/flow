@@ -224,6 +224,7 @@
     <ClInclude Include="iterator.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
+    <ClInclude Include="optional.h" />
     <ClInclude Include="terminal\all.h">
       <FileType>CppHeader</FileType>
     </ClInclude>

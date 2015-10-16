@@ -50,7 +50,7 @@ class Stats
 {
 public:
     /// <summary>
-    /// Initializes a new instance of the <see cref="Stats"/> class.
+    /// Initializes a new instance of the Stats class.
     /// </summary>
     /// <param name="ele"/>The first element from the stream.</param>
     Stats(const T& ele) : _min(ele), _max(ele), _mean(0), _median(0), _modes(), _stddev(0), _variance(0), _sum(ele), _sum_squares(ele * ele), _n(1), _freq({ { ele, 1 } }) { }

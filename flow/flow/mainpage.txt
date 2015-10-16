@@ -142,6 +142,7 @@
 /// \todo is_sorted - check if a stream is sorted by a comparator
 /// \todo overload comparison operators between streams?
 /// \todo to_group - convert to a std::map<T::property, std::vector<T>>
+/// \todo return optional values instead of exceptions?
 /// 
 
 /// \namespace flow::intermediate

@@ -203,5 +203,8 @@
     <ClInclude Include="generator\random.h">
       <Filter>Header Files\generator</Filter>
     </ClInclude>
+    <ClInclude Include="optional.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

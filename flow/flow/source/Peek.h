@@ -44,7 +44,7 @@ public:
     using value_type = typename base::value_type;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Peek{Source, Action}" /> class.
+    /// Initializes a new instance of the Peek class.
     /// </summary>
     /// <param name="source">The source to peek at the elements of.</param>
     /// <param name="action">The action to apply to each stream element.</param>

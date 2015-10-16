@@ -45,7 +45,7 @@ public:
     using value_type = typename base::value_type;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Filter{Source, UnaryPredicate}"/> class.
+    /// Initializes a new instance of the Filter class.
     /// </summary>
     /// <param name="source">The source to filter.</param>
     /// <param name="predicate">The predicate used to filter stream elements.</param>

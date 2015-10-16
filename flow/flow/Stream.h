@@ -47,7 +47,7 @@ class Stream
 {
 public:
     /// <summary>
-    /// Initializes a new instance of the <see cref="Stream{Source}"/> class.
+    /// Initializes a new instance of the Stream class.
     /// </summary>
     /// <param name="...args">Arguments to forward to the Source constructor.</param>
     template <typename... Args>
@@ -133,12 +133,12 @@ public:
         using iterator_category = typename base::iterator_category;
 
         /// <summary>
-        /// Initializes an off-end instance of the <see cref="Stream{Source}.iterator"/> class.
+        /// Initializes an off-end instance of the iterator class.
         /// </summary>
         iterator() : _current(nullptr), _stream(nullptr) { }
 
         /// <summary>
-        /// Initializes a begin instance of the <see cref="Stream{Source}.iterator"/> class.
+        /// Initializes a begin instance of the iterator class.
         /// </summary>
         /// <param name="stream">The stream.</param>
         iterator(Stream<Source>* stream) : _current(nullptr), _stream(stream) { operator++(); }

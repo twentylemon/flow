@@ -137,6 +137,7 @@
     <ClInclude Include="intermediate\set_intersect.h" />
     <ClInclude Include="intermediate\set_sym_diff.h" />
     <ClInclude Include="intermediate\set_union.h" />
+    <ClInclude Include="optional.h" />
     <ClInclude Include="print_tuple.h" />
     <ClInclude Include="source\FlatMap.h" />
     <ClInclude Include="source\Generate.h" />

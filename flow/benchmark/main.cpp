@@ -15,6 +15,7 @@
 #include <complex>
 
 #include <flow.h>
+#include <flow/optional.h>
 using namespace flow;
 
 #ifndef _DEBUG
@@ -92,6 +93,10 @@ int main(int argc, char** argv) {
 
     using boost::multiprecision::cpp_int;
     std::cout << (iterate(std::plus<cpp_int>(), cpp_int(0), cpp_int(1)) | nth(1000)) << std::endl;
+
+    optional<int> i;
+
+
     /*
     auto fibo = iterate(std::plus<cpp_int>(), cpp_int(0), cpp_int(1)) | limit(1000) | to_vector();
 

@@ -46,7 +46,7 @@ public:
     using value_type = typename base::value_type;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Iterator{Itr}"/> class.
+    /// Initializes a new instance of the Iterator class.
     /// </summary>
     /// <param name="begin">The begin iterator.</param>
     /// <param name="end">The end iterator.</param>
@@ -89,7 +89,7 @@ public:
 
 protected:
     /// <summary>
-    /// Initializes an empty instance of the <see cref="Iterator{Itr}"/> class.
+    /// Initializes an empty instance of the Iterator class.
     /// </summary>
     Iterator() { }
 

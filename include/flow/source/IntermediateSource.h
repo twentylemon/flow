@@ -52,7 +52,7 @@ public:
     friend class SetSource;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="IntermediateSourceBase{Source, T}"/> class.
+    /// Initializes a new instance of the IntermediateSourceBase class.
     /// </summary>
     /// <param name="source">The stream source to read elements from.</param>
     IntermediateSourceBase(Source&& source) : _source(std::move(source)), _current(nullptr) { }
@@ -143,7 +143,7 @@ public:
     using decay_type = typename base::decay_type;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="IntermediateSourceNoDefault{Source, T}"/> class.
+    /// Initializes a new instance of the IntermediateSourceNoDefault class.
     /// </summary>
     /// <param name="source">The stream source to read elements from.</param>
     IntermediateSourceNoDefault(Source&& source) : base(std::move(source)), _temp() { }
@@ -189,7 +189,7 @@ public:
     using decay_type = typename base::decay_type;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="IntermediateSourceDefault{Source, T}"/> class.
+    /// Initializes a new instance of the IntermediateSourceDefault class.
     /// </summary>
     /// <param name="source">The stream source to read elements from.</param>
     IntermediateSourceDefault(Source&& source) : base(std::move(source)), _temp_current() { }
@@ -236,7 +236,7 @@ public:
     using value_type = typename base::value_type;
     
     /// <summary>
-    /// Initializes a new instance of the <see cref="IntermediateSource{Source, T}"/> class.
+    /// Initializes a new instance of the IntermediateSource class.
     /// </summary>
     /// <param name="source">The stream source to read elements from.</param>
     IntermediateSource(Source&& source) : base(std::move(source)) { }
@@ -256,7 +256,7 @@ public:
     using value_type = typename base::value_type;
     
     /// <summary>
-    /// Initializes a new instance of the <see cref="IntermediateSource{Source, std::tuple<T...>}"/> class.
+    /// Initializes a new instance of the IntermediateSource class.
     /// </summary>
     /// <param name="source">The stream source to read elements from.</param>
     IntermediateSource(Source&& source) : base(std::move(source)) { }

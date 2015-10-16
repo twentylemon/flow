@@ -44,7 +44,7 @@ public:
     using value_type = typename base::value_type;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Zip{LeftSource, RightSource, Zipper}"/> class.
+    /// Initializes a new instance of the Zip class.
     /// </summary>
     /// <param name="left">The left stream source.</param>
     /// <param name="right">The right stream source.</param>

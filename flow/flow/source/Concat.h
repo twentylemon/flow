@@ -45,7 +45,7 @@ public:
     static_assert(std::is_convertible<value_type, typename Tail::value_type>::value, "flow::concat tail element type must be convertible to the head element type");
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Concat{Head, Tail}"/> class.
+    /// Initializes a new instance of the Concat class.
     /// </summary>
     /// <param name="head">The head stream source to start with.</param>
     /// <param name="tail">The stream source to concatenate onto the end of the head source.</param>

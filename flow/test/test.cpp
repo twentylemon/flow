@@ -5,6 +5,7 @@
 BOOST_AUTO_TEST_SUITE(flow_core)
 #include "iterator.h"
 #include "uncurry.h"
+#include "optional.h"
 BOOST_AUTO_TEST_SUITE_END()
 
 BOOST_AUTO_TEST_SUITE(flow_generator)

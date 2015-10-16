@@ -45,7 +45,7 @@ public:
     using value_type = typename base::value_type;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Skip{Source}"/> class.
+    /// Initializes a new instance of the Skip class.
     /// </summary>
     /// <param name="source">The source to skip elements of.</param>
     /// <param name="begin">The index to skip to.</param>

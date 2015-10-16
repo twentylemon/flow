@@ -44,7 +44,7 @@ public:
     using value_type = typename base::value_type;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Map{Source, UnaryOperation}"/> class.
+    /// Initializes a new instance of the Map class.
     /// </summary>
     /// <param name="source">The source to map from.</param>
     /// <param name="operation">The mapping operation.</param>

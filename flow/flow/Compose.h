@@ -53,7 +53,7 @@ class Compose
 {
 public:
     /// <summary>
-    /// Initializes a new instance of the <see cref="Compose{F, G}"/> class. Represents the composition <c>F(G(...))</c>.
+    /// Initializes a new instance of the Compose class. Represents the composition <c>F(G(...))</c>.
     /// </summary>
     /// <param name="f">The f function.</param>
     /// <param name="g">The g function.</param>

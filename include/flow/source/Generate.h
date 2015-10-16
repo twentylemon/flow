@@ -44,7 +44,7 @@ public:
     using value_type = typename base::value_type;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Generate{Generator}" /> class.
+    /// Initializes a new instance of the Generate class.
     /// </summary>
     /// <param name="generator">The generator used to create stream elements.</param>
     Generate(Generator generator) : base(), _generator(generator) { }

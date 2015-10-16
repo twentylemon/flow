@@ -111,7 +111,7 @@ public:
     static_assert(std::is_convertible<value_type, typename RightSource::value_type>::value, "flow::(set operation) left element type must be convertible to the right element type");
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="SetSource{LeftSource, RightSource, Compare, Operation}"/> class.
+    /// Initializes a new instance of the SetSource class.
     /// </summary>
     /// <param name="left">The left stream source.</param>
     /// <param name="right">The right stream source.</param>

@@ -44,7 +44,7 @@ public:
     using base = IntermediateSource<Source>;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="TakeWhile{Source, UnaryPredicate}" /> class.
+    /// Initializes a new instance of the TakeWhile class.
     /// </summary>
     /// <param name="source">The source to take elements from.</param>
     /// <param name="predicate">The predicate, take stream elements until this returns <c>false</c>.</param>

@@ -45,7 +45,7 @@ public:
     using decay_type = std::decay_t<value_type>;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="GeneratorSourceBase{T}"/> class.
+    /// Initializes a new instance of the GeneratorSourceBase class.
     /// </summary>
     GeneratorSourceBase() : _current(nullptr) { }
 
@@ -118,7 +118,7 @@ public:
     using decay_type = typename base::decay_type;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="GeneratorSourceNoDefault{T}"/> class.
+    /// Initializes a new instance of the GeneratorSourceNoDefault class.
     /// </summary>
     GeneratorSourceNoDefault() : base(), _temp() { }
 
@@ -163,7 +163,7 @@ public:
     using decay_type = typename base::decay_type;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="GeneratorSourceDefault{T}"/> class.
+    /// Initializes a new instance of the GeneratorSourceDefault class.
     /// </summary>
     GeneratorSourceDefault() : base(), _temp_current() { }
 

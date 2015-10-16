@@ -45,7 +45,7 @@ public:
     using value_type = typename base::value_type;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="DropWhile{Source, UnaryPredicate}" /> class.
+    /// Initializes a new instance of the DropWhile class.
     /// </summary>
     /// <param name="source">The source to drop elements from.</param>
     /// <param name="predicate">The predicate, drop stream elements until this returns <c>false</c>.</param>

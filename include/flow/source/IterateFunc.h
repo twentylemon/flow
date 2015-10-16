@@ -49,7 +49,7 @@ public:
     using value_type = typename base::value_type;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="IterateFunc{IteratingFunction, T, N}"/> class.
+    /// Initializes a new instance of the IterateFunc class.
     /// </summary>
     /// <param name="function">The function to iterate.</param>
     /// <param name="...initial">The initial arguments to pass to the function.</param>

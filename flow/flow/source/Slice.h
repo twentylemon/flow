@@ -44,7 +44,7 @@ public:
     using parent_type = Skip<Source>;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Slice{Source}"/> class.
+    /// Initializes a new instance of the Slice class.
     /// </summary>
     /// <param name="source">The source to slice.</param>
     /// <param name="begin">The begin index to slice from.</param>
