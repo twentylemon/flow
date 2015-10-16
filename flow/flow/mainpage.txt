@@ -108,6 +108,17 @@
 /// as finding if any of the elements match the predicate, then negating the result -- this is exactly what is done.</para>
 /// \code{.cpp}auto my_none = any(my_predicate).then(std::logical_not<bool>());\endcode
 /// 
+/// \todo Java uses stream&lt;T&gt; instead of the template being the stream source. This makes it easier to return streams
+/// or pass streams around, or have method that return streams or whatever. Currently, a function like below is not generally possible.
+/// \code{.cpp}auto get_stream(T& t) {
+///     return some_property(t) ? cycle(t, 2) : from(t);
+/// }\endcode
+/// Perhaps this way is actually better. Embedding the template allows for better optimizations to occur, but it makes the
+/// stream type convoluted. It literally always is "a stream of ints" regardless of how many operations are in the source.
+/// The only way I can think of to allow stream&lt;T&gt; to exist would be through the use of an abstract base source class,
+/// and each source has a pointer to the source before it in the pipeline. This involves heavy use of virtual methods -
+/// essentially every function call would need to be virtual. It would also allow for recursively defined streams though.
+///
 
 
 /// \namespace flow::generator
@@ -138,7 +149,7 @@
 /// <para>The functions in the flow::intermediate namespace all produce an intermediate operation. The
 /// intermediate operation does not operate on a stream until the pipe <c>operator|</c> has been applied,
 /// including eager operations. Only after being applied to a stream is the new stream created.</para>
-/// \todo group the stream, [1,2,3,4] with group<2> -> [(1,2), (3,4)]
+/// \todo group the stream, [1,2,3,4,5] with group<2> -> [(1,2), (3,4)]
 /// \todo moving window into the stream, [1,2,3] with window<2> -> [(1,2), (2,3)]
 /// \todo adjacent_diff - from &lt;numeric&gt;
 /// \todo partial_sum - from &lt;numeric&gt;
