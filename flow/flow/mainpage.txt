@@ -20,7 +20,11 @@
 /// --------------------
 /// <para>The flow::generator namespace contains several factory methods for creating a Stream object. Probably the most
 /// common generator used is from(), which creates a Stream from an iterator range or a container.</para>
-/// <code>auto stream = from(my_vector); // a stream over the entire vector in the same order</code>
+/// \code{.cpp}auto stream = from(my_vector); // a stream over the entire vector in the same order \endcode
+/// <para>Since it's very common, the pipe operator is overloaded for container types as a shorthand for from(). So the following
+/// statements create and process the same stream.</para>
+/// \code{.cpp}from(my_vector) | each(process);    // process each vector element
+/// my_vector | each(process);          // shorthand, the same operation as above   \endcode
 /// <para>Other common stream generators are iota(), which counts up from a value, repeat(), which repeats a value or
 /// cycle(), which cycles a container.</para>
 /// 
