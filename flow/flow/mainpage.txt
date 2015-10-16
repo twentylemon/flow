@@ -136,9 +136,9 @@
 /// including eager operations. Only after being applied to a stream is the new stream created.</para>
 /// \todo group the stream, [1,2,3,4] with group<2> -> [(1,2), (3,4)]
 /// \todo moving window into the stream, [1,2,3] with window<2> -> [(1,2), (2,3)]
-/// \todo adjacent_diff - from <numeric>
-/// \todo partial_sum - from <numeric>
-/// \todo inner_product - from <numeric>
+/// \todo adjacent_diff - from &lt;numeric&gt;
+/// \todo partial_sum - from &lt;numeric&gt;
+/// \todo inner_product - from &lt;numeric&gt;
 /// \todo overload arithmetic operators as map operations?
 /// \todo shuffle - would have to be eager, take rng as parameter
 /// 
