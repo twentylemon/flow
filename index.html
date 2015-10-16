@@ -1,34 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <title>Flow by twentylemon</title>
 
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
-    <title>Flow by twentylemon</title>
   </head>
-
   <body>
-    <header>
-      <div class="inner">
-        <h1>Flow</h1>
-        <h2>C++ lazy evaluated stream processing</h2>
-        <a href="https://github.com/twentylemon/flow" class="button"><small>View project on</small> GitHub</a>
-      </div>
-    </header>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Flow</h1>
+        <p class="header">C++ lazy evaluated stream processing</p>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h1>
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/twentylemon/flow/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/twentylemon/flow/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/twentylemon/flow">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/twentylemon">twentylemon</a></p>
+
+
+      </header>
+      <section>
+        <h1>
 <a id="sick-flow-bro" class="anchor" href="#sick-flow-bro" aria-hidden="true"><span class="octicon octicon-link"></span></a>sick flow, bro</h1>
 
 <p>Inspired by Java 8 <a href="http://www.oracle.com/technetwork/articles/java/ma14-java-se-8-streams-2177646.html">Streams</a>,
@@ -36,7 +38,11 @@ flow is a C++14 library that provides lazy evaluation and functional transformat
 The library provides many common data transformations, such as map, filter and fold, as well as other commonly used
 operations like computing the sum, min and max or simply counting the number or elements. And all of it is packaged
 in a nice, easy to read and understand syntax. To use, simply <code>#include &lt;flow.h&gt;</code> in your C++14 program. With fully
-optimized code (<code>-O3</code> or <code>/O2</code>), flow does not offer any performance penalities, so there's no reason not to love.</p>
+optimized code (<code>-O3</code> or <code>/O2</code>), flow offers minimal performance penalties, so there's no reason not to love.</p>
+
+<ul>
+<li><a href="http://twentylemon.github.io/flow/doxy/index.html">Documentation</a></li>
+</ul>
 
 <h2>
 <a id="what-is-a-sick-flow" class="anchor" href="#what-is-a-sick-flow" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is a Sick Flow?</h2>
@@ -52,6 +58,12 @@ do things with.</p>
 common generator used is <code>from()</code>, which creates a Stream from an iterator range or a container.</p>
 
 <div class="highlight highlight-source-c++"><pre><span class="pl-k">auto</span> stream = from(my_vector); <span class="pl-c">// a stream over the entire vector in the same order</span></pre></div>
+
+<p>Since it's very common, the pipe operator is overloaded for container types as a shorthand for from(). So the following
+statements create and process the same stream.</p>
+
+<div class="highlight highlight-source-c++"><pre><span class="pl-en">from</span>(my_vector) | each(process);    <span class="pl-c">// process each vector element</span>
+my_vector | each(process);          <span class="pl-c">// shorthand, the same operation as above</span></pre></div>
 
 <p>Other common stream generators are <code>iota()</code>, which counts up from a value, and <code>repeat()</code>, which repeats a value.
 Several others are included in the flow::generator namespace.</p>
@@ -72,12 +84,17 @@ values for some reason. Oh, and you want at most 10 of those. How would you do t
 
 <p>Not bad, but it's not quickly clear what is going on. The same operation can be done as a sick flow instead:</p>
 
-<div class="highlight highlight-source-c++"><pre>list | filter([](<span class="pl-k">int</span> i){ <span class="pl-k">return</span> i % <span class="pl-c1">2</span> == <span class="pl-c1">0</span>; }) | limit(<span class="pl-c1">10</span>) | map([](<span class="pl-k">int</span> i){ <span class="pl-k">return</span> i*i; }) | each(process);</pre></div>
+<div class="highlight highlight-source-c++"><pre>list
+    | filter([](<span class="pl-k">int</span> i) { <span class="pl-k">return</span> i % <span class="pl-c1">2</span> == <span class="pl-c1">0</span>; })
+    | map([](<span class="pl-k">int</span> i) { <span class="pl-k">return</span> i*i; })
+    | limit(<span class="pl-c1">10</span>)
+    | each(process);</pre></div>
 
-<p>Reading the line aloud, it's obvious what is happening. Take the list, keep even values, limit it to 10 elements,
-map the elements to their square, and then process each of those. Fun. This is just a trivial example, there many other
-stream operations available to be used.
-Stream operations are broken down into two main types: Intermediate and Terminal operations. Intermediate operations
+<p>Reading the flow aloud, it's obvious what is happening. Take the list, keep even values, map the elements to their square,
+limit it to 10 elements, and then process each of those. Fun. This is just a trivial example, there many other
+stream operations available to be used.</p>
+
+<p>Stream operations are broken down into two main types: Intermediate and Terminal operations. Intermediate operations
 transform a stream into another stream. We saw three examples above in <code>filter</code>, <code>limit</code> and <code>map</code>. Intermediate
 operations are meaningless without some sort of Terminal operation, such as <code>each</code> or <code>count</code>. Terminal operations
 do something with the final stream data, be it summing, counting, calling a function, finding the min, and so on.</p>
@@ -96,32 +113,72 @@ If not, you can still just write <code>flow::map</code> instead of <code>flow::i
 <h3>
 <a id="documentation-at-a-glance" class="anchor" href="#documentation-at-a-glance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation at a Glance</h3>
 
-<p>Documentation is available <a href="doxy/index.html">here</a>. The best way to view all available functions, use the <a href="doxy/namespacemembers_func.html">Namespace Members</a> page.
-It lists every important function and the namespace it sits in, indicating whether it is a generator, or an intermediate or terminal operation.</p>
-        </section>
+<p>The best way to view all available functions, use the <a href="https://twentylemon.github.io/flow/doxy/namespacemembers_func.html">Namespace Members</a> page. It lists
+every important function and the namespace it sits in, indicating whether it is a generator, or an intermediate or terminal operation.</p>
 
-        <aside id="sidebar">
-          <a href="doxy/index.html" class="button">
-            <small>View</small>
-            API Docs
-          </a>
-          <a href="https://github.com/twentylemon/flow/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/twentylemon/flow/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
+<h2>
+<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h2>
 
-          <p class="repo-owner"><a href="https://github.com/twentylemon/flow"></a> is maintained by <a href="https://github.com/twentylemon">twentylemon</a>.</p>
+<h3>
+<a id="basic-iteration" class="anchor" href="#basic-iteration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic Iteration</h3>
 
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
+<div class="highlight highlight-source-c++"><pre>my_vector | each([](<span class="pl-k">auto</span>&amp; ele) {
+    <span class="pl-c1">fancy_things</span>(ele);
+    <span class="pl-c1">more_fancy_things</span>(ele);
+});</pre></div>
+
+<h3>
+<a id="display-streams" class="anchor" href="#display-streams" aria-hidden="true"><span class="octicon octicon-link"></span></a>Display Streams</h3>
+
+<div class="highlight highlight-source-c++"><pre>people | map(&amp;Person::name) | dump();       <span class="pl-c">// display to std::cout</span>
+<span class="pl-c">// or, if Person::operator&lt;&lt; exists</span>
+people | dump(why_not_into_a_file, <span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\n</span><span class="pl-pds">"</span></span>);   <span class="pl-c">// with a new line between each one</span></pre></div>
+
+<h3>
+<a id="basic-statistics" class="anchor" href="#basic-statistics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic Statistics</h3>
+
+<div class="highlight highlight-source-c++"><pre><span class="pl-k">auto</span> male_age_stats = people
+    | filter([](Person&amp; p) { <span class="pl-k">return</span> p.<span class="pl-c1">sex</span>() == Person::Sex::Male; })
+    | map(&amp;Person::age)
+    | stats();  <span class="pl-c">// gets mean, standard deviation; can optionally get min/max, median/mode</span>
+
+<span class="pl-c">// get frequency of each age in the group</span>
+<span class="pl-k">auto</span> age_distribution = people | map(&amp;Person::age) | to_map();  <span class="pl-c">// or to_unordered_map()</span></pre></div>
+
+<h3>
+<a id="infinite-streams" class="anchor" href="#infinite-streams" aria-hidden="true"><span class="octicon octicon-link"></span></a>Infinite Streams</h3>
+
+<div class="highlight highlight-source-c++"><pre><span class="pl-k">using</span> boost::multiprecision::cpp_int;
+<span class="pl-k">auto</span> nth_fibonacci = iterate(std::plus&lt;cpp_int&gt;(), cpp_int(<span class="pl-c1">0</span>), cpp_int(<span class="pl-c1">1</span>)) | nth(<span class="pl-c1">1000</span>); <span class="pl-c">// some huge number</span>
+
+<span class="pl-en">iota</span>(<span class="pl-c1">1</span>) | filter([](<span class="pl-k">int</span> i) { <span class="pl-k">return</span> i % <span class="pl-c1">2</span> == <span class="pl-c1">0</span>; }); <span class="pl-c">// a stream containing all even values</span>
+<span class="pl-en">iota</span>(<span class="pl-c1">2</span>, <span class="pl-c1">2</span>); <span class="pl-c">// or, this is the same, start from 2 counting up by 2</span>
+
+<span class="pl-en">random_engine</span>(std::mt19937());  <span class="pl-c">// infinite stream of randomly generated values</span>
+<span class="pl-en">random_ints</span>(<span class="pl-c1">0</span>, <span class="pl-c1">10</span>);             <span class="pl-c">// random ints in the range [0,10]</span>
+<span class="pl-en">generate</span>(std::rand);            <span class="pl-c">// even more randoms!</span></pre></div>
+
+<h3>
+<a id="assign-ids-to-objects" class="anchor" href="#assign-ids-to-objects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Assign IDs to Objects</h3>
+
+<div class="highlight highlight-source-c++"><pre>widgets | zip(iota(<span class="pl-c1">1</span>), [](Widget&amp; w, <span class="pl-k">int</span> id) { w.<span class="pl-c1">set_id</span>(id); <span class="pl-k">return</span> id; }) | execute();</pre></div>
+
+<h3>
+<a id="sorted-stream-operations" class="anchor" href="#sorted-stream-operations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sorted Stream Operations</h3>
+
+<div class="highlight highlight-source-c++"><pre>std::vector&lt;<span class="pl-k">int</span>&gt; x = { <span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span> };
+std::vector&lt;<span class="pl-k">int</span>&gt; y = { <span class="pl-c1">1</span>, <span class="pl-c1">3</span>, <span class="pl-c1">5</span>, <span class="pl-c1">7</span> };
+
+<span class="pl-k">auto</span> xy_union = x | set_union(y) | to_vector();             <span class="pl-c">// { 1, 2, 3, 4, 5, 7 }</span>
+<span class="pl-k">auto</span> xy_intersection = x | set_intersect(y) | to_vector();  <span class="pl-c">// { 1, 3 }</span>
+<span class="pl-k">auto</span> xy_difference = x | set_diff(y) | to_vector();         <span class="pl-c">// { 2, 4 }</span>
+<span class="pl-k">auto</span> xy_sym_diff = x | set_sym_diff(y) | to_vector();       <span class="pl-c">// { 2, 4, 5, 7 }</span></pre></div>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
     </div>
-
-  
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
   </body>
 </html>
-
