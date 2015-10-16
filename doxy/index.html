@@ -14,6 +14,7 @@
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="styles.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -24,7 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Flow
    </div>
-   <div id="projectbrief">Lazy Evaluated Stream Processing</div>
+   <div id="projectbrief">Lazy Evaluated Stream Processing in C++</div>
   </td>
  </tr>
  </tbody>
@@ -87,8 +88,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>A flow is usually called a stream. But if I called the library "Stream" I couldn't say "sick flow" all the time. I'll use flow and stream interchangeably, just know that a stream is a source of data, data that you would want to do things with.</p>
 <h2>Creating a Sick Flow </h2>
 <p>The <a class="el" href="de/d3f/namespaceflow_1_1generator.html" title="Factory methods to create stream objects, all of which are also aliased in the flow namespace...">flow::generator</a> namespace contains several factory methods for creating a Stream object. Probably the most common generator used is <a class="el" href="de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a>, which creates a Stream from an iterator range or a container.</p>
-<p><code>auto stream = from(my_vector); // a stream over the entire vector in the same order</code> </p>
-<p>Other common stream generators are <a class="el" href="de/d3f/namespaceflow_1_1generator.html#ad3e468cd8e943a73900891b99f7a2ded" title="Creates an infinite stream of values by incrementing begin  using operator++. ">iota()</a>, which counts up from a value, <a class="el" href="de/d3f/namespaceflow_1_1generator.html#ac91cc015f53a6efeea386b04b9486572" title="Creates an infinite stream containing value  repeated over and over. ">repeat()</a>, which repeats a value or <a class="el" href="de/d3f/namespaceflow_1_1generator.html#ac56e6d6017435a15378682bacc6da4e9" title="Creates an infinite stream which cycles the iterator range. ">cycle()</a>, which cycles a container.</p>
+<div class="fragment"><div class="line"><span class="keyword">auto</span> stream = <a class="code" href="de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b">from</a>(my_vector); <span class="comment">// a stream over the entire vector in the same order </span></div>
+</div><!-- fragment --> <p>Since it's very common, the pipe operator is overloaded for container types as a shorthand for <a class="el" href="de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a>. So the following statements create and process the same stream.</p>
+<div class="fragment"><div class="line"><a class="code" href="de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b">from</a>(my_vector) | <a class="code" href="d1/d6c/namespaceflow_1_1terminal.html#a6b3d0ede6c9489aebb9ce1ed684c31a0">each</a>(process);    <span class="comment">// process each vector element</span></div>
+<div class="line">my_vector | <a class="code" href="d1/d6c/namespaceflow_1_1terminal.html#a6b3d0ede6c9489aebb9ce1ed684c31a0">each</a>(process);          <span class="comment">// shorthand, the same operation as above   </span></div>
+</div><!-- fragment --> <p>Other common stream generators are <a class="el" href="de/d3f/namespaceflow_1_1generator.html#ad3e468cd8e943a73900891b99f7a2ded" title="Creates an infinite stream of values by incrementing begin  using operator++. ">iota()</a>, which counts up from a value, <a class="el" href="de/d3f/namespaceflow_1_1generator.html#ac91cc015f53a6efeea386b04b9486572" title="Creates an infinite stream containing value  repeated over and over. ">repeat()</a>, which repeats a value or <a class="el" href="de/d3f/namespaceflow_1_1generator.html#ac56e6d6017435a15378682bacc6da4e9" title="Creates an infinite stream which cycles the iterator range. ">cycle()</a>, which cycles a container.</p>
 <h2>Manipulating a Sick Flow </h2>
 <p>Say you want to loop through a list of numbers. But you only want the even values. Then you want the squares of those values for some reason. Oh, and you want at most 10 of those. How would you do that in normal C++? Probably something like</p>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> <a class="code" href="d1/d6c/namespaceflow_1_1terminal.html#a52dfcc0ff79f7c3d74ea2e80a3f9a65f">count</a> = 0;</div>

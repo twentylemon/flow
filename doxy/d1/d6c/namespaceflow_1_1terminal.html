@@ -14,6 +14,7 @@
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+<link href="../../styles.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -24,7 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Flow
    </div>
-   <div id="projectbrief">Lazy Evaluated Stream Processing</div>
+   <div id="projectbrief">Lazy Evaluated Stream Processing in C++</div>
   </td>
  </tr>
  </tbody>
@@ -350,7 +351,8 @@ Functions</h2></td></tr>
 <p>equals - check if two streams are equal </p>
 <p>find - filter(equal to) | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612" title="Returns the first element from the stream. ">first()</a>; optional parameter to return if filtered stream is empty </p>
 <p>is_sorted - check if a stream is sorted by a comparator </p>
-<p class="enddd">overload comparison operators between streams? </p>
+<p>overload comparison operators between streams? </p>
+<p class="enddd">to_group - convert to a std::map&lt;T::property, std::vector&lt;T&gt;&gt; </p>
 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="afb46a36fe4c6693d7b05e3bd0fc05f4d"></a>
