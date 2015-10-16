@@ -64,8 +64,8 @@ public:
     /// </summary>
     /// <returns>The next element in the stream.</returns>
     value_type& next() {
-        base::assign_temp_current(std::move(_values[0]));
-        _values[0] = _function(_values);    // destroy the first value
+        base::assign_temp_current(_values[0]);  // copy the value
+        _values[0] = _function(_values);        // destroy the first value
         if (N > 1) {
             std::rotate(_values.begin(), _values.begin() + 1, _values.end());
         }

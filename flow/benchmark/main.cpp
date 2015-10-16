@@ -10,6 +10,7 @@
 #include <thread>
 #include <chrono>
 
+#include <boost/multiprecision/cpp_int.hpp>
 #include <boost/timer.hpp>
 #include <complex>
 
@@ -79,7 +80,6 @@ void run_timer() {
     std::cout << std::endl << "stream_: " << t_.elapsed() << "\t" << v_ << std::endl;
 }
 
-
 int main(int argc, char** argv) {
     std::iota(vec.begin(), vec.end(), 0);
     using T = decltype(vec)::value_type;
@@ -89,6 +89,41 @@ int main(int argc, char** argv) {
 
     std::vector<int> v1 = { 1, 3, 5, 7 };
     std::vector<int> v2 = { 2, 4, 6, 8 };
+
+    using boost::multiprecision::cpp_int;
+    std::cout << (iterate(std::plus<cpp_int>(), cpp_int(0), cpp_int(1)) | nth(1000)) << std::endl;
+    /*
+    auto fibo = iterate(std::plus<cpp_int>(), cpp_int(0), cpp_int(1)) | limit(1000) | to_vector();
+
+    stream::MakeStream::recurrence(std::plus<cpp_int>(), cpp_int(0), cpp_int(1)) | stream::op::limit(1000) | stream::op::copy_to(fibo.begin());
+
+    fibo | dump(std::cout, "\n");
+    /*
+
+    auto q = iterate(std::plus<cpp_int>(), cpp_int(0), cpp_int(1));
+
+    for (unsigned i = 3; i < fibo.size(); ++i) {
+        if (fibo[i - 1] == fibo[i]) {
+            std::cout << i << " error" << std::endl
+                << fibo[i - 2] << std::endl
+                << fibo[i] << std::endl;
+            break;
+        }
+        else {
+            //std::cout << i << "\t" << fibo[i] << std::endl;
+        }
+    }
+
+    std::array<cpp_int, 3> f;
+    f[0] = 0;
+    f[1] = 1;
+    for (int i = 2; i <= 100; i++) {
+        f[2] = f[0] + f[1];
+        std::rotate(f.begin(), f.begin() + 1, f.end());
+        std::cout << i << ": " << f[1] << std::endl;
+    }
+
+    std::cout << typeid(q).name() << std::endl;
 
     /*
     std::vector<int> cw{ 1, 2, 3 };

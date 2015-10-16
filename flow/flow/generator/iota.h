@@ -42,7 +42,7 @@ namespace flow {
 /// <seealso cref="closed_range()"/>
 template <typename T>
 auto iota(T&& begin) {
-    return iterate([](T& val) -> T& { return ++val; }, std::forward<T>(begin));
+    return iterate([](T& val) { return ++val; }, std::forward<T>(begin));
 }
 
 /// <summary>
@@ -57,7 +57,7 @@ auto iota(T&& begin) {
 /// <seealso cref="closed_range()"/>
 template <typename T, typename U>
 auto iota(T&& begin, U&& increment) {
-    return iterate([increment = std::forward<U>(increment)](T& val) -> T& { return val += increment; }, std::forward<T>(begin));
+    return iterate([increment = std::forward<U>(increment)](T& val) { return val += increment; }, std::forward<T>(begin));
 }
     }
 }

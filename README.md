@@ -70,3 +70,59 @@ If not, you can still just write `flow::map` instead of `flow::intermediate::map
 The best way to view all available functions, use the <a href="https://twentylemon.github.io/flow/doxy/namespacemembers_func.html">Namespace Members</a> page. It lists
 every important function and the namespace it sits in, indicating whether it is a generator, or an intermediate or terminal operation.
 
+Examples
+--------
+### Basic Iteration
+```C++
+my_vector | each([](auto& ele) {
+    fancy_things(ele);
+    more_fancy_things(ele);
+});
+```
+
+### Display Attributes
+```C++
+people | map(&Person::name) | dump();   // display to std::cout
+// or, if Person::operator<< exists
+people | dump(why_not_into_a_file, "\n");
+```
+
+### Basic Statistics
+```C++
+auto male_age_stats = people
+    | filter([](Person& p) { return p.sex() == Person::Sex::Male; })
+    | map(&Person::age)
+    | stats();  // gets mean, standard deviation; can optionally get min/max, median/mode
+
+// get frequency of each age in the group
+auto age_distribution = people | map(&Person::age) | to_map();  // or to_unordered_map()
+```
+
+### Infinite Streams
+```C++
+using boost::multiprecision::cpp_int;
+auto nth_fibonacci = iterate(std::plus<cpp_int>(), cpp_int(0), cpp_int(1)) | nth(1000); // some huge number
+
+iota(1) | filter([](int i) { return i % 2 == 0; }); // a stream containing all even values
+iota(2, 2); // or, this is the same, start from 2 counting up by 2
+
+random_engine(std::mt19937());  // infinite stream of randomly generated values
+random_ints(0, 10);             // random ints in the range [0,10]
+generate(std::rand);            // even more randoms!
+```
+
+### Assign IDs to Objects
+```C++
+widgets | zip(iota(1), [](Widget& w, int id) { w.set_id(id); return id; }) | execute();
+```
+
+### Sorted Stream Operations
+```C++
+std::vector<int> x = { 1, 2, 3, 4 };
+std::vector<int> y = { 1, 3, 5, 7 };
+
+auto union = x | set_union(y) | to_vector();            // { 1, 2, 3, 4, 5, 7 }
+auto intersection = x | set_intersect(y) | to_vector(); // { 1, 3 }
+auto difference = x | set_diff(y) | to_vector();        // { 2, 4 }
+auto sym_diff = x | set_sym_diff(y) | to_vector();      // { 2, 4, 5, 7 }
+```

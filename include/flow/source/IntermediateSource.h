@@ -156,10 +156,20 @@ protected:
     /// Updates the current stream value pointer to a temporary value. The lifetime of the
     /// temporary is extended so the pointer is valid.
     /// </summary>
-    /// <param name="temp_current">The temp_current.</param>
+    /// <param name="temp_current">The value to set as the next stream element.</param>
     void assign_temp_current(decay_type&& temp_current) {
         _temp.clear();
         _temp.push_back(std::move(temp_current));
+        base::assign_current(_temp.data());
+    }
+
+    /// <summary>
+    /// Updates the current stream value pointer to copy a value.
+    /// </summary>
+    /// <param name="temp_current">The value to set as the next stream element.</param>
+    void assign_temp_current(decay_type& temp_current) {
+        _temp.clear();
+        _temp.push_back(temp_current);
         base::assign_current(_temp.data());
     }
 
@@ -192,9 +202,18 @@ protected:
     /// Updates the current stream value pointer to a temporary value. The lifetime of the
     /// temporary is extended so the pointer is valid.
     /// </summary>
-    /// <param name="temp_current">The temp_current.</param>
+    /// <param name="temp_current">The value to set as the next stream element.</param>
     void assign_temp_current(decay_type&& temp_current) {
         _temp_current = std::move(temp_current);
+        base::assign_current(&_temp_current);
+    }
+
+    /// <summary>
+    /// Updates the current stream value pointer to copy a value.
+    /// </summary>
+    /// <param name="temp_current">The value to set as the next stream element.</param>
+    void assign_temp_current(decay_type& temp_current) {
+        _temp_current = temp_current;
         base::assign_current(&_temp_current);
     }
 
