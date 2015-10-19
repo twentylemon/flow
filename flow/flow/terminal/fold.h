@@ -98,7 +98,7 @@ auto fold_id(Accumulator accumulator, UnaryFunction initializer) {
 /// <returns>A terminal operation which folds the stream.</returns>
 template <typename Accumulator, typename UnaryFunction, typename T>
 auto fold_id(Accumulator accumulator, UnaryFunction initializer, T&& init) {
-    return fold(accumulator, initializer(init));
+    return fold(accumulator, initializer(std::forward<T>(init)));
 }
     }
 }

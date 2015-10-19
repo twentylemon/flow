@@ -30,6 +30,7 @@
 
 #include "flow/uncurry.h"
 #include "flow/print_tuple.h"
+#include "flow/optional.h"
 
 #include "flow/generator/from.h"
 #include "flow/generator/from_move.h"

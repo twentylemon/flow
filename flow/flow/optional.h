@@ -44,55 +44,131 @@ namespace flow {
 
     namespace detail {
 
+/// <summary>
+/// Storage device for flow::optional.
+/// </summary>
 template <class T>
 union optional_storage
 {
 public:
-    optional_storage() : _dummy() {};
+    /// <summary>
+    /// Initializes a new empty instance of the optional_storage union.
+    /// </summary>
+    optional_storage() : _dummy() { }
 
+    /// <summary>
+    /// Initializes a new instance of the of the optional_storage union storing <paramref name="value"/>.
+    /// </summary>
+    /// <param name="value">The value.</param>
     optional_storage(const T& value) : _value(value) { }
 
-    ~optional_storage() {}
+    /// <summary>
+    /// Initializes a new instance of the of the optional_storage union storing <paramref name="value"/>.
+    /// </summary>
+    /// <param name="value">The value.</param>
+    optional_storage(T&& value) : _value(std::move(value)) { }
 
+    /// <summary>
+    /// Finalizes an instance of the optional_storage union.
+    /// </summary>
+    ~optional_storage() { }
+
+    /// <summary>
+    /// The dummy variable, the union value when there is no optional value.
+    /// </summary>
     unsigned char _dummy;
+
+    /// <summary>
+    /// The actual value in the optional.
+    /// </summary>
     T _value;
 };
     }
 
+/// <summary>
+/// Manages an optionally contained value, one that may or may not be present.
+/// <para>This optional stores a copy of the original value.</para>
+/// <para>This class functions as a stripped down version of the soon to exist <c>std::optional</c>. Once
+/// <c>std::optional</c> is released and implemented by major compilers, this class will be aliased to be <c>std::optional</c>
+/// instead, and it will serve as a drop in replacement assuming the standard does not change.</para>
+/// </summary>
 template <class T>
 class optional
 {
 public:
+    /// <summary>
+    /// Initializes a new instance of the optional class which contains no value.
+    /// </summary>
     optional() : _init(false), _storage() { }
 
+    /// <summary>
+    /// Initializes a new instance of the optional class containing a copy of <paramref name="value"/>.
+    /// </summary>
+    /// <param name="value">The value to set.</param>
     optional(const T& value) : _init(true), _storage(value) { }
 
+    /// <summary>
+    /// Initializes a new instance of the optional class containing <paramref name="value"/>.
+    /// </summary>
+    /// <param name="value">The value to move into the contained value.</param>
+    optional(T&& value) : _init(true), _storage(std::move(value)) { }
+
+    /// <summary>
+    /// Assigns the contained value to be <paramref name="value"/>.
+    /// </summary>
+    /// <param name="value">The value to set.</param>
+    /// <returns><c>*this</c></returns>
     optional<T>& operator=(T& value) {
         _init = true;
         _storage._value = value;
         return *this;
     }
 
+    /// <summary>
+    /// Returns <c>true</c> if this object contains a value.
+    /// </summary>
+    /// <returns><c>true</c> if this object contains a value.</returns>
     operator bool() const {
         return _init;
     }
 
+    /// <summary>
+    /// Returns a pointer to the contained value, undefined if no there is no contained value.
+    /// </summary>
+    /// <returns>A pointer to the contained value.</returns>
     T* operator->() {
         return &_storage._value;
     }
 
+    /// <summary>
+    /// Returns a pointer to the contained value, undefined if there is no contained value.
+    /// </summary>
+    /// <returns>A pointer to the contained value.</returns>
     const T* operator->() const {
         return &_storage._value;
     }
 
+    /// <summary>
+    /// Returns a reference to the contained value, undefined if there is no contained value.
+    /// </summary>
+    /// <returns>A reference to the contained value.</returns>
     T& operator*() {
         return _storage._value;
     }
 
+    /// <summary>
+    /// Returns a reference to the contained value, undefined if there is no contained value.
+    /// </summary>
+    /// <returns>A reference to the contained value.</returns>
    const T& operator*() const {
         return _storage._value;
     }
 
+   /// <summary>
+   /// Returns a reference to the contained value.
+   /// </summary>
+   /// <returns>A reference to the contained value.</returns>
+    /// <exception cref="std::logic_error">Thrown when there is no contained value.</exception>
    T& value() {
        if (*this) {
            return **this;
@@ -100,6 +176,11 @@ public:
        throw std::logic_error("bad optional access");
    }
 
+   /// <summary>
+   /// Returns a reference to the contained value.
+   /// </summary>
+   /// <returns>A reference to the contained value.</returns>
+   /// <exception cref="std::logic_error">Thrown when there is no contained value.</exception>
    const T& value() const {
        if (*this) {
            return **this;
@@ -107,6 +188,10 @@ public:
        throw std::logic_error("bad optional access");
    }
 
+   /// <summary>
+   /// Returns a reference to the contained value if it exists, otherwise returns <paramref name="default_value"/>.
+   /// </summary>
+   /// <returns>A reference to the contained value if it exists, <paramref name="default_value"/> otherwise.</returns>
    T& value_or(T& default_value) {
        if (*this) {
            return **this;
@@ -114,6 +199,10 @@ public:
        return default_value;
    }
 
+   /// <summary>
+   /// Returns a reference to the contained value if it exists, otherwise returns <paramref name="default_value"/>.
+   /// </summary>
+   /// <returns>A reference to the contained value if it exists, <paramref name="default_value"/> otherwise.</returns>
    const T& value_or(const T& default_value) const {
        if (*this) {
            return **this;
@@ -122,43 +211,87 @@ public:
    }
 
 private:
-    bool _init;
-    flow::detail::optional_storage<T> _storage;
+    bool _init;                                 // true when there is actually a value
+    flow::detail::optional_storage<T> _storage; // the value, or lack there of
 };
 
+/// <summary>
+/// Manages an optionally contained reference, one that may or may not be present.
+/// <para>This class functions as a stripped down version of the soon to exist <c>std::optional</c>. Once
+/// <c>std::optional</c> is released and implemented by major compilers, this class will be aliased to be <c>std::optional</c>
+/// instead, and it will serve as a drop in replacement assuming the standard does not change.</para>
+/// </summary>
 template <class T>
 class optional<T&>
 {
 public:
+    /// <summary>
+    /// Initializes a new instance of the optional class which contains no value.
+    /// </summary>
     optional() : _ref(nullptr) { }
 
-    optional(T& v) : _ref(&v) { }
+    /// <summary>
+    /// Initializes a new instance of the optional class containing <paramref name="value"/>.
+    /// </summary>
+    /// <param name="value">The value to set.</param>
+    optional(T& value) : _ref(&value) { }
 
+    /// <summary>
+    /// Assigns the contained value to be <paramref name="value"/>.
+    /// <para>This changes which value is referenced. The original contained value, if any, is not altered by this operation.</para>
+    /// </summary>
+    /// <param name="value">The value to set.</param>
+    /// <returns><c>*this</c></returns>
     optional<T&>& operator=(T& value) {
         _ref = &value;
         return *this;
     }
 
+    /// <summary>
+    /// Returns <c>true</c> if this object contains a value.
+    /// </summary>
+    /// <returns><c>true</c> if this object contains a value.</returns>
     operator bool() const {
         return _ref != nullptr;
     }
 
+    /// <summary>
+    /// Returns a pointer to the contained value, undefined if there is no contained value.
+    /// </summary>
+    /// <returns>A pointer to the contained value.</returns>
     T* operator->() {
         return _ref;
     }
 
+    /// <summary>
+    /// Returns a pointer to the contained value, undefined if there is no contained value.
+    /// </summary>
+    /// <returns>A pointer to the contained value.</returns>
     const T* operator->() const {
         return _ref;
     }
 
+    /// <summary>
+    /// Returns a reference to the contained value, undefined if there is no contained value.
+    /// </summary>
+    /// <returns>A reference to the contained value.</returns>
     T& operator*() {
         return *_ref;
     }
 
+    /// <summary>
+    /// Returns a reference to the contained value, undefined if there is no contained value.
+    /// </summary>
+    /// <returns>A reference to the contained value.</returns>
     const T& operator*() const {
         return *_ref;
     }
 
+    /// <summary>
+    /// Returns a reference to the contained value.
+    /// </summary>
+    /// <returns>A reference to the contained value.</returns>
+    /// <exception cref="std::logic_error">Thrown when there is no contained value.</exception>
     T& value() {
         if (*this) {
             return **this;
@@ -166,6 +299,11 @@ public:
         throw std::logic_error("bad optional access");
     }
 
+    /// <summary>
+    /// Returns a reference to the contained value.
+    /// </summary>
+    /// <returns>A reference to the contained value.</returns>
+    /// <exception cref="std::logic_error">Thrown when there is no contained value.</exception>
     const T& value() const {
         if (*this) {
             return **this;
@@ -173,6 +311,10 @@ public:
         throw std::logic_error("bad optional access");
     }
 
+    /// <summary>
+    /// Returns a reference to the contained value if it exists, otherwise returns <paramref name="default_value"/>.
+    /// </summary>
+    /// <returns>A reference to the contained value if it exists, <paramref name="default_value"/> otherwise.</returns>
     T& value_or(T& default_value) {
         if (*this) {
             return **this;
@@ -180,6 +322,10 @@ public:
         return default_value;
     }
 
+    /// <summary>
+    /// Returns a reference to the contained value if it exists, otherwise returns <paramref name="default_value"/>.
+    /// </summary>
+    /// <returns>A reference to the contained value if it exists, <paramref name="default_value"/> otherwise.</returns>
     const T& value_or(const T& default_value) const {
         if (*this) {
             return **this;
@@ -188,7 +334,7 @@ public:
     }
 
 private:
-    T* _ref;
+    T* _ref;    // the value, nullptr when no value is contained
 };
 }
 #endif

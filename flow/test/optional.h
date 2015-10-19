@@ -1,7 +1,5 @@
 
 #include "test.h"
-#include <flow/optional.h>
-using flow::optional;
 
 BOOST_AUTO_TEST_CASE(optional_t) {
     optional<int> o;
@@ -17,7 +15,7 @@ BOOST_AUTO_TEST_CASE(optional_t) {
     o.value() = 2;  // check reference
     BOOST_CHECK_EQUAL(i, 1);
     BOOST_CHECK_EQUAL(o.value(), 2);
-    
+
     int j = 3;
     o = j;
     BOOST_CHECK_EQUAL(o.value(), 3);
@@ -50,6 +48,7 @@ BOOST_AUTO_TEST_CASE(optional_t) {
     o4->set_value(3);
     BOOST_CHECK_EQUAL(o4->_value, 3);
     BOOST_CHECK_EQUAL(*o4, Widget(3));
+    BOOST_CHECK_EQUAL(w, Widget(0));
 }
 
 BOOST_AUTO_TEST_CASE(optional_ref_t) {
@@ -100,4 +99,5 @@ BOOST_AUTO_TEST_CASE(optional_ref_t) {
     o4->set_value(3);
     BOOST_CHECK_EQUAL(o4->_value, 3);
     BOOST_CHECK_EQUAL(*o4, Widget(3));
+    BOOST_CHECK_EQUAL(w, Widget(3));
 }

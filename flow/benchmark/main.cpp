@@ -10,12 +10,10 @@
 #include <thread>
 #include <chrono>
 
-#include <boost/multiprecision/cpp_int.hpp>
 #include <boost/timer.hpp>
 #include <complex>
 
 #include <flow.h>
-#include <flow/optional.h>
 using namespace flow;
 
 #ifndef _DEBUG
@@ -91,33 +89,9 @@ int main(int argc, char** argv) {
     std::vector<int> v1 = { 1, 3, 5, 7 };
     std::vector<int> v2 = { 2, 4, 6, 8 };
 
-    using boost::multiprecision::cpp_int;
-    std::cout << (iterate(std::plus<cpp_int>(), cpp_int(0), cpp_int(1)) | nth(1000)) << std::endl;
-
-    optional<int> i;
-
+    flow::optional<int&> a;
 
     /*
-    auto fibo = iterate(std::plus<cpp_int>(), cpp_int(0), cpp_int(1)) | limit(1000) | to_vector();
-
-    stream::MakeStream::recurrence(std::plus<cpp_int>(), cpp_int(0), cpp_int(1)) | stream::op::limit(1000) | stream::op::copy_to(fibo.begin());
-
-    fibo | dump(std::cout, "\n");
-    /*
-
-    auto q = iterate(std::plus<cpp_int>(), cpp_int(0), cpp_int(1));
-
-    for (unsigned i = 3; i < fibo.size(); ++i) {
-        if (fibo[i - 1] == fibo[i]) {
-            std::cout << i << " error" << std::endl
-                << fibo[i - 2] << std::endl
-                << fibo[i] << std::endl;
-            break;
-        }
-        else {
-            //std::cout << i << "\t" << fibo[i] << std::endl;
-        }
-    }
 
     std::array<cpp_int, 3> f;
     f[0] = 0;
