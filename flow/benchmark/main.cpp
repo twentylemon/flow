@@ -63,18 +63,18 @@ std::vector<int> vec(maxv);
 
 void run_timer() {
     using T = int;
-    std::vector<T> vec(10000);
+    std::vector<T> vec(1000000);
     std::generate(vec.begin(), vec.end(), std::rand);
     T vv(0);
     boost::timer tv;
     for (int i = 0; i < maxit; i++) {
-        auto w = vec | sample_heap(1);
+        auto w = vec | opt::fold(std::plus<int>());
     }
     std::cout << std::endl << "streamv: " << tv.elapsed() << "\t" << vv << std::endl;
     T v_(0);
     boost::timer t_;
     for (int i = 0; i < maxit; i++) {
-        auto w = vec | sample_shuffle(1);
+        auto w = vec | opt::fold(std::plus<int>());
     }
     std::cout << std::endl << "stream_: " << t_.elapsed() << "\t" << v_ << std::endl;
 }
@@ -89,7 +89,11 @@ int main(int argc, char** argv) {
     std::vector<int> v1 = { 1, 3, 5, 7 };
     std::vector<int> v2 = { 2, 4, 6, 8 };
 
-    flow::optional<int&> a;
+    auto o = v1 | opt::fold(std::plus<int>());
+    std::cout << *o << std::endl;
+
+    o = from({ 1, 2, 3 }) | opt::fold_id(std::plus<int>(), [](int i) { return 2 * i; });
+    std::cout << *o << std::endl;
 
     /*
 
@@ -159,7 +163,7 @@ int main(int argc, char** argv) {
 
     vec | zip(vec | zip(vec | zip(vec))) | limit(1) | each([](auto&& t) { std::cout << typeid(t).name() << std::endl; });
     */
-    //run_timer();
+    run_timer();
     
     std::cout << std::endl;
     system("pause");

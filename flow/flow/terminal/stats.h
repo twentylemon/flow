@@ -356,6 +356,7 @@ std::ostream& operator<<(std::ostream& out, const Stats<T, R, MinMax, MedianMode
 /// </ul>
 /// </summary>
 /// <returns>A terminal operation that calculates various statistical values of the stream.</returns>
+/// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
 /// <seealso cref="Stats"/>
 /// <seealso cref="count()"/>
 /// <seealso cref="sum()"/>
