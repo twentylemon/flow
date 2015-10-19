@@ -577,7 +577,7 @@ template&lt;typename UnaryPredicate &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that filters the stream elements.</dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d0/d76/zip_8cpp-example.html#a2">zip.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/de0/terminal_8cpp-example.html#a4">terminal.cpp</a>, and <a class="el" href="../../d0/d76/zip_8cpp-example.html#a2">zip.cpp</a>.</dd>
 </dl>
 </div>
 </div>
@@ -723,7 +723,8 @@ template&lt;typename UnaryOperation &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that maps the stream to new values.</dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/de0/terminal_8cpp-example.html#a2">terminal.cpp</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="aae7bef0ac778a95140e38bb9e81ae83a"></a>
@@ -2018,10 +2019,10 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
 
 <p>Sorts the stream using the given comparator, <code>operator&lt;</code> by default. </p>
 <p>Sorting is an eager operation. On application of the <code>sort</code> operation, the entire stream up to that point is evaluated and stored, then finally sorted before continuing with the sorted version of the stream. Thus, the <code>sort</code> operation takes <code>O(n)</code> extra space and time to copy the stream, and the additional <code>O(n logn)</code> to sort, where <code>n</code> is the size of the stream. For most applications, it will be beneficial to sort the source of the stream beforehand if possible. For example, the following should be <em>avoided</em>:</p>
-<p><code>int min = my_vector | <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0641d6ecc741bd5f346a961e5e8ccf44" title="Sorts the stream using the given comparator, operator< by default. ">sort()</a> | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612" title="Returns the first element from the stream. ">first()</a>; // just an example</code> </p>
+<p><code>int min = my_vector | <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0641d6ecc741bd5f346a961e5e8ccf44" title="Sorts the stream using the given comparator, operator< by default. ">sort()</a> | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612" title="Returns the first element from the stream as an optional. ">first()</a>; // just an example</code> </p>
 <p>Instead, sorting the container in place beforehand will be more efficient as no additional copying takes place.</p>
 <p><code>std::sort(my_vector.begin(), my_vector.end());<br />
- int min = my_vector | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612" title="Returns the first element from the stream. ">first()</a>;</code> </p>
+ int min = my_vector | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612" title="Returns the first element from the stream as an optional. ">first()</a>;</code> </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">compare</td><td>The compare function, by default <code>std::less&lt;void&gt;</code>.</td></tr>
@@ -2051,10 +2052,10 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
 
 <p>Sorts the stream preserving relative order of elements using the given comparator, <code>operator&lt;</code> by default. </p>
 <p>Sorting is an eager operation. On application of the <code>stable_sort</code> operation, the entire stream up to that point is evaluated and stored, then finally sorted before continuing with the sorted version of the stream. Thus, the <code>stable_sort</code> operation takes <code>O(n)</code> extra space and time to copy the stream, and the additional <code>O(n logn)</code> to sort, where <code>n</code> is the size of the stream. For most applications, it will be beneficial to sort the source of the stream beforehand if possible. For example, the following should be <em>avoided</em>:</p>
-<p><code>int min = my_vector | <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ab9a5f0773de4aac232e80ae23495e76e" title="Sorts the stream preserving relative order of elements using the given comparator, operator< by default. ">stable_sort()</a> | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612" title="Returns the first element from the stream. ">first()</a>; // just an example</code> </p>
+<p><code>int min = my_vector | <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ab9a5f0773de4aac232e80ae23495e76e" title="Sorts the stream preserving relative order of elements using the given comparator, operator< by default. ">stable_sort()</a> | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612" title="Returns the first element from the stream as an optional. ">first()</a>; // just an example</code> </p>
 <p>Instead, sorting the container in place beforehand will be more efficient as no additional copying takes place.</p>
 <p><code>std::stable_sort(my_vector.begin(), my_vector.end());<br />
- int min = my_vector | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612" title="Returns the first element from the stream. ">first()</a>;</code> </p>
+ int min = my_vector | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612" title="Returns the first element from the stream as an optional. ">first()</a>;</code> </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">compare</td><td>The compare function, by default <code>std::less&lt;void&gt;</code>.</td></tr>

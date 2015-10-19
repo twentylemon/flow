@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['random_2eh',['random.h',['../d1/d79/random_8h.html',1,'']]],
-  ['range_2eh',['range.h',['../d1/d12/range_8h.html',1,'']]],
-  ['repeat_2eh',['repeat.h',['../d3/d71/repeat_8h.html',1,'']]],
-  ['replace_2eh',['replace.h',['../d2/d4f/replace_8h.html',1,'']]],
-  ['reservoir_2eh',['reservoir.h',['../d8/da9/reservoir_8h.html',1,'']]],
-  ['reverse_2eh',['reverse.h',['../de/d81/reverse_8h.html',1,'']]]
+  ['peek_2eh',['peek.h',['../d2/d7f/peek_8h.html',1,'']]],
+  ['print_5ftuple_2eh',['print_tuple.h',['../df/ddb/print__tuple_8h.html',1,'']]],
+  ['product_2eh',['product.h',['../dc/daa/product_8h.html',1,'']]]
 ];

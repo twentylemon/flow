@@ -95,6 +95,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;Terminal.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dc/d62/optional_8h.html">../optional.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -113,16 +114,16 @@ Functions</h2></td></tr>
 <tr class="separator:ad76999f9b4b01425b09c070cc7154ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabf7db53b2573f8f651420cc508170f8"><td class="memTemplParams" colspan="2">template&lt;typename Accumulator &gt; </td></tr>
 <tr class="memitem:aabf7db53b2573f8f651420cc508170f8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aabf7db53b2573f8f651420cc508170f8">flow::terminal::fold</a> (Accumulator accumulator)</td></tr>
-<tr class="memdesc:aabf7db53b2573f8f651420cc508170f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Folds the stream using <em>accumulator</em> .  <a href="#aabf7db53b2573f8f651420cc508170f8">More...</a><br /></td></tr>
+<tr class="memdesc:aabf7db53b2573f8f651420cc508170f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Folds the stream using <em>accumulator</em> , returning the value as an optional.  <a href="#aabf7db53b2573f8f651420cc508170f8">More...</a><br /></td></tr>
 <tr class="separator:aabf7db53b2573f8f651420cc508170f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a439e3f4a1be79bae0105092613415773"><td class="memTemplParams" colspan="2">template&lt;typename Accumulator , typename UnaryFunction &gt; </td></tr>
-<tr class="memitem:a439e3f4a1be79bae0105092613415773"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a439e3f4a1be79bae0105092613415773">flow::terminal::fold_id</a> (Accumulator accumulator, UnaryFunction initializer)</td></tr>
-<tr class="memdesc:a439e3f4a1be79bae0105092613415773"><td class="mdescLeft">&#160;</td><td class="mdescRight">Folds the stream using <em>accumulator</em> .  <a href="#a439e3f4a1be79bae0105092613415773">More...</a><br /></td></tr>
-<tr class="separator:a439e3f4a1be79bae0105092613415773"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71feb02eace70a6babe98181f1e7c579"><td class="memTemplParams" colspan="2">template&lt;typename Accumulator , typename UnaryFunction , typename T &gt; </td></tr>
 <tr class="memitem:a71feb02eace70a6babe98181f1e7c579"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a71feb02eace70a6babe98181f1e7c579">flow::terminal::fold_id</a> (Accumulator accumulator, UnaryFunction initializer, T &amp;&amp;init)</td></tr>
 <tr class="memdesc:a71feb02eace70a6babe98181f1e7c579"><td class="mdescLeft">&#160;</td><td class="mdescRight">Folds the stream using <em>accumulator</em> .  <a href="#a71feb02eace70a6babe98181f1e7c579">More...</a><br /></td></tr>
 <tr class="separator:a71feb02eace70a6babe98181f1e7c579"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a439e3f4a1be79bae0105092613415773"><td class="memTemplParams" colspan="2">template&lt;typename Accumulator , typename UnaryFunction &gt; </td></tr>
+<tr class="memitem:a439e3f4a1be79bae0105092613415773"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a439e3f4a1be79bae0105092613415773">flow::terminal::fold_id</a> (Accumulator accumulator, UnaryFunction initializer)</td></tr>
+<tr class="memdesc:a439e3f4a1be79bae0105092613415773"><td class="mdescLeft">&#160;</td><td class="mdescRight">Folds the stream using <em>accumulator</em> , returning the value as an optional.  <a href="#a439e3f4a1be79bae0105092613415773">More...</a><br /></td></tr>
+<tr class="separator:a439e3f4a1be79bae0105092613415773"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
