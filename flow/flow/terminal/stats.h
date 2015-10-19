@@ -362,6 +362,7 @@ std::ostream& operator<<(std::ostream& out, const Stats<T, R, MinMax, MedianMode
 /// <seealso cref="sum()"/>
 /// <seealso cref="minmax()"/>
 /// <seealso cref="to_map()"/>
+/// \todo make this return an optional?
 template <typename ResultType = double, bool MinMax = false, bool MedianMode = false>
 auto stats() {
     return detail::make_terminal([](auto&& stream) {

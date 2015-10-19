@@ -36,16 +36,15 @@ namespace flow {
     namespace terminal {
 
 /// <summary>
-/// Computes the product of all the elements in the stream using <c>operator*</c>.
+/// Returns the product of all the elements in the stream using <c>operator*</c> as an optional.
 /// </summary>
 /// <returns>A terminal operation which multiplies the elements in the stream.</returns>
-/// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
 inline auto product() {
     return fold(std::multiplies<void>());
 }
 
 /// <summary>
-/// Computes the product of all the elements in the stream using <c>operator*</c>, starting the
+/// Returns the product of all the elements in the stream using <c>operator*</c>, starting the
 /// product at <paramref name="init"/>.
 /// </summary>
 /// <param name="init">The initial value to start the product at.</param>

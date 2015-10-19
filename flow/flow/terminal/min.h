@@ -36,23 +36,23 @@ namespace flow {
     namespace terminal {
             
 /// <summary>
-/// Returns the minimum element from the stream according to <paramref name="compare"/>, <c>operator&lt;</c> by default.
+/// Returns the minimum element from the stream as an optional according to <paramref name="compare"/>, <c>operator&lt;</c> by default.
 /// </summary>
 /// <para>If there are multiple minimum elements, the first such element is returned.</para>
 /// <param name="compare">The compare function, by default <c>std::less&lt;void&gt;</c>.</param>
 /// <returns>A detail::Terminal operation which gives the minimum element from the stream.</returns>
-/// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
 /// <seealso cref="max()"/>
 /// <seealso cref="minmax()"/>
 /// <seealso cref="stats()"/>
+/// <seealso cref="optional"/>
 /// \todo benchmark non-fold implementation
 template <typename Compare = std::less<void>>
 auto min(Compare compare = Compare()) {
     return fold([compare](auto&& lhs, auto&& rhs) {
         if (compare(rhs, lhs)) {
-            return std::move(rhs);
+            return rhs;
         }
-        return std::move(lhs);
+        return lhs;
     });
 }
     }

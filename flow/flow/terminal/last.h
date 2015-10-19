@@ -34,11 +34,13 @@ namespace flow {
     namespace terminal {
 
 /// <summary>
-/// Returns the last element from the stream.
+/// Returns the last element from the stream as an optional.
 /// <para>This is a potentially expensive operation as the entire stream must be evaluated.</para>
 /// </summary>
 /// <returns>A terminal operation which gives the last element from the stream.</returns>
-/// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
+/// <seealso cref="first()"/>
+/// <seealso cref="nth()"/>
+/// <seealso cref="optional"/>
 /// \todo is there a way to lazily step to the end of the stream?
 inline auto last() {
     return fold([](auto&&, auto&& ele) { return std::move(ele); });

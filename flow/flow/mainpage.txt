@@ -135,6 +135,22 @@
 /// <para>The functions in the flow::terminal namespace all produce a terminal operation. The terminal
 /// operation does not operate on a stream until the pipe <c>operator|</c> has been applied, after which
 /// the terminal's return value is calculated.</para>
+/// <para>Some terminal operations (such as min()) return an \ref optional object when the stream is empty.
+/// This practice was chosen over throwing an exception, though there is no clear better way. In the end,
+/// flow uses the optional class for the following reasons:</para>
+/// <ul>
+///     <li>In the exceptional case, a boolean check is much faster than an exception.</li>
+///     <li>In many cases, you will know for sure that the optional returned contains a value and the boolean check
+///         can be skipped anyways. Consider that many of the STL algorithms return iterators which are commonly used without
+///         checking them for validity.</li>
+///     <li>In other cases, when you don't know for sure if a value would exist, a boolean check only carries a very slight overhead.</li>
+///     <li>It is less code on the user end which is always nice.</li>
+/// </ul>
+/// <para>Some convenience methods are available to Terminal operations:</para>
+/// \code{.cpp}Terminal<F> then(F f);      // a terminal which applies f to the result of this terminal
+/// Terminal<F> value();        // a terminal which directly accesses the optional's contained value, undefined if the optional has no value
+/// Terminal<F> value_or(U&&);  // a terminal which directly calls optional::value_or \endcode
+/// <para>Examples of these operations are available in \ref terminal.cpp.</para>
 /// \todo parallel_*() - chunking parallelization of terminal operations
 /// \todo parallel pipelining of stream operations?
 /// \todo equals - check if two streams are equal
@@ -142,7 +158,6 @@
 /// \todo is_sorted - check if a stream is sorted by a comparator
 /// \todo overload comparison operators between streams?
 /// \todo to_group - convert to a std::map<T::property, std::vector<T>>
-/// \todo return optional values instead of exceptions?
 /// 
 
 /// \namespace flow::intermediate

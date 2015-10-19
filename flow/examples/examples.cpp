@@ -19,6 +19,8 @@ int main(int argc, char** argv) {
     sort_example();
     zip_example();
 
+    terminal_example();
+
     system("pause");
     return 0;
 }

@@ -36,3 +36,9 @@
 /// each tuple element using <c>operator<</c>, with a familiar format. Note that the function
 /// is also defined inside of the <c>std</c> namespace. This allows dump() to see the operator
 /// and actually compile. To exclude the <c>std</c> version, <c>\#define FLOW_PRINTTUPLE_NO_STD</c>.</para>
+
+/// \example terminal.cpp
+/// <para>This example shows the extra functions available to terminal operations. These functions,
+/// <c>then(), value(), value_or()</c> return a new terminal operation, so they can be combined and
+/// chained together like other any terminal. The functions <c>value()</c> and <c>value_or()</c>
+/// should only be used when the terminal returns an \ref optional object.</para>

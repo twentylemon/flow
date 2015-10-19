@@ -2,12 +2,12 @@
 #include "../test.h"
 
 BOOST_AUTO_TEST_CASE(product_noinit) {
-    BOOST_CHECK_EQUAL(from({ 1 }) | product(), 1);
-    BOOST_CHECK_EQUAL(from({ 1, 2 }) | product(), 2);
-    BOOST_CHECK_EQUAL(from({ 1, 2, 3 }) | product(), 6);
-    BOOST_CHECK_EQUAL(from({ -1, 2, 3 }) | product(), -6);
+    BOOST_CHECK_EQUAL(from({ 1 }) | product().value(), 1);
+    BOOST_CHECK_EQUAL(from({ 1, 2 }) | product().value(), 2);
+    BOOST_CHECK_EQUAL(from({ 1, 2, 3 }) | product().value(), 6);
+    BOOST_CHECK_EQUAL(from({ -1, 2, 3 }) | product().value(), -6);
 
-    BOOST_CHECK_THROW(empty<int>() | product(), std::out_of_range);
+    BOOST_CHECK_EQUAL(empty<int>() | product().value_or(1), 1);
 }
 
 BOOST_AUTO_TEST_CASE(product_init) {

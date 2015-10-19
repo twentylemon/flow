@@ -17,4 +17,6 @@ void drop_while_example();
 void sort_example();
 void zip_example();
 
+void terminal_example();
+
 #endif

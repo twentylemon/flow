@@ -2,12 +2,12 @@
 #include "../test.h"
 
 BOOST_AUTO_TEST_CASE(sum_noinit) {
-    BOOST_CHECK_EQUAL(from({ 1 }) | sum(), 1);
-    BOOST_CHECK_EQUAL(from({ 1, 2 }) | sum(), 3);
-    BOOST_CHECK_EQUAL(from({ 1, 2, 3 }) | sum(), 6);
-    BOOST_CHECK_EQUAL(from({ -1, 2, 3 }) | sum(), 4);
+    BOOST_CHECK_EQUAL(from({ 1 }) | sum().value(), 1);
+    BOOST_CHECK_EQUAL(from({ 1, 2 }) | sum().value(), 3);
+    BOOST_CHECK_EQUAL(from({ 1, 2, 3 }) | sum().value(), 6);
+    BOOST_CHECK_EQUAL(from({ -1, 2, 3 }) | sum().value(), 4);
 
-    BOOST_CHECK_THROW(empty<int>() | sum(), std::out_of_range);
+    BOOST_CHECK_EQUAL(empty<int>() | sum().value_or(1), 1);
 }
 
 BOOST_AUTO_TEST_CASE(sum_init) {

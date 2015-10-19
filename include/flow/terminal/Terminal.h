@@ -71,6 +71,24 @@ public:
         return Terminal<flow::detail::Compose<G, F>>(flow::detail::Compose<G, F>(std::forward<G>(function), std::move(_operation)));
     }
 
+    /// <summary>
+    /// Returns a Terminal which returns the contained value of the optional returned by this instance.
+    /// </summary>
+    /// <returns>A Terminal which gives the contained value of an optional.</returns>
+    auto value() {
+        return then([](auto&& opt) { return *opt; });
+    }
+
+    /// <summary>
+    /// Returns a Terminal which returns optional::value_or of the result of this instance.
+    /// </summary>
+    /// <param name="default_value">The value to return if there is no contained value in the optional.</param>
+    /// <returns>A copy of the contained value if it exists, <paramref name="default_value" /> otherwise.</returns>
+    template <typename U>
+    auto value_or(U&& default_value) {
+        return then([default_value = std::forward<U>(default_value)](auto&& opt) { return opt.value_or(std::move(default_value)); });
+    }
+
 private:
     F _operation;   // the terminal operation
 };

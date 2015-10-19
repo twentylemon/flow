@@ -134,6 +134,7 @@
     <ClCompile Include="intermediate\drop_while.cpp" />
     <ClCompile Include="intermediate\sort.cpp" />
     <ClCompile Include="intermediate\zip.cpp" />
+    <ClCompile Include="terminal\terminal.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="examples.h" />

@@ -29,21 +29,25 @@
 #define FLOW_TERMINAL_FIRST_H
 
 #include "Terminal.h"
+#include "../optional.h"
 
 namespace flow {
     namespace terminal {
 
 /// <summary>
-/// Returns the first element from the stream.
+/// Returns the first element from the stream as an optional.
 /// </summary>
 /// <returns>A terminal operation which gives the first element from the stream.</returns>
-/// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
+/// <seealso cref="nth()"/>
+/// <seealso cref="last()"/>
+/// <seealso cref="optional"/>
 inline auto first() {
     return detail::make_terminal([](auto&& stream) {
-        if (!stream.has_next()) {
-            throw std::out_of_range("flow::first() expects a non-empty stream");
+        using T = std::decay_t<decltype(stream.next())>;
+        if (stream.has_next()) {
+            return optional<T>(stream.next());
         }
-        return stream.next();
+        return optional<T>();
     });
 }
     }

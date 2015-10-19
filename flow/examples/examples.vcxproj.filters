@@ -16,6 +16,9 @@
     <Filter Include="Source Files\intermediate">
       <UniqueIdentifier>{a6cb4538-719f-4771-9c04-ecd9fbce2e70}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\terminal">
+      <UniqueIdentifier>{0dec5861-a641-44a1-9598-af46b1bad381}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="examples.cpp">
@@ -32,6 +35,9 @@
     </ClCompile>
     <ClCompile Include="intermediate\drop_while.cpp">
       <Filter>Source Files\intermediate</Filter>
+    </ClCompile>
+    <ClCompile Include="terminal\terminal.cpp">
+      <Filter>Source Files\terminal</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

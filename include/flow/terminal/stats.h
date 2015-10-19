@@ -356,11 +356,13 @@ std::ostream& operator<<(std::ostream& out, const Stats<T, R, MinMax, MedianMode
 /// </ul>
 /// </summary>
 /// <returns>A terminal operation that calculates various statistical values of the stream.</returns>
+/// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
 /// <seealso cref="Stats"/>
 /// <seealso cref="count()"/>
 /// <seealso cref="sum()"/>
 /// <seealso cref="minmax()"/>
 /// <seealso cref="to_map()"/>
+/// \todo make this return an optional?
 template <typename ResultType = double, bool MinMax = false, bool MedianMode = false>
 auto stats() {
     return detail::make_terminal([](auto&& stream) {

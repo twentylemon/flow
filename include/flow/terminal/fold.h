@@ -29,6 +29,7 @@
 #define FLOW_TERMINAL_FOLD_H
 
 #include "Terminal.h"
+#include "../optional.h"
 
 namespace flow {
     namespace terminal {
@@ -53,42 +54,6 @@ auto fold(Accumulator accumulator, T&& init) {
 
 /// <summary>
 /// Folds the stream using <paramref name="accumulator"/>.
-/// <para>The first element of the stream is used for the initial folding value.</para>
-/// </summary>
-/// <param name="accumulator">The function through which the stream is folded.</param>
-/// <returns>A terminal operation which folds the stream.</returns>
-/// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
-template <typename Accumulator>
-auto fold(Accumulator accumulator) {
-    return detail::make_terminal([accumulator](auto&& stream) {
-        if (!stream.has_next()) {
-            throw std::out_of_range("flow::fold(Accumulator) expects a non-empty stream");
-        }
-        return stream | fold(accumulator, stream.next());
-    });
-}
-
-/// <summary>
-/// Folds the stream using <paramref name="accumulator"/>.
-/// <para>The result of <paramref name="initializer"/> applied to the first element of the stream is used
-/// for the initial folding value.</para>
-/// </summary>
-/// <param name="accumulator">The function through which the stream is folded.</param>
-/// <param name="initializer">The initializer function to apply to the first element in the stream.</param>
-/// <returns>A terminal operation which folds the stream.</returns>
-/// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
-template <typename Accumulator, typename UnaryFunction>
-auto fold_id(Accumulator accumulator, UnaryFunction initializer) {
-    return detail::make_terminal([accumulator, initializer](auto&& stream) {
-        if (!stream.has_next()) {
-            throw std::out_of_range("flow::fold_id(Accumulator, UnaryFunction) expects a non-empty stream");
-        }
-        return stream | fold(accumulator, initializer(stream.next()));
-    });
-}
-
-/// <summary>
-/// Folds the stream using <paramref name="accumulator"/>.
 /// <para>The result of <paramref name="initializer"/> applied to <paramref name="init"/> is used for
 /// the initial folding value.</para>
 /// </summary>
@@ -98,7 +63,53 @@ auto fold_id(Accumulator accumulator, UnaryFunction initializer) {
 /// <returns>A terminal operation which folds the stream.</returns>
 template <typename Accumulator, typename UnaryFunction, typename T>
 auto fold_id(Accumulator accumulator, UnaryFunction initializer, T&& init) {
-    return fold(accumulator, initializer(init));
+    return fold(accumulator, initializer(std::forward<T>(init)));
+}
+
+/// <summary>
+/// Folds the stream using <paramref name="accumulator"/>, returning the value as an optional.
+/// <para>The first element of the stream is used for the initial folding value.</para>
+/// </summary>
+/// <param name="accumulator">The function through which the stream is folded.</param>
+/// <returns>A terminal operation which folds the stream.</returns>
+/// <seealso cref="optional"/>
+template <typename Accumulator>
+auto fold(Accumulator accumulator) {
+    return detail::make_terminal([accumulator](auto&& stream) {
+        using T = std::decay_t<decltype(stream.next())>;
+        if (!stream.has_next()) {
+            return optional<T>();
+        }
+        optional<T> val(stream.next());
+        while (stream.has_next()) {
+            *val = accumulator(*val, stream.next());
+        }
+        return val;
+    });
+}
+
+/// <summary>
+/// Folds the stream using <paramref name="accumulator"/>, returning the value as an optional.
+/// <para>The result of <paramref name="initializer"/> applied to the first element of the stream is used
+/// for the initial folding value.</para>
+/// </summary>
+/// <param name="accumulator">The function through which the stream is folded.</param>
+/// <param name="initializer">The initializer function to apply to the first element in the stream.</param>
+/// <returns>A terminal operation which folds the stream.</returns>
+/// <seealso cref="optional"/>
+template <typename Accumulator, typename UnaryFunction>
+auto fold_id(Accumulator accumulator, UnaryFunction initializer) {
+    return detail::make_terminal([accumulator, initializer](auto&& stream) {
+        using T = std::result_of_t<UnaryFunction(decltype(stream.next()))>;
+        if (!stream.has_next()) {
+            return optional<T>();
+        }
+        optional<T> val(initializer(stream.next()));
+        while (stream.has_next()) {
+            *val = accumulator(*val, stream.next());
+        }
+        return val;
+    });
 }
     }
 }

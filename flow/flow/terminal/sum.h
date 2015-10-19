@@ -36,10 +36,9 @@ namespace flow {
     namespace terminal {
 
 /// <summary>
-/// Computes the sum of all the elements in the stream using <c>operator+</c>.
+/// Returns the sum of all the elements in the stream using <c>operator+</c> as an optional.
 /// </summary>
 /// <returns>A terminal operation which sums the elements in the stream.</returns>
-/// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
 inline auto sum() {
     return fold(std::plus<void>());
 }

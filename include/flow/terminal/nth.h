@@ -35,11 +35,10 @@ namespace flow {
     namespace terminal {
 
 /// <summary>
-/// Returns the nth element from the stream.
+/// Returns the nth element from the stream as an optional.
 /// </summary>
 /// <param name="n">The index of the element to retrieve.</param>
 /// <returns>A terminal operation which gives the nth element from the stream.</returns>
-/// <exception cref="std::out_of_range">Thrown when the stream has fewer than <c>n</c> elements.</exception>
 inline auto nth(std::size_t n) {
     return intermediate::skip(n) | first();
 }

@@ -68,13 +68,13 @@ void run_timer() {
     T vv(0);
     boost::timer tv;
     for (int i = 0; i < maxit; i++) {
-        auto w = vec | opt::fold(std::plus<int>());
+        auto w = vec | fold(std::plus<int>());
     }
     std::cout << std::endl << "streamv: " << tv.elapsed() << "\t" << vv << std::endl;
     T v_(0);
     boost::timer t_;
     for (int i = 0; i < maxit; i++) {
-        auto w = vec | opt::fold(std::plus<int>());
+        auto w = vec | fold(std::plus<int>());
     }
     std::cout << std::endl << "stream_: " << t_.elapsed() << "\t" << v_ << std::endl;
 }
@@ -88,12 +88,6 @@ int main(int argc, char** argv) {
 
     std::vector<int> v1 = { 1, 3, 5, 7 };
     std::vector<int> v2 = { 2, 4, 6, 8 };
-
-    auto o = v1 | opt::fold(std::plus<int>());
-    std::cout << *o << std::endl;
-
-    o = from({ 1, 2, 3 }) | opt::fold_id(std::plus<int>(), [](int i) { return 2 * i; });
-    std::cout << *o << std::endl;
 
     /*
 

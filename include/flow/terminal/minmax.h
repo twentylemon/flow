@@ -36,22 +36,23 @@ namespace flow {
     namespace terminal {
 
 /// <summary>
-/// Returns the minimum and maximum elements as a pair from the stream according to <paramref name="compare"/>,
+/// Returns the minimum and maximum elements as a optional pair from the stream according to <paramref name="compare"/>,
 /// <c>operator&lt;</c> by default.
 /// <para>The first element is the minimum and the second element is the maximum. If there are multiple min/max
 /// elements, the <em>first</em> minimum element and the <em>last</em> maximum element are returned.</para>
 /// </summary>
 /// <param name="compare">The compare function, by default <c>std::less&lt;void&gt;</c>.</param>
 /// <returns>A detail::Terminal operation which gives the min and max elements from the stream.</returns>
-/// <exception cref="std::out_of_range">Thrown when the stream is empty.</exception>
 /// <seealso cref="min()"/>
 /// <seealso cref="max()"/>
 /// <seealso cref="stats()"/>
+/// <seealso cref="optional"/>
 template <typename Compare = std::less<void>>
 auto minmax(Compare compare = Compare()) {
     return detail::make_terminal([compare](auto&& stream) {
+        using T = std::decay_t<decltype(stream.next())>;
         if (!stream.has_next()) {
-            throw std::out_of_range("flow::minmax(Compare) expects a non-empty stream");
+            return optional<std::pair<T, T>>();
         }
         auto min = stream.next();
         auto max = min;
@@ -74,7 +75,7 @@ auto minmax(Compare compare = Compare()) {
                 }
             }
         }
-        return std::make_pair(std::move(min), std::move(max));
+        return optional<std::pair<T, T>>(std::make_pair(std::move(min), std::move(max)));
     });
 }
     }
