@@ -502,6 +502,30 @@ auto to_unordered_map(const Hash& hash, EqualPredicate equal, const Allocator& a
         return result;
     });
 }
+
+/// <summary>
+/// Copies the stream in a <c>std::map&lt;K, std::vector&lt;T&gt;&gt;</c>, where <c>K</c> is the result type of <paramref name="classifier"/>.
+/// <para>The returned map groups all stream elements together which map to the same value through <paramref name="classifier"/>.
+/// For example, the following groups all the <c>People</c> which have the same first name.</para>
+/// <code>people | to_group([](Person& p) { return p.first_name(); });</code>
+/// </summary>
+/// <param name="classifier">The grouping function, stream elements which return the same value will be grouped to the same
+/// key in the returned map.</param>
+/// <returns>A terminal operation which groups stream elements according to <paramref name="classifier"/>.</returns>
+/// \todo mem_fn overloads; vc++ crashes when compiling these
+/// \todo overload to fold the resultant groups?
+template <typename UnaryFunction>
+auto to_group(UnaryFunction classifier) {
+    return detail::make_terminal([classifier](auto&& stream) {
+        using K = std::result_of_t<UnaryFunction(decltype(stream.next()))>;
+        using T = std::decay_t<decltype(stream.next())>;
+        std::map<K, std::vector<T>> result;
+        // vc++ doesn't want me just using a lambda...
+        auto group_inserter = [](auto& result, auto& grouper, auto&& element) { result[grouper(element)].push_back(std::move(element)); };
+        stream | each(std::bind(group_inserter, std::ref(result), std::ref(classifier), std::placeholders::_1));
+        return result;
+    });
+}
     }
 }
 #endif

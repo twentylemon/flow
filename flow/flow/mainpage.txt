@@ -157,7 +157,6 @@
 /// \todo find - filter(equal to) | first(); optional parameter to return if filtered stream is empty
 /// \todo is_sorted - check if a stream is sorted by a comparator
 /// \todo overload comparison operators between streams?
-/// \todo to_group - convert to a std::map<T::property, std::vector<T>>
 /// 
 
 /// \namespace flow::intermediate
