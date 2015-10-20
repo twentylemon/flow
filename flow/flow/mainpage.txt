@@ -171,7 +171,6 @@
 /// \todo partial_sum - from &lt;numeric&gt;
 /// \todo inner_product - from &lt;numeric&gt;
 /// \todo overload arithmetic operators as map operations?
-/// \todo shuffle - would have to be eager, take rng as parameter
 /// 
 
 /// \namespace flow::source

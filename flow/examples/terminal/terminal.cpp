@@ -10,7 +10,7 @@ void terminal_example() {
 
     std::cout << "Terminal::value(): directly access the value of an optional return value." << std::endl;
     vec5to8 | sum().value();    // 26; no need to use operator* to get the value
-    vec1to4 | map([](int i) { return 2 * i; }) | max(); // 8
+    vec1to4 | map([](int i) { return 2 * i; }) | max().value(); // 8
 
     std::cout << "Terminal::value_or(T def): access the contained value of an optional, or use `def` if no value exists." << std::endl;
     vec1to4 | filter([](int i) { return i > 100; }) | sum().value_or(-1);   // -1; stream was empty so no value in sum

@@ -28,6 +28,8 @@
 #ifndef FLOW_TERMINAL_ANY_H
 #define FLOW_TERMINAL_ANY_H
 
+#include <functional>
+
 #include "Terminal.h"
 
 namespace flow {

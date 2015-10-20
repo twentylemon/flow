@@ -28,6 +28,8 @@
 #ifndef FLOW_INTERMEDIATE_PEEK_H
 #define FLOW_INTERMEDIATE_PEEK_H
 
+#include <functional>
+
 #include "../Stream.h"
 #include "Intermediate.h"
 #include "../source/Peek.h"

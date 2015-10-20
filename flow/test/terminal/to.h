@@ -228,3 +228,11 @@ BOOST_AUTO_TEST_CASE(to_unordered_map_t) {
         BOOST_CHECK_EQUAL(p, *de6.find(p.first));
     }
 }
+
+BOOST_AUTO_TEST_CASE(to_group_t) {
+    std::vector<Widget> w = { Widget(1), Widget(2), Widget(3), Widget(4) };
+
+    std::map<bool, std::vector<Widget>> ex = { {false, {Widget(1), Widget(3)}}, {true, {Widget(2), Widget(4)}} };
+    auto s = w | to_group([](Widget& w) { return w.is_even(); });
+    BOOST_CHECK_EQUAL_COLLECTIONS(ex.begin(), ex.end(), s.begin(), s.end());
+}
