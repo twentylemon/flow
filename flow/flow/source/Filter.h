@@ -68,6 +68,12 @@ public:
         return false;
     }
 
+    /// <summary>
+    /// Ignores the next value from the stream.
+    /// </summary>
+    void lazy_next() {
+    }
+
 private:
     UnaryPredicate _predicate;  // the mapping operation to apply to each element from the source
 };

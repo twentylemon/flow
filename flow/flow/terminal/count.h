@@ -73,6 +73,7 @@ auto count_if(UnaryPredicate predicate) {
 /// </summary>
 /// <returns>A terminal operation which counts of the occurrences of <paramref name="value"/> in the stream.</returns>
 /// <seealso cref="count_if()"/>
+/// <seealso cref="filter()"/>
 /// <seealso cref="contains()"/>
 template <typename T>
 auto count(T&& value) {

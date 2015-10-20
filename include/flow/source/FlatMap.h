@@ -74,6 +74,12 @@ public:
     }
 
     /// <summary>
+    /// Ignores the next value from the stream.
+    /// </summary>
+    void lazy_next() {
+    }
+
+    /// <summary>
     /// Returns the estimated size of the remainder of the stream.
     /// This value cannot be accurately estimated. We assume that each stream created
     /// is the same size as the number of remaining elements in this stream,

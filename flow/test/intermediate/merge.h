@@ -47,4 +47,12 @@ BOOST_AUTO_TEST_CASE(merge_t) {
     ex = {};
     s = empty<int>() | merge(empty<int>()) | to_vector();
     BOOST_CHECK_EQUAL_COLLECTIONS(ex.begin(), ex.end(), s.begin(), s.end());
+
+    ex = { 2, 2, 4, 4, 6 };
+    s = from({ 1, 2, 3, 4, 5 }) | merge({ 2, 3, 4, 5, 6 }) | filter(is_even) | to_vector();
+    BOOST_CHECK_EQUAL_COLLECTIONS(ex.begin(), ex.end(), s.begin(), s.end());
+
+    ex = { 2, 2, 3, 4, 4, 5, 6 };
+    s = from({ 1, 2, 3, 4, 5 }) | filter(is_even) | merge({ 2, 3, 4, 5, 6 }) | to_vector();
+    BOOST_CHECK_EQUAL_COLLECTIONS(ex.begin(), ex.end(), s.begin(), s.end());
 }

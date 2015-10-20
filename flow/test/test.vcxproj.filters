@@ -206,5 +206,11 @@
     <ClInclude Include="optional.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
+    <ClInclude Include="intermediate\shuffle.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
+    <ClInclude Include="lazy.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

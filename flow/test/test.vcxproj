@@ -203,6 +203,7 @@
     <ClInclude Include="intermediate\set_intersect.h" />
     <ClInclude Include="intermediate\set_sym_diff.h" />
     <ClInclude Include="intermediate\set_union.h" />
+    <ClInclude Include="intermediate\shuffle.h" />
     <ClInclude Include="intermediate\skip.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
@@ -224,6 +225,7 @@
     <ClInclude Include="iterator.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
+    <ClInclude Include="lazy.h" />
     <ClInclude Include="optional.h" />
     <ClInclude Include="terminal\all.h">
       <FileType>CppHeader</FileType>

@@ -69,8 +69,8 @@ public:
     }
 
     /// <summary>
-    /// Returns the next element from the stream. The value is <em>moved</em>. Successive calls to next() will fail.
-    /// Default implementation returns <c>std::move(*_current);</c>.
+    /// Returns the next element from the stream.
+    /// Default implementation returns <c>*_current</c>.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
     value_type& next() {
@@ -111,7 +111,7 @@ protected:
     }
 
     /// <summary>
-    /// Returns the value inside the current stream value pointer. It is <em>not</em> moved.
+    /// Returns the value inside the current stream value pointer.
     /// </summary>
     /// <returns>The stream value without moving it.</returns>
     value_type& raw_current() {

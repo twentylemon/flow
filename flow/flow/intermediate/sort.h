@@ -30,6 +30,7 @@
 
 #include <functional>
 
+#include "Intermediate.h"
 #include "../terminal/to.h"
 #include "../generator/from_move.h"
 

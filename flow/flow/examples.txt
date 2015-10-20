@@ -41,4 +41,4 @@
 /// <para>This example shows the extra functions available to terminal operations. These functions,
 /// <c>then(), value(), value_or()</c> return a new terminal operation, so they can be combined and
 /// chained together like other any terminal. The functions <c>value()</c> and <c>value_or()</c>
-/// should only be used when the terminal returns an \ref optional object.</para>
+/// should only be used when the terminal returns an \ref flow::optional object.</para>

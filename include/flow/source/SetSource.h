@@ -190,11 +190,17 @@ public:
     }
 
     /// <summary>
-    /// Returns the next element from the stream. The value is <em>moved</em>. Successive calls to next() will fail.
+    /// Returns the next element from the stream.
     /// </summary>
     /// <returns>The next element in the stream.</returns>
     value_type& next() {
         return *_current;
+    }
+
+    /// <summary>
+    /// Ignores the next value from the stream.
+    /// </summary>
+    void lazy_next() {
     }
 
     /// <summary>
