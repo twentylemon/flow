@@ -256,6 +256,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ac490fe88e884eed9befb822cedbef139"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac490fe88e884eed9befb822cedbef139">set_union</a> (std::initializer_list&lt; T &gt; list, Compare compare=Compare())</td></tr>
 <tr class="memdesc:ac490fe88e884eed9befb822cedbef139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unions <em>list</em>  into the operated (<em>left</em> ) stream while maintaining sorted order, this is the same as <code>set_union(from(list), compare)</code>.  <a href="#ac490fe88e884eed9befb822cedbef139">More...</a><br /></td></tr>
 <tr class="separator:ac490fe88e884eed9befb822cedbef139"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab119dd9937a596a68968616c1b7849c8"><td class="memTemplParams" colspan="2">template&lt;typename Engine  = std::default_random_engine&gt; </td></tr>
+<tr class="memitem:ab119dd9937a596a68968616c1b7849c8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ab119dd9937a596a68968616c1b7849c8">shuffle</a> (Engine rng=Engine())</td></tr>
+<tr class="memdesc:ab119dd9937a596a68968616c1b7849c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shuffles the stream using <em>rng</em>  as the source of randomness.  <a href="#ab119dd9937a596a68968616c1b7849c8">More...</a><br /></td></tr>
+<tr class="separator:ab119dd9937a596a68968616c1b7849c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2725d9fb49cd0c4fe25658500c2fa1f1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a2725d9fb49cd0c4fe25658500c2fa1f1">skip</a> (std::size_t begin, std::size_t step_size)</td></tr>
 <tr class="memdesc:a2725d9fb49cd0c4fe25658500c2fa1f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skips the first elements of a stream, keeping only the elements with index <code>&gt;=</code> <em>begin</em>  in the stream.  <a href="#a2725d9fb49cd0c4fe25658500c2fa1f1">More...</a><br /></td></tr>
 <tr class="separator:a2725d9fb49cd0c4fe25658500c2fa1f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -335,8 +339,7 @@ Functions</h2></td></tr>
 <p>adjacent_diff - from &lt;numeric&gt; </p>
 <p>partial_sum - from &lt;numeric&gt; </p>
 <p>inner_product - from &lt;numeric&gt; </p>
-<p>overload arithmetic operators as map operations? </p>
-<p class="enddd">shuffle - would have to be eager, take rng as parameter </p>
+<p class="enddd">overload arithmetic operators as map operations? </p>
 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="aa0551274cc05f2c668d5612bfe1716cb"></a>
@@ -1788,6 +1791,35 @@ template&lt;typename T , typename Compare  = std::less&lt;void&gt;&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that unions the two streams while maintaining sorted order.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab119dd9937a596a68968616c1b7849c8"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Engine  = std::default_random_engine&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::intermediate::shuffle </td>
+          <td>(</td>
+          <td class="paramtype">Engine&#160;</td>
+          <td class="paramname"><em>rng</em> = <code>Engine()</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shuffles the stream using <em>rng</em>  as the source of randomness. </p>
+<p>By default, a <code>std::default_random_engine</code> with the default seed is used.</p>
+<p>Shuffling is an eager operation. On application of the <code>shuffle</code> operation, the entire stream up to that point is evaluated and stored before continuing with the remainder of the stream. Thus, the <code>shuffle</code> operation takes <code>O(n)</code> extra space and time, where <code>n</code> is the size of the stream..</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rng</td><td>The random number generator engine, from the <code>&lt;random&gt;</code> header.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An intermediate operation which shuffles the stream.</dd></dl>
 
 </div>
 </div>

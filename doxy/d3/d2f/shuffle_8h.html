@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Flow: flow/intermediate/peek.h File Reference</title>
+<title>Flow: flow/intermediate/shuffle.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -91,13 +91,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">peek.h File Reference</div>  </div>
+<div class="title">shuffle.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;functional&gt;</code><br />
-<code>#include &quot;<a class="el" href="../../d3/d99/_stream_8h.html">../Stream.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;random&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
 <code>#include &quot;Intermediate.h&quot;</code><br />
-<code>#include &quot;../source/Peek.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/d9d/to_8h.html">../terminal/to.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dc/d36/from__move_8h.html">../generator/from_move.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -110,14 +111,10 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac9078ec57972888d23411f8c3ea209af"><td class="memTemplParams" colspan="2">template&lt;typename UnaryFunction &gt; </td></tr>
-<tr class="memitem:ac9078ec57972888d23411f8c3ea209af"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ac9078ec57972888d23411f8c3ea209af">flow::intermediate::peek</a> (UnaryFunction action)</td></tr>
-<tr class="memdesc:ac9078ec57972888d23411f8c3ea209af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes <em>action</em>  for each element in the stream.  <a href="#ac9078ec57972888d23411f8c3ea209af">More...</a><br /></td></tr>
-<tr class="separator:ac9078ec57972888d23411f8c3ea209af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af32b7bf1f105167d576b779b3b5f0297"><td class="memTemplParams" colspan="2">template&lt;typename Ret , typename Class &gt; </td></tr>
-<tr class="memitem:af32b7bf1f105167d576b779b3b5f0297"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af32b7bf1f105167d576b779b3b5f0297">flow::intermediate::peek</a> (Ret(Class::*member)())</td></tr>
-<tr class="memdesc:af32b7bf1f105167d576b779b3b5f0297"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes <em>member</em>  for each element in the stream.  <a href="#af32b7bf1f105167d576b779b3b5f0297">More...</a><br /></td></tr>
-<tr class="separator:af32b7bf1f105167d576b779b3b5f0297"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab119dd9937a596a68968616c1b7849c8"><td class="memTemplParams" colspan="2">template&lt;typename Engine  = std::default_random_engine&gt; </td></tr>
+<tr class="memitem:ab119dd9937a596a68968616c1b7849c8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ab119dd9937a596a68968616c1b7849c8">flow::intermediate::shuffle</a> (Engine rng=Engine())</td></tr>
+<tr class="memdesc:ab119dd9937a596a68968616c1b7849c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shuffles the stream using <em>rng</em>  as the source of randomness.  <a href="#ab119dd9937a596a68968616c1b7849c8">More...</a><br /></td></tr>
+<tr class="separator:ab119dd9937a596a68968616c1b7849c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
