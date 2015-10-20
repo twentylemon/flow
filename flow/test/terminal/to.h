@@ -234,5 +234,8 @@ BOOST_AUTO_TEST_CASE(to_group_t) {
 
     std::map<bool, std::vector<Widget>> ex = { {false, {Widget(1), Widget(3)}}, {true, {Widget(2), Widget(4)}} };
     auto s = w | to_group([](Widget& w) { return w.is_even(); });
-    BOOST_CHECK_EQUAL_COLLECTIONS(ex.begin(), ex.end(), s.begin(), s.end());
+    s = w | to_group(&Widget::is_even);
+    for (auto& p : s) {
+        BOOST_CHECK_EQUAL_COLLECTIONS(p.second.begin(), p.second.end(), ex[p.first].begin(), ex[p.first].end());
+    }
 }
