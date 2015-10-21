@@ -87,6 +87,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">flow Namespace Reference</div>  </div>
@@ -113,12 +114,22 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d3f/classflow_1_1optional.html">optional</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manages an optionally contained value, one that may or may not be present.  <a href="../../d6/d3f/classflow_1_1optional.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da1/classflow_1_1optional_3_01_t_01_6_01_4.html">optional&lt; T &amp; &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manages an optionally contained reference, one that may or may not be present.  <a href="../../d8/da1/classflow_1_1optional_3_01_t_01_6_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d45/classflow_1_1_stats.html">Stats</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to wrap all the statistics returned by <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a900a16920892b0445f890cad56458c9a" title="Returns a Stats object which contains several statistics of the stream values. ">stats()</a>.  <a href="../../dd/d45/classflow_1_1_stats.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The stream class provides lazy evaluation and functional style transformations on ordered data.  <a href="../../d9/dcd/classflow_1_1_stream.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a28e0cecc143d749385f38975c0baa7f0"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a28e0cecc143d749385f38975c0baa7f0"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/de2/namespaceflow.html#a28e0cecc143d749385f38975c0baa7f0">is_stream</a> = detail::is_specialization_of&lt; T, <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a> &gt;</td></tr>
+<tr class="memdesc:a28e0cecc143d749385f38975c0baa7f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type trait to detect is a type is a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>.  <a href="#a28e0cecc143d749385f38975c0baa7f0">More...</a><br /></td></tr>
+<tr class="separator:a28e0cecc143d749385f38975c0baa7f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -158,7 +169,24 @@ Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> some_property(t) ? <a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#ac56e6d6017435a15378682bacc6da4e9">cycle</a>(t, 2) : <a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b">from</a>(t);</div>
 <div class="line">}</div>
 </div><!-- fragment --> Perhaps this way is actually better. Embedding the template allows for better optimizations to occur, but it makes the stream type convoluted. It literally always is "a stream of ints" regardless of how many operations are in the source. The only way I can think of to allow stream&lt;T&gt; to exist would be through the use of an abstract base source class, and each source has a pointer to the source before it in the pipeline. This involves heavy use of virtual methods - essentially every function call would need to be virtual. It would also allow for recursively defined streams though. </dd></dl>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="a28e0cecc143d749385f38975c0baa7f0"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d9/de2/namespaceflow.html#a28e0cecc143d749385f38975c0baa7f0">flow::is_stream</a> = typedef detail::is_specialization_of&lt;T, <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Type trait to detect is a type is a <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a>. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a8468f5164d2a75f37d5ae5bd6545db62"></a>
 <div class="memitem">
 <div class="memproto">

@@ -747,6 +747,8 @@ template&lt;typename Ret , typename Class &gt; </div>
 </div><div class="memdoc">
 
 <p>Transforms each element in the stream to the return value of <em>member</em>  for each stream element. </p>
+<p>Note that this <em>will</em> keep references to data. For example, the following would clear all the names in the source list, directly modifying them (assuming <code>name</code> returns a reference).</p>
+<p><code>people | map(&amp;Person::name) | each([](std::string&amp; name) { name.clear(); });</code> </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">member</td><td>The class member function to use as the transformation.</td></tr>
