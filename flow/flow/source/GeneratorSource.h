@@ -172,12 +172,17 @@ private:
 /// <summary>
 /// Type alias shorthand to pick the correct base class.
 /// </summary>
+#if defined(_WIN32) && defined(_DEBUG)
 template <typename T>
 using GeneratorSource = std::conditional_t<
     std::is_default_constructible<T>::value,
-    GeneratorSourceDefault<T>,
+    GeneratorSourceDefault<T>,  // vc++ needs this still
     GeneratorSourceBase<T>
 >;
+#else
+template <typename T>
+using GeneratorSource = GeneratorSourceBase<T>;
+#endif
     }
 }
 #endif

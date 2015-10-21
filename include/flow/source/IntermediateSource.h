@@ -28,8 +28,7 @@
 #ifndef FLOW_SOURCE_INTERMEDIATESOURCE_H
 #define FLOW_SOURCE_INTERMEDIATESOURCE_H
 
-#include <tuple>
-#include <vector>
+#include "../optional.h"
 
 namespace flow {
     namespace source {
@@ -41,24 +40,24 @@ class SetSource;
 /// Base class for intermediate operation sources. Provides default implementations
 /// for basic methods, type aliases and common member variable definitions.
 /// </summary>
-template <typename Source, typename T>
-class IntermediateSourceBase
+template <typename Source, typename T = typename Source::value_type>
+class IntermediateSource
 {
 public:
-    using value_type = T;
-    using decay_type = std::decay_t<value_type>;
+    using value_type = std::remove_reference_t<T>;
+    using decay_type = std::decay_t<T>;
 
     template <typename LeftSource, typename RightSource, typename Compare, typename Operation>
     friend class SetSource;
 
     /// <summary>
-    /// Initializes a new instance of the IntermediateSourceBase class.
+    /// Initializes a new instance of the IntermediateSource class.
     /// </summary>
     /// <param name="source">The stream source to read elements from.</param>
-    IntermediateSourceBase(Source&& source) : _source(std::move(source)), _current(nullptr) { }
+    IntermediateSource(Source&& source) : _source(std::move(source)), _current(nullptr), _temp() { }
 
-    IntermediateSourceBase(const IntermediateSourceBase<Source, T>&) = delete;
-    IntermediateSourceBase(IntermediateSourceBase<Source, T>&&) = default;
+    IntermediateSource(const IntermediateSource<Source, T>&) = delete;
+    IntermediateSource(IntermediateSource<Source, T>&&) = default;
 
     /// <summary>
     /// Returns <c>true</c> if the source has more elements. Default implementation returns <c>_source.has_next()</c>.
@@ -111,6 +110,25 @@ protected:
     }
 
     /// <summary>
+    /// Updates the current stream value pointer to a temporary value. The lifetime of the
+    /// temporary is extended so the pointer is valid.
+    /// </summary>
+    /// <param name="temp_current">The value to set as the next stream element.</param>
+    void assign_temp_current(decay_type&& temp_current) {
+        _temp = std::move(temp_current);
+        assign_current(_temp.operator->());
+    }
+
+    /// <summary>
+    /// Updates the current stream value pointer to copy a value.
+    /// </summary>
+    /// <param name="temp_current">The value to set as the next stream element.</param>
+    void assign_temp_current(value_type& temp_current) {
+        _temp = temp_current;
+        assign_current(_temp.operator->());
+    }
+
+    /// <summary>
     /// Returns the value inside the current stream value pointer.
     /// </summary>
     /// <returns>The stream value without moving it.</returns>
@@ -129,140 +147,7 @@ protected:
 private:
     Source _source;         // the source of the stream
     value_type* _current;   // the current value from the stream
-};
-
-/// <summary>
-/// Base class for intermediate operation sources without default constructible types.
-/// </summary>
-template <typename Source, typename T>
-class IntermediateSourceNoDefault : public IntermediateSourceBase<Source, T>
-{
-public:
-    using base = IntermediateSourceBase<Source, T>;
-    using value_type = typename base::value_type;
-    using decay_type = typename base::decay_type;
-
-    /// <summary>
-    /// Initializes a new instance of the IntermediateSourceNoDefault class.
-    /// </summary>
-    /// <param name="source">The stream source to read elements from.</param>
-    IntermediateSourceNoDefault(Source&& source) : base(std::move(source)), _temp() { }
-
-    IntermediateSourceNoDefault(const IntermediateSourceNoDefault<Source, T>&) = delete;
-    IntermediateSourceNoDefault(IntermediateSourceNoDefault<Source, T>&&) = default;
-
-protected:
-    /// <summary>
-    /// Updates the current stream value pointer to a temporary value. The lifetime of the
-    /// temporary is extended so the pointer is valid.
-    /// </summary>
-    /// <param name="temp_current">The value to set as the next stream element.</param>
-    void assign_temp_current(decay_type&& temp_current) {
-        _temp.clear();
-        _temp.push_back(std::move(temp_current));
-        base::assign_current(_temp.data());
-    }
-
-    /// <summary>
-    /// Updates the current stream value pointer to copy a value.
-    /// </summary>
-    /// <param name="temp_current">The value to set as the next stream element.</param>
-    void assign_temp_current(decay_type& temp_current) {
-        _temp.clear();
-        _temp.push_back(temp_current);
-        base::assign_current(_temp.data());
-    }
-
-private:
-    std::vector<decay_type> _temp;  // the temporary value from the stream, if any
-};
-
-/// <summary>
-/// Base class for intermediate operation sources with default constructible types.
-/// </summary>
-template <typename Source, typename T>
-class IntermediateSourceDefault : public IntermediateSourceBase<Source, T>
-{
-public:
-    using base = IntermediateSourceBase<Source, T>;
-    using value_type = typename base::value_type;
-    using decay_type = typename base::decay_type;
-
-    /// <summary>
-    /// Initializes a new instance of the IntermediateSourceDefault class.
-    /// </summary>
-    /// <param name="source">The stream source to read elements from.</param>
-    IntermediateSourceDefault(Source&& source) : base(std::move(source)), _temp_current() { }
-
-    IntermediateSourceDefault(const IntermediateSourceDefault<Source, T>&) = delete;
-    IntermediateSourceDefault(IntermediateSourceDefault<Source, T>&&) = default;
-
-protected:
-    /// <summary>
-    /// Updates the current stream value pointer to a temporary value. The lifetime of the
-    /// temporary is extended so the pointer is valid.
-    /// </summary>
-    /// <param name="temp_current">The value to set as the next stream element.</param>
-    void assign_temp_current(decay_type&& temp_current) {
-        _temp_current = std::move(temp_current);
-        base::assign_current(&_temp_current);
-    }
-
-    /// <summary>
-    /// Updates the current stream value pointer to copy a value.
-    /// </summary>
-    /// <param name="temp_current">The value to set as the next stream element.</param>
-    void assign_temp_current(decay_type& temp_current) {
-        _temp_current = temp_current;
-        base::assign_current(&_temp_current);
-    }
-
-private:
-    decay_type _temp_current;   // the temporary value from the stream, if any
-};
-
-/// <summary>
-/// Type alias shorthand to pick the correct base class.
-/// </summary>
-template <typename Source, typename T = typename Source::value_type>
-class IntermediateSource : public std::conditional_t<
-    std::is_default_constructible<T>::value,
-    IntermediateSourceDefault<Source, T>,
-    IntermediateSourceNoDefault<Source, T>
->
-{
-public:
-    using base = std::conditional_t<std::is_default_constructible<T>::value, IntermediateSourceDefault<Source, T>, IntermediateSourceNoDefault<Source, T>>;
-    using value_type = typename base::value_type;
-    
-    /// <summary>
-    /// Initializes a new instance of the IntermediateSource class.
-    /// </summary>
-    /// <param name="source">The stream source to read elements from.</param>
-    IntermediateSource(Source&& source) : base(std::move(source)) { }
-
-    IntermediateSource(const IntermediateSource<Source, T>&) = delete;
-    IntermediateSource(IntermediateSource<Source, T>&&) = default;
-};
-
-/// <summary>
-/// Type alias shorthand to pick the correct base class for tuple types.
-/// </summary>
-template <typename Source, typename... T>
-class IntermediateSource<Source, std::tuple<T...>> : public IntermediateSourceNoDefault<Source, std::tuple<T...>>
-{
-public:
-    using base = IntermediateSourceNoDefault<Source, std::tuple<T...>>;
-    using value_type = typename base::value_type;
-    
-    /// <summary>
-    /// Initializes a new instance of the IntermediateSource class.
-    /// </summary>
-    /// <param name="source">The stream source to read elements from.</param>
-    IntermediateSource(Source&& source) : base(std::move(source)) { }
-
-    IntermediateSource(const IntermediateSource<Source, std::tuple<T...>>&) = delete;
-    IntermediateSource(IntermediateSource<Source, std::tuple<T...>>&&) = default;
+    optional<T> _temp;      // the temporary value from the stream, if any
 };
     }
 }

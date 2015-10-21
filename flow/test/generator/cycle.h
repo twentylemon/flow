@@ -5,8 +5,7 @@ BOOST_AUTO_TEST_CASE(cycle_itr) {
     std::vector<int> vec = { 1, 2, 3 };
 
     std::vector<int> ex = { 1, 2, 3, 1, 2 };
-    auto s = cycle(vec.begin(), vec.end()) |
-        limit(5) | to_vector();
+    auto s = cycle(vec.begin(), vec.end()) | limit(5) | to_vector();
     BOOST_CHECK_EQUAL_COLLECTIONS(s.begin(), s.end(), ex.begin(), ex.end());
 
     ex = { 1, 1, 1 };
