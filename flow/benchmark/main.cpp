@@ -95,21 +95,10 @@ int main(int argc, char** argv) {
     std::vector<Widget> w(4);
     for (std::size_t i = 0; i < w.size(); ++i) { w[i].name = std::to_string(i); }
 
-    w | map([](Widget& a) { return a.value; }) | dump();
-    w | map([](Widget& a) { return a.name; }) | dump();
-
-    /* 
-
-    std::array<cpp_int, 3> f;
-    f[0] = 0;
-    f[1] = 1;
-    for (int i = 2; i <= 100; i++) {
-        f[2] = f[0] + f[1];
-        std::rotate(f.begin(), f.begin() + 1, f.end());
-        std::cout << i << ": " << f[1] << std::endl;
-    }
-
-    std::cout << typeid(q).name() << std::endl;
+    w | map(&Widget::get_name) | dump();
+    w | map(&Widget::get_name) | each([](std::string& n) { n = n + n; });
+    endl();
+    w | map(&Widget::get_name) | dump();
 
     /*
     std::vector<int> cw{ 1, 2, 3 };
@@ -166,7 +155,7 @@ int main(int argc, char** argv) {
 
     vec | zip(vec | zip(vec | zip(vec))) | limit(1) | each([](auto&& t) { std::cout << typeid(t).name() << std::endl; });
     */
-    run_timer();
+    //run_timer();
     
     std::cout << std::endl;
     system("pause");

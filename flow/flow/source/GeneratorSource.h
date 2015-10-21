@@ -28,7 +28,7 @@
 #ifndef FLOW_SOURCE_GENERATORSOURCE_H
 #define FLOW_SOURCE_GENERATORSOURCE_H
 
-#include <vector>
+#include "../optional.h"
 
 namespace flow {
     namespace source {
@@ -42,12 +42,12 @@ class GeneratorSourceBase
 {
 public:
     using value_type = T;
-    using decay_type = std::decay_t<value_type>;
+    using decay_type = std::decay_t<T>;
 
     /// <summary>
     /// Initializes a new instance of the GeneratorSourceBase class.
     /// </summary>
-    GeneratorSourceBase() : _current(nullptr) { }
+    GeneratorSourceBase() : _current(nullptr), _temp() { }
 
     GeneratorSourceBase(const GeneratorSourceBase<T>&) = delete;
     GeneratorSourceBase(GeneratorSourceBase<T>&&) = default;
@@ -95,6 +95,25 @@ protected:
     }
 
     /// <summary>
+    /// Updates the current stream value pointer to a temporary value. The lifetime of the
+    /// temporary is extended so the pointer is valid.
+    /// </summary>
+    /// <param name="temp_current">The value to set as the next stream element.</param>
+    void assign_temp_current(decay_type&& temp_current) {
+        _temp = std::move(temp_current);
+        assign_current(_temp.operator->());
+    }
+
+    /// <summary>
+    /// Updates the current stream value pointer to copy a value.
+    /// </summary>
+    /// <param name="temp_current">The value to set as the next stream element.</param>
+    void assign_temp_current(value_type& temp_current) {
+        _temp = temp_current;
+        assign_current(_temp.operator->());
+    }
+
+    /// <summary>
     /// Returns the value inside the current stream value pointer. It is <em>not</em> moved.
     /// </summary>
     /// <returns>The stream value without moving it.</returns>
@@ -103,52 +122,8 @@ protected:
     }
 
 private:
-    value_type* _current;           // the current value from the stream
-};
-
-/// <summary>
-/// Base class for original stream sources without default constructible types.
-/// </summary>
-template <typename T>
-class GeneratorSourceNoDefault : public GeneratorSourceBase<T>
-{
-public:
-    using base = GeneratorSourceBase<T>;
-    using value_type = typename base::value_type;
-    using decay_type = typename base::decay_type;
-
-    /// <summary>
-    /// Initializes a new instance of the GeneratorSourceNoDefault class.
-    /// </summary>
-    GeneratorSourceNoDefault() : base(), _temp() { }
-
-    GeneratorSourceNoDefault(const GeneratorSourceNoDefault<T>&) = delete;
-    GeneratorSourceNoDefault(GeneratorSourceNoDefault<T>&&) = default;
-
-protected:
-    /// <summary>
-    /// Updates the current stream value pointer to a temporary value. The lifetime of the
-    /// temporary is extended so the pointer is valid.
-    /// </summary>
-    /// <param name="temp_current">The value to set as the next stream element.</param>
-    void assign_temp_current(decay_type&& temp_current) {
-        _temp.clear();
-        _temp.push_back(std::move(temp_current));
-        base::assign_current(_temp.data());
-    }
-
-    /// <summary>
-    /// Updates the current stream value pointer to copy a value.
-    /// </summary>
-    /// <param name="temp_current">The value to set as the next stream element.</param>
-    void assign_temp_current(decay_type& temp_current) {
-        _temp.clear();
-        _temp.push_back(temp_current);
-        base::assign_current(_temp.data());
-    }
-
-private:
-    std::vector<decay_type> _temp;  // the temporary value from the stream, if any
+    value_type* _current;       // the current value from the stream
+    optional<decay_type> _temp; // the temporary value from the stream, if any
 };
 
 /// <summary>
@@ -201,9 +176,8 @@ template <typename T>
 using GeneratorSource = std::conditional_t<
     std::is_default_constructible<T>::value,
     GeneratorSourceDefault<T>,
-    GeneratorSourceNoDefault<T>
+    GeneratorSourceBase<T>
 >;
     }
 }
-
 #endif

@@ -186,5 +186,120 @@ private:
     std::aligned_storage_t<sizeof(T), alignof(T)> _storage; // storage for the value
     T* _value;                                              // pointer to the value
 };
+
+/// <summary>
+/// Manages an optionally contained reference, one that may or may not be present.
+/// <para>This class functions as a stripped down version of the soon to exist <c>std::optional</c>. Once
+/// <c>std::optional</c> is released and implemented by major compilers, this class will be aliased to be <c>std::optional</c>
+/// instead, and it will serve as a drop in replacement assuming the standard does not change.</para>
+/// </summary>
+template <typename T>
+class optional<T&>
+{
+public:
+    /// <summary>
+    /// Initializes a new instance of the optional class which contains no value.
+    /// </summary>
+    optional() : _value(nullptr) { }
+
+    /// <summary>
+    /// Initializes a new instance of the optional class containing <paramref name="value"/>.
+    /// </summary>
+    /// <param name="value">The value to move into the contained value.</param>
+    optional(T& value) : _value(&value) { }
+
+    optional(const optional<T&>&) = default;
+    optional(optional<T&>&&) = default;
+
+    /// <summary>
+    /// Assigns the contained value to be <paramref name="value"/>.
+    /// </summary>
+    /// <param name="value">The value to set.</param>
+    /// <returns><c>*this</c></returns>
+    optional<T&>& operator=(T& value) {
+        _value = &value;
+        return *this;
+    }
+
+    /// <summary>
+    /// Returns <c>true</c> if this object contains a value.
+    /// </summary>
+    /// <returns><c>true</c> if this object contains a value.</returns>
+    operator bool() const {
+        return _value != nullptr;
+    }
+
+    /// <summary>
+    /// Returns a pointer to the contained value, undefined if no there is no contained value.
+    /// </summary>
+    /// <returns>A pointer to the contained value.</returns>
+    T* operator->() {
+        return _value;
+    }
+
+    /// <summary>
+    /// Returns a pointer to the contained value, undefined if there is no contained value.
+    /// </summary>
+    /// <returns>A pointer to the contained value.</returns>
+    const T* operator->() const {
+        return _value;
+    }
+
+    /// <summary>
+    /// Returns a reference to the contained value, undefined if there is no contained value.
+    /// </summary>
+    /// <returns>A reference to the contained value.</returns>
+    T& operator*() {
+        return *_value;
+    }
+
+    /// <summary>
+    /// Returns a reference to the contained value, undefined if there is no contained value.
+    /// </summary>
+    /// <returns>A reference to the contained value.</returns>
+    const T& operator*() const {
+        return *_value;
+    }
+
+    /// <summary>
+    /// Returns a reference to the contained value.
+    /// </summary>
+    /// <returns>A reference to the contained value.</returns>
+    /// <exception cref="std::logic_error">Thrown when there is no contained value.</exception>
+    T& value() {
+        if (*this) {
+            return **this;
+        }
+        throw std::logic_error("bad optional access");
+    }
+
+    /// <summary>
+    /// Returns a reference to the contained value.
+    /// </summary>
+    /// <returns>A reference to the contained value.</returns>
+    /// <exception cref="std::logic_error">Thrown when there is no contained value.</exception>
+    const T& value() const {
+        if (*this) {
+            return **this;
+        }
+        throw std::logic_error("bad optional access");
+    }
+
+    /// <summary>
+    /// Returns a copy of the contained value if it exists, otherwise returns <paramref name="default_value"/>.
+    /// </summary>
+    /// <param name="default_value">The value to return if there is no contained value.</param>
+    /// <returns>A copy of the contained value if it exists, <paramref name="default_value"/> otherwise.</returns>
+    template <typename U>
+    T value_or(U&& default_value) const {
+        if (*this) {
+            return **this;
+        }
+        return std::forward<U>(default_value);
+    }
+
+private:
+    T* _value;  // pointer to the referenced value
+};
 }
 #endif

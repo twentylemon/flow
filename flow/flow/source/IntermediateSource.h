@@ -44,8 +44,8 @@ template <typename Source, typename T = typename Source::value_type>
 class IntermediateSource
 {
 public:
-    using value_type = T;
-    using decay_type = std::decay_t<value_type>;
+    using value_type = std::remove_reference_t<T>;
+    using decay_type = std::decay_t<T>;
 
     template <typename LeftSource, typename RightSource, typename Compare, typename Operation>
     friend class SetSource;
@@ -54,7 +54,7 @@ public:
     /// Initializes a new instance of the IntermediateSource class.
     /// </summary>
     /// <param name="source">The stream source to read elements from.</param>
-    IntermediateSource(Source&& source) : _source(std::move(source)), _current(nullptr) { }
+    IntermediateSource(Source&& source) : _source(std::move(source)), _current(nullptr), _temp() { }
 
     IntermediateSource(const IntermediateSource<Source, T>&) = delete;
     IntermediateSource(IntermediateSource<Source, T>&&) = default;
@@ -123,7 +123,7 @@ protected:
     /// Updates the current stream value pointer to copy a value.
     /// </summary>
     /// <param name="temp_current">The value to set as the next stream element.</param>
-    void assign_temp_current(decay_type& temp_current) {
+    void assign_temp_current(value_type& temp_current) {
         _temp = temp_current;
         assign_current(_temp.operator->());
     }
@@ -145,9 +145,9 @@ protected:
     }
 
 private:
-    Source _source;             // the source of the stream
-    value_type* _current;       // the current value from the stream
-    optional<decay_type> _temp; // the temporary value from the stream, if any
+    Source _source;         // the source of the stream
+    value_type* _current;   // the current value from the stream
+    optional<T> _temp;      // the temporary value from the stream, if any
 };
     }
 }

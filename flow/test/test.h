@@ -101,6 +101,7 @@ struct Widget {
     bool operator<=(const Widget& rhs) const { return _value <= rhs._value; }
     bool operator>(const Widget& rhs) const { return _value > rhs._value; }
     bool operator>=(const Widget& rhs) const { return _value >= rhs._value; }
+    Widget& operator++() { ++_value; return *this; }
 
     void process() const { _other = _value; }
     int _value;
