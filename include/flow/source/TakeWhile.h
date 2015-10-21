@@ -42,6 +42,8 @@ class TakeWhile : public IntermediateSource<Source>
 {
 public:
     using base = IntermediateSource<Source>;
+    using value_type = typename base::value_type;
+    static_assert(std::is_convertible<std::result_of_t<UnaryPredicate(value_type&)>, bool>::value, "flow::take_while predicate return value must be convertible to bool");
 
     /// <summary>
     /// Initializes a new instance of the TakeWhile class.

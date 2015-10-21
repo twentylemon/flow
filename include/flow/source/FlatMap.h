@@ -28,9 +28,9 @@
 #ifndef FLOW_SOURCE_FLATMAP_H
 #define FLOW_SOURCE_FLATMAP_H
 
-#include <memory>
-
 #include "IntermediateSource.h"
+#include "../Stream.h"
+#include "../optional.h"
 
 namespace flow {
     namespace source {
@@ -46,13 +46,14 @@ public:
     using base = IntermediateSource<Source, std::remove_reference_t<decltype(std::declval<std::result_of_t<UnaryOperation(typename Source::value_type&)>>().next())>>;
     using stream_type = std::result_of_t<UnaryOperation(typename Source::value_type&)>;
     using value_type = typename base::value_type;
+    static_assert(is_stream<stream_type>::value, "flow::flat_map return value of mapping operation must be a stream");
 
     /// <summary>
     /// Initializes a new instance of the FlatMap class.
     /// </summary>
     /// <param name="source">The source to map from.</param>
     /// <param name="operation">The mapping operation.</param>
-    FlatMap(Source&& source, UnaryOperation operation) : base(std::move(source)), _operation(operation), _stream(nullptr) { }
+    FlatMap(Source&& source, UnaryOperation operation) : base(std::move(source)), _operation(operation), _stream() { }
 
     FlatMap(const FlatMap<Source, UnaryOperation>&) = delete;
     FlatMap(FlatMap<Source, UnaryOperation>&&) = default;
@@ -62,12 +63,12 @@ public:
     /// </summary>
     /// <returns><c>true</c> if this source has more stream elements.</returns>
     bool has_next() {
-        if (_stream != nullptr && _stream->has_next()) {
+        if (_stream && _stream->has_next()) {
             base::assign_current(&_stream->next());
             return true;
         }
         else if (base::has_next()) {
-            _stream = std::make_unique<stream_type>(_operation(base::raw_next()));
+            _stream = _operation(base::raw_next());
             return has_next();  // step the stream or step the original source again
         }
         return false;
@@ -87,15 +88,15 @@ public:
     /// </summary>
     /// <returns>The estimated size of the remainder of the stream.</returns>
     std::size_t estimate_size() const {
-        if (_stream == nullptr) {
+        if (!_stream) {
             return base::estimate_size();
         }
         return base::estimate_size() * _stream->estimate_size();
     }
 
 private:
-    UnaryOperation _operation;              // the mapping operation to apply to each element from the source
-    std::unique_ptr<stream_type> _stream;   // the current stream we are reading values from
+    UnaryOperation _operation;      // the mapping operation to apply to each element from the source
+    optional<stream_type> _stream;  // the current stream we are reading values from
 };
     }
 }

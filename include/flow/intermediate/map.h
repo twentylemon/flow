@@ -52,6 +52,9 @@ auto map(UnaryOperation mapper) {
 
 /// <summary>
 /// Transforms each element in the stream to the return value of <paramref name="member"/> for each stream element.
+/// <para>Note that this <em>will</em> keep references to data. For example, the following would clear all the names
+/// in the source list, directly modifying them (assuming <c>name</c> returns a reference).</para>
+/// <code>people | map(&Person::name) | each([](std::string& name) { name.clear(); });</code>
 /// </summary>
 /// <param name="member">The class member function to use as the transformation.</param>
 /// <returns>An intermediate operation that maps the stream to new values.</returns>
@@ -62,6 +65,9 @@ auto map(Ret(Class::*member)()) {
 
 /// <summary>
 /// Transforms each element in the stream to the return value of <paramref name="member"/> for each stream element.
+/// <para>Note that this <em>will</em> keep references to data. For example, the following would clear all the names
+/// in the source list, directly modifying them (assuming <c>name</c> returns a reference).</para>
+/// <code>people | map(&Person::name) | each([](std::string& name) { name.clear(); });</code>
 /// </summary>
 /// <param name="member">The class member function to use as the transformation.</param>
 /// <returns>An intermediate operation that maps the stream to new values.</returns>

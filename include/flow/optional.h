@@ -43,13 +43,13 @@ public:
     /// <summary>
     /// Initializes a new instance of the optional class which contains no value.
     /// </summary>
-    optional() : _storage(), _value(nullptr) { }
+    optional() : _storage(), _engaged(false) { }
 
     /// <summary>
     /// Initializes a new instance of the optional class containing a copy of <paramref name="value"/>.
     /// </summary>
     /// <param name="value">The value to set.</param>
-    optional(const T& value) : _storage(), _value(nullptr)
+    optional(const T& value) : _storage(), _engaged(false)
     {
         assign(value);
     }
@@ -58,30 +58,20 @@ public:
     /// Initializes a new instance of the optional class containing <paramref name="value"/>.
     /// </summary>
     /// <param name="value">The value to move into the contained value.</param>
-    optional(T&& value) : _storage(), _value(nullptr)
+    optional(T&& value) : _storage(), _engaged(false)
     {
         assign(std::move(value));
     }
 
-    /// <summary>
-    /// Initializes a new instance of the optional class.
-    /// </summary>
-    /// <param name="rhs">The optional to copy.</param>
-    optional(const optional<T>& rhs) {
-        _storage = rhs._storage;
-        if (rhs) {
-            _value = &reinterpret_cast<T&>(_storage);   // point to ours, not theirs
-        }
-    }
+    optional(const optional<T>& rhs) = default;
+    optional(optional<T>&& rhs) = default;
 
     /// <summary>
-    /// Initializes a new instance of the optional class.
+    /// Finalizes an instance of the optional class.
     /// </summary>
-    /// <param name="rhs">The optional to move.</param>
-    optional(optional<T>&& rhs) {
-        _storage = std::move(rhs._storage);
-        if (rhs) {
-            _value = &reinterpret_cast<T&>(_storage);   // point to ours, not theirs
+    ~optional() {
+        if (*this) {
+            reinterpret_cast<T&>(_storage).~T();
         }
     }
 
@@ -101,7 +91,7 @@ public:
     /// </summary>
     /// <returns><c>true</c> if this object contains a value.</returns>
     operator bool() const {
-        return _value != nullptr;
+        return _engaged;
     }
 
     /// <summary>
@@ -109,7 +99,7 @@ public:
     /// </summary>
     /// <returns>A pointer to the contained value.</returns>
     T* operator->() {
-        return _value;
+        return &reinterpret_cast<T&>(_storage);
     }
 
     /// <summary>
@@ -117,7 +107,7 @@ public:
     /// </summary>
     /// <returns>A pointer to the contained value.</returns>
     const T* operator->() const {
-        return _value;
+        return &reinterpret_cast<const T&>(_storage);
     }
 
     /// <summary>
@@ -125,7 +115,7 @@ public:
     /// </summary>
     /// <returns>A reference to the contained value.</returns>
     T& operator*() {
-        return *_value;
+        return reinterpret_cast<T&>(_storage);
     }
 
     /// <summary>
@@ -133,7 +123,7 @@ public:
     /// </summary>
     /// <returns>A reference to the contained value.</returns>
    const T& operator*() const {
-       return *_value;
+       return reinterpret_cast<const T&>(_storage);
     }
 
    /// <summary>
@@ -180,11 +170,15 @@ private:
     /// <param name="value">The value to set.</param>
     template <typename U>
     void assign(U&& value) {
-        _value = new(&_storage) T(std::forward<U>(value));
+        if (*this) {
+            reinterpret_cast<T&>(_storage).~T();
+        }
+        new(&_storage) T(std::forward<U>(value));
+        _engaged = true;
     }
 
     std::aligned_storage_t<sizeof(T), alignof(T)> _storage; // storage for the value
-    T* _value;                                              // pointer to the value
+    bool _engaged;                                          // if the storage contains a real value
 };
 
 /// <summary>

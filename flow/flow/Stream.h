@@ -35,6 +35,21 @@
 
 namespace flow {
 
+    namespace detail {
+
+/// <summary>
+/// Type trait to detect if a type is a specialization of a template class - negative case.
+/// </summary>
+template <typename T, template <typename...> class Template>
+struct is_specialization_of : std::false_type { };
+
+/// <summary>
+/// Type trait to detect if a type is a specialization of a template class - positive case.
+/// </summary>
+template <template <typename...> class Template, typename... Args>
+struct is_specialization_of<Template<Args...>, Template> : std::true_type { };
+    }
+
 /// <summary>
 /// The stream class provides lazy evaluation and functional style transformations on ordered data.
 /// <para>Streams support pipelining of multiple operations. Streams can be transformed using <c>operator|</c>
@@ -217,5 +232,11 @@ public:
 private:
     Source _source; // the source of stream elements
 };
+
+/// <summary>
+/// Type trait to detect is a type is a Stream.
+/// </summary>
+template <typename T>
+using is_stream = detail::is_specialization_of<T, Stream>;
 }
 #endif

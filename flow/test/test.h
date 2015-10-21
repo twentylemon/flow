@@ -95,6 +95,7 @@ struct Widget {
     void set_value(int value) { _value = value; }
     void clear() { _value = 0; }
     bool is_even() const { return _value % 2 == 0; }
+    int& get_other_ref() { return _other; }
     bool operator==(const Widget& rhs) const { return _value == rhs._value; }
     bool operator!=(const Widget& rhs) const { return _value != rhs._value; }
     bool operator<(const Widget& rhs) const { return _value < rhs._value; }
