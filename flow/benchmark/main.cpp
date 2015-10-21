@@ -11,6 +11,7 @@
 #include <chrono>
 
 #include <boost/timer.hpp>
+#include <boost/optional.hpp>
 #include <complex>
 
 #include <flow.h>
@@ -37,7 +38,9 @@ public:
     Widget operator*(const Widget& rhs) const { return Widget(value * rhs.value); }
     bool operator==(const Widget& rhs) const { return value == rhs.value; }
     Widget operator++() { return Widget(value + 1); }
+    std::string& get_name() { return name; }
     int value;
+    std::string name;
     std::array<int, 500> arry;
     /*
     Widget& operator=(const Widget& w) { value = w.value; std::cout << "copy assign" << std::endl; return *this; }
@@ -68,13 +71,13 @@ void run_timer() {
     T vv(0);
     boost::timer tv;
     for (int i = 0; i < maxit; i++) {
-        auto w = vec | fold(std::plus<int>());
+        vv = vec | sum();
     }
     std::cout << std::endl << "streamv: " << tv.elapsed() << "\t" << vv << std::endl;
     T v_(0);
     boost::timer t_;
     for (int i = 0; i < maxit; i++) {
-        auto w = vec | fold(std::plus<int>());
+        //o_ = i;
     }
     std::cout << std::endl << "stream_: " << t_.elapsed() << "\t" << v_ << std::endl;
 }
@@ -89,7 +92,13 @@ int main(int argc, char** argv) {
     std::vector<int> v1 = { 1, 3, 5, 7 };
     std::vector<int> v2 = { 2, 4, 6, 8 };
 
-    /*
+    std::vector<Widget> w(4);
+    for (std::size_t i = 0; i < w.size(); ++i) { w[i].name = std::to_string(i); }
+
+    w | map([](Widget& a) { return a.value; }) | dump();
+    w | map([](Widget& a) { return a.name; }) | dump();
+
+    /* 
 
     std::array<cpp_int, 3> f;
     f[0] = 0;
