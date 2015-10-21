@@ -27,7 +27,7 @@ common generator used is `from()`, which creates a Stream from an iterator range
 auto stream = from(my_vector); // a stream over the entire vector in the same order
 ```
 
-Since it's very common, the pipe operator is overloaded for container types as a shorthand for from(). So the following
+Since it's very common, the pipe operator is overloaded for container types as a shorthand for `from()`. So the following
 statements create and process the same stream.
 
 ```C++
@@ -36,7 +36,7 @@ my_vector | each(process);          // shorthand, the same operation as above
 ```
 
 Other common stream generators are `iota()`, which counts up from a value, and `repeat()`, which repeats a value.
-Several others are included in the flow::generator namespace.
+Several others are included in the `flow::generator` namespace.
 
 Manipulating a Sick Flow
 ------------------------
