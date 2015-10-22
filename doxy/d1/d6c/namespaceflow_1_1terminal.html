@@ -174,6 +174,22 @@ Functions</h2></td></tr>
 <tr class="memitem:a439e3f4a1be79bae0105092613415773"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a439e3f4a1be79bae0105092613415773">fold_id</a> (Accumulator accumulator, UnaryFunction initializer)</td></tr>
 <tr class="memdesc:a439e3f4a1be79bae0105092613415773"><td class="mdescLeft">&#160;</td><td class="mdescRight">Folds the stream using <em>accumulator</em> , returning the value as an optional.  <a href="#a439e3f4a1be79bae0105092613415773">More...</a><br /></td></tr>
 <tr class="separator:a439e3f4a1be79bae0105092613415773"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a338ea201d1ada38a3c2afec6944fbc42"><td class="memTemplParams" colspan="2">template&lt;typename Source , typename T , typename ProductFunction  = std::multiplies&lt;void&gt;, typename SumFunction  = std::plus&lt;T&gt;&gt; </td></tr>
+<tr class="memitem:a338ea201d1ada38a3c2afec6944fbc42"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a338ea201d1ada38a3c2afec6944fbc42">inner_product</a> (<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; Source &gt; &amp;&amp;right, T &amp;&amp;value, ProductFunction times=ProductFunction(), SumFunction plus=SumFunction())</td></tr>
+<tr class="memdesc:a338ea201d1ada38a3c2afec6944fbc42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the inner product (also known as dot product) of the two streams.  <a href="#a338ea201d1ada38a3c2afec6944fbc42">More...</a><br /></td></tr>
+<tr class="separator:a338ea201d1ada38a3c2afec6944fbc42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa80485667da9ab8a6cfdf4651a87150"><td class="memTemplParams" colspan="2">template&lt;typename Itr , typename T , typename ProductFunction  = std::multiplies&lt;void&gt;, typename SumFunction  = std::plus&lt;T&gt;&gt; </td></tr>
+<tr class="memitem:aaa80485667da9ab8a6cfdf4651a87150"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aaa80485667da9ab8a6cfdf4651a87150">inner_product</a> (Itr begin, Itr end, T &amp;&amp;value, ProductFunction times=ProductFunction(), SumFunction plus=SumFunction())</td></tr>
+<tr class="memdesc:aaa80485667da9ab8a6cfdf4651a87150"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the inner product (also known as dot product) of the stream and iterator range, this is the same as <code>inner_product(from(begin, end), value, times, plus)</code>.  <a href="#aaa80485667da9ab8a6cfdf4651a87150">More...</a><br /></td></tr>
+<tr class="separator:aaa80485667da9ab8a6cfdf4651a87150"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21f4741c21faf2386a61774ba5eee6a9"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename T , typename ProductFunction  = std::multiplies&lt;void&gt;, typename SumFunction  = std::plus&lt;T&gt;, typename  = std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a21f4741c21faf2386a61774ba5eee6a9"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a21f4741c21faf2386a61774ba5eee6a9">inner_product</a> (Container &amp;container, T &amp;&amp;value, ProductFunction times=ProductFunction(), SumFunction plus=SumFunction())</td></tr>
+<tr class="memdesc:a21f4741c21faf2386a61774ba5eee6a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the inner product (also known as dot product) of the stream and <em>container</em> , this is the same as <code>inner_product(from(container), value, times, plus)</code>.  <a href="#a21f4741c21faf2386a61774ba5eee6a9">More...</a><br /></td></tr>
+<tr class="separator:a21f4741c21faf2386a61774ba5eee6a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a1febd32cb8ca10885dcffff7861b26"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , typename ProductFunction  = std::multiplies&lt;void&gt;, typename SumFunction  = std::plus&lt;T&gt;&gt; </td></tr>
+<tr class="memitem:a3a1febd32cb8ca10885dcffff7861b26"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a3a1febd32cb8ca10885dcffff7861b26">inner_product</a> (std::initializer_list&lt; T &gt; list, U &amp;&amp;value, ProductFunction times=ProductFunction(), SumFunction plus=SumFunction())</td></tr>
+<tr class="memdesc:a3a1febd32cb8ca10885dcffff7861b26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the inner product (also known as dot product) of the stream and <em>list</em> , this is the same as <code>inner_product(from(list), value, times, plus)</code>.  <a href="#a3a1febd32cb8ca10885dcffff7861b26">More...</a><br /></td></tr>
+<tr class="separator:a3a1febd32cb8ca10885dcffff7861b26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fe0dda56d4f64d94e607e73b9187960"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a4fe0dda56d4f64d94e607e73b9187960">last</a> ()</td></tr>
 <tr class="memdesc:a4fe0dda56d4f64d94e607e73b9187960"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last element from the stream as an optional.  <a href="#a4fe0dda56d4f64d94e607e73b9187960">More...</a><br /></td></tr>
 <tr class="separator:a4fe0dda56d4f64d94e607e73b9187960"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -986,6 +1002,231 @@ template&lt;typename Accumulator , typename UnaryFunction &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a338ea201d1ada38a3c2afec6944fbc42"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Source , typename T , typename ProductFunction  = std::multiplies&lt;void&gt;, typename SumFunction  = std::plus&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::inner_product </td>
+          <td>(</td>
+          <td class="paramtype">Stream&lt; Source &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>right</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ProductFunction&#160;</td>
+          <td class="paramname"><em>times</em> = <code>ProductFunction()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SumFunction&#160;</td>
+          <td class="paramname"><em>plus</em> = <code>SumFunction()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the inner product (also known as dot product) of the two streams. </p>
+<p>The inner product is the sum of products of the elements of the two streams. If the streams are not the same length, the calculation stops once the shorter of the two streams is empty.</p>
+<p>This operation is the same as performing</p>
+<p><code>left | zip(right, times) | fold(plus, value);</code> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">right</td><td>The right stream to compute the inner product with.</td></tr>
+    <tr><td class="paramname">value</td><td>The starting value for the summation, defaults to <code>T()</code>.</td></tr>
+    <tr><td class="paramname">times</td><td>The multiplication operation, defaults to <code>operator*</code>.</td></tr>
+    <tr><td class="paramname">plus</td><td>The addition operation, defaults to <code>operator+</code>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The inner product between <em>right</em>  and the operated stream.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a2f184cd239e9600f7a68eed124e99bef" title="Zips the two streams together using zipper  as the zipping operation. ">zip()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ad76999f9b4b01425b09c070cc7154ec8" title="Folds the stream using the accumulator . ">fold()</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aaa80485667da9ab8a6cfdf4651a87150"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Itr , typename T , typename ProductFunction  = std::multiplies&lt;void&gt;, typename SumFunction  = std::plus&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::inner_product </td>
+          <td>(</td>
+          <td class="paramtype">Itr&#160;</td>
+          <td class="paramname"><em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Itr&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ProductFunction&#160;</td>
+          <td class="paramname"><em>times</em> = <code>ProductFunction()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SumFunction&#160;</td>
+          <td class="paramname"><em>plus</em> = <code>SumFunction()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the inner product (also known as dot product) of the stream and iterator range, this is the same as <code>inner_product(from(begin, end), value, times, plus)</code>. </p>
+<p>The inner product is the sum of products of the elements of the stream and iterator range. If they are not the same length, the calculation stops once the shorter of the two is empty.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">begin</td><td>The beginning of the range to compute inner product with.</td></tr>
+    <tr><td class="paramname">end</td><td>The end of the range to compute inner product with.</td></tr>
+    <tr><td class="paramname">value</td><td>The starting value for the summation, defaults to <code>T()</code>.</td></tr>
+    <tr><td class="paramname">times</td><td>The multiplication operation, defaults to <code>operator*</code>.</td></tr>
+    <tr><td class="paramname">plus</td><td>The addition operation, defaults to <code>operator+</code>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The inner product between <code>[begin, end)</code> and the operated stream.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a2f184cd239e9600f7a68eed124e99bef" title="Zips the two streams together using zipper  as the zipping operation. ">zip()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ad76999f9b4b01425b09c070cc7154ec8" title="Folds the stream using the accumulator . ">fold()</a>, <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a21f4741c21faf2386a61774ba5eee6a9"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Container , typename T , typename ProductFunction  = std::multiplies&lt;void&gt;, typename SumFunction  = std::plus&lt;T&gt;, typename  = std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::inner_product </td>
+          <td>(</td>
+          <td class="paramtype">Container &amp;&#160;</td>
+          <td class="paramname"><em>container</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ProductFunction&#160;</td>
+          <td class="paramname"><em>times</em> = <code>ProductFunction()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SumFunction&#160;</td>
+          <td class="paramname"><em>plus</em> = <code>SumFunction()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the inner product (also known as dot product) of the stream and <em>container</em> , this is the same as <code>inner_product(from(container), value, times, plus)</code>. </p>
+<p>The inner product is the sum of products of the elements of the stream and <em>container</em> . If they are not the same length, the calculation stops once the shorter of the two is empty.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">container</td><td>The container to compute the inner product with.</td></tr>
+    <tr><td class="paramname">value</td><td>The starting value for the summation, defaults to <code>T()</code>.</td></tr>
+    <tr><td class="paramname">times</td><td>The multiplication operation, defaults to <code>operator*</code>.</td></tr>
+    <tr><td class="paramname">plus</td><td>The addition operation, defaults to <code>operator+</code>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The inner product between <em>container</em>  and the operated stream.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a2f184cd239e9600f7a68eed124e99bef" title="Zips the two streams together using zipper  as the zipping operation. ">zip()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ad76999f9b4b01425b09c070cc7154ec8" title="Folds the stream using the accumulator . ">fold()</a>, <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3a1febd32cb8ca10885dcffff7861b26"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename U , typename ProductFunction  = std::multiplies&lt;void&gt;, typename SumFunction  = std::plus&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::terminal::inner_product </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">U &amp;&amp;&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ProductFunction&#160;</td>
+          <td class="paramname"><em>times</em> = <code>ProductFunction()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SumFunction&#160;</td>
+          <td class="paramname"><em>plus</em> = <code>SumFunction()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the inner product (also known as dot product) of the stream and <em>list</em> , this is the same as <code>inner_product(from(list), value, times, plus)</code>. </p>
+<p>The inner product is the sum of products of the elements of the stream and <em>list</em> . If they are not the same length, the calculation stops once the shorter of the two is empty.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>The list to compute the inner product with.</td></tr>
+    <tr><td class="paramname">value</td><td>The starting value for the summation, defaults to <code>T()</code>.</td></tr>
+    <tr><td class="paramname">times</td><td>The multiplication operation, defaults to <code>operator*</code>.</td></tr>
+    <tr><td class="paramname">plus</td><td>The addition operation, defaults to <code>operator+</code>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The inner product between <em>list</em>  and the operated stream.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a2f184cd239e9600f7a68eed124e99bef" title="Zips the two streams together using zipper  as the zipping operation. ">zip()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ad76999f9b4b01425b09c070cc7154ec8" title="Folds the stream using the accumulator . ">fold()</a>, <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a4fe0dda56d4f64d94e607e73b9187960"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1041,7 +1282,6 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A detail::Terminal operation which gives the maximum element from the stream.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ad02d008becaf1d5d64d2ae358ae7306e" title="Returns the minimum element from the stream as an optional according to compare , operator< by defaul...">min()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae944c0b98f14746eb980b9883e36a7e4" title="Returns the minimum and maximum elements as a optional pair from the stream according to compare ...">minmax()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a900a16920892b0445f890cad56458c9a" title="Returns a Stats object which contains several statistics of the stream values. ">stats()</a>, <a class="el" href="../../d6/d3f/classflow_1_1optional.html" title="Manages an optionally contained value, one that may or may not be present. ">optional</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000006">Todo:</a></b></dt><dd>benchmark non-fold implementation </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/de0/terminal_8cpp-example.html#a3">terminal.cpp</a>.</dd>
 </dl>
 </div>
@@ -1072,7 +1312,6 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A detail::Terminal operation which gives the minimum element from the stream.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aa878b5ae4e25bf654161a5004ca025b3" title="Returns the maximum element from the stream as an optional according to compare , operator< by defaul...">max()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae944c0b98f14746eb980b9883e36a7e4" title="Returns the minimum and maximum elements as a optional pair from the stream according to compare ...">minmax()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a900a16920892b0445f890cad56458c9a" title="Returns a Stats object which contains several statistics of the stream values. ">stats()</a>, <a class="el" href="../../d6/d3f/classflow_1_1optional.html" title="Manages an optionally contained value, one that may or may not be present. ">optional</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000007">Todo:</a></b></dt><dd>benchmark non-fold implementation </dd></dl>
 
 </div>
 </div>
@@ -1498,7 +1737,7 @@ template&lt;typename ResultType  = double, bool MinMax = false, bool MedianMode 
   </dd>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dd/d45/classflow_1_1_stats.html" title="Class to wrap all the statistics returned by stats(). ">Stats</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a52dfcc0ff79f7c3d74ea2e80a3f9a65f" title="Returns the number of elements in the stream as std::size_t. ">count()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9d36eab187f4b501c07a00f39e4f2381" title="Returns the sum of all the elements in the stream using operator+ as an optional. ...">sum()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae944c0b98f14746eb980b9883e36a7e4" title="Returns the minimum and maximum elements as a optional pair from the stream according to compare ...">minmax()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aaca68a0c6feaa53446364357148a9b52" title="Copies the stream into a std::map<T, std::size_t>. ">to_map()</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000008">Todo:</a></b></dt><dd>make this return an optional? </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000006">Todo:</a></b></dt><dd>make this return an optional? </dd></dl>
 
 </div>
 </div>
@@ -1690,7 +1929,7 @@ template&lt;typename UnaryFunction &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A terminal operation which groups stream elements according to <em>classifier</em> .</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000009">Todo:</a></b></dt><dd><p class="startdd">mem_fn overloads; vc++ crashes when compiling these </p>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000007">Todo:</a></b></dt><dd><p class="startdd">mem_fn overloads; vc++ crashes when compiling these </p>
 <p class="enddd">overload to fold the resultant groups? </p>
 </dd></dl>
 

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Flow: flow/intermediate/zip.h File Reference</title>
+<title>Flow: flow/terminal/inner_product.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="../../dir_2420eba184a3676f5a7fb84b29bc58a5.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_a0e9e98f8cff90e425322a8947b4aaff.html">intermediate</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../dir_2420eba184a3676f5a7fb84b29bc58a5.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_e74d20354ec74f7e2733517bf2c570cf.html">terminal</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -91,42 +91,42 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">zip.h File Reference</div>  </div>
+<div class="title">inner_product.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;tuple&gt;</code><br />
-<code>#include &quot;<a class="el" href="../../d3/d99/_stream_8h.html">../Stream.h</a>&quot;</code><br />
-<code>#include &quot;Intermediate.h&quot;</code><br />
-<code>#include &quot;../source/Zip.h&quot;</code><br />
+<div class="textblock"><code>#include &lt;functional&gt;</code><br />
+<code>#include &quot;Terminal.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d9/d4b/from_8h.html">../generator/from.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d2/ddd/fold_8h.html">fold.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../da/d3a/zip_8h.html">../intermediate/zip.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:d9/de2/namespaceflow"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/de2/namespaceflow.html">flow</a></td></tr>
 <tr class="memdesc:d9/de2/namespaceflow"><td class="mdescLeft">&#160;</td><td class="mdescRight">The entire flow library is contained in the flow namespace. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:dc/d09/namespaceflow_1_1intermediate"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html">flow::intermediate</a></td></tr>
-<tr class="memdesc:dc/d09/namespaceflow_1_1intermediate"><td class="mdescLeft">&#160;</td><td class="mdescRight">Intermediate operations, all of which are also aliased in the flow namespace. <br /></td></tr>
+<tr class="memitem:d1/d6c/namespaceflow_1_1terminal"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html">flow::terminal</a></td></tr>
+<tr class="memdesc:d1/d6c/namespaceflow_1_1terminal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terminal operations, all of which are also aliased in the flow namespace. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2f184cd239e9600f7a68eed124e99bef"><td class="memTemplParams" colspan="2">template&lt;typename RightSource , typename BinaryOperation  = decltype(detail::zipper)&gt; </td></tr>
-<tr class="memitem:a2f184cd239e9600f7a68eed124e99bef"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a2f184cd239e9600f7a68eed124e99bef">flow::intermediate::zip</a> (Stream&lt; RightSource &gt; &amp;&amp;right, BinaryOperation zipper=detail::zipper)</td></tr>
-<tr class="memdesc:a2f184cd239e9600f7a68eed124e99bef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using <em>zipper</em>  as the zipping operation.  <a href="#a2f184cd239e9600f7a68eed124e99bef">More...</a><br /></td></tr>
-<tr class="separator:a2f184cd239e9600f7a68eed124e99bef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acec2440b5b2d0116f78ef4f4a4c6b7b7"><td class="memTemplParams" colspan="2">template&lt;typename Itr , typename BinaryOperation  = decltype(detail::zipper)&gt; </td></tr>
-<tr class="memitem:acec2440b5b2d0116f78ef4f4a4c6b7b7"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#acec2440b5b2d0116f78ef4f4a4c6b7b7">flow::intermediate::zip</a> (Itr begin, Itr end, BinaryOperation zipper=detail::zipper)</td></tr>
-<tr class="memdesc:acec2440b5b2d0116f78ef4f4a4c6b7b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using <em>zipper</em>  as the zipping operation, this is the same as <code>zip(from(begin, end), zipper)</code>.  <a href="#acec2440b5b2d0116f78ef4f4a4c6b7b7">More...</a><br /></td></tr>
-<tr class="separator:acec2440b5b2d0116f78ef4f4a4c6b7b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e5361675793659ec2bc8f28aa500c15"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename BinaryOperation  = decltype(detail::zipper), typename  = std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:a0e5361675793659ec2bc8f28aa500c15"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0e5361675793659ec2bc8f28aa500c15">flow::intermediate::zip</a> (Container &amp;container, BinaryOperation zipper=detail::zipper)</td></tr>
-<tr class="memdesc:a0e5361675793659ec2bc8f28aa500c15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using <em>zipper</em>  as the zipping operation, this is the same as <code>zip(from(container), zipper)</code>.  <a href="#a0e5361675793659ec2bc8f28aa500c15">More...</a><br /></td></tr>
-<tr class="separator:a0e5361675793659ec2bc8f28aa500c15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01edac530d28f1ea4df059976cf4f0fb"><td class="memTemplParams" colspan="2">template&lt;typename T , typename BinaryOperation  = decltype(detail::zipper)&gt; </td></tr>
-<tr class="memitem:a01edac530d28f1ea4df059976cf4f0fb"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a01edac530d28f1ea4df059976cf4f0fb">flow::intermediate::zip</a> (std::initializer_list&lt; T &gt; list, BinaryOperation zipper=detail::zipper)</td></tr>
-<tr class="memdesc:a01edac530d28f1ea4df059976cf4f0fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using <em>zipper</em>  as the zipping operation, this is the same as <code>zip(from(list), zipper)</code>.  <a href="#a01edac530d28f1ea4df059976cf4f0fb">More...</a><br /></td></tr>
-<tr class="separator:a01edac530d28f1ea4df059976cf4f0fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a338ea201d1ada38a3c2afec6944fbc42"><td class="memTemplParams" colspan="2">template&lt;typename Source , typename T , typename ProductFunction  = std::multiplies&lt;void&gt;, typename SumFunction  = std::plus&lt;T&gt;&gt; </td></tr>
+<tr class="memitem:a338ea201d1ada38a3c2afec6944fbc42"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a338ea201d1ada38a3c2afec6944fbc42">flow::terminal::inner_product</a> (Stream&lt; Source &gt; &amp;&amp;right, T &amp;&amp;value, ProductFunction times=ProductFunction(), SumFunction plus=SumFunction())</td></tr>
+<tr class="memdesc:a338ea201d1ada38a3c2afec6944fbc42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the inner product (also known as dot product) of the two streams.  <a href="#a338ea201d1ada38a3c2afec6944fbc42">More...</a><br /></td></tr>
+<tr class="separator:a338ea201d1ada38a3c2afec6944fbc42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa80485667da9ab8a6cfdf4651a87150"><td class="memTemplParams" colspan="2">template&lt;typename Itr , typename T , typename ProductFunction  = std::multiplies&lt;void&gt;, typename SumFunction  = std::plus&lt;T&gt;&gt; </td></tr>
+<tr class="memitem:aaa80485667da9ab8a6cfdf4651a87150"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aaa80485667da9ab8a6cfdf4651a87150">flow::terminal::inner_product</a> (Itr begin, Itr end, T &amp;&amp;value, ProductFunction times=ProductFunction(), SumFunction plus=SumFunction())</td></tr>
+<tr class="memdesc:aaa80485667da9ab8a6cfdf4651a87150"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the inner product (also known as dot product) of the stream and iterator range, this is the same as <code>inner_product(from(begin, end), value, times, plus)</code>.  <a href="#aaa80485667da9ab8a6cfdf4651a87150">More...</a><br /></td></tr>
+<tr class="separator:aaa80485667da9ab8a6cfdf4651a87150"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21f4741c21faf2386a61774ba5eee6a9"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename T , typename ProductFunction  = std::multiplies&lt;void&gt;, typename SumFunction  = std::plus&lt;T&gt;, typename  = std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a21f4741c21faf2386a61774ba5eee6a9"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a21f4741c21faf2386a61774ba5eee6a9">flow::terminal::inner_product</a> (Container &amp;container, T &amp;&amp;value, ProductFunction times=ProductFunction(), SumFunction plus=SumFunction())</td></tr>
+<tr class="memdesc:a21f4741c21faf2386a61774ba5eee6a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the inner product (also known as dot product) of the stream and <em>container</em> , this is the same as <code>inner_product(from(container), value, times, plus)</code>.  <a href="#a21f4741c21faf2386a61774ba5eee6a9">More...</a><br /></td></tr>
+<tr class="separator:a21f4741c21faf2386a61774ba5eee6a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a1febd32cb8ca10885dcffff7861b26"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , typename ProductFunction  = std::multiplies&lt;void&gt;, typename SumFunction  = std::plus&lt;T&gt;&gt; </td></tr>
+<tr class="memitem:a3a1febd32cb8ca10885dcffff7861b26"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a3a1febd32cb8ca10885dcffff7861b26">flow::terminal::inner_product</a> (std::initializer_list&lt; T &gt; list, U &amp;&amp;value, ProductFunction times=ProductFunction(), SumFunction plus=SumFunction())</td></tr>
+<tr class="memdesc:a3a1febd32cb8ca10885dcffff7861b26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the inner product (also known as dot product) of the stream and <em>list</em> , this is the same as <code>inner_product(from(list), value, times, plus)</code>.  <a href="#a3a1febd32cb8ca10885dcffff7861b26">More...</a><br /></td></tr>
+<tr class="separator:a3a1febd32cb8ca10885dcffff7861b26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
