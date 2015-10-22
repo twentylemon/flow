@@ -59,15 +59,21 @@ class DynInt
 public:
     DynInt() : _val(new int) { *_val = 0; }
     DynInt(int v) : _val(new int) { *_val = v; }
+    DynInt(const DynInt& rhs) : _val(new int) { *_val = *rhs; }
+    DynInt(DynInt&& rhs) : _val(new int) { *_val = *rhs; }
+    DynInt& operator=(const DynInt& rhs) { *_val = *rhs; return *this; }
+    DynInt& operator=(DynInt&& rhs) { *_val = std::move(*rhs); return *this; }
     bool operator<(const DynInt& rhs) const { return *_val < *rhs._val; }
     bool operator<=(const DynInt& rhs) const { return *_val <= *rhs._val; }
     bool operator>(const DynInt& rhs) const { return *_val > *rhs._val; }
     bool operator>=(const DynInt& rhs) const { return *_val >= *rhs._val; }
     bool operator==(const DynInt& rhs) const { return *_val == *rhs._val; }
     bool operator!=(const DynInt& rhs) const { return *_val != *rhs._val; }
+    DynInt& operator++() { ++*_val; return *this; }
     const int& operator*() const { return *_val; }
     int& operator*() { return *_val; }
     DynInt operator*(const DynInt& rhs) const { return DynInt(**this * *rhs); }
+    DynInt operator+(const DynInt& rhs) const { return DynInt(**this + *rhs); }
     ~DynInt() { delete _val; }
     int* _val;
 };
@@ -77,6 +83,9 @@ std::ostream& print(std::ostream& out, const Container& container) {
     std::copy(container.begin(), container.end(), std::ostream_iterator<typename Container::value_type>(out, " "));
     return out;
 }
+std::ostream& operator<<(std::ostream& out, const DynInt& i) {
+    return out << *i;
+}
 
 
 std::vector<int> vec(maxv);
@@ -84,21 +93,22 @@ std::vector<int> vec(maxv);
 
 void run_timer() {
     using T = int;
-    std::vector<T> vec(2500000);
+    std::vector<T> vec(100000);
     std::generate(vec.begin(), vec.end(), std::rand);
     T vv(0);
     boost::timer tv;
     for (int i = 0; i < maxit; i++) {
-        vv = vec | inner_product(from(vec), 0);
+        vv = vec | min().value();
     }
     std::cout << std::endl << "streamv: " << tv.elapsed() << "\t" << vv << std::endl;
     T v_(0);
     boost::timer t_;
     for (int i = 0; i < maxit; i++) {
-        v_ = vec | inner_product_(from(vec), 0);
+        //v_ = vec | min_().value();
     }
     std::cout << std::endl << "stream_: " << t_.elapsed() << "\t" << v_ << std::endl;
 }
+
 
 int main(int argc, char** argv) {
     std::iota(vec.begin(), vec.end(), 0);
@@ -110,14 +120,12 @@ int main(int argc, char** argv) {
     std::vector<int> v1 = { 1, 3, 5, 7 };
     std::vector<int> v2 = { 2, 4, 6, 8 };
 
-    std::vector<optional<DynInt>> d;
-    d.resize(100000);
+    std::cout << flow::source::is_tuple<const std::tuple<int&>>::value << std::endl;
+    std::cout << flow::source::is_tuple<std::tuple<int&>>::value << std::endl;
+    std::cout << flow::source::is_tuple<std::tuple<const int&>>::value << std::endl;
+    std::cout << flow::source::is_tuple<const std::tuple<const int&>>::value << std::endl;
 
-    while (true) {
-        for (auto& i : d) {
-            *i = DynInt(3); // will this leak?
-        }
-    }
+    iota(DynInt(1)) | limit(100) | dump();
 
     /*
     std::vector<int> cw{ 1, 2, 3 };

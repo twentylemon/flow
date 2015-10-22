@@ -257,6 +257,7 @@
     <ClInclude Include="terminal\fold.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
+    <ClInclude Include="terminal\inner_product.h" />
     <ClInclude Include="terminal\last.h">
       <FileType>CppHeader</FileType>
     </ClInclude>

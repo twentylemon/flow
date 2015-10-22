@@ -100,7 +100,12 @@ protected:
     /// </summary>
     /// <param name="temp_current">The value to set as the next stream element.</param>
     void assign_temp_current(decay_type&& temp_current) {
-        _temp = std::move(temp_current);
+        if (_temp) {
+            *_temp = std::move(temp_current);
+        }
+        else {
+            _temp = std::move(temp_current);
+        }
         assign_current(_temp.operator->());
     }
 
@@ -109,7 +114,12 @@ protected:
     /// </summary>
     /// <param name="temp_current">The value to set as the next stream element.</param>
     void assign_temp_current(value_type& temp_current) {
-        _temp = temp_current;
+        if (_temp) {
+            *_temp = temp_current;
+        }
+        else {
+            _temp = temp_current;
+        }
         assign_current(_temp.operator->());
     }
 

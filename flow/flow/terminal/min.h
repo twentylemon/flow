@@ -45,18 +45,8 @@ namespace flow {
 /// <seealso cref="minmax()"/>
 /// <seealso cref="stats()"/>
 /// <seealso cref="optional"/>
-/// \todo benchmark non-fold implementation
 template <typename Compare = std::less<void>>
 auto min(Compare compare = Compare()) {
-    return fold([compare](auto&& lhs, auto&& rhs) {
-        if (compare(rhs, lhs)) {
-            return rhs;
-        }
-        return lhs;
-    });
-}
-template <typename Compare = std::less<void>>
-auto min_(Compare compare = Compare()) {
     return detail::make_terminal([compare](auto&& stream) {
         using T = std::decay_t<decltype(stream.next())>;
         if (!stream.has_next()) {

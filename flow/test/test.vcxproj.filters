@@ -212,5 +212,8 @@
     <ClInclude Include="lazy.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
+    <ClInclude Include="terminal\inner_product.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

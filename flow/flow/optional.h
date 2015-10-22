@@ -71,7 +71,7 @@ public:
     /// </summary>
     ~optional() {
         if (*this) {
-            reinterpret_cast<T&>(_storage).~T();
+            //reinterpret_cast<T&>(_storage).~T();
         }
     }
 

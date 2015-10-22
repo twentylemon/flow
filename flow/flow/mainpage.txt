@@ -168,7 +168,6 @@
 /// \todo moving window into the stream, [1,2,3] with window<2> -> [(1,2), (2,3)]
 /// \todo adjacent_diff - from &lt;numeric&gt;
 /// \todo partial_sum - from &lt;numeric&gt;
-/// \todo inner_product - from &lt;numeric&gt;
 /// \todo overload arithmetic operators as map operations?
 /// 
 

@@ -39,6 +39,9 @@ namespace flow {
 template <typename LeftSource, typename RightSource, typename Compare, typename Operation>
 class SetSource;
 
+/// <summary>
+/// Type trait to detect is a class is a tuple.
+/// </summary>
 template <typename T>
 using is_tuple = flow::detail::is_specialization_of<T, std::tuple>;
 
@@ -120,12 +123,24 @@ protected:
     /// temporary is extended so the pointer is valid.
     /// </summary>
     /// <param name="temp_current">The value to set as the next stream element.</param>
-    void assign_temp_current(decay_type&& temp_current) {
-        if (std::is_reference<T>::value || is_tuple<T>::value) {
-            _temp = std::move(temp_current);
+    template <typename U = T>
+    std::enable_if_t<std::is_reference<U>::value || is_tuple<U>::value> assign_temp_current(decay_type&& temp_current) {
+        _temp = std::move(temp_current);
+        assign_current(_temp.operator->());
+    }
+
+    /// <summary>
+    /// Updates the current stream value pointer to a temporary value. The lifetime of the
+    /// temporary is extended so the pointer is valid.
+    /// </summary>
+    /// <param name="temp_current">The value to set as the next stream element.</param>
+    template <typename U = T>
+    std::enable_if_t<!std::is_reference<U>::value && !is_tuple<U>::value> assign_temp_current(decay_type&& temp_current) {
+        if (_temp) {
+            *_temp = std::move(temp_current);
         }
         else {
-            *_temp = std::move(temp_current);
+            _temp = std::move(temp_current);
         }
         assign_current(_temp.operator->());
     }
@@ -135,12 +150,7 @@ protected:
     /// </summary>
     /// <param name="temp_current">The value to set as the next stream element.</param>
     void assign_temp_current(value_type& temp_current) {
-        if (std::is_reference<T>::value || is_tuple<T>::value) {
-            _temp = temp_current;
-        }
-        else {
-            *_temp = temp_current;
-        }
+        _temp = temp_current;
         assign_current(_temp.operator->());
     }
 

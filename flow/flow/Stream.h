@@ -48,6 +48,12 @@ struct is_specialization_of : std::false_type { };
 /// </summary>
 template <template <typename...> class Template, typename... Args>
 struct is_specialization_of<Template<Args...>, Template> : std::true_type { };
+
+/// <summary>
+/// Type trait to detect if a type is a specialization of a template class - positive case.
+/// </summary>
+template <template <typename...> class Template, typename... Args>
+struct is_specialization_of<const Template<Args...>, Template> : std::true_type { };
     }
 
 /// <summary>
