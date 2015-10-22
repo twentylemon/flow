@@ -54,6 +54,24 @@ std::ostream& operator<<(std::ostream& o, const Widget& w) {
     return o;
 }
 
+class DynInt
+{
+public:
+    DynInt() : _val(new int) { *_val = 0; }
+    DynInt(int v) : _val(new int) { *_val = v; }
+    bool operator<(const DynInt& rhs) const { return *_val < *rhs._val; }
+    bool operator<=(const DynInt& rhs) const { return *_val <= *rhs._val; }
+    bool operator>(const DynInt& rhs) const { return *_val > *rhs._val; }
+    bool operator>=(const DynInt& rhs) const { return *_val >= *rhs._val; }
+    bool operator==(const DynInt& rhs) const { return *_val == *rhs._val; }
+    bool operator!=(const DynInt& rhs) const { return *_val != *rhs._val; }
+    const int& operator*() const { return *_val; }
+    int& operator*() { return *_val; }
+    DynInt operator*(const DynInt& rhs) const { return DynInt(**this * *rhs); }
+    ~DynInt() { delete _val; }
+    int* _val;
+};
+
 template <typename Container>
 std::ostream& print(std::ostream& out, const Container& container) {
     std::copy(container.begin(), container.end(), std::ostream_iterator<typename Container::value_type>(out, " "));
@@ -66,18 +84,18 @@ std::vector<int> vec(maxv);
 
 void run_timer() {
     using T = int;
-    std::vector<T> vec(1000000);
+    std::vector<T> vec(2500000);
     std::generate(vec.begin(), vec.end(), std::rand);
     T vv(0);
     boost::timer tv;
     for (int i = 0; i < maxit; i++) {
-        vv = vec | sum();
+        vv = vec | inner_product(from(vec), 0);
     }
     std::cout << std::endl << "streamv: " << tv.elapsed() << "\t" << vv << std::endl;
     T v_(0);
     boost::timer t_;
     for (int i = 0; i < maxit; i++) {
-        //o_ = i;
+        v_ = vec | inner_product_(from(vec), 0);
     }
     std::cout << std::endl << "stream_: " << t_.elapsed() << "\t" << v_ << std::endl;
 }
@@ -92,13 +110,14 @@ int main(int argc, char** argv) {
     std::vector<int> v1 = { 1, 3, 5, 7 };
     std::vector<int> v2 = { 2, 4, 6, 8 };
 
-    std::vector<Widget> w(4);
-    for (std::size_t i = 0; i < w.size(); ++i) { w[i].name = std::to_string(i); }
+    std::vector<optional<DynInt>> d;
+    d.resize(100000);
 
-    w | map(&Widget::get_name) | dump();
-    w | map(&Widget::get_name) | each([](std::string& n) { n = n + n; });
-    endl();
-    w | map(&Widget::get_name) | dump();
+    while (true) {
+        for (auto& i : d) {
+            *i = DynInt(3); // will this leak?
+        }
+    }
 
     /*
     std::vector<int> cw{ 1, 2, 3 };
@@ -155,7 +174,7 @@ int main(int argc, char** argv) {
 
     vec | zip(vec | zip(vec | zip(vec))) | limit(1) | each([](auto&& t) { std::cout << typeid(t).name() << std::endl; });
     */
-    //run_timer();
+    run_timer();
     
     std::cout << std::endl;
     system("pause");

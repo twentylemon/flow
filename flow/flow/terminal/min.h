@@ -55,6 +55,23 @@ auto min(Compare compare = Compare()) {
         return lhs;
     });
 }
+template <typename Compare = std::less<void>>
+auto min_(Compare compare = Compare()) {
+    return detail::make_terminal([compare](auto&& stream) {
+        using T = std::decay_t<decltype(stream.next())>;
+        if (!stream.has_next()) {
+            return optional<T>();
+        }
+        optional<T> value(stream.next());
+        while (stream.has_next()) {
+            auto& next = stream.next();
+            if (compare(next, *value)) {
+                *value = next;
+            }
+        }
+        return value;
+    });
+}
     }
 }
 #endif

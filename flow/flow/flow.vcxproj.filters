@@ -282,6 +282,9 @@
     <ClInclude Include="intermediate\shuffle.h">
       <Filter>Header Files\intermediate</Filter>
     </ClInclude>
+    <ClInclude Include="terminal\inner_product.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\README.md">

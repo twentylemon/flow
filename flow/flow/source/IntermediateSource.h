@@ -28,13 +28,19 @@
 #ifndef FLOW_SOURCE_INTERMEDIATESOURCE_H
 #define FLOW_SOURCE_INTERMEDIATESOURCE_H
 
+#include <tuple>
+
 #include "../optional.h"
+#include "../Stream.h"
 
 namespace flow {
     namespace source {
 
 template <typename LeftSource, typename RightSource, typename Compare, typename Operation>
 class SetSource;
+
+template <typename T>
+using is_tuple = flow::detail::is_specialization_of<T, std::tuple>;
 
 /// <summary>
 /// Base class for intermediate operation sources. Provides default implementations
@@ -115,7 +121,12 @@ protected:
     /// </summary>
     /// <param name="temp_current">The value to set as the next stream element.</param>
     void assign_temp_current(decay_type&& temp_current) {
-        _temp = std::move(temp_current);
+        if (std::is_reference<T>::value || is_tuple<T>::value) {
+            _temp = std::move(temp_current);
+        }
+        else {
+            *_temp = std::move(temp_current);
+        }
         assign_current(_temp.operator->());
     }
 
@@ -124,7 +135,12 @@ protected:
     /// </summary>
     /// <param name="temp_current">The value to set as the next stream element.</param>
     void assign_temp_current(value_type& temp_current) {
-        _temp = temp_current;
+        if (std::is_reference<T>::value || is_tuple<T>::value) {
+            _temp = temp_current;
+        }
+        else {
+            *_temp = temp_current;
+        }
         assign_current(_temp.operator->());
     }
 
