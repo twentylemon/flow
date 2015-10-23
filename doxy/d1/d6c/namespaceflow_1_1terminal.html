@@ -365,8 +365,8 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Terminal operations, all of which are also aliased in the flow namespace. </p>
-<p>The functions in the <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html" title="Terminal operations, all of which are also aliased in the flow namespace. ">flow::terminal</a> namespace all produce a terminal operation. The terminal operation does not operate on a stream until the pipe <code>operator|</code> has been applied, after which the terminal's return value is calculated.</p>
-<p>Some terminal operations (such as <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ad02d008becaf1d5d64d2ae358ae7306e" title="Returns the minimum element from the stream as an optional according to compare , operator< by defaul...">min()</a>) return an <a class="el" href="../../d6/d3f/classflow_1_1optional.html">optional</a> object when the stream is empty. This practice was chosen over throwing an exception, though there is no clear better way. In the end, flow uses the optional class for the following reasons:</p>
+<p>The functions in the <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html" title="Terminal operations, all of which are also aliased in the flow namespace. ">flow::terminal</a> namespace all produce a terminal operation. The terminal operation does not operate on a stream until the pipe <code>operator|</code> has been applied, after which the stream is evaluated and the terminal's return value is calculated.</p>
+<p>Some terminal operations (such as <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ad02d008becaf1d5d64d2ae358ae7306e" title="Returns the minimum element from the stream as an optional according to compare , operator< by defaul...">min()</a>) return an <a class="el" href="../../d6/d3f/classflow_1_1optional.html">optional</a> object when the stream is empty. This method was chosen over throwing an exception, though there is no clear better way. In the end, flow uses the optional class for the following reasons:</p>
 <ul>
 <li>
 In the exceptional case, a boolean check is much faster than an exception. </li>
@@ -396,7 +396,7 @@ It is less code on the user end which is always nice. </li>
 <div class="line"><span class="comment">// false types</span></div>
 <div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> R, <span class="keyword">typename</span>... Args&gt; <span class="keyword">struct </span>correct&lt;R(Args...)&gt; : std::false_type { };</div>
 <div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> R, <span class="keyword">typename</span> C, <span class="keyword">typename</span>... Args&gt; <span class="keyword">struct </span>correct&lt;R(C::*)(Args...)&gt; : std::false_type { }; </div>
-</div><!-- fragment --></dd></dl>
+</div><!-- fragment --> </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="afb46a36fe4c6693d7b05e3bd0fc05f4d"></a>
 <div class="memitem">
@@ -1062,7 +1062,7 @@ template&lt;typename Source , typename T , typename ProductFunction  = std::mult
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The inner product between <em>right</em>  and the operated stream.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a2f184cd239e9600f7a68eed124e99bef" title="Zips the two streams together using zipper  as the zipping operation. ">zip()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ad76999f9b4b01425b09c070cc7154ec8" title="Folds the stream using the accumulator . ">fold()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ad24663e241e18fe008f4bb9a7d1c0bfc" title="Zips the two streams together using zipper  as the zipping operation. ">zip()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ad76999f9b4b01425b09c070cc7154ec8" title="Folds the stream using the accumulator . ">fold()</a></dd></dl>
 
 </div>
 </div>
@@ -1123,7 +1123,7 @@ template&lt;typename Itr , typename T , typename ProductFunction  = std::multipl
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The inner product between <code>[begin, end)</code> and the operated stream.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a2f184cd239e9600f7a68eed124e99bef" title="Zips the two streams together using zipper  as the zipping operation. ">zip()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ad76999f9b4b01425b09c070cc7154ec8" title="Folds the stream using the accumulator . ">fold()</a>, <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ad24663e241e18fe008f4bb9a7d1c0bfc" title="Zips the two streams together using zipper  as the zipping operation. ">zip()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ad76999f9b4b01425b09c070cc7154ec8" title="Folds the stream using the accumulator . ">fold()</a>, <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>
@@ -1177,7 +1177,7 @@ template&lt;typename Container , typename T , typename ProductFunction  = std::m
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The inner product between <em>container</em>  and the operated stream.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a2f184cd239e9600f7a68eed124e99bef" title="Zips the two streams together using zipper  as the zipping operation. ">zip()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ad76999f9b4b01425b09c070cc7154ec8" title="Folds the stream using the accumulator . ">fold()</a>, <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ad24663e241e18fe008f4bb9a7d1c0bfc" title="Zips the two streams together using zipper  as the zipping operation. ">zip()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ad76999f9b4b01425b09c070cc7154ec8" title="Folds the stream using the accumulator . ">fold()</a>, <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>
@@ -1231,7 +1231,7 @@ template&lt;typename T , typename U , typename ProductFunction  = std::multiplie
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The inner product between <em>list</em>  and the operated stream.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a2f184cd239e9600f7a68eed124e99bef" title="Zips the two streams together using zipper  as the zipping operation. ">zip()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ad76999f9b4b01425b09c070cc7154ec8" title="Folds the stream using the accumulator . ">fold()</a>, <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ad24663e241e18fe008f4bb9a7d1c0bfc" title="Zips the two streams together using zipper  as the zipping operation. ">zip()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ad76999f9b4b01425b09c070cc7154ec8" title="Folds the stream using the accumulator . ">fold()</a>, <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
 
 </div>
 </div>

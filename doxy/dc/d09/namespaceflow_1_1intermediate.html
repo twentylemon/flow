@@ -298,22 +298,22 @@ Functions</h2></td></tr>
 <tr class="memitem:a304866b3dec4eafe95a024319328ef2c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a304866b3dec4eafe95a024319328ef2c">unique</a> (Compare compare=Compare())</td></tr>
 <tr class="memdesc:a304866b3dec4eafe95a024319328ef2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts and extracts only unique elements from the stream.  <a href="#a304866b3dec4eafe95a024319328ef2c">More...</a><br /></td></tr>
 <tr class="separator:a304866b3dec4eafe95a024319328ef2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f184cd239e9600f7a68eed124e99bef"><td class="memTemplParams" colspan="2">template&lt;typename RightSource , typename BinaryOperation  = decltype(detail::zipper)&gt; </td></tr>
-<tr class="memitem:a2f184cd239e9600f7a68eed124e99bef"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a2f184cd239e9600f7a68eed124e99bef">zip</a> (<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; RightSource &gt; &amp;&amp;right, BinaryOperation zipper=detail::zipper)</td></tr>
-<tr class="memdesc:a2f184cd239e9600f7a68eed124e99bef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using <em>zipper</em>  as the zipping operation.  <a href="#a2f184cd239e9600f7a68eed124e99bef">More...</a><br /></td></tr>
-<tr class="separator:a2f184cd239e9600f7a68eed124e99bef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acec2440b5b2d0116f78ef4f4a4c6b7b7"><td class="memTemplParams" colspan="2">template&lt;typename Itr , typename BinaryOperation  = decltype(detail::zipper)&gt; </td></tr>
-<tr class="memitem:acec2440b5b2d0116f78ef4f4a4c6b7b7"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#acec2440b5b2d0116f78ef4f4a4c6b7b7">zip</a> (Itr begin, Itr end, BinaryOperation zipper=detail::zipper)</td></tr>
-<tr class="memdesc:acec2440b5b2d0116f78ef4f4a4c6b7b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using <em>zipper</em>  as the zipping operation, this is the same as <code>zip(from(begin, end), zipper)</code>.  <a href="#acec2440b5b2d0116f78ef4f4a4c6b7b7">More...</a><br /></td></tr>
-<tr class="separator:acec2440b5b2d0116f78ef4f4a4c6b7b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e5361675793659ec2bc8f28aa500c15"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename BinaryOperation  = decltype(detail::zipper), typename  = std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:a0e5361675793659ec2bc8f28aa500c15"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0e5361675793659ec2bc8f28aa500c15">zip</a> (Container &amp;container, BinaryOperation zipper=detail::zipper)</td></tr>
-<tr class="memdesc:a0e5361675793659ec2bc8f28aa500c15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using <em>zipper</em>  as the zipping operation, this is the same as <code>zip(from(container), zipper)</code>.  <a href="#a0e5361675793659ec2bc8f28aa500c15">More...</a><br /></td></tr>
-<tr class="separator:a0e5361675793659ec2bc8f28aa500c15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01edac530d28f1ea4df059976cf4f0fb"><td class="memTemplParams" colspan="2">template&lt;typename T , typename BinaryOperation  = decltype(detail::zipper)&gt; </td></tr>
-<tr class="memitem:a01edac530d28f1ea4df059976cf4f0fb"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a01edac530d28f1ea4df059976cf4f0fb">zip</a> (std::initializer_list&lt; T &gt; list, BinaryOperation zipper=detail::zipper)</td></tr>
-<tr class="memdesc:a01edac530d28f1ea4df059976cf4f0fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using <em>zipper</em>  as the zipping operation, this is the same as <code>zip(from(list), zipper)</code>.  <a href="#a01edac530d28f1ea4df059976cf4f0fb">More...</a><br /></td></tr>
-<tr class="separator:a01edac530d28f1ea4df059976cf4f0fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad24663e241e18fe008f4bb9a7d1c0bfc"><td class="memTemplParams" colspan="2">template&lt;typename RightSource , typename BinaryOperation  = decltype(detail::default_zipper)&gt; </td></tr>
+<tr class="memitem:ad24663e241e18fe008f4bb9a7d1c0bfc"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ad24663e241e18fe008f4bb9a7d1c0bfc">zip</a> (<a class="el" href="../../d9/dcd/classflow_1_1_stream.html">Stream</a>&lt; RightSource &gt; &amp;&amp;right, BinaryOperation zipper=detail::default_zipper)</td></tr>
+<tr class="memdesc:ad24663e241e18fe008f4bb9a7d1c0bfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using <em>zipper</em>  as the zipping operation.  <a href="#ad24663e241e18fe008f4bb9a7d1c0bfc">More...</a><br /></td></tr>
+<tr class="separator:ad24663e241e18fe008f4bb9a7d1c0bfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50b90dbe8e01b0b231d306c0b13666d4"><td class="memTemplParams" colspan="2">template&lt;typename Itr , typename BinaryOperation  = decltype(detail::default_zipper)&gt; </td></tr>
+<tr class="memitem:a50b90dbe8e01b0b231d306c0b13666d4"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a50b90dbe8e01b0b231d306c0b13666d4">zip</a> (Itr begin, Itr end, BinaryOperation zipper=detail::default_zipper)</td></tr>
+<tr class="memdesc:a50b90dbe8e01b0b231d306c0b13666d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using <em>zipper</em>  as the zipping operation, this is the same as <code>zip(from(begin, end), zipper)</code>.  <a href="#a50b90dbe8e01b0b231d306c0b13666d4">More...</a><br /></td></tr>
+<tr class="separator:a50b90dbe8e01b0b231d306c0b13666d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b03121f61aced881afe0ba78e561464"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename BinaryOperation  = decltype(detail::default_zipper), typename  = std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a1b03121f61aced881afe0ba78e561464"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1b03121f61aced881afe0ba78e561464">zip</a> (Container &amp;container, BinaryOperation zipper=detail::default_zipper)</td></tr>
+<tr class="memdesc:a1b03121f61aced881afe0ba78e561464"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using <em>zipper</em>  as the zipping operation, this is the same as <code>zip(from(container), zipper)</code>.  <a href="#a1b03121f61aced881afe0ba78e561464">More...</a><br /></td></tr>
+<tr class="separator:a1b03121f61aced881afe0ba78e561464"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5db1f46511e06cf2c9235032a94725ab"><td class="memTemplParams" colspan="2">template&lt;typename T , typename BinaryOperation  = decltype(detail::default_zipper)&gt; </td></tr>
+<tr class="memitem:a5db1f46511e06cf2c9235032a94725ab"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a5db1f46511e06cf2c9235032a94725ab">zip</a> (std::initializer_list&lt; T &gt; list, BinaryOperation zipper=detail::default_zipper)</td></tr>
+<tr class="memdesc:a5db1f46511e06cf2c9235032a94725ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips the two streams together using <em>zipper</em>  as the zipping operation, this is the same as <code>zip(from(list), zipper)</code>.  <a href="#a5db1f46511e06cf2c9235032a94725ab">More...</a><br /></td></tr>
+<tr class="separator:a5db1f46511e06cf2c9235032a94725ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Intermediate operations, all of which are also aliased in the flow namespace. </p>
@@ -680,6 +680,7 @@ template&lt;typename UnaryOperation &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that limits the length of the stream.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a2725d9fb49cd0c4fe25658500c2fa1f1" title="Skips the first elements of a stream, keeping only the elements with index >= begin  in the stream...">skip()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1954e2f5425b7603794790f7645e776e" title="Slices the stream, keeping only elements with index in the range [begin..end) in the stream...">slice()</a></dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d7/db4/concat_8cpp-example.html#a2">concat.cpp</a>.</dd>
 </dl>
 </div>
@@ -778,6 +779,7 @@ template&lt;typename RightSource , typename Compare  = std::less&lt;void&gt;&gt;
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that merges the two streams while maintaining sorted order.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a497f972f0f5add67935c3bb47a44d104" title="Unions the right  stream into the operated (left ) stream while maintaining sorted order...">set_union()</a></dd></dl>
 
 </div>
 </div>
@@ -824,7 +826,7 @@ template&lt;typename Itr , typename Compare  = std::less&lt;void&gt;&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that merges the two streams while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a497f972f0f5add67935c3bb47a44d104" title="Unions the right  stream into the operated (left ) stream while maintaining sorted order...">set_union()</a></dd></dl>
 
 </div>
 </div>
@@ -864,7 +866,7 @@ template&lt;typename Container , typename Compare  = std::less&lt;void&gt;, type
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that merges the two streams while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a497f972f0f5add67935c3bb47a44d104" title="Unions the right  stream into the operated (left ) stream while maintaining sorted order...">set_union()</a></dd></dl>
 
 </div>
 </div>
@@ -904,7 +906,7 @@ template&lt;typename T , typename Compare  = std::less&lt;void&gt;&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that merges the two streams while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a497f972f0f5add67935c3bb47a44d104" title="Unions the right  stream into the operated (left ) stream while maintaining sorted order...">set_union()</a></dd></dl>
 
 </div>
 </div>
@@ -1006,6 +1008,7 @@ template&lt;typename UnaryPredicate , typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that replaces stream elements.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0db61e00aa587124edb99e065385ef16" title="Maps stream elements to new values if the original element returns true for predicate ...">replace_map()</a></dd></dl>
 
 </div>
 </div>
@@ -1045,6 +1048,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that replaces stream elements.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0db61e00aa587124edb99e065385ef16" title="Maps stream elements to new values if the original element returns true for predicate ...">replace_map()</a></dd></dl>
 
 </div>
 </div>
@@ -1084,6 +1088,7 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that replaces stream elements.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a11854b160914181e130029b111facf55" title="Replaces elements in the stream by replace_by  if the stream element returns true for predicate ...">replace()</a></dd></dl>
 
 </div>
 </div>
@@ -1151,6 +1156,7 @@ template&lt;typename RightSource , typename Compare  = std::less&lt;void&gt;&gt;
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that computes <em>left</em>  <code>-</code> <em>right</em>  while maintaining sorted order.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a16bf95f0e80dcb00c805775a0b799adf" title="Computes the symmetric difference of the operated (left ) stream and the right  stream while maintain...">set_sym_diff()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a414b603609b514656419e512f8b8d8c2" title="Intersects the right  stream into the operated (left ) stream while maintaining sorted order...">set_intersect()</a></dd></dl>
 
 </div>
 </div>
@@ -1197,7 +1203,7 @@ template&lt;typename Itr , typename Compare  = std::less&lt;void&gt;&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that computes <em>left</em>  <code>- [begin,end)</code> while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a16bf95f0e80dcb00c805775a0b799adf" title="Computes the symmetric difference of the operated (left ) stream and the right  stream while maintain...">set_sym_diff()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a414b603609b514656419e512f8b8d8c2" title="Intersects the right  stream into the operated (left ) stream while maintaining sorted order...">set_intersect()</a></dd></dl>
 
 </div>
 </div>
@@ -1237,7 +1243,7 @@ template&lt;typename Container , typename Compare  = std::less&lt;void&gt;, type
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that computes <em>left</em>  <code>-</code> <em>container</em>  while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a16bf95f0e80dcb00c805775a0b799adf" title="Computes the symmetric difference of the operated (left ) stream and the right  stream while maintain...">set_sym_diff()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a414b603609b514656419e512f8b8d8c2" title="Intersects the right  stream into the operated (left ) stream while maintaining sorted order...">set_intersect()</a></dd></dl>
 
 </div>
 </div>
@@ -1277,7 +1283,7 @@ template&lt;typename T , typename Compare  = std::less&lt;void&gt;&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that computes <em>left</em>  <code>-</code> <em>list</em>  while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a16bf95f0e80dcb00c805775a0b799adf" title="Computes the symmetric difference of the operated (left ) stream and the right  stream while maintain...">set_sym_diff()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a414b603609b514656419e512f8b8d8c2" title="Intersects the right  stream into the operated (left ) stream while maintaining sorted order...">set_intersect()</a></dd></dl>
 
 </div>
 </div>
@@ -1317,6 +1323,7 @@ template&lt;typename RightSource , typename Compare  = std::less&lt;void&gt;&gt;
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that intersects the two streams while maintaining sorted order.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ad934301c4575e60e7fa4f8acac75e471" title="Computes the difference of the operated (left ) stream and the right  stream while maintaining sorted...">set_diff()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a16bf95f0e80dcb00c805775a0b799adf" title="Computes the symmetric difference of the operated (left ) stream and the right  stream while maintain...">set_sym_diff()</a></dd></dl>
 
 </div>
 </div>
@@ -1363,7 +1370,7 @@ template&lt;typename Itr , typename Compare  = std::less&lt;void&gt;&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that intersects the two streams while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ad934301c4575e60e7fa4f8acac75e471" title="Computes the difference of the operated (left ) stream and the right  stream while maintaining sorted...">set_diff()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a16bf95f0e80dcb00c805775a0b799adf" title="Computes the symmetric difference of the operated (left ) stream and the right  stream while maintain...">set_sym_diff()</a></dd></dl>
 
 </div>
 </div>
@@ -1403,7 +1410,7 @@ template&lt;typename Container , typename Compare  = std::less&lt;void&gt;, type
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that intersects the two streams while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ad934301c4575e60e7fa4f8acac75e471" title="Computes the difference of the operated (left ) stream and the right  stream while maintaining sorted...">set_diff()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a16bf95f0e80dcb00c805775a0b799adf" title="Computes the symmetric difference of the operated (left ) stream and the right  stream while maintain...">set_sym_diff()</a></dd></dl>
 
 </div>
 </div>
@@ -1443,7 +1450,7 @@ template&lt;typename T , typename Compare  = std::less&lt;void&gt;&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that intersects the two streams while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ad934301c4575e60e7fa4f8acac75e471" title="Computes the difference of the operated (left ) stream and the right  stream while maintaining sorted...">set_diff()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a16bf95f0e80dcb00c805775a0b799adf" title="Computes the symmetric difference of the operated (left ) stream and the right  stream while maintain...">set_sym_diff()</a></dd></dl>
 
 </div>
 </div>
@@ -1483,6 +1490,7 @@ template&lt;typename RightSource , typename Compare  = std::less&lt;void&gt;&gt;
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that computes the symmetric difference between <em>left</em>  and <em>right</em>  while maintaining sorted order.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ad934301c4575e60e7fa4f8acac75e471" title="Computes the difference of the operated (left ) stream and the right  stream while maintaining sorted...">set_diff()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a414b603609b514656419e512f8b8d8c2" title="Intersects the right  stream into the operated (left ) stream while maintaining sorted order...">set_intersect()</a></dd></dl>
 
 </div>
 </div>
@@ -1529,7 +1537,7 @@ template&lt;typename Itr , typename Compare  = std::less&lt;void&gt;&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that computes the symetric difference between <em>left</em>  and <code>[begin,end)</code> while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ad934301c4575e60e7fa4f8acac75e471" title="Computes the difference of the operated (left ) stream and the right  stream while maintaining sorted...">set_diff()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a414b603609b514656419e512f8b8d8c2" title="Intersects the right  stream into the operated (left ) stream while maintaining sorted order...">set_intersect()</a></dd></dl>
 
 </div>
 </div>
@@ -1569,7 +1577,7 @@ template&lt;typename Container , typename Compare  = std::less&lt;void&gt;, type
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that computes the symmetric difference between <em>left</em>  and <em>container</em>  while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ad934301c4575e60e7fa4f8acac75e471" title="Computes the difference of the operated (left ) stream and the right  stream while maintaining sorted...">set_diff()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a414b603609b514656419e512f8b8d8c2" title="Intersects the right  stream into the operated (left ) stream while maintaining sorted order...">set_intersect()</a></dd></dl>
 
 </div>
 </div>
@@ -1609,7 +1617,7 @@ template&lt;typename T , typename Compare  = std::less&lt;void&gt;&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that computes the symmetric difference between <em>left</em>  and <em>list</em>  while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ad934301c4575e60e7fa4f8acac75e471" title="Computes the difference of the operated (left ) stream and the right  stream while maintaining sorted...">set_diff()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a414b603609b514656419e512f8b8d8c2" title="Intersects the right  stream into the operated (left ) stream while maintaining sorted order...">set_intersect()</a></dd></dl>
 
 </div>
 </div>
@@ -1649,6 +1657,7 @@ template&lt;typename RightSource , typename Compare  = std::less&lt;void&gt;&gt;
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that unions the two streams while maintaining sorted order.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a6fb2b65333a532367af81f9ff82149f4" title="Merges the right  stream into the operated (left ) stream while maintaining sorted order...">merge()</a></dd></dl>
 
 </div>
 </div>
@@ -1695,7 +1704,7 @@ template&lt;typename Itr , typename Compare  = std::less&lt;void&gt;&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that unions the two streams while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a6fb2b65333a532367af81f9ff82149f4" title="Merges the right  stream into the operated (left ) stream while maintaining sorted order...">merge()</a></dd></dl>
 
 </div>
 </div>
@@ -1735,7 +1744,7 @@ template&lt;typename Container , typename Compare  = std::less&lt;void&gt;, type
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that unions the two streams while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a6fb2b65333a532367af81f9ff82149f4" title="Merges the right  stream into the operated (left ) stream while maintaining sorted order...">merge()</a></dd></dl>
 
 </div>
 </div>
@@ -1775,7 +1784,7 @@ template&lt;typename T , typename Compare  = std::less&lt;void&gt;&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that unions the two streams while maintaining sorted order.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a6fb2b65333a532367af81f9ff82149f4" title="Merges the right  stream into the operated (left ) stream while maintaining sorted order...">merge()</a></dd></dl>
 
 </div>
 </div>
@@ -1850,6 +1859,7 @@ template&lt;typename Engine  = std::default_random_engine&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that slices the stream from <em>begin</em>  to the end skipping every <em>step_size</em>  elements.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1954e2f5425b7603794790f7645e776e" title="Slices the stream, keeping only elements with index in the range [begin..end) in the stream...">slice()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a347e52317b201a9e142031724ea4de0a" title="Limits the length of the stream to length  elements. ">limit()</a></dd></dl>
 
 </div>
 </div>
@@ -1884,6 +1894,7 @@ template&lt;typename Engine  = std::default_random_engine&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that slices the stream from <em>begin</em>  to the end.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1954e2f5425b7603794790f7645e776e" title="Slices the stream, keeping only elements with index in the range [begin..end) in the stream...">slice()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a347e52317b201a9e142031724ea4de0a" title="Limits the length of the stream to length  elements. ">limit()</a></dd></dl>
 
 </div>
 </div>
@@ -1918,6 +1929,7 @@ template&lt;typename Engine  = std::default_random_engine&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that skips every <em>step_size</em>  elements.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1954e2f5425b7603794790f7645e776e" title="Slices the stream, keeping only elements with index in the range [begin..end) in the stream...">slice()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a347e52317b201a9e142031724ea4de0a" title="Limits the length of the stream to length  elements. ">limit()</a></dd></dl>
 
 </div>
 </div>
@@ -1970,6 +1982,7 @@ template&lt;typename Engine  = std::default_random_engine&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that slices the stream to the given range.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a2725d9fb49cd0c4fe25658500c2fa1f1" title="Skips the first elements of a stream, keeping only the elements with index >= begin  in the stream...">skip()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a347e52317b201a9e142031724ea4de0a" title="Limits the length of the stream to length  elements. ">limit()</a></dd></dl>
 
 </div>
 </div>
@@ -2015,6 +2028,7 @@ template&lt;typename Engine  = std::default_random_engine&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that slices the stream to the given range.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a2725d9fb49cd0c4fe25658500c2fa1f1" title="Skips the first elements of a stream, keeping only the elements with index >= begin  in the stream...">skip()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a347e52317b201a9e142031724ea4de0a" title="Limits the length of the stream to length  elements. ">limit()</a></dd></dl>
 
 </div>
 </div>
@@ -2047,6 +2061,7 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that sorts the stream according to the compare function.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ab9a5f0773de4aac232e80ae23495e76e" title="Sorts the stream preserving relative order of elements using the given comparator, operator< by default. ">stable_sort()</a></dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d1/d7e/sort_8cpp-example.html#a1">sort.cpp</a>.</dd>
 </dl>
 </div>
@@ -2080,6 +2095,7 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that stable sorts the stream according to the compare function.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0641d6ecc741bd5f346a961e5e8ccf44" title="Sorts the stream using the given comparator, operator< by default. ">sort()</a></dd></dl>
 
 </div>
 </div>
@@ -2198,11 +2214,11 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a2f184cd239e9600f7a68eed124e99bef"></a>
+<a class="anchor" id="ad24663e241e18fe008f4bb9a7d1c0bfc"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename RightSource , typename BinaryOperation  = decltype(detail::zipper)&gt; </div>
+template&lt;typename RightSource , typename BinaryOperation  = decltype(detail::default_zipper)&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto flow::intermediate::zip </td>
@@ -2214,7 +2230,7 @@ template&lt;typename RightSource , typename BinaryOperation  = decltype(detail::
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">BinaryOperation&#160;</td>
-          <td class="paramname"><em>zipper</em> = <code>detail::zipper</code>&#160;</td>
+          <td class="paramname"><em>zipper</em> = <code>detail::default_zipper</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -2240,11 +2256,11 @@ template&lt;typename RightSource , typename BinaryOperation  = decltype(detail::
 </dl>
 </div>
 </div>
-<a class="anchor" id="acec2440b5b2d0116f78ef4f4a4c6b7b7"></a>
+<a class="anchor" id="a50b90dbe8e01b0b231d306c0b13666d4"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Itr , typename BinaryOperation  = decltype(detail::zipper)&gt; </div>
+template&lt;typename Itr , typename BinaryOperation  = decltype(detail::default_zipper)&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto flow::intermediate::zip </td>
@@ -2262,7 +2278,7 @@ template&lt;typename Itr , typename BinaryOperation  = decltype(detail::zipper)&
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">BinaryOperation&#160;</td>
-          <td class="paramname"><em>zipper</em> = <code>detail::zipper</code>&#160;</td>
+          <td class="paramname"><em>zipper</em> = <code>detail::default_zipper</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -2288,11 +2304,11 @@ template&lt;typename Itr , typename BinaryOperation  = decltype(detail::zipper)&
 
 </div>
 </div>
-<a class="anchor" id="a0e5361675793659ec2bc8f28aa500c15"></a>
+<a class="anchor" id="a1b03121f61aced881afe0ba78e561464"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Container , typename BinaryOperation  = decltype(detail::zipper), typename  = std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
+template&lt;typename Container , typename BinaryOperation  = decltype(detail::default_zipper), typename  = std::enable_if_t&lt;generator::detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto flow::intermediate::zip </td>
@@ -2304,7 +2320,7 @@ template&lt;typename Container , typename BinaryOperation  = decltype(detail::zi
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">BinaryOperation&#160;</td>
-          <td class="paramname"><em>zipper</em> = <code>detail::zipper</code>&#160;</td>
+          <td class="paramname"><em>zipper</em> = <code>detail::default_zipper</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -2329,11 +2345,11 @@ template&lt;typename Container , typename BinaryOperation  = decltype(detail::zi
 
 </div>
 </div>
-<a class="anchor" id="a01edac530d28f1ea4df059976cf4f0fb"></a>
+<a class="anchor" id="a5db1f46511e06cf2c9235032a94725ab"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename BinaryOperation  = decltype(detail::zipper)&gt; </div>
+template&lt;typename T , typename BinaryOperation  = decltype(detail::default_zipper)&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto flow::intermediate::zip </td>
@@ -2345,7 +2361,7 @@ template&lt;typename T , typename BinaryOperation  = decltype(detail::zipper)&gt
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">BinaryOperation&#160;</td>
-          <td class="paramname"><em>zipper</em> = <code>detail::zipper</code>&#160;</td>
+          <td class="paramname"><em>zipper</em> = <code>detail::default_zipper</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
