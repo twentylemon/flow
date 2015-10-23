@@ -16,5 +16,11 @@ void terminal_example() {
     vec1to4 | filter([](int i) { return i > 100; }) | sum().value_or(-1);   // -1; stream was empty so no value in sum
     vec1to4 | sum().value_or(-1);       // (1+2+3+4) = 10; there was a value
 
+    std::cout << "Terminal::if_then(F func): applies `func` to the result if the optional has a value." << std::endl;
+    vec1to4 | sum().if_then([](int i) { std::cout << "sum = " << i << std::endl; });    // displays "sum = 10"
+    empty<int>() | sum().if_then([](int i) { std::cout << "sum = " << std::endl; },
+        []() { std::cout << "no sum!" << std::endl; }); // displays "no sum!"
+    vec5to8 | sum().if_then([](int i) { std::cout << i; }, []() { std::cout << "empty"; }); // displays 26
+
     std::cout << std::endl << std::endl;
 }

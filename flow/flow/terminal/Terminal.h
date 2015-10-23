@@ -36,6 +36,15 @@ namespace flow {
         namespace detail {
 
 /// <summary>
+/// Empty operation for the default <em>otherwise</em> value in Terminal::if_then.
+/// </summary>
+struct empty_call
+{
+public:
+    void operator()() const {};
+};
+
+/// <summary>
 /// A terminal operation for a Stream. Terminal operations finalize the stream by doing some operation
 /// like looping or summing.
 /// </summary>
@@ -57,7 +66,7 @@ public:
     /// <param name="stream">The stream.</param>
     /// <returns>The result of the operation.</returns>
     template <typename Source>
-    std::result_of_t<F(Stream<Source>&&)> operator()(Stream<Source>&& stream) {
+    decltype(auto) operator()(Stream<Source>&& stream) {
         return _operation(std::move(stream));
     }
 
@@ -67,8 +76,27 @@ public:
     /// <param name="function">The function.</param>
     /// <returns>A terminal operation of this composes with the function given.</returns>
     template <typename G>
-    Terminal<flow::detail::Compose<G, F>> then(G&& function) {
+    auto then(G&& function) {
         return Terminal<flow::detail::Compose<G, F>>(flow::detail::Compose<G, F>(std::forward<G>(function), std::move(_operation)));
+    }
+
+    /// <summary>
+    /// Composes this operation with an operation that calls <paramref name="function"/> if the optional
+    /// contains a value, otherwise <paramref name="otherwise"/> is called.
+    /// </summary>
+    /// <param name="function">The function to call if the optional value exists.</param>
+    /// <param name="otherwise">The function to call if the optional is empty.</param>
+    /// <returns>A terminal operation of this composes with the function given.</returns>
+    template <typename G, typename E = empty_call>
+    auto if_then(G&& function, E&& otherwise = empty_call()) {
+        return then([function = std::forward<G>(function), otherwise = std::forward<E>(otherwise)](auto&& opt) {
+            if (opt) {
+                function(*opt);
+            }
+            else {
+                otherwise();
+            }
+        });
     }
 
     /// <summary>

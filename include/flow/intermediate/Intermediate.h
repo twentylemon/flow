@@ -57,7 +57,7 @@ public:
     /// <param name="stream">The stream.</param>
     /// <returns>A new stream with this operation applied to it.</returns>
     template <typename Source>
-    std::result_of_t<F(Stream<Source>&&)> operator()(Stream<Source>&& stream) {
+    decltype(auto) operator()(Stream<Source>&& stream) {
         return _operation(std::move(stream));
     }
 
@@ -68,7 +68,7 @@ public:
     /// <param name="rhs">The Intermediate operation to pipe into the stream.</param>
     /// <returns>The composition of this and rhs as an intermediate operation.</returns>
     template <typename G>
-    Intermediate<flow::detail::Compose<G, F>> operator|(Intermediate<G>&& rhs) {
+    auto operator|(Intermediate<G>&& rhs) {
         return Intermediate<flow::detail::Compose<G, F>>(flow::detail::Compose<G, F>(std::move(rhs._operation), std::move(_operation)));
     }
 
@@ -79,7 +79,7 @@ public:
     /// <param name="rhs">The terminal::detail::Terminal operation to pipe onto the end of the stream.</param>
     /// <returns>The composition of this and rhs as a Terminal operation.</returns>
     template <typename G>
-    terminal::detail::Terminal<flow::detail::Compose<G, F>> operator|(terminal::detail::Terminal<G>&& rhs) {
+    auto operator|(terminal::detail::Terminal<G>&& rhs) {
         return terminal::detail::Terminal<flow::detail::Compose<G, F>>(flow::detail::Compose<G, F>(std::move(rhs._operation), std::move(_operation)));
     }
 

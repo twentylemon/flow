@@ -34,4 +34,15 @@ BOOST_AUTO_TEST_CASE(iterator_t) {
         vec.push_back(*it);
     }
     BOOST_CHECK_EQUAL_COLLECTIONS(vec.begin(), vec.end(), ex.begin(), ex.end());
+
+    auto s7 = iota(0);
+    int lim = 10000;
+    int su = 0;
+    for (auto& i : s7) {
+        su += i;
+        if (--lim == 0) {
+            break;
+        }
+    }
+    BOOST_CHECK_EQUAL(iota(0) | limit(10000) | sum().value(), su);
 }

@@ -12,6 +12,8 @@
 
 #include <boost/timer.hpp>
 #include <boost/optional.hpp>
+#include <boost/multiprecision/cpp_int.hpp>
+using boost::multiprecision::cpp_int;
 #include <complex>
 
 #include <flow.h>
@@ -109,23 +111,13 @@ void run_timer() {
     std::cout << std::endl << "stream_: " << t_.elapsed() << "\t" << v_ << std::endl;
 }
 
-
 int main(int argc, char** argv) {
     std::iota(vec.begin(), vec.end(), 0);
     using T = decltype(vec)::value_type;
-    //std::size_t inc = iota(0) | nth(50);
-    //std::cout << inc << '\t' << vec.size() << std::endl;
     auto endl = [](int i = 1) { for (int j = 0; j < i; ++j) std::cout << std::endl; };
 
     std::vector<int> v1 = { 1, 3, 5, 7 };
     std::vector<int> v2 = { 2, 4, 6, 8 };
-
-    std::cout << flow::source::is_tuple<const std::tuple<int&>>::value << std::endl;
-    std::cout << flow::source::is_tuple<std::tuple<int&>>::value << std::endl;
-    std::cout << flow::source::is_tuple<std::tuple<const int&>>::value << std::endl;
-    std::cout << flow::source::is_tuple<const std::tuple<const int&>>::value << std::endl;
-
-    iota(DynInt(1)) | limit(100) | dump();
 
     /*
     std::vector<int> cw{ 1, 2, 3 };
@@ -182,7 +174,7 @@ int main(int argc, char** argv) {
 
     vec | zip(vec | zip(vec | zip(vec))) | limit(1) | each([](auto&& t) { std::cout << typeid(t).name() << std::endl; });
     */
-    run_timer();
+    //run_timer();
     
     std::cout << std::endl;
     system("pause");

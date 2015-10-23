@@ -118,6 +118,7 @@
 /// The only way I can think of to allow stream&lt;T&gt; to exist would be through the use of an abstract base source class,
 /// and each source has a pointer to the source before it in the pipeline. This involves heavy use of virtual methods -
 /// essentially every function call would need to be virtual. It would also allow for recursively defined streams though.
+/// \todo <c>constexpr</c> everything - will need to wait for constexpr lambdas realistically
 ///
 
 
@@ -148,8 +149,9 @@
 /// </ul>
 /// <para>Some convenience methods are available to Terminal operations:</para>
 /// \code{.cpp}Terminal<F> then(F f);      // a terminal which applies f to the result of this terminal
-/// Terminal<F> value();        // a terminal which directly accesses the optional's contained value, undefined if the optional has no value
-/// Terminal<F> value_or(U&&);  // a terminal which directly calls optional::value_or \endcode
+/// Terminal<?> value();        // a terminal which directly accesses the optional's contained value, undefined if the optional has no value
+/// Terminal<?> value_or(U&&);  // a terminal which directly calls optional::value_or
+/// Terminal<?> if_then(F f, G g = [](){}); // a terminal which applies f to the contained optional value if it is present, otherwise g is applied \endcode
 /// <para>Examples of these operations are available in \ref terminal.cpp.</para>
 /// \todo parallel_*() - chunking parallelization of terminal operations
 /// \todo parallel pipelining of stream operations?
