@@ -49,6 +49,8 @@ namespace flow {
 /// <param name="right">The right stream to difference from the left stream while maintaining sorted order.</param>
 /// <param name="compare">The compare function by which both streams are sorted.</param>
 /// <returns>An intermediate operation that computes the symmetric difference between <paramref name="left"/> and <paramref name="right"/> while maintaining sorted order.</returns>
+/// <seealso cref="set_diff()"/>
+/// <seealso cref="set_intersect()"/>
 template <typename RightSource, typename Compare = std::less<void>>
 auto set_sym_diff(Stream<RightSource>&& right, Compare compare = Compare()) {
     return detail::make_intermediate([right = std::move(right), compare](auto&& left) mutable {
@@ -70,6 +72,8 @@ auto set_sym_diff(Stream<RightSource>&& right, Compare compare = Compare()) {
 /// <param name="compare">The compare function by which both streams are sorted.</param>
 /// <returns>An intermediate operation that computes the symetric difference between <paramref name="left"/> and <c>[begin,end)</c> while maintaining sorted order.</returns>
 /// <seealso cref="from()"/>
+/// <seealso cref="set_diff()"/>
+/// <seealso cref="set_intersect()"/>
 template <typename Itr, typename Compare = std::less<void>>
 auto set_sym_diff(Itr begin, Itr end, Compare compare = Compare()) {
     return set_sym_diff(generator::from(begin, end), compare);
@@ -88,6 +92,8 @@ auto set_sym_diff(Itr begin, Itr end, Compare compare = Compare()) {
 /// <param name="compare">The compare function by which both streams are sorted.</param>
 /// <returns>An intermediate operation that computes the symmetric difference between <paramref name="left"/> and <paramref name="container"/> while maintaining sorted order.</returns>
 /// <seealso cref="from()"/>
+/// <seealso cref="set_diff()"/>
+/// <seealso cref="set_intersect()"/>
 template <typename Container, typename Compare = std::less<void>, typename = std::enable_if_t<generator::detail::has_const_iterator<Container>::value>>
 auto set_sym_diff(Container& container, Compare compare = Compare()) {
     return set_sym_diff(generator::from(container), compare);
@@ -106,6 +112,8 @@ auto set_sym_diff(Container& container, Compare compare = Compare()) {
 /// <param name="compare">The compare function by which both streams are sorted.</param>
 /// <returns>An intermediate operation that computes the symmetric difference between <paramref name="left"/> and <paramref name="list"/> while maintaining sorted order.</returns>
 /// <seealso cref="from()"/>
+/// <seealso cref="set_diff()"/>
+/// <seealso cref="set_intersect()"/>
 template <typename T, typename Compare = std::less<void>>
 auto set_sym_diff(std::initializer_list<T> list, Compare compare = Compare()) {
     return set_sym_diff(generator::from(list), compare);

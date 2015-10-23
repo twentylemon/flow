@@ -116,7 +116,7 @@ struct tuple_zipper<std::tuple<LeftTypes...>, std::tuple<RightTypes...>>
 /// <summary>
 /// The default zipper wrapper function. Zips streams by concatenating them together as tuples.
 /// </summary>
-const auto zipper = [](auto&& left, auto&& right) {
+const auto default_zipper = [](auto&& left, auto&& right) {
     return tuple_zipper<std::remove_reference_t<decltype(left)>, std::remove_reference_t<decltype(right)>>()(left, right);
 };
         }
@@ -133,8 +133,8 @@ const auto zipper = [](auto&& left, auto&& right) {
 /// <param name="zipper">The zipping operation that combines the two streams.</param>
 /// <returns>An intermediate operation that zips the two streams together.</returns>
 /// <seealso cref="uncurry()"/>
-template <typename RightSource, typename BinaryOperation = decltype(detail::zipper)>
-auto zip(Stream<RightSource>&& right, BinaryOperation zipper = detail::zipper) {
+template <typename RightSource, typename BinaryOperation = decltype(detail::default_zipper)>
+auto zip(Stream<RightSource>&& right, BinaryOperation zipper = detail::default_zipper) {
     return detail::make_intermediate([right = std::move(right), zipper](auto&& left) mutable {
         return Stream<source::Zip<std::remove_reference_t<decltype(left.source())>, RightSource, BinaryOperation>>(std::move(left.source()), std::move(right.source()), zipper);
     });
@@ -155,8 +155,8 @@ auto zip(Stream<RightSource>&& right, BinaryOperation zipper = detail::zipper) {
 /// <returns>An intermediate operation that zips the two streams together.</returns>
 /// <seealso cref="from()"/>
 /// <seealso cref="uncurry()"/>
-template <typename Itr, typename BinaryOperation = decltype(detail::zipper)>
-auto zip(Itr begin, Itr end, BinaryOperation zipper = detail::zipper) {
+template <typename Itr, typename BinaryOperation = decltype(detail::default_zipper)>
+auto zip(Itr begin, Itr end, BinaryOperation zipper = detail::default_zipper) {
     return zip(generator::from(begin, end), zipper);
 }
 
@@ -174,8 +174,8 @@ auto zip(Itr begin, Itr end, BinaryOperation zipper = detail::zipper) {
 /// <returns>An intermediate operation that zips the two streams together.</returns>
 /// <seealso cref="from()"/>
 /// <seealso cref="uncurry()"/>
-template <typename Container, typename BinaryOperation = decltype(detail::zipper), typename = std::enable_if_t<generator::detail::has_const_iterator<Container>::value>>
-auto zip(Container& container, BinaryOperation zipper = detail::zipper) {
+template <typename Container, typename BinaryOperation = decltype(detail::default_zipper), typename = std::enable_if_t<generator::detail::has_const_iterator<Container>::value>>
+auto zip(Container& container, BinaryOperation zipper = detail::default_zipper) {
     return zip(generator::from(container), zipper);
 }
 
@@ -193,8 +193,8 @@ auto zip(Container& container, BinaryOperation zipper = detail::zipper) {
 /// <returns>An intermediate operation that zips the two streams together.</returns>
 /// <seealso cref="from()"/>
 /// <seealso cref="uncurry()"/>
-template <typename T, typename BinaryOperation = decltype(detail::zipper)>
-auto zip(std::initializer_list<T> list, BinaryOperation zipper = detail::zipper) {
+template <typename T, typename BinaryOperation = decltype(detail::default_zipper)>
+auto zip(std::initializer_list<T> list, BinaryOperation zipper = detail::default_zipper) {
     return zip(generator::from(list), zipper);
 }
     }

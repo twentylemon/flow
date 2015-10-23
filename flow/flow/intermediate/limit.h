@@ -39,8 +39,10 @@ namespace flow {
 /// </summary>
 /// <param name="length">The length to limit the stream at.</param>
 /// <returns>An intermediate operation that limits the length of the stream.</returns>
+/// <seealso cref="skip()"/>
+/// <seealso cref="slice()"/>
 inline auto limit(std::size_t length) {
-    return slice(static_cast<std::size_t>(0), length);
+    return slice(0, length);
 }
     }
 }

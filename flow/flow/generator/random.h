@@ -63,14 +63,13 @@ auto random_distribution(Distribution distribution, Engine rng = Engine()) {
 /// <summary>
 /// Creates an infinite stream of uniform random integers in the range <c>[lower, upper]</c>, including <paramref name="upper"/>.
 /// <para>The source of randomness used is <paramref name="rng"/>, which by default is a <c>std::default_random_engine</c>
-/// with the default seed. Any integral type able to be <c>std::uniform_int_distribution&lt;T&gt;::result_type</c>
-/// can be produced.</para>
+/// with the default seed.</para>
 /// </summary>
 /// <param name="lower">The lower bound of integers to produce.</param>
 /// <param name="upper">The upper bound of integers to produce, inclusive.</param>
 /// <param name="rng">The random number generator engine, from the <c>&lt;random&gt;</c> header.</param>
 /// <returns>An infinite stream of random integers in the range <c>[lower, upper]</c>, including <paramref name="upper"/>.</returns>
-template <typename T, typename Engine = std::default_random_engine>
+template <typename T, typename Engine = std::default_random_engine, typename = std::enable_if_t<std::is_integral<T>::value>>
 auto random_ints(T&& lower, T&& upper, Engine rng = Engine()) {
     return random_distribution(std::uniform_int_distribution<T>(std::forward<T>(lower), std::forward<T>(upper)), rng);
 }
@@ -78,14 +77,13 @@ auto random_ints(T&& lower, T&& upper, Engine rng = Engine()) {
 /// <summary>
 /// Creates an infinite stream of uniform random real values in the range <c>[lower, upper)</c>, excluding <paramref name="upper"/>.
 /// <para>The source of randomness used is <paramref name="rng"/>, which by default is a <c>std::default_random_engine</c>
-/// with the default seed. Any floating point type able to be <c>std::uniform_real_distribution&lt;T&gt;::result_type</c>
-/// can be produced.</para>
+/// with the default seed.</para>
 /// </summary>
 /// <param name="lower">The lower bound of integers to produce.</param>
 /// <param name="upper">The upper bound of integers to produce, exclusive.</param>
 /// <param name="rng">The random number generator engine, from the <c>&lt;random&gt;</c> header.</param>
 /// <returns>An infinite stream of random real values in the range <c>[lower, upper)</c>, excluding <paramref name="upper"/>.</returns>
-template <typename T, typename Engine = std::default_random_engine>
+template <typename T, typename Engine = std::default_random_engine, typename = std::enable_if_t<std::is_floating_point<T>::value>>
 auto random_reals(T&& lower, T&& upper, Engine rng = Engine()) {
     return random_distribution(std::uniform_real_distribution<T>(std::forward<T>(lower), std::forward<T>(upper)), rng);
 }

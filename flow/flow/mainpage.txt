@@ -94,19 +94,22 @@
 /// Operating on a Stream
 /// ---------------------
 /// <para>All intermediate and terminal operations can be applied to a stream using <c>operator|</c>.</para>
-/// \code{.cpp}int val = intstream | max(); // apply the `max` terminal to `intstream`\endcode
+/// \code{.cpp}optional<int> val = intstream | max();   // apply the `max` terminal to `intstream`\endcode
 /// <para>Since intermediate operations return a new stream, operations can be chained together in interesting ways.</para>
 /// \code{.cpp}int sum_squares = intstream | map([](int i) { return i * i; }) | sum();\endcode
 /// <para>You can also create new operations from existing ones and apply those to streams. The type of operation
 /// you create is the same as the last operation you combine.</para>
 /// \code{.cpp}auto square_sum = map([](int i) { return i * i; }) | sum();  // square and sum; a terminal operation
 /// auto add2_evens = filter([](int i) { return i % 2 == 0; }) | map([](int i) { return i + 2; });  // keep only even values, add 2 to them; an intermediate operation
-/// int val = intstream | add2_evens | square_sum;  // does exactly what you think it does \endcode
+/// optional<int> val = intstream | add2_evens | square_sum;     // does exactly what you think it does \endcode
 /// <para>Terminal operators also have a method <c>then()</c>, which takes a function that uses the value produced
 /// and produces a new terminal which composes the operations. For example, this method is used internally by none(),
 /// a terminal that returns <c>true</c> if none of the stream elements match a predicate. Logically, this is the same
 /// as finding if any of the elements match the predicate, then negating the result -- this is exactly what is done.</para>
 /// \code{.cpp}auto my_none = any(my_predicate).then(std::logical_not<bool>());\endcode
+/// <para>There are more helper functions built into Terminal operations which allow you to immediately access the returned
+/// optional value if it exists, or execute a function if the value exists, etc. Read more about these operations in the
+/// flow::terminal namespace.</para>
 /// 
 /// \todo Java uses stream&lt;T&gt; instead of the template being the stream source. This makes it easier to return streams
 /// or pass streams around, or have method that return streams or whatever. Currently, a function like below is not generally possible.
@@ -135,9 +138,9 @@
 /// Terminal operations, all of which are also aliased in the flow namespace.
 /// <para>The functions in the flow::terminal namespace all produce a terminal operation. The terminal
 /// operation does not operate on a stream until the pipe <c>operator|</c> has been applied, after which
-/// the terminal's return value is calculated.</para>
+/// the stream is evaluated and the terminal's return value is calculated.</para>
 /// <para>Some terminal operations (such as min()) return an \ref optional object when the stream is empty.
-/// This practice was chosen over throwing an exception, though there is no clear better way. In the end,
+/// This method was chosen over throwing an exception, though there is no clear better way. In the end,
 /// flow uses the optional class for the following reasons:</para>
 /// <ul>
 ///     <li>In the exceptional case, a boolean check is much faster than an exception.</li>
@@ -168,7 +171,6 @@
 /// // false types
 /// template <typename R, typename... Args> struct correct<R(Args...)> : std::false_type { };
 /// template <typename R, typename C, typename... Args> struct correct<R(C::*)(Args...)> : std::false_type { }; \endcode
-/// 
 /// 
 
 /// \namespace flow::intermediate

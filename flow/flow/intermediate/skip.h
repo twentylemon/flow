@@ -43,8 +43,9 @@ namespace flow {
 /// </summary>
 /// <param name="begin">The begin index to slice the stream at, inclusive.</param>
 /// <param name="step_size">The step size, must be positive.</param>
-/// <returns>An intermediate operation that slices the stream from <paramref name="begin"/> to the end
-/// skipping every <paramref name="step_size"/> elements.</returns>
+/// <returns>An intermediate operation that slices the stream from <paramref name="begin"/> to the end skipping every <paramref name="step_size"/> elements.</returns>
+/// <seealso cref="slice()"/>
+/// <seealso cref="limit()"/>
 inline auto skip(std::size_t begin, std::size_t step_size) {
     return detail::make_intermediate([begin, step_size](auto&& stream) {
         return Stream<source::Skip<std::remove_reference_t<decltype(stream.source())>>>(std::move(stream.source()), begin, step_size);
@@ -57,8 +58,10 @@ inline auto skip(std::size_t begin, std::size_t step_size) {
 /// </summary>
 /// <param name="begin">The begin index to slice the stream at, inclusive.</param>
 /// <returns>An intermediate operation that slices the stream from <paramref name="begin"/> to the end.</returns>
+/// <seealso cref="slice()"/>
+/// <seealso cref="limit()"/>
 inline auto skip(std::size_t begin) {
-    return skip(begin, static_cast<std::size_t>(1));
+    return skip(begin, 1);
 }
 
 /// <summary>
@@ -67,8 +70,10 @@ inline auto skip(std::size_t begin) {
 /// </summary>
 /// <param name="step_size">The step size, must be positive.</param>
 /// <returns>An intermediate operation that skips every <paramref name="step_size"/> elements.</returns>
+/// <seealso cref="slice()"/>
+/// <seealso cref="limit()"/>
 inline auto skip_every(std::size_t step_size) {
-    return skip(static_cast<std::size_t>(0), step_size);
+    return skip(0, step_size);
 }
     }
 }

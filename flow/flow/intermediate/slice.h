@@ -47,6 +47,8 @@ namespace flow {
 /// <param name="end">The end index to slice to stream to, exclusive.</param>
 /// <param name="step_size">The step size, must be positive.</param>
 /// <returns>An intermediate operation that slices the stream to the given range.</returns>
+/// <seealso cref="skip()"/>
+/// <seealso cref="limit()"/>
 inline auto slice(std::size_t begin, std::size_t end, std::size_t step_size) {
     return detail::make_intermediate([begin, end, step_size](auto&& stream) {
         return Stream<source::Slice<std::remove_reference_t<decltype(stream.source())>>>(std::move(stream.source()), begin, end, step_size);
@@ -62,8 +64,10 @@ inline auto slice(std::size_t begin, std::size_t end, std::size_t step_size) {
 /// <param name="begin">The begin index to slice the stream at, inclusive.</param>
 /// <param name="end">The end index to slice to stream to, exclusive.</param>
 /// <returns>An intermediate operation that slices the stream to the given range.</returns>
+/// <seealso cref="skip()"/>
+/// <seealso cref="limit()"/>
 inline auto slice(std::size_t begin, std::size_t end) {
-    return slice(begin, end, static_cast<std::size_t>(1));
+    return slice(begin, end, 1);
 }
     }
 }

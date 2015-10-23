@@ -49,6 +49,8 @@ namespace flow {
 /// <param name="right">The right stream to intersect with the left stream while maintaining sorted order.</param>
 /// <param name="compare">The compare function by which both streams are sorted.</param>
 /// <returns>An intermediate operation that intersects the two streams while maintaining sorted order.</returns>
+/// <seealso cref="set_diff()"/>
+/// <seealso cref="set_sym_diff()"/>
 template <typename RightSource, typename Compare = std::less<void>>
 auto set_intersect(Stream<RightSource>&& right, Compare compare = Compare()) {
     return detail::make_intermediate([right = std::move(right), compare](auto&& left) mutable {
@@ -70,6 +72,8 @@ auto set_intersect(Stream<RightSource>&& right, Compare compare = Compare()) {
 /// <param name="compare">The compare function by which both streams are sorted.</param>
 /// <returns>An intermediate operation that intersects the two streams while maintaining sorted order.</returns>
 /// <seealso cref="from()"/>
+/// <seealso cref="set_diff()"/>
+/// <seealso cref="set_sym_diff()"/>
 template <typename Itr, typename Compare = std::less<void>>
 auto set_intersect(Itr begin, Itr end, Compare compare = Compare()) {
     return set_intersect(generator::from(begin, end), compare);
@@ -88,6 +92,8 @@ auto set_intersect(Itr begin, Itr end, Compare compare = Compare()) {
 /// <param name="compare">The compare function by which both streams are sorted.</param>
 /// <returns>An intermediate operation that intersects the two streams while maintaining sorted order.</returns>
 /// <seealso cref="from()"/>
+/// <seealso cref="set_diff()"/>
+/// <seealso cref="set_sym_diff()"/>
 template <typename Container, typename Compare = std::less<void>, typename = std::enable_if_t<generator::detail::has_const_iterator<Container>::value>>
 auto set_intersect(Container& container, Compare compare = Compare()) {
     return set_intersect(generator::from(container), compare);
@@ -106,6 +112,8 @@ auto set_intersect(Container& container, Compare compare = Compare()) {
 /// <param name="compare">The compare function by which both streams are sorted.</param>
 /// <returns>An intermediate operation that intersects the two streams while maintaining sorted order.</returns>
 /// <seealso cref="from()"/>
+/// <seealso cref="set_diff()"/>
+/// <seealso cref="set_sym_diff()"/>
 template <typename T, typename Compare = std::less<void>>
 auto set_intersect(std::initializer_list<T> list, Compare compare = Compare()) {
     return set_intersect(generator::from(list), compare);

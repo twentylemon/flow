@@ -103,11 +103,11 @@ protected:
 /// <summary>
 /// Uncurries <paramref name="curry_function"/>.
 /// <para>Given a function which takes several parameters, converts that function
-/// into a function which takes one <c>std::tuple</c> of those arguments instead. This is useful when zipping streams
-/// together as it allows you to write a function which takes normal arguments instead of a tuple.
-/// For example, this allows the syntax:</para>
+/// into a function which takes one <c>std::tuple</c> of those arguments instead (actually, any type
+/// that has <c>std::get</c> defined for it). This is useful when zipping streams together using the default zipping operation
+/// as it allows you to write a function which takes normal arguments instead of a tuple. For example, this allows the syntax:</para>
 /// <code>intlist | zip(more_ints) | map(uncurry([](int l, int r) { l and r things })) | ...</code>
-/// <para>as opposed to using <c>std::tuple&lt;int,int&gt;</c> and <c>std::get&lt;i&gt;</c>.</para>
+/// <para>as opposed to using <c>map([](std::tuple&lt;int,int&gt; t){ std::get&lt;0&gt;(t) and std::get&lt;1&gt;(t) things })</c>.</para>
 /// </summary>
 /// <param name="curry_function">The curried function to wrap.</param>
 /// <returns>An object with an <c>operator()(std::tuple&lt;Types...&gt;)</c> which wraps <c>curry_function</c>.</returns>
