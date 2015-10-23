@@ -379,16 +379,24 @@ It is less code on the user end which is always nice. </li>
 </ul>
 <p>Some convenience methods are available to Terminal operations:</p>
 <div class="fragment"><div class="line">Terminal&lt;F&gt; then(F f);      <span class="comment">// a terminal which applies f to the result of this terminal</span></div>
-<div class="line">Terminal&lt;F&gt; value();        <span class="comment">// a terminal which directly accesses the optional&#39;s contained value, undefined if the optional has no value</span></div>
-<div class="line">Terminal&lt;F&gt; value_or(U&amp;&amp;);  <span class="comment">// a terminal which directly calls optional::value_or </span></div>
+<div class="line">Terminal&lt;?&gt; value();        <span class="comment">// a terminal which directly accesses the optional&#39;s contained value, undefined if the optional has no value</span></div>
+<div class="line">Terminal&lt;?&gt; value_or(U&amp;&amp;);  <span class="comment">// a terminal which directly calls optional::value_or</span></div>
+<div class="line">Terminal&lt;?&gt; if_then(F f, G g = [](){}); <span class="comment">// a terminal which applies f to the contained optional value if it is present, otherwise g is applied </span></div>
 </div><!-- fragment --> <p>Examples of these operations are available in <a class="el" href="../../df/de0/terminal_8cpp-example.html">terminal.cpp</a>.</p>
 <dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000003">Todo:</a></b></dt><dd><p class="startdd">parallel_*() - chunking parallelization of terminal operations </p>
 <p>parallel pipelining of stream operations? </p>
 <p>equals - check if two streams are equal </p>
 <p>find - filter(equal to) | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612" title="Returns the first element from the stream as an optional. ">first()</a>; optional parameter to return if filtered stream is empty </p>
 <p>is_sorted - check if a stream is sorted by a comparator </p>
-<p class="enddd">overload comparison operators between streams? </p>
-</dd></dl>
+<p>overload comparison operators between streams? </p>
+<p class="enddd">custom - (is this better than <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a6b3d0ede6c9489aebb9ce1ed684c31a0" title="Executes a function for each element in the stream. ">each()</a> with capture?) allow users to create their own terminal operations; useful to ensure signature takes a <code>Stream&lt;Source&gt;&amp;&amp;</code> </p><div class="fragment"><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">struct </span>correct : <span class="keyword">public</span> correct&lt;decltype(&amp;T::operator())&gt; { }; <span class="comment">// capture lambda</span></div>
+<div class="line"><span class="comment">// true types</span></div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> R, <span class="keyword">typename</span> C, <span class="keyword">typename</span> Src&gt; <span class="keyword">struct </span>correct&lt;R(C::*)(Stream&lt;Src&gt;&amp;&amp;)&gt; : std::true_type { };    <span class="comment">// capture class functions</span></div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> R, <span class="keyword">typename</span> Src&gt; <span class="keyword">struct </span>correct&lt;R(Stream&lt;Src&gt;&amp;&amp;)&gt; : std::true_type { };                      <span class="comment">// capture functions</span></div>
+<div class="line"><span class="comment">// false types</span></div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> R, <span class="keyword">typename</span>... Args&gt; <span class="keyword">struct </span>correct&lt;R(Args...)&gt; : std::false_type { };</div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> R, <span class="keyword">typename</span> C, <span class="keyword">typename</span>... Args&gt; <span class="keyword">struct </span>correct&lt;R(C::*)(Args...)&gt; : std::false_type { }; </div>
+</div><!-- fragment --></dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="afb46a36fe4c6693d7b05e3bd0fc05f4d"></a>
 <div class="memitem">

@@ -101,6 +101,12 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">    vec1to4 | <a name="a4"></a><a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c">filter</a>([](<span class="keywordtype">int</span> i) { <span class="keywordflow">return</span> i &gt; 100; }) | <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9d36eab187f4b501c07a00f39e4f2381">sum</a>().value_or(-1);   <span class="comment">// -1; stream was empty so no value in sum</span></div>
 <div class="line">    vec1to4 | <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9d36eab187f4b501c07a00f39e4f2381">sum</a>().value_or(-1);       <span class="comment">// (1+2+3+4) = 10; there was a value</span></div>
 <div class="line"></div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Terminal::if_then(F func): applies `func` to the result if the optional has a value.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    vec1to4 | <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9d36eab187f4b501c07a00f39e4f2381">sum</a>().if_then([](<span class="keywordtype">int</span> i) { std::cout &lt;&lt; <span class="stringliteral">&quot;sum = &quot;</span> &lt;&lt; i &lt;&lt; std::endl; });    <span class="comment">// displays &quot;sum = 10&quot;</span></div>
+<div class="line">    empty&lt;int&gt;() | <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9d36eab187f4b501c07a00f39e4f2381">sum</a>().if_then([](<span class="keywordtype">int</span> i) { std::cout &lt;&lt; <span class="stringliteral">&quot;sum = &quot;</span> &lt;&lt; std::endl; },</div>
+<div class="line">        []() { std::cout &lt;&lt; <span class="stringliteral">&quot;no sum!&quot;</span> &lt;&lt; std::endl; }); <span class="comment">// displays &quot;no sum!&quot;</span></div>
+<div class="line">    vec5to8 | <a class="code" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9d36eab187f4b501c07a00f39e4f2381">sum</a>().if_then([](<span class="keywordtype">int</span> i) { std::cout &lt;&lt; i; }, []() { std::cout &lt;&lt; <span class="stringliteral">&quot;empty&quot;</span>; }); <span class="comment">// displays 26</span></div>
+<div class="line"></div>
 <div class="line">    std::cout &lt;&lt; std::endl &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div><!-- contents -->
