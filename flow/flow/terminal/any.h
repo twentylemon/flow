@@ -42,6 +42,8 @@ namespace flow {
 /// </summary>
 /// <param name="predicate">The predicate to test each element with.</param>
 /// <returns>A terminal operation which returns <c>true</c> if any stream element returns <c>true</c> for <paramref name="predicate" />.</returns>
+/// <seealso cref="all()"/>
+/// <seealso cref="none()"/>
 template <typename UnaryPredicate>
 auto any(UnaryPredicate predicate) {
     return detail::make_terminal([predicate](auto&& stream) {
@@ -61,6 +63,8 @@ auto any(UnaryPredicate predicate) {
 /// If the stream is empty, this will return <c>false</c>.</para>
 /// </summary>
 /// <returns>A terminal operation which returns <c>true</c> if any stream element is <c>true</c>.</returns>
+/// <seealso cref="all()"/>
+/// <seealso cref="none()"/>
 inline auto any() {
     return any([](const auto& ele) { return static_cast<bool>(ele); });
 }
@@ -72,6 +76,8 @@ inline auto any() {
 /// </summary>
 /// <param name="member">The class member function to use as the predicate.</param>
 /// <returns>A terminal operation which returns <c>true</c> if any stream element returns <c>true</c> for the given predicate.</returns>
+/// <seealso cref="all()"/>
+/// <seealso cref="none()"/>
 template <typename Ret, typename Class>
 auto any(Ret(Class::*member)()) {
     return any(std::mem_fn(member));
@@ -84,6 +90,8 @@ auto any(Ret(Class::*member)()) {
 /// </summary>
 /// <param name="member">The class member function to use as the predicate.</param>
 /// <returns>A terminal operation which returns <c>true</c> if any stream element returns <c>true</c> for the given predicate.</returns>
+/// <seealso cref="all()"/>
+/// <seealso cref="none()"/>
 template <typename Ret, typename Class>
 auto any(Ret(Class::*member)() const) {
     return any(std::mem_fn(member));

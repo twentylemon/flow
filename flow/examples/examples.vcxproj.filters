@@ -30,9 +30,6 @@
     <ClCompile Include="intermediate\zip.cpp">
       <Filter>Source Files\intermediate</Filter>
     </ClCompile>
-    <ClCompile Include="intermediate\sort.cpp">
-      <Filter>Source Files\intermediate</Filter>
-    </ClCompile>
     <ClCompile Include="intermediate\drop_while.cpp">
       <Filter>Source Files\intermediate</Filter>
     </ClCompile>

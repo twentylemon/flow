@@ -198,7 +198,7 @@
 /// \code{.cpp}intstream | zip(more_ints) | dump(); // requires std::operator<< for tuples \endcode
 /// <para>The <c>std</c> namespace can be removed by defining <c>\#define FLOW_PRINTTUPLE_NO_STD</c> before including <c>flow.h</c>.</para>
 /// \code{.cpp}// remove std::operator<< for tuples and pairs
-/// #define FLOW_PRINTTUPLE_NO_STD
+/// #define FLOW_PRINTTUPLE_NO_STD  // or define using the command line
 /// #include <flow.h> \endcode
 /// <para>This will cause statements like the above to be a compile error unless the operator is defined elsewhere inside of the <c>std</c>
 /// namespace. If <c>FLOW_PRINTTUPLE_NO_STD</c> is defined, then <c>operator&lt;&lt;</c> is defined inside of the flow namespace instead.</para>

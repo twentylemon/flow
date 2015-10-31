@@ -16,7 +16,6 @@ int main(int argc, char** argv) {
 
     concat_example();
     drop_while_example();
-    sort_example();
     zip_example();
 
     terminal_example();

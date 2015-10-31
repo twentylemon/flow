@@ -12,17 +12,6 @@
 /// <seealso cref="filter()"/>
 /// <seealso cref="take_while()"/>
 
-/// \example sort.cpp
-/// <para>A flow::sort example. This is an eager operation that sorts the stream. During the sort, the entire
-/// stream is evaluated, copied and stored in a new vector, which is sorted afterwards. This means the sorting operation
-/// takes an additional <c>O(n)</c> space and time, excluding the actual sort. Because of this, sorting simple
-/// streams should be avoided in favor of sorting the original source of the stream in place. The first example here is
-/// one such case that should be avoided; it is included to show the output of the stream after the sort operation
-/// takes place.</para>
-/// <para>The second example is not as trivial, so sort should be used in that case. Other examples
-/// may include times when the stream is filtered or mapped, or otherwise transformed.</para>
-/// <seealso cref="stable_sort()"/>
-
 /// \example zip.cpp
 /// <para>A flow::zip example. The zip operation combines two streams into a single stream using a
 /// zipping operation. A zipping operation takes the front element from each stream to produce an output.

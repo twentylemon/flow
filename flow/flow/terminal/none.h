@@ -42,6 +42,8 @@ namespace flow {
 /// </summary>
 /// <param name="predicate">The predicate to test each element with.</param>
 /// <returns>A terminal operation which returns <c>true</c> if none of stream elements return <c>true</c> for <paramref name="predicate"/>.</returns>
+/// <seealso cref="all()"/>
+/// <seealso cref="any()"/>
 template <typename UnaryPredicate>
 auto none(UnaryPredicate predicate) {
     return any(predicate).then(std::logical_not<bool>());
@@ -54,6 +56,8 @@ auto none(UnaryPredicate predicate) {
 /// If the stream is empty, this will return <c>true</c>.</para>
 /// </summary>
 /// <returns>A terminal operation which returns <c>true</c> if none of the stream elements are <c>true</c>.</returns>
+/// <seealso cref="all()"/>
+/// <seealso cref="any()"/>
 inline auto none() {
     return none([](const auto& ele) { return static_cast<bool>(ele); });
 }
@@ -65,6 +69,8 @@ inline auto none() {
 /// </summary>
 /// <param name="member">The class member function to use as the predicate.</param>
 /// <returns>A terminal operation which returns <c>true</c> if none of the stream elements return <c>true</c> for <paramref name="member"/>.</returns>
+/// <seealso cref="all()"/>
+/// <seealso cref="any()"/>
 template <typename Ret, typename Class>
 auto none(Ret(Class::*member)()) {
     return none(std::mem_fn(member));
@@ -77,6 +83,8 @@ auto none(Ret(Class::*member)()) {
 /// </summary>
 /// <param name="member">The class member function to use as the predicate.</param>
 /// <returns>A terminal operation which returns <c>true</c> if none of the stream elements return <c>true</c> for <paramref name="member"/>.</returns>
+/// <seealso cref="all()"/>
+/// <seealso cref="any()"/>
 template <typename Ret, typename Class>
 auto none(Ret(Class::*member)() const) {
     return none(std::mem_fn(member));

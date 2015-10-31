@@ -19,8 +19,10 @@ using boost::multiprecision::cpp_int;
 #include <flow.h>
 using namespace flow;
 
+#include "D:/code/Streams-master/source/Stream.h"
+
 #ifndef _DEBUG
-const int maxit = 1000;
+const int maxit = 100000;
 const int maxv = 500001;
 #else
 const int maxit = 1;
@@ -97,18 +99,37 @@ void run_timer() {
     using T = int;
     std::vector<T> vec(100000);
     std::generate(vec.begin(), vec.end(), std::rand);
-    T vv(0);
-    boost::timer tv;
+    auto r = [](int i) { return std::rand() % (i + 1); };
+    auto a = [](int i) { return i < 1000; };
+    auto is_even = [](int i) { return i % 2 == 0; };
+    T v;
+    boost::timer t;
+    t.restart();
     for (int i = 0; i < maxit; i++) {
-        vv = vec | min().value();
+        v = iterate([](int i) { return i % 2 == 0 ? i / 2 : 3 * i + 1; }, i + 1) | take_while([](int i) { return i != 1; }) | count();
+        vec[i] = vec[i % vec.size()];   // prevent cache optimizations
     }
-    std::cout << std::endl << "streamv: " << tv.elapsed() << "\t" << vv << std::endl;
-    T v_(0);
-    boost::timer t_;
+    std::cout << std::endl << "streamv: " << t.elapsed() << "\t" << v << std::endl;
+
+    t.restart();
     for (int i = 0; i < maxit; i++) {
-        //v_ = vec | min_().value();
+        int s = i + 1;
+        v = 0;
+        while (s != 1) {
+            v++;
+            s = s % 2 == 0 ? s / 2 : 3 * s + 1;
+        }
+        vec[i] = vec[i % vec.size()];
     }
-    std::cout << std::endl << "stream_: " << t_.elapsed() << "\t" << v_ << std::endl;
+    std::cout << std::endl << "normal: " << t.elapsed() << "\t" << v << std::endl;
+
+    t.restart();
+    for (int i = 0; i < maxit; i++) {
+        v = stream::MakeStream::iterate(i + 1, [](int i) { return i % 2 == 0 ? i / 2 : 3 * i + 1; })
+            | stream::op::take_while([](int i) { return i != 1; }) | stream::op::count();
+        vec[i] = vec[i % vec.size()];
+    }
+    std::cout << std::endl << "stream_: " << t.elapsed() << "\t" << v << std::endl;
 }
 
 int main(int argc, char** argv) {
@@ -174,7 +195,7 @@ int main(int argc, char** argv) {
 
     vec | zip(vec | zip(vec | zip(vec))) | limit(1) | each([](auto&& t) { std::cout << typeid(t).name() << std::endl; });
     */
-    //run_timer();
+    run_timer();
     
     std::cout << std::endl;
     system("pause");

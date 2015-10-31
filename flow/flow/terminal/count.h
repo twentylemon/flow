@@ -55,8 +55,6 @@ inline auto count() {
 /// <summary>
 /// Returns the number of elements in the stream that return <c>true</c>
 /// for <paramref name="predicate"/> as <c>std::size_t</c>.
-/// <para>This operation is equivalent to</para>
-/// <code>filter(predicate) | count()</code>.
 /// </summary>
 /// <returns>A terminal operation which counts the number of elements in the stream that return <c>true</c> for <paramref name="predicate"/>.</returns>
 /// <seealso cref="count()"/>
@@ -68,8 +66,7 @@ auto count_if(UnaryPredicate predicate) {
 
 /// <summary>
 /// Returns the number of the occurrences of <paramref name="value"/> in the stream as <c>std::size_t</c>.
-/// <para>Equality is checking using <c>operator==</c>. This operation is equivalent to</para>
-/// <code>filter([value](T e) { return value == e; }) | count()</code>.
+/// <para>Equality is checking using <c>operator==</c>.</para>
 /// </summary>
 /// <returns>A terminal operation which counts of the occurrences of <paramref name="value"/> in the stream.</returns>
 /// <seealso cref="count_if()"/>
