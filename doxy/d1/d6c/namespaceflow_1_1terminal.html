@@ -423,6 +423,7 @@ template&lt;typename UnaryPredicate &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A terminal operation which returns <code>true</code> if all stream elements return <code>true</code> for <em>predicate</em> .</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aef6844ddc5a40bb68764bc31f6070107" title="Returns true if any of the elements in the stream return true for predicate . ">any()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9e6d1f983184706c6ec3a976c449ee6d" title="Returns true if none of the elements in the stream return true for predicate . ">none()</a></dd></dl>
 
 </div>
 </div>
@@ -450,6 +451,7 @@ template&lt;typename UnaryPredicate &gt; </div>
 <p>Returns <code>true</code> if all elements in the stream can be evaluated to <code>true</code>. </p>
 <p>This is an overload for streams with types convertible to <code>bool</code>. This operation is short circuited and will stop executing once any <code>false</code> value is found. If the stream is empty, this will return <code>true</code>.</p>
 <dl class="section return"><dt>Returns</dt><dd>A terminal operation which returns <code>true</code> if all stream elements are <code>true</code>.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aef6844ddc5a40bb68764bc31f6070107" title="Returns true if any of the elements in the stream return true for predicate . ">any()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9e6d1f983184706c6ec3a976c449ee6d" title="Returns true if none of the elements in the stream return true for predicate . ">none()</a></dd></dl>
 
 </div>
 </div>
@@ -478,6 +480,7 @@ template&lt;typename Ret , typename Class &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A terminal operation which returns <code>true</code> if all stream element returns <code>true</code> for the given predicate.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aef6844ddc5a40bb68764bc31f6070107" title="Returns true if any of the elements in the stream return true for predicate . ">any()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9e6d1f983184706c6ec3a976c449ee6d" title="Returns true if none of the elements in the stream return true for predicate . ">none()</a></dd></dl>
 
 </div>
 </div>
@@ -506,7 +509,8 @@ template&lt;typename UnaryPredicate &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A terminal operation which returns <code>true</code> if any stream element returns <code>true</code> for <em>predicate</em> .</dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/de0/terminal_8cpp-example.html#a0">terminal.cpp</a>.</dd>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afb46a36fe4c6693d7b05e3bd0fc05f4d" title="Returns true if all of the elements in the stream return true for predicate . ">all()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9e6d1f983184706c6ec3a976c449ee6d" title="Returns true if none of the elements in the stream return true for predicate . ">none()</a></dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/de0/terminal_8cpp-example.html#a1">terminal.cpp</a>.</dd>
 </dl>
 </div>
 </div>
@@ -534,6 +538,7 @@ template&lt;typename UnaryPredicate &gt; </div>
 <p>Returns <code>true</code> if any element in the stream can be evaluated to <code>true</code>. </p>
 <p>This is an overload for streams with types convertible to <code>bool</code>. This operation is short circuited and will stop executing once any <code>true</code> value is found. If the stream is empty, this will return <code>false</code>.</p>
 <dl class="section return"><dt>Returns</dt><dd>A terminal operation which returns <code>true</code> if any stream element is <code>true</code>.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afb46a36fe4c6693d7b05e3bd0fc05f4d" title="Returns true if all of the elements in the stream return true for predicate . ">all()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9e6d1f983184706c6ec3a976c449ee6d" title="Returns true if none of the elements in the stream return true for predicate . ">none()</a></dd></dl>
 
 </div>
 </div>
@@ -562,6 +567,7 @@ template&lt;typename Ret , typename Class &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A terminal operation which returns <code>true</code> if any stream element returns <code>true</code> for the given predicate.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afb46a36fe4c6693d7b05e3bd0fc05f4d" title="Returns true if all of the elements in the stream return true for predicate . ">all()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9e6d1f983184706c6ec3a976c449ee6d" title="Returns true if none of the elements in the stream return true for predicate . ">none()</a></dd></dl>
 
 </div>
 </div>
@@ -664,8 +670,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Returns the number of the occurrences of <em>value</em>  in the stream as <code>std::size_t</code>. </p>
-<p>Equality is checking using <code>operator==</code>. This operation is equivalent to</p>
-<p><code>filter([value](T e) { return value == e; }) | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a52dfcc0ff79f7c3d74ea2e80a3f9a65f" title="Returns the number of elements in the stream as std::size_t. ">count()</a></code>. </p>
+<p>Equality is checking using <code>operator==</code>.</p>
 <dl class="section return"><dt>Returns</dt><dd>A terminal operation which counts of the occurrences of <em>value</em>  in the stream.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9e6b4fef03bc255768e41ab77d3b36ef" title="Returns the number of elements in the stream that return true for predicate  as std::size_t. ">count_if()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the stream that return false for predicate . ">filter()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afc94fb24c31b8f7e46d8603a6997589b" title="Returns true if an element in the stream compares equal to val by operator==. ">contains()</a></dd></dl>
 
@@ -688,8 +693,6 @@ template&lt;typename UnaryPredicate &gt; </div>
 </div><div class="memdoc">
 
 <p>Returns the number of elements in the stream that return <code>true</code> for <em>predicate</em>  as <code>std::size_t</code>. </p>
-<p>This operation is equivalent to</p>
-<p><code>filter(predicate) | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a52dfcc0ff79f7c3d74ea2e80a3f9a65f" title="Returns the number of elements in the stream as std::size_t. ">count()</a></code>. </p>
 <dl class="section return"><dt>Returns</dt><dd>A terminal operation which counts the number of elements in the stream that return <code>true</code> for <em>predicate</em> .</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a52dfcc0ff79f7c3d74ea2e80a3f9a65f" title="Returns the number of elements in the stream as std::size_t. ">count()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the stream that return false for predicate . ">filter()</a></dd></dl>
 
@@ -737,7 +740,7 @@ template&lt;typename UnaryPredicate &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A terminal operation which print the stream elements to <em>out</em> .</dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d7/db4/concat_8cpp-example.html#a1">concat.cpp</a>, <a class="el" href="../../df/d73/drop_while_8cpp-example.html#a1">drop_while.cpp</a>, <a class="el" href="../../d1/d7e/sort_8cpp-example.html#a2">sort.cpp</a>, and <a class="el" href="../../d0/d76/zip_8cpp-example.html#a1">zip.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d7/db4/concat_8cpp-example.html#a2">concat.cpp</a>, <a class="el" href="../../df/d73/drop_while_8cpp-example.html#a2">drop_while.cpp</a>, and <a class="el" href="../../d0/d76/zip_8cpp-example.html#a2">zip.cpp</a>.</dd>
 </dl>
 </div>
 </div>
@@ -882,7 +885,7 @@ template&lt;typename Accumulator , typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Folds the stream using the <em>accumulator</em> . </p>
-<p>Applying this operation is equivalent to</p>
+<p>This operation is equivalent to</p>
 <p><code>for (T e : stream) { init = accumulator(init, e); }</code> </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1050,8 +1053,6 @@ template&lt;typename Source , typename T , typename ProductFunction  = std::mult
 
 <p>Returns the inner product (also known as dot product) of the two streams. </p>
 <p>The inner product is the sum of products of the elements of the two streams. If the streams are not the same length, the calculation stops once the shorter of the two streams is empty.</p>
-<p>This operation is the same as performing</p>
-<p><code>left | zip(right, times) | fold(plus, value);</code> </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">right</td><td>The right stream to compute the inner product with.</td></tr>
@@ -1290,7 +1291,7 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A detail::Terminal operation which gives the maximum element from the stream.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ad02d008becaf1d5d64d2ae358ae7306e" title="Returns the minimum element from the stream as an optional according to compare , operator< by defaul...">min()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae944c0b98f14746eb980b9883e36a7e4" title="Returns the minimum and maximum elements as a optional pair from the stream according to compare ...">minmax()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a900a16920892b0445f890cad56458c9a" title="Returns a Stats object which contains several statistics of the stream values. ">stats()</a>, <a class="el" href="../../d6/d3f/classflow_1_1optional.html" title="Manages an optionally contained value, one that may or may not be present. ">optional</a></dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/de0/terminal_8cpp-example.html#a3">terminal.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/de0/terminal_8cpp-example.html#a4">terminal.cpp</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1377,6 +1378,7 @@ template&lt;typename UnaryPredicate &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A terminal operation which returns <code>true</code> if none of stream elements return <code>true</code> for <em>predicate</em> .</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afb46a36fe4c6693d7b05e3bd0fc05f4d" title="Returns true if all of the elements in the stream return true for predicate . ">all()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aef6844ddc5a40bb68764bc31f6070107" title="Returns true if any of the elements in the stream return true for predicate . ">any()</a></dd></dl>
 
 </div>
 </div>
@@ -1404,6 +1406,7 @@ template&lt;typename UnaryPredicate &gt; </div>
 <p>Returns <code>true</code> if none of the elements in the stream can be evaluated to <code>true</code>. </p>
 <p>This is an overload for streams with types convertible to <code>bool</code>. This operation is short circuited and will stop executing once any <code>true</code> value is found. If the stream is empty, this will return <code>true</code>.</p>
 <dl class="section return"><dt>Returns</dt><dd>A terminal operation which returns <code>true</code> if none of the stream elements are <code>true</code>.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afb46a36fe4c6693d7b05e3bd0fc05f4d" title="Returns true if all of the elements in the stream return true for predicate . ">all()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aef6844ddc5a40bb68764bc31f6070107" title="Returns true if any of the elements in the stream return true for predicate . ">any()</a></dd></dl>
 
 </div>
 </div>
@@ -1432,6 +1435,7 @@ template&lt;typename Ret , typename Class &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A terminal operation which returns <code>true</code> if none of the stream elements return <code>true</code> for <em>member</em> .</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afb46a36fe4c6693d7b05e3bd0fc05f4d" title="Returns true if all of the elements in the stream return true for predicate . ">all()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aef6844ddc5a40bb68764bc31f6070107" title="Returns true if any of the elements in the stream return true for predicate . ">any()</a></dd></dl>
 
 </div>
 </div>
@@ -1772,7 +1776,7 @@ template&lt;typename ResultType  = double, bool MinMax = false, bool MedianMode 
 
 <p>Returns the sum of all the elements in the stream using <code>operator+</code> as an optional. </p>
 <dl class="section return"><dt>Returns</dt><dd>A terminal operation which sums the elements in the stream.</dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/de0/terminal_8cpp-example.html#a1">terminal.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/de0/terminal_8cpp-example.html#a2">terminal.cpp</a>.</dd>
 </dl>
 </div>
 </div>

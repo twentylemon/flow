@@ -350,7 +350,7 @@ template&lt;typename Tail &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that concatenates the two streams.</dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d7/db4/concat_8cpp-example.html#a0">concat.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d7/db4/concat_8cpp-example.html#a1">concat.cpp</a>.</dd>
 </dl>
 </div>
 </div>
@@ -478,7 +478,7 @@ template&lt;typename UnaryPredicate &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that drops stream elements while the <em>predicate</em>  is <code>true</code>.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af694d1a9aa88f1dd8ff3d3e66d2cb6c9" title="Takes elements from the stream until predicate  returns false for an element. ">take_while()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the stream that return false for predicate . ">filter()</a></dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/d73/drop_while_8cpp-example.html#a0">drop_while.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/d73/drop_while_8cpp-example.html#a1">drop_while.cpp</a>.</dd>
 </dl>
 </div>
 </div>
@@ -563,7 +563,7 @@ template&lt;typename UnaryPredicate &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that filters the stream elements.</dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/de0/terminal_8cpp-example.html#a4">terminal.cpp</a>, and <a class="el" href="../../d0/d76/zip_8cpp-example.html#a2">zip.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/de0/terminal_8cpp-example.html#a5">terminal.cpp</a>, and <a class="el" href="../../d0/d76/zip_8cpp-example.html#a3">zip.cpp</a>.</dd>
 </dl>
 </div>
 </div>
@@ -681,7 +681,7 @@ template&lt;typename UnaryOperation &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that limits the length of the stream.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a2725d9fb49cd0c4fe25658500c2fa1f1" title="Skips the first elements of a stream, keeping only the elements with index >= begin  in the stream...">skip()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a1954e2f5425b7603794790f7645e776e" title="Slices the stream, keeping only elements with index in the range [begin..end) in the stream...">slice()</a></dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d7/db4/concat_8cpp-example.html#a2">concat.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d7/db4/concat_8cpp-example.html#a3">concat.cpp</a>.</dd>
 </dl>
 </div>
 </div>
@@ -710,7 +710,7 @@ template&lt;typename UnaryOperation &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that maps the stream to new values.</dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/de0/terminal_8cpp-example.html#a2">terminal.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/de0/terminal_8cpp-example.html#a3">terminal.cpp</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1116,7 +1116,7 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
 <p>Reverses the elements in the stream. </p>
 <p>Reversing is an eager operation. On application of the <code>reverse</code> operation, the entire stream up to that point is evaluated and stored before continuing with the remainder of the stream. Thus, the <code>reverse</code> operation takes <code>O(n)</code> extra space and time, where <code>n</code> is the size of the stream. For most applications, it will be beneficial to reverse the stream beforehand by <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad5e12b528b2fa20549b7714efd2a6814" title="Creates a stream over container  in reverse order. ">rfrom()</a> or <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a19f2046f7478ce9c2ce68e4946ade84d" title="Creates an infinite stream which cycles container  in reverse order. ">rcycle()</a>.</p>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that reverses the stream.</dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d7/db4/concat_8cpp-example.html#a3">concat.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d7/db4/concat_8cpp-example.html#a4">concat.cpp</a>.</dd>
 </dl>
 </div>
 </div>
@@ -2062,8 +2062,7 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that sorts the stream according to the compare function.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ab9a5f0773de4aac232e80ae23495e76e" title="Sorts the stream preserving relative order of elements using the given comparator, operator< by default. ">stable_sort()</a></dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d1/d7e/sort_8cpp-example.html#a1">sort.cpp</a>.</dd>
-</dl>
+
 </div>
 </div>
 <a class="anchor" id="ab9a5f0773de4aac232e80ae23495e76e"></a>
