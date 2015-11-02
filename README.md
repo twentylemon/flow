@@ -7,7 +7,7 @@ flow is a C++14 library that provides lazy evaluation and functional transformat
 The library provides many common data transformations, such as map, filter and fold, as well as other commonly used
 operations like computing the sum, min and max or simply counting the number or elements. And all of it is packaged
 in a nice, easy to read and understand syntax. To use, simply `#include <flow.h>` in your C++14 program. With fully
-optimized code (`-O3` or `/O2`), flow offers minimal performance penalties, so there's no reason not to love.
+optimized code, flow offers minimal performance penalties so there's no reason not to love.
 
  * [Documentation](http://twentylemon.github.io/flow/doxy/index.html)
 
@@ -36,16 +36,20 @@ my_vector | each(process);          // shorthand, the same operation as above
 ```
 
 Other common stream generators are `iota()`, which counts up from a value, and `repeat()`, which repeats a value.
-Several others are included in the `flow::generator` namespace.
+Several others are included in the [flow::generator](http://twentylemon.github.io/flow/doxy/de/d3f/namespaceflow_1_1generator.html) namespace.
 
 Manipulating a Sick Flow
 ------------------------
-Say you want to loop through a list of numbers. But you only want the even values. Then you want the squares of those
-values for some reason. Oh, and you want at most 10 of those. How would you do that in normal C++? Probably something like
+Operations are applied using `operator|`. Above, we wrote `my_vector | each(process)` -- this is applying the `each`
+operation to the stream created from `my_vector`. Intermediate operations can be chained together by applying `operator|`
+again. We'll get into that after a quick example.
+
+Say you have a list of numbers, and you want to do something with at most 10 of the even values. Say you want
+to `process` their square. How would you do that in normal C++? Probably something like
 
 ```C++
 int count = 0;
-for (auto it = list.begin(), end = list.end(); it != end & count < 10; ++it) {
+for (auto it = list.begin(), end = list.end(); it != end && count < 10; ++it) {
     if (*it % 2 == 0) {
         ++count;
         process(*it * *it);
@@ -71,10 +75,11 @@ Stream operations are broken down into two main types: Intermediate and Terminal
 transform a stream into another stream. We saw three examples above in `filter`, `limit` and `map`. Intermediate
 operations are meaningless without some sort of Terminal operation, such as `each` or `count`. Terminal operations
 do something with the final stream data, be it summing, counting, calling a function, finding the min, and so on.
+Additional information can be found in the [documentation](http://twentylemon.github.io/flow/doxy/d9/de2/namespaceflow.html).
 
-Intermediate operations are all inside the flow::intermediate namespace.
+Intermediate operations are all inside the [flow::intermediate](http://twentylemon.github.io/flow/doxy/dc/d09/namespaceflow_1_1intermediate.html) namespace.
 
-Terminal operations are all inside the flow::terminal namespace.
+Terminal operations are all inside the [flow::terminal](http://twentylemon.github.io/flow/doxy/d1/d6c/namespaceflow_1_1terminal.html) namespace.
 
 ### A Word on the flow namespace
 All of the functions in `flow::generator`, `flow::intermediate` and `flow::terminal` are aliased to also be in the `flow` namespace.
@@ -82,8 +87,8 @@ For your program, if you do `using namespace flow;` (if you want), you get acces
 If not, you can still just write `flow::map` instead of `flow::intermediate::map`.
 
 ### Documentation at a Glance
-The best way to view all available functions, use the <a href="https://twentylemon.github.io/flow/doxy/namespacemembers_func.html">Namespace Members</a> page. It lists
-every important function and the namespace it sits in, indicating whether it is a generator, or an intermediate or terminal operation.
+The best way to view all available functions, use the [Namespace Members](http://twentylemon.github.io/flow/doxy/namespacemembers_func.html) page. It lists
+every function and the namespace it sits in, indicating whether it is a generator, or an intermediate or terminal operation.
 
 Examples
 --------
@@ -97,7 +102,7 @@ my_vector | each([](auto& ele) {
 
 ### Display Streams
 ```C++
-people | map(&Person::name) | dump();       // display to std::cout
+people | map(&Person::name) | dump();       // display names to std::cout
 // or, if Person::operator<< exists
 people | dump(why_not_into_a_file, "\n");   // with a new line between each one
 ```
@@ -136,6 +141,7 @@ widgets | zip(iota(1), [](Widget& w, int id) { w.set_id(id); return id; }) | exe
 std::vector<int> x = { 1, 2, 3, 4 };
 std::vector<int> y = { 1, 3, 5, 7 };
 
+auto xy_merge = x | merge(y) | to_vector();                 // { 1, 1, 2, 3, 3, 4, 5, 7 }
 auto xy_union = x | set_union(y) | to_vector();             // { 1, 2, 3, 4, 5, 7 }
 auto xy_intersection = x | set_intersect(y) | to_vector();  // { 1, 3 }
 auto xy_difference = x | set_diff(y) | to_vector();         // { 2, 4 }
