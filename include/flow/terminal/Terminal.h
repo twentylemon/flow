@@ -91,11 +91,9 @@ public:
     auto if_then(G&& function, E&& otherwise = empty_call()) {
         return then([function = std::forward<G>(function), otherwise = std::forward<E>(otherwise)](auto&& opt) {
             if (opt) {
-                function(*opt);
+                return function(*opt);
             }
-            else {
-                otherwise();
-            }
+            return otherwise();
         });
     }
 

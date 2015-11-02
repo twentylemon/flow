@@ -42,8 +42,6 @@ namespace flow {
 /// Returns the inner product (also known as dot product) of the two streams.
 /// <para>The inner product is the sum of products of the elements of the two streams. If the streams are not
 /// the same length, the calculation stops once the shorter of the two streams is empty.</para>
-/// <para>This operation is the same as performing</para>
-/// <code>left | zip(right, times) | fold(plus, value);</code>
 /// </summary>
 /// <param name="right">The right stream to compute the inner product with.</param>
 /// <param name="value">The starting value for the summation, defaults to <c>T()</c>.</param>

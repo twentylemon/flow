@@ -42,6 +42,7 @@ namespace flow {
 template <typename Head, typename... Tail>
 struct HeadType
 {
+public:
     using type = Head;
 };
         }

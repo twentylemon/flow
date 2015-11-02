@@ -96,5 +96,6 @@ namespace flow {
     using namespace terminal;
     using namespace intermediate;
 }
+using flow::operator|;
 
 #endif

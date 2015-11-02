@@ -50,6 +50,7 @@ namespace flow {
 /// <param name="right">The right stream to union into the left stream while maintaining sorted order.</param>
 /// <param name="compare">The compare function by which both streams are sorted.</param>
 /// <returns>An intermediate operation that unions the two streams while maintaining sorted order.</returns>
+/// <seealso cref="merge()"/>
 template <typename RightSource, typename Compare = std::less<void>>
 auto set_union(Stream<RightSource>&& right, Compare compare = Compare()) {
     return detail::make_intermediate([right = std::move(right), compare](auto&& left) mutable {
@@ -72,6 +73,7 @@ auto set_union(Stream<RightSource>&& right, Compare compare = Compare()) {
 /// <param name="compare">The compare function by which both streams are sorted.</param>
 /// <returns>An intermediate operation that unions the two streams while maintaining sorted order.</returns>
 /// <seealso cref="from()"/>
+/// <seealso cref="merge()"/>
 template <typename Itr, typename Compare = std::less<void>>
 auto set_union(Itr begin, Itr end, Compare compare = Compare()) {
     return set_union(generator::from(begin, end), compare);
@@ -91,6 +93,7 @@ auto set_union(Itr begin, Itr end, Compare compare = Compare()) {
 /// <param name="compare">The compare function by which both streams are sorted.</param>
 /// <returns>An intermediate operation that unions the two streams while maintaining sorted order.</returns>
 /// <seealso cref="from()"/>
+/// <seealso cref="merge()"/>
 template <typename Container, typename Compare = std::less<void>, typename = std::enable_if_t<generator::detail::has_const_iterator<Container>::value>>
 auto set_union(Container& container, Compare compare = Compare()) {
     return set_union(generator::from(container), compare);
@@ -110,6 +113,7 @@ auto set_union(Container& container, Compare compare = Compare()) {
 /// <param name="compare">The compare function by which both streams are sorted.</param>
 /// <returns>An intermediate operation that unions the two streams while maintaining sorted order.</returns>
 /// <seealso cref="from()"/>
+/// <seealso cref="merge()"/>
 template <typename T, typename Compare = std::less<void>>
 auto set_union(std::initializer_list<T> list, Compare compare = Compare()) {
     return set_union(generator::from(list), compare);

@@ -1,3 +1,4 @@
+﻿extensions: .cs .cpp .h
 
 /**
  * \cond LICENSE
@@ -25,25 +26,3 @@
  * \endcond
  */
  
-#ifndef FLOW_INTERMEDIATE_LIMIT_H
-#define FLOW_INTERMEDIATE_LIMIT_H
-
-#include "slice.h"
-
-namespace flow {
-    namespace intermediate {
-
-/// <summary>
-/// Limits the length of the stream to <paramref name="length"/> elements.
-/// <para>If the stream is shorter, all elements are kept.</para>
-/// </summary>
-/// <param name="length">The length to limit the stream at.</param>
-/// <returns>An intermediate operation that limits the length of the stream.</returns>
-/// <seealso cref="skip()"/>
-/// <seealso cref="slice()"/>
-inline auto limit(std::size_t length) {
-    return slice(0, length);
-}
-    }
-}
-#endif

@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\generator">
+      <UniqueIdentifier>{6b114124-f1e1-495c-96bb-a66a0dc0e037}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\terminal">
+      <UniqueIdentifier>{cb295f8c-2a42-49d9-a257-eaf2ca4fa67f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\intermediate">
+      <UniqueIdentifier>{37704f19-529a-416c-9f2e-5cb75edaabb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\source">
+      <UniqueIdentifier>{e17b005e-b8cf-4856-a289-f7af2e83bd8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Doc Files">
+      <UniqueIdentifier>{de7adb85-4845-490a-abb8-a90728e8ea07}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Compose.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Stream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="generator\from.h">
+      <Filter>Header Files\generator</Filter>
+    </ClInclude>
+    <ClInclude Include="intermediate\concat.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
+    <ClInclude Include="intermediate\drop_while.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
+    <ClInclude Include="intermediate\filter.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
+    <ClInclude Include="intermediate\Intermediate.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
+    <ClInclude Include="intermediate\limit.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
+    <ClInclude Include="intermediate\map.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
+    <ClInclude Include="intermediate\peek.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
+    <ClInclude Include="intermediate\replace.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
+    <ClInclude Include="intermediate\reverse.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
+    <ClInclude Include="intermediate\skip.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
+    <ClInclude Include="intermediate\slice.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
+    <ClInclude Include="intermediate\sort.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
+    <ClInclude Include="intermediate\take_while.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
+    <ClInclude Include="intermediate\unique.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
+    <ClInclude Include="terminal\all.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="terminal\any.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="terminal\contains.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="terminal\copy.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="terminal\count.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="terminal\dump.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="terminal\each.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="terminal\first.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="terminal\fold.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="terminal\last.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="terminal\max.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="terminal\min.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="terminal\minmax.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="terminal\none.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="terminal\nth.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="terminal\product.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="terminal\sum.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="terminal\Terminal.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="terminal\to.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Concat.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\DropWhile.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Filter.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Iterator.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Peek.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Skip.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Slice.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\TakeWhile.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Zip.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="intermediate\zip.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
+    <ClInclude Include="uncurry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="generator\empty.h">
+      <Filter>Header Files\generator</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Generate.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\IterateFunc.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="generator\iterate.h">
+      <Filter>Header Files\generator</Filter>
+    </ClInclude>
+    <ClInclude Include="generator\generate.h">
+      <Filter>Header Files\generator</Filter>
+    </ClInclude>
+    <ClInclude Include="generator\iota.h">
+      <Filter>Header Files\generator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\flow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="intermediate\flat_map.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
+    <ClInclude Include="source\FlatMap.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="generator\repeat.h">
+      <Filter>Header Files\generator</Filter>
+    </ClInclude>
+    <ClInclude Include="generator\cycle.h">
+      <Filter>Header Files\generator</Filter>
+    </ClInclude>
+    <ClInclude Include="source\IntermediateSource.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\GeneratorSource.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="print_tuple.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="generator\from_move.h">
+      <Filter>Header Files\generator</Filter>
+    </ClInclude>
+    <ClInclude Include="generator\cycle_move.h">
+      <Filter>Header Files\generator</Filter>
+    </ClInclude>
+    <ClInclude Include="generator\range.h">
+      <Filter>Header Files\generator</Filter>
+    </ClInclude>
+    <ClInclude Include="generator\closed_range.h">
+      <Filter>Header Files\generator</Filter>
+    </ClInclude>
+    <ClInclude Include="terminal\execute.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="terminal\sample.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="terminal\reservoir.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="source\SetSource.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Merge.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="intermediate\merge.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
+    <ClInclude Include="intermediate\set_union.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
+    <ClInclude Include="source\SetUnion.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="intermediate\set_intersect.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
+    <ClInclude Include="source\SetIntersect.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\SetDifference.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="intermediate\set_diff.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
+    <ClInclude Include="intermediate\set_sym_diff.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
+    <ClInclude Include="source\SetSymDifference.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="terminal\stats.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="generator\random.h">
+      <Filter>Header Files\generator</Filter>
+    </ClInclude>
+    <ClInclude Include="optional.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="intermediate\shuffle.h">
+      <Filter>Header Files\intermediate</Filter>
+    </ClInclude>
+    <ClInclude Include="terminal\inner_product.h">
+      <Filter>Header Files\terminal</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\README.md">
+      <Filter>Doc Files</Filter>
+    </None>
+    <None Include="flow.conf">
+      <Filter>Doc Files</Filter>
+    </None>
+    <None Include="flow.licenseheader" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="examples.txt">
+      <Filter>Doc Files</Filter>
+    </Text>
+    <Text Include="mainpage.txt">
+      <Filter>Doc Files</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

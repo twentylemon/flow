@@ -48,7 +48,7 @@ namespace flow {
 /// <returns>An infinite stream which cycles <paramref name="container"/>.</returns>
 template <typename Container, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto cycle_move(Container&& container) {
-    return generate([container = std::move(container)]() { return std::make_pair(container.begin(), container.end()); })
+    return generate([container = std::move(container)]() mutable { return std::make_pair(container.begin(), container.end()); })
         | intermediate::flat_map([](auto&& itr) { return from(itr.first, itr.second); });
 }
 
@@ -62,7 +62,7 @@ auto cycle_move(Container&& container) {
 /// <returns>A stream which cycles <paramref name="container"/> <paramref name="n"/> times.</returns>
 template <typename Container, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto cycle_move(Container&& container, std::size_t n) {
-    return generate([container = std::move(container)]() { return std::make_pair(container.begin(), container.end()); }, n)
+    return generate([container = std::move(container)]() mutable { return std::make_pair(container.begin(), container.end()); }, n)
         | intermediate::flat_map([](auto&& itr) { return from(itr.first, itr.second); });
 }
 
@@ -105,7 +105,7 @@ auto cycle(std::initializer_list<T> list, std::size_t n) {
 /// <returns>An infinite stream which cycles <paramref name="container"/>.</returns>
 template <typename Container, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto rcycle_move(Container&& container) {
-    return generate([container = std::move(container)]() { return std::make_pair(container.rbegin(), container.rend()); })
+    return generate([container = std::move(container)]() mutable { return std::make_pair(container.rbegin(), container.rend()); })
         | intermediate::flat_map([](auto&& itr) { return from(itr.first, itr.second); });
 }
 
@@ -120,7 +120,7 @@ auto rcycle_move(Container&& container) {
 /// <returns>A stream which cycles <paramref name="container"/> <paramref name="n"/> times.</returns>
 template <typename Container, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto rcycle_move(Container&& container, std::size_t n) {
-    return generate([container = std::move(container)]() { return std::make_pair(container.rbegin(), container.rend()); }, n)
+    return generate([container = std::move(container)]() mutable { return std::make_pair(container.rbegin(), container.rend()); }, n)
         | intermediate::flat_map([](auto&& itr) { return from(itr.first, itr.second); });
 }
     }

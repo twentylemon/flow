@@ -1,203 +1,120 @@
 
-#include <iostream>
-#include <fstream>
-#include <array>
-#include <list>
-#include <forward_list>
-#include <vector>
-#include <algorithm>
-#include <numeric>
-#include <thread>
-#include <chrono>
+#include "main.h"
 
-#include <boost/timer.hpp>
-#include <boost/optional.hpp>
-#include <boost/multiprecision/cpp_int.hpp>
-using boost::multiprecision::cpp_int;
-#include <complex>
-
-#include <flow.h>
-using namespace flow;
-
-#include "D:/code/Streams-master/source/Stream.h"
-
-#ifndef _DEBUG
-const int maxit = 100000;
-const int maxv = 500001;
-#else
-const int maxit = 1;
-const int maxv = 11;
-#endif
-
-class Widget
-{
-public:
-    Widget() : value(0) { }
-    Widget(int v) : value(v) { }
-    int get_value() const {
-        return value;
-    }
-    void set_value(int v) { value = v; }
-    bool operator<(const Widget& rhs) const { return value < rhs.value; }
-    Widget operator*(const Widget& rhs) const { return Widget(value * rhs.value); }
-    bool operator==(const Widget& rhs) const { return value == rhs.value; }
-    Widget operator++() { return Widget(value + 1); }
-    std::string& get_name() { return name; }
-    int value;
-    std::string name;
-    std::array<int, 500> arry;
-    /*
-    Widget& operator=(const Widget& w) { value = w.value; std::cout << "copy assign" << std::endl; return *this; }
-    Widget& operator=(Widget&& w) { value = std::move(w.value); std::cout << "move assign" << std::endl; return *this; }
-    Widget(const Widget& w) : value(w.value) { std::cout << "copy" << std::endl; }
-    Widget(Widget&& w) : value(std::move(w.value)) { std::cout << "move" << std::endl; }
-    */
-};
-std::ostream& operator<<(std::ostream& o, const Widget& w) {
-    o << w.value;
-    return o;
-}
-
-class DynInt
-{
-public:
-    DynInt() : _val(new int) { *_val = 0; }
-    DynInt(int v) : _val(new int) { *_val = v; }
-    DynInt(const DynInt& rhs) : _val(new int) { *_val = *rhs; }
-    DynInt(DynInt&& rhs) : _val(new int) { *_val = *rhs; }
-    DynInt& operator=(const DynInt& rhs) { *_val = *rhs; return *this; }
-    DynInt& operator=(DynInt&& rhs) { *_val = std::move(*rhs); return *this; }
-    bool operator<(const DynInt& rhs) const { return *_val < *rhs._val; }
-    bool operator<=(const DynInt& rhs) const { return *_val <= *rhs._val; }
-    bool operator>(const DynInt& rhs) const { return *_val > *rhs._val; }
-    bool operator>=(const DynInt& rhs) const { return *_val >= *rhs._val; }
-    bool operator==(const DynInt& rhs) const { return *_val == *rhs._val; }
-    bool operator!=(const DynInt& rhs) const { return *_val != *rhs._val; }
-    DynInt& operator++() { ++*_val; return *this; }
-    const int& operator*() const { return *_val; }
-    int& operator*() { return *_val; }
-    DynInt operator*(const DynInt& rhs) const { return DynInt(**this * *rhs); }
-    DynInt operator+(const DynInt& rhs) const { return DynInt(**this + *rhs); }
-    ~DynInt() { delete _val; }
-    int* _val;
-};
-
-template <typename Container>
-std::ostream& print(std::ostream& out, const Container& container) {
-    std::copy(container.begin(), container.end(), std::ostream_iterator<typename Container::value_type>(out, " "));
-    return out;
-}
-std::ostream& operator<<(std::ostream& out, const DynInt& i) {
-    return out << *i;
-}
-
-
-std::vector<int> vec(maxv);
-
-
-void run_timer() {
-    using T = int;
-    std::vector<T> vec(100000);
-    std::generate(vec.begin(), vec.end(), std::rand);
-    auto r = [](int i) { return std::rand() % (i + 1); };
-    auto a = [](int i) { return i < 1000; };
-    auto is_even = [](int i) { return i % 2 == 0; };
-    T v;
+template <typename T, typename TimerFunc>
+auto run_timer(const std::vector<T>& vec, std::size_t maxit, TimerFunc func) {
+    std::pair<double, std::decay_t<decltype(func(vec))>> ret;
     boost::timer t;
-    t.restart();
-    for (int i = 0; i < maxit; i++) {
-        v = iterate([](int i) { return i % 2 == 0 ? i / 2 : 3 * i + 1; }, i + 1) | take_while([](int i) { return i != 1; }) | count();
-        vec[i] = vec[i % vec.size()];   // prevent cache optimizations
+    for (std::size_t i = 0; i < maxit; ++i) {
+        ret.second = func(vec);
+        PREVENT_CACHE += vec.size();
     }
-    std::cout << std::endl << "streamv: " << t.elapsed() << "\t" << v << std::endl;
+    ret.first = t.elapsed();
+    return ret;
+}
+
+template <typename T>
+void find_min(std::size_t maxit) {
+    std::vector<T> vec(VECTOR_SIZE);
+    std::generate(vec.begin(), vec.end(), std::rand);
+
+    std::cout << maxit << " iterations of get min with type = " << typeid(std::declval<T>()).name() << std::endl
+        << "flow:   " << run_timer(vec, maxit, [](auto& v) { return v | flow::min().value(); }) << std::endl
+        << "stl:    " << run_timer(vec, maxit, [](auto& v) { return *std::min_element(v.begin(), v.end()); }) << std::endl
+        << "range:  " << run_timer(vec, maxit, [](auto& v) { return *boost::min_element(v); }) << std::endl
+#ifdef INCLUDE_STREAMS
+        << "stream: " << run_timer(vec, maxit, [](auto& v) { return stream::MakeStream::from(v) | stream::op::min(); }) << std::endl
+#endif
+        << std::endl;
+}
+
+template <typename T>
+void random_count(std::size_t maxit) {
+    std::vector<T> vec(VECTOR_SIZE);
+    std::generate(vec.begin(), vec.end(), std::rand);
+    auto m = [](const T& i) { return i*i / 2; };
+    auto lt = [](const T& i) { return i < 1000; };
+    auto even = [](const T& i) { return i % 2 == 0; };
+
+    std::cout << maxit << " iterations of map(i*i/2) | filter(evens) | count_if(<1000) with type = " << typeid(std::declval<T>()).name() << std::endl
+        << "flow:   " << run_timer(vec, maxit, [&m, &lt, &even](auto& v) {
+        return v | flow::map(m) | flow::filter(even) | flow::count_if(lt);
+    }) << std::endl
+        << "stl:    " << run_timer(vec, maxit, [&m, &lt, &even](auto& v) {
+        return std::count_if(v.begin(), v.end(), [&m, &lt, &even](const T& i) {
+            T j = m(i);
+            return even(j) && lt(j);
+        });
+    }) << std::endl
+        << "range:  " << run_timer(vec, maxit, [&m, &lt, &even](auto& v) {
+        return boost::count_if(v | boost::adaptors::transformed(m) | boost::adaptors::filtered(even), lt);
+    }) << std::endl
+#ifdef INCLUDE_STREAMS
+        << "stream: " << run_timer(vec, maxit, [&m, &lt, &even](auto& v) {
+        return stream::MakeStream::from(v) | stream::op::map_(m) | stream::op::filter(even) | stream::op::filter(lt) | stream::op::count();
+    }) << std::endl
+#endif
+        << std::endl;
+}
+
+void collatz_length(std::size_t max) {
+    std::size_t min = 1;
+    std::size_t size;
+    auto next = [](std::size_t i) { return i % 2 == 0 ? i / 2 : 3 * i + 1; };
+    std::cout << "counting total collatz conjecture series lengths from 1 to " << max << std::endl;
+    
+    boost::timer t;
+    size = flow::closed_range(min, max) | flow::flat_map([&next](std::size_t i) {
+        return flow::iterate(next, i) | flow::take_while([](std::size_t v) { return v != 1; });
+    }) | flow::count();
+    std::cout << "flow:   " << std::make_pair(t.elapsed(), size) << std::endl;
 
     t.restart();
-    for (int i = 0; i < maxit; i++) {
-        int s = i + 1;
-        v = 0;
-        while (s != 1) {
-            v++;
-            s = s % 2 == 0 ? s / 2 : 3 * s + 1;
+    size = 0;
+    for (std::size_t i = min; i <= max; ++i) {
+        size += flow::iterate(next, i) | flow::take_while([](std::size_t v) { return v != 1; }) | flow::count();
+    }
+    std::cout << "flow (no flat_map): " << std::make_pair(t.elapsed(), size) << std::endl;
+
+    t.restart();
+    size = 0;
+    for (std::size_t i = min; i <= max; ++i) {
+        std::size_t v = i;
+        while (v != 1) {
+            v = next(v);
+            ++size;
         }
-        vec[i] = vec[i % vec.size()];
     }
-    std::cout << std::endl << "normal: " << t.elapsed() << "\t" << v << std::endl;
+    std::cout << "stl:    " << std::make_pair(t.elapsed(), size) << std::endl;
 
+#ifdef INCLUDE_STREAMS
     t.restart();
-    for (int i = 0; i < maxit; i++) {
-        v = stream::MakeStream::iterate(i + 1, [](int i) { return i % 2 == 0 ? i / 2 : 3 * i + 1; })
-            | stream::op::take_while([](int i) { return i != 1; }) | stream::op::count();
-        vec[i] = vec[i % vec.size()];
+    size = stream::MakeStream::closed_range(min, max) | stream::op::flat_map([&next](std::size_t i) {
+        return stream::MakeStream::iterate(i, next) | stream::op::take_while([](std::size_t v) { return v != 1; });
+    }) | stream::op::count();
+    std::cout << "streams: " << std::make_pair(t.elapsed(), size) << std::endl;
+
+    size = 0;
+    for (std::size_t i = min; i <= max; ++i) {
+        size += stream::MakeStream::iterate(i, next) | stream::op::take_while([](std::size_t v) { return v != 1; }) | stream::op::count();
     }
-    std::cout << std::endl << "stream_: " << t.elapsed() << "\t" << v << std::endl;
+    std::cout << "streams (no flat_map): " << std::make_pair(t.elapsed(), size) << std::endl;
+#endif
 }
 
 int main(int argc, char** argv) {
-    std::iota(vec.begin(), vec.end(), 0);
-    using T = decltype(vec)::value_type;
-    auto endl = [](int i = 1) { for (int j = 0; j < i; ++j) std::cout << std::endl; };
-
-    std::vector<int> v1 = { 1, 3, 5, 7 };
-    std::vector<int> v2 = { 2, 4, 6, 8 };
-
-    /*
-    std::vector<int> cw{ 1, 2, 3 };
-
-    cycle(cw, 4) | unique() | dump();
-    endl();
-
-    //cycle(cw, 1) | replace(1, 3) | dump();
-    //range(0, 26, 5) | dump();
-    cycle_move(std::move(cw), 4) | take_while([](int i) { return i == 1; }) | dump();
-
-    boost::timer t1;
-    std::pair<T, T> m1;
-    for (int i = 0; i < maxit; i++) {
-        m1 = vec | filter([](auto i) { return i % 2 == 0; }) | map([](auto i) { return i*i; }) | minmax();
-        //m1 = vec | filter([](const auto& i) { return i.value % 2 == 0; }) | map([](const auto& i) { return i*i; }) | minmax();
-    }
-    std::cout << std::endl << "stream: " << t1.elapsed() << "\t" << m1.first << "\t" << m1.second << std::endl;
-
-    boost::timer t2;
-    std::pair<T, T> m2;
-    T v2 = 0;
-    for (int i = 0; i < maxit; i++) {
-        v2 = vec.front() * vec.front();
-        m2 = std::make_pair(v2, v2);
-        for (auto it = vec.begin(), end = vec.end(); it != end; ++it) {
-            if (*it % 2 == 0) {
-            //if (it->value % 2 == 0) {
-                T q = *it * *it;
-                if (q < m2.first) { m2.first = q; }
-                else if (m2.second < q) { m2.second = q; }
-            }
-        }
-    }
-    std::cout << std::endl << "stdlib: " << t2.elapsed() << "\t" << m2.first << "\t" << m2.second << std::endl;
-    /*
-    std::vector<Widget> widgets;
-    for (int i = 0; i < 10; i++) {
-    widgets.emplace_back(i);
-    }
-    std::cout << std::endl << std::endl;
-    //const std::vector<Widget> w = widgets;
-    //std::cout << (from(widgets) | map(&Widget::get_value) | min()) << std::endl;
-    //from(w) | map(&Widget::get_value) | each([](int i) { std::cout << i << " "; });
-
-    std::cout << std::endl << std::endl;
-
-
-    std::cout << std::endl;
-    const auto v = vec | limit(10) | to_vector();
-    vec | limit(1) | zip(v | zip(v)) | zip(vec, [](auto&& l, auto&& r) { return std::make_pair(l, r); }) | each([](auto&& t) {
-    std::cout << typeid(t).name() << std::endl;
-    });
-
-    vec | zip(vec | zip(vec | zip(vec))) | limit(1) | each([](auto&& t) { std::cout << typeid(t).name() << std::endl; });
-    */
-    run_timer();
     
-    std::cout << std::endl;
+    find_min<int>(1000);
+    find_min<DynInt>(1000);
+    find_min<LargeClass>(1000);
+
+    random_count<int>(1000);
+    random_count<DynInt>(100);
+    random_count<LargeClass>(1000);
+    
+    collatz_length(1000000);
+    
+    std::cout << std::endl << PREVENT_CACHE << std::endl;
     system("pause");
     return 0;
 }
