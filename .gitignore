@@ -4,6 +4,9 @@
 # ignore doxygen
 doc/
 
+# ignore libs
+flow/benchmark/Streams/
+
 # User-specific files
 *.suo
 *.user
