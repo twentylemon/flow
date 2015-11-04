@@ -69,7 +69,7 @@ auto cycle(Itr begin, Itr end, std::size_t n) {
 /// <returns>An infinite stream which cycles <paramref name="container"/>.</returns>
 template <typename Container, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto cycle(Container& container) {
-    return cycle(container.begin(), container.end());
+    return cycle(std::begin(container), std::end(container));
 }
 
 /// <summary>
@@ -80,12 +80,12 @@ auto cycle(Container& container) {
 /// <returns>A stream which cycles <paramref name="container"/> <paramref name="n"/> times.</returns>
 template <typename Container, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto cycle(Container& container, std::size_t n) {
-    return cycle(container.begin(), container.end(), n);
+    return cycle(std::begin(container), std::end(container), n);
 }
 
 /// <summary>
 /// Creates an infinite stream which cycles <paramref name="container"/> in reverse order.
-/// <para>The container requires bidirectional iterators and the functions <c>rbegin()</c> and <c>rend()</c>.
+/// <para>The container requires bidirectional iterators.
 /// If the container is empty, this operation will crash via stack overflow. This can be
 /// avoided by using rcycle(Container, std::size_t) or empty().</para>
 /// </summary>
@@ -93,19 +93,19 @@ auto cycle(Container& container, std::size_t n) {
 /// <returns>An infinite stream which cycles <paramref name="container"/>.</returns>
 template <typename Container, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto rcycle(Container& container) {
-    return cycle(container.rbegin(), container.rend());
+    return cycle(std::rbegin(container), std::rend(container));
 }
 
 /// <summary>
 /// Creates a stream which cycles through <paramref name="container"/> <paramref name="n"/> times in reverse order.
-/// <para>The container requires bidirectional iterators and the functions <c>rbegin()</c> and <c>rend()</c>.</para>
+/// <para>The container requires bidirectional iterators and the functions.</para>
 /// </summary>
 /// <param name="container">The container to cycle through.</param>
 /// <param name="n">The number of times to repeat <paramref name="container"/>.</param>
 /// <returns>A stream which cycles <paramref name="container"/> <paramref name="n"/> times.</returns>
 template <typename Container, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto rcycle(Container& container, std::size_t n) {
-    return cycle(container.rbegin(), container.rend(), n);
+    return cycle(std::rbegin(container), std::rend(container), n);
 }
     }
 }

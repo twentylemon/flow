@@ -28,6 +28,8 @@
 #ifndef FLOW_GENERATOR_FROM_H
 #define FLOW_GENERATOR_FROM_H
 
+#include <iterator>
+
 #include "../Stream.h"
 #include "../source/Iterator.h"
 
@@ -68,18 +70,18 @@ auto from(Itr begin, Itr end) {
 /// <returns>A stream over <paramref name="container"/>.</returns>
 template <typename Container, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto from(Container& container) {
-    return from(container.begin(), container.end());
+    return from(std::begin(container), std::end(container));
 }
 
 /// <summary>
 /// Creates a stream over <paramref name="container"/> in reverse order.
-/// <para>The container requires bidirectional iterators and the functions <c>rbegin()</c> and <c>rend()</c>.</para>
+/// <para>The container requires bidirectional iterators.</para>
 /// </summary>
 /// <param name="container">The container to create a stream from.</param>
 /// <returns>A reversed stream over <paramref name="container"/>.</returns>
 template <typename Container, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto rfrom(Container& container) {
-    return from(container.rbegin(), container.rend());
+    return from(std::rbegin(container), std::rend(container));
 }
     }
 }
