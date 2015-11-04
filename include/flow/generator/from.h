@@ -72,32 +72,6 @@ auto from(Container& container) {
 }
 
 /// <summary>
-/// Overrides <c>|</c> for containers, <c>container | operation</c> is a shorthand for
-/// <c>from(container) | operation</c>.
-/// </summary>
-/// <param name="container">The container to create a stream from.</param>
-/// <param name="op">The stream operation.</param>
-/// <returns><c>from(container) | op</c></returns>
-/// <seealso cref="from()"/>
-template <typename Container, typename F, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
-auto operator|(Container& container, intermediate::detail::Intermediate<F>&& op) {
-    return from(container) | std::move(op);
-}
-
-/// <summary>
-/// Overrides <c>|</c> for containers, <c>container | operation</c> is a shorthand for
-/// <c>from(container) | operation</c>.
-/// </summary>
-/// <param name="container">The container to create a stream from.</param>
-/// <param name="op">The stream operation.</param>
-/// <returns><c>from(container) | op</c></returns>
-/// <seealso cref="from()"/>
-template <typename Container, typename F, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
-decltype(auto) operator|(Container& container, terminal::detail::Terminal<F>&& op) {
-    return from(container) | std::move(op);
-}
-
-/// <summary>
 /// Creates a stream over <paramref name="container"/> in reverse order.
 /// <para>The container requires bidirectional iterators and the functions <c>rbegin()</c> and <c>rend()</c>.</para>
 /// </summary>

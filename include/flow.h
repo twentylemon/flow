@@ -28,12 +28,15 @@
 #ifndef FLOW_FLOW_H
 #define FLOW_FLOW_H
 
+#include "flow/Stream.h"
+
 #include "flow/uncurry.h"
 #include "flow/print_tuple.h"
 #include "flow/optional.h"
 
 #include "flow/generator/from.h"
 #include "flow/generator/from_move.h"
+#include "flow/generator/pipe.h"
 #include "flow/generator/repeat.h"
 #include "flow/generator/cycle.h"
 #include "flow/generator/cycle_move.h"

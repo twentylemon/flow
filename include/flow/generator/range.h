@@ -48,9 +48,9 @@ namespace flow {
 /// <seealso cref="closed_range()"/>
 /// <seealso cref="iota()"/>
 /// <seealso cref="take_while()"/>
-template <typename T>
-auto range(T&& lower, T&& upper) {
-    return iota(std::forward<T>(lower)) | intermediate::take_while(std::bind(std::less<T>(), std::placeholders::_1, std::forward<T>(upper)));
+template <typename T, typename U>
+auto range(T&& lower, U&& upper) {
+    return iota(std::forward<T>(lower)) | intermediate::take_while(std::bind(std::less<T>(), std::placeholders::_1, std::forward<U>(upper)));
 }
 
 /// <summary>
@@ -67,9 +67,9 @@ auto range(T&& lower, T&& upper) {
 /// <seealso cref="closed_range()"/>
 /// <seealso cref="iota()"/>
 /// <seealso cref="take_while()"/>
-template <typename T, typename U>
-auto range(T&& lower, T&& upper, U&& increment) {
-    return iota(std::forward<T>(lower), std::forward<U>(increment)) | intermediate::take_while(std::bind(std::less<T>(), std::placeholders::_1, std::forward<T>(upper)));
+template <typename T, typename U, typename I>
+auto range(T&& lower, U&& upper, I&& increment) {
+    return iota(std::forward<T>(lower), std::forward<I>(increment)) | intermediate::take_while(std::bind(std::less<T>(), std::placeholders::_1, std::forward<U>(upper)));
 }
     }
 }

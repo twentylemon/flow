@@ -122,7 +122,27 @@ public:
     /// <param name="op">The operation to add to the pipeline.</param>
     /// <returns>A new stream that is the composition of this stream and the operation given.</returns>
     template <typename F>
+    auto operator|(intermediate::detail::Intermediate<F>& op) {
+        return op(std::move(*this));
+    }
+
+    /// <summary>
+    /// Adds an additional operation to the stream pipeline, returning the new stream.
+    /// </summary>
+    /// <param name="op">The operation to add to the pipeline.</param>
+    /// <returns>A new stream that is the composition of this stream and the operation given.</returns>
+    template <typename F>
     auto operator|(intermediate::detail::Intermediate<F>&& op) {
+        return op(std::move(*this));
+    }
+
+    /// <summary>
+    /// Adds an additional operation to the stream pipeline, returning the new stream.
+    /// </summary>
+    /// <param name="op">The operation to add to the pipeline.</param>
+    /// <returns>A new stream that is the composition of this stream and the operation given.</returns>
+    template <typename F>
+    decltype(auto) operator|(terminal::detail::Terminal<F>& op) {
         return op(std::move(*this));
     }
 
