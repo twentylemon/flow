@@ -392,13 +392,13 @@ public:
     }
 
 private:
-    template <typename T, typename ResultType, bool MedianMode>
-    friend void flow::detail::minmax::update(const T&, Stats<T, ResultType, true, MedianMode>&);
+    template <typename V, typename R, bool B>
+    friend void flow::detail::minmax::update(const V&, Stats<V, R, true, B>&);
 
-    template <typename T, typename ResultType, bool MinMax>
-    friend void flow::detail::medianmode::update(const T&, Stats<T, ResultType, MinMax, true>&);
-    template <typename T, typename ResultType, bool MinMax>
-    friend void flow::detail::medianmode::end(Stats<T, ResultType, MinMax, true>&);
+    template <typename V, typename R, bool B>
+    friend void flow::detail::medianmode::update(const V&, Stats<V, R, B, true>&);
+    template <typename V, typename R, bool B>
+    friend void flow::detail::medianmode::end(Stats<V, R, B, true>&);
 
     T _min;                         // conditionally include min value of the stream
     T _max;                         // conditionally included max value of the stream
