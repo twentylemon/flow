@@ -177,14 +177,14 @@ Functions</h2></td></tr>
 <tr class="memitem:af32b7bf1f105167d576b779b3b5f0297"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af32b7bf1f105167d576b779b3b5f0297">peek</a> (Ret(Class::*member)())</td></tr>
 <tr class="memdesc:af32b7bf1f105167d576b779b3b5f0297"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes <em>member</em>  for each element in the stream.  <a href="#af32b7bf1f105167d576b779b3b5f0297">More...</a><br /></td></tr>
 <tr class="separator:af32b7bf1f105167d576b779b3b5f0297"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11854b160914181e130029b111facf55"><td class="memTemplParams" colspan="2">template&lt;typename UnaryPredicate , typename T &gt; </td></tr>
-<tr class="memitem:a11854b160914181e130029b111facf55"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a11854b160914181e130029b111facf55">replace</a> (UnaryPredicate predicate, T &amp;&amp;replace_by)</td></tr>
-<tr class="memdesc:a11854b160914181e130029b111facf55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces elements in the stream by <em>replace_by</em>  if the stream element returns <code>true</code> for <em>predicate</em> .  <a href="#a11854b160914181e130029b111facf55">More...</a><br /></td></tr>
-<tr class="separator:a11854b160914181e130029b111facf55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25fa6ade81d666f3e4f85f5ad5502047"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a25fa6ade81d666f3e4f85f5ad5502047"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a25fa6ade81d666f3e4f85f5ad5502047">replace</a> (T &amp;&amp;old_value, T &amp;&amp;new_value)</td></tr>
-<tr class="memdesc:a25fa6ade81d666f3e4f85f5ad5502047"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces elements in the stream by <em>new_value</em>  if they are equal to <em>old_value</em> .  <a href="#a25fa6ade81d666f3e4f85f5ad5502047">More...</a><br /></td></tr>
-<tr class="separator:a25fa6ade81d666f3e4f85f5ad5502047"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6e8fa6f79f6588eb4b9016e8e84bc4b"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U &gt; </td></tr>
+<tr class="memitem:aa6e8fa6f79f6588eb4b9016e8e84bc4b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa6e8fa6f79f6588eb4b9016e8e84bc4b">replace</a> (T &amp;&amp;old_value, U &amp;&amp;new_value)</td></tr>
+<tr class="memdesc:aa6e8fa6f79f6588eb4b9016e8e84bc4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces elements in the stream by <em>new_value</em>  if they are equal to <em>old_value</em> .  <a href="#aa6e8fa6f79f6588eb4b9016e8e84bc4b">More...</a><br /></td></tr>
+<tr class="separator:aa6e8fa6f79f6588eb4b9016e8e84bc4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07a52c15f2f2411c7532834e00c47438"><td class="memTemplParams" colspan="2">template&lt;typename UnaryPredicate , typename T &gt; </td></tr>
+<tr class="memitem:a07a52c15f2f2411c7532834e00c47438"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a07a52c15f2f2411c7532834e00c47438">replace_if</a> (UnaryPredicate predicate, T &amp;&amp;replace_by)</td></tr>
+<tr class="memdesc:a07a52c15f2f2411c7532834e00c47438"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces elements in the stream by <em>replace_by</em>  if the stream element returns <code>true</code> for <em>predicate</em> .  <a href="#a07a52c15f2f2411c7532834e00c47438">More...</a><br /></td></tr>
+<tr class="separator:a07a52c15f2f2411c7532834e00c47438"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0db61e00aa587124edb99e065385ef16"><td class="memTemplParams" colspan="2">template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </td></tr>
 <tr class="memitem:a0db61e00aa587124edb99e065385ef16"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0db61e00aa587124edb99e065385ef16">replace_map</a> (UnaryPredicate predicate, UnaryOperation mapper)</td></tr>
 <tr class="memdesc:a0db61e00aa587124edb99e065385ef16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps stream elements to new values if the original element returns <code>true</code> for <em>predicate</em> .  <a href="#a0db61e00aa587124edb99e065385ef16">More...</a><br /></td></tr>
@@ -972,14 +972,54 @@ template&lt;typename Ret , typename Class &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a11854b160914181e130029b111facf55"></a>
+<a class="anchor" id="aa6e8fa6f79f6588eb4b9016e8e84bc4b"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::intermediate::replace </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramname"><em>old_value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">U &amp;&amp;&#160;</td>
+          <td class="paramname"><em>new_value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Replaces elements in the stream by <em>new_value</em>  if they are equal to <em>old_value</em> . </p>
+<p>Equality is checked by using <code>operator==</code> on the elements. Values not equal to <em>old_value</em>  are left unchanged.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">old_value</td><td>The value to replace in the stream by <em>new_value</em> .</td></tr>
+    <tr><td class="paramname">new_value</td><td>The value to replace with.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An intermediate operation that replaces stream elements.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a07a52c15f2f2411c7532834e00c47438" title="Replaces elements in the stream by replace_by  if the stream element returns true for predicate ...">replace_if()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0db61e00aa587124edb99e065385ef16" title="Maps stream elements to new values if the original element returns true for predicate ...">replace_map()</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a07a52c15f2f2411c7532834e00c47438"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename UnaryPredicate , typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">auto flow::intermediate::replace </td>
+          <td class="memname">auto flow::intermediate::replace_if </td>
           <td>(</td>
           <td class="paramtype">UnaryPredicate&#160;</td>
           <td class="paramname"><em>predicate</em>, </td>
@@ -1008,47 +1048,7 @@ template&lt;typename UnaryPredicate , typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that replaces stream elements.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0db61e00aa587124edb99e065385ef16" title="Maps stream elements to new values if the original element returns true for predicate ...">replace_map()</a></dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a25fa6ade81d666f3e4f85f5ad5502047"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">auto flow::intermediate::replace </td>
-          <td>(</td>
-          <td class="paramtype">T &amp;&amp;&#160;</td>
-          <td class="paramname"><em>old_value</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">T &amp;&amp;&#160;</td>
-          <td class="paramname"><em>new_value</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Replaces elements in the stream by <em>new_value</em>  if they are equal to <em>old_value</em> . </p>
-<p>Equality is checked by using <code>operator==</code> on the elements. Values not equal to <em>old_value</em>  are left unchanged.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">old_value</td><td>The value to replace in the stream by <em>new_value</em> .</td></tr>
-    <tr><td class="paramname">new_value</td><td>The value to replace with.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>An intermediate operation that replaces stream elements.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0db61e00aa587124edb99e065385ef16" title="Maps stream elements to new values if the original element returns true for predicate ...">replace_map()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0db61e00aa587124edb99e065385ef16" title="Maps stream elements to new values if the original element returns true for predicate ...">replace_map()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa6e8fa6f79f6588eb4b9016e8e84bc4b" title="Replaces elements in the stream by new_value  if they are equal to old_value . ">replace()</a></dd></dl>
 
 </div>
 </div>
@@ -1088,7 +1088,7 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that replaces stream elements.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a11854b160914181e130029b111facf55" title="Replaces elements in the stream by replace_by  if the stream element returns true for predicate ...">replace()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa6e8fa6f79f6588eb4b9016e8e84bc4b" title="Replaces elements in the stream by new_value  if they are equal to old_value . ">replace()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a07a52c15f2f2411c7532834e00c47438" title="Replaces elements in the stream by replace_by  if the stream element returns true for predicate ...">replace_if()</a></dd></dl>
 
 </div>
 </div>

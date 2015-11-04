@@ -100,14 +100,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a6f51a56b3ed1208e7f344ed6983889f8"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a6f51a56b3ed1208e7f344ed6983889f8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a6f51a56b3ed1208e7f344ed6983889f8">closed_range</a> (T &amp;&amp;lower, T &amp;&amp;upper)</td></tr>
-<tr class="memdesc:a6f51a56b3ed1208e7f344ed6983889f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a stream containing the elements in the range <code>[lower, upper]</code>, including <em>upper</em> .  <a href="#a6f51a56b3ed1208e7f344ed6983889f8">More...</a><br /></td></tr>
-<tr class="separator:a6f51a56b3ed1208e7f344ed6983889f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a247e5f34e3d9d8c9c60ba22c1e0f9b5d"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U &gt; </td></tr>
-<tr class="memitem:a247e5f34e3d9d8c9c60ba22c1e0f9b5d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a247e5f34e3d9d8c9c60ba22c1e0f9b5d">closed_range</a> (T &amp;&amp;lower, T &amp;&amp;upper, U &amp;&amp;increment)</td></tr>
-<tr class="memdesc:a247e5f34e3d9d8c9c60ba22c1e0f9b5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a stream containing the elements in the range <code>[lower, upper]</code>, including <em>upper</em>  counting up by <em>increment</em>  each step.  <a href="#a247e5f34e3d9d8c9c60ba22c1e0f9b5d">More...</a><br /></td></tr>
-<tr class="separator:a247e5f34e3d9d8c9c60ba22c1e0f9b5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2c64ec27f78b22d4652a5df27985a17"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U &gt; </td></tr>
+<tr class="memitem:ae2c64ec27f78b22d4652a5df27985a17"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ae2c64ec27f78b22d4652a5df27985a17">closed_range</a> (T &amp;&amp;lower, U &amp;&amp;upper)</td></tr>
+<tr class="memdesc:ae2c64ec27f78b22d4652a5df27985a17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a stream containing the elements in the range <code>[lower, upper]</code>, including <em>upper</em> .  <a href="#ae2c64ec27f78b22d4652a5df27985a17">More...</a><br /></td></tr>
+<tr class="separator:ae2c64ec27f78b22d4652a5df27985a17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0117e56094cfaefa4f8e4185411b4258"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , typename I &gt; </td></tr>
+<tr class="memitem:a0117e56094cfaefa4f8e4185411b4258"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a0117e56094cfaefa4f8e4185411b4258">closed_range</a> (T &amp;&amp;lower, U &amp;&amp;upper, I &amp;&amp;increment)</td></tr>
+<tr class="memdesc:a0117e56094cfaefa4f8e4185411b4258"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a stream containing the elements in the range <code>[lower, upper]</code>, including <em>upper</em>  counting up by <em>increment</em>  each step.  <a href="#a0117e56094cfaefa4f8e4185411b4258">More...</a><br /></td></tr>
+<tr class="separator:a0117e56094cfaefa4f8e4185411b4258"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac56e6d6017435a15378682bacc6da4e9"><td class="memTemplParams" colspan="2">template&lt;typename Itr &gt; </td></tr>
 <tr class="memitem:ac56e6d6017435a15378682bacc6da4e9"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ac56e6d6017435a15378682bacc6da4e9">cycle</a> (Itr begin, Itr end)</td></tr>
 <tr class="memdesc:ac56e6d6017435a15378682bacc6da4e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an infinite stream which cycles the iterator range.  <a href="#ac56e6d6017435a15378682bacc6da4e9">More...</a><br /></td></tr>
@@ -180,10 +180,18 @@ Functions</h2></td></tr>
 <tr class="memitem:a6eb74edc2bf991250c0a54d721285fd6"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a6eb74edc2bf991250c0a54d721285fd6">iterate</a> (IteratingFunction function, Args &amp;&amp;...initial)</td></tr>
 <tr class="memdesc:a6eb74edc2bf991250c0a54d721285fd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an infinite stream where values are created using successive calls to the <em>function</em> , starting with the values given.  <a href="#a6eb74edc2bf991250c0a54d721285fd6">More...</a><br /></td></tr>
 <tr class="separator:a6eb74edc2bf991250c0a54d721285fd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c16d03089d26c99f510ac0eae4b424c"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename F , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a8c16d03089d26c99f510ac0eae4b424c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a8c16d03089d26c99f510ac0eae4b424c">operator|</a> (Container &amp;container, intermediate::detail::Intermediate&lt; F &gt; &amp;op)</td></tr>
+<tr class="memdesc:a8c16d03089d26c99f510ac0eae4b424c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overrides <code>|</code> for containers, <code>container | operation</code> is a shorthand for <code>from(container) | operation</code>.  <a href="#a8c16d03089d26c99f510ac0eae4b424c">More...</a><br /></td></tr>
+<tr class="separator:a8c16d03089d26c99f510ac0eae4b424c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a600c0179388a946baf8aaf03350ed7"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename F , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:a3a600c0179388a946baf8aaf03350ed7"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a3a600c0179388a946baf8aaf03350ed7">operator|</a> (Container &amp;container, intermediate::detail::Intermediate&lt; F &gt; &amp;&amp;op)</td></tr>
 <tr class="memdesc:a3a600c0179388a946baf8aaf03350ed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overrides <code>|</code> for containers, <code>container | operation</code> is a shorthand for <code>from(container) | operation</code>.  <a href="#a3a600c0179388a946baf8aaf03350ed7">More...</a><br /></td></tr>
 <tr class="separator:a3a600c0179388a946baf8aaf03350ed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaec71fad12c43198bc11e63cfc8326e8"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename F , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:aaec71fad12c43198bc11e63cfc8326e8"><td class="memTemplItemLeft" align="right" valign="top">decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#aaec71fad12c43198bc11e63cfc8326e8">operator|</a> (Container &amp;container, terminal::detail::Terminal&lt; F &gt; &amp;op)</td></tr>
+<tr class="memdesc:aaec71fad12c43198bc11e63cfc8326e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overrides <code>|</code> for containers, <code>container | operation</code> is a shorthand for <code>from(container) | operation</code>.  <a href="#aaec71fad12c43198bc11e63cfc8326e8">More...</a><br /></td></tr>
+<tr class="separator:aaec71fad12c43198bc11e63cfc8326e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5bab90bcea83ba6a0658275bb4fdc28e"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename F , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:a5bab90bcea83ba6a0658275bb4fdc28e"><td class="memTemplItemLeft" align="right" valign="top">decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a5bab90bcea83ba6a0658275bb4fdc28e">operator|</a> (Container &amp;container, terminal::detail::Terminal&lt; F &gt; &amp;&amp;op)</td></tr>
 <tr class="memdesc:a5bab90bcea83ba6a0658275bb4fdc28e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overrides <code>|</code> for containers, <code>container | operation</code> is a shorthand for <code>from(container) | operation</code>.  <a href="#a5bab90bcea83ba6a0658275bb4fdc28e">More...</a><br /></td></tr>
@@ -200,22 +208,22 @@ Functions</h2></td></tr>
 <tr class="memitem:a5893af5b5624af406b5b8acd4fe61d40"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a5893af5b5624af406b5b8acd4fe61d40">random_engine</a> (Engine rng=Engine())</td></tr>
 <tr class="memdesc:a5893af5b5624af406b5b8acd4fe61d40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an infinite stream of random numbers generated by <em>rng</em> .  <a href="#a5893af5b5624af406b5b8acd4fe61d40">More...</a><br /></td></tr>
 <tr class="separator:a5893af5b5624af406b5b8acd4fe61d40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f43edef1592d398baace340c4014ba7"><td class="memTemplParams" colspan="2">template&lt;typename T , typename Engine  = std::default_random_engine, typename  = std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:a5f43edef1592d398baace340c4014ba7"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a5f43edef1592d398baace340c4014ba7">random_ints</a> (T &amp;&amp;lower, T &amp;&amp;upper, Engine rng=Engine())</td></tr>
-<tr class="memdesc:a5f43edef1592d398baace340c4014ba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an infinite stream of uniform random integers in the range <code>[lower, upper]</code>, including <em>upper</em> .  <a href="#a5f43edef1592d398baace340c4014ba7">More...</a><br /></td></tr>
-<tr class="separator:a5f43edef1592d398baace340c4014ba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6543851162dfe1b246f43c3f64571d2f"><td class="memTemplParams" colspan="2">template&lt;typename T , typename Engine  = std::default_random_engine, typename  = std::enable_if_t&lt;std::is_floating_point&lt;T&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:a6543851162dfe1b246f43c3f64571d2f"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a6543851162dfe1b246f43c3f64571d2f">random_reals</a> (T &amp;&amp;lower, T &amp;&amp;upper, Engine rng=Engine())</td></tr>
-<tr class="memdesc:a6543851162dfe1b246f43c3f64571d2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an infinite stream of uniform random real values in the range <code>[lower, upper)</code>, excluding <em>upper</em> .  <a href="#a6543851162dfe1b246f43c3f64571d2f">More...</a><br /></td></tr>
-<tr class="separator:a6543851162dfe1b246f43c3f64571d2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6bd9cd3ef1bcb33b9ab06a7637ca8299"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a6bd9cd3ef1bcb33b9ab06a7637ca8299"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a6bd9cd3ef1bcb33b9ab06a7637ca8299">range</a> (T &amp;&amp;lower, T &amp;&amp;upper)</td></tr>
-<tr class="memdesc:a6bd9cd3ef1bcb33b9ab06a7637ca8299"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a stream containing the elements in the range <code>[lower, upper)</code>, excluding <em>upper</em> .  <a href="#a6bd9cd3ef1bcb33b9ab06a7637ca8299">More...</a><br /></td></tr>
-<tr class="separator:a6bd9cd3ef1bcb33b9ab06a7637ca8299"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad47a357cdb2653a6387e076cb2cf4f2e"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U &gt; </td></tr>
-<tr class="memitem:ad47a357cdb2653a6387e076cb2cf4f2e"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad47a357cdb2653a6387e076cb2cf4f2e">range</a> (T &amp;&amp;lower, T &amp;&amp;upper, U &amp;&amp;increment)</td></tr>
-<tr class="memdesc:ad47a357cdb2653a6387e076cb2cf4f2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a stream containing the elements in the range <code>[lower, upper)</code>, excluding <em>upper</em>  counting up by <em>increment</em>  each step.  <a href="#ad47a357cdb2653a6387e076cb2cf4f2e">More...</a><br /></td></tr>
-<tr class="separator:ad47a357cdb2653a6387e076cb2cf4f2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb3555c44d1d02606702664c76473ff5"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , typename Engine  = std::default_random_engine, typename  = std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:abb3555c44d1d02606702664c76473ff5"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#abb3555c44d1d02606702664c76473ff5">random_ints</a> (T &amp;&amp;lower, U &amp;&amp;upper, Engine rng=Engine())</td></tr>
+<tr class="memdesc:abb3555c44d1d02606702664c76473ff5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an infinite stream of uniform random integers in the range <code>[lower, upper]</code>, including <em>upper</em> .  <a href="#abb3555c44d1d02606702664c76473ff5">More...</a><br /></td></tr>
+<tr class="separator:abb3555c44d1d02606702664c76473ff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a340e9dfc2414410ce89d9e039a33736e"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , typename Engine  = std::default_random_engine, typename  = std::enable_if_t&lt;std::is_floating_point&lt;T&gt;::value &amp;&amp; std::is_floating_point&lt;U&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a340e9dfc2414410ce89d9e039a33736e"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a340e9dfc2414410ce89d9e039a33736e">random_reals</a> (T &amp;&amp;lower, U &amp;&amp;upper, Engine rng=Engine())</td></tr>
+<tr class="memdesc:a340e9dfc2414410ce89d9e039a33736e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an infinite stream of uniform random real values in the range <code>[lower, upper)</code>, excluding <em>upper</em> .  <a href="#a340e9dfc2414410ce89d9e039a33736e">More...</a><br /></td></tr>
+<tr class="separator:a340e9dfc2414410ce89d9e039a33736e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45f23c30d0db685703bc80c1daf19840"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U &gt; </td></tr>
+<tr class="memitem:a45f23c30d0db685703bc80c1daf19840"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a45f23c30d0db685703bc80c1daf19840">range</a> (T &amp;&amp;lower, U &amp;&amp;upper)</td></tr>
+<tr class="memdesc:a45f23c30d0db685703bc80c1daf19840"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a stream containing the elements in the range <code>[lower, upper)</code>, excluding <em>upper</em> .  <a href="#a45f23c30d0db685703bc80c1daf19840">More...</a><br /></td></tr>
+<tr class="separator:a45f23c30d0db685703bc80c1daf19840"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1873d100c846390fa6ff05b01dba4abf"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , typename I &gt; </td></tr>
+<tr class="memitem:a1873d100c846390fa6ff05b01dba4abf"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a1873d100c846390fa6ff05b01dba4abf">range</a> (T &amp;&amp;lower, U &amp;&amp;upper, I &amp;&amp;increment)</td></tr>
+<tr class="memdesc:a1873d100c846390fa6ff05b01dba4abf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a stream containing the elements in the range <code>[lower, upper)</code>, excluding <em>upper</em>  counting up by <em>increment</em>  each step.  <a href="#a1873d100c846390fa6ff05b01dba4abf">More...</a><br /></td></tr>
+<tr class="separator:a1873d100c846390fa6ff05b01dba4abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19f2046f7478ce9c2ce68e4946ade84d"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:a19f2046f7478ce9c2ce68e4946ade84d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a19f2046f7478ce9c2ce68e4946ade84d">rcycle</a> (Container &amp;container)</td></tr>
 <tr class="memdesc:a19f2046f7478ce9c2ce68e4946ade84d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an infinite stream which cycles <em>container</em>  in reverse order.  <a href="#a19f2046f7478ce9c2ce68e4946ade84d">More...</a><br /></td></tr>
@@ -255,11 +263,11 @@ Functions</h2></td></tr>
 <p>Also defines <code>operator|</code> for container types to be a shorthand for <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a>. A container is defined to be any class with a <code>const_iterator</code> inner class, and methods <code>begin()</code> and <code>end()</code>.</p>
 <dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000002">Todo:</a></b></dt><dd>parallel_*() - create a parallel version of other generators? </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a6f51a56b3ed1208e7f344ed6983889f8"></a>
+<a class="anchor" id="ae2c64ec27f78b22d4652a5df27985a17"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T , typename U &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto flow::generator::closed_range </td>
@@ -270,7 +278,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramtype">U &amp;&amp;&#160;</td>
           <td class="paramname"><em>upper</em>&#160;</td>
         </tr>
         <tr>
@@ -292,15 +300,15 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A stream containing the elements in the range <code>[lower, upper]</code>.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a6bd9cd3ef1bcb33b9ab06a7637ca8299" title="Creates a stream containing the elements in the range [lower, upper), excluding upper ...">range()</a>, <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad3e468cd8e943a73900891b99f7a2ded" title="Creates an infinite stream of values by incrementing begin  using operator++. ">iota()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af694d1a9aa88f1dd8ff3d3e66d2cb6c9" title="Takes elements from the stream until predicate  returns false for an element. ">take_while()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a45f23c30d0db685703bc80c1daf19840" title="Creates a stream containing the elements in the range [lower, upper), excluding upper ...">range()</a>, <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad3e468cd8e943a73900891b99f7a2ded" title="Creates an infinite stream of values by incrementing begin  using operator++. ">iota()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af694d1a9aa88f1dd8ff3d3e66d2cb6c9" title="Takes elements from the stream until predicate  returns false for an element. ">take_while()</a></dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a247e5f34e3d9d8c9c60ba22c1e0f9b5d"></a>
+<a class="anchor" id="a0117e56094cfaefa4f8e4185411b4258"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename U &gt; </div>
+template&lt;typename T , typename U , typename I &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto flow::generator::closed_range </td>
@@ -311,13 +319,13 @@ template&lt;typename T , typename U &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramtype">U &amp;&amp;&#160;</td>
           <td class="paramname"><em>upper</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">U &amp;&amp;&#160;</td>
+          <td class="paramtype">I &amp;&amp;&#160;</td>
           <td class="paramname"><em>increment</em>&#160;</td>
         </tr>
         <tr>
@@ -340,7 +348,7 @@ template&lt;typename T , typename U &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A stream containing the elements in the range <code>[lower, upper]</code> incremented using <code>operator+</code> <em>increment</em> .</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a6bd9cd3ef1bcb33b9ab06a7637ca8299" title="Creates a stream containing the elements in the range [lower, upper), excluding upper ...">range()</a>, <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad3e468cd8e943a73900891b99f7a2ded" title="Creates an infinite stream of values by incrementing begin  using operator++. ">iota()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af694d1a9aa88f1dd8ff3d3e66d2cb6c9" title="Takes elements from the stream until predicate  returns false for an element. ">take_while()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a45f23c30d0db685703bc80c1daf19840" title="Creates a stream containing the elements in the range [lower, upper), excluding upper ...">range()</a>, <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad3e468cd8e943a73900891b99f7a2ded" title="Creates an infinite stream of values by incrementing begin  using operator++. ">iota()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af694d1a9aa88f1dd8ff3d3e66d2cb6c9" title="Takes elements from the stream until predicate  returns false for an element. ">take_while()</a></dd></dl>
 
 </div>
 </div>
@@ -862,7 +870,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> of values starting at <em>begin</em> , counting up using <code>operator++</code> each time.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a6bd9cd3ef1bcb33b9ab06a7637ca8299" title="Creates a stream containing the elements in the range [lower, upper), excluding upper ...">range()</a>, <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a6f51a56b3ed1208e7f344ed6983889f8" title="Creates a stream containing the elements in the range [lower, upper], including upper ...">closed_range()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a45f23c30d0db685703bc80c1daf19840" title="Creates a stream containing the elements in the range [lower, upper), excluding upper ...">range()</a>, <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ae2c64ec27f78b22d4652a5df27985a17" title="Creates a stream containing the elements in the range [lower, upper], including upper ...">closed_range()</a></dd></dl>
 
 </div>
 </div>
@@ -902,7 +910,7 @@ template&lt;typename T , typename U &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> of values starting at <em>begin</em> , counting up using <code>operator+=</code> by <em>increment</em>  each time.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a6bd9cd3ef1bcb33b9ab06a7637ca8299" title="Creates a stream containing the elements in the range [lower, upper), excluding upper ...">range()</a>, <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a6f51a56b3ed1208e7f344ed6983889f8" title="Creates a stream containing the elements in the range [lower, upper], including upper ...">closed_range()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a45f23c30d0db685703bc80c1daf19840" title="Creates a stream containing the elements in the range [lower, upper), excluding upper ...">range()</a>, <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ae2c64ec27f78b22d4652a5df27985a17" title="Creates a stream containing the elements in the range [lower, upper], including upper ...">closed_range()</a></dd></dl>
 
 </div>
 </div>
@@ -946,6 +954,45 @@ template&lt;typename IteratingFunction , typename... Args&gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a8c16d03089d26c99f510ac0eae4b424c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Container , typename F , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto flow::generator::operator| </td>
+          <td>(</td>
+          <td class="paramtype">Container &amp;&#160;</td>
+          <td class="paramname"><em>container</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">intermediate::detail::Intermediate&lt; F &gt; &amp;&#160;</td>
+          <td class="paramname"><em>op</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Overrides <code>|</code> for containers, <code>container | operation</code> is a shorthand for <code>from(container) | operation</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">container</td><td>The container to create a stream from.</td></tr>
+    <tr><td class="paramname">op</td><td>The stream operation.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>from(container) | op</code></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a3a600c0179388a946baf8aaf03350ed7"></a>
 <div class="memitem">
 <div class="memproto">
@@ -962,6 +1009,45 @@ template&lt;typename Container , typename F , typename  = std::enable_if_t&lt;de
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">intermediate::detail::Intermediate&lt; F &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>op</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Overrides <code>|</code> for containers, <code>container | operation</code> is a shorthand for <code>from(container) | operation</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">container</td><td>The container to create a stream from.</td></tr>
+    <tr><td class="paramname">op</td><td>The stream operation.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>from(container) | op</code></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aaec71fad12c43198bc11e63cfc8326e8"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Container , typename F , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">decltype(auto) flow::generator::operator| </td>
+          <td>(</td>
+          <td class="paramtype">Container &amp;&#160;</td>
+          <td class="paramname"><em>container</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">terminal::detail::Terminal&lt; F &gt; &amp;&#160;</td>
           <td class="paramname"><em>op</em>&#160;</td>
         </tr>
         <tr>
@@ -1119,11 +1205,11 @@ template&lt;typename Engine  = std::default_random_engine&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a5f43edef1592d398baace340c4014ba7"></a>
+<a class="anchor" id="abb3555c44d1d02606702664c76473ff5"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename Engine  = std::default_random_engine, typename  = std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;&gt; </div>
+template&lt;typename T , typename U , typename Engine  = std::default_random_engine, typename  = std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto flow::generator::random_ints </td>
@@ -1134,7 +1220,7 @@ template&lt;typename T , typename Engine  = std::default_random_engine, typename
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramtype">U &amp;&amp;&#160;</td>
           <td class="paramname"><em>upper</em>, </td>
         </tr>
         <tr>
@@ -1165,11 +1251,11 @@ template&lt;typename T , typename Engine  = std::default_random_engine, typename
 
 </div>
 </div>
-<a class="anchor" id="a6543851162dfe1b246f43c3f64571d2f"></a>
+<a class="anchor" id="a340e9dfc2414410ce89d9e039a33736e"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename Engine  = std::default_random_engine, typename  = std::enable_if_t&lt;std::is_floating_point&lt;T&gt;::value&gt;&gt; </div>
+template&lt;typename T , typename U , typename Engine  = std::default_random_engine, typename  = std::enable_if_t&lt;std::is_floating_point&lt;T&gt;::value &amp;&amp; std::is_floating_point&lt;U&gt;::value&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto flow::generator::random_reals </td>
@@ -1180,7 +1266,7 @@ template&lt;typename T , typename Engine  = std::default_random_engine, typename
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramtype">U &amp;&amp;&#160;</td>
           <td class="paramname"><em>upper</em>, </td>
         </tr>
         <tr>
@@ -1211,11 +1297,11 @@ template&lt;typename T , typename Engine  = std::default_random_engine, typename
 
 </div>
 </div>
-<a class="anchor" id="a6bd9cd3ef1bcb33b9ab06a7637ca8299"></a>
+<a class="anchor" id="a45f23c30d0db685703bc80c1daf19840"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T , typename U &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto flow::generator::range </td>
@@ -1226,7 +1312,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramtype">U &amp;&amp;&#160;</td>
           <td class="paramname"><em>upper</em>&#160;</td>
         </tr>
         <tr>
@@ -1248,15 +1334,15 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> containing the elements in the range <code>[lower, upper)</code>.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a6f51a56b3ed1208e7f344ed6983889f8" title="Creates a stream containing the elements in the range [lower, upper], including upper ...">closed_range()</a>, <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad3e468cd8e943a73900891b99f7a2ded" title="Creates an infinite stream of values by incrementing begin  using operator++. ">iota()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af694d1a9aa88f1dd8ff3d3e66d2cb6c9" title="Takes elements from the stream until predicate  returns false for an element. ">take_while()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ae2c64ec27f78b22d4652a5df27985a17" title="Creates a stream containing the elements in the range [lower, upper], including upper ...">closed_range()</a>, <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad3e468cd8e943a73900891b99f7a2ded" title="Creates an infinite stream of values by incrementing begin  using operator++. ">iota()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af694d1a9aa88f1dd8ff3d3e66d2cb6c9" title="Takes elements from the stream until predicate  returns false for an element. ">take_while()</a></dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ad47a357cdb2653a6387e076cb2cf4f2e"></a>
+<a class="anchor" id="a1873d100c846390fa6ff05b01dba4abf"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename U &gt; </div>
+template&lt;typename T , typename U , typename I &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto flow::generator::range </td>
@@ -1267,13 +1353,13 @@ template&lt;typename T , typename U &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramtype">U &amp;&amp;&#160;</td>
           <td class="paramname"><em>upper</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">U &amp;&amp;&#160;</td>
+          <td class="paramtype">I &amp;&amp;&#160;</td>
           <td class="paramname"><em>increment</em>&#160;</td>
         </tr>
         <tr>
@@ -1296,7 +1382,7 @@ template&lt;typename T , typename U &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> containing the elements in the range <code>[lower, upper)</code> incremented using <code>operator+</code> <em>increment</em> .</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a6f51a56b3ed1208e7f344ed6983889f8" title="Creates a stream containing the elements in the range [lower, upper], including upper ...">closed_range()</a>, <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad3e468cd8e943a73900891b99f7a2ded" title="Creates an infinite stream of values by incrementing begin  using operator++. ">iota()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af694d1a9aa88f1dd8ff3d3e66d2cb6c9" title="Takes elements from the stream until predicate  returns false for an element. ">take_while()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ae2c64ec27f78b22d4652a5df27985a17" title="Creates a stream containing the elements in the range [lower, upper], including upper ...">closed_range()</a>, <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad3e468cd8e943a73900891b99f7a2ded" title="Creates an infinite stream of values by incrementing begin  using operator++. ">iota()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#af694d1a9aa88f1dd8ff3d3e66d2cb6c9" title="Takes elements from the stream until predicate  returns false for an element. ">take_while()</a></dd></dl>
 
 </div>
 </div>

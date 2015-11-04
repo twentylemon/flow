@@ -138,10 +138,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8ab8408b46b2854b397d9e14784f6b50"><td class="memItemLeft" align="right" valign="top">decltype(auto)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#a8ab8408b46b2854b397d9e14784f6b50">next</a> ()</td></tr>
 <tr class="memdesc:a8ab8408b46b2854b397d9e14784f6b50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next element from the stream.  <a href="#a8ab8408b46b2854b397d9e14784f6b50">More...</a><br /></td></tr>
 <tr class="separator:a8ab8408b46b2854b397d9e14784f6b50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae970291edebfa7352d21a60acb8578bb"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
+<tr class="memitem:ae970291edebfa7352d21a60acb8578bb"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#ae970291edebfa7352d21a60acb8578bb">operator|</a> (intermediate::detail::Intermediate&lt; F &gt; &amp;op)</td></tr>
+<tr class="memdesc:ae970291edebfa7352d21a60acb8578bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an additional operation to the stream pipeline, returning the new stream.  <a href="#ae970291edebfa7352d21a60acb8578bb">More...</a><br /></td></tr>
+<tr class="separator:ae970291edebfa7352d21a60acb8578bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97f6e20c19f347090ad769114de5f10c"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
 <tr class="memitem:a97f6e20c19f347090ad769114de5f10c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#a97f6e20c19f347090ad769114de5f10c">operator|</a> (intermediate::detail::Intermediate&lt; F &gt; &amp;&amp;op)</td></tr>
 <tr class="memdesc:a97f6e20c19f347090ad769114de5f10c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an additional operation to the stream pipeline, returning the new stream.  <a href="#a97f6e20c19f347090ad769114de5f10c">More...</a><br /></td></tr>
 <tr class="separator:a97f6e20c19f347090ad769114de5f10c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa55ccdf493a8c541aea26d10b0455d27"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
+<tr class="memitem:aa55ccdf493a8c541aea26d10b0455d27"><td class="memTemplItemLeft" align="right" valign="top">decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#aa55ccdf493a8c541aea26d10b0455d27">operator|</a> (terminal::detail::Terminal&lt; F &gt; &amp;op)</td></tr>
+<tr class="memdesc:aa55ccdf493a8c541aea26d10b0455d27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an additional operation to the stream pipeline, returning the new stream.  <a href="#aa55ccdf493a8c541aea26d10b0455d27">More...</a><br /></td></tr>
+<tr class="separator:aa55ccdf493a8c541aea26d10b0455d27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacf5dfc49446a846e262d49170c35524"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
 <tr class="memitem:aacf5dfc49446a846e262d49170c35524"><td class="memTemplItemLeft" align="right" valign="top">decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/dcd/classflow_1_1_stream.html#aacf5dfc49446a846e262d49170c35524">operator|</a> (terminal::detail::Terminal&lt; F &gt; &amp;&amp;op)</td></tr>
 <tr class="memdesc:aacf5dfc49446a846e262d49170c35524"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an additional operation to the stream pipeline, returning the new stream.  <a href="#aacf5dfc49446a846e262d49170c35524">More...</a><br /></td></tr>
@@ -414,6 +422,43 @@ template&lt;typename Source &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="ae970291edebfa7352d21a60acb8578bb"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Source &gt; </div>
+<div class="memtemplate">
+template&lt;typename F &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">flow::Stream</a>&lt; Source &gt;::operator| </td>
+          <td>(</td>
+          <td class="paramtype">intermediate::detail::Intermediate&lt; F &gt; &amp;&#160;</td>
+          <td class="paramname"><em>op</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds an additional operation to the stream pipeline, returning the new stream. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">op</td><td>The operation to add to the pipeline.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A new stream that is the composition of this stream and the operation given.</dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a97f6e20c19f347090ad769114de5f10c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -429,6 +474,43 @@ template&lt;typename F &gt; </div>
           <td class="memname">auto <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">flow::Stream</a>&lt; Source &gt;::operator| </td>
           <td>(</td>
           <td class="paramtype">intermediate::detail::Intermediate&lt; F &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>op</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds an additional operation to the stream pipeline, returning the new stream. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">op</td><td>The operation to add to the pipeline.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A new stream that is the composition of this stream and the operation given.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa55ccdf493a8c541aea26d10b0455d27"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Source &gt; </div>
+<div class="memtemplate">
+template&lt;typename F &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">decltype(auto) <a class="el" href="../../d9/dcd/classflow_1_1_stream.html">flow::Stream</a>&lt; Source &gt;::operator| </td>
+          <td>(</td>
+          <td class="paramtype">terminal::detail::Terminal&lt; F &gt; &amp;&#160;</td>
           <td class="paramname"><em>op</em></td><td>)</td>
           <td></td>
         </tr>
