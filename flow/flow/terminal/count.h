@@ -28,8 +28,6 @@
 #ifndef FLOW_TERMINAL_COUNT_H
 #define FLOW_TERMINAL_COUNT_H
 
-#include <functional>
-
 #include "Terminal.h"
 #include "../intermediate/filter.h"
 
@@ -74,7 +72,7 @@ auto count_if(UnaryPredicate predicate) {
 /// <seealso cref="contains()"/>
 template <typename T>
 auto count(T&& value) {
-    return count_if(std::bind(std::equal_to<T>(), std::forward<T>(value), std::placeholders::_1));
+    return count_if([value = std::forward<T>(value)](auto&& ele) { return ele == value; });
 }
     }
 }

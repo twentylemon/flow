@@ -133,8 +133,31 @@ void triples(std::size_t num) {
     std::cout << "flow: " << t.elapsed() << "\t" << result << std::endl;
 }
 
+void iota_fill_map(int size) {
+    std::cout << "create a histogram of the squares of values from -" << size << " to " << size << std::endl;
+    boost::timer t;
+    auto vf = flow::closed_range(-size, size)
+        | flow::map([](int i) { return i*i; })
+        | flow::to_map();
+    std::cout << "flow:  " << t.elapsed() << std::endl;
+
+    t.restart();
+    std::map<int, std::size_t> vs;
+    for (int i = -size; i <= size; ++i) {
+        auto element = i*i;
+        auto lower = vs.lower_bound(element);
+        if (lower != vs.end() && !(vs.key_comp()(element, lower->first))) {
+            ++lower->second;
+        }
+        else {
+            vs.insert(lower, std::make_pair(element, 1));
+        }
+    }
+    std::cout << "stl:   " << t.elapsed() << std::endl;
+}
+
 int main(int argc, char** argv) {
-    
+    /*
     find_min<int>(1000);
     find_min<DynInt>(1000);
     find_min<LargeClass>(1000);
@@ -146,7 +169,9 @@ int main(int argc, char** argv) {
     collatz_length(1000000);
     
     triples(3000);
-    
+    */
+    iota_fill_map(1000000);
+
     std::cout << std::endl << PREVENT_CACHE << std::endl;
     system("pause");
     return 0;

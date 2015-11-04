@@ -28,8 +28,6 @@
 #ifndef FLOW_INTERMEDIATE_REPLACE_H
 #define FLOW_INTERMEDIATE_REPLACE_H
 
-#include <functional>
-
 #include "map.h"
 
 namespace flow {
@@ -80,7 +78,7 @@ auto replace_if(UnaryPredicate predicate, T&& replace_by) {
 /// <seealso cref="replace_map()"/>
 template <typename T, typename U>
 auto replace(T&& old_value, U&& new_value) {
-    return replace_if(std::bind(std::equal_to<T>(), std::placeholders::_1, std::forward<T>(old_value)), std::forward<U>(new_value));
+    return replace_if([old_value = std::forward<T>(old_value)](auto&& ele) { return ele == old_value; }, std::forward<U>(new_value));
 }
     }
 }
