@@ -288,6 +288,9 @@
     <ClInclude Include="generator\pipe.h">
       <Filter>Header Files\generator</Filter>
     </ClInclude>
+    <ClInclude Include="Stats.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\README.md">

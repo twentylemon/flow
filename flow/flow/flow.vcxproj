@@ -152,6 +152,7 @@
     <ClInclude Include="source\SetSource.h" />
     <ClInclude Include="source\SetSymDifference.h" />
     <ClInclude Include="source\SetUnion.h" />
+    <ClInclude Include="Stats.h" />
     <ClInclude Include="terminal\execute.h" />
     <ClInclude Include="terminal\inner_product.h" />
     <ClInclude Include="terminal\reservoir.h" />
