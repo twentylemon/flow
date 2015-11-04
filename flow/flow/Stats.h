@@ -190,8 +190,8 @@ void display(std::ostream& out, const Stats<T, R, MinMax, true>& stats) {
 /// <summary>
 /// Class to wrap all the statistics returned by stats().
 /// <para>The count, mean, standard deviation, variance, sum and sum of squares of the stream
-/// elements are always calculated. Conditionally calculates additional statistics like
-/// median and mode, etc. If those values are not calculated, using the <c>getter</c> methods
+/// elements are always calculated. Conditionally calculates additional statistics indicated
+/// by the template parameters. If those values are not calculated, using the <c>getter</c> methods
 /// will result in a compiler error.</para>
 /// </summary>
 /// <seealso cref="stats()"/>
@@ -200,12 +200,12 @@ class Stats
 {
 public:
     /// <summary>
-    /// <c>std::true_type</c> if <c>MinMax</c> is <c>, <c>std::false_type</c> otherwise.
+    /// <c>std::true_type</c> if <c>MinMax</c> is <c>true</c>, <c>std::false_type</c> otherwise.
     /// </summary>  
     using minmax = std::conditional_t<MinMax, std::true_type, std::false_type>;
 
     /// <summary>
-    /// <c>std::true_type</c> if <c>MedianMode</c> is <c>, <c>std::false_type</c> otherwise.
+    /// <c>std::true_type</c> if <c>MedianMode</c> is <c>true</c>, <c>std::false_type</c> otherwise.
     /// </summary>  
     using medianmode = std::conditional_t<MedianMode, std::true_type, std::false_type>;
 
