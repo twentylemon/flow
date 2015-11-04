@@ -45,4 +45,11 @@ BOOST_AUTO_TEST_CASE(iterator_t) {
         }
     }
     BOOST_CHECK_EQUAL(iota(0) | limit(10000) | sum().value(), su);
+
+    auto s8 = iota(0);
+    BOOST_CHECK_EQUAL(*std::find(s8.begin(), s8.end(), 1000), 1000);
+    BOOST_CHECK_EQUAL(*s8.begin(), 1001);
+
+    auto s9 = range(0, 100);
+    BOOST_CHECK(std::find(s9.begin(), s9.end(), -1) == s9.end());
 }
