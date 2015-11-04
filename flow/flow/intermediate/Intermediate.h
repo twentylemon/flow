@@ -84,6 +84,9 @@ public:
     }
 
 private:
+    template <typename G>
+    friend class Intermediate;
+
     F _operation;   // the stream operation
 };
 

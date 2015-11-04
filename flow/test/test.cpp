@@ -7,6 +7,7 @@ BOOST_AUTO_TEST_SUITE(flow_core)
 #include "uncurry.h"
 #include "optional.h"
 #include "lazy.h"
+#include "general.h"
 BOOST_AUTO_TEST_SUITE_END()
 
 BOOST_AUTO_TEST_SUITE(flow_generator)

@@ -7,7 +7,7 @@ auto run_timer(const std::vector<T>& vec, std::size_t maxit, TimerFunc func) {
     boost::timer t;
     for (std::size_t i = 0; i < maxit; ++i) {
         ret.second = func(vec);
-        PREVENT_CACHE += vec.size();
+        PREVENT_CACHE += t.elapsed();
     }
     ret.first = t.elapsed();
     return ret;
@@ -102,6 +102,37 @@ void collatz_length(std::size_t max) {
 #endif
 }
 
+void triples(std::size_t num) {
+    std::tuple<int, int, int> result;
+    std::cout << "getting the " << num << "th pythagorean triple (x^2 + y^2 = z^2)" << std::endl;
+    boost::timer t;
+    std::size_t n = 0;
+    for (int z = 1; n < num; ++z) {
+        for (int x = 1; x < z && n < num; ++x) {
+            for (int y = x; y < z && n < num; ++y) {
+                if (x*x + y*y == z*z) {
+                    result = std::make_tuple(x, y, z);
+                    ++n;
+                }
+            }
+        }
+    }
+    std::cout << "stl:  " << t.elapsed() << "\t" << result << std::endl;
+
+    t.restart();
+    result = flow::iota(1)
+        | flow::flat_map([](int z) {
+            return flow::range(1, z)
+                | flow::flat_map([z](int x) {
+                    return flow::range(x, z)
+                        | flow::filter([=](int y) { return x*x + y*y == z*z; })
+                        | flow::map([=](int y) { return std::make_tuple(x, y, z); });
+            });
+    })
+        | flow::nth(num - 1).value();
+    std::cout << "flow: " << t.elapsed() << "\t" << result << std::endl;
+}
+
 int main(int argc, char** argv) {
     
     find_min<int>(1000);
@@ -110,9 +141,11 @@ int main(int argc, char** argv) {
 
     random_count<int>(1000);
     random_count<DynInt>(100);
-    random_count<LargeClass>(1000);
+    random_count<LargeClass>(100);
     
     collatz_length(1000000);
+    
+    triples(3000);
     
     std::cout << std::endl << PREVENT_CACHE << std::endl;
     system("pause");

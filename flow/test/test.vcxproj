@@ -137,6 +137,7 @@
     <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="general.h" />
     <ClInclude Include="generator\closed_range.h">
       <FileType>CppHeader</FileType>
     </ClInclude>

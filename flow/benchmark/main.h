@@ -23,8 +23,8 @@
 #include "LargeClass.h"
 #include "DynInt.h"
 
-constexpr std::size_t VECTOR_SIZE    = 100000;
+constexpr std::size_t VECTOR_SIZE = 100000;
 
-std::size_t PREVENT_CACHE = 0;  // modify this to prevent cache optimizations
+double PREVENT_CACHE = 0.0; // modify this to prevent cache optimizations
 
 #endif

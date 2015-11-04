@@ -43,6 +43,7 @@ namespace flow {
 /// <param name="mapper">The mapping operation to apply to elements that return <c>true</c> for <paramref name="predicate"/>.</param>
 /// <returns>An intermediate operation that replaces stream elements.</returns>
 /// <seealso cref="replace()"/>
+/// <seealso cref="replace_if()"/>
 template <typename UnaryPredicate, typename UnaryOperation>
 auto replace_map(UnaryPredicate predicate, UnaryOperation mapper) {
     return map([mapper, predicate](auto&& ele) {
@@ -61,8 +62,9 @@ auto replace_map(UnaryPredicate predicate, UnaryOperation mapper) {
 /// <param name="replace_by">The value to replace stream elements by when <paramref name="predicate"/> returns <c>true</c>.</param>
 /// <returns>An intermediate operation that replaces stream elements.</returns>
 /// <seealso cref="replace_map()"/>
+/// <seealso cref="replace()"/>
 template <typename UnaryPredicate, typename T>
-auto replace(UnaryPredicate predicate, T&& replace_by) {
+auto replace_if(UnaryPredicate predicate, T&& replace_by) {
     return replace_map(predicate, [replace_by = std::forward<T>(replace_by)](auto&&) { return replace_by; });
 }
 
@@ -74,10 +76,11 @@ auto replace(UnaryPredicate predicate, T&& replace_by) {
 /// <param name="old_value">The value to replace in the stream by <paramref name="new_value"/>.</param>
 /// <param name="new_value">The value to replace with.</param>
 /// <returns>An intermediate operation that replaces stream elements.</returns>
+/// <seealso cref="replace_if()"/>
 /// <seealso cref="replace_map()"/>
-template <typename T>
-auto replace(T&& old_value, T&& new_value) {
-    return replace(std::bind(std::equal_to<T>(), std::placeholders::_1, std::forward<T>(old_value)), std::forward<T>(new_value));
+template <typename T, typename U>
+auto replace(T&& old_value, U&& new_value) {
+    return replace_if(std::bind(std::equal_to<T>(), std::placeholders::_1, std::forward<T>(old_value)), std::forward<U>(new_value));
 }
     }
 }

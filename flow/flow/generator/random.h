@@ -69,9 +69,9 @@ auto random_distribution(Distribution distribution, Engine rng = Engine()) {
 /// <param name="upper">The upper bound of integers to produce, inclusive.</param>
 /// <param name="rng">The random number generator engine, from the <c>&lt;random&gt;</c> header.</param>
 /// <returns>An infinite stream of random integers in the range <c>[lower, upper]</c>, including <paramref name="upper"/>.</returns>
-template <typename T, typename Engine = std::default_random_engine, typename = std::enable_if_t<std::is_integral<T>::value>>
-auto random_ints(T&& lower, T&& upper, Engine rng = Engine()) {
-    return random_distribution(std::uniform_int_distribution<T>(std::forward<T>(lower), std::forward<T>(upper)), rng);
+template <typename T, typename U, typename Engine = std::default_random_engine, typename = std::enable_if_t<std::is_integral<T>::value>>
+auto random_ints(T&& lower, U&& upper, Engine rng = Engine()) {
+    return random_distribution(std::uniform_int_distribution<T>(std::forward<T>(lower), std::forward<U>(upper)), rng);
 }
 
 /// <summary>
@@ -83,9 +83,9 @@ auto random_ints(T&& lower, T&& upper, Engine rng = Engine()) {
 /// <param name="upper">The upper bound of integers to produce, exclusive.</param>
 /// <param name="rng">The random number generator engine, from the <c>&lt;random&gt;</c> header.</param>
 /// <returns>An infinite stream of random real values in the range <c>[lower, upper)</c>, excluding <paramref name="upper"/>.</returns>
-template <typename T, typename Engine = std::default_random_engine, typename = std::enable_if_t<std::is_floating_point<T>::value>>
-auto random_reals(T&& lower, T&& upper, Engine rng = Engine()) {
-    return random_distribution(std::uniform_real_distribution<T>(std::forward<T>(lower), std::forward<T>(upper)), rng);
+template <typename T, typename U, typename Engine = std::default_random_engine, typename = std::enable_if_t<std::is_floating_point<T>::value && std::is_floating_point<U>::value>>
+auto random_reals(T&& lower, U&& upper, Engine rng = Engine()) {
+    return random_distribution(std::uniform_real_distribution<T>(std::forward<T>(lower), std::forward<U>(upper)), rng);
 }
 
 /// <summary>
