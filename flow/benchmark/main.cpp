@@ -131,6 +131,7 @@ void triples(std::size_t num) {
     })
         | flow::nth(num - 1).value();
     std::cout << "flow: " << t.elapsed() << "\t" << result << std::endl;
+    std::cout << std::endl;
 }
 
 void iota_fill_map(int size) {

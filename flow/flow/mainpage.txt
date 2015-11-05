@@ -7,7 +7,7 @@
 /// The library provides many common data transformations, such as map, filter and fold, as well as other commonly used
 /// operations like computing the sum, min and max or simply counting the number or elements. And all of it is packaged
 /// in a nice, easy to read and understand syntax. To use, simply <c>\#include &lt;flow.h&gt;</c> in your C++14 program.
-/// With fully optimized code (<c>-O3</c> or <c>/O2</c>), flow offers minimal performance penalties compared to
+/// With fully optimized code, flow offers minimal performance penalties compared to
 /// standard code, so there's no reason not to love.</para>
 /// 
 /// What is a Sick Flow?
@@ -208,3 +208,45 @@
 /// <para>This will cause statements like the above to be a compile error unless the operator is defined elsewhere inside of the <c>std</c>
 /// namespace. If <c>FLOW_PRINTTUPLE_NO_STD</c> is defined, then <c>operator&lt;&lt;</c> is defined inside of the flow namespace instead.</para>
 /// 
+
+/// \page intro Getting Started
+/// \tableofcontents
+/// This page contains everything you'll need to know to start using the flow library.
+/// \section compilers Compiler Support
+/// <para>The flow library is known to work for g++4.9 and MSVC 14.0. Support for Clang is being worked toward.</para>
+/// <para>The flow library requires compilation under the C++14 standard. For g++, this requires the `-std=c++14` flag. MSVC 14.0 automatically
+/// compiles under the C++14 standard.</para>
+/// <para>flow performs best on MSVC in most cases. The library also performs well for built-in or smaller types in g++.</para>
+/// \section install Installation
+/// <para>The flow library is header-only, so there's nothing to build. Download a release off of the [GitHub repository](https://github.com/twentylemon/flow)
+/// and place the `include` directory where you want the flow library to live. Then, in your program, the <c>\#include</c> directive will be look similar to
+/// <c>\#include &lt;flow.h&gt;</c> depending on your preference regarding the include path.</para>
+/// \subsection example_install Build a Sample Program
+/// <para>The following program computes the sum of squares of the numbers 1 to 10, displaying each square and the sum to `std::cout`.</para>
+/// \code{.cpp}#include <flow.h>
+/// 
+/// int main() { 
+///     flow::closed_range(1, 10)
+///         | flow::map([](int i) { return i*i; })
+///         | flow::peek([](int i) { std::cout << "value = " << i << std::endl; })
+///         | flow::sum().then([](auto& s) { std::cout << "total = " << *s << std::endl; });
+///     return 0;
+/// }\endcode
+/// <para>Copy the above program into a file and try to compile and run it to verify the installation. The output of the program should be:</para>
+/// \code{.cpp}value = 1
+/// value = 4
+/// value = 9
+/// value = 16
+/// value = 25
+/// value = 36
+/// value = 49
+/// value = 64
+/// value = 81
+/// value = 100
+/// total = 385\endcode
+///
+/// \section use Using the Library
+/// <para>This section will go into detail about everything you need to know in order to use the library effectively.</para>
+/// \subsection stream Understanding Streams
+/// 
+///
