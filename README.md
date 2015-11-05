@@ -15,8 +15,8 @@ optimized code, flow offers minimal performance penalties so there's no reason n
 What is a Sick Flow?
 --------------------
 A flow is usually called a stream. But if I called the library "Stream" I couldn't say "sick flow" all the time.
-I'll use flow and stream interchangeably, just know that a stream is a source of data, data that would want to
-do things with.
+I'll use flow and stream interchangeably, just know that a stream is a forward, single-pass source of data, data
+that would want to do things with.
 
 Creating a Sick Flow
 --------------------
