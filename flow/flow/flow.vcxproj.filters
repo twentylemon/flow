@@ -28,14 +28,11 @@
     <Filter Include="Doc Files">
       <UniqueIdentifier>{de7adb85-4845-490a-abb8-a90728e8ea07}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\core">
+      <UniqueIdentifier>{51f99224-d9b8-4df3-8ea4-d0a705f79ce6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Compose.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Stream.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="generator\from.h">
       <Filter>Header Files\generator</Filter>
     </ClInclude>
@@ -171,9 +168,6 @@
     <ClInclude Include="intermediate\zip.h">
       <Filter>Header Files\intermediate</Filter>
     </ClInclude>
-    <ClInclude Include="uncurry.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="generator\empty.h">
       <Filter>Header Files\generator</Filter>
     </ClInclude>
@@ -212,9 +206,6 @@
     </ClInclude>
     <ClInclude Include="source\GeneratorSource.h">
       <Filter>Header Files\source</Filter>
-    </ClInclude>
-    <ClInclude Include="print_tuple.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="generator\from_move.h">
       <Filter>Header Files\generator</Filter>
@@ -276,9 +267,6 @@
     <ClInclude Include="generator\random.h">
       <Filter>Header Files\generator</Filter>
     </ClInclude>
-    <ClInclude Include="optional.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="intermediate\shuffle.h">
       <Filter>Header Files\intermediate</Filter>
     </ClInclude>
@@ -288,8 +276,23 @@
     <ClInclude Include="generator\pipe.h">
       <Filter>Header Files\generator</Filter>
     </ClInclude>
+    <ClInclude Include="Compose.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="optional.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="print_tuple.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
     <ClInclude Include="Stats.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="Stream.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="uncurry.h">
+      <Filter>Header Files\core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -299,7 +302,9 @@
     <None Include="flow.conf">
       <Filter>Doc Files</Filter>
     </None>
-    <None Include="flow.licenseheader" />
+    <None Include="flow.licenseheader">
+      <Filter>Doc Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Text Include="examples.txt">

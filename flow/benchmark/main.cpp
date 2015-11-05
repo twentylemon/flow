@@ -157,19 +157,19 @@ void iota_fill_map(int size) {
 }
 
 int main(int argc, char** argv) {
-    /*
+    
     find_min<int>(1000);
     find_min<DynInt>(1000);
     find_min<LargeClass>(1000);
 
     random_count<int>(1000);
     random_count<DynInt>(100);
-    random_count<LargeClass>(100);
+    random_count<LargeClass>(100);  // better in vc++ than g++
     
     collatz_length(1000000);
     
     triples(3000);
-    */
+    
     iota_fill_map(1000000);
 
     std::cout << std::endl << PREVENT_CACHE << std::endl;

@@ -13,8 +13,8 @@
 /// What is a Sick Flow?
 /// --------------------
 /// <para>A flow is usually called a stream. But if I called the library "Stream" I couldn't say "sick flow" all the time.
-/// I'll use flow and stream interchangeably, just know that a stream is a source of data, data that you would want to
-/// do things with.</para>
+/// I'll use flow and stream interchangeably, just know that a stream is a forward, single-pass source of data, data that
+/// you would want to do things with.</para>
 /// 
 /// Creating a Sick Flow
 /// --------------------
@@ -49,7 +49,7 @@
 /// 
 /// <para>Stream operations are broken down into two main types: Intermediate and Terminal operations. Intermediate operations
 /// transform a stream into another stream. We saw three examples above in <c>filter</c>, <c>limit</c> and <c>map</c>. Intermediate
-/// operations are meaningless without some sort of Terminal operation, such as <c>each</c> or <c>count</c>. Terminal operations
+/// operations are meaningless without some sort of terminal operation, such as <c>each</c> or <c>count</c>. Terminal operations
 /// do something with the final stream data, be it summing, counting, calling a function, finding the min, and so on.</para>
 /// <para>Intermediate operations are all inside the flow::intermediate namespace.<br/>Terminal operations are all inside the
 /// flow::terminal namespace.</para>
@@ -62,6 +62,11 @@
 /// ### Documentation at a Glance
 /// <para>The best way to view all available functions, use the [Namespace Members](namespacemembers_func.html) page. It lists
 /// every important function and the namespace it sits in, indicating whether it is a generator, or an intermediate or terminal operation.</para>
+///
+/// \author Taras Mychaskiw
+/// \version 1.0.1
+/// \date November 2015
+/// \copyright MIT License
 ///
 
 
@@ -107,11 +112,11 @@
 /// a terminal that returns <c>true</c> if none of the stream elements match a predicate. Logically, this is the same
 /// as finding if any of the elements match the predicate, then negating the result -- this is exactly what is done.</para>
 /// \code{.cpp}auto my_none = any(my_predicate).then(std::logical_not<bool>());\endcode
-/// <para>There are more helper functions built into Terminal operations which allow you to immediately access the returned
+/// <para>There are more helper functions built into terminal operations which allow you to immediately access the returned
 /// optional value if it exists, or execute a function if the value exists, etc. Read more about these operations in the
 /// flow::terminal namespace.</para>
 /// 
-/// \todo Java uses stream&lt;T&gt; instead of the template being the stream source. This makes it easier to return streams
+/// \todo Java uses stream&lt;T&gt; instead of stream&lt;source&gt;. This makes it easier to return streams
 /// or pass streams around, or have method that return streams or whatever. Currently, a function like below is not generally possible.
 /// \code{.cpp}auto get_stream(T& t) {
 ///     return some_property(t) ? cycle(t, 2) : from(t);
@@ -129,8 +134,9 @@
 /// Factory methods to create stream objects, all of which are also aliased in the flow namespace.
 /// <para>The functions in the flow::generator namespace all produce Stream objects.</para>
 /// <para>Also defines <c>operator|</c> for container types to be a shorthand for from().
-/// A container is defined to be any class with a <c>const_iterator</c> inner class,
-/// and methods <c>begin()</c> and <c>end()</c>.</para>
+/// A container is defined to be any class with a <c>const_iterator</c> inner class and for which
+/// <c>std::begin</c> and <c>std::end</c> have overloads. (This excludes C-style arrays -- use <c>std::array</c> already!)</para>
+///
 /// \todo parallel_*() - create a parallel version of other generators?
 /// 
 
@@ -138,24 +144,28 @@
 /// Terminal operations, all of which are also aliased in the flow namespace.
 /// <para>The functions in the flow::terminal namespace all produce a terminal operation. The terminal
 /// operation does not operate on a stream until the pipe <c>operator|</c> has been applied, after which
-/// the stream is evaluated and the terminal's return value is calculated.</para>
+/// the stream is evaluated and the terminal's return value is calculated. After applying a terminal
+/// operation, the stream is left in an unusable state as it has been iterated through.</para>
+/// <para>As an alternative to using terminal operations to iterate through a stream, you can use streams iterators or use Java-like iteration.
+/// More information is available in the Stream class documentation.</para>
 /// <para>Some terminal operations (such as min()) return an \ref optional object when the stream is empty.
 /// This method was chosen over throwing an exception, though there is no clear better way. In the end,
 /// flow uses the optional class for the following reasons:</para>
 /// <ul>
 ///     <li>In the exceptional case, a boolean check is much faster than an exception.</li>
 ///     <li>In many cases, you will know for sure that the optional returned contains a value and the boolean check
-///         can be skipped anyways. Consider that many of the STL algorithms return iterators which are commonly used without
+///         can be skipped anyways. Consider that many of the STL algorithms return iterators which are commonly dereferenced without
 ///         checking them for validity.</li>
 ///     <li>In other cases, when you don't know for sure if a value would exist, a boolean check only carries a very slight overhead.</li>
 ///     <li>It is less code on the user end which is always nice.</li>
 /// </ul>
-/// <para>Some convenience methods are available to Terminal operations:</para>
+/// <para>Some convenience methods are available to terminal operations:</para>
 /// \code{.cpp}Terminal<F> then(F f);      // a terminal which applies f to the result of this terminal
 /// Terminal<?> value();        // a terminal which directly accesses the optional's contained value, undefined if the optional has no value
 /// Terminal<?> value_or(U&&);  // a terminal which directly calls optional::value_or
 /// Terminal<?> if_then(F f, G g = [](){}); // a terminal which applies f to the contained optional value if it is present, otherwise g is applied \endcode
 /// <para>Examples of these operations are available in \ref terminal.cpp.</para>
+///
 /// \todo parallel_*() - chunking parallelization of terminal operations
 /// \todo parallel pipelining of stream operations?
 /// \todo equals - check if two streams are equal
@@ -178,17 +188,12 @@
 /// <para>The functions in the flow::intermediate namespace all produce an intermediate operation. The
 /// intermediate operation does not operate on a stream until the pipe <c>operator|</c> has been applied,
 /// including eager operations. Only after being applied to a stream is the new stream created.</para>
+///
 /// \todo group the stream, [1,2,3,4,5] with group<2> -> [(1,2), (3,4)]
 /// \todo moving window into the stream, [1,2,3] with window<2> -> [(1,2), (2,3)]
 /// \todo adjacent_diff - from &lt;numeric&gt;
 /// \todo partial_sum - from &lt;numeric&gt;
 /// \todo overload arithmetic operators as map operations?
-/// 
-
-/// \namespace flow::source
-/// Stream sources, internal to the flow library.
-/// <para>Classes in the flow::source namespace provide the functionality for all of the generators and intermediate
-/// operations. These are internal to the flow library, and are not aliased in the flow namespace.</para>
 /// 
 
 /// \namespace std

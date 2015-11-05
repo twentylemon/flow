@@ -60,7 +60,18 @@ struct is_specialization_of<const Template<Args...>, Template> : std::true_type 
 /// The stream class provides lazy evaluation and functional style transformations on ordered data.
 /// <para>Streams support pipelining of multiple operations. Streams can be transformed using <c>operator|</c>
 /// to create a new stream given an intermediate operation (anything from the flow::intermediate namespace)
-/// or can return a value given a detail::Terminal operation (anything from the flow::terminal namespace).</para>
+/// or can return a value given a terminal operation (anything from the flow::terminal namespace).</para>
+/// <para>A stream can only be only be used once in a forward single-pass manner. Reusing a stream or a
+/// stream iterator can lead to undefined behavior.</para>
+/// <para>Streams can be iterated in several different ways, listed below.</para>
+/// <ul>
+///     <li>The most common is to use a terminal operation, anything from the flow::terminal namespace.</li>
+///     <li>You can access the stream iterators (which satisfy ForwardIterator) using begin() and end() and iterate as you would any normal container.</li>
+///     <li>You can use Java-like iteration using the Stream methods has_next() and next() (or lazy_next() to ignore a value, possibly improving performance).</li>
+/// </ul>
+/// <para>When using the final option, ensure that has_next() is called <em>exactly once</em> before <em>one</em> call to
+/// next() <em>or</em> lazy_next(). Using the stream otherwise can lead to undefined behavior. For simplicity, it
+/// it recommended that one of the first two options is used.</para>
 /// <para>Streams can be constructed using the functions in the flow::generator namespace.</para>
 /// </summary>
 template <typename Source>
@@ -189,29 +200,37 @@ public:
         /// </summary>
         /// <param name="rhs">The other iterator to compare to.</param>
         /// <returns><c>true</c> if this iterator and <paramref name="rhs"/> point to the same object.</returns>
-        bool operator==(const iterator& rhs) const { return _current == rhs._current; }
+        bool operator==(const iterator& rhs) const {
+            return _current == rhs._current;
+        }
 
         /// <summary>
         /// Returns <c>true</c> if the two iterators point to the different objects.
         /// </summary>
         /// <param name="rhs">The other iterator to compare to.</param>
         /// <returns><c>true</c> if this iterator and <paramref name="rhs"/> point to different objects.</returns>
-        bool operator!=(const iterator& rhs) const { return _current != rhs._current; }
+        bool operator!=(const iterator& rhs) const {
+            return _current != rhs._current;
+        }
 
         /// <summary>
-        /// Returns a reference to the underlying object.
+        /// Returns a reference to the underlying value.
         /// </summary>
-        /// <returns>A reference to the underlying object.</returns>
-        reference operator*() { return *_current; }
+        /// <returns>A reference to the underlying value.</returns>
+        reference operator*() {
+            return *_current;
+        }
 
         /// <summary>
-        /// Returns a pointer to the underlying object.
+        /// Returns a pointer to the underlying value.
         /// </summary>
-        /// <returns>A pointer to the underlying object.</returns>
-        pointer operator->() { return _current; }
+        /// <returns>A pointer to the underlying value.</returns>
+        pointer operator->() {
+            return _current;
+        }
 
         /// <summary>
-        /// Advances this iterator to the next element in the stream as a pre-increment.
+        /// Advances this iterator to the next element in the stream.
         /// </summary>
         /// <returns><c>*this</c></returns>
         iterator& operator++() {
@@ -225,7 +244,7 @@ public:
         }
 
         /// <summary>
-        /// Advances this iterator to the next element in the stream as a post-increment.
+        /// Advances this iterator to the next element in the stream.
         /// </summary>
         /// <returns>A copy of <c>*this</c> before the increment was performed.</returns>
         iterator operator++(int) {
