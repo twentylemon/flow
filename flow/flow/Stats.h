@@ -134,7 +134,7 @@ void end(Stats<T, ResultType, MinMax, true>& stats) {
         if (!median_found) {
             count += it->second;
             if (dead_on) {
-                stats._median = (stats._median + static_cast<ResultType>(it->first)) / 2.0;
+                stats._median = (stats._median + static_cast<ResultType>(it->first)) / static_cast<ResultType>(2.0);
                 median_found = true;            // we need to average this and the previous value
             }
             else {
@@ -213,8 +213,8 @@ public:
     /// Initializes a new instance of the Stats class.
     /// </summary>
     /// <param name="ele"/>The first element from the stream.</param>
-    Stats(const T& ele) : _min(ele), _max(ele), _mean(0), _median(0), _modes(),
-        _stddev(0), _variance(0), _sum(ele), _sum_squares(ele * ele), _n(1), _freq({ { ele, 1 } }) { }
+    Stats(const T& ele) : _min(ele), _max(ele), _mean(0), _median(0), _modes(), _stddev(0), _variance(0),
+        _sum(static_cast<ResultType>(ele)), _sum_squares(static_cast<ResultType>(ele * ele)), _n(1), _freq({ { ele, 1 } }) { }
 
     Stats(const Stats<T, ResultType, MinMax, MedianMode>&) = default;
     Stats(Stats<T, ResultType, MinMax, MedianMode>&&) = default;
@@ -385,8 +385,9 @@ public:
     /// but g++ cannot friend an auto return type.</para>
     /// </summary>
     void end() {
-        _mean = _sum / _n;
-        _variance = (_sum_squares * _n - _sum * _sum) / (_n * _n);
+        ResultType n = static_cast<ResultType>(_n);
+        _mean = _sum / n;
+        _variance = (_sum_squares * n - _sum * _sum) / (n * n);
         _stddev = std::sqrt(_variance);
         flow::detail::medianmode::end(*this);
     }

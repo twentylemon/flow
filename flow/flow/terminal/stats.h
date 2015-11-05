@@ -38,8 +38,7 @@ namespace flow {
 /// Returns a Stats object which contains several statistics of the stream values.
 /// <para>The number of elements, mean, standard deviation, variance, sum and sum of squares are always calculated.</para>
 /// <para>Some statistical values are calculated as <c>ResultType</c>, others are calculated as <c>T</c>, the type of elements
-/// in the stream. Calculating statistics requires that both <c>T</c> and <c>ResultType</c> behave as arithmetic types
-/// (such as <c>int</c>, <c>double</c> or <c>std::complex</c>).</para>
+/// in the stream. Calculating statistics requires that both <c>T</c> and <c>ResultType</c> behave as arithmetic types.</para>
 /// <para>The other template parameters indicate whether or not to calculate additional statistics, all of which are not
 /// calculated by default. The behavior of each of them is as follows (<c>n</c> is the size of the stream):</para>
 /// <ul>
