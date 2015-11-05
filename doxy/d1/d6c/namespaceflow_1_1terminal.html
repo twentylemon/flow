@@ -122,10 +122,10 @@ Functions</h2></td></tr>
 <tr class="memitem:aed588ae01b14be839486b94bb87f2ed8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aed588ae01b14be839486b94bb87f2ed8">any</a> (Ret(Class::*member)())</td></tr>
 <tr class="memdesc:aed588ae01b14be839486b94bb87f2ed8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if any of the elements in the stream return <code>true</code> for <em>member</em> .  <a href="#aed588ae01b14be839486b94bb87f2ed8">More...</a><br /></td></tr>
 <tr class="separator:aed588ae01b14be839486b94bb87f2ed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc94fb24c31b8f7e46d8603a6997589b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:afc94fb24c31b8f7e46d8603a6997589b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afc94fb24c31b8f7e46d8603a6997589b">contains</a> (T &amp;&amp;val)</td></tr>
-<tr class="memdesc:afc94fb24c31b8f7e46d8603a6997589b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if an element in the stream compares equal to <code>val</code> by <code>operator==</code>.  <a href="#afc94fb24c31b8f7e46d8603a6997589b">More...</a><br /></td></tr>
-<tr class="separator:afc94fb24c31b8f7e46d8603a6997589b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07ed2f12c748c9f2790416391318a597"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a07ed2f12c748c9f2790416391318a597"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a07ed2f12c748c9f2790416391318a597">contains</a> (T &amp;&amp;value)</td></tr>
+<tr class="memdesc:a07ed2f12c748c9f2790416391318a597"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if an element in the stream compares equal to <code>value</code> by <code>operator==</code>.  <a href="#a07ed2f12c748c9f2790416391318a597">More...</a><br /></td></tr>
+<tr class="separator:a07ed2f12c748c9f2790416391318a597"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2e701e11c61d1038e3b0581e2f32df0"><td class="memTemplParams" colspan="2">template&lt;typename OutputIterator &gt; </td></tr>
 <tr class="memitem:aa2e701e11c61d1038e3b0581e2f32df0"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#aa2e701e11c61d1038e3b0581e2f32df0">copy</a> (OutputIterator result)</td></tr>
 <tr class="memdesc:aa2e701e11c61d1038e3b0581e2f32df0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the elements in the stream into the range beginning at <code>result</code>.  <a href="#aa2e701e11c61d1038e3b0581e2f32df0">More...</a><br /></td></tr>
@@ -365,19 +365,20 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Terminal operations, all of which are also aliased in the flow namespace. </p>
-<p>The functions in the <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html" title="Terminal operations, all of which are also aliased in the flow namespace. ">flow::terminal</a> namespace all produce a terminal operation. The terminal operation does not operate on a stream until the pipe <code>operator|</code> has been applied, after which the stream is evaluated and the terminal's return value is calculated.</p>
+<p>The functions in the <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html" title="Terminal operations, all of which are also aliased in the flow namespace. ">flow::terminal</a> namespace all produce a terminal operation. The terminal operation does not operate on a stream until the pipe <code>operator|</code> has been applied, after which the stream is evaluated and the terminal's return value is calculated. After applying a terminal operation, the stream is left in an unusable state as it has been iterated through.</p>
+<p>As an alternative to using terminal operations to iterate through a stream, you can use streams iterators or use Java-like iteration. More information is available in the <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> class documentation.</p>
 <p>Some terminal operations (such as <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ad02d008becaf1d5d64d2ae358ae7306e" title="Returns the minimum element from the stream as an optional according to compare , operator< by defaul...">min()</a>) return an <a class="el" href="../../d6/d3f/classflow_1_1optional.html">optional</a> object when the stream is empty. This method was chosen over throwing an exception, though there is no clear better way. In the end, flow uses the optional class for the following reasons:</p>
 <ul>
 <li>
 In the exceptional case, a boolean check is much faster than an exception. </li>
 <li>
-In many cases, you will know for sure that the optional returned contains a value and the boolean check can be skipped anyways. Consider that many of the STL algorithms return iterators which are commonly used without checking them for validity. </li>
+In many cases, you will know for sure that the optional returned contains a value and the boolean check can be skipped anyways. Consider that many of the STL algorithms return iterators which are commonly dereferenced without checking them for validity. </li>
 <li>
 In other cases, when you don't know for sure if a value would exist, a boolean check only carries a very slight overhead. </li>
 <li>
 It is less code on the user end which is always nice. </li>
 </ul>
-<p>Some convenience methods are available to Terminal operations:</p>
+<p>Some convenience methods are available to terminal operations:</p>
 <div class="fragment"><div class="line">Terminal&lt;F&gt; then(F f);      <span class="comment">// a terminal which applies f to the result of this terminal</span></div>
 <div class="line">Terminal&lt;?&gt; value();        <span class="comment">// a terminal which directly accesses the optional&#39;s contained value, undefined if the optional has no value</span></div>
 <div class="line">Terminal&lt;?&gt; value_or(U&amp;&amp;);  <span class="comment">// a terminal which directly calls optional::value_or</span></div>
@@ -571,7 +572,7 @@ template&lt;typename Ret , typename Class &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="afc94fb24c31b8f7e46d8603a6997589b"></a>
+<a class="anchor" id="a07ed2f12c748c9f2790416391318a597"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -581,20 +582,20 @@ template&lt;typename T &gt; </div>
           <td class="memname">auto flow::terminal::contains </td>
           <td>(</td>
           <td class="paramtype">T &amp;&amp;&#160;</td>
-          <td class="paramname"><em>val</em></td><td>)</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns <code>true</code> if an element in the stream compares equal to <code>val</code> by <code>operator==</code>. </p>
+<p>Returns <code>true</code> if an element in the stream compares equal to <code>value</code> by <code>operator==</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">val</td><td>The value to search for in the stream.</td></tr>
+    <tr><td class="paramname">value</td><td>The value to search for in the stream.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A terminal operation which returns <code>true</code> if the stream contains <code>val</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A terminal operation which returns <code>true</code> if the stream contains <code>value</code>.</dd></dl>
 
 </div>
 </div>
@@ -672,7 +673,7 @@ template&lt;typename T &gt; </div>
 <p>Returns the number of the occurrences of <em>value</em>  in the stream as <code>std::size_t</code>. </p>
 <p>Equality is checking using <code>operator==</code>.</p>
 <dl class="section return"><dt>Returns</dt><dd>A terminal operation which counts of the occurrences of <em>value</em>  in the stream.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9e6b4fef03bc255768e41ab77d3b36ef" title="Returns the number of elements in the stream that return true for predicate  as std::size_t. ">count_if()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the stream that return false for predicate . ">filter()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#afc94fb24c31b8f7e46d8603a6997589b" title="Returns true if an element in the stream compares equal to val by operator==. ">contains()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a9e6b4fef03bc255768e41ab77d3b36ef" title="Returns the number of elements in the stream that return true for predicate  as std::size_t. ">count_if()</a>, <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c" title="Removes elements from the stream that return false for predicate . ">filter()</a>, <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a07ed2f12c748c9f2790416391318a597" title="Returns true if an element in the stream compares equal to value by operator==. ">contains()</a></dd></dl>
 
 </div>
 </div>
@@ -1733,7 +1734,7 @@ template&lt;typename ResultType  = double, bool MinMax = false, bool MedianMode 
 
 <p>Returns a <a class="el" href="../../dd/d45/classflow_1_1_stats.html" title="Class to wrap all the statistics returned by stats(). ">Stats</a> object which contains several statistics of the stream values. </p>
 <p>The number of elements, mean, standard deviation, variance, sum and sum of squares are always calculated.</p>
-<p>Some statistical values are calculated as <code>ResultType</code>, others are calculated as <code>T</code>, the type of elements in the stream. Calculating statistics requires that both <code>T</code> and <code>ResultType</code> behave as arithmetic types (such as <code>int</code>, <code>double</code> or <code>std::complex</code>).</p>
+<p>Some statistical values are calculated as <code>ResultType</code>, others are calculated as <code>T</code>, the type of elements in the stream. Calculating statistics requires that both <code>T</code> and <code>ResultType</code> behave as arithmetic types.</p>
 <p>The other template parameters indicate whether or not to calculate additional statistics, all of which are not calculated by default. The behavior of each of them is as follows (<code>n</code> is the size of the stream):</p>
 <ul>
 <li>

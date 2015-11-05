@@ -260,7 +260,7 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Factory methods to create stream objects, all of which are also aliased in the flow namespace. </p>
 <p>The functions in the <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html" title="Factory methods to create stream objects, all of which are also aliased in the flow namespace...">flow::generator</a> namespace all produce <a class="el" href="../../d9/dcd/classflow_1_1_stream.html" title="The stream class provides lazy evaluation and functional style transformations on ordered data...">Stream</a> objects.</p>
-<p>Also defines <code>operator|</code> for container types to be a shorthand for <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a>. A container is defined to be any class with a <code>const_iterator</code> inner class, and methods <code>begin()</code> and <code>end()</code>.</p>
+<p>Also defines <code>operator|</code> for container types to be a shorthand for <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b" title="Creates a stream from the given iterator range. ">from()</a>. A container is defined to be any class with a <code>const_iterator</code> inner class and for which <code>std::begin</code> and <code>std::end</code> have overloads. (This excludes C-style arrays &ndash; use <code>std::array</code> already!)</p>
 <dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000002">Todo:</a></b></dt><dd>parallel_*() - create a parallel version of other generators? </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="ae2c64ec27f78b22d4652a5df27985a17"></a>
@@ -1403,7 +1403,7 @@ template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_con
 </div><div class="memdoc">
 
 <p>Creates an infinite stream which cycles <em>container</em>  in reverse order. </p>
-<p>The container requires bidirectional iterators and the functions <code>rbegin()</code> and <code>rend()</code>. If the container is empty, this operation will crash via stack overflow. This can be avoided by using rcycle(Container, std::size_t) or <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#af89b482574e82df455be487db4dd18bd" title="Creates a stream that contains no elements. ">empty()</a>.</p>
+<p>The container requires bidirectional iterators. If the container is empty, this operation will crash via stack overflow. This can be avoided by using rcycle(Container, std::size_t) or <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#af89b482574e82df455be487db4dd18bd" title="Creates a stream that contains no elements. ">empty()</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">container</td><td>The container to cycle through.</td></tr>
@@ -1441,7 +1441,7 @@ template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_con
 </div><div class="memdoc">
 
 <p>Creates a stream which cycles through <em>container</em>  <em>n</em>  times in reverse order. </p>
-<p>The container requires bidirectional iterators and the functions <code>rbegin()</code> and <code>rend()</code>.</p>
+<p>The container requires bidirectional iterators and the functions.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">container</td><td>The container to cycle through.</td></tr>
@@ -1470,7 +1470,7 @@ template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_con
 </div><div class="memdoc">
 
 <p>Creates an infinite stream which cycles <em>container</em>  in reverse order. </p>
-<p>The container requires bidirectional iterators and the functions <code>rbegin()</code> and <code>rend()</code>. This extends the lifetime of temporary containers that are passed to it. That is, it is safe to use temporaries or other variables as long as they are moved in.</p>
+<p>The container requires bidirectional iterators. This extends the lifetime of temporary containers that are passed to it. That is, it is safe to use temporaries or other variables as long as they are moved in.</p>
 <p>If the container is empty, this operation will crash via stack overflow. This can be avoided by using rcycle_move(Container, std::size_t) or <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#af89b482574e82df455be487db4dd18bd" title="Creates a stream that contains no elements. ">empty()</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1509,7 +1509,7 @@ template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_con
 </div><div class="memdoc">
 
 <p>Creates a stream which cycles through <em>container</em>  <em>n</em>  times in reverse order. </p>
-<p>The container requires bidirectional iterators and the functions <code>rbegin()</code> and <code>rend()</code>. This extends the lifetime of temporary containers that are passed to it. That is, it is safe to use temporaries or other variables as long as they are moved in.</p>
+<p>The container requires bidirectional iterators. This extends the lifetime of temporary containers that are passed to it. That is, it is safe to use temporaries or other variables as long as they are moved in.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">container</td><td>The container to cycle through.</td></tr>
@@ -1603,7 +1603,7 @@ template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_con
 </div><div class="memdoc">
 
 <p>Creates a stream over <em>container</em>  in reverse order. </p>
-<p>The container requires bidirectional iterators and the functions <code>rbegin()</code> and <code>rend()</code>.</p>
+<p>The container requires bidirectional iterators.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">container</td><td>The container to create a stream from.</td></tr>

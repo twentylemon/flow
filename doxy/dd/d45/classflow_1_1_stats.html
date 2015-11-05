@@ -91,6 +91,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="../../d1/d74/classflow_1_1_stats-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -101,8 +102,17 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <p>Class to wrap all the statistics returned by <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a900a16920892b0445f890cad56458c9a" title="Returns a Stats object which contains several statistics of the stream values. ">stats()</a>.  
  <a href="../../dd/d45/classflow_1_1_stats.html#details">More...</a></p>
 
-<p><code>#include &lt;stats.h&gt;</code></p>
+<p><code>#include &lt;Stats.h&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:acd92826166d53813ff93e85c98743155"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d45/classflow_1_1_stats.html#acd92826166d53813ff93e85c98743155">medianmode</a> = std::conditional_t&lt; MedianMode, std::true_type, std::false_type &gt;</td></tr>
+<tr class="memdesc:acd92826166d53813ff93e85c98743155"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>std::true_type</code> if <code>MedianMode</code> is <code>true</code>, <code>std::false_type</code> otherwise.  <a href="#acd92826166d53813ff93e85c98743155">More...</a><br /></td></tr>
+<tr class="separator:acd92826166d53813ff93e85c98743155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9220f1efb5e159f49c7ff9b5a3f34139"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d45/classflow_1_1_stats.html#a9220f1efb5e159f49c7ff9b5a3f34139">minmax</a> = std::conditional_t&lt; MinMax, std::true_type, std::false_type &gt;</td></tr>
+<tr class="memdesc:a9220f1efb5e159f49c7ff9b5a3f34139"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>std::true_type</code> if <code>MinMax</code> is <code>true</code>, <code>std::false_type</code> otherwise.  <a href="#a9220f1efb5e159f49c7ff9b5a3f34139">More...</a><br /></td></tr>
+<tr class="separator:a9220f1efb5e159f49c7ff9b5a3f34139"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af3dfc687e2655cd13f2c7fca5ba7909c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d45/classflow_1_1_stats.html#af3dfc687e2655cd13f2c7fca5ba7909c">Stats</a> (const T &amp;ele)</td></tr>
@@ -115,10 +125,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8434c2630f3a3467c72ffd11ab734219"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d45/classflow_1_1_stats.html#a8434c2630f3a3467c72ffd11ab734219">end</a> ()</td></tr>
 <tr class="memdesc:a8434c2630f3a3467c72ffd11ab734219"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once the stream is ended; finishes calculating statistics values.  <a href="#a8434c2630f3a3467c72ffd11ab734219">More...</a><br /></td></tr>
 <tr class="separator:a8434c2630f3a3467c72ffd11ab734219"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55ceefc04501012f893a91e1278ecc04"><td class="memTemplParams" colspan="2">template&lt;bool B = MedianMode, typename  = std::enable_if_t&lt;B&gt;&gt; </td></tr>
-<tr class="memitem:a55ceefc04501012f893a91e1278ecc04"><td class="memTemplItemLeft" align="right" valign="top">const std::map&lt; T, std::size_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d45/classflow_1_1_stats.html#a55ceefc04501012f893a91e1278ecc04">frequency</a> () const </td></tr>
-<tr class="memdesc:a55ceefc04501012f893a91e1278ecc04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the frequency of which each element occurred in the stream [conditionally compiled].  <a href="#a55ceefc04501012f893a91e1278ecc04">More...</a><br /></td></tr>
-<tr class="separator:a55ceefc04501012f893a91e1278ecc04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee513e2c57b43b67d3fbba2edbaeb1f8"><td class="memTemplParams" colspan="2">template&lt;bool B = MedianMode, typename  = std::enable_if_t&lt;B&gt;&gt; </td></tr>
+<tr class="memitem:aee513e2c57b43b67d3fbba2edbaeb1f8"><td class="memTemplItemLeft" align="right" valign="top">std::map&lt; T, std::size_t &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d45/classflow_1_1_stats.html#aee513e2c57b43b67d3fbba2edbaeb1f8">frequency</a> ()</td></tr>
+<tr class="memdesc:aee513e2c57b43b67d3fbba2edbaeb1f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the frequency of which each element occurred in the stream [conditionally compiled].  <a href="#aee513e2c57b43b67d3fbba2edbaeb1f8">More...</a><br /></td></tr>
+<tr class="separator:aee513e2c57b43b67d3fbba2edbaeb1f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e33418dbce1ad8dc9e7b8a1ba0dec07"><td class="memTemplParams" colspan="2">template&lt;bool B = MedianMode, typename  = std::enable_if_t&lt;B&gt;&gt; </td></tr>
+<tr class="memitem:a8e33418dbce1ad8dc9e7b8a1ba0dec07"><td class="memTemplItemLeft" align="right" valign="top">const std::map&lt; T, std::size_t &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d45/classflow_1_1_stats.html#a8e33418dbce1ad8dc9e7b8a1ba0dec07">frequency</a> () const </td></tr>
+<tr class="memdesc:a8e33418dbce1ad8dc9e7b8a1ba0dec07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the frequency of which each element occurred in the stream [conditionally compiled].  <a href="#a8e33418dbce1ad8dc9e7b8a1ba0dec07">More...</a><br /></td></tr>
+<tr class="separator:a8e33418dbce1ad8dc9e7b8a1ba0dec07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2740c4400c20e92dbf08270d31265708"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d45/classflow_1_1_stats.html#a2740c4400c20e92dbf08270d31265708">has_medianmode</a> () const </td></tr>
+<tr class="memdesc:a2740c4400c20e92dbf08270d31265708"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if the median/mode values have been calculated.  <a href="#a2740c4400c20e92dbf08270d31265708">More...</a><br /></td></tr>
+<tr class="separator:a2740c4400c20e92dbf08270d31265708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61afede746f6749fe55d3b9fb6c350c1"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d45/classflow_1_1_stats.html#a61afede746f6749fe55d3b9fb6c350c1">has_minmax</a> () const </td></tr>
+<tr class="memdesc:a61afede746f6749fe55d3b9fb6c350c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if the min/max values have been calculated.  <a href="#a61afede746f6749fe55d3b9fb6c350c1">More...</a><br /></td></tr>
+<tr class="separator:a61afede746f6749fe55d3b9fb6c350c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c912a1c63a9efaf40ea7b0d65f054f9"><td class="memTemplParams" colspan="2">template&lt;bool B = MinMax, typename  = std::enable_if_t&lt;B&gt;&gt; </td></tr>
 <tr class="memitem:a5c912a1c63a9efaf40ea7b0d65f054f9"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d45/classflow_1_1_stats.html#a5c912a1c63a9efaf40ea7b0d65f054f9">max</a> () const </td></tr>
 <tr class="memdesc:a5c912a1c63a9efaf40ea7b0d65f054f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum value calculated [conditionally compiled].  <a href="#a5c912a1c63a9efaf40ea7b0d65f054f9">More...</a><br /></td></tr>
@@ -134,10 +154,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a27e710e4a368cffa919b8b6ddb724a95"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d45/classflow_1_1_stats.html#a27e710e4a368cffa919b8b6ddb724a95">min</a> () const </td></tr>
 <tr class="memdesc:a27e710e4a368cffa919b8b6ddb724a95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the minimum value calculated [conditionally compiled].  <a href="#a27e710e4a368cffa919b8b6ddb724a95">More...</a><br /></td></tr>
 <tr class="separator:a27e710e4a368cffa919b8b6ddb724a95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68b4d400a39f4b6bb7de17d6ffb0ad27"><td class="memTemplParams" colspan="2">template&lt;bool B = MedianMode, typename  = std::enable_if_t&lt;B&gt;&gt; </td></tr>
+<tr class="memitem:a68b4d400a39f4b6bb7de17d6ffb0ad27"><td class="memTemplItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d45/classflow_1_1_stats.html#a68b4d400a39f4b6bb7de17d6ffb0ad27">mode</a> ()</td></tr>
+<tr class="memdesc:a68b4d400a39f4b6bb7de17d6ffb0ad27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the minimum mode value calculated [conditionally compiled].  <a href="#a68b4d400a39f4b6bb7de17d6ffb0ad27">More...</a><br /></td></tr>
+<tr class="separator:a68b4d400a39f4b6bb7de17d6ffb0ad27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49a91377df9ca2b1f73225b37b43e24a"><td class="memTemplParams" colspan="2">template&lt;bool B = MedianMode, typename  = std::enable_if_t&lt;B&gt;&gt; </td></tr>
 <tr class="memitem:a49a91377df9ca2b1f73225b37b43e24a"><td class="memTemplItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d45/classflow_1_1_stats.html#a49a91377df9ca2b1f73225b37b43e24a">mode</a> () const </td></tr>
 <tr class="memdesc:a49a91377df9ca2b1f73225b37b43e24a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the minimum mode value calculated [conditionally compiled].  <a href="#a49a91377df9ca2b1f73225b37b43e24a">More...</a><br /></td></tr>
 <tr class="separator:a49a91377df9ca2b1f73225b37b43e24a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a286c7557c7b374c8f3fee9cf578056d7"><td class="memTemplParams" colspan="2">template&lt;bool B = MedianMode, typename  = std::enable_if_t&lt;B&gt;&gt; </td></tr>
+<tr class="memitem:a286c7557c7b374c8f3fee9cf578056d7"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d45/classflow_1_1_stats.html#a286c7557c7b374c8f3fee9cf578056d7">modes</a> ()</td></tr>
+<tr class="memdesc:a286c7557c7b374c8f3fee9cf578056d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the mode value(s) calculated [conditionally compiled].  <a href="#a286c7557c7b374c8f3fee9cf578056d7">More...</a><br /></td></tr>
+<tr class="separator:a286c7557c7b374c8f3fee9cf578056d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62a378bfb3dd2493c2d666ac10187f4e"><td class="memTemplParams" colspan="2">template&lt;bool B = MedianMode, typename  = std::enable_if_t&lt;B&gt;&gt; </td></tr>
 <tr class="memitem:a62a378bfb3dd2493c2d666ac10187f4e"><td class="memTemplItemLeft" align="right" valign="top">const std::vector&lt; T &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d45/classflow_1_1_stats.html#a62a378bfb3dd2493c2d666ac10187f4e">modes</a> () const </td></tr>
 <tr class="memdesc:a62a378bfb3dd2493c2d666ac10187f4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the mode value(s) calculated [conditionally compiled].  <a href="#a62a378bfb3dd2493c2d666ac10187f4e">More...</a><br /></td></tr>
@@ -170,9 +198,42 @@ Public Member Functions</h2></td></tr>
 class flow::Stats&lt; T, ResultType, MinMax, MedianMode &gt;</h3>
 
 <p>Class to wrap all the statistics returned by <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a900a16920892b0445f890cad56458c9a" title="Returns a Stats object which contains several statistics of the stream values. ">stats()</a>. </p>
-<p>The count, mean, standard deviation, variance, sum and sum of squares of the stream elements are always calculated. Conditionally calculates additional statistics like median and mode, etc. If those values are not calculated, using the <code>getter</code> methods will result in a compiler error.</p>
+<p>The count, mean, standard deviation, variance, sum and sum of squares of the stream elements are always calculated. Conditionally calculates additional statistics indicated by the template parameters. If those values are not calculated, using the <code>getter</code> methods will result in a compiler error.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a900a16920892b0445f890cad56458c9a" title="Returns a Stats object which contains several statistics of the stream values. ">stats()</a></dd></dl>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a class="anchor" id="acd92826166d53813ff93e85c98743155"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename ResultType , bool MinMax, bool MedianMode&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../dd/d45/classflow_1_1_stats.html">flow::Stats</a>&lt; T, ResultType, MinMax, MedianMode &gt;::<a class="el" href="../../dd/d45/classflow_1_1_stats.html#acd92826166d53813ff93e85c98743155">medianmode</a> =  std::conditional_t&lt;MedianMode, std::true_type, std::false_type&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>std::true_type</code> if <code>MedianMode</code> is <code>true</code>, <code>std::false_type</code> otherwise. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9220f1efb5e159f49c7ff9b5a3f34139"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename ResultType , bool MinMax, bool MedianMode&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../dd/d45/classflow_1_1_stats.html">flow::Stats</a>&lt; T, ResultType, MinMax, MedianMode &gt;::<a class="el" href="../../dd/d45/classflow_1_1_stats.html#a9220f1efb5e159f49c7ff9b5a3f34139">minmax</a> =  std::conditional_t&lt;MinMax, std::true_type, std::false_type&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>std::true_type</code> if <code>MinMax</code> is <code>true</code>, <code>std::false_type</code> otherwise. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="af3dfc687e2655cd13f2c7fca5ba7909c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -288,7 +349,7 @@ template&lt;typename T , typename ResultType , bool MinMax, bool MedianMode&gt; 
 
 </div>
 </div>
-<a class="anchor" id="a55ceefc04501012f893a91e1278ecc04"></a>
+<a class="anchor" id="aee513e2c57b43b67d3fbba2edbaeb1f8"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -300,7 +361,37 @@ template&lt;bool B = MedianMode, typename  = std::enable_if_t&lt;B&gt;&gt; </div
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::map&lt;T, std::size_t&gt; <a class="el" href="../../dd/d45/classflow_1_1_stats.html">flow::Stats</a>&lt; T, ResultType, MinMax, MedianMode &gt;::frequency </td>
+          <td class="memname">std::map&lt;T, std::size_t&gt;&amp; <a class="el" href="../../dd/d45/classflow_1_1_stats.html">flow::Stats</a>&lt; T, ResultType, MinMax, MedianMode &gt;::frequency </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the frequency of which each element occurred in the stream [conditionally compiled]. </p>
+<dl class="section return"><dt>Returns</dt><dd>The mode value of the stream.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8e33418dbce1ad8dc9e7b8a1ba0dec07"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename ResultType , bool MinMax, bool MedianMode&gt; </div>
+<div class="memtemplate">
+template&lt;bool B = MedianMode, typename  = std::enable_if_t&lt;B&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::map&lt;T, std::size_t&gt;&amp; <a class="el" href="../../dd/d45/classflow_1_1_stats.html">flow::Stats</a>&lt; T, ResultType, MinMax, MedianMode &gt;::frequency </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -315,6 +406,62 @@ template&lt;bool B = MedianMode, typename  = std::enable_if_t&lt;B&gt;&gt; </div
 
 <p>Returns the frequency of which each element occurred in the stream [conditionally compiled]. </p>
 <dl class="section return"><dt>Returns</dt><dd>The mode value of the stream.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2740c4400c20e92dbf08270d31265708"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename ResultType , bool MinMax, bool MedianMode&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool <a class="el" href="../../dd/d45/classflow_1_1_stats.html">flow::Stats</a>&lt; T, ResultType, MinMax, MedianMode &gt;::has_medianmode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns <code>true</code> if the median/mode values have been calculated. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>MedianMode</code> template argument.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a61afede746f6749fe55d3b9fb6c350c1"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename ResultType , bool MinMax, bool MedianMode&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool <a class="el" href="../../dd/d45/classflow_1_1_stats.html">flow::Stats</a>&lt; T, ResultType, MinMax, MedianMode &gt;::has_minmax </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns <code>true</code> if the min/max values have been calculated. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>MinMax</code> template argument.</dd></dl>
 
 </div>
 </div>
@@ -436,6 +583,36 @@ template&lt;bool B = MinMax, typename  = std::enable_if_t&lt;B&gt;&gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a68b4d400a39f4b6bb7de17d6ffb0ad27"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename ResultType , bool MinMax, bool MedianMode&gt; </div>
+<div class="memtemplate">
+template&lt;bool B = MedianMode, typename  = std::enable_if_t&lt;B&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T&amp; <a class="el" href="../../dd/d45/classflow_1_1_stats.html">flow::Stats</a>&lt; T, ResultType, MinMax, MedianMode &gt;::mode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the minimum mode value calculated [conditionally compiled]. </p>
+<dl class="section return"><dt>Returns</dt><dd>The minimum mode value of the stream.</dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a49a91377df9ca2b1f73225b37b43e24a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -463,6 +640,36 @@ template&lt;bool B = MedianMode, typename  = std::enable_if_t&lt;B&gt;&gt; </div
 
 <p>Returns the minimum mode value calculated [conditionally compiled]. </p>
 <dl class="section return"><dt>Returns</dt><dd>The minimum mode value of the stream.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a286c7557c7b374c8f3fee9cf578056d7"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename ResultType , bool MinMax, bool MedianMode&gt; </div>
+<div class="memtemplate">
+template&lt;bool B = MedianMode, typename  = std::enable_if_t&lt;B&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;T&gt;&amp; <a class="el" href="../../dd/d45/classflow_1_1_stats.html">flow::Stats</a>&lt; T, ResultType, MinMax, MedianMode &gt;::modes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the mode value(s) calculated [conditionally compiled]. </p>
+<dl class="section return"><dt>Returns</dt><dd>The mode value(s) of the stream.</dd></dl>
 
 </div>
 </div>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Flow: flow/terminal/contains.h File Reference</title>
+<title>Flow: flow/Stats.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -83,34 +83,43 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="../../dir_2420eba184a3676f5a7fb84b29bc58a5.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_e74d20354ec74f7e2733517bf2c570cf.html">terminal</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../dir_2420eba184a3676f5a7fb84b29bc58a5.html">flow</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">contains.h File Reference</div>  </div>
+<div class="title">Stats.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="../../df/d8d/any_8h.html">any.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;map&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../d5/de5/dump_8h.html">terminal/dump.h</a>&quot;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d45/classflow_1_1_stats.html">flow::Stats&lt; T, ResultType, MinMax, MedianMode &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to wrap all the statistics returned by <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a900a16920892b0445f890cad56458c9a" title="Returns a Stats object which contains several statistics of the stream values. ">stats()</a>.  <a href="../../dd/d45/classflow_1_1_stats.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d45/classflow_1_1_stats.html">flow::Stats&lt; T, ResultType, MinMax, MedianMode &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to wrap all the statistics returned by <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a900a16920892b0445f890cad56458c9a" title="Returns a Stats object which contains several statistics of the stream values. ">stats()</a>.  <a href="../../dd/d45/classflow_1_1_stats.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:d9/de2/namespaceflow"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/de2/namespaceflow.html">flow</a></td></tr>
 <tr class="memdesc:d9/de2/namespaceflow"><td class="mdescLeft">&#160;</td><td class="mdescRight">The entire flow library is contained in the flow namespace. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:d1/d6c/namespaceflow_1_1terminal"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html">flow::terminal</a></td></tr>
-<tr class="memdesc:d1/d6c/namespaceflow_1_1terminal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terminal operations, all of which are also aliased in the flow namespace. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a07ed2f12c748c9f2790416391318a597"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a07ed2f12c748c9f2790416391318a597"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#a07ed2f12c748c9f2790416391318a597">flow::terminal::contains</a> (T &amp;&amp;value)</td></tr>
-<tr class="memdesc:a07ed2f12c748c9f2790416391318a597"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if an element in the stream compares equal to <code>value</code> by <code>operator==</code>.  <a href="#a07ed2f12c748c9f2790416391318a597">More...</a><br /></td></tr>
-<tr class="separator:a07ed2f12c748c9f2790416391318a597"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8468f5164d2a75f37d5ae5bd6545db62"><td class="memTemplParams" colspan="2">template&lt;typename T , typename R , bool MinMax, bool MedianMode&gt; </td></tr>
+<tr class="memitem:a8468f5164d2a75f37d5ae5bd6545db62"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/de2/namespaceflow.html#a8468f5164d2a75f37d5ae5bd6545db62">flow::operator&lt;&lt;</a> (std::ostream &amp;out, const Stats&lt; T, R, MinMax, MedianMode &gt; &amp;stats)</td></tr>
+<tr class="memdesc:a8468f5164d2a75f37d5ae5bd6545db62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload <code>operator&lt;&lt;</code> to display <a class="el" href="../../dd/d45/classflow_1_1_stats.html" title="Class to wrap all the statistics returned by stats(). ">Stats</a> objects.  <a href="#a8468f5164d2a75f37d5ae5bd6545db62">More...</a><br /></td></tr>
+<tr class="separator:a8468f5164d2a75f37d5ae5bd6545db62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
