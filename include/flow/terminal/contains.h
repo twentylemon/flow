@@ -28,21 +28,19 @@
 #ifndef FLOW_TERMINAL_CONTAINS_H
 #define FLOW_TERMINAL_CONTAINS_H
 
-#include <functional>
-
 #include "any.h"
 
 namespace flow {
     namespace terminal {
 
 /// <summary>
-/// Returns <c>true</c> if an element in the stream compares equal to <c>val</c> by <c>operator==</c>.
+/// Returns <c>true</c> if an element in the stream compares equal to <c>value</c> by <c>operator==</c>.
 /// </summary>
-/// <param name="val">The value to search for in the stream.</param>
-/// <returns>A terminal operation which returns <c>true</c> if the stream contains <c>val</c>.</returns>
+/// <param name="value">The value to search for in the stream.</param>
+/// <returns>A terminal operation which returns <c>true</c> if the stream contains <c>value</c>.</returns>
 template <typename T>
-auto contains(T&& val) {
-    return any(std::bind(std::equal_to<T>(), std::forward<T>(val), std::placeholders::_1));
+auto contains(T&& value) {
+    return any([value = std::forward<T>(value)](auto&& ele) { return ele == value; });
 }
     }
 }

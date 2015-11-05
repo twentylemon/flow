@@ -48,7 +48,7 @@ namespace flow {
 /// <returns>An infinite stream which cycles <paramref name="container"/>.</returns>
 template <typename Container, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto cycle_move(Container&& container) {
-    return generate([container = std::move(container)]() mutable { return std::make_pair(container.begin(), container.end()); })
+    return generate([container = std::move(container)]() mutable { return std::make_pair(std::begin(container), std::end(container)); })
         | intermediate::flat_map([](auto&& itr) { return from(itr.first, itr.second); });
 }
 
@@ -62,7 +62,7 @@ auto cycle_move(Container&& container) {
 /// <returns>A stream which cycles <paramref name="container"/> <paramref name="n"/> times.</returns>
 template <typename Container, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto cycle_move(Container&& container, std::size_t n) {
-    return generate([container = std::move(container)]() mutable { return std::make_pair(container.begin(), container.end()); }, n)
+    return generate([container = std::move(container)]() mutable { return std::make_pair(std::begin(container), std::end(container)); }, n)
         | intermediate::flat_map([](auto&& itr) { return from(itr.first, itr.second); });
 }
 
@@ -95,7 +95,7 @@ auto cycle(std::initializer_list<T> list, std::size_t n) {
 
 /// <summary>
 /// Creates an infinite stream which cycles <paramref name="container"/> in reverse order.
-/// <para>The container requires bidirectional iterators and the functions <c>rbegin()</c> and <c>rend()</c>.
+/// <para>The container requires bidirectional iterators.
 /// This extends the lifetime of temporary containers that are passed to it. That is, it is
 /// safe to use temporaries or other variables as long as they are moved in.</para>
 /// <para>If the container is empty, this operation will crash via stack overflow. This can be
@@ -105,13 +105,13 @@ auto cycle(std::initializer_list<T> list, std::size_t n) {
 /// <returns>An infinite stream which cycles <paramref name="container"/>.</returns>
 template <typename Container, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto rcycle_move(Container&& container) {
-    return generate([container = std::move(container)]() mutable { return std::make_pair(container.rbegin(), container.rend()); })
+    return generate([container = std::move(container)]() mutable { return std::make_pair(std::rbegin(container), std::rend(container)); })
         | intermediate::flat_map([](auto&& itr) { return from(itr.first, itr.second); });
 }
 
 /// <summary>
 /// Creates a stream which cycles through <paramref name="container"/> <paramref name="n"/> times in reverse order.
-/// <para>The container requires bidirectional iterators and the functions <c>rbegin()</c> and <c>rend()</c>.
+/// <para>The container requires bidirectional iterators.
 /// This extends the lifetime of temporary containers that are passed to it. That is, it is
 /// safe to use temporaries or other variables as long as they are moved in.</para>
 /// </summary>
@@ -120,7 +120,7 @@ auto rcycle_move(Container&& container) {
 /// <returns>A stream which cycles <paramref name="container"/> <paramref name="n"/> times.</returns>
 template <typename Container, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto rcycle_move(Container&& container, std::size_t n) {
-    return generate([container = std::move(container)]() mutable { return std::make_pair(container.rbegin(), container.rend()); }, n)
+    return generate([container = std::move(container)]() mutable { return std::make_pair(std::rbegin(container), std::rend(container)); }, n)
         | intermediate::flat_map([](auto&& itr) { return from(itr.first, itr.second); });
 }
     }

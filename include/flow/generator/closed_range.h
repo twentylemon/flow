@@ -28,8 +28,6 @@
 #ifndef FLOW_GENERATOR_CLOSEDRANGE_H
 #define FLOW_GENERATOR_CLOSEDRANGE_H
 
-#include <functional>
-
 #include "iota.h"
 #include "../intermediate/take_while.h"
 
@@ -50,7 +48,7 @@ namespace flow {
 /// <seealso cref="take_while()"/>
 template <typename T, typename U>
 auto closed_range(T&& lower, U&& upper) {
-    return iota(std::forward<T>(lower)) | intermediate::take_while(std::bind(std::less_equal<T>(), std::placeholders::_1, std::forward<U>(upper)));
+    return iota(std::forward<T>(lower)) | intermediate::take_while([upper = std::forward<U>(upper)](auto&& ele) { return ele <= upper; });
 }
 
 /// <summary>
@@ -70,7 +68,7 @@ auto closed_range(T&& lower, U&& upper) {
 /// <seealso cref="take_while()"/>
 template <typename T, typename U, typename I>
 auto closed_range(T&& lower, U&& upper, I&& increment) {
-    return iota(std::forward<T>(lower), std::forward<I>(increment)) | intermediate::take_while(std::bind(std::less_equal<T>(), std::placeholders::_1, std::forward<U>(upper)));
+    return iota(std::forward<T>(lower), std::forward<I>(increment)) | intermediate::take_while([upper = std::forward<U>(upper)](auto&& ele) { return ele <= upper; });
 }
     }
 }
