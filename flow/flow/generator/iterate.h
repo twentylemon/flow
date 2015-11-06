@@ -37,14 +37,22 @@ namespace flow {
         namespace detail {
 
 /// <summary>
-/// Extracts the first type out of a parameter pack.
+/// Empty base case for logical and of terms.
 /// </summary>
-template <typename Head, typename... Tail>
-struct HeadType
-{
-public:
-    using type = Head;
-};
+template <typename... T>
+struct conjunction : std::true_type { };
+
+/// <summary>
+/// Singleton base case for logical and of terms.
+/// </summary>
+template <typename T>
+struct conjunction<T> : T { };
+
+/// <summary>
+/// Recursive case for logical and of terms.
+/// </summary>
+template <typename T, typename... U>
+struct conjunction<T, U...> : std::conditional_t<T::value, conjunction<U...>, T> { };
         }
 
 /// <summary>
@@ -60,9 +68,9 @@ public:
 /// <param name="...initial">The first values the stream will contain, and initial values to send to the iterating function
 /// to calculate further elements.</param>
 /// <returns>An infinite stream that iterates the function given.</returns>
-template <typename IteratingFunction, typename... Args>
-auto iterate(IteratingFunction function, Args&&... initial) {
-    return Stream<source::IterateFunc<IteratingFunction, std::remove_reference_t<typename detail::HeadType<Args...>::type>, sizeof...(Args)>>(function, std::forward<Args>(initial)...);
+template <typename IteratingFunction, typename T, typename... Args, typename = std::enable_if_t<detail::conjunction<std::is_same<T, Args>...>::value>>
+auto iterate(IteratingFunction function, T&& first, Args&&... initial) {
+    return Stream<source::IterateFunc<IteratingFunction, std::remove_reference_t<T>, sizeof...(Args)+1>>(function, std::forward<T>(first), std::forward<Args>(initial)...);
 }
     }
 }
