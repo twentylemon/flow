@@ -46,16 +46,6 @@ auto from_move(Container&& container) {
 }
 
 /// <summary>
-/// Creates a stream over <paramref name="list"/>.
-/// </summary>
-/// <param name="list">The list to create a stream from.</param>
-/// <returns>A stream over <paramref name="list"/>.</returns>
-template <typename T>
-auto from(std::initializer_list<T> list) {
-    return from_move(std::deque<T>(list));
-}
-
-/// <summary>
 /// Creates a stream over <paramref name="container"/> in reverse order.
 /// <para>The container requires bidirectional iterators and the functions <c>rbegin()</c> and <c>rend()</c>.
 /// This extends the lifetime of temporary containers that are passed to it. That is, it is

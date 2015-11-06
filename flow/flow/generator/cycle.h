@@ -84,6 +84,33 @@ auto cycle(Container& container, std::size_t n) {
 }
 
 /// <summary>
+/// Creates an infinite stream which cycles <paramref name="list"/>.
+/// <para>If the list is empty, this operation will crash via stack overflow. This can be
+/// avoided by using cycle(std::initializer_list&lt;T&gt;, std::size_t), or empty().</para>
+/// <para>To cycle a singleton list, use repeat().</para>
+/// </summary>
+/// <param name="list">The list to cycle through.</param>
+/// <returns>An infinite stream which cycles <paramref name="list"/>.</returns>
+/// <seealso cref="repeat()"/>
+template <typename T>
+auto cycle(std::initializer_list<T> list) {
+    return cycle(std::begin(list), std::end(list));
+}
+
+/// <summary>
+/// Creates a stream which cycles through <paramref name="list"/> <paramref name="n"/> times.
+/// <para>To cycle a singleton list, use repeat().</para>
+/// </summary>
+/// <param name="list">The list to cycle through.</param>
+/// <param name="n">The number of times to repeat <paramref name="list"/>.</param>
+/// <returns>A stream which cycles <paramref name="list"/> <paramref name="n"/> times.</returns>
+/// <seealso cref="repeat()"/>
+template <typename T>
+auto cycle(std::initializer_list<T> list, std::size_t n) {
+    return cycle(std::begin(list), std::end(list), n);
+}
+
+/// <summary>
 /// Creates an infinite stream which cycles <paramref name="container"/> in reverse order.
 /// <para>The container requires bidirectional iterators.
 /// If the container is empty, this operation will crash via stack overflow. This can be

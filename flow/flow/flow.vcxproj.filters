@@ -31,6 +31,9 @@
     <Filter Include="Header Files\core">
       <UniqueIdentifier>{51f99224-d9b8-4df3-8ea4-d0a705f79ce6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\extra">
+      <UniqueIdentifier>{049babb1-c41c-4115-9f14-ab26ad5decf9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="generator\from.h">
@@ -294,6 +297,9 @@
     <ClInclude Include="uncurry.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
+    <ClInclude Include="extra\optional2.h">
+      <Filter>Header Files\extra</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\README.md">
@@ -302,9 +308,7 @@
     <None Include="flow.conf">
       <Filter>Doc Files</Filter>
     </None>
-    <None Include="flow.licenseheader">
-      <Filter>Doc Files</Filter>
-    </None>
+    <None Include="flow.licenseheader" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="examples.txt">

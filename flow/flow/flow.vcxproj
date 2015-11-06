@@ -120,6 +120,7 @@
   <ItemGroup>
     <ClInclude Include="..\flow.h" />
     <ClInclude Include="Compose.h" />
+    <ClInclude Include="extra\optional2.h" />
     <ClInclude Include="generator\closed_range.h" />
     <ClInclude Include="generator\cycle.h" />
     <ClInclude Include="generator\cycle_move.h" />

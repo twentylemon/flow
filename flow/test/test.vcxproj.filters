@@ -25,6 +25,9 @@
     <Filter Include="Header Files\terminal">
       <UniqueIdentifier>{22d1e50d-fda0-414c-8b2c-eefc18805875}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\extra">
+      <UniqueIdentifier>{7d0cd5c9-223a-405d-92e5-2e310795c27d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test.cpp">
@@ -217,6 +220,9 @@
     </ClInclude>
     <ClInclude Include="general.h">
       <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="extra\optional2.h">
+      <Filter>Header Files\extra</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
