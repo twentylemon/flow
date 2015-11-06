@@ -25,8 +25,8 @@
  * \endcond
  */
  
-#ifndef FLOW_OPTIONAL2_H
-#define FLOW_OPTIONAL2_H
+#ifndef FLOW_EXRRA_OPTIONAL_H
+#define FLOW_EXRRA_OPTIONAL_H
 
 #include <type_traits>
 
