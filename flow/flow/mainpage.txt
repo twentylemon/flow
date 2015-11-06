@@ -212,15 +212,15 @@
 
 /// \page readme Readme
 /// \tableofcontents
-/// This page contains everything you'll need to know to start using the flow library.
+/// This page contains everything you'll need to know in order to start using the flow library.
 /// \section compilers Compiler Support
 /// <para>The flow library is known to work for g++4.9 and MSVC 14.0. Support for Clang is being worked toward.</para>
 /// <para>The flow library requires compilation under the C++14 standard. For g++, this requires the `-std=c++14` flag. MSVC 14.0 automatically
 /// compiles under the C++14 standard.</para>
-/// <para>flow performs best on MSVC in most cases. The library also performs well for built-in or smaller types in g++.</para>
+/// <para>Flow performs best on MSVC in most cases. The library also performs well for built-in or smaller types in g++.</para>
 /// \section install Installation
-/// <para>The flow library is header-only, so there's nothing to build. Download a release off of the [GitHub repository](https://github.com/twentylemon/flow)
-/// and place the `include` directory where you want the flow library to live. Then, in your program, the <c>\#include</c> directive will be look similar to
+/// <para>The flow library is header-only, so there's nothing to build. Download a release from the [GitHub repository](https://github.com/twentylemon/flow)
+/// and place the `include` directory where you want the flow library to live. Then, in your program, the <c>\#include</c> directive will be similar to
 /// <c>\#include &lt;flow.h&gt;</c> depending on your preference regarding the include path.</para>
 /// \subsection build Build a Sample Program
 /// <para>The following program computes the sum of squares of the numbers 1 to 10, displaying each square and the sum to `std::cout`.</para>
@@ -260,14 +260,14 @@
 /// <para>Streams allow for <em>pipelining</em> of operations in a simple syntax. Many stream operations create new streams, which
 /// allows multiple operations to be chained to form a pipeline. Other operations will iterate through the stream implicitly to
 /// calculate some result. In the \ref build example, we can see a stream pipeline. This example shows a very simple use case,
-/// calculating the sum of the squares of the numbers 1 to 10. Contrary to vanilla code, the first operation that actually takes
-/// place is sum() requests a value. It asks if the operation before it in the pipeline, peek(), has another element. peek() gets
-/// this request, but it is not a stream source, so it asks the previous thing in the pipeline the same question. map() defers back again,
+/// calculating the sum of the squares of the numbers 1 to 10. Contrary to vanilla code, the first operation that takes
+/// place, sum(), requests a value. It asks if the operation before it in the pipeline, peek(), has another element. peek() gets
+/// this request, but is not a stream source, so it asks the previous thing in the pipeline the same question. map() defers back again,
 /// and finally, closed_range(), the source of the stream, can say "Yes! Have a 1." That 1 is passed up the pipeline to map(), which squares
 /// the 1 into 1, peek() displays the (squared) 1 before forwarding it to sum() who can finally use the value. Current sum is 1, hurray!
-/// This process is then repeated -- sum requests another value; it is piped up to closed_range which gives 2 this time; map makes it 4; peek
-/// displays it; sum tallies it and requests another. Eventually, closed_range will not have any more elements to give so the stream iteration
-/// stops, and the sum is returned.</para>
+/// This process is then repeated -- sum() requests another value; it is piped up to closed_range() which gives 2 this time; map() makes it 4; peek()
+/// displays it; sum() tallies it and requests another. Eventually, closed_range() will not have any more elements to give so the stream iteration
+/// stops and the sum is returned.</para>
 /// <para>Naturally, more complex pipelines can be created. We can slightly modify the above example to calculate the sum of the <em>even</em>
 /// numbers from 1 to 10. The following code will calculate and display that sum.</para>
 /// \code{.cpp}flow::closed_range(1, 10)
@@ -275,10 +275,10 @@
 ///     | flow::map([](int i) { return i * i; })
 ///     | flow::sum().then([](auto& s) { std::cout << "total = " << *s << std::endl; });\endcode
 /// <para>Here, we added filter() to the mix, which only keeps stream elements that return <c>true</c> for the predicate -- even values, in this case.
-/// In this example, the process follows the same flow: sum requests an element from map, map in turn requests from filter, filter requests
-/// from closed_range which gives a value: 1. Here is where it is different: the 1 is passed to filter, but filter does not accept odd values, so
-/// it is rejected and the pipeline stops; a new value is immediately requested. closed_range doesn't mind, it gives the next value: 2 to filter;
-/// filter accepts and passes it to map, map squares it and passes 4 to sum which finally uses the <em>first</em> value. Current sum is 4, hurray!</para>
+/// In this example, the process follows the same flow: sum() requests an element from map(), map() in turn requests from filter(), filter() requests
+/// from closed_range() which gives a value: 1. Here is where it is different: the 1 is passed to filter(), but filter() does not accept odd values, so
+/// it is rejected and the pipeline stops; a new value is immediately requested. closed_range() doesn't mind, it gives the next value: 2 to filter();
+/// filter() accepts and passes it to map(), map() squares it and passes 4 to sum() which finally uses the <em>first</em> value. Current sum is 4, hurray!</para>
 /// <para>You can watch the pipeline work with some print statements. Try the following code for yourself:</para>
 /// \code{.cpp}flow::closed_range(1, 5) // note: 1 to 5
 ///     | flow::filter([](int i) { std::cout << "filter: " << i << std::endl; return i % 2 == 0; })
@@ -313,7 +313,7 @@
 /// \subsubsection intermediate Intermediate Operations
 /// <para>Intermediate operations somehow transform a stream into a new one. Just above, we used filter() to transform the stream created by <c>closed_range(1, 5)</c>
 /// into a stream only containing the even values in the range; the stream was transformed again using map(). Intermediate operations
-/// do not use the stream in any way, they simply change the way the stream is used once it is.</para>
+/// do not use the stream in any way, they simply change the way the stream behaves once it is used.</para>
 /// <para>Intermediate operations are further divided into <em>stateless</em> and <em>stateful</em> operations. Most operations are stateless, such as
 /// filter() and map(). Stateless operations don't care about the state of the stream as a whole and thus only require <c>O(1)</c> space and time.
 /// Stateful operations, such as sort(), need to know about the entire stream. They accomplish this by copying the stream into a <c>std::vector</c>.
