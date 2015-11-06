@@ -87,6 +87,8 @@ For your program, if you do `using namespace flow;` (if you want), you get acces
 If not, you can still just write `flow::map` instead of `flow::intermediate::map`.
 
 ### Documentation at a Glance
+To get started, take some time to look at the [Readme](http://twentylemon.github.io/flow/doxy/df/d5b/readme.html).
+
 The best way to view all available functions, use the [Namespace Members](http://twentylemon.github.io/flow/doxy/namespacemembers_func.html) page. It lists
 every function and the namespace it sits in, indicating whether it is a generator, or an intermediate or terminal operation.
 

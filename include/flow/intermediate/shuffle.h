@@ -41,9 +41,9 @@ namespace flow {
 /// <summary>
 /// Shuffles the stream using <paramref name="rng"/> as the source of randomness.
 /// <para>By default, a <c>std::default_random_engine</c> with the default seed is used.</para>
-/// <para>Shuffling is an eager operation. On application of the <c>shuffle</c> operation,
+/// <para>Shuffling is a <em>stateful</em> operation. On application of the <c>shuffle</c> operation,
 /// the entire stream up to that point is evaluated and stored before continuing with the remainder of the stream.
-/// Thus, the <c>shuffle</c> operation takes <c>O(n)</c> extra space and time, where <c>n</c> is the size of the stream..</para>
+/// Thus, the <c>shuffle</c> operation takes <c>O(n)</c> extra space and time, where <c>n</c> is the size of the stream.</para>
 /// </summary>
 /// <param name="rng">The random number generator engine, from the <c>&lt;random&gt;</c> header.</param>
 /// <returns>An intermediate operation which shuffles the stream.</returns>

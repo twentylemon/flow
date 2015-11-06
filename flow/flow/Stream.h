@@ -87,6 +87,8 @@ public:
 
     Stream(const Stream<Source>&) = delete;
     Stream(Stream<Source>&&) = default;
+    Stream<Source>& operator=(const Stream<Source>&) = delete;
+    Stream<Source>& operator=(Stream<Source>&&) = delete;
 
     /// <summary>
     /// Returns the source of this stream.

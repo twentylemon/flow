@@ -35,14 +35,14 @@ namespace flow {
 
 /// <summary>
 /// Forces the stream to be evaluated entirely.
-/// <para>The stream will not normally be evaluated unless a terminal operation or an eager intermediate
-/// operation is applied. This terminal forces evaluation of the entire stream. For example:</para>
+/// <para>The stream will not normally be evaluated unless a terminal operation is applied.
+/// This terminal forces evaluation of the entire stream. For example:</para>
 /// <code>widgets | zip(iota(1), [](Widget& w, int i) { w.set_id(i); return i; });</code>
 /// <para>The above stream assigns a unique id to each Widget, and the stream contains the ids. However, no terminal
 /// operation is applied, no value is ever needed so none of the stream is ever evaluated. Appending <c> | execute()</c>
 /// will force the stream to be evaluated, assigning the ids but ignoring the stream itself.</para>
 /// </summary>
-/// <returns>A detail::Terminal operation that evaluates the entire stream but ignores the elements.</returns>
+/// <returns>A terminal operation that evaluates the entire stream but ignores the elements.</returns>
 inline auto execute() {
     return detail::make_terminal([](auto&& stream) {
         while (stream.has_next()) {

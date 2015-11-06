@@ -60,6 +60,7 @@
 /// If not, you can still just write <c>flow::map</c> instead of <c>flow::intermediate::map</c>.</para>
 /// 
 /// ### Documentation at a Glance
+/// <para>To get started, take some time to look at the [Readme](df/d5b/readme.html).</para>
 /// <para>The best way to view all available functions, use the [Namespace Members](namespacemembers_func.html) page. It lists
 /// every important function and the namespace it sits in, indicating whether it is a generator, or an intermediate or terminal operation.</para>
 ///
@@ -76,12 +77,12 @@
 /// for complex operations to be written in a clean, easy to understand and maintainable way. This
 /// functionality is provided by the Stream class, coupled with stream operators.
 /// Two types of stream operators exist: intermediate and terminal operations.</para>
-/// <para>Intermediate operations take a stream as input and produce a new stream. Most intermediate
+/// <para>Intermediate operations take a stream as input and produce a new stream. Intermediate
 /// operations are lazily evaluated -- the stream is not evaluated until a value is required -- however
-/// some are eager and require the entire stream to evaluated up front before the operation can be applied.
-/// Eager operations also require an additional <c>O(n)</c> space, where <c>n</c> is the size of the stream,
-/// whereas lazy operations only require <c>O(1)</c> space. In the documentation, all intermediate
-/// operations are lazy unless noted otherwise.</para>
+/// some are <em>stateful</em> and require the entire stream to evaluated up front before the operation can be applied.
+/// Stateful operations also require an additional <c>O(n)</c> space, where <c>n</c> is the size of the stream,
+/// whereas <em>stateless</em> operations only require <c>O(1)</c> space. In the documentation, all intermediate
+/// operations are stateless unless noted otherwise.</para>
 /// <para>Terminal operations take a stream as input and produce a non-stream output. The exact output depends on the
 /// operation, it could be a stream element, a combination of stream elements (such as a sum), or maybe a <c>bool</c>.
 /// As with intermediate operations, terminal operations are lazily evaluated.
@@ -187,7 +188,7 @@
 /// Intermediate operations, all of which are also aliased in the flow namespace.
 /// <para>The functions in the flow::intermediate namespace all produce an intermediate operation. The
 /// intermediate operation does not operate on a stream until the pipe <c>operator|</c> has been applied,
-/// including eager operations. Only after being applied to a stream is the new stream created.</para>
+/// including stateful operations. Only after being applied to a stream is the new stream created.</para>
 ///
 /// \todo group the stream, [1,2,3,4,5] with group<2> -> [(1,2), (3,4)]
 /// \todo moving window into the stream, [1,2,3] with window<2> -> [(1,2), (2,3)]
@@ -209,7 +210,7 @@
 /// namespace. If <c>FLOW_PRINTTUPLE_NO_STD</c> is defined, then <c>operator&lt;&lt;</c> is defined inside of the flow namespace instead.</para>
 /// 
 
-/// \page intro Getting Started
+/// \page readme Readme
 /// \tableofcontents
 /// This page contains everything you'll need to know to start using the flow library.
 /// \section compilers Compiler Support
@@ -221,13 +222,13 @@
 /// <para>The flow library is header-only, so there's nothing to build. Download a release off of the [GitHub repository](https://github.com/twentylemon/flow)
 /// and place the `include` directory where you want the flow library to live. Then, in your program, the <c>\#include</c> directive will be look similar to
 /// <c>\#include &lt;flow.h&gt;</c> depending on your preference regarding the include path.</para>
-/// \subsection example_install Build a Sample Program
+/// \subsection build Build a Sample Program
 /// <para>The following program computes the sum of squares of the numbers 1 to 10, displaying each square and the sum to `std::cout`.</para>
 /// \code{.cpp}#include <flow.h>
 /// 
 /// int main() { 
 ///     flow::closed_range(1, 10)
-///         | flow::map([](int i) { return i*i; })
+///         | flow::map([](int i) { return i * i; })
 ///         | flow::peek([](int i) { std::cout << "value = " << i << std::endl; })
 ///         | flow::sum().then([](auto& s) { std::cout << "total = " << *s << std::endl; });
 ///     return 0;
@@ -248,5 +249,141 @@
 /// \section use Using the Library
 /// <para>This section will go into detail about everything you need to know in order to use the library effectively.</para>
 /// \subsection stream Understanding Streams
+/// <para>What is a stream? You can think of a stream as a single pass sequence of elements which you can manipulate or process in some way.
+/// It's sort of like a container that doesn't own its elements -- stream elements in flow will typically be references to elements in an
+/// actual container, or be generated temporary variables. Streams don't <em>store</em> elements, the elements are instead <em>computed</em>
+/// once they are needed.</para>
+/// <para>Streams are <em>single-pass</em> -- this means they can only be iterated through once. Iterating through a stream will be referred to as
+/// <em>using</em> the stream, and an iterated through stream will be referred to as <em>used</em>. Using a stream that has already been
+/// used will lead to undefined behavior. <span style="font-size:0.8em">[Typically, it produces an empty stream, but this behavior
+/// is not guaranteed.]</span></para>
+/// <para>Streams allow for <em>pipelining</em> of operations in a simple syntax. Many stream operations create new streams, which
+/// allows multiple operations to be chained to form a pipeline. Other operations will iterate through the stream implicitly to
+/// calculate some result. In the \ref build example, we can see a stream pipeline. This example shows a very simple use case,
+/// calculating the sum of the squares of the numbers 1 to 10. Contrary to vanilla code, the first operation that actually takes
+/// place is sum() requests a value. It asks if the operation before it in the pipeline, peek(), has another element. peek() gets
+/// this request, but it is not a stream source, so it asks the previous thing in the pipeline the same question. map() defers back again,
+/// and finally, closed_range(), the source of the stream, can say "Yes! Have a 1." That 1 is passed up the pipeline to map(), which squares
+/// the 1 into 1, peek() displays the (squared) 1 before forwarding it to sum() who can finally use the value. Current sum is 1, hurray!
+/// This process is then repeated -- sum requests another value; it is piped up to closed_range which gives 2 this time; map makes it 4; peek
+/// displays it; sum tallies it and requests another. Eventually, closed_range will not have any more elements to give so the stream iteration
+/// stops, and the sum is returned.</para>
+/// <para>Naturally, more complex pipelines can be created. We can slightly modify the above example to calculate the sum of the <em>even</em>
+/// numbers from 1 to 10. The following code will calculate and display that sum.</para>
+/// \code{.cpp}flow::closed_range(1, 10)
+///     | flow::filter([](int i) { return i % 2 == 0; })
+///     | flow::map([](int i) { return i * i; })
+///     | flow::sum().then([](auto& s) { std::cout << "total = " << *s << std::endl; });\endcode
+/// <para>Here, we added filter() to the mix, which only keeps stream elements that return <c>true</c> for the predicate -- even values, in this case.
+/// In this example, the process follows the same flow: sum requests an element from map, map in turn requests from filter, filter requests
+/// from closed_range which gives a value: 1. Here is where it is different: the 1 is passed to filter, but filter does not accept odd values, so
+/// it is rejected and the pipeline stops; a new value is immediately requested. closed_range doesn't mind, it gives the next value: 2 to filter;
+/// filter accepts and passes it to map, map squares it and passes 4 to sum which finally uses the <em>first</em> value. Current sum is 4, hurray!</para>
+/// <para>You can watch the pipeline work with some print statements. Try the following code for yourself:</para>
+/// \code{.cpp}flow::closed_range(1, 5) // note: 1 to 5
+///     | flow::filter([](int i) { std::cout << "filter: " << i << std::endl; return i % 2 == 0; })
+///     | flow::map([](int i) { std::cout << "map: " << i << std::endl; return i * i; })
+///     | flow::sum().then([](auto& s) { std::cout << "total = " << *s << std::endl; });\endcode
+/// <para>It is the same as above, except both filter() and map() display to `std::cout` when they are doing work. This code will display the following.</para>
+/// \code{.cpp}filter: 1
+/// filter: 2
+/// map: 2
+/// filter: 3
+/// filter: 4
+/// map: 4
+/// filter: 5
+/// total = 20\endcode
+///
+/// \subsection generator Stream Generators
+/// <para>Creating a stream is simple using the factory methods provided in the flow::generator namespace. The most common method is
+/// to create a stream over a container using from(). Since it's so common, the <c>operator|</c> is overloaded for container types
+/// with stream operations, so the following two lines produce the same result.</para>
+/// \code{.cpp}std::vector<int> vec = { ... };
+/// int s1 = flow::from(vec) | flow::sum(0);
+/// int s2 = vec | flow::sum(0);
+/// assert(s1 == s2);\endcode
+/// <para>Other common generators include iota() and range(), which count up from a value, or repeat(), which repeats a value.
+/// These generators actually produce <em>infinite</em> streams, more information about these is available in the \ref infinite section.</para>
+///
+/// \subsection operations Stream Operations
+/// <para>We've seen some examples and understand the flow behind the scenes, but we haven't explained what the stream operations are,
+/// what they are doing, and what <c>operator|</c> is doing precisely.</para>
+/// <para>Stream operations can be broken down into two main types: intermediate and terminal. Intermediate operations transform the stream
+/// somehow (map() or filter()), while terminal operations iterate through the stream and use the values somehow (sum()).</para>
+/// \subsubsection intermediate Intermediate Operations
+/// <para>Intermediate operations somehow transform a stream into a new one. Just above, we used filter() to transform the stream created by <c>closed_range(1, 5)</c>
+/// into a stream only containing the even values in the range; the stream was transformed again using map(). Intermediate operations
+/// do not use the stream in any way, they simply change the way the stream is used once it is.</para>
+/// <para>Intermediate operations are further divided into <em>stateless</em> and <em>stateful</em> operations. Most operations are stateless, such as
+/// filter() and map(). Stateless operations don't care about the state of the stream as a whole and thus only require <c>O(1)</c> space and time.
+/// Stateful operations, such as sort(), need to know about the entire stream. They accomplish this by copying the stream into a <c>std::vector</c>.
+/// These are especially expensive operations and generally should be avoided when performance is a concern. Stateful operations require an additional
+/// <c>O(n)</c> space and at least <c>O(n)</c> time, where <c>n</c> is the size of the stream.</para>
+/// <para>Intermediate operations are all contained in the flow::intermediate namespace.</para>
+/// \subsubsection terminal Terminal Operations
+/// <para>Terminal operations use the streams they are applied to in order to produce a result or a side effect. Above, we used sum()
+/// to add all the elements, and dump() to write them all into a file.</para>
+/// <para>Terminal operations built into the flow library contain several shorthand methods which allow you to directly use the value returned
+/// by the terminal in another function. In the example in \ref build, we used <c>then()</c> to immediate display the sum. There are also methods
+/// to directly access the value inside a \ref flow::optional object, which are returned by several of the terminal operations in the library.
+/// These methods are described below. More information is available on the flow::terminal namespace page, and examples in \ref terminal.cpp.</para>
+/// \code{.cpp}// call "value" the normal return value of *this terminal
+/// .then(F f);         // return `f(value)`
+/// // the following should only be used if `value` is an instance of flow::optional
+/// .value();           // return `*value` without error checking
+/// .value_or(T v);     // return `value.value_or(v)`; `*value` if it exists, `v` otherwise
+/// .if_then(F f, G g = [](){});    // return `f(*value)` if value exists, otherwise return `g()`\endcode
+/// <para>Terminal operations are all contained in the flow::terminal namespace.</para>
+/// \subsubsection pipe The Pipe Operator
+/// <para>All stream operations are <em>lazy</em>, meaning the operation itself does not do any work. The operation only does work once it
+/// is <em>applied</em> to a stream using <c>operator|</c>. In short, <c>operator|</c> is the thing that tells the operations to operate.</para>
+/// <para>The <c>operator|</c> is also overloaded between operations so you can compose your own and create new ones. For example, say
+/// you use the "keeps evens and square" intermediate operation frequently. You can store this operation in a variable or create a function
+/// that returns this operation.</para>
+/// \code{.cpp}auto even_squares = flow::filter([](int i) { return i % 2 == 0; }) | flow::map([](int i) { return i * i; });
+/// auto write_out = flow::peek([](int i) { std::cerr << "writing " << i << " to file" << std::endl; }) | flow::dump(output_file, "\n");
+/// flow::closed_range(1, 10)
+///     | even_squares
+///     | write_out;
+/// \endcode
+/// <para>The type of operation you create is the same type as the last operation you compose. The <c>even_squares</c> operation above is an
+/// intermediate operation because map() is an intermediate operation. The <c>write_out</c> operation is a terminal operation because dump()
+/// is a terminal operation.</para>
+///
+/// \subsection infinite Infinite Streams
+/// <para>Since streams are lazily evaluated, they can represent an infinite series of elements. A simple example of this is the iota() generator,
+/// which counts up from a value. You can use infinite streams in the same manner as you would finite streams, but be aware of when you use
+/// infinite streams, you must somehow stop the stream evaluation.</para>
+/// \code{.cpp}int infinity = flow::iota(1) | flow::last().value(); // this will never stop
+/// std::vector<int> rands = flow::generate(std::rand) | flow::to_vector(); // also bad, but this will happily crash once memory allocation fails
+/// rands = flow::generate(std::rand) | flow::limit(i_want_this_many) | flow::to_vector();  // good! explicitly limit the length
+/// bool has_10 = flow::random_ints(1, 9) | flow::contains(10); // never stops; values between 1 and 9 never contains 10
+/// has_10 = flow::random_ints(1, 10000) | flow::contains(10);  // *could* stop, but who knows when\endcode
+/// <para>Also note that infinite streams are never totally used, so the following would be totally acceptable.</para>
+/// \code{.cpp}auto randoms = flow::random_reals(0.0, 1.0);
+/// std::vector<double> vec = randoms | flow::limit(1000) | flow::to_vector();  // store 1,000 of them
+/// double val = randoms | flow::limit(100000) | flow::sum().value();           // sum 100,000 of them; randoms is not totally used\endcode
 /// 
+/// \subsection iteration Custom Iteration
+/// <para>If none of the provided intermediate or terminal operations do exactly what you need them to do, you can always iterate
+/// through a stream yourself in the same manner as you would any container. Acquire the stream you want, then use the methods
+/// <c>begin()</c> and <c>end()</c> to access the stream iterators, or use the range-based for loop. Remember though, once a stream is
+/// used, it cannot be used again.</para>
+/// \code{.cpp}auto stream = people
+///     | flow::filter([](Person& p) { return p.sex() == Person::Sex::Male; })
+///     | flow::map(&Person::age);
+/// for (int age : stream) {
+///     ...
+/// }
+/// // be careful! stream is used and cannot be used again.
+/// auto ages = people | flow::map(&Person::age);
+/// bool eq = std::equal(ages.begin(), ages.end(), other_thing.begin());    // ages is used!\endcode
+/// <para>The stream iterators also work for infinite streams, technically. The past-the-end iterator will never be reached by incrementing. Ensure
+/// you have some sort of stopping condition for infinite streams, same as you always would.</para>
+/// \code{.cpp}auto counter = flow::iota(0);
+/// bool eq = std::equal(vec.begin(), vec.end(), counter.begin());  // counter is stepped to vec.size() now\endcode
+///
+/// \section feedback Feedback
+/// <para>Let me know of any bugs, performance issues or possible additions to the library by opening an issue on the
+/// [GitHub repository](https://github.com/twentylemon/flow). If you like the project, let me know by staring or forking!</para>
 ///
