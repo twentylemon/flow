@@ -45,8 +45,8 @@ template <typename T>
 struct has_const_iterator
 {
 private:
-    template <typename C> static std::true_type test(typename C::const_iterator*);
-    template <typename C> static std::false_type test(...);
+    template <typename C> constexpr static std::true_type test(typename C::const_iterator*);
+    template <typename C> constexpr static std::false_type test(...);
 public:
     constexpr static bool value = decltype(test<T>(0))::value;
 };
@@ -71,6 +71,16 @@ auto from(Itr begin, Itr end) {
 template <typename Container, typename = std::enable_if_t<detail::has_const_iterator<Container>::value>>
 auto from(Container& container) {
     return from(std::begin(container), std::end(container));
+}
+
+/// <summary>
+/// Creates a stream over <paramref name="list"/>.
+/// </summary>
+/// <param name="list">The list to create a stream from.</param>
+/// <returns>A stream over <paramref name="list"/>.</returns>
+template <typename T>
+auto from(std::initializer_list<T> list) {
+    return from(std::begin(list), std::end(list));
 }
 
 /// <summary>

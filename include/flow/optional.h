@@ -66,16 +66,14 @@ public:
     optional(const optional<T>& rhs) = default;
     optional(optional<T>&& rhs) = default;
 
-    /*
     /// <summary>
     /// Finalizes an instance of the optional class.
     /// </summary>
     ~optional() {
-        if (*this) {
+        if (*this && std::is_trivially_destructible<T>::value) {
             reinterpret_cast<T&>(_storage).~T();
         }
     }
-    */
 
     /// <summary>
     /// Assigns the contained value to be <paramref name="value"/>.
