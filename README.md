@@ -9,6 +9,7 @@ operations like computing the sum, min and max or simply counting the number or 
 in a nice, easy to read and understand syntax. To use, simply `#include <flow.h>` in your C++14 program. With fully
 optimized code, flow offers minimal performance penalties so there's no reason not to love.
 
+ * [Readme](http://twentylemon.github.io/flow/doxy/df/d5b/readme.html)
  * [Documentation](http://twentylemon.github.io/flow/doxy/index.html)
 
 
