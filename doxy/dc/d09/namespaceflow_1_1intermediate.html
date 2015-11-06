@@ -317,7 +317,7 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Intermediate operations, all of which are also aliased in the flow namespace. </p>
-<p>The functions in the <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html" title="Intermediate operations, all of which are also aliased in the flow namespace. ">flow::intermediate</a> namespace all produce an intermediate operation. The intermediate operation does not operate on a stream until the pipe <code>operator|</code> has been applied, including eager operations. Only after being applied to a stream is the new stream created.</p>
+<p>The functions in the <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html" title="Intermediate operations, all of which are also aliased in the flow namespace. ">flow::intermediate</a> namespace all produce an intermediate operation. The intermediate operation does not operate on a stream until the pipe <code>operator|</code> has been applied, including stateful operations. Only after being applied to a stream is the new stream created.</p>
 <dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000004">Todo:</a></b></dt><dd><p class="startdd">group the stream, [1,2,3,4,5] with group&lt;2&gt; -&gt; [(1,2), (3,4)] </p>
 <p>moving window into the stream, [1,2,3] with window&lt;2&gt; -&gt; [(1,2), (2,3)] </p>
 <p>adjacent_diff - from &lt;numeric&gt; </p>
@@ -1114,7 +1114,7 @@ template&lt;typename UnaryPredicate , typename UnaryOperation &gt; </div>
 </div><div class="memdoc">
 
 <p>Reverses the elements in the stream. </p>
-<p>Reversing is an eager operation. On application of the <code>reverse</code> operation, the entire stream up to that point is evaluated and stored before continuing with the remainder of the stream. Thus, the <code>reverse</code> operation takes <code>O(n)</code> extra space and time, where <code>n</code> is the size of the stream. For most applications, it will be beneficial to reverse the stream beforehand by <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad5e12b528b2fa20549b7714efd2a6814" title="Creates a stream over container  in reverse order. ">rfrom()</a> or <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a19f2046f7478ce9c2ce68e4946ade84d" title="Creates an infinite stream which cycles container  in reverse order. ">rcycle()</a>.</p>
+<p>Reversing is an <em>stateful</em> operation. On application of the <code>reverse</code> operation, the entire stream up to that point is evaluated and stored before continuing with the remainder of the stream. Thus, the <code>reverse</code> operation takes <code>O(n)</code> extra space and time, where <code>n</code> is the size of the stream. For most applications, it will be beneficial to reverse the stream beforehand by <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad5e12b528b2fa20549b7714efd2a6814" title="Creates a stream over container  in reverse order. ">rfrom()</a> or <a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a19f2046f7478ce9c2ce68e4946ade84d" title="Creates an infinite stream which cycles container  in reverse order. ">rcycle()</a>.</p>
 <dl class="section return"><dt>Returns</dt><dd>An intermediate operation that reverses the stream.</dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d7/db4/concat_8cpp-example.html#a4">concat.cpp</a>.</dd>
 </dl>
@@ -1806,7 +1806,7 @@ template&lt;typename Engine  = std::default_random_engine&gt; </div>
 
 <p>Shuffles the stream using <em>rng</em>  as the source of randomness. </p>
 <p>By default, a <code>std::default_random_engine</code> with the default seed is used.</p>
-<p>Shuffling is an eager operation. On application of the <code>shuffle</code> operation, the entire stream up to that point is evaluated and stored before continuing with the remainder of the stream. Thus, the <code>shuffle</code> operation takes <code>O(n)</code> extra space and time, where <code>n</code> is the size of the stream..</p>
+<p>Shuffling is a <em>stateful</em> operation. On application of the <code>shuffle</code> operation, the entire stream up to that point is evaluated and stored before continuing with the remainder of the stream. Thus, the <code>shuffle</code> operation takes <code>O(n)</code> extra space and time, where <code>n</code> is the size of the stream.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rng</td><td>The random number generator engine, from the <code>&lt;random&gt;</code> header.</td></tr>
@@ -2049,7 +2049,7 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
 </div><div class="memdoc">
 
 <p>Sorts the stream using the given comparator, <code>operator&lt;</code> by default. </p>
-<p>Sorting is an eager operation. On application of the <code>sort</code> operation, the entire stream up to that point is evaluated and stored, then finally sorted before continuing with the sorted version of the stream. Thus, the <code>sort</code> operation takes <code>O(n)</code> extra space and time to copy the stream, and the additional <code>O(n logn)</code> to sort, where <code>n</code> is the size of the stream. For most applications, it will be beneficial to sort the source of the stream beforehand if possible. For example, the following should be <em>avoided</em>:</p>
+<p>Sorting is an <em>stateful</em> operation. On application of the <code>sort</code> operation, the entire stream up to that point is evaluated and stored, then finally sorted before continuing with the sorted version of the stream. Thus, the <code>sort</code> operation takes <code>O(n)</code> extra space and time to copy the stream, and the additional <code>O(n logn)</code> to sort, where <code>n</code> is the size of the stream. For most applications, it will be beneficial to sort the source of the stream beforehand if possible. For example, the following should be <em>avoided</em>:</p>
 <p><code>int min = my_vector | <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#a0641d6ecc741bd5f346a961e5e8ccf44" title="Sorts the stream using the given comparator, operator< by default. ">sort()</a> | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612" title="Returns the first element from the stream as an optional. ">first()</a>; // just an example</code> </p>
 <p>Instead, sorting the container in place beforehand will be more efficient as no additional copying takes place.</p>
 <p><code>std::sort(my_vector.begin(), my_vector.end());<br />
@@ -2082,7 +2082,7 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
 </div><div class="memdoc">
 
 <p>Sorts the stream preserving relative order of elements using the given comparator, <code>operator&lt;</code> by default. </p>
-<p>Sorting is an eager operation. On application of the <code>stable_sort</code> operation, the entire stream up to that point is evaluated and stored, then finally sorted before continuing with the sorted version of the stream. Thus, the <code>stable_sort</code> operation takes <code>O(n)</code> extra space and time to copy the stream, and the additional <code>O(n logn)</code> to sort, where <code>n</code> is the size of the stream. For most applications, it will be beneficial to sort the source of the stream beforehand if possible. For example, the following should be <em>avoided</em>:</p>
+<p>Sorting is an <em>stateful</em> operation. On application of the <code>stable_sort</code> operation, the entire stream up to that point is evaluated and stored, then finally sorted before continuing with the sorted version of the stream. Thus, the <code>stable_sort</code> operation takes <code>O(n)</code> extra space and time to copy the stream, and the additional <code>O(n logn)</code> to sort, where <code>n</code> is the size of the stream. For most applications, it will be beneficial to sort the source of the stream beforehand if possible. For example, the following should be <em>avoided</em>:</p>
 <p><code>int min = my_vector | <a class="el" href="../../dc/d09/namespaceflow_1_1intermediate.html#ab9a5f0773de4aac232e80ae23495e76e" title="Sorts the stream preserving relative order of elements using the given comparator, operator< by default. ">stable_sort()</a> | <a class="el" href="../../d1/d6c/namespaceflow_1_1terminal.html#ae2088cf5443957cdf935652bccc0b612" title="Returns the first element from the stream as an optional. ">first()</a>; // just an example</code> </p>
 <p>Instead, sorting the container in place beforehand will be more efficient as no additional copying takes place.</p>
 <p><code>std::stable_sort(my_vector.begin(), my_vector.end());<br />
@@ -2201,7 +2201,7 @@ template&lt;typename Compare  = std::less&lt;void&gt;&gt; </div>
 </div><div class="memdoc">
 
 <p>Sorts and extracts only unique elements from the stream. </p>
-<p>By default, <code>operator&lt;</code> is used for comparisons. As with sorting, this operation is eager, the entire stream up to this operation's application is evaluated and stored. Thus, the <code>unique</code> operation takes <code>O(n)</code> extra space and time plus <code>O(n logn)</code> time to sort, where <code>n</code> is the size of the stream.</p>
+<p>By default, <code>operator&lt;</code> is used for comparisons. As with sorting, this operation is <em>stateful</em>, the entire stream up to this operation's application is evaluated and stored. Thus, the <code>unique</code> operation takes <code>O(n)</code> extra space and time plus <code>O(n logn)</code> time to sort, where <code>n</code> is the size of the stream.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">compare</td><td>The compare function, by default <code>std::less&lt;void&gt;</code>.</td></tr>

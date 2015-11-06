@@ -10,6 +10,7 @@ var searchData=
   ['range_2eh',['range.h',['../d1/d12/range_8h.html',1,'']]],
   ['rcycle',['rcycle',['../de/d3f/namespaceflow_1_1generator.html#a19f2046f7478ce9c2ce68e4946ade84d',1,'flow::generator::rcycle(Container &amp;container)'],['../de/d3f/namespaceflow_1_1generator.html#aa8cf0278f995971ffae89f787ebb4e53',1,'flow::generator::rcycle(Container &amp;container, std::size_t n)']]],
   ['rcycle_5fmove',['rcycle_move',['../de/d3f/namespaceflow_1_1generator.html#aa3307eb1fb7521e10723eec340591042',1,'flow::generator::rcycle_move(Container &amp;&amp;container)'],['../de/d3f/namespaceflow_1_1generator.html#ad08ac97ea330f2f2dcb2086860d90e6b',1,'flow::generator::rcycle_move(Container &amp;&amp;container, std::size_t n)']]],
+  ['readme',['Readme',['../df/d5b/readme.html',1,'']]],
   ['reference',['reference',['../d0/d2d/classflow_1_1_stream_1_1iterator.html#a1e6de82a44ebf0998b05832f3004673a',1,'flow::Stream::iterator']]],
   ['repeat',['repeat',['../de/d3f/namespaceflow_1_1generator.html#ac91cc015f53a6efeea386b04b9486572',1,'flow::generator::repeat(T &amp;&amp;value)'],['../de/d3f/namespaceflow_1_1generator.html#a8a58b8df495070ec677c6c28b713bf20',1,'flow::generator::repeat(T &amp;&amp;value, std::size_t n)']]],
   ['repeat_2eh',['repeat.h',['../d3/d71/repeat_8h.html',1,'']]],
