@@ -17,9 +17,8 @@ template <typename T>
 void find_min(std::size_t maxit) {
     std::vector<T> vec(VECTOR_SIZE);
     std::generate(vec.begin(), vec.end(), std::rand);
-    T t;
 
-    std::cout << maxit << " iterations of get min with type = " << typeid(t).name() << std::endl
+    std::cout << maxit << " iterations of get min with type = " << typeid(T()).name() << std::endl
         << "flow:   " << run_timer(vec, maxit, [](auto& v) { return v | flow::min().value(); }) << std::endl
         << "stl:    " << run_timer(vec, maxit, [](auto& v) { return *std::min_element(v.begin(), v.end()); }) << std::endl
         << "range:  " << run_timer(vec, maxit, [](auto& v) { return *boost::min_element(v); }) << std::endl
@@ -33,12 +32,11 @@ template <typename T>
 void random_count(std::size_t maxit) {
     std::vector<T> vec(VECTOR_SIZE);
     std::generate(vec.begin(), vec.end(), std::rand);
-    T t;
     auto m = [](const T& i) { return i*i / 2; };
     auto lt = [](const T& i) { return i < 1000; };
     auto even = [](const T& i) { return i % 2 == 0; };
 
-    std::cout << maxit << " iterations of map(i*i/2) | filter(evens) | count_if(<1000) with type = " << typeid(t).name() << std::endl
+    std::cout << maxit << " iterations of map(i*i/2) | filter(evens) | count_if(<1000) with type = " << typeid(T()).name() << std::endl
         << "flow:   " << run_timer(vec, maxit, [&m, &lt, &even](auto& v) {
         return v | flow::map(m) | flow::filter(even) | flow::count_if(lt);
     }) << std::endl

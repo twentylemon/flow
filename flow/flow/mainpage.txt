@@ -377,7 +377,8 @@
 /// }
 /// // be careful! stream is used and cannot be used again.
 /// auto ages = people | flow::map(&Person::age);
-/// bool eq = std::equal(ages.begin(), ages.end(), other_thing.begin());    // ages is used!\endcode
+/// bool eq = std::equal(ages.begin(), ages.end(), other_thing.begin());
+/// // ages may or may not be used entirely -- you should consider it used\endcode
 /// <para>The stream iterators also work for infinite streams, technically. The past-the-end iterator will never be reached by incrementing. Ensure
 /// you have some sort of stopping condition for infinite streams, same as you always would.</para>
 /// \code{.cpp}auto counter = flow::iota(0);
