@@ -1,4 +1,4 @@
 all:
-	g++ -std=c++14 -I .. -Og test.cpp
+	g++-4.9 -std=c++14 -I .. -Og test.cpp
 test:
-	g++ -std=c++14 -I .. -Og test.cpp
+	g++-4.9 -std=c++14 -I .. -Og test.cpp
