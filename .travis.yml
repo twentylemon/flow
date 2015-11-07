@@ -1,3 +1,16 @@
+
+sudo: false
 language: cpp
-before-script:
-    - cd flow/test/
+compiler: g++
+install:
+- if [ "$CXX" = "g++" ]; then export CXX="g++-4.9" CC="gcc-4.9"; fi
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-4.9
+
+before-script: cd flow/test/
+
+script: make
