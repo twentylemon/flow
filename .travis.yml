@@ -13,3 +13,5 @@ addons:
 
 before-script:
     - cd flow/test/
+
+build: make
