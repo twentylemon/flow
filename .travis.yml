@@ -11,6 +11,4 @@ addons:
     packages:
     - g++-4.9
 
-before-script: cd flow/test/
-
 script: make
