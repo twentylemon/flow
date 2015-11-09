@@ -1,0 +1,545 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{82125DA1-1CD7-45B5-9281-E6AE7C287CB7}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>test_msvc</RootNamespace>
+    <ProjectName>test-msvc</ProjectName>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(SolutionDir);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(SolutionDir);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="closed_range_inc.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="closed_range_op.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="concat_container.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="concat_itr.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="concat_list.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="concat_stream.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="cycle_container.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="cycle_container_n.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="cycle_itr.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="cycle_itr_n.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="cycle_list.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="cycle_list_n.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="cycle_move_container.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="cycle_move_container_n.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="drop_while_bool.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="drop_while_func.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="drop_while_member.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="drop_while_member_const.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="empty_gen.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="filter_bool.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="filter_func.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="filter_member.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="filter_member_const.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="flat_map_t.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="from_container.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="from_itr.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="from_list.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="from_move_container.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="general.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="generate_func.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="generate_func_n.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="iota_inc.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="iota_op.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="iterate_func.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="iterator.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="lazy.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="limit_t.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="map_func.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="map_member.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="map_member_const.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="merge_container_comp.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="merge_container_less.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="merge_itr_comp.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="merge_itr_less.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="merge_list_comp.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="merge_list_less.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="merge_stream_comp.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="merge_stream_less.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="optional_reference.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="optional_value.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="peek_func.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="peek_member.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="peek_member_const.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="rand_bools.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="rand_distrib.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="rand_engine.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="rand_ints.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="rand_reals.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="range_inc.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="range_op.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="rcycle_container.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="rcycle_container_n.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="rcycle_move_container.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="rcycle_move_container_n.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="repeat_n.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="repeat_val.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="replace_if_t.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="replace_map_t.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="replace_val.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="reverse_t.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="rfrom_container.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="rfrom_move_container.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="shuffle_t.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="skip_every_t.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="skip_op.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="skip_step.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="slice_op.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="slice_step.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="sort_comp.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="sort_less.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="stable_sort_comp.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="stable_sort_less.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="take_while_bool.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="take_while_func.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="take_while_member.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="take_while_member_const.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="uncurry.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="unique_comp.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="unique_less.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>$(BOOST_LIB_FOR_ADAPTER);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <UseFullPaths Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</UseFullPaths>
+      <UseFullPaths Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</UseFullPaths>
+      <UseFullPaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</UseFullPaths>
+      <UseFullPaths Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</UseFullPaths>
+    </ClCompile>
+  </ItemDefinitionGroup>
+</Project>

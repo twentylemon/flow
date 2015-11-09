@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\core">
+      <UniqueIdentifier>{7aa74c44-c0f7-49fa-8e76-1a5e41fb5271}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generator">
+      <UniqueIdentifier>{7f9f5e98-8afa-43ba-be1a-8bc4b16e263f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate">
+      <UniqueIdentifier>{a1bfe74f-ab57-4c53-a6a6-fcb014cdca0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\terminal">
+      <UniqueIdentifier>{0d0a7338-56b6-424d-b9e6-704e2759da72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generator\closed_range">
+      <UniqueIdentifier>{aadae692-44ff-4c6c-bffd-0cfa401c79cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generator\cycle">
+      <UniqueIdentifier>{dd1e82f4-d425-4fdb-a209-e33a08bea4c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generator\from">
+      <UniqueIdentifier>{2bdb9a39-ccaf-4823-983c-f4522bd0dd8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generator\generate">
+      <UniqueIdentifier>{6d2ebc36-97a3-4663-b1d1-ee1b61ba68bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generator\iota">
+      <UniqueIdentifier>{207006f5-08fd-4745-b9cd-f23996725e53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generator\random">
+      <UniqueIdentifier>{33983597-4ccc-4941-bb18-078be9af62d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generator\range">
+      <UniqueIdentifier>{94cd4996-2144-4a40-bdce-cb13de6654dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generator\repeat">
+      <UniqueIdentifier>{449487f5-7630-448e-afc7-76a626693604}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\concat">
+      <UniqueIdentifier>{c6766e2c-b235-4f54-b5af-ad506f1f3b11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\drop_while">
+      <UniqueIdentifier>{1b5c7eb6-b991-466f-907b-9642f4788b7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\filter">
+      <UniqueIdentifier>{cc354452-6a8d-45d6-b681-b26cab7f36bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\map">
+      <UniqueIdentifier>{598296e5-8cc7-4907-84ba-6f6f440c4da6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\merge">
+      <UniqueIdentifier>{00aa953c-19bc-49ab-afb2-c1569e695326}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\peek">
+      <UniqueIdentifier>{db4d8217-d558-41af-b1a8-e3ab027299fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\replace">
+      <UniqueIdentifier>{c7ed98c3-2363-4466-90ec-0012a9f372e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\skip">
+      <UniqueIdentifier>{f8b148d2-c311-4f45-a659-e4c393442db2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\slice">
+      <UniqueIdentifier>{c05df950-d593-4f94-8d89-82590b57e416}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\take_while">
+      <UniqueIdentifier>{3d583c72-ef14-46e9-91e7-f0c93b7dcd84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\sort">
+      <UniqueIdentifier>{710df0f0-160a-4fd9-8db6-5c322b315f4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\unique">
+      <UniqueIdentifier>{6be3966a-195a-4614-9c98-009681197597}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="uncurry.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="general.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="optional_value.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="optional_reference.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="lazy.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="iterator.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="empty_gen.cpp">
+      <Filter>Source Files\generator</Filter>
+    </ClCompile>
+    <ClCompile Include="iterate_func.cpp">
+      <Filter>Source Files\generator</Filter>
+    </ClCompile>
+    <ClCompile Include="closed_range_inc.cpp">
+      <Filter>Source Files\generator\closed_range</Filter>
+    </ClCompile>
+    <ClCompile Include="closed_range_op.cpp">
+      <Filter>Source Files\generator\closed_range</Filter>
+    </ClCompile>
+    <ClCompile Include="cycle_container.cpp">
+      <Filter>Source Files\generator\cycle</Filter>
+    </ClCompile>
+    <ClCompile Include="cycle_container_n.cpp">
+      <Filter>Source Files\generator\cycle</Filter>
+    </ClCompile>
+    <ClCompile Include="cycle_itr.cpp">
+      <Filter>Source Files\generator\cycle</Filter>
+    </ClCompile>
+    <ClCompile Include="cycle_itr_n.cpp">
+      <Filter>Source Files\generator\cycle</Filter>
+    </ClCompile>
+    <ClCompile Include="cycle_list.cpp">
+      <Filter>Source Files\generator\cycle</Filter>
+    </ClCompile>
+    <ClCompile Include="cycle_list_n.cpp">
+      <Filter>Source Files\generator\cycle</Filter>
+    </ClCompile>
+    <ClCompile Include="cycle_move_container.cpp">
+      <Filter>Source Files\generator\cycle</Filter>
+    </ClCompile>
+    <ClCompile Include="cycle_move_container_n.cpp">
+      <Filter>Source Files\generator\cycle</Filter>
+    </ClCompile>
+    <ClCompile Include="rcycle_container.cpp">
+      <Filter>Source Files\generator\cycle</Filter>
+    </ClCompile>
+    <ClCompile Include="rcycle_container_n.cpp">
+      <Filter>Source Files\generator\cycle</Filter>
+    </ClCompile>
+    <ClCompile Include="rcycle_move_container.cpp">
+      <Filter>Source Files\generator\cycle</Filter>
+    </ClCompile>
+    <ClCompile Include="rcycle_move_container_n.cpp">
+      <Filter>Source Files\generator\cycle</Filter>
+    </ClCompile>
+    <ClCompile Include="from_container.cpp">
+      <Filter>Source Files\generator\from</Filter>
+    </ClCompile>
+    <ClCompile Include="from_itr.cpp">
+      <Filter>Source Files\generator\from</Filter>
+    </ClCompile>
+    <ClCompile Include="from_list.cpp">
+      <Filter>Source Files\generator\from</Filter>
+    </ClCompile>
+    <ClCompile Include="from_move_container.cpp">
+      <Filter>Source Files\generator\from</Filter>
+    </ClCompile>
+    <ClCompile Include="rfrom_move_container.cpp">
+      <Filter>Source Files\generator\from</Filter>
+    </ClCompile>
+    <ClCompile Include="rfrom_container.cpp">
+      <Filter>Source Files\generator\from</Filter>
+    </ClCompile>
+    <ClCompile Include="generate_func_n.cpp">
+      <Filter>Source Files\generator\generate</Filter>
+    </ClCompile>
+    <ClCompile Include="generate_func.cpp">
+      <Filter>Source Files\generator\generate</Filter>
+    </ClCompile>
+    <ClCompile Include="iota_op.cpp">
+      <Filter>Source Files\generator\iota</Filter>
+    </ClCompile>
+    <ClCompile Include="iota_inc.cpp">
+      <Filter>Source Files\generator\iota</Filter>
+    </ClCompile>
+    <ClCompile Include="rand_bools.cpp">
+      <Filter>Source Files\generator\random</Filter>
+    </ClCompile>
+    <ClCompile Include="rand_distrib.cpp">
+      <Filter>Source Files\generator\random</Filter>
+    </ClCompile>
+    <ClCompile Include="rand_engine.cpp">
+      <Filter>Source Files\generator\random</Filter>
+    </ClCompile>
+    <ClCompile Include="rand_ints.cpp">
+      <Filter>Source Files\generator\random</Filter>
+    </ClCompile>
+    <ClCompile Include="rand_reals.cpp">
+      <Filter>Source Files\generator\random</Filter>
+    </ClCompile>
+    <ClCompile Include="range_op.cpp">
+      <Filter>Source Files\generator\range</Filter>
+    </ClCompile>
+    <ClCompile Include="range_inc.cpp">
+      <Filter>Source Files\generator\range</Filter>
+    </ClCompile>
+    <ClCompile Include="repeat_n.cpp">
+      <Filter>Source Files\generator\repeat</Filter>
+    </ClCompile>
+    <ClCompile Include="repeat_val.cpp">
+      <Filter>Source Files\generator\repeat</Filter>
+    </ClCompile>
+    <ClCompile Include="concat_stream.cpp">
+      <Filter>Source Files\intermediate\concat</Filter>
+    </ClCompile>
+    <ClCompile Include="concat_itr.cpp">
+      <Filter>Source Files\intermediate\concat</Filter>
+    </ClCompile>
+    <ClCompile Include="concat_container.cpp">
+      <Filter>Source Files\intermediate\concat</Filter>
+    </ClCompile>
+    <ClCompile Include="concat_list.cpp">
+      <Filter>Source Files\intermediate\concat</Filter>
+    </ClCompile>
+    <ClCompile Include="drop_while_func.cpp">
+      <Filter>Source Files\intermediate\drop_while</Filter>
+    </ClCompile>
+    <ClCompile Include="drop_while_bool.cpp">
+      <Filter>Source Files\intermediate\drop_while</Filter>
+    </ClCompile>
+    <ClCompile Include="drop_while_member.cpp">
+      <Filter>Source Files\intermediate\drop_while</Filter>
+    </ClCompile>
+    <ClCompile Include="drop_while_member_const.cpp">
+      <Filter>Source Files\intermediate\drop_while</Filter>
+    </ClCompile>
+    <ClCompile Include="filter_func.cpp">
+      <Filter>Source Files\intermediate\filter</Filter>
+    </ClCompile>
+    <ClCompile Include="filter_bool.cpp">
+      <Filter>Source Files\intermediate\filter</Filter>
+    </ClCompile>
+    <ClCompile Include="filter_member.cpp">
+      <Filter>Source Files\intermediate\filter</Filter>
+    </ClCompile>
+    <ClCompile Include="filter_member_const.cpp">
+      <Filter>Source Files\intermediate\filter</Filter>
+    </ClCompile>
+    <ClCompile Include="flat_map_t.cpp">
+      <Filter>Source Files\intermediate</Filter>
+    </ClCompile>
+    <ClCompile Include="limit_t.cpp">
+      <Filter>Source Files\intermediate</Filter>
+    </ClCompile>
+    <ClCompile Include="map_func.cpp">
+      <Filter>Source Files\intermediate\map</Filter>
+    </ClCompile>
+    <ClCompile Include="map_member.cpp">
+      <Filter>Source Files\intermediate\map</Filter>
+    </ClCompile>
+    <ClCompile Include="map_member_const.cpp">
+      <Filter>Source Files\intermediate\map</Filter>
+    </ClCompile>
+    <ClCompile Include="peek_func.cpp">
+      <Filter>Source Files\intermediate\peek</Filter>
+    </ClCompile>
+    <ClCompile Include="peek_member.cpp">
+      <Filter>Source Files\intermediate\peek</Filter>
+    </ClCompile>
+    <ClCompile Include="peek_member_const.cpp">
+      <Filter>Source Files\intermediate\peek</Filter>
+    </ClCompile>
+    <ClCompile Include="replace_map_t.cpp">
+      <Filter>Source Files\intermediate\replace</Filter>
+    </ClCompile>
+    <ClCompile Include="replace_val.cpp">
+      <Filter>Source Files\intermediate\replace</Filter>
+    </ClCompile>
+    <ClCompile Include="replace_if_t.cpp">
+      <Filter>Source Files\intermediate\replace</Filter>
+    </ClCompile>
+    <ClCompile Include="reverse_t.cpp">
+      <Filter>Source Files\intermediate</Filter>
+    </ClCompile>
+    <ClCompile Include="shuffle_t.cpp">
+      <Filter>Source Files\intermediate</Filter>
+    </ClCompile>
+    <ClCompile Include="skip_step.cpp">
+      <Filter>Source Files\intermediate\skip</Filter>
+    </ClCompile>
+    <ClCompile Include="skip_op.cpp">
+      <Filter>Source Files\intermediate\skip</Filter>
+    </ClCompile>
+    <ClCompile Include="skip_every_t.cpp">
+      <Filter>Source Files\intermediate\skip</Filter>
+    </ClCompile>
+    <ClCompile Include="slice_step.cpp">
+      <Filter>Source Files\intermediate\slice</Filter>
+    </ClCompile>
+    <ClCompile Include="slice_op.cpp">
+      <Filter>Source Files\intermediate\slice</Filter>
+    </ClCompile>
+    <ClCompile Include="take_while_func.cpp">
+      <Filter>Source Files\intermediate\take_while</Filter>
+    </ClCompile>
+    <ClCompile Include="take_while_bool.cpp">
+      <Filter>Source Files\intermediate\take_while</Filter>
+    </ClCompile>
+    <ClCompile Include="take_while_member.cpp">
+      <Filter>Source Files\intermediate\take_while</Filter>
+    </ClCompile>
+    <ClCompile Include="take_while_member_const.cpp">
+      <Filter>Source Files\intermediate\take_while</Filter>
+    </ClCompile>
+    <ClCompile Include="sort_less.cpp">
+      <Filter>Source Files\intermediate\sort</Filter>
+    </ClCompile>
+    <ClCompile Include="sort_comp.cpp">
+      <Filter>Source Files\intermediate\sort</Filter>
+    </ClCompile>
+    <ClCompile Include="stable_sort_less.cpp">
+      <Filter>Source Files\intermediate\sort</Filter>
+    </ClCompile>
+    <ClCompile Include="stable_sort_comp.cpp">
+      <Filter>Source Files\intermediate\sort</Filter>
+    </ClCompile>
+    <ClCompile Include="merge_stream_less.cpp">
+      <Filter>Source Files\intermediate\merge</Filter>
+    </ClCompile>
+    <ClCompile Include="merge_stream_comp.cpp">
+      <Filter>Source Files\intermediate\merge</Filter>
+    </ClCompile>
+    <ClCompile Include="unique_less.cpp">
+      <Filter>Source Files\intermediate\unique</Filter>
+    </ClCompile>
+    <ClCompile Include="unique_comp.cpp">
+      <Filter>Source Files\intermediate\unique</Filter>
+    </ClCompile>
+    <ClCompile Include="merge_list_less.cpp">
+      <Filter>Source Files\intermediate\merge</Filter>
+    </ClCompile>
+    <ClCompile Include="merge_list_comp.cpp">
+      <Filter>Source Files\intermediate\merge</Filter>
+    </ClCompile>
+    <ClCompile Include="merge_itr_less.cpp">
+      <Filter>Source Files\intermediate\merge</Filter>
+    </ClCompile>
+    <ClCompile Include="merge_itr_comp.cpp">
+      <Filter>Source Files\intermediate\merge</Filter>
+    </ClCompile>
+    <ClCompile Include="merge_container_less.cpp">
+      <Filter>Source Files\intermediate\merge</Filter>
+    </ClCompile>
+    <ClCompile Include="merge_container_comp.cpp">
+      <Filter>Source Files\intermediate\merge</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

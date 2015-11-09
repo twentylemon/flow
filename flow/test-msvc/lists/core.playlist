@@ -1,0 +1,1 @@
+<Playlist Version="1.0"><Add Test="general" /><Add Test="iterator" /><Add Test="lazy" /><Add Test="optional_value" /><Add Test="optional_reference" /><Add Test="uncurry" /></Playlist>
