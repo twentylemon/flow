@@ -56,18 +56,18 @@ struct conjunction<T, U...> : std::conditional_t<T::value, conjunction<U...>, T>
         }
 
 /// <summary>
-/// Creates an infinite stream where values are created using successive calls to
-/// the <paramref name="function"/>, starting with the values given.
+/// Creates an infinite stream where values are created using successive calls to  the <paramref name="function"/>, starting with the values given.
 /// <para>The next stream element is computed using the previous <c>n</c> stream elements applied to <paramref name="function"/>,
-/// where <c>n</c> is the number of parameters that <paramref name="function"/> takes.</para>
+/// where <c>n</c> is the number of parameters that <paramref name="function/> takes.</para>
 /// <para>For example, <c>iterate(std::plus&lt;int&gt;(), 0, 1)</c> would result in the stream
 /// <c>0, 1, 1, 2, 3, 5, 8...</c> (the Fibonacci numbers). <c>0</c> and <c>1</c> are given, then the rest
 /// are calculated as <c>0+1=1</c>, <c>1+1=2</c>, <c>1+2=3</c>, and <c>f_i = f_{i-2} + f_{i-1}</c> in general.</para>
 /// </summary>
 /// <param name="function">The iterating function.</param>
-/// <param name="...initial">The first values the stream will contain, and initial values to send to the iterating function
+/// <param name="first">The first value the stream will contain, and the initial value to send to <paramref name="function"/>.</param>
+/// <param name="...initial">The first values the stream will contain, and initial values to send to <paramref name="function"/>
 /// to calculate further elements.</param>
-/// <returns>An infinite stream that iterates the function given.</returns>
+/// <returns> An infinite stream that iterates <paramref name="function"/>.</returns>
 template <typename IteratingFunction, typename T, typename... Args, typename = std::enable_if_t<detail::conjunction<std::is_same<T, Args>...>::value>>
 auto iterate(IteratingFunction function, T&& first, Args&&... initial) {
     return Stream<source::IterateFunc<IteratingFunction, std::remove_reference_t<T>, sizeof...(Args)+1>>(function, std::forward<T>(first), std::forward<Args>(initial)...);
