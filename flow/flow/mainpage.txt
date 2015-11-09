@@ -386,5 +386,5 @@
 ///
 /// \section feedback Feedback
 /// <para>Let me know of any bugs, performance issues or possible additions to the library by opening an issue on the
-/// [GitHub repository](https://github.com/twentylemon/flow). If you like the project, let me know by staring or forking!</para>
+/// [GitHub repository](https://github.com/twentylemon/flow). If you like the project, let me know by starring or forking!</para>
 ///
