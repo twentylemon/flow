@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Flow: flow/generator/from.h File Reference</title>
+<title>Flow: flow/extra/optional2.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -83,48 +83,23 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="../../dir_2420eba184a3676f5a7fb84b29bc58a5.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_82b0d2086401c82289635bcacc8786d9.html">generator</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../dir_2420eba184a3676f5a7fb84b29bc58a5.html">flow</a></li><li class="navelem"><a class="el" href="../../dir_e96057dc6dc74b39f3f3487a06bdd3a7.html">extra</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">from.h File Reference</div>  </div>
+<div class="title">optional2.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;iterator&gt;</code><br />
-<code>#include &quot;<a class="el" href="../../d3/d99/_stream_8h.html">../Stream.h</a>&quot;</code><br />
-<code>#include &quot;../source/Iterator.h&quot;</code><br />
+<div class="textblock"><code>#include &lt;type_traits&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:d9/de2/namespaceflow"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/de2/namespaceflow.html">flow</a></td></tr>
 <tr class="memdesc:d9/de2/namespaceflow"><td class="mdescLeft">&#160;</td><td class="mdescRight">The entire flow library is contained in the flow namespace. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:de/d3f/namespaceflow_1_1generator"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html">flow::generator</a></td></tr>
-<tr class="memdesc:de/d3f/namespaceflow_1_1generator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory methods to create stream objects, all of which are also aliased in the flow namespace. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ad70162f218f4b05d3ad1a3dca7f1cd3b"><td class="memTemplParams" colspan="2">template&lt;typename Itr &gt; </td></tr>
-<tr class="memitem:ad70162f218f4b05d3ad1a3dca7f1cd3b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad70162f218f4b05d3ad1a3dca7f1cd3b">flow::generator::from</a> (Itr begin, Itr end)</td></tr>
-<tr class="memdesc:ad70162f218f4b05d3ad1a3dca7f1cd3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a stream from the given iterator range.  <a href="#ad70162f218f4b05d3ad1a3dca7f1cd3b">More...</a><br /></td></tr>
-<tr class="separator:ad70162f218f4b05d3ad1a3dca7f1cd3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaacf2459cc735b5c6731a65cee51f270"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:aaacf2459cc735b5c6731a65cee51f270"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#aaacf2459cc735b5c6731a65cee51f270">flow::generator::from</a> (Container &amp;container)</td></tr>
-<tr class="memdesc:aaacf2459cc735b5c6731a65cee51f270"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a stream over <em>container</em> .  <a href="#aaacf2459cc735b5c6731a65cee51f270">More...</a><br /></td></tr>
-<tr class="separator:aaacf2459cc735b5c6731a65cee51f270"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a874bfa518cc8c716f585a644774b6ddb"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a874bfa518cc8c716f585a644774b6ddb"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a874bfa518cc8c716f585a644774b6ddb">flow::generator::from</a> (std::initializer_list&lt; T &gt; list)</td></tr>
-<tr class="memdesc:a874bfa518cc8c716f585a644774b6ddb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a stream over <em>list</em> .  <a href="#a874bfa518cc8c716f585a644774b6ddb">More...</a><br /></td></tr>
-<tr class="separator:a874bfa518cc8c716f585a644774b6ddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5e12b528b2fa20549b7714efd2a6814"><td class="memTemplParams" colspan="2">template&lt;typename Container , typename  = std::enable_if_t&lt;detail::has_const_iterator&lt;Container&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:ad5e12b528b2fa20549b7714efd2a6814"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#ad5e12b528b2fa20549b7714efd2a6814">flow::generator::rfrom</a> (Container &amp;container)</td></tr>
-<tr class="memdesc:ad5e12b528b2fa20549b7714efd2a6814"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a stream over <em>container</em>  in reverse order.  <a href="#ad5e12b528b2fa20549b7714efd2a6814">More...</a><br /></td></tr>
-<tr class="separator:ad5e12b528b2fa20549b7714efd2a6814"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

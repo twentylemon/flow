@@ -108,10 +108,10 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a6eb74edc2bf991250c0a54d721285fd6"><td class="memTemplParams" colspan="2">template&lt;typename IteratingFunction , typename... Args&gt; </td></tr>
-<tr class="memitem:a6eb74edc2bf991250c0a54d721285fd6"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#a6eb74edc2bf991250c0a54d721285fd6">flow::generator::iterate</a> (IteratingFunction function, Args &amp;&amp;...initial)</td></tr>
-<tr class="memdesc:a6eb74edc2bf991250c0a54d721285fd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an infinite stream where values are created using successive calls to the <em>function</em> , starting with the values given.  <a href="#a6eb74edc2bf991250c0a54d721285fd6">More...</a><br /></td></tr>
-<tr class="separator:a6eb74edc2bf991250c0a54d721285fd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af52f926da29f2886408fa3f340027f67"><td class="memTemplParams" colspan="2">template&lt;typename IteratingFunction , typename T , typename... Args, typename  = std::enable_if_t&lt;detail::conjunction&lt;std::is_same&lt;T, Args&gt;...&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:af52f926da29f2886408fa3f340027f67"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d3f/namespaceflow_1_1generator.html#af52f926da29f2886408fa3f340027f67">flow::generator::iterate</a> (IteratingFunction function, T &amp;&amp;first, Args &amp;&amp;...initial)</td></tr>
+<tr class="memdesc:af52f926da29f2886408fa3f340027f67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an infinite stream where values are created using successive calls to the <em>function</em> , starting with the values given.  <a href="#af52f926da29f2886408fa3f340027f67">More...</a><br /></td></tr>
+<tr class="separator:af52f926da29f2886408fa3f340027f67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
