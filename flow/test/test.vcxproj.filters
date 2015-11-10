@@ -446,9 +446,6 @@
     <ClCompile Include="unique_less.cpp">
       <Filter>Source Files\intermediate\unique</Filter>
     </ClCompile>
-    <ClCompile Include="uncurry.cpp">
-      <Filter>Source Files\core</Filter>
-    </ClCompile>
     <ClCompile Include="set_sym_diff_itr_less.cpp">
       <Filter>Source Files\intermediate\set_sym_diff</Filter>
     </ClCompile>
@@ -748,6 +745,9 @@
     </ClCompile>
     <ClCompile Include="rfrom_move_container.cpp">
       <Filter>Source Files\generator\from</Filter>
+    </ClCompile>
+    <ClCompile Include="uncurry_t.cpp">
+      <Filter>Source Files\core</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

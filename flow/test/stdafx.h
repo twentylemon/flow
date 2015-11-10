@@ -20,7 +20,7 @@
     namespace std { \
         template <typename T> \
         std::ostream& operator<<(std::ostream& out, const cls<T>& container) { \
-            return container | dump(); \
+            return container | flow::dump(); \
         } \
     }
 
@@ -28,7 +28,7 @@
     namespace std { \
         template <typename T, typename C> \
         std::ostream& operator<<(std::ostream& out, const cls<T,C>& container) { \
-            return container | dump(); \
+            return container | flow::dump(); \
         } \
     }
 
@@ -36,7 +36,7 @@
     namespace std { \
         template <typename T, typename C, typename P> \
         std::ostream& operator<<(std::ostream& out, const cls<T,C,P>& container) { \
-            return container | dump(); \
+            return container | flow::dump(); \
         } \
     }
 
@@ -44,7 +44,7 @@
     namespace std { \
         template <typename T, typename C, typename P, typename A> \
         std::ostream& operator<<(std::ostream& out, const cls<T,C,P,A>& container) { \
-            return container | dump(); \
+            return container | flow::dump(); \
         } \
     }
 

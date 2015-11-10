@@ -603,7 +603,7 @@
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="uncurry.cpp" />
+    <ClCompile Include="uncurry_t.cpp" />
     <ClCompile Include="unique_comp.cpp" />
     <ClCompile Include="unique_less.cpp" />
     <ClCompile Include="zip_container_default.cpp">
