@@ -115,6 +115,69 @@
     <Filter Include="Source Files\intermediate\set_union">
       <UniqueIdentifier>{17b5f595-e422-408a-804b-aab6fff22d70}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\intermediate\zip">
+      <UniqueIdentifier>{713c7d58-e590-4354-b5f5-2c39f63c7a00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\terminal\all">
+      <UniqueIdentifier>{80dc3721-444e-47a5-a1e3-772d0c3d4f96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\terminal\sum">
+      <UniqueIdentifier>{77c5ea83-d917-4270-8e20-255258db47a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\terminal\any">
+      <UniqueIdentifier>{5512009f-1bc0-42da-8eb3-0031142220d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\terminal\contains">
+      <UniqueIdentifier>{62a9f4c7-301e-43f8-ba41-79bb4b51cc34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\terminal\copy">
+      <UniqueIdentifier>{8f330adb-6548-4419-a6e8-7e440c2eae89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\terminal\count">
+      <UniqueIdentifier>{a9336fc9-3022-4c16-9a3d-56ad4999aef7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\terminal\dump">
+      <UniqueIdentifier>{536bc4fa-aa25-4a3d-bf03-ad920b69f17b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\terminal\each">
+      <UniqueIdentifier>{470cd5ed-74a2-4456-b5f4-a913e212ae7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\terminal\execute">
+      <UniqueIdentifier>{fc25e6e6-f0b7-4220-af90-e5006efaa215}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\terminal\first">
+      <UniqueIdentifier>{80e8e3ab-63eb-482e-9799-f2392a7ab713}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\terminal\fold">
+      <UniqueIdentifier>{dbe76944-ba93-402d-9f66-fa3c4dddf124}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\terminal\inner_product">
+      <UniqueIdentifier>{fef8f0f7-4757-49a6-91e6-0c6608c9581b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\terminal\last">
+      <UniqueIdentifier>{5e226ddd-ec4e-4c15-8f36-0a7cc1a8970b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\terminal\minmax">
+      <UniqueIdentifier>{b5f8e318-c9a9-4472-807f-6cc1589182fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\terminal\none">
+      <UniqueIdentifier>{1db32ed7-8c48-4e3d-a34b-8faedf5a8c00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\terminal\nth">
+      <UniqueIdentifier>{4e60370c-7092-4f07-bf0c-2cf25533c972}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\terminal\product">
+      <UniqueIdentifier>{f20ccc23-b87e-4e17-bb06-44a4418842d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\terminal\sample">
+      <UniqueIdentifier>{21a85efe-e3f3-49da-aa12-5960cb6c010d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\terminal\stats">
+      <UniqueIdentifier>{65ce0a24-4344-47ad-983d-bfb1099d866a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\terminal\to">
+      <UniqueIdentifier>{d39461ba-ddd3-42a2-bd3f-3365dbcab3b1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -469,6 +532,222 @@
     </ClCompile>
     <ClCompile Include="empty_t.cpp">
       <Filter>Source Files\generator\empty</Filter>
+    </ClCompile>
+    <ClCompile Include="set_union_container_less.cpp">
+      <Filter>Source Files\intermediate\set_union</Filter>
+    </ClCompile>
+    <ClCompile Include="set_union_container_comp.cpp">
+      <Filter>Source Files\intermediate\set_union</Filter>
+    </ClCompile>
+    <ClCompile Include="set_union_list_less.cpp">
+      <Filter>Source Files\intermediate\set_union</Filter>
+    </ClCompile>
+    <ClCompile Include="set_union_list_comp.cpp">
+      <Filter>Source Files\intermediate\set_union</Filter>
+    </ClCompile>
+    <ClCompile Include="set_union_itr_comp.cpp">
+      <Filter>Source Files\intermediate\set_union</Filter>
+    </ClCompile>
+    <ClCompile Include="set_union_itr_less.cpp">
+      <Filter>Source Files\intermediate\set_union</Filter>
+    </ClCompile>
+    <ClCompile Include="zip_stream_func.cpp">
+      <Filter>Source Files\intermediate\zip</Filter>
+    </ClCompile>
+    <ClCompile Include="zip_stream_default.cpp">
+      <Filter>Source Files\intermediate\zip</Filter>
+    </ClCompile>
+    <ClCompile Include="zip_container_default.cpp">
+      <Filter>Source Files\intermediate\zip</Filter>
+    </ClCompile>
+    <ClCompile Include="zip_container_func.cpp">
+      <Filter>Source Files\intermediate\zip</Filter>
+    </ClCompile>
+    <ClCompile Include="zip_itr_default.cpp">
+      <Filter>Source Files\intermediate\zip</Filter>
+    </ClCompile>
+    <ClCompile Include="zip_itr_func.cpp">
+      <Filter>Source Files\intermediate\zip</Filter>
+    </ClCompile>
+    <ClCompile Include="zip_list_default.cpp">
+      <Filter>Source Files\intermediate\zip</Filter>
+    </ClCompile>
+    <ClCompile Include="zip_list_func.cpp">
+      <Filter>Source Files\intermediate\zip</Filter>
+    </ClCompile>
+    <ClCompile Include="all_func.cpp">
+      <Filter>Source Files\terminal\all</Filter>
+    </ClCompile>
+    <ClCompile Include="all_bool.cpp">
+      <Filter>Source Files\terminal\all</Filter>
+    </ClCompile>
+    <ClCompile Include="all_member.cpp">
+      <Filter>Source Files\terminal\all</Filter>
+    </ClCompile>
+    <ClCompile Include="all_member_const.cpp">
+      <Filter>Source Files\terminal\all</Filter>
+    </ClCompile>
+    <ClCompile Include="any_func.cpp">
+      <Filter>Source Files\terminal\any</Filter>
+    </ClCompile>
+    <ClCompile Include="any_bool.cpp">
+      <Filter>Source Files\terminal\any</Filter>
+    </ClCompile>
+    <ClCompile Include="any_member.cpp">
+      <Filter>Source Files\terminal\any</Filter>
+    </ClCompile>
+    <ClCompile Include="any_member_const.cpp">
+      <Filter>Source Files\terminal\any</Filter>
+    </ClCompile>
+    <ClCompile Include="contains_t.cpp">
+      <Filter>Source Files\terminal\contains</Filter>
+    </ClCompile>
+    <ClCompile Include="copy_t.cpp">
+      <Filter>Source Files\terminal\copy</Filter>
+    </ClCompile>
+    <ClCompile Include="count_t.cpp">
+      <Filter>Source Files\terminal\count</Filter>
+    </ClCompile>
+    <ClCompile Include="count_if_t.cpp">
+      <Filter>Source Files\terminal\count</Filter>
+    </ClCompile>
+    <ClCompile Include="count_val.cpp">
+      <Filter>Source Files\terminal\count</Filter>
+    </ClCompile>
+    <ClCompile Include="dump_t.cpp">
+      <Filter>Source Files\terminal\dump</Filter>
+    </ClCompile>
+    <ClCompile Include="each_func.cpp">
+      <Filter>Source Files\terminal\each</Filter>
+    </ClCompile>
+    <ClCompile Include="each_member.cpp">
+      <Filter>Source Files\terminal\each</Filter>
+    </ClCompile>
+    <ClCompile Include="each_member_const.cpp">
+      <Filter>Source Files\terminal\each</Filter>
+    </ClCompile>
+    <ClCompile Include="execute_t.cpp">
+      <Filter>Source Files\terminal\execute</Filter>
+    </ClCompile>
+    <ClCompile Include="first_t.cpp">
+      <Filter>Source Files\terminal\first</Filter>
+    </ClCompile>
+    <ClCompile Include="fold_init.cpp">
+      <Filter>Source Files\terminal\fold</Filter>
+    </ClCompile>
+    <ClCompile Include="fold_opt.cpp">
+      <Filter>Source Files\terminal\fold</Filter>
+    </ClCompile>
+    <ClCompile Include="fold_id_init.cpp">
+      <Filter>Source Files\terminal\fold</Filter>
+    </ClCompile>
+    <ClCompile Include="fold_id_opt.cpp">
+      <Filter>Source Files\terminal\fold</Filter>
+    </ClCompile>
+    <ClCompile Include="last_t.cpp">
+      <Filter>Source Files\terminal\last</Filter>
+    </ClCompile>
+    <ClCompile Include="max_less.cpp">
+      <Filter>Source Files\terminal\minmax</Filter>
+    </ClCompile>
+    <ClCompile Include="max_comp.cpp">
+      <Filter>Source Files\terminal\minmax</Filter>
+    </ClCompile>
+    <ClCompile Include="min_less.cpp">
+      <Filter>Source Files\terminal\minmax</Filter>
+    </ClCompile>
+    <ClCompile Include="min_comp.cpp">
+      <Filter>Source Files\terminal\minmax</Filter>
+    </ClCompile>
+    <ClCompile Include="minmax_less.cpp">
+      <Filter>Source Files\terminal\minmax</Filter>
+    </ClCompile>
+    <ClCompile Include="minmax_comp.cpp">
+      <Filter>Source Files\terminal\minmax</Filter>
+    </ClCompile>
+    <ClCompile Include="none_func.cpp">
+      <Filter>Source Files\terminal\none</Filter>
+    </ClCompile>
+    <ClCompile Include="none_bool.cpp">
+      <Filter>Source Files\terminal\none</Filter>
+    </ClCompile>
+    <ClCompile Include="none_member.cpp">
+      <Filter>Source Files\terminal\none</Filter>
+    </ClCompile>
+    <ClCompile Include="none_member_const.cpp">
+      <Filter>Source Files\terminal\none</Filter>
+    </ClCompile>
+    <ClCompile Include="nth_t.cpp">
+      <Filter>Source Files\terminal\nth</Filter>
+    </ClCompile>
+    <ClCompile Include="product_init.cpp">
+      <Filter>Source Files\terminal\product</Filter>
+    </ClCompile>
+    <ClCompile Include="product_opt.cpp">
+      <Filter>Source Files\terminal\product</Filter>
+    </ClCompile>
+    <ClCompile Include="reservoir_t.cpp">
+      <Filter>Source Files\terminal\sample</Filter>
+    </ClCompile>
+    <ClCompile Include="sample_heap_t.cpp">
+      <Filter>Source Files\terminal\sample</Filter>
+    </ClCompile>
+    <ClCompile Include="sample_shuffle_t.cpp">
+      <Filter>Source Files\terminal\sample</Filter>
+    </ClCompile>
+    <ClCompile Include="sample_t.cpp">
+      <Filter>Source Files\terminal\sample</Filter>
+    </ClCompile>
+    <ClCompile Include="stats_t.cpp">
+      <Filter>Source Files\terminal\stats</Filter>
+    </ClCompile>
+    <ClCompile Include="sum_init.cpp">
+      <Filter>Source Files\terminal\sum</Filter>
+    </ClCompile>
+    <ClCompile Include="sum_opt.cpp">
+      <Filter>Source Files\terminal\sum</Filter>
+    </ClCompile>
+    <ClCompile Include="to_deque_t.cpp">
+      <Filter>Source Files\terminal\to</Filter>
+    </ClCompile>
+    <ClCompile Include="to_forward_list_t.cpp">
+      <Filter>Source Files\terminal\to</Filter>
+    </ClCompile>
+    <ClCompile Include="to_list_t.cpp">
+      <Filter>Source Files\terminal\to</Filter>
+    </ClCompile>
+    <ClCompile Include="to_multiset_t.cpp">
+      <Filter>Source Files\terminal\to</Filter>
+    </ClCompile>
+    <ClCompile Include="to_set_t.cpp">
+      <Filter>Source Files\terminal\to</Filter>
+    </ClCompile>
+    <ClCompile Include="to_unordered_multiset_t.cpp">
+      <Filter>Source Files\terminal\to</Filter>
+    </ClCompile>
+    <ClCompile Include="to_unordered_set_t.cpp">
+      <Filter>Source Files\terminal\to</Filter>
+    </ClCompile>
+    <ClCompile Include="to_vector_t.cpp">
+      <Filter>Source Files\terminal\to</Filter>
+    </ClCompile>
+    <ClCompile Include="to_map_t.cpp">
+      <Filter>Source Files\terminal\to</Filter>
+    </ClCompile>
+    <ClCompile Include="to_unordered_map_t.cpp">
+      <Filter>Source Files\terminal\to</Filter>
+    </ClCompile>
+    <ClCompile Include="to_group_t.cpp">
+      <Filter>Source Files\terminal\to</Filter>
+    </ClCompile>
+    <ClCompile Include="inner_product_t.cpp">
+      <Filter>Source Files\terminal\inner_product</Filter>
+    </ClCompile>
+    <ClCompile Include="rfrom_container.cpp">
+      <Filter>Source Files\generator\from</Filter>
+    </ClCompile>
+    <ClCompile Include="rfrom_move_container.cpp">
+      <Filter>Source Files\generator\from</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

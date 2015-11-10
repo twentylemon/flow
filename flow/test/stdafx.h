@@ -13,6 +13,7 @@
 #include <stdio.h>
 
 // TODO: reference additional headers your program requires here
+#include <sstream>
 #include <flow.h>
 
 #define DO_OP1(cls) \
@@ -115,8 +116,6 @@ inline std::ostream& operator<<(std::ostream& out, const Widget& widget) {
 inline bool square_less_widget(const Widget& lhs, const Widget& rhs) {
     return std::pow(lhs._value, 2) < std::pow(rhs._value, 2);
 }
-
-std::initializer_list<int> init_list = { 1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6, -1, -2, -3, -4, -5, -6 };
 
 //Adding required boost header
 #include <boost/test/unit_test.hpp>

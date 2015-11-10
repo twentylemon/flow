@@ -127,6 +127,12 @@
 #include "set_sym_diff_stream_comp.cpp"
 #include "set_sym_diff_stream_less.cpp"
 
+#include "set_union_container_comp.cpp"
+#include "set_union_container_less.cpp"
+#include "set_union_itr_comp.cpp"
+#include "set_union_itr_less.cpp"
+#include "set_union_list_comp.cpp"
+#include "set_union_list_less.cpp"
 #include "set_union_stream_comp.cpp"
 #include "set_union_stream_less.cpp"
 
@@ -152,4 +158,88 @@
 #include "unique_comp.cpp"
 #include "unique_less.cpp"
 
+#include "zip_container_default.cpp"
+#include "zip_container_func.cpp"
+#include "zip_itr_default.cpp"
+#include "zip_itr_func.cpp"
+#include "zip_list_default.cpp"
+#include "zip_list_func.cpp"
+#include "zip_stream_default.cpp"
+#include "zip_stream_func.cpp"
+
 // terminal
+#include "all_bool.cpp"
+#include "all_func.cpp"
+#include "all_member.cpp"
+#include "all_member_const.cpp"
+
+#include "any_bool.cpp"
+#include "any_func.cpp"
+#include "any_member.cpp"
+#include "any_member_const.cpp"
+
+#include "contains_t.cpp"
+
+#include "copy_t.cpp"
+
+#include "count_if_t.cpp"
+#include "count_t.cpp"
+#include "count_val.cpp"
+
+#include "dump_t.cpp"
+
+#include "each_func.cpp"
+#include "each_member.cpp"
+#include "each_member_const.cpp"
+
+#include "execute_t.cpp"
+
+#include "first_t.cpp"
+
+#include "fold_id_init.cpp"
+#include "fold_id_opt.cpp"
+#include "fold_init.cpp"
+#include "fold_opt.cpp"
+
+#include "inner_product_t.cpp"
+
+#include "last_t.cpp"
+
+#include "max_comp.cpp"
+#include "max_less.cpp"
+#include "min_comp.cpp"
+#include "min_less.cpp"
+#include "minmax_comp.cpp"
+#include "minmax_less.cpp"
+
+#include "none_bool.cpp"
+#include "none_func.cpp"
+#include "none_member.cpp"
+#include "none_member_const.cpp"
+
+#include "nth_t.cpp"
+
+#include "product_init.cpp"
+#include "product_opt.cpp"
+
+#include "reservoir_t.cpp"
+#include "sample_heap_t.cpp"
+#include "sample_shuffle_t.cpp"
+#include "sample_t.cpp"
+
+#include "stats_t.cpp"
+
+#include "sum_init.cpp"
+#include "sum_opt.cpp"
+
+#include "to_deque_t.cpp"
+#include "to_forward_list_t.cpp"
+#include "to_group_t.cpp"
+#include "to_list_t.cpp"
+#include "to_map_t.cpp"
+#include "to_multiset_t.cpp"
+#include "to_set_t.cpp"
+#include "to_unordered_map_t.cpp"
+#include "to_unordered_multiset_t.cpp"
+#include "to_unordered_set_t.cpp"
+#include "to_vector_t.cpp"
