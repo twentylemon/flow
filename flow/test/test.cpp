@@ -1,7 +1,6 @@
 
-#include "stdafx.h"
-
 // intentionally include cpp files -- boost.test takes a million years to compile
+#include "stdafx.cpp"
 
 // core
 #include "general.cpp"
@@ -9,7 +8,7 @@
 #include "lazy.cpp"
 #include "optional_reference.cpp"
 #include "optional_value.cpp"
-#include "uncurry.cpp"
+#include "uncurry_t.cpp"
 
 // generator
 #include "closed_range_inc.cpp"

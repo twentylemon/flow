@@ -118,6 +118,9 @@ inline bool square_less_widget(const Widget& lhs, const Widget& rhs) {
 }
 
 //Adding required boost header
+#ifdef _WIN32
 #include <boost/test/unit_test.hpp>
-
+#else
+#include <boost/test/included/unit_test.hpp>
+#endif
 #endif
