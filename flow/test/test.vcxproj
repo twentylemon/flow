@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|Win32">
-      <Configuration>Release</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|x64">
       <Configuration>Debug</Configuration>
       <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|x64">
       <Configuration>Release</Configuration>
@@ -19,8 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{B983C635-B836-4A67-B3AE-A9949BEC664C}</ProjectGuid>
+    <ProjectGuid>{4D9CF1DE-CAD8-4924-8B09-8F651FA18503}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
     <RootNamespace>test</RootNamespace>
+    <ProjectName>test</ProjectName>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -28,277 +30,354 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
-  <ImportGroup Label="Shared">
-  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(SolutionDir);$(IncludePath)</IncludePath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
     <IncludePath>$(SolutionDir);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
     <IncludePath>$(SolutionDir);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(SolutionDir);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
-    <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
-    <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <SubSystem>Console</SubSystem>
     </Link>
-    <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <SubSystem>Console</SubSystem>
     </Link>
-    <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="extra\optional2.h" />
-    <ClInclude Include="general.h" />
-    <ClInclude Include="generator\closed_range.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="generator\cycle.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="generator\cycle_move.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="generator\empty.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="generator\from.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="generator\from_move.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="generator\generate.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="generator\iota.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="generator\iterate.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="generator\random.h" />
-    <ClInclude Include="generator\range.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="generator\repeat.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="intermediate\concat.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="intermediate\drop_while.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="intermediate\filter.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="intermediate\flat_map.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="intermediate\limit.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="intermediate\map.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="intermediate\merge.h" />
-    <ClInclude Include="intermediate\peek.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="intermediate\replace.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="intermediate\reverse.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="intermediate\set_diff.h" />
-    <ClInclude Include="intermediate\set_intersect.h" />
-    <ClInclude Include="intermediate\set_sym_diff.h" />
-    <ClInclude Include="intermediate\set_union.h" />
-    <ClInclude Include="intermediate\shuffle.h" />
-    <ClInclude Include="intermediate\skip.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="intermediate\slice.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="intermediate\sort.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="intermediate\take_while.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="intermediate\unique.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="intermediate\zip.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="iterator.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="lazy.h" />
-    <ClInclude Include="optional.h" />
-    <ClInclude Include="terminal\all.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="terminal\any.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="terminal\contains.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="terminal\copy.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="terminal\count.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="terminal\dump.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="terminal\each.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="terminal\execute.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="terminal\first.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="terminal\fold.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="terminal\inner_product.h" />
-    <ClInclude Include="terminal\last.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="terminal\max.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="terminal\min.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="terminal\minmax.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="terminal\none.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="terminal\nth.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="terminal\product.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="terminal\reservoir.h" />
-    <ClInclude Include="terminal\sample.h" />
-    <ClInclude Include="terminal\stats.h" />
-    <ClInclude Include="terminal\sum.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="terminal\to.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClCompile Include="test.cpp" />
-    <ClInclude Include="uncurry.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="test.h" />
+    <ClCompile Include="closed_range_inc.cpp" />
+    <ClCompile Include="closed_range_op.cpp" />
+    <ClCompile Include="concat_container.cpp" />
+    <ClCompile Include="concat_itr.cpp" />
+    <ClCompile Include="concat_list.cpp" />
+    <ClCompile Include="concat_stream.cpp" />
+    <ClCompile Include="cycle_container.cpp" />
+    <ClCompile Include="cycle_container_n.cpp" />
+    <ClCompile Include="cycle_itr.cpp" />
+    <ClCompile Include="cycle_itr_n.cpp" />
+    <ClCompile Include="cycle_list.cpp" />
+    <ClCompile Include="cycle_list_n.cpp" />
+    <ClCompile Include="cycle_move_container.cpp" />
+    <ClCompile Include="cycle_move_container_n.cpp" />
+    <ClCompile Include="drop_while_bool.cpp" />
+    <ClCompile Include="drop_while_func.cpp" />
+    <ClCompile Include="drop_while_member.cpp" />
+    <ClCompile Include="drop_while_member_const.cpp" />
+    <ClCompile Include="empty_t.cpp" />
+    <ClCompile Include="filter_bool.cpp" />
+    <ClCompile Include="filter_func.cpp" />
+    <ClCompile Include="filter_member.cpp" />
+    <ClCompile Include="filter_member_const.cpp" />
+    <ClCompile Include="flat_map_t.cpp" />
+    <ClCompile Include="from_container.cpp" />
+    <ClCompile Include="from_itr.cpp" />
+    <ClCompile Include="from_list.cpp" />
+    <ClCompile Include="from_move_container.cpp" />
+    <ClCompile Include="general.cpp" />
+    <ClCompile Include="generate_func.cpp" />
+    <ClCompile Include="generate_func_n.cpp" />
+    <ClCompile Include="iota_inc.cpp" />
+    <ClCompile Include="iota_op.cpp" />
+    <ClCompile Include="iterate_func.cpp" />
+    <ClCompile Include="iterator.cpp" />
+    <ClCompile Include="lazy.cpp" />
+    <ClCompile Include="limit_t.cpp" />
+    <ClCompile Include="map_func.cpp" />
+    <ClCompile Include="map_member.cpp" />
+    <ClCompile Include="map_member_const.cpp" />
+    <ClCompile Include="merge_container_comp.cpp" />
+    <ClCompile Include="merge_container_less.cpp" />
+    <ClCompile Include="merge_itr_comp.cpp" />
+    <ClCompile Include="merge_itr_less.cpp" />
+    <ClCompile Include="merge_list_comp.cpp" />
+    <ClCompile Include="merge_list_less.cpp" />
+    <ClCompile Include="merge_stream_comp.cpp" />
+    <ClCompile Include="merge_stream_less.cpp" />
+    <ClCompile Include="optional_reference.cpp" />
+    <ClCompile Include="optional_value.cpp" />
+    <ClCompile Include="peek_func.cpp" />
+    <ClCompile Include="peek_member.cpp" />
+    <ClCompile Include="peek_member_const.cpp" />
+    <ClCompile Include="rand_bools.cpp" />
+    <ClCompile Include="rand_distrib.cpp" />
+    <ClCompile Include="rand_engine.cpp" />
+    <ClCompile Include="rand_ints.cpp" />
+    <ClCompile Include="rand_reals.cpp" />
+    <ClCompile Include="range_inc.cpp" />
+    <ClCompile Include="range_op.cpp" />
+    <ClCompile Include="rcycle_container.cpp" />
+    <ClCompile Include="rcycle_container_n.cpp" />
+    <ClCompile Include="rcycle_move_container.cpp" />
+    <ClCompile Include="rcycle_move_container_n.cpp" />
+    <ClCompile Include="repeat_n.cpp" />
+    <ClCompile Include="repeat_val.cpp" />
+    <ClCompile Include="replace_if_t.cpp" />
+    <ClCompile Include="replace_map_t.cpp" />
+    <ClCompile Include="replace_val.cpp" />
+    <ClCompile Include="reverse_t.cpp" />
+    <ClCompile Include="set_diff_container_comp.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="set_diff_container_less.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="set_diff_itr_comp.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="set_diff_itr_less.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="set_diff_list_comp.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="set_diff_list_less.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="set_diff_stream_comp.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="set_diff_stream_less.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="set_intersect_container_comp.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="set_intersect_container_less.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="set_intersect_itr_comp.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="set_intersect_itr_less.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="set_intersect_list_comp.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="set_intersect_list_less.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="set_intersect_stream_comp.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="set_intersect_stream_less.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="set_sym_diff_container_comp.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="set_sym_diff_container_less.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="set_sym_diff_itr_comp.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="set_sym_diff_itr_less.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="set_sym_diff_list_comp.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="set_sym_diff_list_less.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="set_sym_diff_stream_comp.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="set_sym_diff_stream_less.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="set_union_stream_comp.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="set_union_stream_less.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="shuffle_t.cpp" />
+    <ClCompile Include="skip_every_t.cpp" />
+    <ClCompile Include="skip_op.cpp" />
+    <ClCompile Include="skip_step.cpp" />
+    <ClCompile Include="slice_op.cpp" />
+    <ClCompile Include="slice_step.cpp" />
+    <ClCompile Include="sort_comp.cpp" />
+    <ClCompile Include="sort_less.cpp" />
+    <ClCompile Include="stable_sort_comp.cpp" />
+    <ClCompile Include="stable_sort_less.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="take_while_bool.cpp" />
+    <ClCompile Include="take_while_func.cpp" />
+    <ClCompile Include="take_while_member.cpp" />
+    <ClCompile Include="take_while_member_const.cpp" />
+    <ClCompile Include="test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="uncurry.cpp" />
+    <ClCompile Include="unique_comp.cpp" />
+    <ClCompile Include="unique_less.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>$(BOOST_LIB_FOR_ADAPTER);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <UseFullPaths Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</UseFullPaths>
+      <UseFullPaths Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</UseFullPaths>
+      <UseFullPaths Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</UseFullPaths>
+      <UseFullPaths Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</UseFullPaths>
+    </ClCompile>
+  </ItemDefinitionGroup>
 </Project>

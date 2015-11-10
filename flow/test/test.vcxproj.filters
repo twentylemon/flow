@@ -7,222 +7,468 @@
     </Filter>
     <Filter Include="Header Files">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\core">
-      <UniqueIdentifier>{5179e8d5-c95d-4d7c-9b3f-d4f6e3784e07}</UniqueIdentifier>
+    <Filter Include="Source Files\core">
+      <UniqueIdentifier>{9cd29ac7-aa56-4059-9924-1734fb70bbca}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generator">
-      <UniqueIdentifier>{d3a87bdc-87eb-4daf-9a46-0116beacff79}</UniqueIdentifier>
+    <Filter Include="Source Files\intermediate">
+      <UniqueIdentifier>{7d040402-c5b6-4df4-92a5-5afc6cee9630}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\intermediate">
-      <UniqueIdentifier>{2d25bc65-4ed5-480d-8749-b3d68300900c}</UniqueIdentifier>
+    <Filter Include="Source Files\terminal">
+      <UniqueIdentifier>{f1304d62-0d46-49f4-9555-3bda083296c7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\terminal">
-      <UniqueIdentifier>{22d1e50d-fda0-414c-8b2c-eefc18805875}</UniqueIdentifier>
+    <Filter Include="Source Files\generator">
+      <UniqueIdentifier>{7a5083fb-7dd0-4efa-b323-625c7b939cee}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\extra">
-      <UniqueIdentifier>{7d0cd5c9-223a-405d-92e5-2e310795c27d}</UniqueIdentifier>
+    <Filter Include="Source Files\generator\closed_range">
+      <UniqueIdentifier>{ef0eaa39-986c-49e3-ba03-3ad6cc701f74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generator\cycle">
+      <UniqueIdentifier>{7213b151-857d-4419-90a6-815fc89e0eec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generator\empty">
+      <UniqueIdentifier>{1a299a14-3917-4ce5-a553-40ea5d371825}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generator\from">
+      <UniqueIdentifier>{d2bd20c8-86e5-4a9f-8035-270f09945e32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generator\generate">
+      <UniqueIdentifier>{c542e5e4-1271-4ee6-afd2-488583b6e7f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generator\iota">
+      <UniqueIdentifier>{154c1155-a99d-402b-bc74-6a12909e7173}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generator\iterate">
+      <UniqueIdentifier>{461cf742-b702-4f62-886c-8b7ac1a4fc1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generator\random">
+      <UniqueIdentifier>{2c923c9c-c9e5-4438-a4a7-ca9302e7e7a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generator\range">
+      <UniqueIdentifier>{5e4c9092-58bf-42fe-ba13-0611890a9e8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generator\repeat">
+      <UniqueIdentifier>{b99a9f3a-0b31-4af6-9701-d88409e52448}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\concat">
+      <UniqueIdentifier>{fd87cc5c-d093-46ab-93b8-cd0a1442c224}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\drop_while">
+      <UniqueIdentifier>{9b9f795d-42cf-4f8a-8439-e26dcdcf017c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\filter">
+      <UniqueIdentifier>{dfa7b4d4-c024-44ab-99e3-96b59d5ea12c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\flat_map">
+      <UniqueIdentifier>{42ae3a2c-7492-4a0e-8e68-37444c372a4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\limit">
+      <UniqueIdentifier>{1b8b7602-bc7e-4c3d-bc64-40b2532645a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\map">
+      <UniqueIdentifier>{30636c7e-2210-4fb5-9c8c-9bbf6b089258}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\merge">
+      <UniqueIdentifier>{9281cfa1-aa63-493d-af51-b88a62432ba7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\peek">
+      <UniqueIdentifier>{1bfe5d13-2b4f-4ce9-be8a-d17d2343a60d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\replace">
+      <UniqueIdentifier>{101ee128-08a4-4820-8a15-05746916cfa3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\reverse">
+      <UniqueIdentifier>{f425844e-cb96-42fc-98be-02951ac2c363}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\shuffle">
+      <UniqueIdentifier>{b16647a0-01a2-4992-93ad-4ad4a21a0d8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\skip">
+      <UniqueIdentifier>{c5b763b2-21fe-4fee-8ef1-c0287d569e0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\slice">
+      <UniqueIdentifier>{941e84cc-b13d-4180-ac20-c08a62113853}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\sort">
+      <UniqueIdentifier>{a15c40db-7626-4454-b381-0c6f68f0153b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\take_while">
+      <UniqueIdentifier>{0741d9cb-2eaf-418c-b45a-faf603aa61d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\unique">
+      <UniqueIdentifier>{bd60df6a-79d0-4fb1-9ae3-d933d6e51363}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\set_sym_diff">
+      <UniqueIdentifier>{020eba30-0153-4bc3-b5e5-8a0209e064e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\set_intersect">
+      <UniqueIdentifier>{b8c7bd6f-44a8-4dce-8faa-f9a475321d68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\set_diff">
+      <UniqueIdentifier>{e8f2e60a-43c3-4ce2-9726-0405bffa327e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intermediate\set_union">
+      <UniqueIdentifier>{17b5f595-e422-408a-804b-aab6fff22d70}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="closed_range_inc.cpp">
+      <Filter>Source Files\generator\closed_range</Filter>
+    </ClCompile>
+    <ClCompile Include="closed_range_op.cpp">
+      <Filter>Source Files\generator\closed_range</Filter>
+    </ClCompile>
+    <ClCompile Include="concat_container.cpp">
+      <Filter>Source Files\intermediate\concat</Filter>
+    </ClCompile>
+    <ClCompile Include="concat_itr.cpp">
+      <Filter>Source Files\intermediate\concat</Filter>
+    </ClCompile>
+    <ClCompile Include="concat_list.cpp">
+      <Filter>Source Files\intermediate\concat</Filter>
+    </ClCompile>
+    <ClCompile Include="concat_stream.cpp">
+      <Filter>Source Files\intermediate\concat</Filter>
+    </ClCompile>
+    <ClCompile Include="cycle_container.cpp">
+      <Filter>Source Files\generator\cycle</Filter>
+    </ClCompile>
+    <ClCompile Include="cycle_container_n.cpp">
+      <Filter>Source Files\generator\cycle</Filter>
+    </ClCompile>
+    <ClCompile Include="cycle_itr.cpp">
+      <Filter>Source Files\generator\cycle</Filter>
+    </ClCompile>
+    <ClCompile Include="cycle_itr_n.cpp">
+      <Filter>Source Files\generator\cycle</Filter>
+    </ClCompile>
+    <ClCompile Include="cycle_list.cpp">
+      <Filter>Source Files\generator\cycle</Filter>
+    </ClCompile>
+    <ClCompile Include="cycle_list_n.cpp">
+      <Filter>Source Files\generator\cycle</Filter>
+    </ClCompile>
+    <ClCompile Include="cycle_move_container.cpp">
+      <Filter>Source Files\generator\cycle</Filter>
+    </ClCompile>
+    <ClCompile Include="cycle_move_container_n.cpp">
+      <Filter>Source Files\generator\cycle</Filter>
+    </ClCompile>
+    <ClCompile Include="drop_while_bool.cpp">
+      <Filter>Source Files\intermediate\drop_while</Filter>
+    </ClCompile>
+    <ClCompile Include="drop_while_func.cpp">
+      <Filter>Source Files\intermediate\drop_while</Filter>
+    </ClCompile>
+    <ClCompile Include="drop_while_member.cpp">
+      <Filter>Source Files\intermediate\drop_while</Filter>
+    </ClCompile>
+    <ClCompile Include="drop_while_member_const.cpp">
+      <Filter>Source Files\intermediate\drop_while</Filter>
+    </ClCompile>
+    <ClCompile Include="filter_bool.cpp">
+      <Filter>Source Files\intermediate\filter</Filter>
+    </ClCompile>
+    <ClCompile Include="filter_func.cpp">
+      <Filter>Source Files\intermediate\filter</Filter>
+    </ClCompile>
+    <ClCompile Include="filter_member.cpp">
+      <Filter>Source Files\intermediate\filter</Filter>
+    </ClCompile>
+    <ClCompile Include="filter_member_const.cpp">
+      <Filter>Source Files\intermediate\filter</Filter>
+    </ClCompile>
+    <ClCompile Include="flat_map_t.cpp">
+      <Filter>Source Files\intermediate\flat_map</Filter>
+    </ClCompile>
+    <ClCompile Include="from_container.cpp">
+      <Filter>Source Files\generator\from</Filter>
+    </ClCompile>
+    <ClCompile Include="from_itr.cpp">
+      <Filter>Source Files\generator\from</Filter>
+    </ClCompile>
+    <ClCompile Include="from_list.cpp">
+      <Filter>Source Files\generator\from</Filter>
+    </ClCompile>
+    <ClCompile Include="from_move_container.cpp">
+      <Filter>Source Files\generator\from</Filter>
+    </ClCompile>
+    <ClCompile Include="general.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="generate_func.cpp">
+      <Filter>Source Files\generator\generate</Filter>
+    </ClCompile>
+    <ClCompile Include="generate_func_n.cpp">
+      <Filter>Source Files\generator\generate</Filter>
+    </ClCompile>
+    <ClCompile Include="iota_inc.cpp">
+      <Filter>Source Files\generator\iota</Filter>
+    </ClCompile>
+    <ClCompile Include="iota_op.cpp">
+      <Filter>Source Files\generator\iota</Filter>
+    </ClCompile>
+    <ClCompile Include="iterate_func.cpp">
+      <Filter>Source Files\generator\iterate</Filter>
+    </ClCompile>
+    <ClCompile Include="iterator.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="lazy.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="limit_t.cpp">
+      <Filter>Source Files\intermediate\limit</Filter>
+    </ClCompile>
+    <ClCompile Include="map_func.cpp">
+      <Filter>Source Files\intermediate\map</Filter>
+    </ClCompile>
+    <ClCompile Include="map_member.cpp">
+      <Filter>Source Files\intermediate\map</Filter>
+    </ClCompile>
+    <ClCompile Include="map_member_const.cpp">
+      <Filter>Source Files\intermediate\map</Filter>
+    </ClCompile>
+    <ClCompile Include="merge_container_comp.cpp">
+      <Filter>Source Files\intermediate\merge</Filter>
+    </ClCompile>
+    <ClCompile Include="merge_container_less.cpp">
+      <Filter>Source Files\intermediate\merge</Filter>
+    </ClCompile>
+    <ClCompile Include="merge_itr_comp.cpp">
+      <Filter>Source Files\intermediate\merge</Filter>
+    </ClCompile>
+    <ClCompile Include="merge_itr_less.cpp">
+      <Filter>Source Files\intermediate\merge</Filter>
+    </ClCompile>
+    <ClCompile Include="merge_list_comp.cpp">
+      <Filter>Source Files\intermediate\merge</Filter>
+    </ClCompile>
+    <ClCompile Include="merge_list_less.cpp">
+      <Filter>Source Files\intermediate\merge</Filter>
+    </ClCompile>
+    <ClCompile Include="merge_stream_comp.cpp">
+      <Filter>Source Files\intermediate\merge</Filter>
+    </ClCompile>
+    <ClCompile Include="merge_stream_less.cpp">
+      <Filter>Source Files\intermediate\merge</Filter>
+    </ClCompile>
+    <ClCompile Include="optional_reference.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="optional_value.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="peek_func.cpp">
+      <Filter>Source Files\intermediate\peek</Filter>
+    </ClCompile>
+    <ClCompile Include="peek_member.cpp">
+      <Filter>Source Files\intermediate\peek</Filter>
+    </ClCompile>
+    <ClCompile Include="peek_member_const.cpp">
+      <Filter>Source Files\intermediate\peek</Filter>
+    </ClCompile>
+    <ClCompile Include="rand_bools.cpp">
+      <Filter>Source Files\generator\random</Filter>
+    </ClCompile>
+    <ClCompile Include="rand_distrib.cpp">
+      <Filter>Source Files\generator\random</Filter>
+    </ClCompile>
+    <ClCompile Include="rand_engine.cpp">
+      <Filter>Source Files\generator\random</Filter>
+    </ClCompile>
+    <ClCompile Include="rand_ints.cpp">
+      <Filter>Source Files\generator\random</Filter>
+    </ClCompile>
+    <ClCompile Include="rand_reals.cpp">
+      <Filter>Source Files\generator\random</Filter>
+    </ClCompile>
+    <ClCompile Include="range_inc.cpp">
+      <Filter>Source Files\generator\range</Filter>
+    </ClCompile>
+    <ClCompile Include="range_op.cpp">
+      <Filter>Source Files\generator\range</Filter>
+    </ClCompile>
+    <ClCompile Include="rcycle_container.cpp">
+      <Filter>Source Files\generator\cycle</Filter>
+    </ClCompile>
+    <ClCompile Include="rcycle_container_n.cpp">
+      <Filter>Source Files\generator\cycle</Filter>
+    </ClCompile>
+    <ClCompile Include="rcycle_move_container.cpp">
+      <Filter>Source Files\generator\cycle</Filter>
+    </ClCompile>
+    <ClCompile Include="rcycle_move_container_n.cpp">
+      <Filter>Source Files\generator\cycle</Filter>
+    </ClCompile>
+    <ClCompile Include="repeat_n.cpp">
+      <Filter>Source Files\generator\repeat</Filter>
+    </ClCompile>
+    <ClCompile Include="repeat_val.cpp">
+      <Filter>Source Files\generator\repeat</Filter>
+    </ClCompile>
+    <ClCompile Include="replace_if_t.cpp">
+      <Filter>Source Files\intermediate\replace</Filter>
+    </ClCompile>
+    <ClCompile Include="replace_map_t.cpp">
+      <Filter>Source Files\intermediate\replace</Filter>
+    </ClCompile>
+    <ClCompile Include="replace_val.cpp">
+      <Filter>Source Files\intermediate\replace</Filter>
+    </ClCompile>
+    <ClCompile Include="reverse_t.cpp">
+      <Filter>Source Files\intermediate\reverse</Filter>
+    </ClCompile>
+    <ClCompile Include="shuffle_t.cpp">
+      <Filter>Source Files\intermediate\shuffle</Filter>
+    </ClCompile>
+    <ClCompile Include="skip_every_t.cpp">
+      <Filter>Source Files\intermediate\skip</Filter>
+    </ClCompile>
+    <ClCompile Include="skip_op.cpp">
+      <Filter>Source Files\intermediate\skip</Filter>
+    </ClCompile>
+    <ClCompile Include="skip_step.cpp">
+      <Filter>Source Files\intermediate\skip</Filter>
+    </ClCompile>
+    <ClCompile Include="slice_op.cpp">
+      <Filter>Source Files\intermediate\slice</Filter>
+    </ClCompile>
+    <ClCompile Include="slice_step.cpp">
+      <Filter>Source Files\intermediate\slice</Filter>
+    </ClCompile>
+    <ClCompile Include="sort_comp.cpp">
+      <Filter>Source Files\intermediate\sort</Filter>
+    </ClCompile>
+    <ClCompile Include="sort_less.cpp">
+      <Filter>Source Files\intermediate\sort</Filter>
+    </ClCompile>
+    <ClCompile Include="stable_sort_comp.cpp">
+      <Filter>Source Files\intermediate\sort</Filter>
+    </ClCompile>
+    <ClCompile Include="stable_sort_less.cpp">
+      <Filter>Source Files\intermediate\sort</Filter>
+    </ClCompile>
+    <ClCompile Include="take_while_bool.cpp">
+      <Filter>Source Files\intermediate\take_while</Filter>
+    </ClCompile>
+    <ClCompile Include="take_while_func.cpp">
+      <Filter>Source Files\intermediate\take_while</Filter>
+    </ClCompile>
+    <ClCompile Include="take_while_member.cpp">
+      <Filter>Source Files\intermediate\take_while</Filter>
+    </ClCompile>
+    <ClCompile Include="take_while_member_const.cpp">
+      <Filter>Source Files\intermediate\take_while</Filter>
+    </ClCompile>
+    <ClCompile Include="unique_comp.cpp">
+      <Filter>Source Files\intermediate\unique</Filter>
+    </ClCompile>
+    <ClCompile Include="unique_less.cpp">
+      <Filter>Source Files\intermediate\unique</Filter>
+    </ClCompile>
+    <ClCompile Include="uncurry.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="set_sym_diff_itr_less.cpp">
+      <Filter>Source Files\intermediate\set_sym_diff</Filter>
+    </ClCompile>
+    <ClCompile Include="set_sym_diff_itr_comp.cpp">
+      <Filter>Source Files\intermediate\set_sym_diff</Filter>
+    </ClCompile>
+    <ClCompile Include="set_sym_diff_container_less.cpp">
+      <Filter>Source Files\intermediate\set_sym_diff</Filter>
+    </ClCompile>
+    <ClCompile Include="set_sym_diff_container_comp.cpp">
+      <Filter>Source Files\intermediate\set_sym_diff</Filter>
+    </ClCompile>
+    <ClCompile Include="set_sym_diff_stream_less.cpp">
+      <Filter>Source Files\intermediate\set_sym_diff</Filter>
+    </ClCompile>
+    <ClCompile Include="set_sym_diff_stream_comp.cpp">
+      <Filter>Source Files\intermediate\set_sym_diff</Filter>
+    </ClCompile>
+    <ClCompile Include="set_sym_diff_list_less.cpp">
+      <Filter>Source Files\intermediate\set_sym_diff</Filter>
+    </ClCompile>
+    <ClCompile Include="set_sym_diff_list_comp.cpp">
+      <Filter>Source Files\intermediate\set_sym_diff</Filter>
+    </ClCompile>
+    <ClCompile Include="set_intersect_stream_less.cpp">
+      <Filter>Source Files\intermediate\set_intersect</Filter>
+    </ClCompile>
+    <ClCompile Include="set_intersect_stream_comp.cpp">
+      <Filter>Source Files\intermediate\set_intersect</Filter>
+    </ClCompile>
+    <ClCompile Include="set_intersect_itr_less.cpp">
+      <Filter>Source Files\intermediate\set_intersect</Filter>
+    </ClCompile>
+    <ClCompile Include="set_intersect_itr_comp.cpp">
+      <Filter>Source Files\intermediate\set_intersect</Filter>
+    </ClCompile>
+    <ClCompile Include="set_intersect_container_less.cpp">
+      <Filter>Source Files\intermediate\set_intersect</Filter>
+    </ClCompile>
+    <ClCompile Include="set_intersect_container_comp.cpp">
+      <Filter>Source Files\intermediate\set_intersect</Filter>
+    </ClCompile>
+    <ClCompile Include="set_intersect_list_less.cpp">
+      <Filter>Source Files\intermediate\set_intersect</Filter>
+    </ClCompile>
+    <ClCompile Include="set_intersect_list_comp.cpp">
+      <Filter>Source Files\intermediate\set_intersect</Filter>
+    </ClCompile>
+    <ClCompile Include="set_diff_container_comp.cpp">
+      <Filter>Source Files\intermediate\set_diff</Filter>
+    </ClCompile>
+    <ClCompile Include="set_diff_container_less.cpp">
+      <Filter>Source Files\intermediate\set_diff</Filter>
+    </ClCompile>
+    <ClCompile Include="set_diff_itr_comp.cpp">
+      <Filter>Source Files\intermediate\set_diff</Filter>
+    </ClCompile>
+    <ClCompile Include="set_diff_stream_less.cpp">
+      <Filter>Source Files\intermediate\set_diff</Filter>
+    </ClCompile>
+    <ClCompile Include="set_diff_stream_comp.cpp">
+      <Filter>Source Files\intermediate\set_diff</Filter>
+    </ClCompile>
+    <ClCompile Include="set_diff_list_less.cpp">
+      <Filter>Source Files\intermediate\set_diff</Filter>
+    </ClCompile>
+    <ClCompile Include="set_diff_list_comp.cpp">
+      <Filter>Source Files\intermediate\set_diff</Filter>
+    </ClCompile>
+    <ClCompile Include="set_diff_itr_less.cpp">
+      <Filter>Source Files\intermediate\set_diff</Filter>
+    </ClCompile>
+    <ClCompile Include="set_union_stream_less.cpp">
+      <Filter>Source Files\intermediate\set_union</Filter>
+    </ClCompile>
+    <ClCompile Include="set_union_stream_comp.cpp">
+      <Filter>Source Files\intermediate\set_union</Filter>
+    </ClCompile>
     <ClCompile Include="test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="test.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="terminal\to.h">
-      <Filter>Header Files\terminal</Filter>
-    </ClInclude>
-    <ClInclude Include="intermediate\zip.h">
-      <Filter>Header Files\intermediate</Filter>
-    </ClInclude>
-    <ClInclude Include="generator\repeat.h">
-      <Filter>Header Files\generator</Filter>
-    </ClInclude>
-    <ClInclude Include="generator\closed_range.h">
-      <Filter>Header Files\generator</Filter>
-    </ClInclude>
-    <ClInclude Include="intermediate\concat.h">
-      <Filter>Header Files\intermediate</Filter>
-    </ClInclude>
-    <ClInclude Include="terminal\all.h">
-      <Filter>Header Files\terminal</Filter>
-    </ClInclude>
-    <ClInclude Include="terminal\any.h">
-      <Filter>Header Files\terminal</Filter>
-    </ClInclude>
-    <ClInclude Include="terminal\contains.h">
-      <Filter>Header Files\terminal</Filter>
-    </ClInclude>
-    <ClInclude Include="terminal\copy.h">
-      <Filter>Header Files\terminal</Filter>
-    </ClInclude>
-    <ClInclude Include="terminal\count.h">
-      <Filter>Header Files\terminal</Filter>
-    </ClInclude>
-    <ClInclude Include="generator\cycle.h">
-      <Filter>Header Files\generator</Filter>
-    </ClInclude>
-    <ClInclude Include="generator\cycle_move.h">
-      <Filter>Header Files\generator</Filter>
-    </ClInclude>
-    <ClInclude Include="generator\empty.h">
-      <Filter>Header Files\generator</Filter>
-    </ClInclude>
-    <ClInclude Include="generator\from.h">
-      <Filter>Header Files\generator</Filter>
-    </ClInclude>
-    <ClInclude Include="generator\from_move.h">
-      <Filter>Header Files\generator</Filter>
-    </ClInclude>
-    <ClInclude Include="generator\generate.h">
-      <Filter>Header Files\generator</Filter>
-    </ClInclude>
-    <ClInclude Include="generator\iota.h">
-      <Filter>Header Files\generator</Filter>
-    </ClInclude>
-    <ClInclude Include="generator\iterate.h">
-      <Filter>Header Files\generator</Filter>
-    </ClInclude>
-    <ClInclude Include="generator\range.h">
-      <Filter>Header Files\generator</Filter>
-    </ClInclude>
-    <ClInclude Include="intermediate\drop_while.h">
-      <Filter>Header Files\intermediate</Filter>
-    </ClInclude>
-    <ClInclude Include="terminal\dump.h">
-      <Filter>Header Files\terminal</Filter>
-    </ClInclude>
-    <ClInclude Include="terminal\each.h">
-      <Filter>Header Files\terminal</Filter>
-    </ClInclude>
-    <ClInclude Include="terminal\execute.h">
-      <Filter>Header Files\terminal</Filter>
-    </ClInclude>
-    <ClInclude Include="terminal\first.h">
-      <Filter>Header Files\terminal</Filter>
-    </ClInclude>
-    <ClInclude Include="terminal\fold.h">
-      <Filter>Header Files\terminal</Filter>
-    </ClInclude>
-    <ClInclude Include="terminal\last.h">
-      <Filter>Header Files\terminal</Filter>
-    </ClInclude>
-    <ClInclude Include="intermediate\filter.h">
-      <Filter>Header Files\intermediate</Filter>
-    </ClInclude>
-    <ClInclude Include="intermediate\flat_map.h">
-      <Filter>Header Files\intermediate</Filter>
-    </ClInclude>
-    <ClInclude Include="intermediate\limit.h">
-      <Filter>Header Files\intermediate</Filter>
-    </ClInclude>
-    <ClInclude Include="intermediate\map.h">
-      <Filter>Header Files\intermediate</Filter>
-    </ClInclude>
-    <ClInclude Include="terminal\max.h">
-      <Filter>Header Files\terminal</Filter>
-    </ClInclude>
-    <ClInclude Include="terminal\min.h">
-      <Filter>Header Files\terminal</Filter>
-    </ClInclude>
-    <ClInclude Include="terminal\minmax.h">
-      <Filter>Header Files\terminal</Filter>
-    </ClInclude>
-    <ClInclude Include="terminal\none.h">
-      <Filter>Header Files\terminal</Filter>
-    </ClInclude>
-    <ClInclude Include="terminal\nth.h">
-      <Filter>Header Files\terminal</Filter>
-    </ClInclude>
-    <ClInclude Include="intermediate\peek.h">
-      <Filter>Header Files\intermediate</Filter>
-    </ClInclude>
-    <ClInclude Include="terminal\product.h">
-      <Filter>Header Files\terminal</Filter>
-    </ClInclude>
-    <ClInclude Include="iterator.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
-    <ClInclude Include="intermediate\replace.h">
-      <Filter>Header Files\intermediate</Filter>
-    </ClInclude>
-    <ClInclude Include="intermediate\reverse.h">
-      <Filter>Header Files\intermediate</Filter>
-    </ClInclude>
-    <ClInclude Include="intermediate\skip.h">
-      <Filter>Header Files\intermediate</Filter>
-    </ClInclude>
-    <ClInclude Include="intermediate\slice.h">
-      <Filter>Header Files\intermediate</Filter>
-    </ClInclude>
-    <ClInclude Include="intermediate\sort.h">
-      <Filter>Header Files\intermediate</Filter>
-    </ClInclude>
-    <ClInclude Include="intermediate\take_while.h">
-      <Filter>Header Files\intermediate</Filter>
-    </ClInclude>
-    <ClInclude Include="intermediate\unique.h">
-      <Filter>Header Files\intermediate</Filter>
-    </ClInclude>
-    <ClInclude Include="terminal\sum.h">
-      <Filter>Header Files\terminal</Filter>
-    </ClInclude>
-    <ClInclude Include="uncurry.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
-    <ClInclude Include="terminal\sample.h">
-      <Filter>Header Files\terminal</Filter>
-    </ClInclude>
-    <ClInclude Include="terminal\reservoir.h">
-      <Filter>Header Files\terminal</Filter>
-    </ClInclude>
-    <ClInclude Include="intermediate\merge.h">
-      <Filter>Header Files\intermediate</Filter>
-    </ClInclude>
-    <ClInclude Include="intermediate\set_union.h">
-      <Filter>Header Files\intermediate</Filter>
-    </ClInclude>
-    <ClInclude Include="intermediate\set_intersect.h">
-      <Filter>Header Files\intermediate</Filter>
-    </ClInclude>
-    <ClInclude Include="intermediate\set_diff.h">
-      <Filter>Header Files\intermediate</Filter>
-    </ClInclude>
-    <ClInclude Include="intermediate\set_sym_diff.h">
-      <Filter>Header Files\intermediate</Filter>
-    </ClInclude>
-    <ClInclude Include="terminal\stats.h">
-      <Filter>Header Files\terminal</Filter>
-    </ClInclude>
-    <ClInclude Include="generator\random.h">
-      <Filter>Header Files\generator</Filter>
-    </ClInclude>
-    <ClInclude Include="optional.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
-    <ClInclude Include="intermediate\shuffle.h">
-      <Filter>Header Files\intermediate</Filter>
-    </ClInclude>
-    <ClInclude Include="lazy.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
-    <ClInclude Include="terminal\inner_product.h">
-      <Filter>Header Files\terminal</Filter>
-    </ClInclude>
-    <ClInclude Include="general.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
-    <ClInclude Include="extra\optional2.h">
-      <Filter>Header Files\extra</Filter>
-    </ClInclude>
+    <ClCompile Include="empty_t.cpp">
+      <Filter>Source Files\generator\empty</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

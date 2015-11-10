@@ -1,80 +1,155 @@
 
+#include "stdafx.h"
 
-#include "test.h"
+// intentionally include cpp files -- boost.test takes a million years to compile
 
-BOOST_AUTO_TEST_SUITE(flow_core)
-#include "iterator.h"
-#include "uncurry.h"
-#include "optional.h"
-#include "lazy.h"
-#include "general.h"
-BOOST_AUTO_TEST_SUITE_END()
+// core
+#include "general.cpp"
+#include "iterator.cpp"
+#include "lazy.cpp"
+#include "optional_reference.cpp"
+#include "optional_value.cpp"
+#include "uncurry.cpp"
 
-BOOST_AUTO_TEST_SUITE(flow_generator)
-#include "generator/closed_range.h"
-#include "generator/cycle.h"
-#include "generator/cycle_move.h"
-#include "generator/empty.h"
-#include "generator/from.h"
-#include "generator/from_move.h"
-#include "generator/generate.h"
-#include "generator/iota.h"
-#include "generator/iterate.h"
-#include "generator/range.h"
-#include "generator/repeat.h"
-#include "generator/random.h"
-BOOST_AUTO_TEST_SUITE_END()
+// generator
+#include "closed_range_inc.cpp"
+#include "closed_range_op.cpp"
 
-BOOST_AUTO_TEST_SUITE(flow_intermediate)
-#include "intermediate/concat.h"
-#include "intermediate/drop_while.h"
-#include "intermediate/filter.h"
-#include "intermediate/flat_map.h"
-#include "intermediate/limit.h"
-#include "intermediate/map.h"
-#include "intermediate/peek.h"
-#include "intermediate/replace.h"
-#include "intermediate/reverse.h"
-#include "intermediate/skip.h"
-#include "intermediate/slice.h"
-#include "intermediate/sort.h"
-#include "intermediate/take_while.h"
-#include "intermediate/unique.h"
-#include "intermediate/zip.h"
-#include "intermediate/merge.h"
-#include "intermediate/set_union.h"
-#include "intermediate/set_intersect.h"
-#include "intermediate/set_diff.h"
-#include "intermediate/set_sym_diff.h"
-#include "intermediate/shuffle.h"
-BOOST_AUTO_TEST_SUITE_END()
+#include "cycle_container.cpp"
+#include "cycle_container_n.cpp"
+#include "cycle_itr.cpp"
+#include "cycle_itr_n.cpp"
+#include "cycle_list.cpp"
+#include "cycle_list_n.cpp"
+#include "cycle_move_container.cpp"
+#include "cycle_move_container_n.cpp"
+#include "rcycle_container.cpp"
+#include "rcycle_container_n.cpp"
+#include "rcycle_move_container.cpp"
+#include "rcycle_move_container_n.cpp"
 
-BOOST_AUTO_TEST_SUITE(flow_terminal)
-#include "terminal/all.h"
-#include "terminal/any.h"
-#include "terminal/contains.h"
-#include "terminal/copy.h"
-#include "terminal/count.h"
-#include "terminal/dump.h"
-#include "terminal/each.h"
-#include "terminal/execute.h"
-#include "terminal/first.h"
-#include "terminal/fold.h"
-#include "terminal/last.h"
-#include "terminal/max.h"
-#include "terminal/min.h"
-#include "terminal/minmax.h"
-#include "terminal/none.h"
-#include "terminal/nth.h"
-#include "terminal/product.h"
-#include "terminal/sum.h"
-#include "terminal/to.h"
-#include "terminal/sample.h"
-#include "terminal/reservoir.h"
-#include "terminal/stats.h"
-#include "terminal/inner_product.h"
-BOOST_AUTO_TEST_SUITE_END()
+#include "empty_t.cpp"
 
-BOOST_AUTO_TEST_SUITE(flow_extra)
-//#include "extra/optional2.h"
-BOOST_AUTO_TEST_SUITE_END()
+#include "from_container.cpp"
+#include "from_itr.cpp"
+#include "from_list.cpp"
+#include "from_move_container.cpp"
+#include "rfrom_container.cpp"
+#include "rfrom_move_container.cpp"
+
+#include "generate_func.cpp"
+#include "generate_func_n.cpp"
+
+#include "iota_inc.cpp"
+#include "iota_op.cpp"
+
+#include "iterate_func.cpp"
+
+#include "rand_bools.cpp"
+#include "rand_distrib.cpp"
+#include "rand_engine.cpp"
+#include "rand_ints.cpp"
+#include "rand_reals.cpp"
+
+#include "range_inc.cpp"
+#include "range_op.cpp"
+
+#include "repeat_n.cpp"
+#include "repeat_val.cpp"
+
+// intermediate
+#include "concat_container.cpp"
+#include "concat_itr.cpp"
+#include "concat_list.cpp"
+#include "concat_stream.cpp"
+
+#include "drop_while_bool.cpp"
+#include "drop_while_func.cpp"
+#include "drop_while_member.cpp"
+#include "drop_while_member_const.cpp"
+
+#include "filter_bool.cpp"
+#include "filter_func.cpp"
+#include "filter_member.cpp"
+#include "filter_member_const.cpp"
+
+#include "flat_map_t.cpp"
+
+#include "limit_t.cpp"
+
+#include "map_func.cpp"
+#include "map_member.cpp"
+#include "map_member_const.cpp"
+
+#include "merge_container_comp.cpp"
+#include "merge_container_less.cpp"
+#include "merge_itr_comp.cpp"
+#include "merge_itr_less.cpp"
+#include "merge_list_comp.cpp"
+#include "merge_list_less.cpp"
+#include "merge_stream_comp.cpp"
+#include "merge_stream_less.cpp"
+
+#include "peek_func.cpp"
+#include "peek_member.cpp"
+#include "peek_member_const.cpp"
+
+#include "replace_if_t.cpp"
+#include "replace_map_t.cpp"
+#include "replace_val.cpp"
+
+#include "reverse_t.cpp"
+
+#include "set_diff_container_comp.cpp"
+#include "set_diff_container_less.cpp"
+#include "set_diff_itr_comp.cpp"
+#include "set_diff_itr_less.cpp"
+#include "set_diff_list_comp.cpp"
+#include "set_diff_list_less.cpp"
+#include "set_diff_stream_comp.cpp"
+#include "set_diff_stream_less.cpp"
+
+#include "set_intersect_container_comp.cpp"
+#include "set_intersect_container_less.cpp"
+#include "set_intersect_itr_comp.cpp"
+#include "set_intersect_itr_less.cpp"
+#include "set_intersect_list_comp.cpp"
+#include "set_intersect_list_less.cpp"
+#include "set_intersect_stream_comp.cpp"
+#include "set_intersect_stream_less.cpp"
+
+#include "set_sym_diff_container_comp.cpp"
+#include "set_sym_diff_container_less.cpp"
+#include "set_sym_diff_itr_comp.cpp"
+#include "set_sym_diff_itr_less.cpp"
+#include "set_sym_diff_list_comp.cpp"
+#include "set_sym_diff_list_less.cpp"
+#include "set_sym_diff_stream_comp.cpp"
+#include "set_sym_diff_stream_less.cpp"
+
+#include "set_union_stream_comp.cpp"
+#include "set_union_stream_less.cpp"
+
+#include "shuffle_t.cpp"
+
+#include "skip_every_t.cpp"
+#include "skip_op.cpp"
+#include "skip_step.cpp"
+
+#include "slice_op.cpp"
+#include "slice_step.cpp"
+
+#include "sort_comp.cpp"
+#include "sort_less.cpp"
+#include "stable_sort_comp.cpp"
+#include "stable_sort_less.cpp"
+
+#include "take_while_bool.cpp"
+#include "take_while_func.cpp"
+#include "take_while_member.cpp"
+#include "take_while_member_const.cpp"
+
+#include "unique_comp.cpp"
+#include "unique_less.cpp"
+
+// terminal
