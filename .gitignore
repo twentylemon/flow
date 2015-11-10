@@ -6,6 +6,7 @@ doc/
 
 # ignore libs
 flow/benchmark/Streams/
+flow/test/test
 
 # User-specific files
 *.suo
