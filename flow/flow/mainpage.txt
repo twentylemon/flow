@@ -376,6 +376,13 @@
 ///     ...
 /// }
 /// // be careful! stream is used and cannot be used again.
+///
+/// // you can also use the stream directly in the range-based for loop
+/// // the stream is a temporary, so whether or not it is used doesn't matter anymore
+/// for (auto&& e : range(1, 100) | filter([](int i) { return i % 2 == 0; }) | map([](int i) { return i*i; })) {
+///     ...
+/// }
+///
 /// auto ages = people | flow::map(&Person::age);
 /// bool eq = std::equal(ages.begin(), ages.end(), other_thing.begin());
 /// // ages may or may not be used entirely -- you should consider it to be used\endcode

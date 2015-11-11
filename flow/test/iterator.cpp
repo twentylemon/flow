@@ -55,5 +55,10 @@ BOOST_AUTO_TEST_CASE( iterator )
 
     auto s9 = range(0, 100);
     BOOST_CHECK(std::find(s9.begin(), s9.end(), -1) == s9.end());
+    
+    for (auto&& q : range(1, 100) | filter(is_even)) {
+        BOOST_CHECK(is_even(q));
+        BOOST_CHECK(q >= 1 && q < 100);
+    }
 }
 
