@@ -400,7 +400,7 @@ auto to_unordered_multiset(const Hash& hash, EqualPredicate equal, const Allocat
 
 /// <summary>
 /// Copies the stream into a <c>std::map&lt;T, std::size_t&gt;</c>.
-/// <para>The map keys are stream elements and each mapped value in the number of occurrences of that key in the stream.</para>
+/// <para>The map keys are stream elements and each mapped value is the number of occurrences of that key in the stream.</para>
 /// </summary>
 inline auto to_map() {
     return detail::make_terminal([](auto&& stream) {
@@ -413,7 +413,7 @@ inline auto to_map() {
 
 /// <summary>
 /// Copies the stream into a <c>std::map&lt;T, std::size_t, KeyCompare&gt;</c>.
-/// <para>The map keys are stream elements and each mapped value in the number of occurrences of that key in the stream.</para>
+/// <para>The map keys are stream elements and each mapped value is the number of occurrences of that key in the stream.</para>
 /// </summary>
 /// <param name="key_compare">The key comparator to use in the map.</param>
 template <typename KeyCompare>
@@ -428,7 +428,7 @@ auto to_map(KeyCompare key_compare) {
 
 /// <summary>
 /// Copies the stream into a <c>std::map&lt;T, std::size_t, KeyCompare, Allocator&gt;</c>.
-/// <para>The map keys are stream elements and each mapped value in the number of occurrences of that key in the stream.</para>
+/// <para>The map keys are stream elements and each mapped value is the number of occurrences of that key in the stream.</para>
 /// </summary>
 /// <param name="key_compare">The key comparator to use in the map.</param>
 /// <param name="alloc">The allocator to use in the returned container.</param>
@@ -444,7 +444,7 @@ auto to_map(KeyCompare key_compare, const Allocator& alloc) {
 
 /// <summary>
 /// Copies the stream into a <c>std::unordered_map&lt;T, std::size_t&gt;</c>.
-/// <para>The map keys are stream elements and each mapped value in the number of occurrences of that key in the stream.</para>
+/// <para>The map keys are stream elements and each mapped value is the number of occurrences of that key in the stream.</para>
 /// </summary>
 inline auto to_unordered_map() {
     return detail::make_terminal([](auto&& stream) {
@@ -457,7 +457,7 @@ inline auto to_unordered_map() {
 
 /// <summary>
 /// Copies the stream into a <c>std::unordered_map&lt;T, std::size_t, Hash&gt;</c>.
-/// <para>The map keys are stream elements and each mapped value in the number of occurrences of that key in the stream.</para>
+/// <para>The map keys are stream elements and each mapped value is the number of occurrences of that key in the stream.</para>
 /// </summary>
 /// <param name="hash">The hash function to use.</param>
 template <typename Hash>
@@ -472,7 +472,7 @@ auto to_unordered_map(const Hash& hash) {
 
 /// <summary>
 /// Copies the stream into a <c>std::unordered_map&lt;T, std::size_t, Hash, EqualPredicate&gt;</c>.
-/// <para>The map keys are stream elements and each mapped value in the number of occurrences of that key in the stream.</para>
+/// <para>The map keys are stream elements and each mapped value is the number of occurrences of that key in the stream.</para>
 /// </summary>
 /// <param name="hash">The hash function to use.</param>
 /// <param name="equal">The function to use for the equality predicate in the hash table.</param>
@@ -488,7 +488,7 @@ auto to_unordered_map(const Hash& hash, EqualPredicate equal) {
 
 /// <summary>
 /// Copies the stream into a <c>std::unordered_map&lt;T, std::size_t, Hash, EqualPredicate, Allocator&gt;</c>.
-/// <para>The map keys are stream elements and each mapped value in the number of occurrences of that key in the stream.</para>
+/// <para>The map keys are stream elements and each mapped value is the number of occurrences of that key in the stream.</para>
 /// </summary>
 /// <param name="hash">The hash function to use.</param>
 /// <param name="equal">The function to use for the equality predicate in the hash table.</param>
