@@ -222,6 +222,13 @@ Custom Iteration</h2>
 <div class="line">    ...</div>
 <div class="line">}</div>
 <div class="line"><span class="comment">// be careful! stream is used and cannot be used again.</span></div>
+<div class="line"></div>
+<div class="line"><span class="comment">// you can also use the stream directly in the range-based for loop</span></div>
+<div class="line"><span class="comment">// the stream is a temporary, so whether or not it is used doesn&#39;t matter anymore</span></div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp;&amp; e : <a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#a45f23c30d0db685703bc80c1daf19840">range</a>(1, 100) | <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#aa74be97ab2dbd180f7d1127a88cfcf8c">filter</a>([](<span class="keywordtype">int</span> i) { <span class="keywordflow">return</span> i % 2 == 0; }) | <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#af704cfd8b681a9cd8b2437d249487f78">map</a>([](<span class="keywordtype">int</span> i) { <span class="keywordflow">return</span> i*i; })) {</div>
+<div class="line">    ...</div>
+<div class="line">}</div>
+<div class="line"></div>
 <div class="line"><span class="keyword">auto</span> ages = people | <a class="code" href="../../dc/d09/namespaceflow_1_1intermediate.html#af704cfd8b681a9cd8b2437d249487f78">flow::map</a>(&amp;Person::age);</div>
 <div class="line"><span class="keywordtype">bool</span> eq = std::equal(ages.begin(), ages.end(), other_thing.begin());</div>
 <div class="line"><span class="comment">// ages may or may not be used entirely -- you should consider it to be used</span></div>
