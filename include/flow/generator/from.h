@@ -45,8 +45,15 @@ template <typename T>
 struct has_const_iterator
 {
 private:
-    template <typename C> constexpr static std::true_type test(typename C::const_iterator*);
-    template <typename C> constexpr static std::false_type test(...);
+    template <typename C>
+    constexpr static std::true_type test(typename C::const_iterator*) {
+        return std::true_type();
+    }
+    
+    template <typename C>
+    constexpr static std::false_type test(...) {
+        return std::false_type();
+    }
 public:
     constexpr static bool value = decltype(test<T>(0))::value;
 };

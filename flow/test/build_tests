@@ -1,2 +1,6 @@
 
-g++ -std=c++14 -I ../../include -Og -o test.o test.cpp
+echo "building with g++ -> test.gcc.o"
+g++ -std=c++14 -I ../../include -Og -o test.gcc.o test.cpp
+
+echo "building with clang -> test.clang.o"
+clang++ -std=c++14 -I ../../include -o test.clang.o test.cpp

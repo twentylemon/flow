@@ -214,10 +214,15 @@
 /// \tableofcontents
 /// This page contains everything you'll need to know in order to start using the flow library.
 /// \section compilers Compiler Support
-/// <para>The flow library is known to work for g++4.9 and MSVC 14.0. Support for Clang is being worked toward.</para>
-/// <para>The flow library requires compilation under the C++14 standard. For g++, this requires the `-std=c++14` flag. MSVC 14.0 automatically
+/// <para>The flow library is known to work for the following compilers.</para>
+/// <ul>
+///     <li>g++ 4.9 and g++ 5.0</li>
+///     <li>clang 3.5</li>
+///     <li>msvc 14.0 (visual studio 2015)
+/// </ul>
+/// <para>The flow library requires compilation under the C++14 standard. For g++/clang, this requires the `-std=c++14` flag. MSVC 14.0 automatically
 /// compiles under the C++14 standard.</para>
-/// <para>Flow performs best on MSVC in most cases. The library also performs well for built-in or smaller types in g++.</para>
+/// <para>Flow performs best on MSVC in most cases. The library also performs well for built-in or smaller types in g++ or clang.</para>
 /// \section install Installation
 /// <para>The flow library is header-only, so there's nothing to build. Download a release from the [GitHub repository](https://github.com/twentylemon/flow)
 /// and place the `include` directory where you want the flow library to live. Then, in your program, the <c>\#include</c> directive will be similar to

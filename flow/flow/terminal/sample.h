@@ -58,6 +58,7 @@ namespace flow {
 /// <seealso cref="reservoir()"/>
 inline auto sample_heap(std::size_t n) {
     return detail::make_terminal([n](auto&& stream) {
+        using flow::generator::operator|;
         using T = std::decay_t<decltype(stream.next())>;
         using U = typename std::default_random_engine::result_type;
         std::default_random_engine gen(static_cast<unsigned int>(std::chrono::system_clock::now().time_since_epoch().count()));
