@@ -104,9 +104,17 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="textblock"><p>This page contains everything you'll need to know in order to start using the flow library.</p>
 <h1><a class="anchor" id="compilers"></a>
 Compiler Support</h1>
-<p>The flow library is known to work for g++4.9 and MSVC 14.0. Support for Clang is being worked toward.</p>
-<p>The flow library requires compilation under the C++14 standard. For g++, this requires the <code>-std=c++14</code> flag. MSVC 14.0 automatically compiles under the C++14 standard.</p>
-<p>Flow performs best on MSVC in most cases. The library also performs well for built-in or smaller types in g++.</p>
+<p>The flow library is known to work for the following compilers.</p>
+<ul>
+<li>
+g++ 4.9 and g++ 5.0 </li>
+<li>
+clang 3.5 </li>
+<li>
+msvc 14.0 (visual studio 2015) </li>
+</ul>
+<p>The flow library requires compilation under the C++14 standard. For g++/clang, this requires the <code>-std=c++14</code> flag. MSVC 14.0 automatically compiles under the C++14 standard.</p>
+<p>Flow performs best on MSVC in most cases. The library also performs well for built-in or smaller types in g++ or clang.</p>
 <h1><a class="anchor" id="install"></a>
 Installation</h1>
 <p>The flow library is header-only, so there's nothing to build. Download a release from the <a href="https://github.com/twentylemon/flow">GitHub repository</a> and place the <code>include</code> directory where you want the flow library to live. Then, in your program, the <code>#include</code> directive will be similar to <code>#include &lt;<a class="el" href="../../da/d76/flow_8h.html">flow.h</a>&gt;</code> depending on your preference regarding the include path.</p>
