@@ -242,7 +242,7 @@ Custom Iteration</h2>
 <div class="line"><span class="comment">// ages may or may not be used entirely -- you should consider it to be used</span></div>
 </div><!-- fragment --> <p>The stream iterators also work for infinite streams, technically. The past-the-end iterator will never be reached by incrementing. Ensure you have some sort of stopping condition for infinite streams, same as you always would.</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> counter = <a class="code" href="../../de/d3f/namespaceflow_1_1generator.html#ad3e468cd8e943a73900891b99f7a2ded">flow::iota</a>(0);</div>
-<div class="line"><span class="keywordtype">bool</span> eq = std::equal(vec.begin(), vec.end(), counter.begin());  <span class="comment">// counter is stepped to vec.size() now</span></div>
+<div class="line"><span class="keywordtype">bool</span> eq = std::equal(vec.begin(), vec.end(), counter.begin());  <span class="comment">// counter is stepped to where ever the function stopped incrementing</span></div>
 </div><!-- fragment --><h1><a class="anchor" id="feedback"></a>
 Feedback</h1>
 <p>Let me know of any bugs, performance issues or possible additions to the library by opening an issue on the <a href="https://github.com/twentylemon/flow">GitHub repository</a>. If you like the project, let me know by starring or forking!</p>
